@@ -10,11 +10,9 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 /**
  * Base class for ENUMERATED value serializers to produce both XER and JER
  * @param <T> The ENUMERATED type
- * TODO: this doesn't need to be generic
  * @author Ivan Yourshaw
  */
-@SuppressWarnings({"unchecked", "rawtypes"})
-public class EnumeratedSerializer<T extends Enum & Asn1Enumerated> extends StdSerializer<T> {
+public class EnumeratedSerializer<T extends Enum<?> & Asn1Enumerated> extends StdSerializer<T> {
 
 
     protected EnumeratedSerializer(Class<T> t) {
