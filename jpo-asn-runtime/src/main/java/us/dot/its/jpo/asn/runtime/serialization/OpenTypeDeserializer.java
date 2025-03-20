@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -47,6 +48,7 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
             // JSON:
             log.debug("deserialize open type: json");
             TreeNode node = jsonParser.getCodec().readTree(jsonParser);
+            var mapper = (ObjectMapper)jsonParser.getCodec();
             if (node instanceof ObjectNode objectNode) {
                 // Try unwrapping
                 JsonNode innerNode = objectNode.findValue(wrapped);
@@ -54,9 +56,9 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
                     log.debug("deserialize open type json unwrapped {}", wrapped);
                 }
                 JsonNode useNode = innerNode != null ? innerNode : objectNode;
-                String json = SerializationUtil.jsonMapper().writeValueAsString(useNode);
+                String json = mapper.writeValueAsString(useNode);
                 log.debug("deserialize open type: json value: {}", json);
-                result = SerializationUtil.jsonMapper().readValue(json, thisClass);
+                result = mapper.readValue(json, thisClass);
             }
         }
         return result;

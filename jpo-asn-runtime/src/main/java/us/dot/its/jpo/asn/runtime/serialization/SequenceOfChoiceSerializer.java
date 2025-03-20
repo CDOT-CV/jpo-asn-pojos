@@ -3,6 +3,7 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
 
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
@@ -37,7 +38,7 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
     if (serializerProvider instanceof XmlSerializerProvider xmlProvider) {
       // XER: Choice items not wrapped
       var xmlGen = (ToXmlGenerator) jsonGenerator;
-      var mapper = SerializationUtil.xmlMapper();
+      var mapper = (ObjectMapper)xmlGen.getCodec();
 
       xmlGen.writeStartArray();
       for (S choiceItem : sequenceOf) {

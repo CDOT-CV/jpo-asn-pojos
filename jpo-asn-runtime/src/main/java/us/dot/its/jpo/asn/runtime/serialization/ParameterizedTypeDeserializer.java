@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -72,17 +73,18 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 log.trace("id: {}", id);
                 Class<?> subType = getSubtypeForId(id, idType, types);
                 log.trace("subtype: {}", subType.getName());
-                return (T)SerializationUtil.xmlMapper().readValue(xml, subType);
+                return (T)xmlMapper.readValue(xml, subType);
             } else {
                 throw new RuntimeException("Not instance of object");
             }
         } else {
             // JER
             TreeNode node = jsonParser.getCodec().readTree(jsonParser);
+            var mapper = (ObjectMapper)jsonParser.getCodec();
             if (node instanceof ObjectNode objectNode) {
                 log.trace("ObjectNode: {}", objectNode);
                 JsonNode idPropNode = objectNode.findValue(idPropName);
-                String json = SerializationUtil.jsonMapper().writeValueAsString(objectNode);
+                String json = mapper.writeValueAsString(objectNode);
                 log.trace("node json: {}", json);
                 if (idPropNode == null) {
                     throw new RuntimeException("idPropNode is null");
@@ -91,7 +93,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 log.trace("id: {}", id);
                 Class<?> subType = getSubtypeForId(id, idType, types);
                 log.trace("subtype: {}", subType.getName());
-                T deserializedItem = (T)SerializationUtil.jsonMapper().readValue(json, subType);
+                T deserializedItem = (T)mapper.readValue(json, subType);
                 log.trace("deserializedItem: {}", deserializedItem);
                 return deserializedItem;
             } else {

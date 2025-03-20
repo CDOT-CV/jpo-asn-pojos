@@ -1,6 +1,7 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
@@ -29,7 +30,7 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
     if (serializerProvider instanceof XmlSerializerProvider) {
       // XER: Write each item sequentially without wrapping
       var xmlGen = (ToXmlGenerator)jsonGenerator;
-      var mapper = SerializationUtil.xmlMapper();
+      var mapper = (ObjectMapper)xmlGen.getCodec();
       for (var item : sequenceOf) {
         String itemXml = mapper.writeValueAsString(item);
         log.trace("itemXml: {}", itemXml);

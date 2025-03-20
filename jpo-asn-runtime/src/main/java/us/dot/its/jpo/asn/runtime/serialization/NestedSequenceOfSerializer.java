@@ -3,6 +3,7 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
 
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
@@ -30,11 +31,11 @@ public class NestedSequenceOfSerializer<T extends Asn1SequenceOf<?>> extends Std
         if (serializerProvider instanceof XmlSerializerProvider) {
             // Wrapped XER
             var xmlGen = (ToXmlGenerator)jsonGenerator;
+            var mapper = (ObjectMapper)xmlGen.getCodec();
             for (var item : t) {
 
                 xmlGen.writeRaw(String.format("<%s>", wrapped));
 
-                var mapper = SerializationUtil.xmlMapper();
                 final String itemXml = mapper.writeValueAsString(item);
                 final String strippedXml = unwrap(itemXml);
                 xmlGen.writeRaw(strippedXml);
