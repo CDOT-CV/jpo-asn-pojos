@@ -59,11 +59,4 @@ public abstract class SequenceOfEnumeratedDeserializer<S extends Enum<?> & Asn1E
     return result;
   }
 
-  private void addEnumValue(T result, String name) {
-    for (S enumValue : listEnumValues()) {
-      if (Objects.equals(enumValue.getName(), name)) {
-        result.add(enumValue);
-      }
-    }
-  }
 }
