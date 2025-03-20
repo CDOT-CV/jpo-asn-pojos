@@ -7,7 +7,6 @@ import java.util.Objects;
  * A constrained integer type with lower bound and upper bound.
  * Unconstrained integer types and extensibility markers in integer constraints are not supported.
  */
-//@JsonSerialize(using = IntegerSerializer.class)
 public class Asn1Integer implements Asn1Type, Comparable<Asn1Integer> {
 
     protected long value;
