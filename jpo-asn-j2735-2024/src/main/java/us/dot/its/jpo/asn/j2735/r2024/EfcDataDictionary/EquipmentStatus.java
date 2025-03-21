@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        EquipmentStatus.EquipmentStatusDeserializer
+        us.dot.its.jpo.asn.j2735.r2024.EfcDataDictionary.EquipmentStatus.EquipmentStatusDeserializer
             .class)
 public class EquipmentStatus extends Asn1Bitstring {
 

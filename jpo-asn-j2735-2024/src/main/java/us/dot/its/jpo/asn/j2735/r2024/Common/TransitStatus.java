@@ -27,7 +27,7 @@ import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
-    using = TransitStatus.TransitStatusDeserializer.class)
+    using = us.dot.its.jpo.asn.j2735.r2024.Common.TransitStatus.TransitStatusDeserializer.class)
 public class TransitStatus extends Asn1Bitstring {
 
   public boolean isNone() {

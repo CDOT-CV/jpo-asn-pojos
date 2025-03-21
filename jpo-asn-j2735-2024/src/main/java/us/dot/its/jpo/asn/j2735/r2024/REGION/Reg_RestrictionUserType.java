@@ -44,7 +44,7 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
     })
 @JsonDeserialize(
     using =
-        Reg_RestrictionUserType
+        us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RestrictionUserType
             .Reg_RestrictionUserTypeDeserializer.class)
 public abstract class Reg_RestrictionUserType<TValue> extends RegionalExtension<TValue> {
 

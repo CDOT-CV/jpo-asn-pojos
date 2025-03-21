@@ -30,6 +30,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.ITIS.ResponderGroupAffected;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.serialization.SequenceOfEnumeratedDeserializer;
@@ -39,6 +40,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class IncidentsContainer extends Asn1Sequence {

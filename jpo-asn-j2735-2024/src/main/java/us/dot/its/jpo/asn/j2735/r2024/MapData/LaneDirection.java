@@ -27,7 +27,7 @@ import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
-    using = LaneDirection.LaneDirectionDeserializer.class)
+    using = us.dot.its.jpo.asn.j2735.r2024.MapData.LaneDirection.LaneDirectionDeserializer.class)
 public class LaneDirection extends Asn1Bitstring {
 
   public boolean isIngressPath() {

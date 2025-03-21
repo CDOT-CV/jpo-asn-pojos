@@ -60,7 +60,7 @@ public abstract class RegionalExtension<TValue> extends Asn1Sequence {
 
   public RegionalExtension(int id, String name) {
     super(true);
-    var theId = new RegionId();
+    var theId = new us.dot.its.jpo.asn.j2735.r2024.Common.RegionId();
     theId.setValue(id);
     this.regionId = theId;
     this.name = name;

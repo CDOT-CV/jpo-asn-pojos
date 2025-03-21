@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        PublicSafetyAndRoadWorkerActivity
+        us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.PublicSafetyAndRoadWorkerActivity
             .PublicSafetyAndRoadWorkerActivityDeserializer.class)
 public class PublicSafetyAndRoadWorkerActivity extends Asn1Bitstring {
 

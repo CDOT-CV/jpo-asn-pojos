@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        CountryCode.CountryCodeDeserializer.class)
+        us.dot.its.jpo.asn.j2735.r2024.EfcDataDictionary.CountryCode.CountryCodeDeserializer.class)
 public class CountryCode extends Asn1Bitstring {
 
   public CountryCode() {

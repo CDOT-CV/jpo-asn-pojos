@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        UserSizeAndBehaviour
+        us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.UserSizeAndBehaviour
             .UserSizeAndBehaviourDeserializer.class)
 public class UserSizeAndBehaviour extends Asn1Bitstring {
 

@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        BrakeAppliedStatus.BrakeAppliedStatusDeserializer
+        us.dot.its.jpo.asn.j2735.r2024.Common.BrakeAppliedStatus.BrakeAppliedStatusDeserializer
             .class)
 public class BrakeAppliedStatus extends Asn1Bitstring {
 

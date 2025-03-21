@@ -60,7 +60,7 @@ public abstract class CCMPartIIcontent<TValue> extends Asn1Sequence {
 
   public CCMPartIIcontent(int id, String name) {
     super(true);
-    var theId = new PartII_Id();
+    var theId = new us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage.PartII_Id();
     theId.setValue(id);
     this.partII_Id = theId;
     this.name = name;

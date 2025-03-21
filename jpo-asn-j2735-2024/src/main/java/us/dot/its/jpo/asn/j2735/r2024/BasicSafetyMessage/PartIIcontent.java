@@ -60,7 +60,7 @@ public abstract class PartIIcontent<TValue> extends Asn1Sequence {
 
   public PartIIcontent(int id, String name) {
     super(true);
-    var theId = new PartII_Id();
+    var theId = new us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PartII_Id();
     theId.setValue(id);
     this.partII_Id = theId;
     this.name = name;

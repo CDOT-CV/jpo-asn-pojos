@@ -239,7 +239,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
           intId = 255)
     })
 @JsonDeserialize(
-    using = MessageFrame.MessageFrameDeserializer.class)
+    using = us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame.MessageFrameDeserializer.class)
 public abstract class MessageFrame<TValue> extends Asn1Sequence {
 
   protected DSRCmsgID messageId;
@@ -272,7 +272,7 @@ public abstract class MessageFrame<TValue> extends Asn1Sequence {
 
   public MessageFrame(int id, String name) {
     super(true);
-    var theId = new DSRCmsgID();
+    var theId = new us.dot.its.jpo.asn.j2735.r2024.MessageFrame.DSRCmsgID();
     theId.setValue(id);
     this.messageId = theId;
     this.name = name;

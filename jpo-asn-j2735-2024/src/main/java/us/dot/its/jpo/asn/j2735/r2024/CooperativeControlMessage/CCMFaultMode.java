@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        CCMFaultMode
+        us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage.CCMFaultMode
             .CCMFaultModeDeserializer.class)
 public class CCMFaultMode extends Asn1Bitstring {
 

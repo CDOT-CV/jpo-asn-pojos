@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        PrivilegedEventFlags.PrivilegedEventFlagsDeserializer
+        us.dot.its.jpo.asn.j2735.r2024.Common.PrivilegedEventFlags.PrivilegedEventFlagsDeserializer
             .class)
 public class PrivilegedEventFlags extends Asn1Bitstring {
 

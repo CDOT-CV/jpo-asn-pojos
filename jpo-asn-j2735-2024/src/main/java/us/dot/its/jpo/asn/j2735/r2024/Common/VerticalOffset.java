@@ -27,11 +27,13 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.VertOffset_B07;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_VerticalOffset;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 
+@ToString(callSuper = true)
 @Getter
 @Setter
 @JsonInclude(Include.NON_NULL)

@@ -30,6 +30,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.Common.Extent;
 import us.dot.its.jpo.asn.j2735.r2024.Common.HeadingSlice;
 import us.dot.its.jpo.asn.j2735.r2024.Common.LaneWidth;
@@ -40,6 +41,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class GeometricProjection extends Asn1Sequence {

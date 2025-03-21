@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.ValidRegion;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.types.Asn1ObjectIdentifier;
@@ -35,6 +36,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class Area extends Asn1Sequence {

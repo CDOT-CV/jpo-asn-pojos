@@ -41,7 +41,7 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
           intId = 3)
     })
 @JsonDeserialize(
-    using = Reg_MapData.Reg_MapDataDeserializer.class)
+    using = us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MapData.Reg_MapDataDeserializer.class)
 public abstract class Reg_MapData<TValue> extends RegionalExtension<TValue> {
 
   public Reg_MapData(int id, String name) {

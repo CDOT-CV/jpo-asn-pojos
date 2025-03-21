@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        AllowedManeuvers.AllowedManeuversDeserializer.class)
+        us.dot.its.jpo.asn.j2735.r2024.MapData.AllowedManeuvers.AllowedManeuversDeserializer.class)
 public class AllowedManeuvers extends Asn1Bitstring {
 
   public boolean isManeuverStraightAllowed() {

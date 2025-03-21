@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime;
 import us.dot.its.jpo.asn.j2735.r2024.EfcDataDictionary.VehicleDescription;
 import us.dot.its.jpo.asn.j2735.r2024.TollAdvertisementMessage.VehicleTypes;
@@ -38,6 +39,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class UserData extends Asn1Sequence {

@@ -43,7 +43,7 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
     })
 @JsonDeserialize(
     using =
-        Reg_MovementEvent.Reg_MovementEventDeserializer.class)
+        us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent.Reg_MovementEventDeserializer.class)
 public abstract class Reg_MovementEvent<TValue> extends RegionalExtension<TValue> {
 
   public Reg_MovementEvent(int id, String name) {

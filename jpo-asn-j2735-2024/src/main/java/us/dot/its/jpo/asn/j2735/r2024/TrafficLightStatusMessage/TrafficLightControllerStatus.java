@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        TrafficLightControllerStatus
+        us.dot.its.jpo.asn.j2735.r2024.TrafficLightStatusMessage.TrafficLightControllerStatus
             .TrafficLightControllerStatusDeserializer.class)
 public class TrafficLightControllerStatus extends Asn1Bitstring {
 

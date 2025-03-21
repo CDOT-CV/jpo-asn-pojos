@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        VerticalAccelerationThreshold
+        us.dot.its.jpo.asn.j2735.r2024.Common.VerticalAccelerationThreshold
             .VerticalAccelerationThresholdDeserializer.class)
 public class VerticalAccelerationThreshold extends Asn1Bitstring {
 

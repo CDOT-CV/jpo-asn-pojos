@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.Common.DescriptiveName;
 import us.dot.its.jpo.asn.j2735.r2024.Common.VehicleID;
 import us.dot.its.jpo.asn.j2735.r2024.Common.VehicleType;
@@ -41,6 +42,7 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class VehicleIdent extends Asn1Sequence {
@@ -69,6 +71,7 @@ public class VehicleIdent extends Asn1Sequence {
   @JsonProperty("vehicleClass")
   private VehicleClassChoice vehicleClass;
 
+  @ToString(callSuper = true)
   @Getter
   @Setter
   @JsonInclude(Include.NON_NULL)

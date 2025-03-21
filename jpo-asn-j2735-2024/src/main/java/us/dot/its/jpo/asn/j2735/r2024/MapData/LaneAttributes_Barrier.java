@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        LaneAttributes_Barrier
+        us.dot.its.jpo.asn.j2735.r2024.MapData.LaneAttributes_Barrier
             .LaneAttributes_BarrierDeserializer.class)
 public class LaneAttributes_Barrier extends Asn1Bitstring {
 

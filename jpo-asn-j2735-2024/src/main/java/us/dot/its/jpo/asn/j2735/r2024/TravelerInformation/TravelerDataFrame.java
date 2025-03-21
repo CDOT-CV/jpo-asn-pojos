@@ -32,6 +32,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.j2735.r2024.Common.DYear;
 import us.dot.its.jpo.asn.j2735.r2024.Common.FurtherInfoID;
 import us.dot.its.jpo.asn.j2735.r2024.Common.MinuteOfTheYear;
@@ -46,6 +47,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class TravelerDataFrame extends Asn1Sequence {
@@ -108,6 +110,7 @@ public class TravelerDataFrame extends Asn1Sequence {
   @JsonProperty("contentNew")
   private TravelerDataFrameNewPartIIIContent contentNew;
 
+  @ToString(callSuper = true)
   @Getter
   @Setter
   @JsonInclude(Include.NON_NULL)
@@ -132,6 +135,7 @@ public class TravelerDataFrame extends Asn1Sequence {
     }
   }
 
+  @ToString(callSuper = true)
   @Getter
   @Setter
   @JsonInclude(Include.NON_NULL)

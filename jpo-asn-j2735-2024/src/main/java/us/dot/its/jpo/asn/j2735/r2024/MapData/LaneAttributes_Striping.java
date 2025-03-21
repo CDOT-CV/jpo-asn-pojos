@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        LaneAttributes_Striping
+        us.dot.its.jpo.asn.j2735.r2024.MapData.LaneAttributes_Striping
             .LaneAttributes_StripingDeserializer.class)
 public class LaneAttributes_Striping extends Asn1Bitstring {
 

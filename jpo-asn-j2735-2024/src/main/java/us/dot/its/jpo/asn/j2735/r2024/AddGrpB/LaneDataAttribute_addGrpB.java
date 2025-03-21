@@ -25,10 +25,12 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import lombok.ToString;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 public class LaneDataAttribute_addGrpB extends Asn1Sequence {
 
   public LaneDataAttribute_addGrpB() {

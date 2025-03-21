@@ -28,12 +28,14 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class ITIScodesAndTextSequence extends Asn1Sequence {
@@ -42,6 +44,7 @@ public class ITIScodesAndTextSequence extends Asn1Sequence {
   @JsonProperty("item")
   private ItemChoice item;
 
+  @ToString(callSuper = true)
   @Getter
   @Setter
   @JsonInclude(Include.NON_NULL)

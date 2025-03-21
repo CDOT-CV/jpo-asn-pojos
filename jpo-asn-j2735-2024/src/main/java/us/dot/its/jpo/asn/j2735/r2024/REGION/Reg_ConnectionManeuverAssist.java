@@ -44,7 +44,7 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
     })
 @JsonDeserialize(
     using =
-        Reg_ConnectionManeuverAssist
+        us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist
             .Reg_ConnectionManeuverAssistDeserializer.class)
 public abstract class Reg_ConnectionManeuverAssist<TValue> extends RegionalExtension<TValue> {
 

@@ -41,16 +41,18 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
           intId = 0),
       @Asn1ParameterizedTypes.Type(
           value =
-              SpecialVehicleExtensionsBSMpartIIExtension.class,
+              us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage
+                  .SpecialVehicleExtensionsBSMpartIIExtension.class,
           intId = 1),
       @Asn1ParameterizedTypes.Type(
           value =
-              SupplementalVehicleExtensionsBSMpartIIExtension.class,
+              us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage
+                  .SupplementalVehicleExtensionsBSMpartIIExtension.class,
           intId = 2)
     })
 @JsonDeserialize(
     using =
-        BSMpartIIExtension
+        us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BSMpartIIExtension
             .BSMpartIIExtensionDeserializer.class)
 public abstract class BSMpartIIExtension<TValue> extends PartIIcontent<TValue> {
 

@@ -32,6 +32,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.serialization.SequenceOfChoiceDeserializer;
 import us.dot.its.jpo.asn.runtime.serialization.SequenceOfChoiceSerializer;
@@ -41,6 +42,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 public class TollChargesTable extends Asn1Sequence {
@@ -49,6 +51,7 @@ public class TollChargesTable extends Asn1Sequence {
   @JsonProperty("tollTypeCharge")
   private TollTypeChargeChoice tollTypeCharge;
 
+  @ToString(callSuper = true)
   @Getter
   @Setter
   @JsonInclude(Include.NON_NULL)

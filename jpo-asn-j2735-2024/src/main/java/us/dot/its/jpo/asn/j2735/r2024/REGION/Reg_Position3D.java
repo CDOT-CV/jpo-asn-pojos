@@ -44,7 +44,7 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
           intId = 3)
     })
 @JsonDeserialize(
-    using = Reg_Position3D.Reg_Position3DDeserializer.class)
+    using = us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D.Reg_Position3DDeserializer.class)
 public abstract class Reg_Position3D<TValue> extends RegionalExtension<TValue> {
 
   public Reg_Position3D(int id, String name) {

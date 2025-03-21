@@ -41,16 +41,18 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
           intId = 0),
       @Asn1ParameterizedTypes.Type(
           value =
-              LightVehicleCCMExtensionsCCMpartIIExtension.class,
+              us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage
+                  .LightVehicleCCMExtensionsCCMpartIIExtension.class,
           intId = 1),
       @Asn1ParameterizedTypes.Type(
           value =
-              HeavyTruckCCMExtensionsCCMpartIIExtension.class,
+              us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage
+                  .HeavyTruckCCMExtensionsCCMpartIIExtension.class,
           intId = 2)
     })
 @JsonDeserialize(
     using =
-        CCMpartIIExtension
+        us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage.CCMpartIIExtension
             .CCMpartIIExtensionDeserializer.class)
 public abstract class CCMpartIIExtension<TValue> extends CCMPartIIcontent<TValue> {
 

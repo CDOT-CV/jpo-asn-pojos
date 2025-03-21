@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        TemporaryIDPointer
+        us.dot.its.jpo.asn.j2735.r2024.ManeuverSharingAndCoordinatingMessage.TemporaryIDPointer
             .TemporaryIDPointerDeserializer.class)
 public class TemporaryIDPointer extends Asn1Bitstring {
 

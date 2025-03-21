@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        PersonalAssistive
+        us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.PersonalAssistive
             .PersonalAssistiveDeserializer.class)
 public class PersonalAssistive extends Asn1Bitstring {
 

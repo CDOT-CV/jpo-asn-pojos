@@ -28,7 +28,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(
     using =
-        IntersectionStatusObject
+        us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStatusObject
             .IntersectionStatusObjectDeserializer.class)
 public class IntersectionStatusObject extends Asn1Bitstring {
 
