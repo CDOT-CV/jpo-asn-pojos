@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer
-		extends
-			OpenTypeDeserializer<LaneDataAttribute_addGrpB> {
+    extends OpenTypeDeserializer<LaneDataAttribute_addGrpB> {
 
-	public LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer() {
-		super(LaneDataAttribute_addGrpB.class, "LaneDataAttribute_addGrpB");
-	}
+  public LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer() {
+    super(LaneDataAttribute_addGrpB.class, "LaneDataAttribute_addGrpB");
+  }
 }

@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class HeavyTruckCCMExtensionsCCMpartIIExtensionValueSerializer
-		extends
-			OpenTypeSerializer<HeavyTruckCCMExtensions> {
+    extends OpenTypeSerializer<HeavyTruckCCMExtensions> {
 
-	public HeavyTruckCCMExtensionsCCMpartIIExtensionValueSerializer() {
-		super(HeavyTruckCCMExtensions.class, "partII-Value", "HeavyTruckCCMExtensions");
-	}
+  public HeavyTruckCCMExtensionsCCMpartIIExtensionValueSerializer() {
+    super(HeavyTruckCCMExtensions.class, "partII-Value", "HeavyTruckCCMExtensions");
+  }
 }

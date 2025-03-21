@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ChargingUnits extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "driven")
-	@JsonProperty("driven")
-	private Driven driven;
-	@Asn1Property(tag = 1, name = "parked")
-	@JsonProperty("parked")
-	private Parked parked;
+  @Asn1Property(tag = 0, name = "driven")
+  @JsonProperty("driven")
+  private Driven driven;
 
-	public ChargingUnits() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "parked")
+  @JsonProperty("parked")
+  private Parked parked;
+
+  public ChargingUnits() {
+    super(true);
+  }
 }

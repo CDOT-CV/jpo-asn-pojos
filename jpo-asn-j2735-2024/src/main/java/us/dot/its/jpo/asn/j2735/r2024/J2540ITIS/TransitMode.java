@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TransitMode.TransitModeDeserializer.class)
 public class TransitMode extends Asn1Integer {
 
-	public TransitMode() {
-		super(0L, 65535L);
-	}
+  public TransitMode() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public TransitMode(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TransitMode(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TransitModeDeserializer extends IntegerDeserializer<TransitMode> {
-		public TransitModeDeserializer() {
-			super(TransitMode.class);
-		}
+  public static class TransitModeDeserializer extends IntegerDeserializer<TransitMode> {
+    public TransitModeDeserializer() {
+      super(TransitMode.class);
+    }
 
-		@Override
-		protected TransitMode construct() {
-			return new TransitMode();
-		}
-	}
+    @Override
+    protected TransitMode construct() {
+      return new TransitMode();
+    }
+  }
 }

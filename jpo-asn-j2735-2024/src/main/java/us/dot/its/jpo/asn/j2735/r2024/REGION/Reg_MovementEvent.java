@@ -31,18 +31,29 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpB.MovementEvent_addGrpBReg_MovementEvent.class, intId = 2)})
-@JsonDeserialize(using = Reg_MovementEvent.Reg_MovementEventDeserializer.class)
-abstract public class Reg_MovementEvent<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.AddGrpB.MovementEvent_addGrpBReg_MovementEvent.class,
+          intId = 2)
+    })
+@JsonDeserialize(
+    using =
+        Reg_MovementEvent.Reg_MovementEventDeserializer.class)
+public abstract class Reg_MovementEvent<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_MovementEvent(int id, String name) {
-		super(id, name);
-	}
+  public Reg_MovementEvent(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_MovementEventDeserializer extends ParameterizedTypeDeserializer<Reg_MovementEvent> {
-		public Reg_MovementEventDeserializer() {
-			super(Reg_MovementEvent.class);
-		}
-	}
+  public static class Reg_MovementEventDeserializer
+      extends ParameterizedTypeDeserializer<Reg_MovementEvent> {
+    public Reg_MovementEventDeserializer() {
+      super(Reg_MovementEvent.class);
+    }
+  }
 }

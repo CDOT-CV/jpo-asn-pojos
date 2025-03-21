@@ -39,27 +39,28 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PrimaryRegionChargingInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "primaryRegionCountry")
-	@JsonProperty("primaryRegionCountry")
-	private CountryCode primaryRegionCountry;
-	@Asn1Property(tag = 1, name = "chargingPrimaryRegion")
-	@JsonProperty("chargingPrimaryRegion")
-	private ChargingPrimaryRegionChoice chargingPrimaryRegion;
+  @Asn1Property(tag = 0, name = "primaryRegionCountry")
+  @JsonProperty("primaryRegionCountry")
+  private CountryCode primaryRegionCountry;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class ChargingPrimaryRegionChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "state")
-		@JsonProperty("state")
-		private PrimaryRegionState state;
+  @Asn1Property(tag = 1, name = "chargingPrimaryRegion")
+  @JsonProperty("chargingPrimaryRegion")
+  private ChargingPrimaryRegionChoice chargingPrimaryRegion;
 
-		public ChargingPrimaryRegionChoice() {
-			super(true);
-		}
-	}
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class ChargingPrimaryRegionChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "state")
+    @JsonProperty("state")
+    private PrimaryRegionState state;
 
-	public PrimaryRegionChargingInfo() {
-		super(true);
-	}
+    public ChargingPrimaryRegionChoice() {
+      super(true);
+    }
+  }
+
+  public PrimaryRegionChargingInfo() {
+    super(true);
+  }
 }

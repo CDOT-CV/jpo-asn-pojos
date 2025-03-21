@@ -35,26 +35,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ContentContainer extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "rszContainer")
-	@JsonProperty("rszContainer")
-	private ReducedSpeedZoneContainer rszContainer;
-	@Asn1Property(tag = 1, name = "laneClosureContainer")
-	@JsonProperty("laneClosureContainer")
-	private LaneClosureContainer laneClosureContainer;
-	@Asn1Property(tag = 2, name = "curveContainer")
-	@JsonProperty("curveContainer")
-	private CurveContainer curveContainer;
-	@Asn1Property(tag = 3, name = "dynamicInfoContainer")
-	@JsonProperty("dynamicInfoContainer")
-	private DynamicInfoContainer dynamicInfoContainer;
-	@Asn1Property(tag = 4, name = "incidentsContainer")
-	@JsonProperty("incidentsContainer")
-	private IncidentsContainer incidentsContainer;
-	@Asn1Property(tag = 5, name = "situationalContainer")
-	@JsonProperty("situationalContainer")
-	private SituationalContainer situationalContainer;
+  @Asn1Property(tag = 0, name = "rszContainer")
+  @JsonProperty("rszContainer")
+  private ReducedSpeedZoneContainer rszContainer;
 
-	public ContentContainer() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "laneClosureContainer")
+  @JsonProperty("laneClosureContainer")
+  private LaneClosureContainer laneClosureContainer;
+
+  @Asn1Property(tag = 2, name = "curveContainer")
+  @JsonProperty("curveContainer")
+  private CurveContainer curveContainer;
+
+  @Asn1Property(tag = 3, name = "dynamicInfoContainer")
+  @JsonProperty("dynamicInfoContainer")
+  private DynamicInfoContainer dynamicInfoContainer;
+
+  @Asn1Property(tag = 4, name = "incidentsContainer")
+  @JsonProperty("incidentsContainer")
+  private IncidentsContainer incidentsContainer;
+
+  @Asn1Property(tag = 5, name = "situationalContainer")
+  @JsonProperty("situationalContainer")
+  private SituationalContainer situationalContainer;
+
+  public ContentContainer() {
+    super(true);
+  }
 }

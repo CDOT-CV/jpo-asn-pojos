@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D;
 @JsonDeserialize(using = None.class)
 public class Position3D_addGrpCReg_Position3D extends Reg_Position3D<Position3D_addGrpC> {
 
-	public Position3D_addGrpCReg_Position3D() {
-		super(3, "Position3D_addGrpC");
-	}
+  public Position3D_addGrpCReg_Position3D() {
+    super(3, "Position3D_addGrpC");
+  }
 
-	@Override
-	@JsonSerialize(using = Position3D_addGrpCReg_Position3DValueSerializer.class)
-	public Position3D_addGrpC getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = Position3D_addGrpCReg_Position3DValueSerializer.class)
+  public Position3D_addGrpC getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = Position3D_addGrpCReg_Position3DValueDeserializer.class)
-	public void setRegExtValue(Position3D_addGrpC value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = Position3D_addGrpCReg_Position3DValueDeserializer.class)
+  public void setRegExtValue(Position3D_addGrpC value) {
+    super.setRegExtValue(value);
+  }
 }

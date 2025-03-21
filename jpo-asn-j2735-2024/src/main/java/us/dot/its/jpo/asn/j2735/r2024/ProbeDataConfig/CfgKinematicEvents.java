@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgKinematicEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "events")
-	@JsonProperty("events")
-	private CfgEvents events;
-	@Asn1Property(tag = 1, name = "hysteresis", optional = true)
-	@JsonProperty("hysteresis")
-	private CfgHysteresis hysteresis;
+  @Asn1Property(tag = 0, name = "events")
+  @JsonProperty("events")
+  private CfgEvents events;
 
-	public CfgKinematicEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "hysteresis", optional = true)
+  @JsonProperty("hysteresis")
+  private CfgHysteresis hysteresis;
+
+  public CfgKinematicEvents() {
+    super(true);
+  }
 }

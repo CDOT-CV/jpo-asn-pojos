@@ -22,9 +22,9 @@
 
 package us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage;
 
-abstract public class CCM_PARTII_EXT_ID_AND_TYPE<T> {
+public abstract class CCM_PARTII_EXT_ID_AND_TYPE<T> {
 
-	abstract PartII_Id getId();
+  abstract PartII_Id getId();
 
-	abstract Class<T> getType();
+  abstract Class<T> getType();
 }

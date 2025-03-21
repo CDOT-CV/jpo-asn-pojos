@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPEssSurfaceIceOrWaterDepth.NTCIPEssSurfaceIceOrWaterDepthDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssSurfaceIceOrWaterDepth.NTCIPEssSurfaceIceOrWaterDepthDeserializer.class)
 public class NTCIPEssSurfaceIceOrWaterDepth extends Asn1Integer {
 
-	public NTCIPEssSurfaceIceOrWaterDepth() {
-		super(0L, 65535L);
-	}
+  public NTCIPEssSurfaceIceOrWaterDepth() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public NTCIPEssSurfaceIceOrWaterDepth(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssSurfaceIceOrWaterDepth(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssSurfaceIceOrWaterDepthDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssSurfaceIceOrWaterDepth> {
-		public NTCIPEssSurfaceIceOrWaterDepthDeserializer() {
-			super(NTCIPEssSurfaceIceOrWaterDepth.class);
-		}
+  public static class NTCIPEssSurfaceIceOrWaterDepthDeserializer
+      extends IntegerDeserializer<NTCIPEssSurfaceIceOrWaterDepth> {
+    public NTCIPEssSurfaceIceOrWaterDepthDeserializer() {
+      super(NTCIPEssSurfaceIceOrWaterDepth.class);
+    }
 
-		@Override
-		protected NTCIPEssSurfaceIceOrWaterDepth construct() {
-			return new NTCIPEssSurfaceIceOrWaterDepth();
-		}
-	}
+    @Override
+    protected NTCIPEssSurfaceIceOrWaterDepth construct() {
+      return new NTCIPEssSurfaceIceOrWaterDepth();
+    }
+  }
 }

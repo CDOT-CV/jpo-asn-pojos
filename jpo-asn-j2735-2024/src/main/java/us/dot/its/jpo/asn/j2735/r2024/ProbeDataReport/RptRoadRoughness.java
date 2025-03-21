@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptRoadRoughness extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "meanVerticalVariation")
-	@JsonProperty("meanVerticalVariation")
-	private MeanVariation meanVerticalVariation;
-	@Asn1Property(tag = 1, name = "verticalVariationStdDev", optional = true)
-	@JsonProperty("verticalVariationStdDev")
-	private StdDev verticalVariationStdDev;
-	@Asn1Property(tag = 2, name = "meanHorizontalVariation", optional = true)
-	@JsonProperty("meanHorizontalVariation")
-	private MeanVariation meanHorizontalVariation;
-	@Asn1Property(tag = 3, name = "horizontalVariationStdDev", optional = true)
-	@JsonProperty("horizontalVariationStdDev")
-	private StdDev horizontalVariationStdDev;
+  @Asn1Property(tag = 0, name = "meanVerticalVariation")
+  @JsonProperty("meanVerticalVariation")
+  private MeanVariation meanVerticalVariation;
 
-	public RptRoadRoughness() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "verticalVariationStdDev", optional = true)
+  @JsonProperty("verticalVariationStdDev")
+  private StdDev verticalVariationStdDev;
+
+  @Asn1Property(tag = 2, name = "meanHorizontalVariation", optional = true)
+  @JsonProperty("meanHorizontalVariation")
+  private MeanVariation meanHorizontalVariation;
+
+  @Asn1Property(tag = 3, name = "horizontalVariationStdDev", optional = true)
+  @JsonProperty("horizontalVariationStdDev")
+  private StdDev horizontalVariationStdDev;
+
+  public RptRoadRoughness() {
+    super(true);
+  }
 }

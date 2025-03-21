@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = CargoWeight.CargoWeightDeserializer.class)
 public class CargoWeight extends Asn1Integer {
 
-	public CargoWeight() {
-		super(0L, 64255L);
-	}
+  public CargoWeight() {
+    super(0L, 64255L);
+  }
 
-	@JsonCreator
-	public CargoWeight(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public CargoWeight(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class CargoWeightDeserializer extends IntegerDeserializer<CargoWeight> {
-		public CargoWeightDeserializer() {
-			super(CargoWeight.class);
-		}
+  public static class CargoWeightDeserializer extends IntegerDeserializer<CargoWeight> {
+    public CargoWeightDeserializer() {
+      super(CargoWeight.class);
+    }
 
-		@Override
-		protected CargoWeight construct() {
-			return new CargoWeight();
-		}
-	}
+    @Override
+    protected CargoWeight construct() {
+      return new CargoWeight();
+    }
+  }
 }

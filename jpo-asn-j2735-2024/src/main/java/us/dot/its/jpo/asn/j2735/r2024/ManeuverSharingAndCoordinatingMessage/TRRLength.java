@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TRRLength.TRRLengthDeserializer.class)
 public class TRRLength extends Asn1Integer {
 
-	public TRRLength() {
-		super(0L, 4095L);
-	}
+  public TRRLength() {
+    super(0L, 4095L);
+  }
 
-	@JsonCreator
-	public TRRLength(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TRRLength(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TRRLengthDeserializer extends IntegerDeserializer<TRRLength> {
-		public TRRLengthDeserializer() {
-			super(TRRLength.class);
-		}
+  public static class TRRLengthDeserializer extends IntegerDeserializer<TRRLength> {
+    public TRRLengthDeserializer() {
+      super(TRRLength.class);
+    }
 
-		@Override
-		protected TRRLength construct() {
-			return new TRRLength();
-		}
-	}
+    @Override
+    protected TRRLength construct() {
+      return new TRRLength();
+    }
+  }
 }

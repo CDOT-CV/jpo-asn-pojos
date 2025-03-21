@@ -50,170 +50,188 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class TravelerDataFrame extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "doNotUse1")
-	@JsonProperty("doNotUse1")
-	private SSPindex doNotUse1;
-	@Asn1Property(tag = 1, name = "frameType")
-	@JsonProperty("frameType")
-	private TravelerInfoType frameType;
-	@Asn1Property(tag = 2, name = "msgId")
-	@JsonProperty("msgId")
-	private MsgIdChoice msgId;
-	@Asn1Property(tag = 3, name = "startYear", optional = true)
-	@JsonProperty("startYear")
-	private DYear startYear;
-	@Asn1Property(tag = 4, name = "startTime")
-	@JsonProperty("startTime")
-	private MinuteOfTheYear startTime;
-	@Asn1Property(tag = 5, name = "durationTime")
-	@JsonProperty("durationTime")
-	private MinutesDuration durationTime;
-	@Asn1Property(tag = 6, name = "priority")
-	@JsonProperty("priority")
-	private SignPriority priority;
-	@Asn1Property(tag = 7, name = "doNotUse2")
-	@JsonProperty("doNotUse2")
-	private SSPindex doNotUse2;
-	@Asn1Property(tag = 8, name = "regions")
-	@JsonProperty("regions")
-	@JacksonXmlElementWrapper(localName = "regions")
-	@JacksonXmlProperty(localName = "GeographicalPath")
-	private SequenceOfRegions regions;
-	@Asn1Property(tag = 9, name = "doNotUse3")
-	@JsonProperty("doNotUse3")
-	private SSPindex doNotUse3;
-	@Asn1Property(tag = 10, name = "doNotUse4")
-	@JsonProperty("doNotUse4")
-	private SSPindex doNotUse4;
-	@Asn1Property(tag = 11, name = "content")
-	@JsonProperty("content")
-	private ContentChoice content;
-	@Asn1Property(tag = 12, name = "url", optional = true)
-	@JsonProperty("url")
-	private URL_Short url;
-	@Asn1Property(tag = 13, name = "contentNew", extension = true)
-	@JsonProperty("contentNew")
-	private TravelerDataFrameNewPartIIIContent contentNew;
+  @Asn1Property(tag = 0, name = "doNotUse1")
+  @JsonProperty("doNotUse1")
+  private SSPindex doNotUse1;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class MsgIdChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "furtherInfoID")
-		@JsonProperty("furtherInfoID")
-		private FurtherInfoID furtherInfoID;
-		@Asn1Property(tag = 1, name = "roadSignID")
-		@JsonProperty("roadSignID")
-		private RoadSignID roadSignID;
+  @Asn1Property(tag = 1, name = "frameType")
+  @JsonProperty("frameType")
+  private TravelerInfoType frameType;
 
-		public MsgIdChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 2, name = "msgId")
+  @JsonProperty("msgId")
+  private MsgIdChoice msgId;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegions extends Asn1SequenceOf<GeographicalPath> {
-		public SequenceOfRegions() {
-			super(GeographicalPath.class, 1L, 16L);
-		}
-	}
+  @Asn1Property(tag = 3, name = "startYear", optional = true)
+  @JsonProperty("startYear")
+  private DYear startYear;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class ContentChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "advisory")
-		@JsonProperty("advisory")
-		@JsonDeserialize(using = AdvisoryDeserializer.class)
-		@JsonSerialize(using = AdvisorySerializer.class)
-		private ITIScodesAndText advisory;
-		@Asn1Property(tag = 1, name = "workZone")
-		@JsonProperty("workZone")
-		@JsonDeserialize(using = WorkZoneDeserializer.class)
-		@JsonSerialize(using = WorkZoneSerializer.class)
-		private WorkZone workZone;
-		@Asn1Property(tag = 2, name = "genericSign")
-		@JsonProperty("genericSign")
-		@JsonDeserialize(using = GenericSignDeserializer.class)
-		@JsonSerialize(using = GenericSignSerializer.class)
-		private GenericSignage genericSign;
-		@Asn1Property(tag = 3, name = "speedLimit")
-		@JsonProperty("speedLimit")
-		@JsonDeserialize(using = SpeedLimitDeserializer.class)
-		@JsonSerialize(using = SpeedLimitSerializer.class)
-		private SpeedLimit speedLimit;
-		@Asn1Property(tag = 4, name = "exitService")
-		@JsonProperty("exitService")
-		@JsonDeserialize(using = ExitServiceDeserializer.class)
-		@JsonSerialize(using = ExitServiceSerializer.class)
-		private ExitService exitService;
+  @Asn1Property(tag = 4, name = "startTime")
+  @JsonProperty("startTime")
+  private MinuteOfTheYear startTime;
 
-		public ContentChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 5, name = "durationTime")
+  @JsonProperty("durationTime")
+  private MinutesDuration durationTime;
 
-	public TravelerDataFrame() {
-		super(true);
-	}
+  @Asn1Property(tag = 6, name = "priority")
+  @JsonProperty("priority")
+  private SignPriority priority;
 
-	public static class AdvisoryDeserializer extends NestedSequenceOfDeserializer<ITIScodesAndText> {
-		public AdvisoryDeserializer() {
-			super(ITIScodesAndText.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 7, name = "doNotUse2")
+  @JsonProperty("doNotUse2")
+  private SSPindex doNotUse2;
 
-	public static class AdvisorySerializer extends NestedSequenceOfSerializer<ITIScodesAndText> {
-		public AdvisorySerializer() {
-			super(ITIScodesAndText.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 8, name = "regions")
+  @JsonProperty("regions")
+  @JacksonXmlElementWrapper(localName = "regions")
+  @JacksonXmlProperty(localName = "GeographicalPath")
+  private SequenceOfRegions regions;
 
-	public static class WorkZoneDeserializer extends NestedSequenceOfDeserializer<WorkZone> {
-		public WorkZoneDeserializer() {
-			super(WorkZone.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 9, name = "doNotUse3")
+  @JsonProperty("doNotUse3")
+  private SSPindex doNotUse3;
 
-	public static class WorkZoneSerializer extends NestedSequenceOfSerializer<WorkZone> {
-		public WorkZoneSerializer() {
-			super(WorkZone.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 10, name = "doNotUse4")
+  @JsonProperty("doNotUse4")
+  private SSPindex doNotUse4;
 
-	public static class GenericSignDeserializer extends NestedSequenceOfDeserializer<GenericSignage> {
-		public GenericSignDeserializer() {
-			super(GenericSignage.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 11, name = "content")
+  @JsonProperty("content")
+  private ContentChoice content;
 
-	public static class GenericSignSerializer extends NestedSequenceOfSerializer<GenericSignage> {
-		public GenericSignSerializer() {
-			super(GenericSignage.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 12, name = "url", optional = true)
+  @JsonProperty("url")
+  private URL_Short url;
 
-	public static class SpeedLimitDeserializer extends NestedSequenceOfDeserializer<SpeedLimit> {
-		public SpeedLimitDeserializer() {
-			super(SpeedLimit.class, "SEQUENCE");
-		}
-	}
+  @Asn1Property(tag = 13, name = "contentNew", extension = true)
+  @JsonProperty("contentNew")
+  private TravelerDataFrameNewPartIIIContent contentNew;
 
-	public static class SpeedLimitSerializer extends NestedSequenceOfSerializer<SpeedLimit> {
-		public SpeedLimitSerializer() {
-			super(SpeedLimit.class, "SEQUENCE");
-		}
-	}
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class MsgIdChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "furtherInfoID")
+    @JsonProperty("furtherInfoID")
+    private FurtherInfoID furtherInfoID;
 
-	public static class ExitServiceDeserializer extends NestedSequenceOfDeserializer<ExitService> {
-		public ExitServiceDeserializer() {
-			super(ExitService.class, "SEQUENCE");
-		}
-	}
+    @Asn1Property(tag = 1, name = "roadSignID")
+    @JsonProperty("roadSignID")
+    private RoadSignID roadSignID;
 
-	public static class ExitServiceSerializer extends NestedSequenceOfSerializer<ExitService> {
-		public ExitServiceSerializer() {
-			super(ExitService.class, "SEQUENCE");
-		}
-	}
+    public MsgIdChoice() {
+      super(false);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegions extends Asn1SequenceOf<GeographicalPath> {
+    public SequenceOfRegions() {
+      super(GeographicalPath.class, 1L, 16L);
+    }
+  }
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class ContentChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "advisory")
+    @JsonProperty("advisory")
+    @JsonDeserialize(using = AdvisoryDeserializer.class)
+    @JsonSerialize(using = AdvisorySerializer.class)
+    private ITIScodesAndText advisory;
+
+    @Asn1Property(tag = 1, name = "workZone")
+    @JsonProperty("workZone")
+    @JsonDeserialize(using = WorkZoneDeserializer.class)
+    @JsonSerialize(using = WorkZoneSerializer.class)
+    private WorkZone workZone;
+
+    @Asn1Property(tag = 2, name = "genericSign")
+    @JsonProperty("genericSign")
+    @JsonDeserialize(using = GenericSignDeserializer.class)
+    @JsonSerialize(using = GenericSignSerializer.class)
+    private GenericSignage genericSign;
+
+    @Asn1Property(tag = 3, name = "speedLimit")
+    @JsonProperty("speedLimit")
+    @JsonDeserialize(using = SpeedLimitDeserializer.class)
+    @JsonSerialize(using = SpeedLimitSerializer.class)
+    private SpeedLimit speedLimit;
+
+    @Asn1Property(tag = 4, name = "exitService")
+    @JsonProperty("exitService")
+    @JsonDeserialize(using = ExitServiceDeserializer.class)
+    @JsonSerialize(using = ExitServiceSerializer.class)
+    private ExitService exitService;
+
+    public ContentChoice() {
+      super(false);
+    }
+  }
+
+  public TravelerDataFrame() {
+    super(true);
+  }
+
+  public static class AdvisoryDeserializer extends NestedSequenceOfDeserializer<ITIScodesAndText> {
+    public AdvisoryDeserializer() {
+      super(ITIScodesAndText.class, "SEQUENCE");
+    }
+  }
+
+  public static class AdvisorySerializer extends NestedSequenceOfSerializer<ITIScodesAndText> {
+    public AdvisorySerializer() {
+      super(ITIScodesAndText.class, "SEQUENCE");
+    }
+  }
+
+  public static class WorkZoneDeserializer extends NestedSequenceOfDeserializer<WorkZone> {
+    public WorkZoneDeserializer() {
+      super(WorkZone.class, "SEQUENCE");
+    }
+  }
+
+  public static class WorkZoneSerializer extends NestedSequenceOfSerializer<WorkZone> {
+    public WorkZoneSerializer() {
+      super(WorkZone.class, "SEQUENCE");
+    }
+  }
+
+  public static class GenericSignDeserializer extends NestedSequenceOfDeserializer<GenericSignage> {
+    public GenericSignDeserializer() {
+      super(GenericSignage.class, "SEQUENCE");
+    }
+  }
+
+  public static class GenericSignSerializer extends NestedSequenceOfSerializer<GenericSignage> {
+    public GenericSignSerializer() {
+      super(GenericSignage.class, "SEQUENCE");
+    }
+  }
+
+  public static class SpeedLimitDeserializer extends NestedSequenceOfDeserializer<SpeedLimit> {
+    public SpeedLimitDeserializer() {
+      super(SpeedLimit.class, "SEQUENCE");
+    }
+  }
+
+  public static class SpeedLimitSerializer extends NestedSequenceOfSerializer<SpeedLimit> {
+    public SpeedLimitSerializer() {
+      super(SpeedLimit.class, "SEQUENCE");
+    }
+  }
+
+  public static class ExitServiceDeserializer extends NestedSequenceOfDeserializer<ExitService> {
+    public ExitServiceDeserializer() {
+      super(ExitService.class, "SEQUENCE");
+    }
+  }
+
+  public static class ExitServiceSerializer extends NestedSequenceOfSerializer<ExitService> {
+    public ExitServiceSerializer() {
+      super(ExitService.class, "SEQUENCE");
+    }
+  }
 }

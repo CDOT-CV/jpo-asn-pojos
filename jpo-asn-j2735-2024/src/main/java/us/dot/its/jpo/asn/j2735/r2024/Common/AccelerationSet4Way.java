@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AccelerationSet4Way extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "long")
-	@JsonProperty("long")
-	private Acceleration long_;
-	@Asn1Property(tag = 1, name = "lat")
-	@JsonProperty("lat")
-	private Acceleration lat;
-	@Asn1Property(tag = 2, name = "vert")
-	@JsonProperty("vert")
-	private VerticalAcceleration vert;
-	@Asn1Property(tag = 3, name = "yaw")
-	@JsonProperty("yaw")
-	private YawRate yaw;
+  @Asn1Property(tag = 0, name = "long")
+  @JsonProperty("long")
+  private Acceleration long_;
 
-	public AccelerationSet4Way() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "lat")
+  @JsonProperty("lat")
+  private Acceleration lat;
+
+  @Asn1Property(tag = 2, name = "vert")
+  @JsonProperty("vert")
+  private VerticalAcceleration vert;
+
+  @Asn1Property(tag = 3, name = "yaw")
+  @JsonProperty("yaw")
+  private YawRate yaw;
+
+  public AccelerationSet4Way() {
+    super(false);
+  }
 }

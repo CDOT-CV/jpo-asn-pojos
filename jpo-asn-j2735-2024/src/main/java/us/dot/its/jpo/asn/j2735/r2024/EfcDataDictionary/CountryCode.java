@@ -26,21 +26,23 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = CountryCode.CountryCodeDeserializer.class)
+@JsonDeserialize(
+    using =
+        CountryCode.CountryCodeDeserializer.class)
 public class CountryCode extends Asn1Bitstring {
 
-	public CountryCode() {
-		super(10, false, new String[]{});
-	}
+  public CountryCode() {
+    super(10, false, new String[] {});
+  }
 
-	public static class CountryCodeDeserializer extends BitStringDeserializer<CountryCode> {
-		public CountryCodeDeserializer() {
-			super(CountryCode.class);
-		}
+  public static class CountryCodeDeserializer extends BitStringDeserializer<CountryCode> {
+    public CountryCodeDeserializer() {
+      super(CountryCode.class);
+    }
 
-		@Override
-		protected CountryCode construct() {
-			return new CountryCode();
-		}
-	}
+    @Override
+    protected CountryCode construct() {
+      return new CountryCode();
+    }
+  }
 }

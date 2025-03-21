@@ -39,27 +39,28 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class GenericSignageSequence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "item")
-	@JsonProperty("item")
-	private ItemChoice item;
+  @Asn1Property(tag = 0, name = "item")
+  @JsonProperty("item")
+  private ItemChoice item;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class ItemChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "itis")
-		@JsonProperty("itis")
-		private ITIScodes itis;
-		@Asn1Property(tag = 1, name = "text")
-		@JsonProperty("text")
-		private ITIStextPhrase text;
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class ItemChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "itis")
+    @JsonProperty("itis")
+    private ITIScodes itis;
 
-		public ItemChoice() {
-			super(false);
-		}
-	}
+    @Asn1Property(tag = 1, name = "text")
+    @JsonProperty("text")
+    private ITIStextPhrase text;
 
-	public GenericSignageSequence() {
-		super(false);
-	}
+    public ItemChoice() {
+      super(false);
+    }
+  }
+
+  public GenericSignageSequence() {
+    super(false);
+  }
 }

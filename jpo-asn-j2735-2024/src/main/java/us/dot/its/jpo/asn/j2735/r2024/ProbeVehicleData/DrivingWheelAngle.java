@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DrivingWheelAngle.DrivingWheelAngleDeserializer.class)
 public class DrivingWheelAngle extends Asn1Integer {
 
-	public DrivingWheelAngle() {
-		super(-128L, 127L);
-	}
+  public DrivingWheelAngle() {
+    super(-128L, 127L);
+  }
 
-	@JsonCreator
-	public DrivingWheelAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DrivingWheelAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DrivingWheelAngleDeserializer extends IntegerDeserializer<DrivingWheelAngle> {
-		public DrivingWheelAngleDeserializer() {
-			super(DrivingWheelAngle.class);
-		}
+  public static class DrivingWheelAngleDeserializer extends IntegerDeserializer<DrivingWheelAngle> {
+    public DrivingWheelAngleDeserializer() {
+      super(DrivingWheelAngle.class);
+    }
 
-		@Override
-		protected DrivingWheelAngle construct() {
-			return new DrivingWheelAngle();
-		}
-	}
+    @Override
+    protected DrivingWheelAngle construct() {
+      return new DrivingWheelAngle();
+    }
+  }
 }

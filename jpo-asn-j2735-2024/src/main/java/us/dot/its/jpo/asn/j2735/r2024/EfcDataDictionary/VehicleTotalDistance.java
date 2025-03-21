@@ -29,24 +29,25 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = VehicleTotalDistance.VehicleTotalDistanceDeserializer.class)
 public class VehicleTotalDistance extends Int4Unsigned {
 
-	public VehicleTotalDistance() {
-		super();
-	}
+  public VehicleTotalDistance() {
+    super();
+  }
 
-	@JsonCreator
-	public VehicleTotalDistance(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VehicleTotalDistance(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VehicleTotalDistanceDeserializer extends IntegerDeserializer<VehicleTotalDistance> {
-		public VehicleTotalDistanceDeserializer() {
-			super(VehicleTotalDistance.class);
-		}
+  public static class VehicleTotalDistanceDeserializer
+      extends IntegerDeserializer<VehicleTotalDistance> {
+    public VehicleTotalDistanceDeserializer() {
+      super(VehicleTotalDistance.class);
+    }
 
-		@Override
-		protected VehicleTotalDistance construct() {
-			return new VehicleTotalDistance();
-		}
-	}
+    @Override
+    protected VehicleTotalDistance construct() {
+      return new VehicleTotalDistance();
+    }
+  }
 }

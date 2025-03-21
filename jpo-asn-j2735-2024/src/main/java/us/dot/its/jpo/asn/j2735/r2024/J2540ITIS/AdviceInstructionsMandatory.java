@@ -30,26 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AdviceInstructionsMandatory.AdviceInstructionsMandatoryDeserializer.class)
 public class AdviceInstructionsMandatory extends Asn1Integer {
 
-	public AdviceInstructionsMandatory() {
-		super(0L, 65535L);
-	}
+  public AdviceInstructionsMandatory() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public AdviceInstructionsMandatory(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AdviceInstructionsMandatory(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AdviceInstructionsMandatoryDeserializer
-			extends
-				IntegerDeserializer<AdviceInstructionsMandatory> {
-		public AdviceInstructionsMandatoryDeserializer() {
-			super(AdviceInstructionsMandatory.class);
-		}
+  public static class AdviceInstructionsMandatoryDeserializer
+      extends IntegerDeserializer<AdviceInstructionsMandatory> {
+    public AdviceInstructionsMandatoryDeserializer() {
+      super(AdviceInstructionsMandatory.class);
+    }
 
-		@Override
-		protected AdviceInstructionsMandatory construct() {
-			return new AdviceInstructionsMandatory();
-		}
-	}
+    @Override
+    protected AdviceInstructionsMandatory construct() {
+      return new AdviceInstructionsMandatory();
+    }
+  }
 }

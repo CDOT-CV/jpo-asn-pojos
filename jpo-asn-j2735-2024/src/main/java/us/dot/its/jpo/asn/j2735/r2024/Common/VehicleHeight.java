@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = VehicleHeight.VehicleHeightDeserializer.class)
 public class VehicleHeight extends Asn1Integer {
 
-	public VehicleHeight() {
-		super(0L, 127L);
-	}
+  public VehicleHeight() {
+    super(0L, 127L);
+  }
 
-	@JsonCreator
-	public VehicleHeight(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VehicleHeight(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VehicleHeightDeserializer extends IntegerDeserializer<VehicleHeight> {
-		public VehicleHeightDeserializer() {
-			super(VehicleHeight.class);
-		}
+  public static class VehicleHeightDeserializer extends IntegerDeserializer<VehicleHeight> {
+    public VehicleHeightDeserializer() {
+      super(VehicleHeight.class);
+    }
 
-		@Override
-		protected VehicleHeight construct() {
-			return new VehicleHeight();
-		}
-	}
+    @Override
+    protected VehicleHeight construct() {
+      return new VehicleHeight();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Torque.TorqueDeserializer.class)
 public class Torque extends Asn1Integer {
 
-	public Torque() {
-		super(0L, 601L);
-	}
+  public Torque() {
+    super(0L, 601L);
+  }
 
-	@JsonCreator
-	public Torque(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Torque(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TorqueDeserializer extends IntegerDeserializer<Torque> {
-		public TorqueDeserializer() {
-			super(Torque.class);
-		}
+  public static class TorqueDeserializer extends IntegerDeserializer<Torque> {
+    public TorqueDeserializer() {
+      super(Torque.class);
+    }
 
-		@Override
-		protected Torque construct() {
-			return new Torque();
-		}
-	}
+    @Override
+    protected Torque construct() {
+      return new Torque();
+    }
+  }
 }

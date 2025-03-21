@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipAirTemperature extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "temperature")
-	@JsonProperty("temperature")
-	private NTCIPEssAirTemperature temperature;
-	@Asn1Property(tag = 1, name = "measurementStdDev", optional = true)
-	@JsonProperty("measurementStdDev")
-	private TemperatureMeasurementStdDev measurementStdDev;
-	@Asn1Property(tag = 2, name = "tempSensorHeight", optional = true)
-	@JsonProperty("tempSensorHeight")
-	private NTCIPEssTemperatureSensorHeight tempSensorHeight;
+  @Asn1Property(tag = 0, name = "temperature")
+  @JsonProperty("temperature")
+  private NTCIPEssAirTemperature temperature;
 
-	public NtcipAirTemperature() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "measurementStdDev", optional = true)
+  @JsonProperty("measurementStdDev")
+  private TemperatureMeasurementStdDev measurementStdDev;
+
+  @Asn1Property(tag = 2, name = "tempSensorHeight", optional = true)
+  @JsonProperty("tempSensorHeight")
+  private NTCIPEssTemperatureSensorHeight tempSensorHeight;
+
+  public NtcipAirTemperature() {
+    super(true);
+  }
 }

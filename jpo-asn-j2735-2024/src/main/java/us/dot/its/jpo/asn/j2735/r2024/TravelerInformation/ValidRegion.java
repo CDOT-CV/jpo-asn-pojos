@@ -40,36 +40,40 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ValidRegion extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "direction")
-	@JsonProperty("direction")
-	private HeadingSlice direction;
-	@Asn1Property(tag = 1, name = "extent", optional = true)
-	@JsonProperty("extent")
-	private Extent extent;
-	@Asn1Property(tag = 2, name = "area")
-	@JsonProperty("area")
-	private AreaChoice area;
+  @Asn1Property(tag = 0, name = "direction")
+  @JsonProperty("direction")
+  private HeadingSlice direction;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class AreaChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "shapePointSet")
-		@JsonProperty("shapePointSet")
-		private ShapePointSet shapePointSet;
-		@Asn1Property(tag = 1, name = "circle")
-		@JsonProperty("circle")
-		private Circle circle;
-		@Asn1Property(tag = 2, name = "regionPointSet")
-		@JsonProperty("regionPointSet")
-		private RegionPointSet regionPointSet;
+  @Asn1Property(tag = 1, name = "extent", optional = true)
+  @JsonProperty("extent")
+  private Extent extent;
 
-		public AreaChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 2, name = "area")
+  @JsonProperty("area")
+  private AreaChoice area;
 
-	public ValidRegion() {
-		super(false);
-	}
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class AreaChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "shapePointSet")
+    @JsonProperty("shapePointSet")
+    private ShapePointSet shapePointSet;
+
+    @Asn1Property(tag = 1, name = "circle")
+    @JsonProperty("circle")
+    private Circle circle;
+
+    @Asn1Property(tag = 2, name = "regionPointSet")
+    @JsonProperty("regionPointSet")
+    private RegionPointSet regionPointSet;
+
+    public AreaChoice() {
+      super(false);
+    }
+  }
+
+  public ValidRegion() {
+    super(false);
+  }
 }

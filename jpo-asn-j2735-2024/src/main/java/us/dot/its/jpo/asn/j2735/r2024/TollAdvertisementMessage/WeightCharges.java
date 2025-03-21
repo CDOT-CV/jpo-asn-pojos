@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class WeightCharges extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "totalWeightCharges")
-	@JsonProperty("totalWeightCharges")
-	private TotalWeightCharges totalWeightCharges;
-	@Asn1Property(tag = 1, name = "perAxleWeightCharges")
-	@JsonProperty("perAxleWeightCharges")
-	private PerAxleWeightCharges perAxleWeightCharges;
+  @Asn1Property(tag = 0, name = "totalWeightCharges")
+  @JsonProperty("totalWeightCharges")
+  private TotalWeightCharges totalWeightCharges;
 
-	public WeightCharges() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "perAxleWeightCharges")
+  @JsonProperty("perAxleWeightCharges")
+  private PerAxleWeightCharges perAxleWeightCharges;
+
+  public WeightCharges() {
+    super(true);
+  }
 }

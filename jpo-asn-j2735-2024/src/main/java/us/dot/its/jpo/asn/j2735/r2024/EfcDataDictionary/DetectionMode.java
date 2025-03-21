@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DetectionMode.DetectionModeDeserializer.class)
 public class DetectionMode extends Asn1Integer {
 
-	public DetectionMode() {
-		super(0L, 255L);
-	}
+  public DetectionMode() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public DetectionMode(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DetectionMode(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DetectionModeDeserializer extends IntegerDeserializer<DetectionMode> {
-		public DetectionModeDeserializer() {
-			super(DetectionMode.class);
-		}
+  public static class DetectionModeDeserializer extends IntegerDeserializer<DetectionMode> {
+    public DetectionModeDeserializer() {
+      super(DetectionMode.class);
+    }
 
-		@Override
-		protected DetectionMode construct() {
-			return new DetectionMode();
-		}
-	}
+    @Override
+    protected DetectionMode construct() {
+      return new DetectionMode();
+    }
+  }
 }

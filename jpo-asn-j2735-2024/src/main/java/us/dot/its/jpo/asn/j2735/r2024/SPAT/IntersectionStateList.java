@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class IntersectionStateList extends Asn1SequenceOf<IntersectionState> {
 
-	public IntersectionStateList() {
-		super(IntersectionState.class, 1L, 32L);
-	}
+  public IntersectionStateList() {
+    super(IntersectionState.class, 1L, 32L);
+  }
 }

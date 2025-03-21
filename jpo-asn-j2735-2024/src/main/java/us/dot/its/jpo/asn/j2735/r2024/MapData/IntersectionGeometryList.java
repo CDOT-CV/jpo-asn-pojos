@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class IntersectionGeometryList extends Asn1SequenceOf<IntersectionGeometry> {
 
-	public IntersectionGeometryList() {
-		super(IntersectionGeometry.class, 1L, 32L);
-	}
+  public IntersectionGeometryList() {
+    super(IntersectionGeometry.class, 1L, 32L);
+  }
 }

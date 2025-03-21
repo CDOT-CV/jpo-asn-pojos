@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleSafetyExtensions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "events", optional = true)
-	@JsonProperty("events")
-	private VehicleEventFlags events;
-	@Asn1Property(tag = 1, name = "pathHistory", optional = true)
-	@JsonProperty("pathHistory")
-	private PathHistory pathHistory;
-	@Asn1Property(tag = 2, name = "pathPrediction", optional = true)
-	@JsonProperty("pathPrediction")
-	private PathPrediction pathPrediction;
-	@Asn1Property(tag = 3, name = "lights", optional = true)
-	@JsonProperty("lights")
-	private ExteriorLights lights;
+  @Asn1Property(tag = 0, name = "events", optional = true)
+  @JsonProperty("events")
+  private VehicleEventFlags events;
 
-	public VehicleSafetyExtensions() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "pathHistory", optional = true)
+  @JsonProperty("pathHistory")
+  private PathHistory pathHistory;
+
+  @Asn1Property(tag = 2, name = "pathPrediction", optional = true)
+  @JsonProperty("pathPrediction")
+  private PathPrediction pathPrediction;
+
+  @Asn1Property(tag = 3, name = "lights", optional = true)
+  @JsonProperty("lights")
+  private ExteriorLights lights;
+
+  public VehicleSafetyExtensions() {
+    super(true);
+  }
 }

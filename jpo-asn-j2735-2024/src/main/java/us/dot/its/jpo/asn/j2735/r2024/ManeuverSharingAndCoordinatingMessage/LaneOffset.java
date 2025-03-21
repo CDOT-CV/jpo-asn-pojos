@@ -33,32 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = LaneOffset.LaneOffsetSerializer.class)
 @JsonDeserialize(using = LaneOffset.LaneOffsetDeserializer.class)
 public enum LaneOffset implements Asn1Enumerated {
-	CURRENTLANE(0, "currentLane"), FIRSTLEFTLANE(1, "firstLeftLane"), FIRSTRIGHTLANE(2,
-			"firstRightLane"), SECONDLEFTLANE(3, "secondLeftLane"), SECONDRIGHTLANE(4,
-					"secondRightLane"), THIRDLEFTLANE(5, "thirdLeftLane"), THIRDRIGHTLANE(6, "thirdRightLane");
+  CURRENTLANE(0, "currentLane"),
+  FIRSTLEFTLANE(1, "firstLeftLane"),
+  FIRSTRIGHTLANE(2, "firstRightLane"),
+  SECONDLEFTLANE(3, "secondLeftLane"),
+  SECONDRIGHTLANE(4, "secondRightLane"),
+  THIRDLEFTLANE(5, "thirdLeftLane"),
+  THIRDRIGHTLANE(6, "thirdRightLane");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private LaneOffset(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private LaneOffset(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class LaneOffsetSerializer extends EnumeratedSerializer<LaneOffset> {
-		public LaneOffsetSerializer() {
-			super(LaneOffset.class);
-		}
-	}
+  public static class LaneOffsetSerializer extends EnumeratedSerializer<LaneOffset> {
+    public LaneOffsetSerializer() {
+      super(LaneOffset.class);
+    }
+  }
 
-	public static class LaneOffsetDeserializer extends EnumeratedDeserializer<LaneOffset> {
-		public LaneOffsetDeserializer() {
-			super(LaneOffset.class);
-		}
+  public static class LaneOffsetDeserializer extends EnumeratedDeserializer<LaneOffset> {
+    public LaneOffsetDeserializer() {
+      super(LaneOffset.class);
+    }
 
-		@Override
-		protected LaneOffset[] listEnumValues() {
-			return LaneOffset.values();
-		}
-	}
+    @Override
+    protected LaneOffset[] listEnumValues() {
+      return LaneOffset.values();
+    }
+  }
 }

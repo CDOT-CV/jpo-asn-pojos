@@ -31,33 +31,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RequestedItemList extends Asn1SequenceOf<RequestedItem> {
 
-	public RequestedItemList() {
-		super(RequestedItem.class, 1L, 32L);
-	}
+  public RequestedItemList() {
+    super(RequestedItem.class, 1L, 32L);
+  }
 
-	public static class RequestedItemListSerializer
-			extends
-				SequenceOfEnumeratedSerializer<RequestedItem, RequestedItemList> {
-		public RequestedItemListSerializer() {
-			super(RequestedItem.class, RequestedItemList.class);
-		}
-	}
+  public static class RequestedItemListSerializer
+      extends SequenceOfEnumeratedSerializer<RequestedItem, RequestedItemList> {
+    public RequestedItemListSerializer() {
+      super(RequestedItem.class, RequestedItemList.class);
+    }
+  }
 
-	public static class RequestedItemListDeserializer
-			extends
-				SequenceOfEnumeratedDeserializer<RequestedItem, RequestedItemList> {
-		public RequestedItemListDeserializer() {
-			super(RequestedItemList.class, RequestedItem.class);
-		}
+  public static class RequestedItemListDeserializer
+      extends SequenceOfEnumeratedDeserializer<RequestedItem, RequestedItemList> {
+    public RequestedItemListDeserializer() {
+      super(RequestedItemList.class, RequestedItem.class);
+    }
 
-		@Override
-		protected RequestedItem[] listEnumValues() {
-			return RequestedItem.values();
-		}
+    @Override
+    protected RequestedItem[] listEnumValues() {
+      return RequestedItem.values();
+    }
 
-		@Override
-		protected RequestedItemList construct() {
-			return new RequestedItemList();
-		}
-	}
+    @Override
+    protected RequestedItemList construct() {
+      return new RequestedItemList();
+    }
+  }
 }

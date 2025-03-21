@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RoadGrade.RoadGradeDeserializer.class)
 public class RoadGrade extends Asn1Integer {
 
-	public RoadGrade() {
-		super(-100L, 101L);
-	}
+  public RoadGrade() {
+    super(-100L, 101L);
+  }
 
-	@JsonCreator
-	public RoadGrade(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RoadGrade(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RoadGradeDeserializer extends IntegerDeserializer<RoadGrade> {
-		public RoadGradeDeserializer() {
-			super(RoadGrade.class);
-		}
+  public static class RoadGradeDeserializer extends IntegerDeserializer<RoadGrade> {
+    public RoadGradeDeserializer() {
+      super(RoadGrade.class);
+    }
 
-		@Override
-		protected RoadGrade construct() {
-			return new RoadGrade();
-		}
-	}
+    @Override
+    protected RoadGrade construct() {
+      return new RoadGrade();
+    }
+  }
 }

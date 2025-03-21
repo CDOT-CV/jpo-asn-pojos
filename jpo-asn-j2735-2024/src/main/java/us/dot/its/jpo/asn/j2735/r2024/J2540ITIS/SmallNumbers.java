@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SmallNumbers.SmallNumbersDeserializer.class)
 public class SmallNumbers extends Asn1Integer {
 
-	public SmallNumbers() {
-		super(0L, 65535L);
-	}
+  public SmallNumbers() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public SmallNumbers(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SmallNumbers(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SmallNumbersDeserializer extends IntegerDeserializer<SmallNumbers> {
-		public SmallNumbersDeserializer() {
-			super(SmallNumbers.class);
-		}
+  public static class SmallNumbersDeserializer extends IntegerDeserializer<SmallNumbers> {
+    public SmallNumbersDeserializer() {
+      super(SmallNumbers.class);
+    }
 
-		@Override
-		protected SmallNumbers construct() {
-			return new SmallNumbers();
-		}
-	}
+    @Override
+    protected SmallNumbers construct() {
+      return new SmallNumbers();
+    }
+  }
 }

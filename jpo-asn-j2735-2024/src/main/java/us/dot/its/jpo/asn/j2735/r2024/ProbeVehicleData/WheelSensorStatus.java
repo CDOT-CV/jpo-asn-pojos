@@ -33,30 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = WheelSensorStatus.WheelSensorStatusSerializer.class)
 @JsonDeserialize(using = WheelSensorStatus.WheelSensorStatusDeserializer.class)
 public enum WheelSensorStatus implements Asn1Enumerated {
-	OFF(0, "off"), ON(1, "on"), NOTDEFINED(2, "notDefined"), NOTSUPPORTED(3, "notSupported");
+  OFF(0, "off"),
+  ON(1, "on"),
+  NOTDEFINED(2, "notDefined"),
+  NOTSUPPORTED(3, "notSupported");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private WheelSensorStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private WheelSensorStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class WheelSensorStatusSerializer extends EnumeratedSerializer<WheelSensorStatus> {
-		public WheelSensorStatusSerializer() {
-			super(WheelSensorStatus.class);
-		}
-	}
+  public static class WheelSensorStatusSerializer extends EnumeratedSerializer<WheelSensorStatus> {
+    public WheelSensorStatusSerializer() {
+      super(WheelSensorStatus.class);
+    }
+  }
 
-	public static class WheelSensorStatusDeserializer extends EnumeratedDeserializer<WheelSensorStatus> {
-		public WheelSensorStatusDeserializer() {
-			super(WheelSensorStatus.class);
-		}
+  public static class WheelSensorStatusDeserializer
+      extends EnumeratedDeserializer<WheelSensorStatus> {
+    public WheelSensorStatusDeserializer() {
+      super(WheelSensorStatus.class);
+    }
 
-		@Override
-		protected WheelSensorStatus[] listEnumValues() {
-			return WheelSensorStatus.values();
-		}
-	}
+    @Override
+    protected WheelSensorStatus[] listEnumValues() {
+      return WheelSensorStatus.values();
+    }
+  }
 }

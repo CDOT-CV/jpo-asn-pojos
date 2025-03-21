@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.TravelerInformation;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class TravelerInformationMessageFrameValueSerializer extends OpenTypeSerializer<TravelerInformation> {
+public class TravelerInformationMessageFrameValueSerializer
+    extends OpenTypeSerializer<TravelerInformation> {
 
-	public TravelerInformationMessageFrameValueSerializer() {
-		super(TravelerInformation.class, "value", "TravelerInformation");
-	}
+  public TravelerInformationMessageFrameValueSerializer() {
+    super(TravelerInformation.class, "value", "TravelerInformation");
+  }
 }

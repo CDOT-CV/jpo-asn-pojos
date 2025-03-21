@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class PathHistoryPointList extends Asn1SequenceOf<PathHistoryPoint> {
 
-	public PathHistoryPointList() {
-		super(PathHistoryPoint.class, 1L, 23L);
-	}
+  public PathHistoryPointList() {
+    super(PathHistoryPoint.class, 1L, 23L);
+  }
 }

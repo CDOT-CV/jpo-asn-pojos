@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipSolarRadiation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "solarRadiation")
-	@JsonProperty("solarRadiation")
-	private NTCIPEssTotalRadiationV4 solarRadiation;
-	@Asn1Property(tag = 1, name = "measurementPeriod")
-	@JsonProperty("measurementPeriod")
-	private NTCIPEssTotalRadiationPeriod measurementPeriod;
+  @Asn1Property(tag = 0, name = "solarRadiation")
+  @JsonProperty("solarRadiation")
+  private NTCIPEssTotalRadiationV4 solarRadiation;
 
-	public NtcipSolarRadiation() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "measurementPeriod")
+  @JsonProperty("measurementPeriod")
+  private NTCIPEssTotalRadiationPeriod measurementPeriod;
+
+  public NtcipSolarRadiation() {
+    super(true);
+  }
 }

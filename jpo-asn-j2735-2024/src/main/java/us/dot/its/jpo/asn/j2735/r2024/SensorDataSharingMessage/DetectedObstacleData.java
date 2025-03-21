@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DetectedObstacleData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "obstSize")
-	@JsonProperty("obstSize")
-	private ObstacleSize obstSize;
-	@Asn1Property(tag = 1, name = "obstSizeConfidence")
-	@JsonProperty("obstSizeConfidence")
-	private ObstacleSizeConfidence obstSizeConfidence;
+  @Asn1Property(tag = 0, name = "obstSize")
+  @JsonProperty("obstSize")
+  private ObstacleSize obstSize;
 
-	public DetectedObstacleData() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "obstSizeConfidence")
+  @JsonProperty("obstSizeConfidence")
+  private ObstacleSizeConfidence obstSizeConfidence;
+
+  public DetectedObstacleData() {
+    super(false);
+  }
 }

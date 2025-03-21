@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Velocity.VelocityDeserializer.class)
 public class Velocity extends Asn1Integer {
 
-	public Velocity() {
-		super(0L, 8191L);
-	}
+  public Velocity() {
+    super(0L, 8191L);
+  }
 
-	@JsonCreator
-	public Velocity(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Velocity(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VelocityDeserializer extends IntegerDeserializer<Velocity> {
-		public VelocityDeserializer() {
-			super(Velocity.class);
-		}
+  public static class VelocityDeserializer extends IntegerDeserializer<Velocity> {
+    public VelocityDeserializer() {
+      super(Velocity.class);
+    }
 
-		@Override
-		protected Velocity construct() {
-			return new Velocity();
-		}
-	}
+    @Override
+    protected Velocity construct() {
+      return new Velocity();
+    }
+  }
 }

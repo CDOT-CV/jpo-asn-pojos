@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PositionOffsetXYZ extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "offsetX")
-	@JsonProperty("offsetX")
-	private ObjectDistance offsetX;
-	@Asn1Property(tag = 1, name = "offsetY")
-	@JsonProperty("offsetY")
-	private ObjectDistance offsetY;
-	@Asn1Property(tag = 2, name = "offsetZ", optional = true)
-	@JsonProperty("offsetZ")
-	private ObjectDistance offsetZ;
+  @Asn1Property(tag = 0, name = "offsetX")
+  @JsonProperty("offsetX")
+  private ObjectDistance offsetX;
 
-	public PositionOffsetXYZ() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "offsetY")
+  @JsonProperty("offsetY")
+  private ObjectDistance offsetY;
+
+  @Asn1Property(tag = 2, name = "offsetZ", optional = true)
+  @JsonProperty("offsetZ")
+  private ObjectDistance offsetZ;
+
+  public PositionOffsetXYZ() {
+    super(false);
+  }
 }

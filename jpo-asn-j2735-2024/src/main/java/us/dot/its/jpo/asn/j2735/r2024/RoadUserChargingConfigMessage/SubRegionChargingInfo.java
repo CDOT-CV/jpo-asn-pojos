@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SubRegionChargingInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "subRegion")
-	@JsonProperty("subRegion")
-	private Asn1ObjectIdentifier subRegion;
-	@Asn1Property(tag = 1, name = "chargingFees")
-	@JsonProperty("chargingFees")
-	private ChargingFees chargingFees;
+  @Asn1Property(tag = 0, name = "subRegion")
+  @JsonProperty("subRegion")
+  private Asn1ObjectIdentifier subRegion;
 
-	public SubRegionChargingInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "chargingFees")
+  @JsonProperty("chargingFees")
+  private ChargingFees chargingFees;
+
+  public SubRegionChargingInfo() {
+    super(true);
+  }
 }

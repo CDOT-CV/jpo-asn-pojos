@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class DescriptiveName extends IA5String {
 
-	public DescriptiveName() {
-		super(1, 63);
-	}
+  public DescriptiveName() {
+    super(1, 63);
+  }
 
-	@JsonCreator
-	public DescriptiveName(String value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DescriptiveName(String value) {
+    this();
+    this.value = value;
+  }
 }

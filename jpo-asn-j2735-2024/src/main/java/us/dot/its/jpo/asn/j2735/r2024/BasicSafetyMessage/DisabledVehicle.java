@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DisabledVehicle extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "statusDetails")
-	@JsonProperty("statusDetails")
-	private ITIScodes statusDetails;
-	@Asn1Property(tag = 1, name = "locationDetails", optional = true)
-	@JsonProperty("locationDetails")
-	private GenericLocations locationDetails;
+  @Asn1Property(tag = 0, name = "statusDetails")
+  @JsonProperty("statusDetails")
+  private ITIScodes statusDetails;
 
-	public DisabledVehicle() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "locationDetails", optional = true)
+  @JsonProperty("locationDetails")
+  private GenericLocations locationDetails;
+
+  public DisabledVehicle() {
+    super(true);
+  }
 }

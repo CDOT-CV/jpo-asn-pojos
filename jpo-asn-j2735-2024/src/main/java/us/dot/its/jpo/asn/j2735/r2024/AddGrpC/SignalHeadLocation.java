@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SignalHeadLocation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "node")
-	@JsonProperty("node")
-	private NodeOffsetPointXY node;
-	@Asn1Property(tag = 1, name = "signalGroupID")
-	@JsonProperty("signalGroupID")
-	private SignalGroupID signalGroupID;
+  @Asn1Property(tag = 0, name = "node")
+  @JsonProperty("node")
+  private NodeOffsetPointXY node;
 
-	public SignalHeadLocation() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "signalGroupID")
+  @JsonProperty("signalGroupID")
+  private SignalGroupID signalGroupID;
+
+  public SignalHeadLocation() {
+    super(true);
+  }
 }

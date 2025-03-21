@@ -45,51 +45,60 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class GenericLane extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "laneID")
-	@JsonProperty("laneID")
-	private LaneID laneID;
-	@Asn1Property(tag = 1, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 2, name = "ingressApproach", optional = true)
-	@JsonProperty("ingressApproach")
-	private ApproachID ingressApproach;
-	@Asn1Property(tag = 3, name = "egressApproach", optional = true)
-	@JsonProperty("egressApproach")
-	private ApproachID egressApproach;
-	@Asn1Property(tag = 4, name = "laneAttributes")
-	@JsonProperty("laneAttributes")
-	private LaneAttributes laneAttributes;
-	@Asn1Property(tag = 5, name = "maneuvers", optional = true)
-	@JsonProperty("maneuvers")
-	private AllowedManeuvers maneuvers;
-	@Asn1Property(tag = 6, name = "nodeList")
-	@JsonProperty("nodeList")
-	private NodeListXY nodeList;
-	@Asn1Property(tag = 7, name = "connectsTo", optional = true)
-	@JsonProperty("connectsTo")
-	@JacksonXmlElementWrapper(localName = "connectsTo")
-	@JacksonXmlProperty(localName = "Connection")
-	private ConnectsToList connectsTo;
-	@Asn1Property(tag = 8, name = "overlays", optional = true)
-	@JsonProperty("overlays")
-	@JacksonXmlElementWrapper(localName = "overlays")
-	@JacksonXmlProperty(localName = "LaneID")
-	private OverlayLaneList overlays;
-	@Asn1Property(tag = 9, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-GenericLane")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "laneID")
+  @JsonProperty("laneID")
+  private LaneID laneID;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GenericLane> {
-		public SequenceOfRegional() {
-			super(Reg_GenericLane.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
 
-	public GenericLane() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "ingressApproach", optional = true)
+  @JsonProperty("ingressApproach")
+  private ApproachID ingressApproach;
+
+  @Asn1Property(tag = 3, name = "egressApproach", optional = true)
+  @JsonProperty("egressApproach")
+  private ApproachID egressApproach;
+
+  @Asn1Property(tag = 4, name = "laneAttributes")
+  @JsonProperty("laneAttributes")
+  private LaneAttributes laneAttributes;
+
+  @Asn1Property(tag = 5, name = "maneuvers", optional = true)
+  @JsonProperty("maneuvers")
+  private AllowedManeuvers maneuvers;
+
+  @Asn1Property(tag = 6, name = "nodeList")
+  @JsonProperty("nodeList")
+  private NodeListXY nodeList;
+
+  @Asn1Property(tag = 7, name = "connectsTo", optional = true)
+  @JsonProperty("connectsTo")
+  @JacksonXmlElementWrapper(localName = "connectsTo")
+  @JacksonXmlProperty(localName = "Connection")
+  private ConnectsToList connectsTo;
+
+  @Asn1Property(tag = 8, name = "overlays", optional = true)
+  @JsonProperty("overlays")
+  @JacksonXmlElementWrapper(localName = "overlays")
+  @JacksonXmlProperty(localName = "LaneID")
+  private OverlayLaneList overlays;
+
+  @Asn1Property(tag = 9, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-GenericLane")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GenericLane> {
+    public SequenceOfRegional() {
+      super(Reg_GenericLane.class, 1L, 4L);
+    }
+  }
+
+  public GenericLane() {
+    super(true);
+  }
 }

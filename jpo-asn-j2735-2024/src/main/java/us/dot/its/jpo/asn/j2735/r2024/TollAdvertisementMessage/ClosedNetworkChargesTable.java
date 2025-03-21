@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ClosedNetworkChargesTable extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "entryChargesTable")
-	@JsonProperty("entryChargesTable")
-	private EntryChargesTable entryChargesTable;
-	@Asn1Property(tag = 1, name = "exitChargesTable")
-	@JsonProperty("exitChargesTable")
-	private ExitChargesTable exitChargesTable;
+  @Asn1Property(tag = 0, name = "entryChargesTable")
+  @JsonProperty("entryChargesTable")
+  private EntryChargesTable entryChargesTable;
 
-	public ClosedNetworkChargesTable() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "exitChargesTable")
+  @JsonProperty("exitChargesTable")
+  private ExitChargesTable exitChargesTable;
+
+  public ClosedNetworkChargesTable() {
+    super(true);
+  }
 }

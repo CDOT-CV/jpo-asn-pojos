@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Hour.HourDeserializer.class)
 public class Hour extends Asn1Integer {
 
-	public Hour() {
-		super(0L, 255L);
-	}
+  public Hour() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public Hour(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Hour(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class HourDeserializer extends IntegerDeserializer<Hour> {
-		public HourDeserializer() {
-			super(Hour.class);
-		}
+  public static class HourDeserializer extends IntegerDeserializer<Hour> {
+    public HourDeserializer() {
+      super(Hour.class);
+    }
 
-		@Override
-		protected Hour construct() {
-			return new Hour();
-		}
-	}
+    @Override
+    protected Hour construct() {
+      return new Hour();
+    }
+  }
 }

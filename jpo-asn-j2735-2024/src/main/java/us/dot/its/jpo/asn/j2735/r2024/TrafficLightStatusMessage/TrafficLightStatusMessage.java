@@ -42,37 +42,45 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrafficLightStatusMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "trafficLightID")
-	@JsonProperty("trafficLightID")
-	private TrafficLightID trafficLightID;
-	@Asn1Property(tag = 1, name = "long", optional = true)
-	@JsonProperty("long")
-	private Longitude long_;
-	@Asn1Property(tag = 2, name = "lat", optional = true)
-	@JsonProperty("lat")
-	private Latitude lat;
-	@Asn1Property(tag = 3, name = "operationStatus")
-	@JsonProperty("operationStatus")
-	private TrafficLightOperationStatus operationStatus;
-	@Asn1Property(tag = 4, name = "controllerStatus")
-	@JsonProperty("controllerStatus")
-	private TrafficLightControllerStatus controllerStatus;
-	@Asn1Property(tag = 5, name = "cyclecounter")
-	@JsonProperty("cyclecounter")
-	private TimeInSecond_B16 cyclecounter;
-	@Asn1Property(tag = 6, name = "cycletime")
-	@JsonProperty("cycletime")
-	private TimeInSecond_B16 cycletime;
-	@Asn1Property(tag = 7, name = "currentTime")
-	@JsonProperty("currentTime")
-	private DDateTime currentTime;
-	@Asn1Property(tag = 8, name = "trafficLightStatus")
-	@JsonProperty("trafficLightStatus")
-	@JacksonXmlElementWrapper(localName = "trafficLightStatus")
-	@JacksonXmlProperty(localName = "TrafficLightStatus")
-	private TrafficLightStatusList trafficLightStatus;
+  @Asn1Property(tag = 0, name = "trafficLightID")
+  @JsonProperty("trafficLightID")
+  private TrafficLightID trafficLightID;
 
-	public TrafficLightStatusMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "long", optional = true)
+  @JsonProperty("long")
+  private Longitude long_;
+
+  @Asn1Property(tag = 2, name = "lat", optional = true)
+  @JsonProperty("lat")
+  private Latitude lat;
+
+  @Asn1Property(tag = 3, name = "operationStatus")
+  @JsonProperty("operationStatus")
+  private TrafficLightOperationStatus operationStatus;
+
+  @Asn1Property(tag = 4, name = "controllerStatus")
+  @JsonProperty("controllerStatus")
+  private TrafficLightControllerStatus controllerStatus;
+
+  @Asn1Property(tag = 5, name = "cyclecounter")
+  @JsonProperty("cyclecounter")
+  private TimeInSecond_B16 cyclecounter;
+
+  @Asn1Property(tag = 6, name = "cycletime")
+  @JsonProperty("cycletime")
+  private TimeInSecond_B16 cycletime;
+
+  @Asn1Property(tag = 7, name = "currentTime")
+  @JsonProperty("currentTime")
+  private DDateTime currentTime;
+
+  @Asn1Property(tag = 8, name = "trafficLightStatus")
+  @JsonProperty("trafficLightStatus")
+  @JacksonXmlElementWrapper(localName = "trafficLightStatus")
+  @JacksonXmlProperty(localName = "TrafficLightStatus")
+  private TrafficLightStatusList trafficLightStatus;
+
+  public TrafficLightStatusMessage() {
+    super(true);
+  }
 }

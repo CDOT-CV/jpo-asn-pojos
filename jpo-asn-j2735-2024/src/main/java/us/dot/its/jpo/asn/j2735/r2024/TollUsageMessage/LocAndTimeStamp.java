@@ -42,23 +42,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LocAndTimeStamp extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "latitude")
-	@JsonProperty("latitude")
-	private Latitude latitude;
-	@Asn1Property(tag = 1, name = "longitude")
-	@JsonProperty("longitude")
-	private Longitude longitude;
-	@Asn1Property(tag = 2, name = "elevation", optional = true)
-	@JsonProperty("elevation")
-	private Elevation elevation;
-	@Asn1Property(tag = 3, name = "timeStamp")
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
-	@Asn1Property(tag = 4, name = "currentLane", optional = true)
-	@JsonProperty("currentLane")
-	private LaneID currentLane;
+  @Asn1Property(tag = 0, name = "latitude")
+  @JsonProperty("latitude")
+  private Latitude latitude;
 
-	public LocAndTimeStamp() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "longitude")
+  @JsonProperty("longitude")
+  private Longitude longitude;
+
+  @Asn1Property(tag = 2, name = "elevation", optional = true)
+  @JsonProperty("elevation")
+  private Elevation elevation;
+
+  @Asn1Property(tag = 3, name = "timeStamp")
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
+
+  @Asn1Property(tag = 4, name = "currentLane", optional = true)
+  @JsonProperty("currentLane")
+  private LaneID currentLane;
+
+  public LocAndTimeStamp() {
+    super(true);
+  }
 }

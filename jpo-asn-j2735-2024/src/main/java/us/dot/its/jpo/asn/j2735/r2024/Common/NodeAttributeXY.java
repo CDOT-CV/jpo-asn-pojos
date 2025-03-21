@@ -33,34 +33,41 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = NodeAttributeXY.NodeAttributeXYSerializer.class)
 @JsonDeserialize(using = NodeAttributeXY.NodeAttributeXYDeserializer.class)
 public enum NodeAttributeXY implements Asn1Enumerated {
-	RESERVED(0, "reserved"), STOPLINE(1, "stopLine"), ROUNDEDCAPSTYLEA(2, "roundedCapStyleA"), ROUNDEDCAPSTYLEB(3,
-			"roundedCapStyleB"), MERGEPOINT(4, "mergePoint"), DIVERGEPOINT(5, "divergePoint"), DOWNSTREAMSTOPLINE(6,
-					"downstreamStopLine"), DOWNSTREAMSTARTNODE(7, "downstreamStartNode"), CLOSEDTOTRAFFIC(8,
-							"closedToTraffic"), SAFEISLAND(9, "safeIsland"), CURBPRESENTATSTEPOFF(10,
-									"curbPresentAtStepOff"), HYDRANTPRESENT(11, "hydrantPresent");
+  RESERVED(0, "reserved"),
+  STOPLINE(1, "stopLine"),
+  ROUNDEDCAPSTYLEA(2, "roundedCapStyleA"),
+  ROUNDEDCAPSTYLEB(3, "roundedCapStyleB"),
+  MERGEPOINT(4, "mergePoint"),
+  DIVERGEPOINT(5, "divergePoint"),
+  DOWNSTREAMSTOPLINE(6, "downstreamStopLine"),
+  DOWNSTREAMSTARTNODE(7, "downstreamStartNode"),
+  CLOSEDTOTRAFFIC(8, "closedToTraffic"),
+  SAFEISLAND(9, "safeIsland"),
+  CURBPRESENTATSTEPOFF(10, "curbPresentAtStepOff"),
+  HYDRANTPRESENT(11, "hydrantPresent");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NodeAttributeXY(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NodeAttributeXY(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NodeAttributeXYSerializer extends EnumeratedSerializer<NodeAttributeXY> {
-		public NodeAttributeXYSerializer() {
-			super(NodeAttributeXY.class);
-		}
-	}
+  public static class NodeAttributeXYSerializer extends EnumeratedSerializer<NodeAttributeXY> {
+    public NodeAttributeXYSerializer() {
+      super(NodeAttributeXY.class);
+    }
+  }
 
-	public static class NodeAttributeXYDeserializer extends EnumeratedDeserializer<NodeAttributeXY> {
-		public NodeAttributeXYDeserializer() {
-			super(NodeAttributeXY.class);
-		}
+  public static class NodeAttributeXYDeserializer extends EnumeratedDeserializer<NodeAttributeXY> {
+    public NodeAttributeXYDeserializer() {
+      super(NodeAttributeXY.class);
+    }
 
-		@Override
-		protected NodeAttributeXY[] listEnumValues() {
-			return NodeAttributeXY.values();
-		}
-	}
+    @Override
+    protected NodeAttributeXY[] listEnumValues() {
+      return NodeAttributeXY.values();
+    }
+  }
 }

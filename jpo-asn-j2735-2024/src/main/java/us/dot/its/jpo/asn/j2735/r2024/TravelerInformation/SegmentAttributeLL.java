@@ -33,82 +33,69 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SegmentAttributeLL.SegmentAttributeLLSerializer.class)
 @JsonDeserialize(using = SegmentAttributeLL.SegmentAttributeLLDeserializer.class)
 public enum SegmentAttributeLL implements Asn1Enumerated {
-	RESERVED(0, "reserved"), DONOTBLOCK(1, "doNotBlock"), WHITELINE(2, "whiteLine"), MERGINGLANELEFT(3,
-			"mergingLaneLeft"), MERGINGLANERIGHT(4, "mergingLaneRight"), CURBONLEFT(5, "curbOnLeft"), CURBONRIGHT(6,
-					"curbOnRight"), LOADINGZONEONLEFT(7, "loadingzoneOnLeft"), LOADINGZONEONRIGHT(8,
-							"loadingzoneOnRight"), TURNOUTPOINTONLEFT(9, "turnOutPointOnLeft"), TURNOUTPOINTONRIGHT(10,
-									"turnOutPointOnRight"), ADJACENTPARKINGONLEFT(11,
-											"adjacentParkingOnLeft"), ADJACENTPARKINGONRIGHT(12,
-													"adjacentParkingOnRight"), ADJACENTBIKELANEONLEFT(13,
-															"adjacentBikeLaneOnLeft"), ADJACENTBIKELANEONRIGHT(14,
-																	"adjacentBikeLaneOnRight"), SHAREDBIKELANE(15,
-																			"sharedBikeLane"), BIKEBOXINFRONT(16,
-																					"bikeBoxInFront"), TRANSITSTOPONLEFT(
-																							17,
-																							"transitStopOnLeft"), TRANSITSTOPONRIGHT(
-																									18,
-																									"transitStopOnRight"), TRANSITSTOPINLANE(
-																											19,
-																											"transitStopInLane"), SHAREDWITHTRACKEDVEHICLE(
-																													20,
-																													"sharedWithTrackedVehicle"), SAFEISLAND(
-																															21,
-																															"safeIsland"), LOWCURBSPRESENT(
-																																	22,
-																																	"lowCurbsPresent"), RUMBLESTRIPPRESENT(
-																																			23,
-																																			"rumbleStripPresent"), AUDIBLESIGNALINGPRESENT(
-																																					24,
-																																					"audibleSignalingPresent"), ADAPTIVETIMINGPRESENT(
-																																							25,
-																																							"adaptiveTimingPresent"), RFSIGNALREQUESTPRESENT(
-																																									26,
-																																									"rfSignalRequestPresent"), PARTIALCURBINTRUSION(
-																																											27,
-																																											"partialCurbIntrusion"), TAPERTOLEFT(
-																																													28,
-																																													"taperToLeft"), TAPERTORIGHT(
-																																															29,
-																																															"taperToRight"), TAPERTOCENTERLINE(
-																																																	30,
-																																																	"taperToCenterLine"), PARALLELPARKING(
-																																																			31,
-																																																			"parallelParking"), HEADINPARKING(
-																																																					32,
-																																																					"headInParking"), FREEPARKING(
-																																																							33,
-																																																							"freeParking"), TIMERESTRICTIONSONPARKING(
-																																																									34,
-																																																									"timeRestrictionsOnParking"), COSTTOPARK(
-																																																											35,
-																																																											"costToPark"), MIDBLOCKCURBPRESENT(
-																																																													36,
-																																																													"midBlockCurbPresent"), UNEVENPAVEMENTPRESENT(
-																																																															37,
-																																																															"unEvenPavementPresent");
+  RESERVED(0, "reserved"),
+  DONOTBLOCK(1, "doNotBlock"),
+  WHITELINE(2, "whiteLine"),
+  MERGINGLANELEFT(3, "mergingLaneLeft"),
+  MERGINGLANERIGHT(4, "mergingLaneRight"),
+  CURBONLEFT(5, "curbOnLeft"),
+  CURBONRIGHT(6, "curbOnRight"),
+  LOADINGZONEONLEFT(7, "loadingzoneOnLeft"),
+  LOADINGZONEONRIGHT(8, "loadingzoneOnRight"),
+  TURNOUTPOINTONLEFT(9, "turnOutPointOnLeft"),
+  TURNOUTPOINTONRIGHT(10, "turnOutPointOnRight"),
+  ADJACENTPARKINGONLEFT(11, "adjacentParkingOnLeft"),
+  ADJACENTPARKINGONRIGHT(12, "adjacentParkingOnRight"),
+  ADJACENTBIKELANEONLEFT(13, "adjacentBikeLaneOnLeft"),
+  ADJACENTBIKELANEONRIGHT(14, "adjacentBikeLaneOnRight"),
+  SHAREDBIKELANE(15, "sharedBikeLane"),
+  BIKEBOXINFRONT(16, "bikeBoxInFront"),
+  TRANSITSTOPONLEFT(17, "transitStopOnLeft"),
+  TRANSITSTOPONRIGHT(18, "transitStopOnRight"),
+  TRANSITSTOPINLANE(19, "transitStopInLane"),
+  SHAREDWITHTRACKEDVEHICLE(20, "sharedWithTrackedVehicle"),
+  SAFEISLAND(21, "safeIsland"),
+  LOWCURBSPRESENT(22, "lowCurbsPresent"),
+  RUMBLESTRIPPRESENT(23, "rumbleStripPresent"),
+  AUDIBLESIGNALINGPRESENT(24, "audibleSignalingPresent"),
+  ADAPTIVETIMINGPRESENT(25, "adaptiveTimingPresent"),
+  RFSIGNALREQUESTPRESENT(26, "rfSignalRequestPresent"),
+  PARTIALCURBINTRUSION(27, "partialCurbIntrusion"),
+  TAPERTOLEFT(28, "taperToLeft"),
+  TAPERTORIGHT(29, "taperToRight"),
+  TAPERTOCENTERLINE(30, "taperToCenterLine"),
+  PARALLELPARKING(31, "parallelParking"),
+  HEADINPARKING(32, "headInParking"),
+  FREEPARKING(33, "freeParking"),
+  TIMERESTRICTIONSONPARKING(34, "timeRestrictionsOnParking"),
+  COSTTOPARK(35, "costToPark"),
+  MIDBLOCKCURBPRESENT(36, "midBlockCurbPresent"),
+  UNEVENPAVEMENTPRESENT(37, "unEvenPavementPresent");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SegmentAttributeLL(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SegmentAttributeLL(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SegmentAttributeLLSerializer extends EnumeratedSerializer<SegmentAttributeLL> {
-		public SegmentAttributeLLSerializer() {
-			super(SegmentAttributeLL.class);
-		}
-	}
+  public static class SegmentAttributeLLSerializer
+      extends EnumeratedSerializer<SegmentAttributeLL> {
+    public SegmentAttributeLLSerializer() {
+      super(SegmentAttributeLL.class);
+    }
+  }
 
-	public static class SegmentAttributeLLDeserializer extends EnumeratedDeserializer<SegmentAttributeLL> {
-		public SegmentAttributeLLDeserializer() {
-			super(SegmentAttributeLL.class);
-		}
+  public static class SegmentAttributeLLDeserializer
+      extends EnumeratedDeserializer<SegmentAttributeLL> {
+    public SegmentAttributeLLDeserializer() {
+      super(SegmentAttributeLL.class);
+    }
 
-		@Override
-		protected SegmentAttributeLL[] listEnumValues() {
-			return SegmentAttributeLL.values();
-		}
-	}
+    @Override
+    protected SegmentAttributeLL[] listEnumValues() {
+      return SegmentAttributeLL.values();
+    }
+  }
 }

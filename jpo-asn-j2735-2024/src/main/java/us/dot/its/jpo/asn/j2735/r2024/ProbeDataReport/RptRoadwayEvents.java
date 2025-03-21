@@ -36,53 +36,67 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 @JsonInclude(Include.NON_NULL)
 public class RptRoadwayEvents extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "obstacleDetected")
-	@JsonProperty("obstacleDetected")
-	private Asn1Null obstacleDetected;
-	@Asn1Property(tag = 1, name = "adverseRoadSurface")
-	@JsonProperty("adverseRoadSurface")
-	private RptRoadRoughness adverseRoadSurface;
-	@Asn1Property(tag = 2, name = "trfsigEncounters")
-	@JsonProperty("trfsigEncounters")
-	private RptTrafficSigEncounters trfsigEncounters;
-	@Asn1Property(tag = 3, name = "trfsigLightOut")
-	@JsonProperty("trfsigLightOut")
-	private Asn1Null trfsigLightOut;
-	@Asn1Property(tag = 4, name = "trfsigRoadGeoMismatch")
-	@JsonProperty("trfsigRoadGeoMismatch")
-	private Asn1Null trfsigRoadGeoMismatch;
-	@Asn1Property(tag = 5, name = "roadsignDetection")
-	@JsonProperty("roadsignDetection")
-	private Asn1Null roadsignDetection;
-	@Asn1Property(tag = 6, name = "lowRoadsignReflect")
-	@JsonProperty("lowRoadsignReflect")
-	private Asn1Null lowRoadsignReflect;
-	@Asn1Property(tag = 7, name = "lowLaneMarkReflect")
-	@JsonProperty("lowLaneMarkReflect")
-	private Asn1Null lowLaneMarkReflect;
-	@Asn1Property(tag = 8, name = "roadsignIncnstncy")
-	@JsonProperty("roadsignIncnstncy")
-	private Asn1Null roadsignIncnstncy;
-	@Asn1Property(tag = 9, name = "laneGeoIncnstncy")
-	@JsonProperty("laneGeoIncnstncy")
-	private Asn1Null laneGeoIncnstncy;
-	@Asn1Property(tag = 10, name = "incidentDetect")
-	@JsonProperty("incidentDetect")
-	private Asn1Null incidentDetect;
-	@Asn1Property(tag = 11, name = "workZoneCharDetect")
-	@JsonProperty("workZoneCharDetect")
-	private Asn1Null workZoneCharDetect;
-	@Asn1Property(tag = 12, name = "inclWeatherDetect")
-	@JsonProperty("inclWeatherDetect")
-	private Asn1Null inclWeatherDetect;
-	@Asn1Property(tag = 13, name = "railrdCrossActiv")
-	@JsonProperty("railrdCrossActiv")
-	private Asn1Null railrdCrossActiv;
-	@Asn1Property(tag = 14, name = "drawBridgeActiv")
-	@JsonProperty("drawBridgeActiv")
-	private Asn1Null drawBridgeActiv;
+  @Asn1Property(tag = 0, name = "obstacleDetected")
+  @JsonProperty("obstacleDetected")
+  private Asn1Null obstacleDetected;
 
-	public RptRoadwayEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "adverseRoadSurface")
+  @JsonProperty("adverseRoadSurface")
+  private RptRoadRoughness adverseRoadSurface;
+
+  @Asn1Property(tag = 2, name = "trfsigEncounters")
+  @JsonProperty("trfsigEncounters")
+  private RptTrafficSigEncounters trfsigEncounters;
+
+  @Asn1Property(tag = 3, name = "trfsigLightOut")
+  @JsonProperty("trfsigLightOut")
+  private Asn1Null trfsigLightOut;
+
+  @Asn1Property(tag = 4, name = "trfsigRoadGeoMismatch")
+  @JsonProperty("trfsigRoadGeoMismatch")
+  private Asn1Null trfsigRoadGeoMismatch;
+
+  @Asn1Property(tag = 5, name = "roadsignDetection")
+  @JsonProperty("roadsignDetection")
+  private Asn1Null roadsignDetection;
+
+  @Asn1Property(tag = 6, name = "lowRoadsignReflect")
+  @JsonProperty("lowRoadsignReflect")
+  private Asn1Null lowRoadsignReflect;
+
+  @Asn1Property(tag = 7, name = "lowLaneMarkReflect")
+  @JsonProperty("lowLaneMarkReflect")
+  private Asn1Null lowLaneMarkReflect;
+
+  @Asn1Property(tag = 8, name = "roadsignIncnstncy")
+  @JsonProperty("roadsignIncnstncy")
+  private Asn1Null roadsignIncnstncy;
+
+  @Asn1Property(tag = 9, name = "laneGeoIncnstncy")
+  @JsonProperty("laneGeoIncnstncy")
+  private Asn1Null laneGeoIncnstncy;
+
+  @Asn1Property(tag = 10, name = "incidentDetect")
+  @JsonProperty("incidentDetect")
+  private Asn1Null incidentDetect;
+
+  @Asn1Property(tag = 11, name = "workZoneCharDetect")
+  @JsonProperty("workZoneCharDetect")
+  private Asn1Null workZoneCharDetect;
+
+  @Asn1Property(tag = 12, name = "inclWeatherDetect")
+  @JsonProperty("inclWeatherDetect")
+  private Asn1Null inclWeatherDetect;
+
+  @Asn1Property(tag = 13, name = "railrdCrossActiv")
+  @JsonProperty("railrdCrossActiv")
+  private Asn1Null railrdCrossActiv;
+
+  @Asn1Property(tag = 14, name = "drawBridgeActiv")
+  @JsonProperty("drawBridgeActiv")
+  private Asn1Null drawBridgeActiv;
+
+  public RptRoadwayEvents() {
+    super(true);
+  }
 }

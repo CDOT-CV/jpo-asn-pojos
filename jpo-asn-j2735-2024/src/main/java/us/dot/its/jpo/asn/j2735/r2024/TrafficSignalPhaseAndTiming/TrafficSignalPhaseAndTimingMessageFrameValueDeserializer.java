@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.TrafficSignalPhaseAndTiming;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class TrafficSignalPhaseAndTimingMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<TrafficSignalPhaseAndTiming> {
+    extends OpenTypeDeserializer<TrafficSignalPhaseAndTiming> {
 
-	public TrafficSignalPhaseAndTimingMessageFrameValueDeserializer() {
-		super(TrafficSignalPhaseAndTiming.class, "TrafficSignalPhaseAndTiming");
-	}
+  public TrafficSignalPhaseAndTimingMessageFrameValueDeserializer() {
+    super(TrafficSignalPhaseAndTiming.class, "TrafficSignalPhaseAndTiming");
+  }
 }

@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AcceleratorPedalPosition.AcceleratorPedalPositionDeserializer.class)
 public class AcceleratorPedalPosition extends Asn1Integer {
 
-	public AcceleratorPedalPosition() {
-		super(0L, 201L);
-	}
+  public AcceleratorPedalPosition() {
+    super(0L, 201L);
+  }
 
-	@JsonCreator
-	public AcceleratorPedalPosition(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AcceleratorPedalPosition(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AcceleratorPedalPositionDeserializer extends IntegerDeserializer<AcceleratorPedalPosition> {
-		public AcceleratorPedalPositionDeserializer() {
-			super(AcceleratorPedalPosition.class);
-		}
+  public static class AcceleratorPedalPositionDeserializer
+      extends IntegerDeserializer<AcceleratorPedalPosition> {
+    public AcceleratorPedalPositionDeserializer() {
+      super(AcceleratorPedalPosition.class);
+    }
 
-		@Override
-		protected AcceleratorPedalPosition construct() {
-			return new AcceleratorPedalPosition();
-		}
-	}
+    @Override
+    protected AcceleratorPedalPosition construct() {
+      return new AcceleratorPedalPosition();
+    }
+  }
 }

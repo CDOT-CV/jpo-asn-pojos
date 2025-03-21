@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class TumHash extends Asn1OctetString {
 
-	public TumHash() {
-		super(32, 32);
-	}
+  public TumHash() {
+    super(32, 32);
+  }
 
-	@JsonCreator
-	public TumHash(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public TumHash(String value) {
+    this();
+    setValue(value);
+  }
 }

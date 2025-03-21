@@ -40,42 +40,51 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class J1939data extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tires", optional = true)
-	@JsonProperty("tires")
-	@JacksonXmlElementWrapper(localName = "tires")
-	@JacksonXmlProperty(localName = "TireData")
-	private TireDataList tires;
-	@Asn1Property(tag = 1, name = "axles", optional = true)
-	@JsonProperty("axles")
-	@JacksonXmlElementWrapper(localName = "axles")
-	@JacksonXmlProperty(localName = "AxleWeightSet")
-	private AxleWeightList axles;
-	@Asn1Property(tag = 2, name = "trailerWeight", optional = true)
-	@JsonProperty("trailerWeight")
-	private TrailerWeight trailerWeight;
-	@Asn1Property(tag = 3, name = "cargoWeight", optional = true)
-	@JsonProperty("cargoWeight")
-	private CargoWeight cargoWeight;
-	@Asn1Property(tag = 4, name = "steeringAxleTemperature", optional = true)
-	@JsonProperty("steeringAxleTemperature")
-	private SteeringAxleTemperature steeringAxleTemperature;
-	@Asn1Property(tag = 5, name = "driveAxleLocation", optional = true)
-	@JsonProperty("driveAxleLocation")
-	private DriveAxleLocation driveAxleLocation;
-	@Asn1Property(tag = 6, name = "driveAxleLiftAirPressure", optional = true)
-	@JsonProperty("driveAxleLiftAirPressure")
-	private DriveAxleLiftAirPressure driveAxleLiftAirPressure;
-	@Asn1Property(tag = 7, name = "driveAxleTemperature", optional = true)
-	@JsonProperty("driveAxleTemperature")
-	private DriveAxleTemperature driveAxleTemperature;
-	@Asn1Property(tag = 8, name = "driveAxleLubePressure", optional = true)
-	@JsonProperty("driveAxleLubePressure")
-	private DriveAxleLubePressure driveAxleLubePressure;
-	@Asn1Property(tag = 9, name = "steeringAxleLubePressure", optional = true)
-	@JsonProperty("steeringAxleLubePressure")
-	private SteeringAxleLubePressure steeringAxleLubePressure;
+  @Asn1Property(tag = 0, name = "tires", optional = true)
+  @JsonProperty("tires")
+  @JacksonXmlElementWrapper(localName = "tires")
+  @JacksonXmlProperty(localName = "TireData")
+  private TireDataList tires;
 
-	public J1939data() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "axles", optional = true)
+  @JsonProperty("axles")
+  @JacksonXmlElementWrapper(localName = "axles")
+  @JacksonXmlProperty(localName = "AxleWeightSet")
+  private AxleWeightList axles;
+
+  @Asn1Property(tag = 2, name = "trailerWeight", optional = true)
+  @JsonProperty("trailerWeight")
+  private TrailerWeight trailerWeight;
+
+  @Asn1Property(tag = 3, name = "cargoWeight", optional = true)
+  @JsonProperty("cargoWeight")
+  private CargoWeight cargoWeight;
+
+  @Asn1Property(tag = 4, name = "steeringAxleTemperature", optional = true)
+  @JsonProperty("steeringAxleTemperature")
+  private SteeringAxleTemperature steeringAxleTemperature;
+
+  @Asn1Property(tag = 5, name = "driveAxleLocation", optional = true)
+  @JsonProperty("driveAxleLocation")
+  private DriveAxleLocation driveAxleLocation;
+
+  @Asn1Property(tag = 6, name = "driveAxleLiftAirPressure", optional = true)
+  @JsonProperty("driveAxleLiftAirPressure")
+  private DriveAxleLiftAirPressure driveAxleLiftAirPressure;
+
+  @Asn1Property(tag = 7, name = "driveAxleTemperature", optional = true)
+  @JsonProperty("driveAxleTemperature")
+  private DriveAxleTemperature driveAxleTemperature;
+
+  @Asn1Property(tag = 8, name = "driveAxleLubePressure", optional = true)
+  @JsonProperty("driveAxleLubePressure")
+  private DriveAxleLubePressure driveAxleLubePressure;
+
+  @Asn1Property(tag = 9, name = "steeringAxleLubePressure", optional = true)
+  @JsonProperty("steeringAxleLubePressure")
+  private SteeringAxleLubePressure steeringAxleLubePressure;
+
+  public J1939data() {
+    super(true);
+  }
 }

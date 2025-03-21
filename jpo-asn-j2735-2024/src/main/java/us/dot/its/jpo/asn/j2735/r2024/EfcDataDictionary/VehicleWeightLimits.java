@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleWeightLimits extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleMaxLadenWeight")
-	@JsonProperty("vehicleMaxLadenWeight")
-	private Int2Unsigned vehicleMaxLadenWeight;
-	@Asn1Property(tag = 1, name = "vehicleTrainMaximumWeight")
-	@JsonProperty("vehicleTrainMaximumWeight")
-	private Int2Unsigned vehicleTrainMaximumWeight;
-	@Asn1Property(tag = 2, name = "vehicleWeightUnladen")
-	@JsonProperty("vehicleWeightUnladen")
-	private Int2Unsigned vehicleWeightUnladen;
+  @Asn1Property(tag = 0, name = "vehicleMaxLadenWeight")
+  @JsonProperty("vehicleMaxLadenWeight")
+  private Int2Unsigned vehicleMaxLadenWeight;
 
-	public VehicleWeightLimits() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "vehicleTrainMaximumWeight")
+  @JsonProperty("vehicleTrainMaximumWeight")
+  private Int2Unsigned vehicleTrainMaximumWeight;
+
+  @Asn1Property(tag = 2, name = "vehicleWeightUnladen")
+  @JsonProperty("vehicleWeightUnladen")
+  private Int2Unsigned vehicleWeightUnladen;
+
+  public VehicleWeightLimits() {
+    super(false);
+  }
 }

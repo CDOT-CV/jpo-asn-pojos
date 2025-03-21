@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipPrecipitation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "precipitation")
-	@JsonProperty("precipitation")
-	private NTCIPPrecipitationSensorPrecipSituation precipitation;
+  @Asn1Property(tag = 0, name = "precipitation")
+  @JsonProperty("precipitation")
+  private NTCIPPrecipitationSensorPrecipSituation precipitation;
 
-	public NtcipPrecipitation() {
-		super(true);
-	}
+  public NtcipPrecipitation() {
+    super(true);
+  }
 }

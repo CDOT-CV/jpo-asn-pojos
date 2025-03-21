@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SizeValue.SizeValueDeserializer.class)
 public class SizeValue extends Asn1Integer {
 
-	public SizeValue() {
-		super(0L, 1023L);
-	}
+  public SizeValue() {
+    super(0L, 1023L);
+  }
 
-	@JsonCreator
-	public SizeValue(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SizeValue(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SizeValueDeserializer extends IntegerDeserializer<SizeValue> {
-		public SizeValueDeserializer() {
-			super(SizeValue.class);
-		}
+  public static class SizeValueDeserializer extends IntegerDeserializer<SizeValue> {
+    public SizeValueDeserializer() {
+      super(SizeValue.class);
+    }
 
-		@Override
-		protected SizeValue construct() {
-			return new SizeValue();
-		}
-	}
+    @Override
+    protected SizeValue construct() {
+      return new SizeValue();
+    }
+  }
 }

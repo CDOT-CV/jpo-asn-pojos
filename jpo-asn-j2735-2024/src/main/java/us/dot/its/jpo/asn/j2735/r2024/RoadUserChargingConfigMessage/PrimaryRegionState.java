@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 @Setter
 public class PrimaryRegionState extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "usCanMexState")
-	@JsonProperty("usCanMexState")
-	private IA5String usCanMexState;
-	@Asn1Property(tag = 1, name = "chargingFees", optional = true)
-	@JsonProperty("chargingFees")
-	private ChargingFees chargingFees;
+  @Asn1Property(tag = 0, name = "usCanMexState")
+  @JsonProperty("usCanMexState")
+  private IA5String usCanMexState;
 
-	public PrimaryRegionState() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "chargingFees", optional = true)
+  @JsonProperty("chargingFees")
+  private ChargingFees chargingFees;
+
+  public PrimaryRegionState() {
+    super(true);
+  }
 }

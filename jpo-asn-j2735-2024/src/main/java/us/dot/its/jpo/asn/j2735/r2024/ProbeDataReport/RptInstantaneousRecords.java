@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RptInstantaneousRecords extends Asn1SequenceOf<RptInstantaneousRecord> {
 
-	public RptInstantaneousRecords() {
-		super(RptInstantaneousRecord.class, 1L, 255L);
-	}
+  public RptInstantaneousRecords() {
+    super(RptInstantaneousRecord.class, 1L, 255L);
+  }
 }

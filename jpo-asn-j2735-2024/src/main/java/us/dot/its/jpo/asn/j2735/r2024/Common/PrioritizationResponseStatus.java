@@ -31,38 +31,42 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
 @JsonSerialize(using = PrioritizationResponseStatus.PrioritizationResponseStatusSerializer.class)
-@JsonDeserialize(using = PrioritizationResponseStatus.PrioritizationResponseStatusDeserializer.class)
+@JsonDeserialize(
+    using = PrioritizationResponseStatus.PrioritizationResponseStatusDeserializer.class)
 public enum PrioritizationResponseStatus implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), REQUESTED(1, "requested"), PROCESSING(2, "processing"), WATCHOTHERTRAFFIC(3,
-			"watchOtherTraffic"), GRANTED(4, "granted"), REJECTED(5,
-					"rejected"), MAXPRESENCE(6, "maxPresence"), RESERVICELOCKED(7, "reserviceLocked");
+  UNKNOWN(0, "unknown"),
+  REQUESTED(1, "requested"),
+  PROCESSING(2, "processing"),
+  WATCHOTHERTRAFFIC(3, "watchOtherTraffic"),
+  GRANTED(4, "granted"),
+  REJECTED(5, "rejected"),
+  MAXPRESENCE(6, "maxPresence"),
+  RESERVICELOCKED(7, "reserviceLocked");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PrioritizationResponseStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PrioritizationResponseStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PrioritizationResponseStatusSerializer
-			extends
-				EnumeratedSerializer<PrioritizationResponseStatus> {
-		public PrioritizationResponseStatusSerializer() {
-			super(PrioritizationResponseStatus.class);
-		}
-	}
+  public static class PrioritizationResponseStatusSerializer
+      extends EnumeratedSerializer<PrioritizationResponseStatus> {
+    public PrioritizationResponseStatusSerializer() {
+      super(PrioritizationResponseStatus.class);
+    }
+  }
 
-	public static class PrioritizationResponseStatusDeserializer
-			extends
-				EnumeratedDeserializer<PrioritizationResponseStatus> {
-		public PrioritizationResponseStatusDeserializer() {
-			super(PrioritizationResponseStatus.class);
-		}
+  public static class PrioritizationResponseStatusDeserializer
+      extends EnumeratedDeserializer<PrioritizationResponseStatus> {
+    public PrioritizationResponseStatusDeserializer() {
+      super(PrioritizationResponseStatus.class);
+    }
 
-		@Override
-		protected PrioritizationResponseStatus[] listEnumValues() {
-			return PrioritizationResponseStatus.values();
-		}
-	}
+    @Override
+    protected PrioritizationResponseStatus[] listEnumValues() {
+      return PrioritizationResponseStatus.values();
+    }
+  }
 }

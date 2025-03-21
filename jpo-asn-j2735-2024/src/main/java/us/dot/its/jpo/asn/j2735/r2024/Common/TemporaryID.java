@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class TemporaryID extends Asn1OctetString {
 
-	public TemporaryID() {
-		super(4, 4);
-	}
+  public TemporaryID() {
+    super(4, 4);
+  }
 
-	@JsonCreator
-	public TemporaryID(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public TemporaryID(String value) {
+    this();
+    setValue(value);
+  }
 }

@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class ITIScodesAndText extends Asn1SequenceOf<ITIScodesAndTextSequence> {
 
-	public ITIScodesAndText() {
-		super(ITIScodesAndTextSequence.class, 1L, 100L);
-	}
+  public ITIScodesAndText() {
+    super(ITIScodesAndTextSequence.class, 1L, 100L);
+  }
 }

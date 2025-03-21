@@ -31,28 +31,26 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RestrictionUserTypeList extends Asn1SequenceOf<RestrictionUserType> {
 
-	public RestrictionUserTypeList() {
-		super(RestrictionUserType.class, 1L, 16L);
-	}
+  public RestrictionUserTypeList() {
+    super(RestrictionUserType.class, 1L, 16L);
+  }
 
-	public static class RestrictionUserTypeListSerializer
-			extends
-				SequenceOfChoiceSerializer<RestrictionUserType, RestrictionUserTypeList> {
-		public RestrictionUserTypeListSerializer() {
-			super(RestrictionUserType.class, RestrictionUserTypeList.class);
-		}
-	}
+  public static class RestrictionUserTypeListSerializer
+      extends SequenceOfChoiceSerializer<RestrictionUserType, RestrictionUserTypeList> {
+    public RestrictionUserTypeListSerializer() {
+      super(RestrictionUserType.class, RestrictionUserTypeList.class);
+    }
+  }
 
-	public static class RestrictionUserTypeListDeserializer
-			extends
-				SequenceOfChoiceDeserializer<RestrictionUserType, RestrictionUserTypeList> {
-		public RestrictionUserTypeListDeserializer() {
-			super(RestrictionUserType.class, RestrictionUserTypeList.class);
-		}
+  public static class RestrictionUserTypeListDeserializer
+      extends SequenceOfChoiceDeserializer<RestrictionUserType, RestrictionUserTypeList> {
+    public RestrictionUserTypeListDeserializer() {
+      super(RestrictionUserType.class, RestrictionUserTypeList.class);
+    }
 
-		@Override
-		protected RestrictionUserTypeList construct() {
-			return new RestrictionUserTypeList();
-		}
-	}
+    @Override
+    protected RestrictionUserTypeList construct() {
+      return new RestrictionUserTypeList();
+    }
+  }
 }

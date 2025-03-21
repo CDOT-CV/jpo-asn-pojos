@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AccelSteerYawRateConfidence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "yawRate")
-	@JsonProperty("yawRate")
-	private YawRateConfidence yawRate;
-	@Asn1Property(tag = 1, name = "acceleration")
-	@JsonProperty("acceleration")
-	private AccelerationConfidence acceleration;
-	@Asn1Property(tag = 2, name = "steeringWheelAngle")
-	@JsonProperty("steeringWheelAngle")
-	private SteeringWheelAngleConfidence steeringWheelAngle;
+  @Asn1Property(tag = 0, name = "yawRate")
+  @JsonProperty("yawRate")
+  private YawRateConfidence yawRate;
 
-	public AccelSteerYawRateConfidence() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "acceleration")
+  @JsonProperty("acceleration")
+  private AccelerationConfidence acceleration;
+
+  @Asn1Property(tag = 2, name = "steeringWheelAngle")
+  @JsonProperty("steeringWheelAngle")
+  private SteeringWheelAngleConfidence steeringWheelAngle;
+
+  public AccelSteerYawRateConfidence() {
+    super(false);
+  }
 }

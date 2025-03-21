@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssDewpointTemp.NTCIPEssDewpointTempDeserializer.class)
 public class NTCIPEssDewpointTemp extends Asn1Integer {
 
-	public NTCIPEssDewpointTemp() {
-		super(-1000L, 1001L);
-	}
+  public NTCIPEssDewpointTemp() {
+    super(-1000L, 1001L);
+  }
 
-	@JsonCreator
-	public NTCIPEssDewpointTemp(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssDewpointTemp(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssDewpointTempDeserializer extends IntegerDeserializer<NTCIPEssDewpointTemp> {
-		public NTCIPEssDewpointTempDeserializer() {
-			super(NTCIPEssDewpointTemp.class);
-		}
+  public static class NTCIPEssDewpointTempDeserializer
+      extends IntegerDeserializer<NTCIPEssDewpointTemp> {
+    public NTCIPEssDewpointTempDeserializer() {
+      super(NTCIPEssDewpointTemp.class);
+    }
 
-		@Override
-		protected NTCIPEssDewpointTemp construct() {
-			return new NTCIPEssDewpointTemp();
-		}
-	}
+    @Override
+    protected NTCIPEssDewpointTemp construct() {
+      return new NTCIPEssDewpointTemp();
+    }
+  }
 }

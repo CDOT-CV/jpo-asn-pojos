@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleDimensions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleLengthOverall")
-	@JsonProperty("vehicleLengthOverall")
-	private Int1Unsigned vehicleLengthOverall;
-	@Asn1Property(tag = 1, name = "vehicleHeigthOverall")
-	@JsonProperty("vehicleHeigthOverall")
-	private Int1Unsigned vehicleHeigthOverall;
-	@Asn1Property(tag = 2, name = "vehicleWidthOverall")
-	@JsonProperty("vehicleWidthOverall")
-	private Int1Unsigned vehicleWidthOverall;
+  @Asn1Property(tag = 0, name = "vehicleLengthOverall")
+  @JsonProperty("vehicleLengthOverall")
+  private Int1Unsigned vehicleLengthOverall;
 
-	public VehicleDimensions() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "vehicleHeigthOverall")
+  @JsonProperty("vehicleHeigthOverall")
+  private Int1Unsigned vehicleHeigthOverall;
+
+  @Asn1Property(tag = 2, name = "vehicleWidthOverall")
+  @JsonProperty("vehicleWidthOverall")
+  private Int1Unsigned vehicleWidthOverall;
+
+  public VehicleDimensions() {
+    super(false);
+  }
 }

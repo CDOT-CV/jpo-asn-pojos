@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AntennaOffsetSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "antOffsetX")
-	@JsonProperty("antOffsetX")
-	private Offset_B12 antOffsetX;
-	@Asn1Property(tag = 1, name = "antOffsetY")
-	@JsonProperty("antOffsetY")
-	private Offset_B09 antOffsetY;
-	@Asn1Property(tag = 2, name = "antOffsetZ")
-	@JsonProperty("antOffsetZ")
-	private Offset_B10 antOffsetZ;
+  @Asn1Property(tag = 0, name = "antOffsetX")
+  @JsonProperty("antOffsetX")
+  private Offset_B12 antOffsetX;
 
-	public AntennaOffsetSet() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "antOffsetY")
+  @JsonProperty("antOffsetY")
+  private Offset_B09 antOffsetY;
+
+  @Asn1Property(tag = 2, name = "antOffsetZ")
+  @JsonProperty("antOffsetZ")
+  private Offset_B10 antOffsetZ;
+
+  public AntennaOffsetSet() {
+    super(false);
+  }
 }

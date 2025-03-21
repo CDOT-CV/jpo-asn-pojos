@@ -41,23 +41,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class CfgMsgRecepIndicators extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "msgDictionary", optional = true)
-	@JsonProperty("msgDictionary")
-	private CfgMsgDictionary msgDictionary;
-	@Asn1Property(tag = 1, name = "messages", optional = true)
-	@JsonProperty("messages")
-	@JacksonXmlElementWrapper(localName = "messages")
-	@JacksonXmlProperty(localName = "DSRCmsgID")
-	private SequenceOfMessages messages;
+  @Asn1Property(tag = 0, name = "msgDictionary", optional = true)
+  @JsonProperty("msgDictionary")
+  private CfgMsgDictionary msgDictionary;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfMessages extends Asn1SequenceOf<DSRCmsgID> {
-		public SequenceOfMessages() {
-			super(DSRCmsgID.class, 1L, 8L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "messages", optional = true)
+  @JsonProperty("messages")
+  @JacksonXmlElementWrapper(localName = "messages")
+  @JacksonXmlProperty(localName = "DSRCmsgID")
+  private SequenceOfMessages messages;
 
-	public CfgMsgRecepIndicators() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfMessages extends Asn1SequenceOf<DSRCmsgID> {
+    public SequenceOfMessages() {
+      super(DSRCmsgID.class, 1L, 8L);
+    }
+  }
+
+  public CfgMsgRecepIndicators() {
+    super(true);
+  }
 }

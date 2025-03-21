@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ManeuverID.ManeuverIDDeserializer.class)
 public class ManeuverID extends Asn1Integer {
 
-	public ManeuverID() {
-		super(0L, 255L);
-	}
+  public ManeuverID() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public ManeuverID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ManeuverID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ManeuverIDDeserializer extends IntegerDeserializer<ManeuverID> {
-		public ManeuverIDDeserializer() {
-			super(ManeuverID.class);
-		}
+  public static class ManeuverIDDeserializer extends IntegerDeserializer<ManeuverID> {
+    public ManeuverIDDeserializer() {
+      super(ManeuverID.class);
+    }
 
-		@Override
-		protected ManeuverID construct() {
-			return new ManeuverID();
-		}
-	}
+    @Override
+    protected ManeuverID construct() {
+      return new ManeuverID();
+    }
+  }
 }

@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LaneChargesTable extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "laneId")
-	@JsonProperty("laneId")
-	private LaneID laneId;
-	@Asn1Property(tag = 1, name = "chargesTable")
-	@JsonProperty("chargesTable")
-	private ChargesTable chargesTable;
+  @Asn1Property(tag = 0, name = "laneId")
+  @JsonProperty("laneId")
+  private LaneID laneId;
 
-	public LaneChargesTable() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "chargesTable")
+  @JsonProperty("chargesTable")
+  private ChargesTable chargesTable;
+
+  public LaneChargesTable() {
+    super(true);
+  }
 }

@@ -33,30 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AdvisorySpeedType.AdvisorySpeedTypeSerializer.class)
 @JsonDeserialize(using = AdvisorySpeedType.AdvisorySpeedTypeDeserializer.class)
 public enum AdvisorySpeedType implements Asn1Enumerated {
-	NONE(0, "none"), GREENWAVE(1, "greenwave"), ECODRIVE(2, "ecoDrive"), TRANSIT(3, "transit");
+  NONE(0, "none"),
+  GREENWAVE(1, "greenwave"),
+  ECODRIVE(2, "ecoDrive"),
+  TRANSIT(3, "transit");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AdvisorySpeedType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AdvisorySpeedType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AdvisorySpeedTypeSerializer extends EnumeratedSerializer<AdvisorySpeedType> {
-		public AdvisorySpeedTypeSerializer() {
-			super(AdvisorySpeedType.class);
-		}
-	}
+  public static class AdvisorySpeedTypeSerializer extends EnumeratedSerializer<AdvisorySpeedType> {
+    public AdvisorySpeedTypeSerializer() {
+      super(AdvisorySpeedType.class);
+    }
+  }
 
-	public static class AdvisorySpeedTypeDeserializer extends EnumeratedDeserializer<AdvisorySpeedType> {
-		public AdvisorySpeedTypeDeserializer() {
-			super(AdvisorySpeedType.class);
-		}
+  public static class AdvisorySpeedTypeDeserializer
+      extends EnumeratedDeserializer<AdvisorySpeedType> {
+    public AdvisorySpeedTypeDeserializer() {
+      super(AdvisorySpeedType.class);
+    }
 
-		@Override
-		protected AdvisorySpeedType[] listEnumValues() {
-			return AdvisorySpeedType.values();
-		}
-	}
+    @Override
+    protected AdvisorySpeedType[] listEnumValues() {
+      return AdvisorySpeedType.values();
+    }
+  }
 }

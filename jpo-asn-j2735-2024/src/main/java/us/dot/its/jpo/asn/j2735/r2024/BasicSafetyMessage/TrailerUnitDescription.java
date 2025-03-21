@@ -45,49 +45,61 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrailerUnitDescription extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "isDolly")
-	@JsonProperty("isDolly")
-	private IsDolly isDolly;
-	@Asn1Property(tag = 1, name = "width")
-	@JsonProperty("width")
-	private VehicleWidth width;
-	@Asn1Property(tag = 2, name = "length")
-	@JsonProperty("length")
-	private VehicleLength length;
-	@Asn1Property(tag = 3, name = "height", optional = true)
-	@JsonProperty("height")
-	private VehicleHeight height;
-	@Asn1Property(tag = 4, name = "mass", optional = true)
-	@JsonProperty("mass")
-	private TrailerMass mass;
-	@Asn1Property(tag = 5, name = "bumperHeights", optional = true)
-	@JsonProperty("bumperHeights")
-	private BumperHeights bumperHeights;
-	@Asn1Property(tag = 6, name = "centerOfGravity", optional = true)
-	@JsonProperty("centerOfGravity")
-	private VehicleHeight centerOfGravity;
-	@Asn1Property(tag = 7, name = "frontPivot")
-	@JsonProperty("frontPivot")
-	private PivotPointDescription frontPivot;
-	@Asn1Property(tag = 8, name = "rearPivot", optional = true)
-	@JsonProperty("rearPivot")
-	private PivotPointDescription rearPivot;
-	@Asn1Property(tag = 9, name = "rearWheelOffset", optional = true)
-	@JsonProperty("rearWheelOffset")
-	private Offset_B12 rearWheelOffset;
-	@Asn1Property(tag = 10, name = "positionOffset")
-	@JsonProperty("positionOffset")
-	private Node_XY_24b positionOffset;
-	@Asn1Property(tag = 11, name = "elevationOffset", optional = true)
-	@JsonProperty("elevationOffset")
-	private VertOffset_B07 elevationOffset;
-	@Asn1Property(tag = 12, name = "crumbData", optional = true)
-	@JsonProperty("crumbData")
-	@JacksonXmlElementWrapper(localName = "crumbData")
-	@JacksonXmlProperty(localName = "TrailerHistoryPoint")
-	private TrailerHistoryPointList crumbData;
+  @Asn1Property(tag = 0, name = "isDolly")
+  @JsonProperty("isDolly")
+  private IsDolly isDolly;
 
-	public TrailerUnitDescription() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "width")
+  @JsonProperty("width")
+  private VehicleWidth width;
+
+  @Asn1Property(tag = 2, name = "length")
+  @JsonProperty("length")
+  private VehicleLength length;
+
+  @Asn1Property(tag = 3, name = "height", optional = true)
+  @JsonProperty("height")
+  private VehicleHeight height;
+
+  @Asn1Property(tag = 4, name = "mass", optional = true)
+  @JsonProperty("mass")
+  private TrailerMass mass;
+
+  @Asn1Property(tag = 5, name = "bumperHeights", optional = true)
+  @JsonProperty("bumperHeights")
+  private BumperHeights bumperHeights;
+
+  @Asn1Property(tag = 6, name = "centerOfGravity", optional = true)
+  @JsonProperty("centerOfGravity")
+  private VehicleHeight centerOfGravity;
+
+  @Asn1Property(tag = 7, name = "frontPivot")
+  @JsonProperty("frontPivot")
+  private PivotPointDescription frontPivot;
+
+  @Asn1Property(tag = 8, name = "rearPivot", optional = true)
+  @JsonProperty("rearPivot")
+  private PivotPointDescription rearPivot;
+
+  @Asn1Property(tag = 9, name = "rearWheelOffset", optional = true)
+  @JsonProperty("rearWheelOffset")
+  private Offset_B12 rearWheelOffset;
+
+  @Asn1Property(tag = 10, name = "positionOffset")
+  @JsonProperty("positionOffset")
+  private Node_XY_24b positionOffset;
+
+  @Asn1Property(tag = 11, name = "elevationOffset", optional = true)
+  @JsonProperty("elevationOffset")
+  private VertOffset_B07 elevationOffset;
+
+  @Asn1Property(tag = 12, name = "crumbData", optional = true)
+  @JsonProperty("crumbData")
+  @JacksonXmlElementWrapper(localName = "crumbData")
+  @JacksonXmlProperty(localName = "TrailerHistoryPoint")
+  private TrailerHistoryPointList crumbData;
+
+  public TrailerUnitDescription() {
+    super(true);
+  }
 }

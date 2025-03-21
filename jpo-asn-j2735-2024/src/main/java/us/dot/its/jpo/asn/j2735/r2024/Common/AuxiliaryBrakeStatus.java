@@ -33,30 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AuxiliaryBrakeStatus.AuxiliaryBrakeStatusSerializer.class)
 @JsonDeserialize(using = AuxiliaryBrakeStatus.AuxiliaryBrakeStatusDeserializer.class)
 public enum AuxiliaryBrakeStatus implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OFF(1, "off"), ON(2, "on"), RESERVED(3, "reserved");
+  UNAVAILABLE(0, "unavailable"),
+  OFF(1, "off"),
+  ON(2, "on"),
+  RESERVED(3, "reserved");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AuxiliaryBrakeStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AuxiliaryBrakeStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AuxiliaryBrakeStatusSerializer extends EnumeratedSerializer<AuxiliaryBrakeStatus> {
-		public AuxiliaryBrakeStatusSerializer() {
-			super(AuxiliaryBrakeStatus.class);
-		}
-	}
+  public static class AuxiliaryBrakeStatusSerializer
+      extends EnumeratedSerializer<AuxiliaryBrakeStatus> {
+    public AuxiliaryBrakeStatusSerializer() {
+      super(AuxiliaryBrakeStatus.class);
+    }
+  }
 
-	public static class AuxiliaryBrakeStatusDeserializer extends EnumeratedDeserializer<AuxiliaryBrakeStatus> {
-		public AuxiliaryBrakeStatusDeserializer() {
-			super(AuxiliaryBrakeStatus.class);
-		}
+  public static class AuxiliaryBrakeStatusDeserializer
+      extends EnumeratedDeserializer<AuxiliaryBrakeStatus> {
+    public AuxiliaryBrakeStatusDeserializer() {
+      super(AuxiliaryBrakeStatus.class);
+    }
 
-		@Override
-		protected AuxiliaryBrakeStatus[] listEnumValues() {
-			return AuxiliaryBrakeStatus.values();
-		}
-	}
+    @Override
+    protected AuxiliaryBrakeStatus[] listEnumValues() {
+      return AuxiliaryBrakeStatus.values();
+    }
+  }
 }

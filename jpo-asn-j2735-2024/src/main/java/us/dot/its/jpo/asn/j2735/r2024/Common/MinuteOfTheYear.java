@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MinuteOfTheYear.MinuteOfTheYearDeserializer.class)
 public class MinuteOfTheYear extends Asn1Integer {
 
-	public MinuteOfTheYear() {
-		super(0L, 527040L);
-	}
+  public MinuteOfTheYear() {
+    super(0L, 527040L);
+  }
 
-	@JsonCreator
-	public MinuteOfTheYear(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MinuteOfTheYear(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MinuteOfTheYearDeserializer extends IntegerDeserializer<MinuteOfTheYear> {
-		public MinuteOfTheYearDeserializer() {
-			super(MinuteOfTheYear.class);
-		}
+  public static class MinuteOfTheYearDeserializer extends IntegerDeserializer<MinuteOfTheYear> {
+    public MinuteOfTheYearDeserializer() {
+      super(MinuteOfTheYear.class);
+    }
 
-		@Override
-		protected MinuteOfTheYear construct() {
-			return new MinuteOfTheYear();
-		}
-	}
+    @Override
+    protected MinuteOfTheYear construct() {
+      return new MinuteOfTheYear();
+    }
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TumData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tollUserData")
-	@JsonProperty("tollUserData")
-	private TollUserData tollUserData;
-	@Asn1Property(tag = 1, name = "tollServiceProviderData", optional = true)
-	@JsonProperty("tollServiceProviderData")
-	private TollServiceProviderData tollServiceProviderData;
+  @Asn1Property(tag = 0, name = "tollUserData")
+  @JsonProperty("tollUserData")
+  private TollUserData tollUserData;
 
-	public TumData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tollServiceProviderData", optional = true)
+  @JsonProperty("tollServiceProviderData")
+  private TollServiceProviderData tollServiceProviderData;
+
+  public TumData() {
+    super(true);
+  }
 }

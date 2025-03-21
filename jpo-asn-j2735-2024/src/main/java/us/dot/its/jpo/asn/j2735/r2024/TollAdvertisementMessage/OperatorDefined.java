@@ -38,56 +38,71 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class OperatorDefined extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "opDefCharge1", optional = true)
-	@JsonProperty("opDefCharge1")
-	private PaymentFee opDefCharge1;
-	@Asn1Property(tag = 1, name = "opDefCharge2", optional = true)
-	@JsonProperty("opDefCharge2")
-	private PaymentFee opDefCharge2;
-	@Asn1Property(tag = 2, name = "opDefCharge3", optional = true)
-	@JsonProperty("opDefCharge3")
-	private PaymentFee opDefCharge3;
-	@Asn1Property(tag = 3, name = "opDefCharge4", optional = true)
-	@JsonProperty("opDefCharge4")
-	private PaymentFee opDefCharge4;
-	@Asn1Property(tag = 4, name = "opDefCharge5", optional = true)
-	@JsonProperty("opDefCharge5")
-	private PaymentFee opDefCharge5;
-	@Asn1Property(tag = 5, name = "opDefCharge6", optional = true)
-	@JsonProperty("opDefCharge6")
-	private PaymentFee opDefCharge6;
-	@Asn1Property(tag = 6, name = "opDefCharge7", optional = true)
-	@JsonProperty("opDefCharge7")
-	private PaymentFee opDefCharge7;
-	@Asn1Property(tag = 7, name = "opDefCharge8", optional = true)
-	@JsonProperty("opDefCharge8")
-	private PaymentFee opDefCharge8;
-	@Asn1Property(tag = 8, name = "opDefCharge9", optional = true)
-	@JsonProperty("opDefCharge9")
-	private PaymentFee opDefCharge9;
-	@Asn1Property(tag = 9, name = "opDefCharge10", optional = true)
-	@JsonProperty("opDefCharge10")
-	private PaymentFee opDefCharge10;
-	@Asn1Property(tag = 10, name = "opDefCharge11", optional = true)
-	@JsonProperty("opDefCharge11")
-	private PaymentFee opDefCharge11;
-	@Asn1Property(tag = 11, name = "opDefCharge12", optional = true)
-	@JsonProperty("opDefCharge12")
-	private PaymentFee opDefCharge12;
-	@Asn1Property(tag = 12, name = "opDefCharge13", optional = true)
-	@JsonProperty("opDefCharge13")
-	private PaymentFee opDefCharge13;
-	@Asn1Property(tag = 13, name = "opDefCharge14", optional = true)
-	@JsonProperty("opDefCharge14")
-	private PaymentFee opDefCharge14;
-	@Asn1Property(tag = 14, name = "opDefCharge15", optional = true)
-	@JsonProperty("opDefCharge15")
-	private PaymentFee opDefCharge15;
-	@Asn1Property(tag = 15, name = "opDefCharge16", optional = true)
-	@JsonProperty("opDefCharge16")
-	private PaymentFee opDefCharge16;
+  @Asn1Property(tag = 0, name = "opDefCharge1", optional = true)
+  @JsonProperty("opDefCharge1")
+  private PaymentFee opDefCharge1;
 
-	public OperatorDefined() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "opDefCharge2", optional = true)
+  @JsonProperty("opDefCharge2")
+  private PaymentFee opDefCharge2;
+
+  @Asn1Property(tag = 2, name = "opDefCharge3", optional = true)
+  @JsonProperty("opDefCharge3")
+  private PaymentFee opDefCharge3;
+
+  @Asn1Property(tag = 3, name = "opDefCharge4", optional = true)
+  @JsonProperty("opDefCharge4")
+  private PaymentFee opDefCharge4;
+
+  @Asn1Property(tag = 4, name = "opDefCharge5", optional = true)
+  @JsonProperty("opDefCharge5")
+  private PaymentFee opDefCharge5;
+
+  @Asn1Property(tag = 5, name = "opDefCharge6", optional = true)
+  @JsonProperty("opDefCharge6")
+  private PaymentFee opDefCharge6;
+
+  @Asn1Property(tag = 6, name = "opDefCharge7", optional = true)
+  @JsonProperty("opDefCharge7")
+  private PaymentFee opDefCharge7;
+
+  @Asn1Property(tag = 7, name = "opDefCharge8", optional = true)
+  @JsonProperty("opDefCharge8")
+  private PaymentFee opDefCharge8;
+
+  @Asn1Property(tag = 8, name = "opDefCharge9", optional = true)
+  @JsonProperty("opDefCharge9")
+  private PaymentFee opDefCharge9;
+
+  @Asn1Property(tag = 9, name = "opDefCharge10", optional = true)
+  @JsonProperty("opDefCharge10")
+  private PaymentFee opDefCharge10;
+
+  @Asn1Property(tag = 10, name = "opDefCharge11", optional = true)
+  @JsonProperty("opDefCharge11")
+  private PaymentFee opDefCharge11;
+
+  @Asn1Property(tag = 11, name = "opDefCharge12", optional = true)
+  @JsonProperty("opDefCharge12")
+  private PaymentFee opDefCharge12;
+
+  @Asn1Property(tag = 12, name = "opDefCharge13", optional = true)
+  @JsonProperty("opDefCharge13")
+  private PaymentFee opDefCharge13;
+
+  @Asn1Property(tag = 13, name = "opDefCharge14", optional = true)
+  @JsonProperty("opDefCharge14")
+  private PaymentFee opDefCharge14;
+
+  @Asn1Property(tag = 14, name = "opDefCharge15", optional = true)
+  @JsonProperty("opDefCharge15")
+  private PaymentFee opDefCharge15;
+
+  @Asn1Property(tag = 15, name = "opDefCharge16", optional = true)
+  @JsonProperty("opDefCharge16")
+  private PaymentFee opDefCharge16;
+
+  public OperatorDefined() {
+    super(true);
+  }
 }

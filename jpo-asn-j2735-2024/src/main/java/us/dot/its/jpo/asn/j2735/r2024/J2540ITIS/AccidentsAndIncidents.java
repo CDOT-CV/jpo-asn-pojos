@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AccidentsAndIncidents.AccidentsAndIncidentsDeserializer.class)
 public class AccidentsAndIncidents extends Asn1Integer {
 
-	public AccidentsAndIncidents() {
-		super(0L, 65535L);
-	}
+  public AccidentsAndIncidents() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public AccidentsAndIncidents(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AccidentsAndIncidents(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AccidentsAndIncidentsDeserializer extends IntegerDeserializer<AccidentsAndIncidents> {
-		public AccidentsAndIncidentsDeserializer() {
-			super(AccidentsAndIncidents.class);
-		}
+  public static class AccidentsAndIncidentsDeserializer
+      extends IntegerDeserializer<AccidentsAndIncidents> {
+    public AccidentsAndIncidentsDeserializer() {
+      super(AccidentsAndIncidents.class);
+    }
 
-		@Override
-		protected AccidentsAndIncidents construct() {
-			return new AccidentsAndIncidents();
-		}
-	}
+    @Override
+    protected AccidentsAndIncidents construct() {
+      return new AccidentsAndIncidents();
+    }
+  }
 }

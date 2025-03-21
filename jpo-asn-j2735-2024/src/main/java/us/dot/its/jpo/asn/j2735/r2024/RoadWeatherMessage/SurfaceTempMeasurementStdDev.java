@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = SurfaceTempMeasurementStdDev.SurfaceTempMeasurementStdDevDeserializer.class)
+@JsonDeserialize(
+    using = SurfaceTempMeasurementStdDev.SurfaceTempMeasurementStdDevDeserializer.class)
 public class SurfaceTempMeasurementStdDev extends Asn1Integer {
 
-	public SurfaceTempMeasurementStdDev() {
-		super(1L, 16L);
-	}
+  public SurfaceTempMeasurementStdDev() {
+    super(1L, 16L);
+  }
 
-	@JsonCreator
-	public SurfaceTempMeasurementStdDev(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SurfaceTempMeasurementStdDev(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SurfaceTempMeasurementStdDevDeserializer
-			extends
-				IntegerDeserializer<SurfaceTempMeasurementStdDev> {
-		public SurfaceTempMeasurementStdDevDeserializer() {
-			super(SurfaceTempMeasurementStdDev.class);
-		}
+  public static class SurfaceTempMeasurementStdDevDeserializer
+      extends IntegerDeserializer<SurfaceTempMeasurementStdDev> {
+    public SurfaceTempMeasurementStdDevDeserializer() {
+      super(SurfaceTempMeasurementStdDev.class);
+    }
 
-		@Override
-		protected SurfaceTempMeasurementStdDev construct() {
-			return new SurfaceTempMeasurementStdDev();
-		}
-	}
+    @Override
+    protected SurfaceTempMeasurementStdDev construct() {
+      return new SurfaceTempMeasurementStdDev();
+    }
+  }
 }

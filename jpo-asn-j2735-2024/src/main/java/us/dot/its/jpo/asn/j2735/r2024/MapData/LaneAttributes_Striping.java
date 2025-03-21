@@ -26,70 +26,84 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Striping.LaneAttributes_StripingDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Striping
+            .LaneAttributes_StripingDeserializer.class)
 public class LaneAttributes_Striping extends Asn1Bitstring {
 
-	public boolean isStripeToConnectingLanesRevocableLane() {
-		return get(0);
-	}
+  public boolean isStripeToConnectingLanesRevocableLane() {
+    return get(0);
+  }
 
-	public void setStripeToConnectingLanesRevocableLane(boolean stripeToConnectingLanesRevocableLane) {
-		set(0, stripeToConnectingLanesRevocableLane);
-	}
+  public void setStripeToConnectingLanesRevocableLane(
+      boolean stripeToConnectingLanesRevocableLane) {
+    set(0, stripeToConnectingLanesRevocableLane);
+  }
 
-	public boolean isStripeDrawOnLeft() {
-		return get(1);
-	}
+  public boolean isStripeDrawOnLeft() {
+    return get(1);
+  }
 
-	public void setStripeDrawOnLeft(boolean stripeDrawOnLeft) {
-		set(1, stripeDrawOnLeft);
-	}
+  public void setStripeDrawOnLeft(boolean stripeDrawOnLeft) {
+    set(1, stripeDrawOnLeft);
+  }
 
-	public boolean isStripeDrawOnRight() {
-		return get(2);
-	}
+  public boolean isStripeDrawOnRight() {
+    return get(2);
+  }
 
-	public void setStripeDrawOnRight(boolean stripeDrawOnRight) {
-		set(2, stripeDrawOnRight);
-	}
+  public void setStripeDrawOnRight(boolean stripeDrawOnRight) {
+    set(2, stripeDrawOnRight);
+  }
 
-	public boolean isStripeToConnectingLanesLeft() {
-		return get(3);
-	}
+  public boolean isStripeToConnectingLanesLeft() {
+    return get(3);
+  }
 
-	public void setStripeToConnectingLanesLeft(boolean stripeToConnectingLanesLeft) {
-		set(3, stripeToConnectingLanesLeft);
-	}
+  public void setStripeToConnectingLanesLeft(boolean stripeToConnectingLanesLeft) {
+    set(3, stripeToConnectingLanesLeft);
+  }
 
-	public boolean isStripeToConnectingLanesRight() {
-		return get(4);
-	}
+  public boolean isStripeToConnectingLanesRight() {
+    return get(4);
+  }
 
-	public void setStripeToConnectingLanesRight(boolean stripeToConnectingLanesRight) {
-		set(4, stripeToConnectingLanesRight);
-	}
+  public void setStripeToConnectingLanesRight(boolean stripeToConnectingLanesRight) {
+    set(4, stripeToConnectingLanesRight);
+  }
 
-	public boolean isStripeToConnectingLanesAhead() {
-		return get(5);
-	}
+  public boolean isStripeToConnectingLanesAhead() {
+    return get(5);
+  }
 
-	public void setStripeToConnectingLanesAhead(boolean stripeToConnectingLanesAhead) {
-		set(5, stripeToConnectingLanesAhead);
-	}
+  public void setStripeToConnectingLanesAhead(boolean stripeToConnectingLanesAhead) {
+    set(5, stripeToConnectingLanesAhead);
+  }
 
-	public LaneAttributes_Striping() {
-		super(16, false, new String[]{"stripeToConnectingLanesRevocableLane", "stripeDrawOnLeft", "stripeDrawOnRight",
-				"stripeToConnectingLanesLeft", "stripeToConnectingLanesRight", "stripeToConnectingLanesAhead"});
-	}
+  public LaneAttributes_Striping() {
+    super(
+        16,
+        false,
+        new String[] {
+          "stripeToConnectingLanesRevocableLane",
+          "stripeDrawOnLeft",
+          "stripeDrawOnRight",
+          "stripeToConnectingLanesLeft",
+          "stripeToConnectingLanesRight",
+          "stripeToConnectingLanesAhead"
+        });
+  }
 
-	public static class LaneAttributes_StripingDeserializer extends BitStringDeserializer<LaneAttributes_Striping> {
-		public LaneAttributes_StripingDeserializer() {
-			super(LaneAttributes_Striping.class);
-		}
+  public static class LaneAttributes_StripingDeserializer
+      extends BitStringDeserializer<LaneAttributes_Striping> {
+    public LaneAttributes_StripingDeserializer() {
+      super(LaneAttributes_Striping.class);
+    }
 
-		@Override
-		protected LaneAttributes_Striping construct() {
-			return new LaneAttributes_Striping();
-		}
-	}
+    @Override
+    protected LaneAttributes_Striping construct() {
+      return new LaneAttributes_Striping();
+    }
+  }
 }

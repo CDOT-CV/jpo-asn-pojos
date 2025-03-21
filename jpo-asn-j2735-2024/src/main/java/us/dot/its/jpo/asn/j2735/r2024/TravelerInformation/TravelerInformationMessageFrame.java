@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class TravelerInformationMessageFrame extends MessageFrame<TravelerInformation> {
 
-	public TravelerInformationMessageFrame() {
-		super(31, "TravelerInformation");
-	}
+  public TravelerInformationMessageFrame() {
+    super(31, "TravelerInformation");
+  }
 
-	@Override
-	@JsonSerialize(using = TravelerInformationMessageFrameValueSerializer.class)
-	public TravelerInformation getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = TravelerInformationMessageFrameValueSerializer.class)
+  public TravelerInformation getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = TravelerInformationMessageFrameValueDeserializer.class)
-	public void setValue(TravelerInformation value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = TravelerInformationMessageFrameValueDeserializer.class)
+  public void setValue(TravelerInformation value) {
+    super.setValue(value);
+  }
 }

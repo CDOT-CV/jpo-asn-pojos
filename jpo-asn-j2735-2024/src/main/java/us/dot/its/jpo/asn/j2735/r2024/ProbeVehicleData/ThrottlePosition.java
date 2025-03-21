@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ThrottlePosition.ThrottlePositionDeserializer.class)
 public class ThrottlePosition extends Asn1Integer {
 
-	public ThrottlePosition() {
-		super(0L, 200L);
-	}
+  public ThrottlePosition() {
+    super(0L, 200L);
+  }
 
-	@JsonCreator
-	public ThrottlePosition(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ThrottlePosition(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ThrottlePositionDeserializer extends IntegerDeserializer<ThrottlePosition> {
-		public ThrottlePositionDeserializer() {
-			super(ThrottlePosition.class);
-		}
+  public static class ThrottlePositionDeserializer extends IntegerDeserializer<ThrottlePosition> {
+    public ThrottlePositionDeserializer() {
+      super(ThrottlePosition.class);
+    }
 
-		@Override
-		protected ThrottlePosition construct() {
-			return new ThrottlePosition();
-		}
-	}
+    @Override
+    protected ThrottlePosition construct() {
+      return new ThrottlePosition();
+    }
+  }
 }

@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleToLanePosition extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "stationID")
-	@JsonProperty("stationID")
-	private StationID stationID;
-	@Asn1Property(tag = 1, name = "laneID")
-	@JsonProperty("laneID")
-	private LaneID laneID;
+  @Asn1Property(tag = 0, name = "stationID")
+  @JsonProperty("stationID")
+  private StationID stationID;
 
-	public VehicleToLanePosition() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "laneID")
+  @JsonProperty("laneID")
+  private LaneID laneID;
+
+  public VehicleToLanePosition() {
+    super(true);
+  }
 }

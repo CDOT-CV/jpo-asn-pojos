@@ -33,32 +33,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = YawRateConfidence.YawRateConfidenceSerializer.class)
 @JsonDeserialize(using = YawRateConfidence.YawRateConfidenceDeserializer.class)
 public enum YawRateConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), DEGSEC_100_00(1, "degSec-100-00"), DEGSEC_010_00(2, "degSec-010-00"), DEGSEC_005_00(
-			3, "degSec-005-00"), DEGSEC_001_00(4, "degSec-001-00"), DEGSEC_000_10(5,
-					"degSec-000-10"), DEGSEC_000_05(6, "degSec-000-05"), DEGSEC_000_01(7, "degSec-000-01");
+  UNAVAILABLE(0, "unavailable"),
+  DEGSEC_100_00(1, "degSec-100-00"),
+  DEGSEC_010_00(2, "degSec-010-00"),
+  DEGSEC_005_00(3, "degSec-005-00"),
+  DEGSEC_001_00(4, "degSec-001-00"),
+  DEGSEC_000_10(5, "degSec-000-10"),
+  DEGSEC_000_05(6, "degSec-000-05"),
+  DEGSEC_000_01(7, "degSec-000-01");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private YawRateConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private YawRateConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class YawRateConfidenceSerializer extends EnumeratedSerializer<YawRateConfidence> {
-		public YawRateConfidenceSerializer() {
-			super(YawRateConfidence.class);
-		}
-	}
+  public static class YawRateConfidenceSerializer extends EnumeratedSerializer<YawRateConfidence> {
+    public YawRateConfidenceSerializer() {
+      super(YawRateConfidence.class);
+    }
+  }
 
-	public static class YawRateConfidenceDeserializer extends EnumeratedDeserializer<YawRateConfidence> {
-		public YawRateConfidenceDeserializer() {
-			super(YawRateConfidence.class);
-		}
+  public static class YawRateConfidenceDeserializer
+      extends EnumeratedDeserializer<YawRateConfidence> {
+    public YawRateConfidenceDeserializer() {
+      super(YawRateConfidence.class);
+    }
 
-		@Override
-		protected YawRateConfidence[] listEnumValues() {
-			return YawRateConfidence.values();
-		}
-	}
+    @Override
+    protected YawRateConfidence[] listEnumValues() {
+      return YawRateConfidence.values();
+    }
+  }
 }

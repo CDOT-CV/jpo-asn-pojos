@@ -36,53 +36,67 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 @JsonInclude(Include.NON_NULL)
 public class RptVehicleEvents extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "headLights")
-	@JsonProperty("headLights")
-	private Asn1Null headLights;
-	@Asn1Property(tag = 1, name = "fogLights")
-	@JsonProperty("fogLights")
-	private Asn1Null fogLights;
-	@Asn1Property(tag = 2, name = "hazardLights")
-	@JsonProperty("hazardLights")
-	private Asn1Null hazardLights;
-	@Asn1Property(tag = 3, name = "kinematicEvents")
-	@JsonProperty("kinematicEvents")
-	private RptKinematicEvents kinematicEvents;
-	@Asn1Property(tag = 4, name = "wiperStatusChange")
-	@JsonProperty("wiperStatusChange")
-	private Asn1Null wiperStatusChange;
-	@Asn1Property(tag = 5, name = "lowSpeed")
-	@JsonProperty("lowSpeed")
-	private Asn1Null lowSpeed;
-	@Asn1Property(tag = 6, name = "resumedSpeed")
-	@JsonProperty("resumedSpeed")
-	private Asn1Null resumedSpeed;
-	@Asn1Property(tag = 7, name = "vehEntrsExitsRegion")
-	@JsonProperty("vehEntrsExitsRegion")
-	private Asn1Null vehEntrsExitsRegion;
-	@Asn1Property(tag = 8, name = "emerVehDetect")
-	@JsonProperty("emerVehDetect")
-	private Asn1Null emerVehDetect;
-	@Asn1Property(tag = 9, name = "emerVehLightBar")
-	@JsonProperty("emerVehLightBar")
-	private Asn1Null emerVehLightBar;
-	@Asn1Property(tag = 10, name = "reqTspEvp")
-	@JsonProperty("reqTspEvp")
-	private Asn1Null reqTspEvp;
-	@Asn1Property(tag = 11, name = "transitVehPassCnt")
-	@JsonProperty("transitVehPassCnt")
-	private Asn1Null transitVehPassCnt;
-	@Asn1Property(tag = 12, name = "transitVehDoor")
-	@JsonProperty("transitVehDoor")
-	private Asn1Null transitVehDoor;
-	@Asn1Property(tag = 13, name = "v2xMsgRecption")
-	@JsonProperty("v2xMsgRecption")
-	private Asn1Null v2xMsgRecption;
-	@Asn1Property(tag = 14, name = "driverAlertsAndWarnings")
-	@JsonProperty("driverAlertsAndWarnings")
-	private RptDriverAlertsAndWarnings driverAlertsAndWarnings;
+  @Asn1Property(tag = 0, name = "headLights")
+  @JsonProperty("headLights")
+  private Asn1Null headLights;
 
-	public RptVehicleEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "fogLights")
+  @JsonProperty("fogLights")
+  private Asn1Null fogLights;
+
+  @Asn1Property(tag = 2, name = "hazardLights")
+  @JsonProperty("hazardLights")
+  private Asn1Null hazardLights;
+
+  @Asn1Property(tag = 3, name = "kinematicEvents")
+  @JsonProperty("kinematicEvents")
+  private RptKinematicEvents kinematicEvents;
+
+  @Asn1Property(tag = 4, name = "wiperStatusChange")
+  @JsonProperty("wiperStatusChange")
+  private Asn1Null wiperStatusChange;
+
+  @Asn1Property(tag = 5, name = "lowSpeed")
+  @JsonProperty("lowSpeed")
+  private Asn1Null lowSpeed;
+
+  @Asn1Property(tag = 6, name = "resumedSpeed")
+  @JsonProperty("resumedSpeed")
+  private Asn1Null resumedSpeed;
+
+  @Asn1Property(tag = 7, name = "vehEntrsExitsRegion")
+  @JsonProperty("vehEntrsExitsRegion")
+  private Asn1Null vehEntrsExitsRegion;
+
+  @Asn1Property(tag = 8, name = "emerVehDetect")
+  @JsonProperty("emerVehDetect")
+  private Asn1Null emerVehDetect;
+
+  @Asn1Property(tag = 9, name = "emerVehLightBar")
+  @JsonProperty("emerVehLightBar")
+  private Asn1Null emerVehLightBar;
+
+  @Asn1Property(tag = 10, name = "reqTspEvp")
+  @JsonProperty("reqTspEvp")
+  private Asn1Null reqTspEvp;
+
+  @Asn1Property(tag = 11, name = "transitVehPassCnt")
+  @JsonProperty("transitVehPassCnt")
+  private Asn1Null transitVehPassCnt;
+
+  @Asn1Property(tag = 12, name = "transitVehDoor")
+  @JsonProperty("transitVehDoor")
+  private Asn1Null transitVehDoor;
+
+  @Asn1Property(tag = 13, name = "v2xMsgRecption")
+  @JsonProperty("v2xMsgRecption")
+  private Asn1Null v2xMsgRecption;
+
+  @Asn1Property(tag = 14, name = "driverAlertsAndWarnings")
+  @JsonProperty("driverAlertsAndWarnings")
+  private RptDriverAlertsAndWarnings driverAlertsAndWarnings;
+
+  public RptVehicleEvents() {
+    super(true);
+  }
 }

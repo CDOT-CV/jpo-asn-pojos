@@ -39,53 +39,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptTransitVehData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "currNumPasngers", optional = true)
-	@JsonProperty("currNumPasngers")
-	private CurrNumPasngersInteger currNumPasngers;
-	@Asn1Property(tag = 1, name = "avgNumPasngers", optional = true)
-	@JsonProperty("avgNumPasngers")
-	private AvgNumPasngersInteger avgNumPasngers;
-	@Asn1Property(tag = 2, name = "trnstVehSchAdh", optional = true)
-	@JsonProperty("trnstVehSchAdh")
-	private TrnstVehSchAdhInteger trnstVehSchAdh;
+  @Asn1Property(tag = 0, name = "currNumPasngers", optional = true)
+  @JsonProperty("currNumPasngers")
+  private CurrNumPasngersInteger currNumPasngers;
 
-	public static class CurrNumPasngersInteger extends Asn1Integer {
-		public CurrNumPasngersInteger() {
-			super(0L, 255L);
-		}
+  @Asn1Property(tag = 1, name = "avgNumPasngers", optional = true)
+  @JsonProperty("avgNumPasngers")
+  private AvgNumPasngersInteger avgNumPasngers;
 
-		@JsonCreator
-		public CurrNumPasngersInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "trnstVehSchAdh", optional = true)
+  @JsonProperty("trnstVehSchAdh")
+  private TrnstVehSchAdhInteger trnstVehSchAdh;
 
-	public static class AvgNumPasngersInteger extends Asn1Integer {
-		public AvgNumPasngersInteger() {
-			super(0L, 255L);
-		}
+  public static class CurrNumPasngersInteger extends Asn1Integer {
+    public CurrNumPasngersInteger() {
+      super(0L, 255L);
+    }
 
-		@JsonCreator
-		public AvgNumPasngersInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public CurrNumPasngersInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class TrnstVehSchAdhInteger extends Asn1Integer {
-		public TrnstVehSchAdhInteger() {
-			super(-200L, 55L);
-		}
+  public static class AvgNumPasngersInteger extends Asn1Integer {
+    public AvgNumPasngersInteger() {
+      super(0L, 255L);
+    }
 
-		@JsonCreator
-		public TrnstVehSchAdhInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public AvgNumPasngersInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public RptTransitVehData() {
-		super(true);
-	}
+  public static class TrnstVehSchAdhInteger extends Asn1Integer {
+    public TrnstVehSchAdhInteger() {
+      super(-200L, 55L);
+    }
+
+    @JsonCreator
+    public TrnstVehSchAdhInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public RptTransitVehData() {
+    super(true);
+  }
 }

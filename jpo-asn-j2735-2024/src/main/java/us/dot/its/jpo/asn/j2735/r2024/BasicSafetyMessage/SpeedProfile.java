@@ -39,13 +39,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SpeedProfile extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "speedReports")
-	@JsonProperty("speedReports")
-	@JacksonXmlElementWrapper(localName = "speedReports")
-	@JacksonXmlProperty(localName = "SpeedProfileMeasurement")
-	private SpeedProfileMeasurementList speedReports;
+  @Asn1Property(tag = 0, name = "speedReports")
+  @JsonProperty("speedReports")
+  @JacksonXmlElementWrapper(localName = "speedReports")
+  @JacksonXmlProperty(localName = "SpeedProfileMeasurement")
+  private SpeedProfileMeasurementList speedReports;
 
-	public SpeedProfile() {
-		super(true);
-	}
+  public SpeedProfile() {
+    super(true);
+  }
 }

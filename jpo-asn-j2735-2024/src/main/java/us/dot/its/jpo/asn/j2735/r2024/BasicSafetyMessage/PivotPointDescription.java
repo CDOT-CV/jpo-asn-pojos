@@ -39,17 +39,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PivotPointDescription extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pivotOffset")
-	@JsonProperty("pivotOffset")
-	private Offset_B11 pivotOffset;
-	@Asn1Property(tag = 1, name = "pivotAngle")
-	@JsonProperty("pivotAngle")
-	private Angle pivotAngle;
-	@Asn1Property(tag = 2, name = "pivots")
-	@JsonProperty("pivots")
-	private PivotingAllowed pivots;
+  @Asn1Property(tag = 0, name = "pivotOffset")
+  @JsonProperty("pivotOffset")
+  private Offset_B11 pivotOffset;
 
-	public PivotPointDescription() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "pivotAngle")
+  @JsonProperty("pivotAngle")
+  private Angle pivotAngle;
+
+  @Asn1Property(tag = 2, name = "pivots")
+  @JsonProperty("pivots")
+  private PivotingAllowed pivots;
+
+  public PivotPointDescription() {
+    super(true);
+  }
 }

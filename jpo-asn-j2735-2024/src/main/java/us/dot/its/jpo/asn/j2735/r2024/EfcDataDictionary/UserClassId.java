@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = UserClassId.UserClassIdDeserializer.class)
 public class UserClassId extends Int1Unsigned {
 
-	public UserClassId() {
-		super();
-	}
+  public UserClassId() {
+    super();
+  }
 
-	@JsonCreator
-	public UserClassId(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public UserClassId(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class UserClassIdDeserializer extends IntegerDeserializer<UserClassId> {
-		public UserClassIdDeserializer() {
-			super(UserClassId.class);
-		}
+  public static class UserClassIdDeserializer extends IntegerDeserializer<UserClassId> {
+    public UserClassIdDeserializer() {
+      super(UserClassId.class);
+    }
 
-		@Override
-		protected UserClassId construct() {
-			return new UserClassId();
-		}
-	}
+    @Override
+    protected UserClassId construct() {
+      return new UserClassId();
+    }
+  }
 }

@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = VehicleClass.VehicleClassDeserializer.class)
 public class VehicleClass extends Int1Unsigned {
 
-	public VehicleClass() {
-		super();
-	}
+  public VehicleClass() {
+    super();
+  }
 
-	@JsonCreator
-	public VehicleClass(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VehicleClass(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VehicleClassDeserializer extends IntegerDeserializer<VehicleClass> {
-		public VehicleClassDeserializer() {
-			super(VehicleClass.class);
-		}
+  public static class VehicleClassDeserializer extends IntegerDeserializer<VehicleClass> {
+    public VehicleClassDeserializer() {
+      super(VehicleClass.class);
+    }
 
-		@Override
-		protected VehicleClass construct() {
-			return new VehicleClass();
-		}
-	}
+    @Override
+    protected VehicleClass construct() {
+      return new VehicleClass();
+    }
+  }
 }

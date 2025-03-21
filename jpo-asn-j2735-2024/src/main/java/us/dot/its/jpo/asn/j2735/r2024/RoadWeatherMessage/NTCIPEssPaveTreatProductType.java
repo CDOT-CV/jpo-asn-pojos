@@ -31,38 +31,48 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
 @JsonSerialize(using = NTCIPEssPaveTreatProductType.NTCIPEssPaveTreatProductTypeSerializer.class)
-@JsonDeserialize(using = NTCIPEssPaveTreatProductType.NTCIPEssPaveTreatProductTypeDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssPaveTreatProductType.NTCIPEssPaveTreatProductTypeDeserializer.class)
 public enum NTCIPEssPaveTreatProductType implements Asn1Enumerated {
-	OTHER(1, "other"), SAND(2, "sand"), DIRT(3, "dirt"), GRAVEL(4, "gravel"), CINDERS(5, "cinders"), WATER(6,
-			"water"), ENHANCEDSALTS(7, "enhancedSalts"), NACL(8, "naCl"), CACL(9, "caCl"), MGCL(10,
-					"mgCl"), CMA(11, "cMA"), KAC(12, "kAC"), NAFORMATE(13, "naFormate"), NAA(14, "naA");
+  OTHER(1, "other"),
+  SAND(2, "sand"),
+  DIRT(3, "dirt"),
+  GRAVEL(4, "gravel"),
+  CINDERS(5, "cinders"),
+  WATER(6, "water"),
+  ENHANCEDSALTS(7, "enhancedSalts"),
+  NACL(8, "naCl"),
+  CACL(9, "caCl"),
+  MGCL(10, "mgCl"),
+  CMA(11, "cMA"),
+  KAC(12, "kAC"),
+  NAFORMATE(13, "naFormate"),
+  NAA(14, "naA");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NTCIPEssPaveTreatProductType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NTCIPEssPaveTreatProductType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NTCIPEssPaveTreatProductTypeSerializer
-			extends
-				EnumeratedSerializer<NTCIPEssPaveTreatProductType> {
-		public NTCIPEssPaveTreatProductTypeSerializer() {
-			super(NTCIPEssPaveTreatProductType.class);
-		}
-	}
+  public static class NTCIPEssPaveTreatProductTypeSerializer
+      extends EnumeratedSerializer<NTCIPEssPaveTreatProductType> {
+    public NTCIPEssPaveTreatProductTypeSerializer() {
+      super(NTCIPEssPaveTreatProductType.class);
+    }
+  }
 
-	public static class NTCIPEssPaveTreatProductTypeDeserializer
-			extends
-				EnumeratedDeserializer<NTCIPEssPaveTreatProductType> {
-		public NTCIPEssPaveTreatProductTypeDeserializer() {
-			super(NTCIPEssPaveTreatProductType.class);
-		}
+  public static class NTCIPEssPaveTreatProductTypeDeserializer
+      extends EnumeratedDeserializer<NTCIPEssPaveTreatProductType> {
+    public NTCIPEssPaveTreatProductTypeDeserializer() {
+      super(NTCIPEssPaveTreatProductType.class);
+    }
 
-		@Override
-		protected NTCIPEssPaveTreatProductType[] listEnumValues() {
-			return NTCIPEssPaveTreatProductType.values();
-		}
-	}
+    @Override
+    protected NTCIPEssPaveTreatProductType[] listEnumValues() {
+      return NTCIPEssPaveTreatProductType.values();
+    }
+  }
 }

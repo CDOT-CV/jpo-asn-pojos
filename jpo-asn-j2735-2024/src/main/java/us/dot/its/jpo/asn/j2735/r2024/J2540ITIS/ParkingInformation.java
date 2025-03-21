@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ParkingInformation.ParkingInformationDeserializer.class)
 public class ParkingInformation extends Asn1Integer {
 
-	public ParkingInformation() {
-		super(0L, 65535L);
-	}
+  public ParkingInformation() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public ParkingInformation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ParkingInformation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ParkingInformationDeserializer extends IntegerDeserializer<ParkingInformation> {
-		public ParkingInformationDeserializer() {
-			super(ParkingInformation.class);
-		}
+  public static class ParkingInformationDeserializer
+      extends IntegerDeserializer<ParkingInformation> {
+    public ParkingInformationDeserializer() {
+      super(ParkingInformation.class);
+    }
 
-		@Override
-		protected ParkingInformation construct() {
-			return new ParkingInformation();
-		}
-	}
+    @Override
+    protected ParkingInformation construct() {
+      return new ParkingInformation();
+    }
+  }
 }

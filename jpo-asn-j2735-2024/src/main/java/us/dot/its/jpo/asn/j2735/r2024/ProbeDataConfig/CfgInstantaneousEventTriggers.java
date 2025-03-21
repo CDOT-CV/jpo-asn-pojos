@@ -35,20 +35,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class CfgInstantaneousEventTriggers extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "intervalEvents")
-	@JsonProperty("intervalEvents")
-	private CfgIntervalEvents intervalEvents;
-	@Asn1Property(tag = 1, name = "vehicleEvents")
-	@JsonProperty("vehicleEvents")
-	private CfgVehicleEvents vehicleEvents;
-	@Asn1Property(tag = 2, name = "roadwayEvents")
-	@JsonProperty("roadwayEvents")
-	private CfgRoadwayEvents roadwayEvents;
-	@Asn1Property(tag = 3, name = "commSysPerfEvents")
-	@JsonProperty("commSysPerfEvents")
-	private CfgCommSysPerfEvents commSysPerfEvents;
+  @Asn1Property(tag = 0, name = "intervalEvents")
+  @JsonProperty("intervalEvents")
+  private CfgIntervalEvents intervalEvents;
 
-	public CfgInstantaneousEventTriggers() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "vehicleEvents")
+  @JsonProperty("vehicleEvents")
+  private CfgVehicleEvents vehicleEvents;
+
+  @Asn1Property(tag = 2, name = "roadwayEvents")
+  @JsonProperty("roadwayEvents")
+  private CfgRoadwayEvents roadwayEvents;
+
+  @Asn1Property(tag = 3, name = "commSysPerfEvents")
+  @JsonProperty("commSysPerfEvents")
+  private CfgCommSysPerfEvents commSysPerfEvents;
+
+  public CfgInstantaneousEventTriggers() {
+    super(true);
+  }
 }

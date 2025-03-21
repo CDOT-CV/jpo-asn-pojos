@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = Time.TimeDeserializer.class)
 public class Time extends Int4Unsigned {
 
-	public Time() {
-		super();
-	}
+  public Time() {
+    super();
+  }
 
-	@JsonCreator
-	public Time(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Time(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TimeDeserializer extends IntegerDeserializer<Time> {
-		public TimeDeserializer() {
-			super(Time.class);
-		}
+  public static class TimeDeserializer extends IntegerDeserializer<Time> {
+    public TimeDeserializer() {
+      super(Time.class);
+    }
 
-		@Override
-		protected Time construct() {
-			return new Time();
-		}
-	}
+    @Override
+    protected Time construct() {
+      return new Time();
+    }
+  }
 }

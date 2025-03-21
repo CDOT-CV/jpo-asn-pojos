@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Grass extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private GrassType type;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private GrassType type;
 
-	public Grass() {
-		super(true);
-	}
+  public Grass() {
+    super(true);
+  }
 }

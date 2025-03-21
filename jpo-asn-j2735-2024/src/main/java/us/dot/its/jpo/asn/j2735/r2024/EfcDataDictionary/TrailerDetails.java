@@ -39,26 +39,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrailerDetails extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "trailerType")
-	@JsonProperty("trailerType")
-	private TrailerType trailerType;
-	@Asn1Property(tag = 1, name = "trailerAxles")
-	@JsonProperty("trailerAxles")
-	private TrailerAxlesInteger trailerAxles;
+  @Asn1Property(tag = 0, name = "trailerType")
+  @JsonProperty("trailerType")
+  private TrailerType trailerType;
 
-	public static class TrailerAxlesInteger extends Asn1Integer {
-		public TrailerAxlesInteger() {
-			super(0L, 7L);
-		}
+  @Asn1Property(tag = 1, name = "trailerAxles")
+  @JsonProperty("trailerAxles")
+  private TrailerAxlesInteger trailerAxles;
 
-		@JsonCreator
-		public TrailerAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class TrailerAxlesInteger extends Asn1Integer {
+    public TrailerAxlesInteger() {
+      super(0L, 7L);
+    }
 
-	public TrailerDetails() {
-		super(false);
-	}
+    @JsonCreator
+    public TrailerAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TrailerDetails() {
+    super(false);
+  }
 }

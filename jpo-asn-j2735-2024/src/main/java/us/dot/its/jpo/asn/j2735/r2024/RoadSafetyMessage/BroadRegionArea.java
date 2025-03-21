@@ -38,16 +38,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class BroadRegionArea extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "polygon")
-	@JsonProperty("polygon")
-	@JsonSerialize(using = RSMPolygon.RSMPolygonSerializer.class)
-	@JsonDeserialize(using = RSMPolygon.RSMPolygonDeserializer.class)
-	private RSMPolygon polygon;
-	@Asn1Property(tag = 1, name = "circle")
-	@JsonProperty("circle")
-	private Circle circle;
+  @Asn1Property(tag = 0, name = "polygon")
+  @JsonProperty("polygon")
+  @JsonSerialize(using = RSMPolygon.RSMPolygonSerializer.class)
+  @JsonDeserialize(using = RSMPolygon.RSMPolygonDeserializer.class)
+  private RSMPolygon polygon;
 
-	public BroadRegionArea() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "circle")
+  @JsonProperty("circle")
+  private Circle circle;
+
+  public BroadRegionArea() {
+    super(true);
+  }
 }

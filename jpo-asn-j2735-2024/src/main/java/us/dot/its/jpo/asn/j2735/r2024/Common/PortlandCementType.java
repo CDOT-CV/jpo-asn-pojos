@@ -33,30 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = PortlandCementType.PortlandCementTypeSerializer.class)
 @JsonDeserialize(using = PortlandCementType.PortlandCementTypeDeserializer.class)
 public enum PortlandCementType implements Asn1Enumerated {
-	NEWSHARP(0, "newSharp"), TRAVELED(1, "traveled"), TRAFFICPOLISHED(2, "trafficPolished");
+  NEWSHARP(0, "newSharp"),
+  TRAVELED(1, "traveled"),
+  TRAFFICPOLISHED(2, "trafficPolished");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PortlandCementType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PortlandCementType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PortlandCementTypeSerializer extends EnumeratedSerializer<PortlandCementType> {
-		public PortlandCementTypeSerializer() {
-			super(PortlandCementType.class);
-		}
-	}
+  public static class PortlandCementTypeSerializer
+      extends EnumeratedSerializer<PortlandCementType> {
+    public PortlandCementTypeSerializer() {
+      super(PortlandCementType.class);
+    }
+  }
 
-	public static class PortlandCementTypeDeserializer extends EnumeratedDeserializer<PortlandCementType> {
-		public PortlandCementTypeDeserializer() {
-			super(PortlandCementType.class);
-		}
+  public static class PortlandCementTypeDeserializer
+      extends EnumeratedDeserializer<PortlandCementType> {
+    public PortlandCementTypeDeserializer() {
+      super(PortlandCementType.class);
+    }
 
-		@Override
-		protected PortlandCementType[] listEnumValues() {
-			return PortlandCementType.values();
-		}
-	}
+    @Override
+    protected PortlandCementType[] listEnumValues() {
+      return PortlandCementType.values();
+    }
+  }
 }

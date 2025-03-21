@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RegionId.RegionIdDeserializer.class)
 public class RegionId extends Asn1Integer {
 
-	public RegionId() {
-		super(0L, 255L);
-	}
+  public RegionId() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public RegionId(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RegionId(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RegionIdDeserializer extends IntegerDeserializer<RegionId> {
-		public RegionIdDeserializer() {
-			super(RegionId.class);
-		}
+  public static class RegionIdDeserializer extends IntegerDeserializer<RegionId> {
+    public RegionIdDeserializer() {
+      super(RegionId.class);
+    }
 
-		@Override
-		protected RegionId construct() {
-			return new RegionId();
-		}
-	}
+    @Override
+    protected RegionId construct() {
+      return new RegionId();
+    }
+  }
 }

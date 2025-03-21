@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Scale_B12.Scale_B12Deserializer.class)
 public class Scale_B12 extends Asn1Integer {
 
-	public Scale_B12() {
-		super(-2048L, 2047L);
-	}
+  public Scale_B12() {
+    super(-2048L, 2047L);
+  }
 
-	@JsonCreator
-	public Scale_B12(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Scale_B12(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class Scale_B12Deserializer extends IntegerDeserializer<Scale_B12> {
-		public Scale_B12Deserializer() {
-			super(Scale_B12.class);
-		}
+  public static class Scale_B12Deserializer extends IntegerDeserializer<Scale_B12> {
+    public Scale_B12Deserializer() {
+      super(Scale_B12.class);
+    }
 
-		@Override
-		protected Scale_B12 construct() {
-			return new Scale_B12();
-		}
-	}
+    @Override
+    protected Scale_B12 construct() {
+      return new Scale_B12();
+    }
+  }
 }

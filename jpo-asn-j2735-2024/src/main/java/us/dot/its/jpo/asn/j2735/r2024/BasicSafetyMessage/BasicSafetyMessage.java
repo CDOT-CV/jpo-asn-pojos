@@ -42,35 +42,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class BasicSafetyMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "coreData")
-	@JsonProperty("coreData")
-	private BSMcoreData coreData;
-	@Asn1Property(tag = 1, name = "partII", optional = true)
-	@JsonProperty("partII")
-	@JacksonXmlElementWrapper(localName = "partII")
-	@JacksonXmlProperty(localName = "BSMpartIIExtension")
-	private SequenceOfPartII partII;
-	@Asn1Property(tag = 2, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-BasicSafetyMessage")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "coreData")
+  @JsonProperty("coreData")
+  private BSMcoreData coreData;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfPartII extends Asn1SequenceOf<BSMpartIIExtension> {
-		public SequenceOfPartII() {
-			super(BSMpartIIExtension.class, 1L, 8L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "partII", optional = true)
+  @JsonProperty("partII")
+  @JacksonXmlElementWrapper(localName = "partII")
+  @JacksonXmlProperty(localName = "BSMpartIIExtension")
+  private SequenceOfPartII partII;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_BasicSafetyMessage> {
-		public SequenceOfRegional() {
-			super(Reg_BasicSafetyMessage.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-BasicSafetyMessage")
+  private SequenceOfRegional regional;
 
-	public BasicSafetyMessage() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfPartII extends Asn1SequenceOf<BSMpartIIExtension> {
+    public SequenceOfPartII() {
+      super(BSMpartIIExtension.class, 1L, 8L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_BasicSafetyMessage> {
+    public SequenceOfRegional() {
+      super(Reg_BasicSafetyMessage.class, 1L, 4L);
+    }
+  }
+
+  public BasicSafetyMessage() {
+    super(true);
+  }
 }

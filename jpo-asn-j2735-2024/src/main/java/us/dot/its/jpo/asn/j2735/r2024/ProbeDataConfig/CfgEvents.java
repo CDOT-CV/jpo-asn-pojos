@@ -40,35 +40,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "absActivated", optional = true)
-	@JsonProperty("absActivated")
-	private Asn1Boolean absActivated;
-	@Asn1Property(tag = 1, name = "tractionCtlLoss", optional = true)
-	@JsonProperty("tractionCtlLoss")
-	private Asn1Boolean tractionCtlLoss;
-	@Asn1Property(tag = 2, name = "stabilityCtlActivated", optional = true)
-	@JsonProperty("stabilityCtlActivated")
-	private Asn1Boolean stabilityCtlActivated;
-	@Asn1Property(tag = 3, name = "hardBraking", optional = true)
-	@JsonProperty("hardBraking")
-	private Asn1Boolean hardBraking;
-	@Asn1Property(tag = 4, name = "swerveThreshold", optional = true)
-	@JsonProperty("swerveThreshold")
-	private SwerveThresholdInteger swerveThreshold;
+  @Asn1Property(tag = 0, name = "absActivated", optional = true)
+  @JsonProperty("absActivated")
+  private Asn1Boolean absActivated;
 
-	public static class SwerveThresholdInteger extends Asn1Integer {
-		public SwerveThresholdInteger() {
-			super(1L, 50L);
-		}
+  @Asn1Property(tag = 1, name = "tractionCtlLoss", optional = true)
+  @JsonProperty("tractionCtlLoss")
+  private Asn1Boolean tractionCtlLoss;
 
-		@JsonCreator
-		public SwerveThresholdInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "stabilityCtlActivated", optional = true)
+  @JsonProperty("stabilityCtlActivated")
+  private Asn1Boolean stabilityCtlActivated;
 
-	public CfgEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "hardBraking", optional = true)
+  @JsonProperty("hardBraking")
+  private Asn1Boolean hardBraking;
+
+  @Asn1Property(tag = 4, name = "swerveThreshold", optional = true)
+  @JsonProperty("swerveThreshold")
+  private SwerveThresholdInteger swerveThreshold;
+
+  public static class SwerveThresholdInteger extends Asn1Integer {
+    public SwerveThresholdInteger() {
+      super(1L, 50L);
+    }
+
+    @JsonCreator
+    public SwerveThresholdInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgEvents() {
+    super(true);
+  }
 }

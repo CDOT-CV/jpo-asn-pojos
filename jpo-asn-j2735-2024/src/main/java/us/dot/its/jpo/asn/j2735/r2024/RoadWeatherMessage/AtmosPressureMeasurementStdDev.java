@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = AtmosPressureMeasurementStdDev.AtmosPressureMeasurementStdDevDeserializer.class)
+@JsonDeserialize(
+    using = AtmosPressureMeasurementStdDev.AtmosPressureMeasurementStdDevDeserializer.class)
 public class AtmosPressureMeasurementStdDev extends Asn1Integer {
 
-	public AtmosPressureMeasurementStdDev() {
-		super(1L, 16L);
-	}
+  public AtmosPressureMeasurementStdDev() {
+    super(1L, 16L);
+  }
 
-	@JsonCreator
-	public AtmosPressureMeasurementStdDev(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AtmosPressureMeasurementStdDev(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AtmosPressureMeasurementStdDevDeserializer
-			extends
-				IntegerDeserializer<AtmosPressureMeasurementStdDev> {
-		public AtmosPressureMeasurementStdDevDeserializer() {
-			super(AtmosPressureMeasurementStdDev.class);
-		}
+  public static class AtmosPressureMeasurementStdDevDeserializer
+      extends IntegerDeserializer<AtmosPressureMeasurementStdDev> {
+    public AtmosPressureMeasurementStdDevDeserializer() {
+      super(AtmosPressureMeasurementStdDev.class);
+    }
 
-		@Override
-		protected AtmosPressureMeasurementStdDev construct() {
-			return new AtmosPressureMeasurementStdDev();
-		}
-	}
+    @Override
+    protected AtmosPressureMeasurementStdDev construct() {
+      return new AtmosPressureMeasurementStdDev();
+    }
+  }
 }

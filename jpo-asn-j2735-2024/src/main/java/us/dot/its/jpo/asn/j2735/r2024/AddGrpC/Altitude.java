@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Altitude extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "value")
-	@JsonProperty("value")
-	private AltitudeValue value;
-	@Asn1Property(tag = 1, name = "confidence")
-	@JsonProperty("confidence")
-	private AltitudeConfidence confidence;
+  @Asn1Property(tag = 0, name = "value")
+  @JsonProperty("value")
+  private AltitudeValue value;
 
-	public Altitude() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "confidence")
+  @JsonProperty("confidence")
+  private AltitudeConfidence confidence;
+
+  public Altitude() {
+    super(false);
+  }
 }

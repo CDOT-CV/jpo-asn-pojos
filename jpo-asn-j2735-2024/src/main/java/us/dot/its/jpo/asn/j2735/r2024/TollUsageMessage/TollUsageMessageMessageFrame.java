@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class TollUsageMessageMessageFrame extends MessageFrame<TollUsageMessage> {
 
-	public TollUsageMessageMessageFrame() {
-		super(38, "TollUsageMessage");
-	}
+  public TollUsageMessageMessageFrame() {
+    super(38, "TollUsageMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = TollUsageMessageMessageFrameValueSerializer.class)
-	public TollUsageMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = TollUsageMessageMessageFrameValueSerializer.class)
+  public TollUsageMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = TollUsageMessageMessageFrameValueDeserializer.class)
-	public void setValue(TollUsageMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = TollUsageMessageMessageFrameValueDeserializer.class)
+  public void setValue(TollUsageMessage value) {
+    super.setValue(value);
+  }
 }

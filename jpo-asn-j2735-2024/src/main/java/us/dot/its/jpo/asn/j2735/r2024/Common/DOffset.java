@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DOffset.DOffsetDeserializer.class)
 public class DOffset extends Asn1Integer {
 
-	public DOffset() {
-		super(-840L, 840L);
-	}
+  public DOffset() {
+    super(-840L, 840L);
+  }
 
-	@JsonCreator
-	public DOffset(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DOffset(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DOffsetDeserializer extends IntegerDeserializer<DOffset> {
-		public DOffsetDeserializer() {
-			super(DOffset.class);
-		}
+  public static class DOffsetDeserializer extends IntegerDeserializer<DOffset> {
+    public DOffsetDeserializer() {
+      super(DOffset.class);
+    }
 
-		@Override
-		protected DOffset construct() {
-			return new DOffset();
-		}
-	}
+    @Override
+    protected DOffset construct() {
+      return new DOffset();
+    }
+  }
 }

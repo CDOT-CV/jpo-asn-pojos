@@ -33,31 +33,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TransmissionState.TransmissionStateSerializer.class)
 @JsonDeserialize(using = TransmissionState.TransmissionStateDeserializer.class)
 public enum TransmissionState implements Asn1Enumerated {
-	NEUTRAL(0, "neutral"), PARK(1, "park"), FORWARDGEARS(2, "forwardGears"), REVERSEGEARS(3, "reverseGears"), RESERVED1(
-			4, "reserved1"), RESERVED2(5, "reserved2"), RESERVED3(6, "reserved3"), UNAVAILABLE(7, "unavailable");
+  NEUTRAL(0, "neutral"),
+  PARK(1, "park"),
+  FORWARDGEARS(2, "forwardGears"),
+  REVERSEGEARS(3, "reverseGears"),
+  RESERVED1(4, "reserved1"),
+  RESERVED2(5, "reserved2"),
+  RESERVED3(6, "reserved3"),
+  UNAVAILABLE(7, "unavailable");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TransmissionState(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TransmissionState(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TransmissionStateSerializer extends EnumeratedSerializer<TransmissionState> {
-		public TransmissionStateSerializer() {
-			super(TransmissionState.class);
-		}
-	}
+  public static class TransmissionStateSerializer extends EnumeratedSerializer<TransmissionState> {
+    public TransmissionStateSerializer() {
+      super(TransmissionState.class);
+    }
+  }
 
-	public static class TransmissionStateDeserializer extends EnumeratedDeserializer<TransmissionState> {
-		public TransmissionStateDeserializer() {
-			super(TransmissionState.class);
-		}
+  public static class TransmissionStateDeserializer
+      extends EnumeratedDeserializer<TransmissionState> {
+    public TransmissionStateDeserializer() {
+      super(TransmissionState.class);
+    }
 
-		@Override
-		protected TransmissionState[] listEnumValues() {
-			return TransmissionState.values();
-		}
-	}
+    @Override
+    protected TransmissionState[] listEnumValues() {
+      return TransmissionState.values();
+    }
+  }
 }

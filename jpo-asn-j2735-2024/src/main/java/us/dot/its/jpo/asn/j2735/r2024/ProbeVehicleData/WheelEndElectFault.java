@@ -33,30 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = WheelEndElectFault.WheelEndElectFaultSerializer.class)
 @JsonDeserialize(using = WheelEndElectFault.WheelEndElectFaultDeserializer.class)
 public enum WheelEndElectFault implements Asn1Enumerated {
-	ISOK(0, "isOk"), ISNOTDEFINED(1, "isNotDefined"), ISERROR(2, "isError"), ISNOTSUPPORTED(3, "isNotSupported");
+  ISOK(0, "isOk"),
+  ISNOTDEFINED(1, "isNotDefined"),
+  ISERROR(2, "isError"),
+  ISNOTSUPPORTED(3, "isNotSupported");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private WheelEndElectFault(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private WheelEndElectFault(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class WheelEndElectFaultSerializer extends EnumeratedSerializer<WheelEndElectFault> {
-		public WheelEndElectFaultSerializer() {
-			super(WheelEndElectFault.class);
-		}
-	}
+  public static class WheelEndElectFaultSerializer
+      extends EnumeratedSerializer<WheelEndElectFault> {
+    public WheelEndElectFaultSerializer() {
+      super(WheelEndElectFault.class);
+    }
+  }
 
-	public static class WheelEndElectFaultDeserializer extends EnumeratedDeserializer<WheelEndElectFault> {
-		public WheelEndElectFaultDeserializer() {
-			super(WheelEndElectFault.class);
-		}
+  public static class WheelEndElectFaultDeserializer
+      extends EnumeratedDeserializer<WheelEndElectFault> {
+    public WheelEndElectFaultDeserializer() {
+      super(WheelEndElectFault.class);
+    }
 
-		@Override
-		protected WheelEndElectFault[] listEnumValues() {
-			return WheelEndElectFault.values();
-		}
-	}
+    @Override
+    protected WheelEndElectFault[] listEnumValues() {
+      return WheelEndElectFault.values();
+    }
+  }
 }

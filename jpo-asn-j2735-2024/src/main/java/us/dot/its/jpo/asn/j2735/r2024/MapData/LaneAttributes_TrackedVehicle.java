@@ -26,64 +26,74 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_TrackedVehicle.LaneAttributes_TrackedVehicleDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_TrackedVehicle
+            .LaneAttributes_TrackedVehicleDeserializer.class)
 public class LaneAttributes_TrackedVehicle extends Asn1Bitstring {
 
-	public boolean isSpec_RevocableLane() {
-		return get(0);
-	}
+  public boolean isSpec_RevocableLane() {
+    return get(0);
+  }
 
-	public void setSpec_RevocableLane(boolean spec_RevocableLane) {
-		set(0, spec_RevocableLane);
-	}
+  public void setSpec_RevocableLane(boolean spec_RevocableLane) {
+    set(0, spec_RevocableLane);
+  }
 
-	public boolean isSpec_commuterRailRoadTrack() {
-		return get(1);
-	}
+  public boolean isSpec_commuterRailRoadTrack() {
+    return get(1);
+  }
 
-	public void setSpec_commuterRailRoadTrack(boolean spec_commuterRailRoadTrack) {
-		set(1, spec_commuterRailRoadTrack);
-	}
+  public void setSpec_commuterRailRoadTrack(boolean spec_commuterRailRoadTrack) {
+    set(1, spec_commuterRailRoadTrack);
+  }
 
-	public boolean isSpec_lightRailRoadTrack() {
-		return get(2);
-	}
+  public boolean isSpec_lightRailRoadTrack() {
+    return get(2);
+  }
 
-	public void setSpec_lightRailRoadTrack(boolean spec_lightRailRoadTrack) {
-		set(2, spec_lightRailRoadTrack);
-	}
+  public void setSpec_lightRailRoadTrack(boolean spec_lightRailRoadTrack) {
+    set(2, spec_lightRailRoadTrack);
+  }
 
-	public boolean isSpec_heavyRailRoadTrack() {
-		return get(3);
-	}
+  public boolean isSpec_heavyRailRoadTrack() {
+    return get(3);
+  }
 
-	public void setSpec_heavyRailRoadTrack(boolean spec_heavyRailRoadTrack) {
-		set(3, spec_heavyRailRoadTrack);
-	}
+  public void setSpec_heavyRailRoadTrack(boolean spec_heavyRailRoadTrack) {
+    set(3, spec_heavyRailRoadTrack);
+  }
 
-	public boolean isSpec_otherRailType() {
-		return get(4);
-	}
+  public boolean isSpec_otherRailType() {
+    return get(4);
+  }
 
-	public void setSpec_otherRailType(boolean spec_otherRailType) {
-		set(4, spec_otherRailType);
-	}
+  public void setSpec_otherRailType(boolean spec_otherRailType) {
+    set(4, spec_otherRailType);
+  }
 
-	public LaneAttributes_TrackedVehicle() {
-		super(16, false, new String[]{"spec-RevocableLane", "spec-commuterRailRoadTrack", "spec-lightRailRoadTrack",
-				"spec-heavyRailRoadTrack", "spec-otherRailType"});
-	}
+  public LaneAttributes_TrackedVehicle() {
+    super(
+        16,
+        false,
+        new String[] {
+          "spec-RevocableLane",
+          "spec-commuterRailRoadTrack",
+          "spec-lightRailRoadTrack",
+          "spec-heavyRailRoadTrack",
+          "spec-otherRailType"
+        });
+  }
 
-	public static class LaneAttributes_TrackedVehicleDeserializer
-			extends
-				BitStringDeserializer<LaneAttributes_TrackedVehicle> {
-		public LaneAttributes_TrackedVehicleDeserializer() {
-			super(LaneAttributes_TrackedVehicle.class);
-		}
+  public static class LaneAttributes_TrackedVehicleDeserializer
+      extends BitStringDeserializer<LaneAttributes_TrackedVehicle> {
+    public LaneAttributes_TrackedVehicleDeserializer() {
+      super(LaneAttributes_TrackedVehicle.class);
+    }
 
-		@Override
-		protected LaneAttributes_TrackedVehicle construct() {
-			return new LaneAttributes_TrackedVehicle();
-		}
-	}
+    @Override
+    protected LaneAttributes_TrackedVehicle construct() {
+      return new LaneAttributes_TrackedVehicle();
+    }
+  }
 }

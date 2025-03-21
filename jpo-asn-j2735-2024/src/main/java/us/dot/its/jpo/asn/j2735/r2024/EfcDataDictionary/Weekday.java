@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Weekday.WeekdayDeserializer.class)
 public class Weekday extends Asn1Integer {
 
-	public Weekday() {
-		super(0L, 7L);
-	}
+  public Weekday() {
+    super(0L, 7L);
+  }
 
-	@JsonCreator
-	public Weekday(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Weekday(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class WeekdayDeserializer extends IntegerDeserializer<Weekday> {
-		public WeekdayDeserializer() {
-			super(Weekday.class);
-		}
+  public static class WeekdayDeserializer extends IntegerDeserializer<Weekday> {
+    public WeekdayDeserializer() {
+      super(Weekday.class);
+    }
 
-		@Override
-		protected Weekday construct() {
-			return new Weekday();
-		}
-	}
+    @Override
+    protected Weekday construct() {
+      return new Weekday();
+    }
+  }
 }

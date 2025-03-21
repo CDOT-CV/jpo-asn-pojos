@@ -33,34 +33,45 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SizeValueConfidence.SizeValueConfidenceSerializer.class)
 @JsonDeserialize(using = SizeValueConfidence.SizeValueConfidenceDeserializer.class)
 public enum SizeValueConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), SIZE_100_00(1, "size-100-00"), SIZE_050_00(2, "size-050-00"), SIZE_020_00(3,
-			"size-020-00"), SIZE_010_00(4, "size-010-00"), SIZE_005_00(5, "size-005-00"), SIZE_002_00(6,
-					"size-002-00"), SIZE_001_00(7, "size-001-00"), SIZE_000_50(8, "size-000-50"), SIZE_000_20(9,
-							"size-000-20"), SIZE_000_10(10, "size-000-10"), SIZE_000_05(11,
-									"size-000-05"), SIZE_000_02(12, "size-000-02"), SIZE_000_01(13, "size-000-01");
+  UNAVAILABLE(0, "unavailable"),
+  SIZE_100_00(1, "size-100-00"),
+  SIZE_050_00(2, "size-050-00"),
+  SIZE_020_00(3, "size-020-00"),
+  SIZE_010_00(4, "size-010-00"),
+  SIZE_005_00(5, "size-005-00"),
+  SIZE_002_00(6, "size-002-00"),
+  SIZE_001_00(7, "size-001-00"),
+  SIZE_000_50(8, "size-000-50"),
+  SIZE_000_20(9, "size-000-20"),
+  SIZE_000_10(10, "size-000-10"),
+  SIZE_000_05(11, "size-000-05"),
+  SIZE_000_02(12, "size-000-02"),
+  SIZE_000_01(13, "size-000-01");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SizeValueConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SizeValueConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SizeValueConfidenceSerializer extends EnumeratedSerializer<SizeValueConfidence> {
-		public SizeValueConfidenceSerializer() {
-			super(SizeValueConfidence.class);
-		}
-	}
+  public static class SizeValueConfidenceSerializer
+      extends EnumeratedSerializer<SizeValueConfidence> {
+    public SizeValueConfidenceSerializer() {
+      super(SizeValueConfidence.class);
+    }
+  }
 
-	public static class SizeValueConfidenceDeserializer extends EnumeratedDeserializer<SizeValueConfidence> {
-		public SizeValueConfidenceDeserializer() {
-			super(SizeValueConfidence.class);
-		}
+  public static class SizeValueConfidenceDeserializer
+      extends EnumeratedDeserializer<SizeValueConfidence> {
+    public SizeValueConfidenceDeserializer() {
+      super(SizeValueConfidence.class);
+    }
 
-		@Override
-		protected SizeValueConfidence[] listEnumValues() {
-			return SizeValueConfidence.values();
-		}
-	}
+    @Override
+    protected SizeValueConfidence[] listEnumValues() {
+      return SizeValueConfidence.values();
+    }
+  }
 }

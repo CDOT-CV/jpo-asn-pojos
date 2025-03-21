@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class GenericSignage extends Asn1SequenceOf<GenericSignageSequence> {
 
-	public GenericSignage() {
-		super(GenericSignageSequence.class, 1L, 16L);
-	}
+  public GenericSignage() {
+    super(GenericSignageSequence.class, 1L, 16L);
+  }
 }

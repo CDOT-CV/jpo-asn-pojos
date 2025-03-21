@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class TestMessage13MessageFrame extends MessageFrame<TestMessage13> {
 
-	public TestMessage13MessageFrame() {
-		super(253, "TestMessage13");
-	}
+  public TestMessage13MessageFrame() {
+    super(253, "TestMessage13");
+  }
 
-	@Override
-	@JsonSerialize(using = TestMessage13MessageFrameValueSerializer.class)
-	public TestMessage13 getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = TestMessage13MessageFrameValueSerializer.class)
+  public TestMessage13 getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = TestMessage13MessageFrameValueDeserializer.class)
-	public void setValue(TestMessage13 value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = TestMessage13MessageFrameValueDeserializer.class)
+  public void setValue(TestMessage13 value) {
+    super.setValue(value);
+  }
 }

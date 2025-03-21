@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SpecialEvents.SpecialEventsDeserializer.class)
 public class SpecialEvents extends Asn1Integer {
 
-	public SpecialEvents() {
-		super(0L, 65535L);
-	}
+  public SpecialEvents() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public SpecialEvents(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SpecialEvents(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SpecialEventsDeserializer extends IntegerDeserializer<SpecialEvents> {
-		public SpecialEventsDeserializer() {
-			super(SpecialEvents.class);
-		}
+  public static class SpecialEventsDeserializer extends IntegerDeserializer<SpecialEvents> {
+    public SpecialEventsDeserializer() {
+      super(SpecialEvents.class);
+    }
 
-		@Override
-		protected SpecialEvents construct() {
-			return new SpecialEvents();
-		}
-	}
+    @Override
+    protected SpecialEvents construct() {
+      return new SpecialEvents();
+    }
+  }
 }

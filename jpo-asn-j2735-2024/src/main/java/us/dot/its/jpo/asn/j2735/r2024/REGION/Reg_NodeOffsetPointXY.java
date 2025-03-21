@@ -31,18 +31,31 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpB.NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY.class, intId = 2)})
-@JsonDeserialize(using = Reg_NodeOffsetPointXY.Reg_NodeOffsetPointXYDeserializer.class)
-abstract public class Reg_NodeOffsetPointXY<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.AddGrpB.NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY
+                  .class,
+          intId = 2)
+    })
+@JsonDeserialize(
+    using =
+        Reg_NodeOffsetPointXY
+            .Reg_NodeOffsetPointXYDeserializer.class)
+public abstract class Reg_NodeOffsetPointXY<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_NodeOffsetPointXY(int id, String name) {
-		super(id, name);
-	}
+  public Reg_NodeOffsetPointXY(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_NodeOffsetPointXYDeserializer extends ParameterizedTypeDeserializer<Reg_NodeOffsetPointXY> {
-		public Reg_NodeOffsetPointXYDeserializer() {
-			super(Reg_NodeOffsetPointXY.class);
-		}
-	}
+  public static class Reg_NodeOffsetPointXYDeserializer
+      extends ParameterizedTypeDeserializer<Reg_NodeOffsetPointXY> {
+    public Reg_NodeOffsetPointXYDeserializer() {
+      super(Reg_NodeOffsetPointXY.class);
+    }
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PaymentFee extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "paymentFeeAmount")
-	@JsonProperty("paymentFeeAmount")
-	private Int2Unsigned paymentFeeAmount;
-	@Asn1Property(tag = 1, name = "paymentFeeUnit")
-	@JsonProperty("paymentFeeUnit")
-	private PayUnit paymentFeeUnit;
+  @Asn1Property(tag = 0, name = "paymentFeeAmount")
+  @JsonProperty("paymentFeeAmount")
+  private Int2Unsigned paymentFeeAmount;
 
-	public PaymentFee() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "paymentFeeUnit")
+  @JsonProperty("paymentFeeUnit")
+  private PayUnit paymentFeeUnit;
+
+  public PaymentFee() {
+    super(false);
+  }
 }

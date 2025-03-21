@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer
-		extends
-			OpenTypeDeserializer<NodeOffsetPointXY_addGrpB> {
+    extends OpenTypeDeserializer<NodeOffsetPointXY_addGrpB> {
 
-	public NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer() {
-		super(NodeOffsetPointXY_addGrpB.class, "NodeOffsetPointXY_addGrpB");
-	}
+  public NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer() {
+    super(NodeOffsetPointXY_addGrpB.class, "NodeOffsetPointXY_addGrpB");
+  }
 }

@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Sample extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "sampleStart")
-	@JsonProperty("sampleStart")
-	private SampleStartInteger sampleStart;
-	@Asn1Property(tag = 1, name = "sampleEnd")
-	@JsonProperty("sampleEnd")
-	private SampleEndInteger sampleEnd;
+  @Asn1Property(tag = 0, name = "sampleStart")
+  @JsonProperty("sampleStart")
+  private SampleStartInteger sampleStart;
 
-	public static class SampleStartInteger extends Asn1Integer {
-		public SampleStartInteger() {
-			super(0L, 255L);
-		}
+  @Asn1Property(tag = 1, name = "sampleEnd")
+  @JsonProperty("sampleEnd")
+  private SampleEndInteger sampleEnd;
 
-		@JsonCreator
-		public SampleStartInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class SampleStartInteger extends Asn1Integer {
+    public SampleStartInteger() {
+      super(0L, 255L);
+    }
 
-	public static class SampleEndInteger extends Asn1Integer {
-		public SampleEndInteger() {
-			super(0L, 255L);
-		}
+    @JsonCreator
+    public SampleStartInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public SampleEndInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class SampleEndInteger extends Asn1Integer {
+    public SampleEndInteger() {
+      super(0L, 255L);
+    }
 
-	public Sample() {
-		super(false);
-	}
+    @JsonCreator
+    public SampleEndInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public Sample() {
+    super(false);
+  }
 }

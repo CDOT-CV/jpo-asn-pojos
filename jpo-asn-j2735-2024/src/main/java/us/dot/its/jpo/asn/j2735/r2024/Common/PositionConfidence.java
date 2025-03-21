@@ -33,32 +33,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = PositionConfidence.PositionConfidenceSerializer.class)
 @JsonDeserialize(using = PositionConfidence.PositionConfidenceDeserializer.class)
 public enum PositionConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), A500M(1, "a500m"), A200M(2, "a200m"), A100M(3, "a100m"), A50M(4, "a50m"), A20M(5,
-			"a20m"), A10M(6, "a10m"), A5M(7, "a5m"), A2M(8, "a2m"), A1M(9, "a1m"), A50CM(10, "a50cm"), A20CM(11,
-					"a20cm"), A10CM(12, "a10cm"), A5CM(13, "a5cm"), A2CM(14, "a2cm"), A1CM(15, "a1cm");
+  UNAVAILABLE(0, "unavailable"),
+  A500M(1, "a500m"),
+  A200M(2, "a200m"),
+  A100M(3, "a100m"),
+  A50M(4, "a50m"),
+  A20M(5, "a20m"),
+  A10M(6, "a10m"),
+  A5M(7, "a5m"),
+  A2M(8, "a2m"),
+  A1M(9, "a1m"),
+  A50CM(10, "a50cm"),
+  A20CM(11, "a20cm"),
+  A10CM(12, "a10cm"),
+  A5CM(13, "a5cm"),
+  A2CM(14, "a2cm"),
+  A1CM(15, "a1cm");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PositionConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PositionConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PositionConfidenceSerializer extends EnumeratedSerializer<PositionConfidence> {
-		public PositionConfidenceSerializer() {
-			super(PositionConfidence.class);
-		}
-	}
+  public static class PositionConfidenceSerializer
+      extends EnumeratedSerializer<PositionConfidence> {
+    public PositionConfidenceSerializer() {
+      super(PositionConfidence.class);
+    }
+  }
 
-	public static class PositionConfidenceDeserializer extends EnumeratedDeserializer<PositionConfidence> {
-		public PositionConfidenceDeserializer() {
-			super(PositionConfidence.class);
-		}
+  public static class PositionConfidenceDeserializer
+      extends EnumeratedDeserializer<PositionConfidence> {
+    public PositionConfidenceDeserializer() {
+      super(PositionConfidence.class);
+    }
 
-		@Override
-		protected PositionConfidence[] listEnumValues() {
-			return PositionConfidence.values();
-		}
-	}
+    @Override
+    protected PositionConfidence[] listEnumValues() {
+      return PositionConfidence.values();
+    }
+  }
 }

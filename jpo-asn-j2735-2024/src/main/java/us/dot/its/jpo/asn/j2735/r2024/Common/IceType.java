@@ -33,30 +33,30 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = IceType.IceTypeSerializer.class)
 @JsonDeserialize(using = IceType.IceTypeDeserializer.class)
 public enum IceType implements Asn1Enumerated {
-	SMOOTH(0, "smooth");
+  SMOOTH(0, "smooth");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private IceType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private IceType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class IceTypeSerializer extends EnumeratedSerializer<IceType> {
-		public IceTypeSerializer() {
-			super(IceType.class);
-		}
-	}
+  public static class IceTypeSerializer extends EnumeratedSerializer<IceType> {
+    public IceTypeSerializer() {
+      super(IceType.class);
+    }
+  }
 
-	public static class IceTypeDeserializer extends EnumeratedDeserializer<IceType> {
-		public IceTypeDeserializer() {
-			super(IceType.class);
-		}
+  public static class IceTypeDeserializer extends EnumeratedDeserializer<IceType> {
+    public IceTypeDeserializer() {
+      super(IceType.class);
+    }
 
-		@Override
-		protected IceType[] listEnumValues() {
-			return IceType.values();
-		}
-	}
+    @Override
+    protected IceType[] listEnumValues() {
+      return IceType.values();
+    }
+  }
 }

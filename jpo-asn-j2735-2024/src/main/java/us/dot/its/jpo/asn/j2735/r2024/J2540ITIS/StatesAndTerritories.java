@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = StatesAndTerritories.StatesAndTerritoriesDeserializer.class)
 public class StatesAndTerritories extends Asn1Integer {
 
-	public StatesAndTerritories() {
-		super(0L, 65535L);
-	}
+  public StatesAndTerritories() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public StatesAndTerritories(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public StatesAndTerritories(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class StatesAndTerritoriesDeserializer extends IntegerDeserializer<StatesAndTerritories> {
-		public StatesAndTerritoriesDeserializer() {
-			super(StatesAndTerritories.class);
-		}
+  public static class StatesAndTerritoriesDeserializer
+      extends IntegerDeserializer<StatesAndTerritories> {
+    public StatesAndTerritoriesDeserializer() {
+      super(StatesAndTerritories.class);
+    }
 
-		@Override
-		protected StatesAndTerritories construct() {
-			return new StatesAndTerritories();
-		}
-	}
+    @Override
+    protected StatesAndTerritories construct() {
+      return new StatesAndTerritories();
+    }
+  }
 }

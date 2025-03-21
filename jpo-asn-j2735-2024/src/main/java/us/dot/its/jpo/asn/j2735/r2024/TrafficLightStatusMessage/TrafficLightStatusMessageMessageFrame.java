@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class TrafficLightStatusMessageMessageFrame extends MessageFrame<TrafficLightStatusMessage> {
 
-	public TrafficLightStatusMessageMessageFrame() {
-		super(50, "TrafficLightStatusMessage");
-	}
+  public TrafficLightStatusMessageMessageFrame() {
+    super(50, "TrafficLightStatusMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = TrafficLightStatusMessageMessageFrameValueSerializer.class)
-	public TrafficLightStatusMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = TrafficLightStatusMessageMessageFrameValueSerializer.class)
+  public TrafficLightStatusMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = TrafficLightStatusMessageMessageFrameValueDeserializer.class)
-	public void setValue(TrafficLightStatusMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = TrafficLightStatusMessageMessageFrameValueDeserializer.class)
+  public void setValue(TrafficLightStatusMessage value) {
+    super.setValue(value);
+  }
 }

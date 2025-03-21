@@ -24,14 +24,15 @@ package us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
-public class PersonalCrossingRequestDeserializer extends BooleanDeserializer<PersonalCrossingRequest> {
+public class PersonalCrossingRequestDeserializer
+    extends BooleanDeserializer<PersonalCrossingRequest> {
 
-	public PersonalCrossingRequestDeserializer() {
-		super(PersonalCrossingRequest.class);
-	}
+  public PersonalCrossingRequestDeserializer() {
+    super(PersonalCrossingRequest.class);
+  }
 
-	@Override
-	protected PersonalCrossingRequest construct() {
-		return new PersonalCrossingRequest();
-	}
+  @Override
+  protected PersonalCrossingRequest construct() {
+    return new PersonalCrossingRequest();
+  }
 }

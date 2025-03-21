@@ -39,23 +39,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ChargesTable extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "vehTypeBased")
-	@JsonProperty("vehTypeBased")
-	@JacksonXmlElementWrapper(localName = "vehTypeBased")
-	@JacksonXmlProperty(localName = "VehTypeCharges")
-	private VehTypeChargesTable vehTypeBased;
-	@Asn1Property(tag = 1, name = "numAxlesBased")
-	@JsonProperty("numAxlesBased")
-	@JacksonXmlElementWrapper(localName = "numAxlesBased")
-	@JacksonXmlProperty(localName = "AxlesCharges")
-	private AxlesChargesTable numAxlesBased;
-	@Asn1Property(tag = 2, name = "weightBased")
-	@JsonProperty("weightBased")
-	@JsonSerialize(using = WeightChargesTable.WeightChargesTableSerializer.class)
-	@JsonDeserialize(using = WeightChargesTable.WeightChargesTableDeserializer.class)
-	private WeightChargesTable weightBased;
+  @Asn1Property(tag = 0, name = "vehTypeBased")
+  @JsonProperty("vehTypeBased")
+  @JacksonXmlElementWrapper(localName = "vehTypeBased")
+  @JacksonXmlProperty(localName = "VehTypeCharges")
+  private VehTypeChargesTable vehTypeBased;
 
-	public ChargesTable() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "numAxlesBased")
+  @JsonProperty("numAxlesBased")
+  @JacksonXmlElementWrapper(localName = "numAxlesBased")
+  @JacksonXmlProperty(localName = "AxlesCharges")
+  private AxlesChargesTable numAxlesBased;
+
+  @Asn1Property(tag = 2, name = "weightBased")
+  @JsonProperty("weightBased")
+  @JsonSerialize(using = WeightChargesTable.WeightChargesTableSerializer.class)
+  @JsonDeserialize(using = WeightChargesTable.WeightChargesTableDeserializer.class)
+  private WeightChargesTable weightBased;
+
+  public ChargesTable() {
+    super(true);
+  }
 }

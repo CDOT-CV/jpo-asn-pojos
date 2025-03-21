@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TimeUnit.TimeUnitDeserializer.class)
 public class TimeUnit extends Asn1Integer {
 
-	public TimeUnit() {
-		super(0L, 255L);
-	}
+  public TimeUnit() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public TimeUnit(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TimeUnit(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TimeUnitDeserializer extends IntegerDeserializer<TimeUnit> {
-		public TimeUnitDeserializer() {
-			super(TimeUnit.class);
-		}
+  public static class TimeUnitDeserializer extends IntegerDeserializer<TimeUnit> {
+    public TimeUnitDeserializer() {
+      super(TimeUnit.class);
+    }
 
-		@Override
-		protected TimeUnit construct() {
-			return new TimeUnit();
-		}
-	}
+    @Override
+    protected TimeUnit construct() {
+      return new TimeUnit();
+    }
+  }
 }

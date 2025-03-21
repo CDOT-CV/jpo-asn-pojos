@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RegulatorySpeedLimit extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private SpeedLimitType type;
-	@Asn1Property(tag = 1, name = "speed")
-	@JsonProperty("speed")
-	private Velocity speed;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private SpeedLimitType type;
 
-	public RegulatorySpeedLimit() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "speed")
+  @JsonProperty("speed")
+  private Velocity speed;
+
+  public RegulatorySpeedLimit() {
+    super(false);
+  }
 }

@@ -45,45 +45,52 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 @Setter
 public class VehicleIdent extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 1, name = "vin", optional = true)
-	@JsonProperty("vin")
-	private VINstring vin;
-	@Asn1Property(tag = 2, name = "ownerCode", optional = true)
-	@JsonProperty("ownerCode")
-	private IA5String ownerCode;
-	@Asn1Property(tag = 3, name = "id", optional = true)
-	@JsonProperty("id")
-	private VehicleID id;
-	@Asn1Property(tag = 4, name = "vehicleType", optional = true)
-	@JsonProperty("vehicleType")
-	private VehicleType vehicleType;
-	@Asn1Property(tag = 5, name = "vehicleClass", optional = true)
-	@JsonProperty("vehicleClass")
-	private VehicleClassChoice vehicleClass;
+  @Asn1Property(tag = 0, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class VehicleClassChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "vGroup")
-		@JsonProperty("vGroup")
-		private VehicleGroupAffected vGroup;
-		@Asn1Property(tag = 1, name = "rGroup")
-		@JsonProperty("rGroup")
-		private ResponderGroupAffected rGroup;
-		@Asn1Property(tag = 2, name = "rEquip")
-		@JsonProperty("rEquip")
-		private IncidentResponseEquipment rEquip;
+  @Asn1Property(tag = 1, name = "vin", optional = true)
+  @JsonProperty("vin")
+  private VINstring vin;
 
-		public VehicleClassChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 2, name = "ownerCode", optional = true)
+  @JsonProperty("ownerCode")
+  private IA5String ownerCode;
 
-	public VehicleIdent() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "id", optional = true)
+  @JsonProperty("id")
+  private VehicleID id;
+
+  @Asn1Property(tag = 4, name = "vehicleType", optional = true)
+  @JsonProperty("vehicleType")
+  private VehicleType vehicleType;
+
+  @Asn1Property(tag = 5, name = "vehicleClass", optional = true)
+  @JsonProperty("vehicleClass")
+  private VehicleClassChoice vehicleClass;
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class VehicleClassChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "vGroup")
+    @JsonProperty("vGroup")
+    private VehicleGroupAffected vGroup;
+
+    @Asn1Property(tag = 1, name = "rGroup")
+    @JsonProperty("rGroup")
+    private ResponderGroupAffected rGroup;
+
+    @Asn1Property(tag = 2, name = "rEquip")
+    @JsonProperty("rEquip")
+    private IncidentResponseEquipment rEquip;
+
+    public VehicleClassChoice() {
+      super(false);
+    }
+  }
+
+  public VehicleIdent() {
+    super(true);
+  }
 }

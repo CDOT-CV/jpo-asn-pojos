@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgTransitVehicleData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "currNumPasngers", optional = true)
-	@JsonProperty("currNumPasngers")
-	private Asn1Boolean currNumPasngers;
-	@Asn1Property(tag = 1, name = "avgNumPasngers", optional = true)
-	@JsonProperty("avgNumPasngers")
-	private Asn1Boolean avgNumPasngers;
-	@Asn1Property(tag = 2, name = "trnstVehSchAdh", optional = true)
-	@JsonProperty("trnstVehSchAdh")
-	private Asn1Boolean trnstVehSchAdh;
+  @Asn1Property(tag = 0, name = "currNumPasngers", optional = true)
+  @JsonProperty("currNumPasngers")
+  private Asn1Boolean currNumPasngers;
 
-	public CfgTransitVehicleData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "avgNumPasngers", optional = true)
+  @JsonProperty("avgNumPasngers")
+  private Asn1Boolean avgNumPasngers;
+
+  @Asn1Property(tag = 2, name = "trnstVehSchAdh", optional = true)
+  @JsonProperty("trnstVehSchAdh")
+  private Asn1Boolean trnstVehSchAdh;
+
+  public CfgTransitVehicleData() {
+    super(true);
+  }
 }

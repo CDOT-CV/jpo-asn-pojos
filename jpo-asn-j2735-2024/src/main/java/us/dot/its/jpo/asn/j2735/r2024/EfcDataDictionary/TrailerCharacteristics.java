@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrailerCharacteristics extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "trailerDetails")
-	@JsonProperty("trailerDetails")
-	private TrailerDetails trailerDetails;
-	@Asn1Property(tag = 1, name = "trailerMaxLadenWeight")
-	@JsonProperty("trailerMaxLadenWeight")
-	private Int2Unsigned trailerMaxLadenWeight;
-	@Asn1Property(tag = 2, name = "trailerWeightUnladen")
-	@JsonProperty("trailerWeightUnladen")
-	private Int2Unsigned trailerWeightUnladen;
+  @Asn1Property(tag = 0, name = "trailerDetails")
+  @JsonProperty("trailerDetails")
+  private TrailerDetails trailerDetails;
 
-	public TrailerCharacteristics() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "trailerMaxLadenWeight")
+  @JsonProperty("trailerMaxLadenWeight")
+  private Int2Unsigned trailerMaxLadenWeight;
+
+  @Asn1Property(tag = 2, name = "trailerWeightUnladen")
+  @JsonProperty("trailerWeightUnladen")
+  private Int2Unsigned trailerWeightUnladen;
+
+  public TrailerCharacteristics() {
+    super(false);
+  }
 }

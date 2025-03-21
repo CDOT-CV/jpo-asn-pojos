@@ -42,26 +42,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CurrentStateData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "executantVehPos", optional = true)
-	@JsonProperty("executantVehPos")
-	private PositionOffsetXYZ executantVehPos;
-	@Asn1Property(tag = 1, name = "executantVehPosConfidence", optional = true)
-	@JsonProperty("executantVehPosConfidence")
-	private PositionConfidenceSet executantVehPosConfidence;
-	@Asn1Property(tag = 2, name = "speed")
-	@JsonProperty("speed")
-	private Speed speed;
-	@Asn1Property(tag = 3, name = "heading")
-	@JsonProperty("heading")
-	private Heading heading;
-	@Asn1Property(tag = 4, name = "accel4way", optional = true)
-	@JsonProperty("accel4way")
-	private AccelerationSet4Way accel4way;
-	@Asn1Property(tag = 5, name = "size")
-	@JsonProperty("size")
-	private VehicleSize size;
+  @Asn1Property(tag = 0, name = "executantVehPos", optional = true)
+  @JsonProperty("executantVehPos")
+  private PositionOffsetXYZ executantVehPos;
 
-	public CurrentStateData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "executantVehPosConfidence", optional = true)
+  @JsonProperty("executantVehPosConfidence")
+  private PositionConfidenceSet executantVehPosConfidence;
+
+  @Asn1Property(tag = 2, name = "speed")
+  @JsonProperty("speed")
+  private Speed speed;
+
+  @Asn1Property(tag = 3, name = "heading")
+  @JsonProperty("heading")
+  private Heading heading;
+
+  @Asn1Property(tag = 4, name = "accel4way", optional = true)
+  @JsonProperty("accel4way")
+  private AccelerationSet4Way accel4way;
+
+  @Asn1Property(tag = 5, name = "size")
+  @JsonProperty("size")
+  private VehicleSize size;
+
+  public CurrentStateData() {
+    super(true);
+  }
 }

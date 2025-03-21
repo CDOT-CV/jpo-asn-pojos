@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer
-		extends
-			OpenTypeSerializer<SpecialVehicleExtensions> {
+    extends OpenTypeSerializer<SpecialVehicleExtensions> {
 
-	public SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer() {
-		super(SpecialVehicleExtensions.class, "partII-Value", "SpecialVehicleExtensions");
-	}
+  public SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer() {
+    super(SpecialVehicleExtensions.class, "partII-Value", "SpecialVehicleExtensions");
+  }
 }

@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.CommonSafetyRequest;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class CommonSafetyRequestMessageFrameValueDeserializer extends OpenTypeDeserializer<CommonSafetyRequest> {
+public class CommonSafetyRequestMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<CommonSafetyRequest> {
 
-	public CommonSafetyRequestMessageFrameValueDeserializer() {
-		super(CommonSafetyRequest.class, "CommonSafetyRequest");
-	}
+  public CommonSafetyRequestMessageFrameValueDeserializer() {
+    super(CommonSafetyRequest.class, "CommonSafetyRequest");
+  }
 }

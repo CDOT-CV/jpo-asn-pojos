@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class NodeSetLL extends Asn1SequenceOf<NodeLL> {
 
-	public NodeSetLL() {
-		super(NodeLL.class, 2L, 63L);
-	}
+  public NodeSetLL() {
+    super(NodeLL.class, 2L, 63L);
+  }
 }

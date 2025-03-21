@@ -31,28 +31,26 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class LaneDataAttributeList extends Asn1SequenceOf<LaneDataAttribute> {
 
-	public LaneDataAttributeList() {
-		super(LaneDataAttribute.class, 1L, 8L);
-	}
+  public LaneDataAttributeList() {
+    super(LaneDataAttribute.class, 1L, 8L);
+  }
 
-	public static class LaneDataAttributeListSerializer
-			extends
-				SequenceOfChoiceSerializer<LaneDataAttribute, LaneDataAttributeList> {
-		public LaneDataAttributeListSerializer() {
-			super(LaneDataAttribute.class, LaneDataAttributeList.class);
-		}
-	}
+  public static class LaneDataAttributeListSerializer
+      extends SequenceOfChoiceSerializer<LaneDataAttribute, LaneDataAttributeList> {
+    public LaneDataAttributeListSerializer() {
+      super(LaneDataAttribute.class, LaneDataAttributeList.class);
+    }
+  }
 
-	public static class LaneDataAttributeListDeserializer
-			extends
-				SequenceOfChoiceDeserializer<LaneDataAttribute, LaneDataAttributeList> {
-		public LaneDataAttributeListDeserializer() {
-			super(LaneDataAttribute.class, LaneDataAttributeList.class);
-		}
+  public static class LaneDataAttributeListDeserializer
+      extends SequenceOfChoiceDeserializer<LaneDataAttribute, LaneDataAttributeList> {
+    public LaneDataAttributeListDeserializer() {
+      super(LaneDataAttribute.class, LaneDataAttributeList.class);
+    }
 
-		@Override
-		protected LaneDataAttributeList construct() {
-			return new LaneDataAttributeList();
-		}
-	}
+    @Override
+    protected LaneDataAttributeList construct() {
+      return new LaneDataAttributeList();
+    }
+  }
 }

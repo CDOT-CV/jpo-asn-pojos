@@ -44,44 +44,52 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class RequestorDescription extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "id")
-	@JsonProperty("id")
-	private VehicleID id;
-	@Asn1Property(tag = 1, name = "type", optional = true)
-	@JsonProperty("type")
-	private RequestorType type;
-	@Asn1Property(tag = 2, name = "position", optional = true)
-	@JsonProperty("position")
-	private RequestorPositionVector position;
-	@Asn1Property(tag = 3, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 4, name = "routeName", optional = true)
-	@JsonProperty("routeName")
-	private DescriptiveName routeName;
-	@Asn1Property(tag = 5, name = "transitStatus", optional = true)
-	@JsonProperty("transitStatus")
-	private TransitVehicleStatus transitStatus;
-	@Asn1Property(tag = 6, name = "transitOccupancy", optional = true)
-	@JsonProperty("transitOccupancy")
-	private TransitVehicleOccupancy transitOccupancy;
-	@Asn1Property(tag = 7, name = "transitSchedule", optional = true)
-	@JsonProperty("transitSchedule")
-	private DeltaTime transitSchedule;
-	@Asn1Property(tag = 8, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-RequestorDescription")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "id")
+  @JsonProperty("id")
+  private VehicleID id;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RequestorDescription> {
-		public SequenceOfRegional() {
-			super(Reg_RequestorDescription.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "type", optional = true)
+  @JsonProperty("type")
+  private RequestorType type;
 
-	public RequestorDescription() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "position", optional = true)
+  @JsonProperty("position")
+  private RequestorPositionVector position;
+
+  @Asn1Property(tag = 3, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
+
+  @Asn1Property(tag = 4, name = "routeName", optional = true)
+  @JsonProperty("routeName")
+  private DescriptiveName routeName;
+
+  @Asn1Property(tag = 5, name = "transitStatus", optional = true)
+  @JsonProperty("transitStatus")
+  private TransitVehicleStatus transitStatus;
+
+  @Asn1Property(tag = 6, name = "transitOccupancy", optional = true)
+  @JsonProperty("transitOccupancy")
+  private TransitVehicleOccupancy transitOccupancy;
+
+  @Asn1Property(tag = 7, name = "transitSchedule", optional = true)
+  @JsonProperty("transitSchedule")
+  private DeltaTime transitSchedule;
+
+  @Asn1Property(tag = 8, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-RequestorDescription")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RequestorDescription> {
+    public SequenceOfRegional() {
+      super(Reg_RequestorDescription.class, 1L, 4L);
+    }
+  }
+
+  public RequestorDescription() {
+    super(true);
+  }
 }

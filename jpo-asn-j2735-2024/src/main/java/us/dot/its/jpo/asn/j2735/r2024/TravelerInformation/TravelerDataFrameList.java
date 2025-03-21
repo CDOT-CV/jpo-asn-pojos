@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class TravelerDataFrameList extends Asn1SequenceOf<TravelerDataFrame> {
 
-	public TravelerDataFrameList() {
-		super(TravelerDataFrame.class, 1L, 8L);
-	}
+  public TravelerDataFrameList() {
+    super(TravelerDataFrame.class, 1L, 8L);
+  }
 }

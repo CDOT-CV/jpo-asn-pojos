@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssTotalRadiationV4.NTCIPEssTotalRadiationV4Deserializer.class)
 public class NTCIPEssTotalRadiationV4 extends Asn1Integer {
 
-	public NTCIPEssTotalRadiationV4() {
-		super(-2048L, 2049L);
-	}
+  public NTCIPEssTotalRadiationV4() {
+    super(-2048L, 2049L);
+  }
 
-	@JsonCreator
-	public NTCIPEssTotalRadiationV4(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssTotalRadiationV4(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssTotalRadiationV4Deserializer extends IntegerDeserializer<NTCIPEssTotalRadiationV4> {
-		public NTCIPEssTotalRadiationV4Deserializer() {
-			super(NTCIPEssTotalRadiationV4.class);
-		}
+  public static class NTCIPEssTotalRadiationV4Deserializer
+      extends IntegerDeserializer<NTCIPEssTotalRadiationV4> {
+    public NTCIPEssTotalRadiationV4Deserializer() {
+      super(NTCIPEssTotalRadiationV4.class);
+    }
 
-		@Override
-		protected NTCIPEssTotalRadiationV4 construct() {
-			return new NTCIPEssTotalRadiationV4();
-		}
-	}
+    @Override
+    protected NTCIPEssTotalRadiationV4 construct() {
+      return new NTCIPEssTotalRadiationV4();
+    }
+  }
 }

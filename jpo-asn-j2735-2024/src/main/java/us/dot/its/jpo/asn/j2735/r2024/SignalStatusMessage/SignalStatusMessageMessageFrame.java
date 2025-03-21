@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class SignalStatusMessageMessageFrame extends MessageFrame<SignalStatusMessage> {
 
-	public SignalStatusMessageMessageFrame() {
-		super(30, "SignalStatusMessage");
-	}
+  public SignalStatusMessageMessageFrame() {
+    super(30, "SignalStatusMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = SignalStatusMessageMessageFrameValueSerializer.class)
-	public SignalStatusMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = SignalStatusMessageMessageFrameValueSerializer.class)
+  public SignalStatusMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = SignalStatusMessageMessageFrameValueDeserializer.class)
-	public void setValue(SignalStatusMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = SignalStatusMessageMessageFrameValueDeserializer.class)
+  public void setValue(SignalStatusMessage value) {
+    super.setValue(value);
+  }
 }

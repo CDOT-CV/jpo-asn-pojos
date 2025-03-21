@@ -26,63 +26,66 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = VerticalAccelerationThreshold.VerticalAccelerationThresholdDeserializer.class)
+@JsonDeserialize(
+    using =
+        VerticalAccelerationThreshold
+            .VerticalAccelerationThresholdDeserializer.class)
 public class VerticalAccelerationThreshold extends Asn1Bitstring {
 
-	public boolean isNotEquipped() {
-		return get(0);
-	}
+  public boolean isNotEquipped() {
+    return get(0);
+  }
 
-	public void setNotEquipped(boolean notEquipped) {
-		set(0, notEquipped);
-	}
+  public void setNotEquipped(boolean notEquipped) {
+    set(0, notEquipped);
+  }
 
-	public boolean isLeftFront() {
-		return get(1);
-	}
+  public boolean isLeftFront() {
+    return get(1);
+  }
 
-	public void setLeftFront(boolean leftFront) {
-		set(1, leftFront);
-	}
+  public void setLeftFront(boolean leftFront) {
+    set(1, leftFront);
+  }
 
-	public boolean isLeftRear() {
-		return get(2);
-	}
+  public boolean isLeftRear() {
+    return get(2);
+  }
 
-	public void setLeftRear(boolean leftRear) {
-		set(2, leftRear);
-	}
+  public void setLeftRear(boolean leftRear) {
+    set(2, leftRear);
+  }
 
-	public boolean isRightFront() {
-		return get(3);
-	}
+  public boolean isRightFront() {
+    return get(3);
+  }
 
-	public void setRightFront(boolean rightFront) {
-		set(3, rightFront);
-	}
+  public void setRightFront(boolean rightFront) {
+    set(3, rightFront);
+  }
 
-	public boolean isRightRear() {
-		return get(4);
-	}
+  public boolean isRightRear() {
+    return get(4);
+  }
 
-	public void setRightRear(boolean rightRear) {
-		set(4, rightRear);
-	}
+  public void setRightRear(boolean rightRear) {
+    set(4, rightRear);
+  }
 
-	public VerticalAccelerationThreshold() {
-		super(5, false, new String[]{"notEquipped", "leftFront", "leftRear", "rightFront", "rightRear"});
-	}
+  public VerticalAccelerationThreshold() {
+    super(
+        5, false, new String[] {"notEquipped", "leftFront", "leftRear", "rightFront", "rightRear"});
+  }
 
-	public static class VerticalAccelerationThresholdDeserializer
-			extends
-				BitStringDeserializer<VerticalAccelerationThreshold> {
-		public VerticalAccelerationThresholdDeserializer() {
-			super(VerticalAccelerationThreshold.class);
-		}
+  public static class VerticalAccelerationThresholdDeserializer
+      extends BitStringDeserializer<VerticalAccelerationThreshold> {
+    public VerticalAccelerationThresholdDeserializer() {
+      super(VerticalAccelerationThreshold.class);
+    }
 
-		@Override
-		protected VerticalAccelerationThreshold construct() {
-			return new VerticalAccelerationThreshold();
-		}
-	}
+    @Override
+    protected VerticalAccelerationThreshold construct() {
+      return new VerticalAccelerationThreshold();
+    }
+  }
 }

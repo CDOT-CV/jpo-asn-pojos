@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPEssTemperatureSensorHeight.NTCIPEssTemperatureSensorHeightDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssTemperatureSensorHeight.NTCIPEssTemperatureSensorHeightDeserializer.class)
 public class NTCIPEssTemperatureSensorHeight extends Asn1Integer {
 
-	public NTCIPEssTemperatureSensorHeight() {
-		super(-1000L, 1001L);
-	}
+  public NTCIPEssTemperatureSensorHeight() {
+    super(-1000L, 1001L);
+  }
 
-	@JsonCreator
-	public NTCIPEssTemperatureSensorHeight(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssTemperatureSensorHeight(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssTemperatureSensorHeightDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssTemperatureSensorHeight> {
-		public NTCIPEssTemperatureSensorHeightDeserializer() {
-			super(NTCIPEssTemperatureSensorHeight.class);
-		}
+  public static class NTCIPEssTemperatureSensorHeightDeserializer
+      extends IntegerDeserializer<NTCIPEssTemperatureSensorHeight> {
+    public NTCIPEssTemperatureSensorHeightDeserializer() {
+      super(NTCIPEssTemperatureSensorHeight.class);
+    }
 
-		@Override
-		protected NTCIPEssTemperatureSensorHeight construct() {
-			return new NTCIPEssTemperatureSensorHeight();
-		}
-	}
+    @Override
+    protected NTCIPEssTemperatureSensorHeight construct() {
+      return new NTCIPEssTemperatureSensorHeight();
+    }
+  }
 }

@@ -37,32 +37,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class VerticalOffset extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "offset1")
-	@JsonProperty("offset1")
-	private VertOffset_B07 offset1;
-	@Asn1Property(tag = 1, name = "offset2")
-	@JsonProperty("offset2")
-	private VertOffset_B08 offset2;
-	@Asn1Property(tag = 2, name = "offset3")
-	@JsonProperty("offset3")
-	private VertOffset_B09 offset3;
-	@Asn1Property(tag = 3, name = "offset4")
-	@JsonProperty("offset4")
-	private VertOffset_B10 offset4;
-	@Asn1Property(tag = 4, name = "offset5")
-	@JsonProperty("offset5")
-	private VertOffset_B11 offset5;
-	@Asn1Property(tag = 5, name = "offset6")
-	@JsonProperty("offset6")
-	private VertOffset_B12 offset6;
-	@Asn1Property(tag = 6, name = "elevation")
-	@JsonProperty("elevation")
-	private Elevation elevation;
-	@Asn1Property(tag = 7, name = "regional")
-	@JsonProperty("regional")
-	private Reg_VerticalOffset regional;
+  @Asn1Property(tag = 0, name = "offset1")
+  @JsonProperty("offset1")
+  private VertOffset_B07 offset1;
 
-	public VerticalOffset() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "offset2")
+  @JsonProperty("offset2")
+  private VertOffset_B08 offset2;
+
+  @Asn1Property(tag = 2, name = "offset3")
+  @JsonProperty("offset3")
+  private VertOffset_B09 offset3;
+
+  @Asn1Property(tag = 3, name = "offset4")
+  @JsonProperty("offset4")
+  private VertOffset_B10 offset4;
+
+  @Asn1Property(tag = 4, name = "offset5")
+  @JsonProperty("offset5")
+  private VertOffset_B11 offset5;
+
+  @Asn1Property(tag = 5, name = "offset6")
+  @JsonProperty("offset6")
+  private VertOffset_B12 offset6;
+
+  @Asn1Property(tag = 6, name = "elevation")
+  @JsonProperty("elevation")
+  private Elevation elevation;
+
+  @Asn1Property(tag = 7, name = "regional")
+  @JsonProperty("regional")
+  private Reg_VerticalOffset regional;
+
+  public VerticalOffset() {
+    super(false);
+  }
 }

@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_IntersectionState;
 
 @JsonRootName("Reg_IntersectionState")
 @JsonDeserialize(using = None.class)
-public class IntersectionState_addGrpCReg_IntersectionState extends Reg_IntersectionState<IntersectionState_addGrpC> {
+public class IntersectionState_addGrpCReg_IntersectionState
+    extends Reg_IntersectionState<IntersectionState_addGrpC> {
 
-	public IntersectionState_addGrpCReg_IntersectionState() {
-		super(3, "IntersectionState_addGrpC");
-	}
+  public IntersectionState_addGrpCReg_IntersectionState() {
+    super(3, "IntersectionState_addGrpC");
+  }
 
-	@Override
-	@JsonSerialize(using = IntersectionState_addGrpCReg_IntersectionStateValueSerializer.class)
-	public IntersectionState_addGrpC getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = IntersectionState_addGrpCReg_IntersectionStateValueSerializer.class)
+  public IntersectionState_addGrpC getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = IntersectionState_addGrpCReg_IntersectionStateValueDeserializer.class)
-	public void setRegExtValue(IntersectionState_addGrpC value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = IntersectionState_addGrpCReg_IntersectionStateValueDeserializer.class)
+  public void setRegExtValue(IntersectionState_addGrpC value) {
+    super.setRegExtValue(value);
+  }
 }

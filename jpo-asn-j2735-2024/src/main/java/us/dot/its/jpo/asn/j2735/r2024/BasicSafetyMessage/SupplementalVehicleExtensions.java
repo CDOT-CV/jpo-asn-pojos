@@ -46,58 +46,70 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class SupplementalVehicleExtensions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "classification", optional = true)
-	@JsonProperty("classification")
-	private BasicVehicleClass classification;
-	@Asn1Property(tag = 1, name = "classDetails", optional = true)
-	@JsonProperty("classDetails")
-	private VehicleClassification classDetails;
-	@Asn1Property(tag = 2, name = "vehicleData", optional = true)
-	@JsonProperty("vehicleData")
-	private VehicleData vehicleData;
-	@Asn1Property(tag = 3, name = "doNotUse1", optional = true)
-	@JsonProperty("doNotUse1")
-	private WeatherReport doNotUse1;
-	@Asn1Property(tag = 4, name = "doNotUse2", optional = true)
-	@JsonProperty("doNotUse2")
-	private WeatherProbe doNotUse2;
-	@Asn1Property(tag = 5, name = "doNotUse3", optional = true)
-	@JsonProperty("doNotUse3")
-	private ObstacleDetection doNotUse3;
-	@Asn1Property(tag = 6, name = "status", optional = true)
-	@JsonProperty("status")
-	private DisabledVehicle status;
-	@Asn1Property(tag = 7, name = "doNotUse4", optional = true)
-	@JsonProperty("doNotUse4")
-	private SpeedProfile doNotUse4;
-	@Asn1Property(tag = 8, name = "doNotUse5", optional = true)
-	@JsonProperty("doNotUse5")
-	private RTCMPackage doNotUse5;
-	@Asn1Property(tag = 9, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-SupplementalVehicleExtensions")
-	private SequenceOfRegional regional;
-	@Asn1Property(tag = 10, name = "fhwaVehicleClass", extension = true)
-	@JsonProperty("fhwaVehicleClass")
-	private RptVehicleClass fhwaVehicleClass;
-	@Asn1Property(tag = 11, name = "trailers", optional = true, extension = true)
-	@JsonProperty("trailers")
-	@JacksonXmlElementWrapper(localName = "trailers")
-	@JacksonXmlProperty(localName = "TrailerUnitDescJ2945Slash1B")
-	private TrailersJ2945Slash1B trailers;
-	@Asn1Property(tag = 12, name = "schoolBus", optional = true, extension = true)
-	@JsonProperty("schoolBus")
-	private SchoolBusJ2945Slash1C schoolBus;
+  @Asn1Property(tag = 0, name = "classification", optional = true)
+  @JsonProperty("classification")
+  private BasicVehicleClass classification;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SupplementalVehicleExtensions> {
-		public SequenceOfRegional() {
-			super(Reg_SupplementalVehicleExtensions.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "classDetails", optional = true)
+  @JsonProperty("classDetails")
+  private VehicleClassification classDetails;
 
-	public SupplementalVehicleExtensions() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "vehicleData", optional = true)
+  @JsonProperty("vehicleData")
+  private VehicleData vehicleData;
+
+  @Asn1Property(tag = 3, name = "doNotUse1", optional = true)
+  @JsonProperty("doNotUse1")
+  private WeatherReport doNotUse1;
+
+  @Asn1Property(tag = 4, name = "doNotUse2", optional = true)
+  @JsonProperty("doNotUse2")
+  private WeatherProbe doNotUse2;
+
+  @Asn1Property(tag = 5, name = "doNotUse3", optional = true)
+  @JsonProperty("doNotUse3")
+  private ObstacleDetection doNotUse3;
+
+  @Asn1Property(tag = 6, name = "status", optional = true)
+  @JsonProperty("status")
+  private DisabledVehicle status;
+
+  @Asn1Property(tag = 7, name = "doNotUse4", optional = true)
+  @JsonProperty("doNotUse4")
+  private SpeedProfile doNotUse4;
+
+  @Asn1Property(tag = 8, name = "doNotUse5", optional = true)
+  @JsonProperty("doNotUse5")
+  private RTCMPackage doNotUse5;
+
+  @Asn1Property(tag = 9, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-SupplementalVehicleExtensions")
+  private SequenceOfRegional regional;
+
+  @Asn1Property(tag = 10, name = "fhwaVehicleClass", extension = true)
+  @JsonProperty("fhwaVehicleClass")
+  private RptVehicleClass fhwaVehicleClass;
+
+  @Asn1Property(tag = 11, name = "trailers", optional = true, extension = true)
+  @JsonProperty("trailers")
+  @JacksonXmlElementWrapper(localName = "trailers")
+  @JacksonXmlProperty(localName = "TrailerUnitDescJ2945Slash1B")
+  private TrailersJ2945Slash1B trailers;
+
+  @Asn1Property(tag = 12, name = "schoolBus", optional = true, extension = true)
+  @JsonProperty("schoolBus")
+  private SchoolBusJ2945Slash1C schoolBus;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SupplementalVehicleExtensions> {
+    public SequenceOfRegional() {
+      super(Reg_SupplementalVehicleExtensions.class, 1L, 4L);
+    }
+  }
+
+  public SupplementalVehicleExtensions() {
+    super(true);
+  }
 }

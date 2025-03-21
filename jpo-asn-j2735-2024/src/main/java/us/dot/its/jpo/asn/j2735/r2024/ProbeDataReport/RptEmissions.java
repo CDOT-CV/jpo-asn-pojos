@@ -39,143 +39,151 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptEmissions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "hydrocarbons", optional = true)
-	@JsonProperty("hydrocarbons")
-	private HydrocarbonsInteger hydrocarbons;
-	@Asn1Property(tag = 1, name = "co", optional = true)
-	@JsonProperty("co")
-	private CoInteger co;
-	@Asn1Property(tag = 2, name = "co2", optional = true)
-	@JsonProperty("co2")
-	private Co2Integer co2;
-	@Asn1Property(tag = 3, name = "no", optional = true)
-	@JsonProperty("no")
-	private NoInteger no;
-	@Asn1Property(tag = 4, name = "no2", optional = true)
-	@JsonProperty("no2")
-	private No2Integer no2;
-	@Asn1Property(tag = 5, name = "so2", optional = true)
-	@JsonProperty("so2")
-	private So2Integer so2;
-	@Asn1Property(tag = 6, name = "o3", optional = true)
-	@JsonProperty("o3")
-	private O3Integer o3;
-	@Asn1Property(tag = 7, name = "pm10", optional = true)
-	@JsonProperty("pm10")
-	private Pm10Integer pm10;
-	@Asn1Property(tag = 8, name = "pm25", optional = true)
-	@JsonProperty("pm25")
-	private Pm25Integer pm25;
+  @Asn1Property(tag = 0, name = "hydrocarbons", optional = true)
+  @JsonProperty("hydrocarbons")
+  private HydrocarbonsInteger hydrocarbons;
 
-	public static class HydrocarbonsInteger extends Asn1Integer {
-		public HydrocarbonsInteger() {
-			super(1L, 1000L);
-		}
+  @Asn1Property(tag = 1, name = "co", optional = true)
+  @JsonProperty("co")
+  private CoInteger co;
 
-		@JsonCreator
-		public HydrocarbonsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "co2", optional = true)
+  @JsonProperty("co2")
+  private Co2Integer co2;
 
-	public static class CoInteger extends Asn1Integer {
-		public CoInteger() {
-			super(1L, 1000L);
-		}
+  @Asn1Property(tag = 3, name = "no", optional = true)
+  @JsonProperty("no")
+  private NoInteger no;
 
-		@JsonCreator
-		public CoInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "no2", optional = true)
+  @JsonProperty("no2")
+  private No2Integer no2;
 
-	public static class Co2Integer extends Asn1Integer {
-		public Co2Integer() {
-			super(1L, 1000L);
-		}
+  @Asn1Property(tag = 5, name = "so2", optional = true)
+  @JsonProperty("so2")
+  private So2Integer so2;
 
-		@JsonCreator
-		public Co2Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 6, name = "o3", optional = true)
+  @JsonProperty("o3")
+  private O3Integer o3;
 
-	public static class NoInteger extends Asn1Integer {
-		public NoInteger() {
-			super(1L, 1000L);
-		}
+  @Asn1Property(tag = 7, name = "pm10", optional = true)
+  @JsonProperty("pm10")
+  private Pm10Integer pm10;
 
-		@JsonCreator
-		public NoInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 8, name = "pm25", optional = true)
+  @JsonProperty("pm25")
+  private Pm25Integer pm25;
 
-	public static class No2Integer extends Asn1Integer {
-		public No2Integer() {
-			super(1L, 1000L);
-		}
+  public static class HydrocarbonsInteger extends Asn1Integer {
+    public HydrocarbonsInteger() {
+      super(1L, 1000L);
+    }
 
-		@JsonCreator
-		public No2Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public HydrocarbonsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class So2Integer extends Asn1Integer {
-		public So2Integer() {
-			super(1L, 1000L);
-		}
+  public static class CoInteger extends Asn1Integer {
+    public CoInteger() {
+      super(1L, 1000L);
+    }
 
-		@JsonCreator
-		public So2Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public CoInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class O3Integer extends Asn1Integer {
-		public O3Integer() {
-			super(1L, 1000L);
-		}
+  public static class Co2Integer extends Asn1Integer {
+    public Co2Integer() {
+      super(1L, 1000L);
+    }
 
-		@JsonCreator
-		public O3Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public Co2Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class Pm10Integer extends Asn1Integer {
-		public Pm10Integer() {
-			super(1L, 1000L);
-		}
+  public static class NoInteger extends Asn1Integer {
+    public NoInteger() {
+      super(1L, 1000L);
+    }
 
-		@JsonCreator
-		public Pm10Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public NoInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class Pm25Integer extends Asn1Integer {
-		public Pm25Integer() {
-			super(1L, 1000L);
-		}
+  public static class No2Integer extends Asn1Integer {
+    public No2Integer() {
+      super(1L, 1000L);
+    }
 
-		@JsonCreator
-		public Pm25Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public No2Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public RptEmissions() {
-		super(true);
-	}
+  public static class So2Integer extends Asn1Integer {
+    public So2Integer() {
+      super(1L, 1000L);
+    }
+
+    @JsonCreator
+    public So2Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class O3Integer extends Asn1Integer {
+    public O3Integer() {
+      super(1L, 1000L);
+    }
+
+    @JsonCreator
+    public O3Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class Pm10Integer extends Asn1Integer {
+    public Pm10Integer() {
+      super(1L, 1000L);
+    }
+
+    @JsonCreator
+    public Pm10Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class Pm25Integer extends Asn1Integer {
+    public Pm25Integer() {
+      super(1L, 1000L);
+    }
+
+    @JsonCreator
+    public Pm25Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public RptEmissions() {
+    super(true);
+  }
 }

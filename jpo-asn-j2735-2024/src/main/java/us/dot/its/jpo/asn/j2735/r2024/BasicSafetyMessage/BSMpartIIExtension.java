@@ -30,20 +30,38 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "partII-Id", idType = IdType.INTEGER, valueProperty = "partII-Value", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSafetyExtensionsBSMpartIIExtension.class, intId = 0),
-		@Asn1ParameterizedTypes.Type(value = SpecialVehicleExtensionsBSMpartIIExtension.class, intId = 1),
-		@Asn1ParameterizedTypes.Type(value = SupplementalVehicleExtensionsBSMpartIIExtension.class, intId = 2)})
-@JsonDeserialize(using = BSMpartIIExtension.BSMpartIIExtensionDeserializer.class)
-abstract public class BSMpartIIExtension<TValue> extends PartIIcontent<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "partII-Id",
+    idType = IdType.INTEGER,
+    valueProperty = "partII-Value",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSafetyExtensionsBSMpartIIExtension.class,
+          intId = 0),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              SpecialVehicleExtensionsBSMpartIIExtension.class,
+          intId = 1),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              SupplementalVehicleExtensionsBSMpartIIExtension.class,
+          intId = 2)
+    })
+@JsonDeserialize(
+    using =
+        BSMpartIIExtension
+            .BSMpartIIExtensionDeserializer.class)
+public abstract class BSMpartIIExtension<TValue> extends PartIIcontent<TValue> {
 
-	public BSMpartIIExtension(int id, String name) {
-		super(id, name);
-	}
+  public BSMpartIIExtension(int id, String name) {
+    super(id, name);
+  }
 
-	public static class BSMpartIIExtensionDeserializer extends ParameterizedTypeDeserializer<BSMpartIIExtension> {
-		public BSMpartIIExtensionDeserializer() {
-			super(BSMpartIIExtension.class);
-		}
-	}
+  public static class BSMpartIIExtensionDeserializer
+      extends ParameterizedTypeDeserializer<BSMpartIIExtension> {
+    public BSMpartIIExtensionDeserializer() {
+      super(BSMpartIIExtension.class);
+    }
+  }
 }

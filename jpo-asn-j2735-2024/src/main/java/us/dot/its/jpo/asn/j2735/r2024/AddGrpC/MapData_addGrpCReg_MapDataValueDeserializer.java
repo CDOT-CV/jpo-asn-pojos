@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpC;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class MapData_addGrpCReg_MapDataValueDeserializer extends OpenTypeDeserializer<MapData_addGrpC> {
+public class MapData_addGrpCReg_MapDataValueDeserializer
+    extends OpenTypeDeserializer<MapData_addGrpC> {
 
-	public MapData_addGrpCReg_MapDataValueDeserializer() {
-		super(MapData_addGrpC.class, "MapData_addGrpC");
-	}
+  public MapData_addGrpCReg_MapDataValueDeserializer() {
+    super(MapData_addGrpC.class, "MapData_addGrpC");
+  }
 }

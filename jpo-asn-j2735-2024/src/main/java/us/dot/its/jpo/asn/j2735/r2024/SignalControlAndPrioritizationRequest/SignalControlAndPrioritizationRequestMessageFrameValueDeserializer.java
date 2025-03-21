@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationRequest;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class SignalControlAndPrioritizationRequestMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<SignalControlAndPrioritizationRequest> {
+    extends OpenTypeDeserializer<SignalControlAndPrioritizationRequest> {
 
-	public SignalControlAndPrioritizationRequestMessageFrameValueDeserializer() {
-		super(SignalControlAndPrioritizationRequest.class, "SignalControlAndPrioritizationRequest");
-	}
+  public SignalControlAndPrioritizationRequestMessageFrameValueDeserializer() {
+    super(SignalControlAndPrioritizationRequest.class, "SignalControlAndPrioritizationRequest");
+  }
 }

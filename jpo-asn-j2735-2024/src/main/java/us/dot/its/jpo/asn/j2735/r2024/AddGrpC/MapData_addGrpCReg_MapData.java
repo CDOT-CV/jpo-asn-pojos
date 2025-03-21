@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MapData;
 @JsonDeserialize(using = None.class)
 public class MapData_addGrpCReg_MapData extends Reg_MapData<MapData_addGrpC> {
 
-	public MapData_addGrpCReg_MapData() {
-		super(3, "MapData_addGrpC");
-	}
+  public MapData_addGrpCReg_MapData() {
+    super(3, "MapData_addGrpC");
+  }
 
-	@Override
-	@JsonSerialize(using = MapData_addGrpCReg_MapDataValueSerializer.class)
-	public MapData_addGrpC getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = MapData_addGrpCReg_MapDataValueSerializer.class)
+  public MapData_addGrpC getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = MapData_addGrpCReg_MapDataValueDeserializer.class)
-	public void setRegExtValue(MapData_addGrpC value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = MapData_addGrpCReg_MapDataValueDeserializer.class)
+  public void setRegExtValue(MapData_addGrpC value) {
+    super.setRegExtValue(value);
+  }
 }

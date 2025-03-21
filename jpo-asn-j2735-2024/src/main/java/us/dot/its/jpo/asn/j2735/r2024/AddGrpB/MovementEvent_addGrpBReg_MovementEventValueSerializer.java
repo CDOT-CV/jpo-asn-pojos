@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class MovementEvent_addGrpBReg_MovementEventValueSerializer extends OpenTypeSerializer<MovementEvent_addGrpB> {
+public class MovementEvent_addGrpBReg_MovementEventValueSerializer
+    extends OpenTypeSerializer<MovementEvent_addGrpB> {
 
-	public MovementEvent_addGrpBReg_MovementEventValueSerializer() {
-		super(MovementEvent_addGrpB.class, "regExtValue", "MovementEvent_addGrpB");
-	}
+  public MovementEvent_addGrpBReg_MovementEventValueSerializer() {
+    super(MovementEvent_addGrpB.class, "regExtValue", "MovementEvent_addGrpB");
+  }
 }

@@ -38,11 +38,11 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 @Setter
 public class VisualLink extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "urlLink", optional = true)
-	@JsonProperty("urlLink")
-	private IA5String urlLink;
+  @Asn1Property(tag = 0, name = "urlLink", optional = true)
+  @JsonProperty("urlLink")
+  private IA5String urlLink;
 
-	public VisualLink() {
-		super(true);
-	}
+  public VisualLink() {
+    super(true);
+  }
 }

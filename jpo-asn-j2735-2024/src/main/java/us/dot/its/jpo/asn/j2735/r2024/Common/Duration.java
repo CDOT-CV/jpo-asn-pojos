@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Duration.DurationDeserializer.class)
 public class Duration extends Asn1Integer {
 
-	public Duration() {
-		super(0L, 3600L);
-	}
+  public Duration() {
+    super(0L, 3600L);
+  }
 
-	@JsonCreator
-	public Duration(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Duration(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DurationDeserializer extends IntegerDeserializer<Duration> {
-		public DurationDeserializer() {
-			super(Duration.class);
-		}
+  public static class DurationDeserializer extends IntegerDeserializer<Duration> {
+    public DurationDeserializer() {
+      super(Duration.class);
+    }
 
-		@Override
-		protected Duration construct() {
-			return new Duration();
-		}
-	}
+    @Override
+    protected Duration construct() {
+      return new Duration();
+    }
+  }
 }

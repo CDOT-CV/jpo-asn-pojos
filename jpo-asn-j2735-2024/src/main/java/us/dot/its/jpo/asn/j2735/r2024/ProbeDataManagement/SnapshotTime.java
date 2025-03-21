@@ -38,20 +38,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SnapshotTime extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "speed1")
-	@JsonProperty("speed1")
-	private GrossSpeed speed1;
-	@Asn1Property(tag = 1, name = "time1")
-	@JsonProperty("time1")
-	private SecondOfTime time1;
-	@Asn1Property(tag = 2, name = "speed2")
-	@JsonProperty("speed2")
-	private GrossSpeed speed2;
-	@Asn1Property(tag = 3, name = "time2")
-	@JsonProperty("time2")
-	private SecondOfTime time2;
+  @Asn1Property(tag = 0, name = "speed1")
+  @JsonProperty("speed1")
+  private GrossSpeed speed1;
 
-	public SnapshotTime() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "time1")
+  @JsonProperty("time1")
+  private SecondOfTime time1;
+
+  @Asn1Property(tag = 2, name = "speed2")
+  @JsonProperty("speed2")
+  private GrossSpeed speed2;
+
+  @Asn1Property(tag = 3, name = "time2")
+  @JsonProperty("time2")
+  private SecondOfTime time2;
+
+  public SnapshotTime() {
+    super(false);
+  }
 }

@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class SignalStatusPackageList extends Asn1SequenceOf<SignalStatusPackage> {
 
-	public SignalStatusPackageList() {
-		super(SignalStatusPackage.class, 1L, 32L);
-	}
+  public SignalStatusPackageList() {
+    super(SignalStatusPackage.class, 1L, 32L);
+  }
 }

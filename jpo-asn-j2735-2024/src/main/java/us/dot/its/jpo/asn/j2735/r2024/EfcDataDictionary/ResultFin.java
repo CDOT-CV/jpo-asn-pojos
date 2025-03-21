@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class ResultFin extends Asn1OctetString {
 
-	public ResultFin() {
-		super(1, 1);
-	}
+  public ResultFin() {
+    super(1, 1);
+  }
 
-	@JsonCreator
-	public ResultFin(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public ResultFin(String value) {
+    this();
+    setValue(value);
+  }
 }

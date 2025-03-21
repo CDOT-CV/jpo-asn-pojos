@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DriveAxleLubePressure.DriveAxleLubePressureDeserializer.class)
 public class DriveAxleLubePressure extends Asn1Integer {
 
-	public DriveAxleLubePressure() {
-		super(0L, 250L);
-	}
+  public DriveAxleLubePressure() {
+    super(0L, 250L);
+  }
 
-	@JsonCreator
-	public DriveAxleLubePressure(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DriveAxleLubePressure(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DriveAxleLubePressureDeserializer extends IntegerDeserializer<DriveAxleLubePressure> {
-		public DriveAxleLubePressureDeserializer() {
-			super(DriveAxleLubePressure.class);
-		}
+  public static class DriveAxleLubePressureDeserializer
+      extends IntegerDeserializer<DriveAxleLubePressure> {
+    public DriveAxleLubePressureDeserializer() {
+      super(DriveAxleLubePressure.class);
+    }
 
-		@Override
-		protected DriveAxleLubePressure construct() {
-			return new DriveAxleLubePressure();
-		}
-	}
+    @Override
+    protected DriveAxleLubePressure construct() {
+      return new DriveAxleLubePressure();
+    }
+  }
 }

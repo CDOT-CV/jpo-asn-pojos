@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class IntersectionCollisionMessageFrame extends MessageFrame<IntersectionCollision> {
 
-	public IntersectionCollisionMessageFrame() {
-		super(23, "IntersectionCollision");
-	}
+  public IntersectionCollisionMessageFrame() {
+    super(23, "IntersectionCollision");
+  }
 
-	@Override
-	@JsonSerialize(using = IntersectionCollisionMessageFrameValueSerializer.class)
-	public IntersectionCollision getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = IntersectionCollisionMessageFrameValueSerializer.class)
+  public IntersectionCollision getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = IntersectionCollisionMessageFrameValueDeserializer.class)
-	public void setValue(IntersectionCollision value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = IntersectionCollisionMessageFrameValueDeserializer.class)
+  public void setValue(IntersectionCollision value) {
+    super.setValue(value);
+  }
 }

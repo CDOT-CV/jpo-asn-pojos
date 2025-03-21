@@ -31,22 +31,22 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RestrictionUserType;
 @JsonRootName("Reg_RestrictionUserType")
 @JsonDeserialize(using = None.class)
 public class RestrictionUserType_addGrpCReg_RestrictionUserType
-		extends
-			Reg_RestrictionUserType<RestrictionUserType_addGrpC> {
+    extends Reg_RestrictionUserType<RestrictionUserType_addGrpC> {
 
-	public RestrictionUserType_addGrpCReg_RestrictionUserType() {
-		super(3, "RestrictionUserType_addGrpC");
-	}
+  public RestrictionUserType_addGrpCReg_RestrictionUserType() {
+    super(3, "RestrictionUserType_addGrpC");
+  }
 
-	@Override
-	@JsonSerialize(using = RestrictionUserType_addGrpCReg_RestrictionUserTypeValueSerializer.class)
-	public RestrictionUserType_addGrpC getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = RestrictionUserType_addGrpCReg_RestrictionUserTypeValueSerializer.class)
+  public RestrictionUserType_addGrpC getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer.class)
-	public void setRegExtValue(RestrictionUserType_addGrpC value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(
+      using = RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer.class)
+  public void setRegExtValue(RestrictionUserType_addGrpC value) {
+    super.setRegExtValue(value);
+  }
 }

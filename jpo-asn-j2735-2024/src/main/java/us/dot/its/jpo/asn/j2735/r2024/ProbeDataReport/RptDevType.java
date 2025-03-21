@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptDevType extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "oemOrAftermarket")
-	@JsonProperty("oemOrAftermarket")
-	private Asn1Boolean oemOrAftermarket;
-	@Asn1Property(tag = 1, name = "canOrIvnConnected")
-	@JsonProperty("canOrIvnConnected")
-	private Asn1Boolean canOrIvnConnected;
-	@Asn1Property(tag = 2, name = "mcoCapable", optional = true)
-	@JsonProperty("mcoCapable")
-	private Asn1Boolean mcoCapable;
+  @Asn1Property(tag = 0, name = "oemOrAftermarket")
+  @JsonProperty("oemOrAftermarket")
+  private Asn1Boolean oemOrAftermarket;
 
-	public RptDevType() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "canOrIvnConnected")
+  @JsonProperty("canOrIvnConnected")
+  private Asn1Boolean canOrIvnConnected;
+
+  @Asn1Property(tag = 2, name = "mcoCapable", optional = true)
+  @JsonProperty("mcoCapable")
+  private Asn1Boolean mcoCapable;
+
+  public RptDevType() {
+    super(true);
+  }
 }

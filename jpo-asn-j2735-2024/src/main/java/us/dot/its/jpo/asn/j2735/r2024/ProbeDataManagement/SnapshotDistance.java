@@ -38,20 +38,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SnapshotDistance extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "distance1")
-	@JsonProperty("distance1")
-	private GrossDistance distance1;
-	@Asn1Property(tag = 1, name = "speed1")
-	@JsonProperty("speed1")
-	private GrossSpeed speed1;
-	@Asn1Property(tag = 2, name = "distance2")
-	@JsonProperty("distance2")
-	private GrossDistance distance2;
-	@Asn1Property(tag = 3, name = "speed2")
-	@JsonProperty("speed2")
-	private GrossSpeed speed2;
+  @Asn1Property(tag = 0, name = "distance1")
+  @JsonProperty("distance1")
+  private GrossDistance distance1;
 
-	public SnapshotDistance() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "speed1")
+  @JsonProperty("speed1")
+  private GrossSpeed speed1;
+
+  @Asn1Property(tag = 2, name = "distance2")
+  @JsonProperty("distance2")
+  private GrossDistance distance2;
+
+  @Asn1Property(tag = 3, name = "speed2")
+  @JsonProperty("speed2")
+  private GrossSpeed speed2;
+
+  public SnapshotDistance() {
+    super(false);
+  }
 }

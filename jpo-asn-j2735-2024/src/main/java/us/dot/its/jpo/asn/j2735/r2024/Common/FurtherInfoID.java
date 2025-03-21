@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class FurtherInfoID extends Asn1OctetString {
 
-	public FurtherInfoID() {
-		super(2, 2);
-	}
+  public FurtherInfoID() {
+    super(2, 2);
+  }
 
-	@JsonCreator
-	public FurtherInfoID(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public FurtherInfoID(String value) {
+    this();
+    setValue(value);
+  }
 }

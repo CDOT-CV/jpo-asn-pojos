@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TimeMark.TimeMarkDeserializer.class)
 public class TimeMark extends Asn1Integer {
 
-	public TimeMark() {
-		super(0L, 36111L);
-	}
+  public TimeMark() {
+    super(0L, 36111L);
+  }
 
-	@JsonCreator
-	public TimeMark(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TimeMark(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TimeMarkDeserializer extends IntegerDeserializer<TimeMark> {
-		public TimeMarkDeserializer() {
-			super(TimeMark.class);
-		}
+  public static class TimeMarkDeserializer extends IntegerDeserializer<TimeMark> {
+    public TimeMarkDeserializer() {
+      super(TimeMark.class);
+    }
 
-		@Override
-		protected TimeMark construct() {
-			return new TimeMark();
-		}
-	}
+    @Override
+    protected TimeMark construct() {
+      return new TimeMark();
+    }
+  }
 }

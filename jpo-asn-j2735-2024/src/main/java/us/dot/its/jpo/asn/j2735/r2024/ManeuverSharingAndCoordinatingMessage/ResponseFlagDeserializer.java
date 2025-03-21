@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class ResponseFlagDeserializer extends BooleanDeserializer<ResponseFlag> {
 
-	public ResponseFlagDeserializer() {
-		super(ResponseFlag.class);
-	}
+  public ResponseFlagDeserializer() {
+    super(ResponseFlag.class);
+  }
 
-	@Override
-	protected ResponseFlag construct() {
-		return new ResponseFlag();
-	}
+  @Override
+  protected ResponseFlag construct() {
+    return new ResponseFlag();
+  }
 }

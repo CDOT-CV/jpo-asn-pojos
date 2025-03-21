@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Longitude.LongitudeDeserializer.class)
 public class Longitude extends Asn1Integer {
 
-	public Longitude() {
-		super(-1799999999L, 1800000001L);
-	}
+  public Longitude() {
+    super(-1799999999L, 1800000001L);
+  }
 
-	@JsonCreator
-	public Longitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Longitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LongitudeDeserializer extends IntegerDeserializer<Longitude> {
-		public LongitudeDeserializer() {
-			super(Longitude.class);
-		}
+  public static class LongitudeDeserializer extends IntegerDeserializer<Longitude> {
+    public LongitudeDeserializer() {
+      super(Longitude.class);
+    }
 
-		@Override
-		protected Longitude construct() {
-			return new Longitude();
-		}
-	}
+    @Override
+    protected Longitude construct() {
+      return new Longitude();
+    }
+  }
 }

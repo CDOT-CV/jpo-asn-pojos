@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TumInstructions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "maxNumOfLocTimeStamps")
-	@JsonProperty("maxNumOfLocTimeStamps")
-	private MaxNumOfLocTimeStampsInteger maxNumOfLocTimeStamps;
-	@Asn1Property(tag = 1, name = "locTimeStampRate")
-	@JsonProperty("locTimeStampRate")
-	private LocTimeStampRateInteger locTimeStampRate;
+  @Asn1Property(tag = 0, name = "maxNumOfLocTimeStamps")
+  @JsonProperty("maxNumOfLocTimeStamps")
+  private MaxNumOfLocTimeStampsInteger maxNumOfLocTimeStamps;
 
-	public static class MaxNumOfLocTimeStampsInteger extends Asn1Integer {
-		public MaxNumOfLocTimeStampsInteger() {
-			super(1L, 5L);
-		}
+  @Asn1Property(tag = 1, name = "locTimeStampRate")
+  @JsonProperty("locTimeStampRate")
+  private LocTimeStampRateInteger locTimeStampRate;
 
-		@JsonCreator
-		public MaxNumOfLocTimeStampsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class MaxNumOfLocTimeStampsInteger extends Asn1Integer {
+    public MaxNumOfLocTimeStampsInteger() {
+      super(1L, 5L);
+    }
 
-	public static class LocTimeStampRateInteger extends Asn1Integer {
-		public LocTimeStampRateInteger() {
-			super(1L, 10L);
-		}
+    @JsonCreator
+    public MaxNumOfLocTimeStampsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public LocTimeStampRateInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class LocTimeStampRateInteger extends Asn1Integer {
+    public LocTimeStampRateInteger() {
+      super(1L, 10L);
+    }
 
-	public TumInstructions() {
-		super(true);
-	}
+    @JsonCreator
+    public LocTimeStampRateInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TumInstructions() {
+    super(true);
+  }
 }

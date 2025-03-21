@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SteeringAxleTemperature.SteeringAxleTemperatureDeserializer.class)
 public class SteeringAxleTemperature extends Asn1Integer {
 
-	public SteeringAxleTemperature() {
-		super(-40L, 210L);
-	}
+  public SteeringAxleTemperature() {
+    super(-40L, 210L);
+  }
 
-	@JsonCreator
-	public SteeringAxleTemperature(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SteeringAxleTemperature(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SteeringAxleTemperatureDeserializer extends IntegerDeserializer<SteeringAxleTemperature> {
-		public SteeringAxleTemperatureDeserializer() {
-			super(SteeringAxleTemperature.class);
-		}
+  public static class SteeringAxleTemperatureDeserializer
+      extends IntegerDeserializer<SteeringAxleTemperature> {
+    public SteeringAxleTemperatureDeserializer() {
+      super(SteeringAxleTemperature.class);
+    }
 
-		@Override
-		protected SteeringAxleTemperature construct() {
-			return new SteeringAxleTemperature();
-		}
-	}
+    @Override
+    protected SteeringAxleTemperature construct() {
+      return new SteeringAxleTemperature();
+    }
+  }
 }

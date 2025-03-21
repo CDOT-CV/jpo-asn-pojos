@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = Longitude.LongitudeDeserializer.class)
 public class Longitude extends Int4Signed {
 
-	public Longitude() {
-		super();
-	}
+  public Longitude() {
+    super();
+  }
 
-	@JsonCreator
-	public Longitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Longitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LongitudeDeserializer extends IntegerDeserializer<Longitude> {
-		public LongitudeDeserializer() {
-			super(Longitude.class);
-		}
+  public static class LongitudeDeserializer extends IntegerDeserializer<Longitude> {
+    public LongitudeDeserializer() {
+      super(Longitude.class);
+    }
 
-		@Override
-		protected Longitude construct() {
-			return new Longitude();
-		}
-	}
+    @Override
+    protected Longitude construct() {
+      return new Longitude();
+    }
+  }
 }

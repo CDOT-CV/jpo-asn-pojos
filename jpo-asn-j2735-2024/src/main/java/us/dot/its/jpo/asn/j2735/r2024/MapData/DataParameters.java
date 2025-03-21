@@ -38,20 +38,23 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 @Setter
 public class DataParameters extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "processMethod", optional = true)
-	@JsonProperty("processMethod")
-	private IA5String processMethod;
-	@Asn1Property(tag = 1, name = "processAgency", optional = true)
-	@JsonProperty("processAgency")
-	private IA5String processAgency;
-	@Asn1Property(tag = 2, name = "lastCheckedDate", optional = true)
-	@JsonProperty("lastCheckedDate")
-	private IA5String lastCheckedDate;
-	@Asn1Property(tag = 3, name = "geoidUsed", optional = true)
-	@JsonProperty("geoidUsed")
-	private IA5String geoidUsed;
+  @Asn1Property(tag = 0, name = "processMethod", optional = true)
+  @JsonProperty("processMethod")
+  private IA5String processMethod;
 
-	public DataParameters() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "processAgency", optional = true)
+  @JsonProperty("processAgency")
+  private IA5String processAgency;
+
+  @Asn1Property(tag = 2, name = "lastCheckedDate", optional = true)
+  @JsonProperty("lastCheckedDate")
+  private IA5String lastCheckedDate;
+
+  @Asn1Property(tag = 3, name = "geoidUsed", optional = true)
+  @JsonProperty("geoidUsed")
+  private IA5String geoidUsed;
+
+  public DataParameters() {
+    super(true);
+  }
 }

@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class WorkZone extends Asn1SequenceOf<WorkZoneSequence> {
 
-	public WorkZone() {
-		super(WorkZoneSequence.class, 1L, 16L);
-	}
+  public WorkZone() {
+    super(WorkZoneSequence.class, 1L, 16L);
+  }
 }

@@ -29,21 +29,22 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonRootName("BSMpartIIExtension")
 @JsonDeserialize(using = None.class)
-public class SpecialVehicleExtensionsBSMpartIIExtension extends BSMpartIIExtension<SpecialVehicleExtensions> {
+public class SpecialVehicleExtensionsBSMpartIIExtension
+    extends BSMpartIIExtension<SpecialVehicleExtensions> {
 
-	public SpecialVehicleExtensionsBSMpartIIExtension() {
-		super(1, "SpecialVehicleExtensions");
-	}
+  public SpecialVehicleExtensionsBSMpartIIExtension() {
+    super(1, "SpecialVehicleExtensions");
+  }
 
-	@Override
-	@JsonSerialize(using = SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer.class)
-	public SpecialVehicleExtensions getPartII_Value() {
-		return super.getPartII_Value();
-	}
+  @Override
+  @JsonSerialize(using = SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer.class)
+  public SpecialVehicleExtensions getPartII_Value() {
+    return super.getPartII_Value();
+  }
 
-	@Override
-	@JsonDeserialize(using = SpecialVehicleExtensionsBSMpartIIExtensionValueDeserializer.class)
-	public void setPartII_Value(SpecialVehicleExtensions value) {
-		super.setPartII_Value(value);
-	}
+  @Override
+  @JsonDeserialize(using = SpecialVehicleExtensionsBSMpartIIExtensionValueDeserializer.class)
+  public void setPartII_Value(SpecialVehicleExtensions value) {
+    super.setPartII_Value(value);
+  }
 }

@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class PayloadData extends Asn1OctetString {
 
-	public PayloadData() {
-		super(1, 2048);
-	}
+  public PayloadData() {
+    super(1, 2048);
+  }
 
-	@JsonCreator
-	public PayloadData(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public PayloadData(String value) {
+    this();
+    setValue(value);
+  }
 }

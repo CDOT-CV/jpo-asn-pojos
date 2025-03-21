@@ -37,41 +37,51 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrafficLightStatus extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "trafficLightType")
-	@JsonProperty("trafficLightType")
-	private TrafficLightType trafficLightType;
-	@Asn1Property(tag = 1, name = "consecutiveTrafficLight")
-	@JsonProperty("consecutiveTrafficLight")
-	private ConsecutiveTrafficLight consecutiveTrafficLight;
-	@Asn1Property(tag = 2, name = "trafficLightIntervalType")
-	@JsonProperty("trafficLightIntervalType")
-	private TrafficLightIntervalType trafficLightIntervalType;
-	@Asn1Property(tag = 3, name = "pedestrianCall")
-	@JsonProperty("pedestrianCall")
-	private PedestrianCall pedestrianCall;
-	@Asn1Property(tag = 4, name = "actuatedinterval")
-	@JsonProperty("actuatedinterval")
-	private ActuatedInterval actuatedinterval;
-	@Asn1Property(tag = 5, name = "permissiveNonProtected")
-	@JsonProperty("permissiveNonProtected")
-	private PermissiveNonProtected permissiveNonProtected;
-	@Asn1Property(tag = 6, name = "lightingStatus")
-	@JsonProperty("lightingStatus")
-	private TrafficLightingStatus lightingStatus;
-	@Asn1Property(tag = 7, name = "maxIntervalLength")
-	@JsonProperty("maxIntervalLength")
-	private TimeInSecond_B8 maxIntervalLength;
-	@Asn1Property(tag = 8, name = "remainingTime")
-	@JsonProperty("remainingTime")
-	private TimeInSecond_B8 remainingTime;
-	@Asn1Property(tag = 9, name = "directionCode")
-	@JsonProperty("directionCode")
-	private TrafficLightDirectionCode directionCode;
-	@Asn1Property(tag = 10, name = "reserved")
-	@JsonProperty("reserved")
-	private ReservedBit reserved;
+  @Asn1Property(tag = 0, name = "trafficLightType")
+  @JsonProperty("trafficLightType")
+  private TrafficLightType trafficLightType;
 
-	public TrafficLightStatus() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "consecutiveTrafficLight")
+  @JsonProperty("consecutiveTrafficLight")
+  private ConsecutiveTrafficLight consecutiveTrafficLight;
+
+  @Asn1Property(tag = 2, name = "trafficLightIntervalType")
+  @JsonProperty("trafficLightIntervalType")
+  private TrafficLightIntervalType trafficLightIntervalType;
+
+  @Asn1Property(tag = 3, name = "pedestrianCall")
+  @JsonProperty("pedestrianCall")
+  private PedestrianCall pedestrianCall;
+
+  @Asn1Property(tag = 4, name = "actuatedinterval")
+  @JsonProperty("actuatedinterval")
+  private ActuatedInterval actuatedinterval;
+
+  @Asn1Property(tag = 5, name = "permissiveNonProtected")
+  @JsonProperty("permissiveNonProtected")
+  private PermissiveNonProtected permissiveNonProtected;
+
+  @Asn1Property(tag = 6, name = "lightingStatus")
+  @JsonProperty("lightingStatus")
+  private TrafficLightingStatus lightingStatus;
+
+  @Asn1Property(tag = 7, name = "maxIntervalLength")
+  @JsonProperty("maxIntervalLength")
+  private TimeInSecond_B8 maxIntervalLength;
+
+  @Asn1Property(tag = 8, name = "remainingTime")
+  @JsonProperty("remainingTime")
+  private TimeInSecond_B8 remainingTime;
+
+  @Asn1Property(tag = 9, name = "directionCode")
+  @JsonProperty("directionCode")
+  private TrafficLightDirectionCode directionCode;
+
+  @Asn1Property(tag = 10, name = "reserved")
+  @JsonProperty("reserved")
+  private ReservedBit reserved;
+
+  public TrafficLightStatus() {
+    super(true);
+  }
 }

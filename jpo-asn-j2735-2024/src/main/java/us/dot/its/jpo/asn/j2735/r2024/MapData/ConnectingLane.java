@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ConnectingLane extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lane")
-	@JsonProperty("lane")
-	private LaneID lane;
-	@Asn1Property(tag = 1, name = "maneuver", optional = true)
-	@JsonProperty("maneuver")
-	private AllowedManeuvers maneuver;
+  @Asn1Property(tag = 0, name = "lane")
+  @JsonProperty("lane")
+  private LaneID lane;
 
-	public ConnectingLane() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "maneuver", optional = true)
+  @JsonProperty("maneuver")
+  private AllowedManeuvers maneuver;
+
+  public ConnectingLane() {
+    super(false);
+  }
 }

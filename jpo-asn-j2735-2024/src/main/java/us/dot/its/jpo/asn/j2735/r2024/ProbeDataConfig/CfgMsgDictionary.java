@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = CfgMsgDictionary.CfgMsgDictionarySerializer.class)
 @JsonDeserialize(using = CfgMsgDictionary.CfgMsgDictionaryDeserializer.class)
 public enum CfgMsgDictionary implements Asn1Enumerated {
-	SAE(1, "sae"), ETSI(2, "etsi"), ISO(3, "iso");
+  SAE(1, "sae"),
+  ETSI(2, "etsi"),
+  ISO(3, "iso");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private CfgMsgDictionary(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private CfgMsgDictionary(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class CfgMsgDictionarySerializer extends EnumeratedSerializer<CfgMsgDictionary> {
-		public CfgMsgDictionarySerializer() {
-			super(CfgMsgDictionary.class);
-		}
-	}
+  public static class CfgMsgDictionarySerializer extends EnumeratedSerializer<CfgMsgDictionary> {
+    public CfgMsgDictionarySerializer() {
+      super(CfgMsgDictionary.class);
+    }
+  }
 
-	public static class CfgMsgDictionaryDeserializer extends EnumeratedDeserializer<CfgMsgDictionary> {
-		public CfgMsgDictionaryDeserializer() {
-			super(CfgMsgDictionary.class);
-		}
+  public static class CfgMsgDictionaryDeserializer
+      extends EnumeratedDeserializer<CfgMsgDictionary> {
+    public CfgMsgDictionaryDeserializer() {
+      super(CfgMsgDictionary.class);
+    }
 
-		@Override
-		protected CfgMsgDictionary[] listEnumValues() {
-			return CfgMsgDictionary.values();
-		}
-	}
+    @Override
+    protected CfgMsgDictionary[] listEnumValues() {
+      return CfgMsgDictionary.values();
+    }
+  }
 }

@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RegionList extends Asn1SequenceOf<RegionOffsets> {
 
-	public RegionList() {
-		super(RegionOffsets.class, 1L, 64L);
-	}
+  public RegionList() {
+    super(RegionOffsets.class, 1L, 64L);
+  }
 }

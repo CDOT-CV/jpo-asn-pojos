@@ -35,17 +35,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class DetectedObjectOptionalData extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "detVeh")
-	@JsonProperty("detVeh")
-	private DetectedVehicleData detVeh;
-	@Asn1Property(tag = 1, name = "detVRU")
-	@JsonProperty("detVRU")
-	private DetectedVRUData detVRU;
-	@Asn1Property(tag = 2, name = "detObst")
-	@JsonProperty("detObst")
-	private DetectedObstacleData detObst;
+  @Asn1Property(tag = 0, name = "detVeh")
+  @JsonProperty("detVeh")
+  private DetectedVehicleData detVeh;
 
-	public DetectedObjectOptionalData() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "detVRU")
+  @JsonProperty("detVRU")
+  private DetectedVRUData detVRU;
+
+  @Asn1Property(tag = 2, name = "detObst")
+  @JsonProperty("detObst")
+  private DetectedObstacleData detObst;
+
+  public DetectedObjectOptionalData() {
+    super(false);
+  }
 }

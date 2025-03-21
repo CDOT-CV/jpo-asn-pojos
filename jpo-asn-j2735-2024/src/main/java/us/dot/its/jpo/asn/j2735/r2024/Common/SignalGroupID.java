@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SignalGroupID.SignalGroupIDDeserializer.class)
 public class SignalGroupID extends Asn1Integer {
 
-	public SignalGroupID() {
-		super(0L, 255L);
-	}
+  public SignalGroupID() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public SignalGroupID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SignalGroupID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SignalGroupIDDeserializer extends IntegerDeserializer<SignalGroupID> {
-		public SignalGroupIDDeserializer() {
-			super(SignalGroupID.class);
-		}
+  public static class SignalGroupIDDeserializer extends IntegerDeserializer<SignalGroupID> {
+    public SignalGroupIDDeserializer() {
+      super(SignalGroupID.class);
+    }
 
-		@Override
-		protected SignalGroupID construct() {
-			return new SignalGroupID();
-		}
-	}
+    @Override
+    protected SignalGroupID construct() {
+      return new SignalGroupID();
+    }
+  }
 }

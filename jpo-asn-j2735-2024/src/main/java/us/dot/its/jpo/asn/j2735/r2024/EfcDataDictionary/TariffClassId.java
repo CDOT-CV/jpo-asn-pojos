@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = TariffClassId.TariffClassIdDeserializer.class)
 public class TariffClassId extends Int4Unsigned {
 
-	public TariffClassId() {
-		super();
-	}
+  public TariffClassId() {
+    super();
+  }
 
-	@JsonCreator
-	public TariffClassId(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TariffClassId(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TariffClassIdDeserializer extends IntegerDeserializer<TariffClassId> {
-		public TariffClassIdDeserializer() {
-			super(TariffClassId.class);
-		}
+  public static class TariffClassIdDeserializer extends IntegerDeserializer<TariffClassId> {
+    public TariffClassIdDeserializer() {
+      super(TariffClassId.class);
+    }
 
-		@Override
-		protected TariffClassId construct() {
-			return new TariffClassId();
-		}
-	}
+    @Override
+    protected TariffClassId construct() {
+      return new TariffClassId();
+    }
+  }
 }

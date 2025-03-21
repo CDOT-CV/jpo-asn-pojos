@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class EventIdentifier extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "operatorID")
-	@JsonProperty("operatorID")
-	private RoadAuthorityID operatorID;
-	@Asn1Property(tag = 1, name = "uniqueID")
-	@JsonProperty("uniqueID")
-	private TemporaryID uniqueID;
+  @Asn1Property(tag = 0, name = "operatorID")
+  @JsonProperty("operatorID")
+  private RoadAuthorityID operatorID;
 
-	public EventIdentifier() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "uniqueID")
+  @JsonProperty("uniqueID")
+  private TemporaryID uniqueID;
+
+  public EventIdentifier() {
+    super(true);
+  }
 }

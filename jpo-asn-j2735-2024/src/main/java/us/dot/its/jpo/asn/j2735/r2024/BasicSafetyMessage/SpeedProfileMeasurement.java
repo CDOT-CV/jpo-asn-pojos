@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = SpeedProfileMeasurement.SpeedProfileMeasurementDeserializer.class)
 public class SpeedProfileMeasurement extends GrossSpeed {
 
-	public SpeedProfileMeasurement() {
-		super();
-	}
+  public SpeedProfileMeasurement() {
+    super();
+  }
 
-	@JsonCreator
-	public SpeedProfileMeasurement(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SpeedProfileMeasurement(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SpeedProfileMeasurementDeserializer extends IntegerDeserializer<SpeedProfileMeasurement> {
-		public SpeedProfileMeasurementDeserializer() {
-			super(SpeedProfileMeasurement.class);
-		}
+  public static class SpeedProfileMeasurementDeserializer
+      extends IntegerDeserializer<SpeedProfileMeasurement> {
+    public SpeedProfileMeasurementDeserializer() {
+      super(SpeedProfileMeasurement.class);
+    }
 
-		@Override
-		protected SpeedProfileMeasurement construct() {
-			return new SpeedProfileMeasurement();
-		}
-	}
+    @Override
+    protected SpeedProfileMeasurement construct() {
+      return new SpeedProfileMeasurement();
+    }
+  }
 }

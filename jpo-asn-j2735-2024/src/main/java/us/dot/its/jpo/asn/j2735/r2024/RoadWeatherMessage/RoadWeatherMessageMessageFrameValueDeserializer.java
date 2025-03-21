@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadWeatherMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class RoadWeatherMessageMessageFrameValueDeserializer extends OpenTypeDeserializer<RoadWeatherMessage> {
+public class RoadWeatherMessageMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<RoadWeatherMessage> {
 
-	public RoadWeatherMessageMessageFrameValueDeserializer() {
-		super(RoadWeatherMessage.class, "RoadWeatherMessage");
-	}
+  public RoadWeatherMessageMessageFrameValueDeserializer() {
+    super(RoadWeatherMessage.class, "RoadWeatherMessage");
+  }
 }

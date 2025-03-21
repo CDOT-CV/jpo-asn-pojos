@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.Common;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class VehicleSafetyExtensionsCCMpartIIExtensionValueDeserializer
-		extends
-			OpenTypeDeserializer<VehicleSafetyExtensions> {
+    extends OpenTypeDeserializer<VehicleSafetyExtensions> {
 
-	public VehicleSafetyExtensionsCCMpartIIExtensionValueDeserializer() {
-		super(VehicleSafetyExtensions.class, "VehicleSafetyExtensions");
-	}
+  public VehicleSafetyExtensionsCCMpartIIExtensionValueDeserializer() {
+    super(VehicleSafetyExtensions.class, "VehicleSafetyExtensions");
+  }
 }

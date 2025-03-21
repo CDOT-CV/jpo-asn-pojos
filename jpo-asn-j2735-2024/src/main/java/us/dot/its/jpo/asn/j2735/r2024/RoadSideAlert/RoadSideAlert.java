@@ -49,56 +49,65 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class RoadSideAlert extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "msgCnt")
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 1, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 2, name = "typeEvent")
-	@JsonProperty("typeEvent")
-	private ITIScodes typeEvent;
-	@Asn1Property(tag = 3, name = "description", optional = true)
-	@JsonProperty("description")
-	@JacksonXmlElementWrapper(localName = "description")
-	@JacksonXmlProperty(localName = "ITIScodes")
-	private SequenceOfDescription description;
-	@Asn1Property(tag = 4, name = "priority", optional = true)
-	@JsonProperty("priority")
-	private Priority priority;
-	@Asn1Property(tag = 5, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private HeadingSlice heading;
-	@Asn1Property(tag = 6, name = "extent", optional = true)
-	@JsonProperty("extent")
-	private Extent extent;
-	@Asn1Property(tag = 7, name = "position", optional = true)
-	@JsonProperty("position")
-	private FullPositionVector position;
-	@Asn1Property(tag = 8, name = "furtherInfoID", optional = true)
-	@JsonProperty("furtherInfoID")
-	private FurtherInfoID furtherInfoID;
-	@Asn1Property(tag = 9, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-RoadSideAlert")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "msgCnt")
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfDescription extends Asn1SequenceOf<ITIScodes> {
-		public SequenceOfDescription() {
-			super(ITIScodes.class, 1L, 8L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RoadSideAlert> {
-		public SequenceOfRegional() {
-			super(Reg_RoadSideAlert.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "typeEvent")
+  @JsonProperty("typeEvent")
+  private ITIScodes typeEvent;
 
-	public RoadSideAlert() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "description", optional = true)
+  @JsonProperty("description")
+  @JacksonXmlElementWrapper(localName = "description")
+  @JacksonXmlProperty(localName = "ITIScodes")
+  private SequenceOfDescription description;
+
+  @Asn1Property(tag = 4, name = "priority", optional = true)
+  @JsonProperty("priority")
+  private Priority priority;
+
+  @Asn1Property(tag = 5, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private HeadingSlice heading;
+
+  @Asn1Property(tag = 6, name = "extent", optional = true)
+  @JsonProperty("extent")
+  private Extent extent;
+
+  @Asn1Property(tag = 7, name = "position", optional = true)
+  @JsonProperty("position")
+  private FullPositionVector position;
+
+  @Asn1Property(tag = 8, name = "furtherInfoID", optional = true)
+  @JsonProperty("furtherInfoID")
+  private FurtherInfoID furtherInfoID;
+
+  @Asn1Property(tag = 9, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-RoadSideAlert")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfDescription extends Asn1SequenceOf<ITIScodes> {
+    public SequenceOfDescription() {
+      super(ITIScodes.class, 1L, 8L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RoadSideAlert> {
+    public SequenceOfRegional() {
+      super(Reg_RoadSideAlert.class, 1L, 4L);
+    }
+  }
+
+  public RoadSideAlert() {
+    super(true);
+  }
 }

@@ -33,30 +33,30 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RockType.RockTypeSerializer.class)
 @JsonDeserialize(using = RockType.RockTypeDeserializer.class)
 public enum RockType implements Asn1Enumerated {
-	CRUSHED(0, "crushed");
+  CRUSHED(0, "crushed");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RockType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RockType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RockTypeSerializer extends EnumeratedSerializer<RockType> {
-		public RockTypeSerializer() {
-			super(RockType.class);
-		}
-	}
+  public static class RockTypeSerializer extends EnumeratedSerializer<RockType> {
+    public RockTypeSerializer() {
+      super(RockType.class);
+    }
+  }
 
-	public static class RockTypeDeserializer extends EnumeratedDeserializer<RockType> {
-		public RockTypeDeserializer() {
-			super(RockType.class);
-		}
+  public static class RockTypeDeserializer extends EnumeratedDeserializer<RockType> {
+    public RockTypeDeserializer() {
+      super(RockType.class);
+    }
 
-		@Override
-		protected RockType[] listEnumValues() {
-			return RockType.values();
-		}
-	}
+    @Override
+    protected RockType[] listEnumValues() {
+      return RockType.values();
+    }
+  }
 }

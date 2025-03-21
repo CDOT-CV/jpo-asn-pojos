@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ReferencePointType.ReferencePointTypeSerializer.class)
 @JsonDeserialize(using = ReferencePointType.ReferencePointTypeDeserializer.class)
 public enum ReferencePointType implements Asn1Enumerated {
-	STARTOFEVENT(0, "startOfEvent"), ARBITRARY(1, "arbitrary");
+  STARTOFEVENT(0, "startOfEvent"),
+  ARBITRARY(1, "arbitrary");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ReferencePointType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ReferencePointType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ReferencePointTypeSerializer extends EnumeratedSerializer<ReferencePointType> {
-		public ReferencePointTypeSerializer() {
-			super(ReferencePointType.class);
-		}
-	}
+  public static class ReferencePointTypeSerializer
+      extends EnumeratedSerializer<ReferencePointType> {
+    public ReferencePointTypeSerializer() {
+      super(ReferencePointType.class);
+    }
+  }
 
-	public static class ReferencePointTypeDeserializer extends EnumeratedDeserializer<ReferencePointType> {
-		public ReferencePointTypeDeserializer() {
-			super(ReferencePointType.class);
-		}
+  public static class ReferencePointTypeDeserializer
+      extends EnumeratedDeserializer<ReferencePointType> {
+    public ReferencePointTypeDeserializer() {
+      super(ReferencePointType.class);
+    }
 
-		@Override
-		protected ReferencePointType[] listEnumValues() {
-			return ReferencePointType.values();
-		}
-	}
+    @Override
+    protected ReferencePointType[] listEnumValues() {
+      return ReferencePointType.values();
+    }
+  }
 }

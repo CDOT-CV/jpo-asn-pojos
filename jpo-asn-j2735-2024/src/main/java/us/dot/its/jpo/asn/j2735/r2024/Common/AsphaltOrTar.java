@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AsphaltOrTar extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private AsphaltOrTarType type;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private AsphaltOrTarType type;
 
-	public AsphaltOrTar() {
-		super(true);
-	}
+  public AsphaltOrTar() {
+    super(true);
+  }
 }

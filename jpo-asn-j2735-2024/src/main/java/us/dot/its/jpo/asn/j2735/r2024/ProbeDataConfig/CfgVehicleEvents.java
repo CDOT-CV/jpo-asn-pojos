@@ -40,56 +40,67 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgVehicleEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "headLights", optional = true)
-	@JsonProperty("headLights")
-	private Asn1Boolean headLights;
-	@Asn1Property(tag = 1, name = "fogLights", optional = true)
-	@JsonProperty("fogLights")
-	private Asn1Boolean fogLights;
-	@Asn1Property(tag = 2, name = "hazardLights", optional = true)
-	@JsonProperty("hazardLights")
-	private Asn1Boolean hazardLights;
-	@Asn1Property(tag = 3, name = "kinematicEvents", optional = true)
-	@JsonProperty("kinematicEvents")
-	private CfgKinematicEvents kinematicEvents;
-	@Asn1Property(tag = 4, name = "wiperStatusChange", optional = true)
-	@JsonProperty("wiperStatusChange")
-	private Asn1Boolean wiperStatusChange;
-	@Asn1Property(tag = 5, name = "lowSpeed", optional = true)
-	@JsonProperty("lowSpeed")
-	private CfgLowSpeedCriteria lowSpeed;
-	@Asn1Property(tag = 6, name = "resumedSpeed", optional = true)
-	@JsonProperty("resumedSpeed")
-	private ResumedSpeedInteger resumedSpeed;
-	@Asn1Property(tag = 7, name = "vehEntrsExitsRegion", optional = true)
-	@JsonProperty("vehEntrsExitsRegion")
-	private Asn1Boolean vehEntrsExitsRegion;
-	@Asn1Property(tag = 8, name = "emerVehDetect", optional = true)
-	@JsonProperty("emerVehDetect")
-	private Asn1Boolean emerVehDetect;
-	@Asn1Property(tag = 9, name = "emerAndTransInfo", optional = true)
-	@JsonProperty("emerAndTransInfo")
-	private CfgEmerAndTransitInfo emerAndTransInfo;
-	@Asn1Property(tag = 10, name = "v2xMsgRecption", optional = true)
-	@JsonProperty("v2xMsgRecption")
-	private CfgMsgRecepIndicators v2xMsgRecption;
-	@Asn1Property(tag = 11, name = "driverAlertsAndWarnings", optional = true)
-	@JsonProperty("driverAlertsAndWarnings")
-	private Asn1Boolean driverAlertsAndWarnings;
+  @Asn1Property(tag = 0, name = "headLights", optional = true)
+  @JsonProperty("headLights")
+  private Asn1Boolean headLights;
 
-	public static class ResumedSpeedInteger extends Asn1Integer {
-		public ResumedSpeedInteger() {
-			super(1L, 100L);
-		}
+  @Asn1Property(tag = 1, name = "fogLights", optional = true)
+  @JsonProperty("fogLights")
+  private Asn1Boolean fogLights;
 
-		@JsonCreator
-		public ResumedSpeedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "hazardLights", optional = true)
+  @JsonProperty("hazardLights")
+  private Asn1Boolean hazardLights;
 
-	public CfgVehicleEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "kinematicEvents", optional = true)
+  @JsonProperty("kinematicEvents")
+  private CfgKinematicEvents kinematicEvents;
+
+  @Asn1Property(tag = 4, name = "wiperStatusChange", optional = true)
+  @JsonProperty("wiperStatusChange")
+  private Asn1Boolean wiperStatusChange;
+
+  @Asn1Property(tag = 5, name = "lowSpeed", optional = true)
+  @JsonProperty("lowSpeed")
+  private CfgLowSpeedCriteria lowSpeed;
+
+  @Asn1Property(tag = 6, name = "resumedSpeed", optional = true)
+  @JsonProperty("resumedSpeed")
+  private ResumedSpeedInteger resumedSpeed;
+
+  @Asn1Property(tag = 7, name = "vehEntrsExitsRegion", optional = true)
+  @JsonProperty("vehEntrsExitsRegion")
+  private Asn1Boolean vehEntrsExitsRegion;
+
+  @Asn1Property(tag = 8, name = "emerVehDetect", optional = true)
+  @JsonProperty("emerVehDetect")
+  private Asn1Boolean emerVehDetect;
+
+  @Asn1Property(tag = 9, name = "emerAndTransInfo", optional = true)
+  @JsonProperty("emerAndTransInfo")
+  private CfgEmerAndTransitInfo emerAndTransInfo;
+
+  @Asn1Property(tag = 10, name = "v2xMsgRecption", optional = true)
+  @JsonProperty("v2xMsgRecption")
+  private CfgMsgRecepIndicators v2xMsgRecption;
+
+  @Asn1Property(tag = 11, name = "driverAlertsAndWarnings", optional = true)
+  @JsonProperty("driverAlertsAndWarnings")
+  private Asn1Boolean driverAlertsAndWarnings;
+
+  public static class ResumedSpeedInteger extends Asn1Integer {
+    public ResumedSpeedInteger() {
+      super(1L, 100L);
+    }
+
+    @JsonCreator
+    public ResumedSpeedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgVehicleEvents() {
+    super(true);
+  }
 }

@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class SPATMessageFrame extends MessageFrame<SPAT> {
 
-	public SPATMessageFrame() {
-		super(19, "SPAT");
-	}
+  public SPATMessageFrame() {
+    super(19, "SPAT");
+  }
 
-	@Override
-	@JsonSerialize(using = SPATMessageFrameValueSerializer.class)
-	public SPAT getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = SPATMessageFrameValueSerializer.class)
+  public SPAT getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = SPATMessageFrameValueDeserializer.class)
-	public void setValue(SPAT value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = SPATMessageFrameValueDeserializer.class)
+  public void setValue(SPAT value) {
+    super.setValue(value);
+  }
 }

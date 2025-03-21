@@ -40,19 +40,21 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RegionPointSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "anchor", optional = true)
-	@JsonProperty("anchor")
-	private Position3D anchor;
-	@Asn1Property(tag = 1, name = "scale", optional = true)
-	@JsonProperty("scale")
-	private Zoom scale;
-	@Asn1Property(tag = 2, name = "nodeList")
-	@JsonProperty("nodeList")
-	@JacksonXmlElementWrapper(localName = "nodeList")
-	@JacksonXmlProperty(localName = "RegionOffsets")
-	private RegionList nodeList;
+  @Asn1Property(tag = 0, name = "anchor", optional = true)
+  @JsonProperty("anchor")
+  private Position3D anchor;
 
-	public RegionPointSet() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "scale", optional = true)
+  @JsonProperty("scale")
+  private Zoom scale;
+
+  @Asn1Property(tag = 2, name = "nodeList")
+  @JsonProperty("nodeList")
+  @JacksonXmlElementWrapper(localName = "nodeList")
+  @JacksonXmlProperty(localName = "RegionOffsets")
+  private RegionList nodeList;
+
+  public RegionPointSet() {
+    super(true);
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = StdDev.StdDevDeserializer.class)
 public class StdDev extends Asn1Integer {
 
-	public StdDev() {
-		super(0L, 10000L);
-	}
+  public StdDev() {
+    super(0L, 10000L);
+  }
 
-	@JsonCreator
-	public StdDev(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public StdDev(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class StdDevDeserializer extends IntegerDeserializer<StdDev> {
-		public StdDevDeserializer() {
-			super(StdDev.class);
-		}
+  public static class StdDevDeserializer extends IntegerDeserializer<StdDev> {
+    public StdDevDeserializer() {
+      super(StdDev.class);
+    }
 
-		@Override
-		protected StdDev construct() {
-			return new StdDev();
-		}
-	}
+    @Override
+    protected StdDev construct() {
+      return new StdDev();
+    }
+  }
 }

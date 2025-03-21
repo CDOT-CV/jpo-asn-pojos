@@ -42,35 +42,40 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ConnectionManeuverAssist extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "connectionID")
-	@JsonProperty("connectionID")
-	private LaneConnectionID connectionID;
-	@Asn1Property(tag = 1, name = "queueLength", optional = true)
-	@JsonProperty("queueLength")
-	private ZoneLength queueLength;
-	@Asn1Property(tag = 2, name = "availableStorageLength", optional = true)
-	@JsonProperty("availableStorageLength")
-	private ZoneLength availableStorageLength;
-	@Asn1Property(tag = 3, name = "waitOnStop", optional = true)
-	@JsonProperty("waitOnStop")
-	private WaitOnStopline waitOnStop;
-	@Asn1Property(tag = 4, name = "pedBicycleDetect", optional = true)
-	@JsonProperty("pedBicycleDetect")
-	private PedestrianBicycleDetect pedBicycleDetect;
-	@Asn1Property(tag = 5, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-ConnectionManeuverAssist")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "connectionID")
+  @JsonProperty("connectionID")
+  private LaneConnectionID connectionID;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ConnectionManeuverAssist> {
-		public SequenceOfRegional() {
-			super(Reg_ConnectionManeuverAssist.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "queueLength", optional = true)
+  @JsonProperty("queueLength")
+  private ZoneLength queueLength;
 
-	public ConnectionManeuverAssist() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "availableStorageLength", optional = true)
+  @JsonProperty("availableStorageLength")
+  private ZoneLength availableStorageLength;
+
+  @Asn1Property(tag = 3, name = "waitOnStop", optional = true)
+  @JsonProperty("waitOnStop")
+  private WaitOnStopline waitOnStop;
+
+  @Asn1Property(tag = 4, name = "pedBicycleDetect", optional = true)
+  @JsonProperty("pedBicycleDetect")
+  private PedestrianBicycleDetect pedBicycleDetect;
+
+  @Asn1Property(tag = 5, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-ConnectionManeuverAssist")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ConnectionManeuverAssist> {
+    public SequenceOfRegional() {
+      super(Reg_ConnectionManeuverAssist.class, 1L, 4L);
+    }
+  }
+
+  public ConnectionManeuverAssist() {
+    super(true);
+  }
 }

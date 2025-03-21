@@ -40,26 +40,28 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class CommonContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "eventInfo")
-	@JsonProperty("eventInfo")
-	private EventInfo eventInfo;
-	@Asn1Property(tag = 1, name = "regionInfo")
-	@JsonProperty("regionInfo")
-	@JacksonXmlElementWrapper(localName = "regionInfo")
-	@JacksonXmlProperty(localName = "RegionInfo")
-	private SequenceOfRegionInfo regionInfo;
-	@Asn1Property(tag = 2, name = "crossLinking", optional = true)
-	@JsonProperty("crossLinking")
-	private CrossLinking crossLinking;
+  @Asn1Property(tag = 0, name = "eventInfo")
+  @JsonProperty("eventInfo")
+  private EventInfo eventInfo;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegionInfo extends Asn1SequenceOf<RegionInfo> {
-		public SequenceOfRegionInfo() {
-			super(RegionInfo.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "regionInfo")
+  @JsonProperty("regionInfo")
+  @JacksonXmlElementWrapper(localName = "regionInfo")
+  @JacksonXmlProperty(localName = "RegionInfo")
+  private SequenceOfRegionInfo regionInfo;
 
-	public CommonContainer() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "crossLinking", optional = true)
+  @JsonProperty("crossLinking")
+  private CrossLinking crossLinking;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegionInfo extends Asn1SequenceOf<RegionInfo> {
+    public SequenceOfRegionInfo() {
+      super(RegionInfo.class, 1L, 4L);
+    }
+  }
+
+  public CommonContainer() {
+    super(true);
+  }
 }

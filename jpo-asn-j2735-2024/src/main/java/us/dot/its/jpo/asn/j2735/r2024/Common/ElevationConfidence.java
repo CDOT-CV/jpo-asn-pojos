@@ -33,35 +33,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ElevationConfidence.ElevationConfidenceSerializer.class)
 @JsonDeserialize(using = ElevationConfidence.ElevationConfidenceDeserializer.class)
 public enum ElevationConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), ELEV_500_00(1, "elev-500-00"), ELEV_200_00(2, "elev-200-00"), ELEV_100_00(3,
-			"elev-100-00"), ELEV_050_00(4, "elev-050-00"), ELEV_020_00(5, "elev-020-00"), ELEV_010_00(6,
-					"elev-010-00"), ELEV_005_00(7, "elev-005-00"), ELEV_002_00(8, "elev-002-00"), ELEV_001_00(9,
-							"elev-001-00"), ELEV_000_50(10, "elev-000-50"), ELEV_000_20(11, "elev-000-20"), ELEV_000_10(
-									12, "elev-000-10"), ELEV_000_05(13, "elev-000-05"), ELEV_000_02(14,
-											"elev-000-02"), ELEV_000_01(15, "elev-000-01");
+  UNAVAILABLE(0, "unavailable"),
+  ELEV_500_00(1, "elev-500-00"),
+  ELEV_200_00(2, "elev-200-00"),
+  ELEV_100_00(3, "elev-100-00"),
+  ELEV_050_00(4, "elev-050-00"),
+  ELEV_020_00(5, "elev-020-00"),
+  ELEV_010_00(6, "elev-010-00"),
+  ELEV_005_00(7, "elev-005-00"),
+  ELEV_002_00(8, "elev-002-00"),
+  ELEV_001_00(9, "elev-001-00"),
+  ELEV_000_50(10, "elev-000-50"),
+  ELEV_000_20(11, "elev-000-20"),
+  ELEV_000_10(12, "elev-000-10"),
+  ELEV_000_05(13, "elev-000-05"),
+  ELEV_000_02(14, "elev-000-02"),
+  ELEV_000_01(15, "elev-000-01");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ElevationConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ElevationConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ElevationConfidenceSerializer extends EnumeratedSerializer<ElevationConfidence> {
-		public ElevationConfidenceSerializer() {
-			super(ElevationConfidence.class);
-		}
-	}
+  public static class ElevationConfidenceSerializer
+      extends EnumeratedSerializer<ElevationConfidence> {
+    public ElevationConfidenceSerializer() {
+      super(ElevationConfidence.class);
+    }
+  }
 
-	public static class ElevationConfidenceDeserializer extends EnumeratedDeserializer<ElevationConfidence> {
-		public ElevationConfidenceDeserializer() {
-			super(ElevationConfidence.class);
-		}
+  public static class ElevationConfidenceDeserializer
+      extends EnumeratedDeserializer<ElevationConfidence> {
+    public ElevationConfidenceDeserializer() {
+      super(ElevationConfidence.class);
+    }
 
-		@Override
-		protected ElevationConfidence[] listEnumValues() {
-			return ElevationConfidence.values();
-		}
-	}
+    @Override
+    protected ElevationConfidence[] listEnumValues() {
+      return ElevationConfidence.values();
+    }
+  }
 }

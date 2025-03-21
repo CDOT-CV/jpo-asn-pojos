@@ -39,17 +39,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Area extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "areaID")
-	@JsonProperty("areaID")
-	private Asn1ObjectIdentifier areaID;
-	@Asn1Property(tag = 1, name = "chargingArea")
-	@JsonProperty("chargingArea")
-	private ValidRegion chargingArea;
-	@Asn1Property(tag = 2, name = "chargingFees")
-	@JsonProperty("chargingFees")
-	private ChargingFees chargingFees;
+  @Asn1Property(tag = 0, name = "areaID")
+  @JsonProperty("areaID")
+  private Asn1ObjectIdentifier areaID;
 
-	public Area() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "chargingArea")
+  @JsonProperty("chargingArea")
+  private ValidRegion chargingArea;
+
+  @Asn1Property(tag = 2, name = "chargingFees")
+  @JsonProperty("chargingFees")
+  private ChargingFees chargingFees;
+
+  public Area() {
+    super(true);
+  }
 }

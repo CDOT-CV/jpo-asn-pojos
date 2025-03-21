@@ -33,31 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = Driven.DrivenSerializer.class)
 @JsonDeserialize(using = Driven.DrivenDeserializer.class)
 public enum Driven implements Asn1Enumerated {
-	PERMIN(0, "perMin"), PERHOUR(1, "perHour"), PERDAY(2, "perDay"), PERDISTMILE(3, "perDistMile"), PERDISTKILO(4,
-			"perDistKilo");
+  PERMIN(0, "perMin"),
+  PERHOUR(1, "perHour"),
+  PERDAY(2, "perDay"),
+  PERDISTMILE(3, "perDistMile"),
+  PERDISTKILO(4, "perDistKilo");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private Driven(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private Driven(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class DrivenSerializer extends EnumeratedSerializer<Driven> {
-		public DrivenSerializer() {
-			super(Driven.class);
-		}
-	}
+  public static class DrivenSerializer extends EnumeratedSerializer<Driven> {
+    public DrivenSerializer() {
+      super(Driven.class);
+    }
+  }
 
-	public static class DrivenDeserializer extends EnumeratedDeserializer<Driven> {
-		public DrivenDeserializer() {
-			super(Driven.class);
-		}
+  public static class DrivenDeserializer extends EnumeratedDeserializer<Driven> {
+    public DrivenDeserializer() {
+      super(Driven.class);
+    }
 
-		@Override
-		protected Driven[] listEnumValues() {
-			return Driven.values();
-		}
-	}
+    @Override
+    protected Driven[] listEnumValues() {
+      return Driven.values();
+    }
+  }
 }

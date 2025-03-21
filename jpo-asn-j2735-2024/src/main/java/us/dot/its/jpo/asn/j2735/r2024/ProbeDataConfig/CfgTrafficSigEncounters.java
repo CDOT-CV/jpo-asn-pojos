@@ -44,77 +44,84 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class CfgTrafficSigEncounters extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "intersections", optional = true)
-	@JsonProperty("intersections")
-	@JacksonXmlElementWrapper(localName = "intersections")
-	@JacksonXmlProperty(localName = "IntersectionID")
-	private SequenceOfIntersections intersections;
-	@Asn1Property(tag = 1, name = "trfcsigApproachDelay", optional = true)
-	@JsonProperty("trfcsigApproachDelay")
-	private TrfcsigApproachDelayInteger trfcsigApproachDelay;
-	@Asn1Property(tag = 2, name = "trfsigApproachSpeed", optional = true)
-	@JsonProperty("trfsigApproachSpeed")
-	private TrfsigApproachSpeedInteger trfsigApproachSpeed;
-	@Asn1Property(tag = 3, name = "trfsigArrivalGreen", optional = true)
-	@JsonProperty("trfsigArrivalGreen")
-	private Asn1Boolean trfsigArrivalGreen;
-	@Asn1Property(tag = 4, name = "trfsigArrivalRed", optional = true)
-	@JsonProperty("trfsigArrivalRed")
-	private Asn1Boolean trfsigArrivalRed;
-	@Asn1Property(tag = 5, name = "trfsigPedDelay", optional = true)
-	@JsonProperty("trfsigPedDelay")
-	private TrfsigPedDelayInteger trfsigPedDelay;
-	@Asn1Property(tag = 6, name = "trfsigSpatMismatch", optional = true)
-	@JsonProperty("trfsigSpatMismatch")
-	private Asn1Boolean trfsigSpatMismatch;
-	@Asn1Property(tag = 7, name = "trfsigSpatTimingError", optional = true)
-	@JsonProperty("trfsigSpatTimingError")
-	private Asn1Boolean trfsigSpatTimingError;
+  @Asn1Property(tag = 0, name = "intersections", optional = true)
+  @JsonProperty("intersections")
+  @JacksonXmlElementWrapper(localName = "intersections")
+  @JacksonXmlProperty(localName = "IntersectionID")
+  private SequenceOfIntersections intersections;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfIntersections extends Asn1SequenceOf<IntersectionID> {
-		public SequenceOfIntersections() {
-			super(IntersectionID.class, 1L, 100L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "trfcsigApproachDelay", optional = true)
+  @JsonProperty("trfcsigApproachDelay")
+  private TrfcsigApproachDelayInteger trfcsigApproachDelay;
 
-	public static class TrfcsigApproachDelayInteger extends Asn1Integer {
-		public TrfcsigApproachDelayInteger() {
-			super(1L, 3600L);
-		}
+  @Asn1Property(tag = 2, name = "trfsigApproachSpeed", optional = true)
+  @JsonProperty("trfsigApproachSpeed")
+  private TrfsigApproachSpeedInteger trfsigApproachSpeed;
 
-		@JsonCreator
-		public TrfcsigApproachDelayInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 3, name = "trfsigArrivalGreen", optional = true)
+  @JsonProperty("trfsigArrivalGreen")
+  private Asn1Boolean trfsigArrivalGreen;
 
-	public static class TrfsigApproachSpeedInteger extends Asn1Integer {
-		public TrfsigApproachSpeedInteger() {
-			super(1L, 200L);
-		}
+  @Asn1Property(tag = 4, name = "trfsigArrivalRed", optional = true)
+  @JsonProperty("trfsigArrivalRed")
+  private Asn1Boolean trfsigArrivalRed;
 
-		@JsonCreator
-		public TrfsigApproachSpeedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 5, name = "trfsigPedDelay", optional = true)
+  @JsonProperty("trfsigPedDelay")
+  private TrfsigPedDelayInteger trfsigPedDelay;
 
-	public static class TrfsigPedDelayInteger extends Asn1Integer {
-		public TrfsigPedDelayInteger() {
-			super(1L, 300L);
-		}
+  @Asn1Property(tag = 6, name = "trfsigSpatMismatch", optional = true)
+  @JsonProperty("trfsigSpatMismatch")
+  private Asn1Boolean trfsigSpatMismatch;
 
-		@JsonCreator
-		public TrfsigPedDelayInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 7, name = "trfsigSpatTimingError", optional = true)
+  @JsonProperty("trfsigSpatTimingError")
+  private Asn1Boolean trfsigSpatTimingError;
 
-	public CfgTrafficSigEncounters() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfIntersections extends Asn1SequenceOf<IntersectionID> {
+    public SequenceOfIntersections() {
+      super(IntersectionID.class, 1L, 100L);
+    }
+  }
+
+  public static class TrfcsigApproachDelayInteger extends Asn1Integer {
+    public TrfcsigApproachDelayInteger() {
+      super(1L, 3600L);
+    }
+
+    @JsonCreator
+    public TrfcsigApproachDelayInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class TrfsigApproachSpeedInteger extends Asn1Integer {
+    public TrfsigApproachSpeedInteger() {
+      super(1L, 200L);
+    }
+
+    @JsonCreator
+    public TrfsigApproachSpeedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class TrfsigPedDelayInteger extends Asn1Integer {
+    public TrfsigPedDelayInteger() {
+      super(1L, 300L);
+    }
+
+    @JsonCreator
+    public TrfsigPedDelayInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgTrafficSigEncounters() {
+    super(true);
+  }
 }

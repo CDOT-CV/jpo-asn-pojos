@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TimeInSecond_B8.TimeInSecond_B8Deserializer.class)
 public class TimeInSecond_B8 extends Asn1Integer {
 
-	public TimeInSecond_B8() {
-		super(0L, 255L);
-	}
+  public TimeInSecond_B8() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public TimeInSecond_B8(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TimeInSecond_B8(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TimeInSecond_B8Deserializer extends IntegerDeserializer<TimeInSecond_B8> {
-		public TimeInSecond_B8Deserializer() {
-			super(TimeInSecond_B8.class);
-		}
+  public static class TimeInSecond_B8Deserializer extends IntegerDeserializer<TimeInSecond_B8> {
+    public TimeInSecond_B8Deserializer() {
+      super(TimeInSecond_B8.class);
+    }
 
-		@Override
-		protected TimeInSecond_B8 construct() {
-			return new TimeInSecond_B8();
-		}
-	}
+    @Override
+    protected TimeInSecond_B8 construct() {
+      return new TimeInSecond_B8();
+    }
+  }
 }

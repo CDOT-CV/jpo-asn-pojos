@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ElevOffset.ElevOffsetDeserializer.class)
 public class ElevOffset extends Asn1Integer {
 
-	public ElevOffset() {
-		super(-4096L, 4095L);
-	}
+  public ElevOffset() {
+    super(-4096L, 4095L);
+  }
 
-	@JsonCreator
-	public ElevOffset(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ElevOffset(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ElevOffsetDeserializer extends IntegerDeserializer<ElevOffset> {
-		public ElevOffsetDeserializer() {
-			super(ElevOffset.class);
-		}
+  public static class ElevOffsetDeserializer extends IntegerDeserializer<ElevOffset> {
+    public ElevOffsetDeserializer() {
+      super(ElevOffset.class);
+    }
 
-		@Override
-		protected ElevOffset construct() {
-			return new ElevOffset();
-		}
-	}
+    @Override
+    protected ElevOffset construct() {
+      return new ElevOffset();
+    }
+  }
 }

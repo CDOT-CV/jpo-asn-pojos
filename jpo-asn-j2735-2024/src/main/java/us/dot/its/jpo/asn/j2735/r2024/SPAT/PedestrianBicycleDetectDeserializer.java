@@ -24,14 +24,15 @@ package us.dot.its.jpo.asn.j2735.r2024.SPAT;
 
 import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
-public class PedestrianBicycleDetectDeserializer extends BooleanDeserializer<PedestrianBicycleDetect> {
+public class PedestrianBicycleDetectDeserializer
+    extends BooleanDeserializer<PedestrianBicycleDetect> {
 
-	public PedestrianBicycleDetectDeserializer() {
-		super(PedestrianBicycleDetect.class);
-	}
+  public PedestrianBicycleDetectDeserializer() {
+    super(PedestrianBicycleDetect.class);
+  }
 
-	@Override
-	protected PedestrianBicycleDetect construct() {
-		return new PedestrianBicycleDetect();
-	}
+  @Override
+  protected PedestrianBicycleDetect construct() {
+    return new PedestrianBicycleDetect();
+  }
 }

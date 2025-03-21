@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ITIScodes.ITIScodesDeserializer.class)
 public class ITIScodes extends Asn1Integer {
 
-	public ITIScodes() {
-		super(0L, 65535L);
-	}
+  public ITIScodes() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public ITIScodes(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ITIScodes(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ITIScodesDeserializer extends IntegerDeserializer<ITIScodes> {
-		public ITIScodesDeserializer() {
-			super(ITIScodes.class);
-		}
+  public static class ITIScodesDeserializer extends IntegerDeserializer<ITIScodes> {
+    public ITIScodesDeserializer() {
+      super(ITIScodes.class);
+    }
 
-		@Override
-		protected ITIScodes construct() {
-			return new ITIScodes();
-		}
-	}
+    @Override
+    protected ITIScodes construct() {
+      return new ITIScodes();
+    }
+  }
 }

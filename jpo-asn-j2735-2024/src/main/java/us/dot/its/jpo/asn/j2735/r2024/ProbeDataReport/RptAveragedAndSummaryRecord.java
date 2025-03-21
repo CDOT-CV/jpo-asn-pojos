@@ -40,29 +40,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptAveragedAndSummaryRecord extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "startTime")
-	@JsonProperty("startTime")
-	private DDateTime startTime;
-	@Asn1Property(tag = 1, name = "startLoc")
-	@JsonProperty("startLoc")
-	private Position3D startLoc;
-	@Asn1Property(tag = 2, name = "startAccOfPos")
-	@JsonProperty("startAccOfPos")
-	private PositionalAccuracy startAccOfPos;
-	@Asn1Property(tag = 3, name = "endTime")
-	@JsonProperty("endTime")
-	private DDateTime endTime;
-	@Asn1Property(tag = 4, name = "endLoc")
-	@JsonProperty("endLoc")
-	private Position3D endLoc;
-	@Asn1Property(tag = 5, name = "endAccOfPos")
-	@JsonProperty("endAccOfPos")
-	private PositionalAccuracy endAccOfPos;
-	@Asn1Property(tag = 6, name = "record")
-	@JsonProperty("record")
-	private RptAvgAndSummaryRecordData record_;
+  @Asn1Property(tag = 0, name = "startTime")
+  @JsonProperty("startTime")
+  private DDateTime startTime;
 
-	public RptAveragedAndSummaryRecord() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "startLoc")
+  @JsonProperty("startLoc")
+  private Position3D startLoc;
+
+  @Asn1Property(tag = 2, name = "startAccOfPos")
+  @JsonProperty("startAccOfPos")
+  private PositionalAccuracy startAccOfPos;
+
+  @Asn1Property(tag = 3, name = "endTime")
+  @JsonProperty("endTime")
+  private DDateTime endTime;
+
+  @Asn1Property(tag = 4, name = "endLoc")
+  @JsonProperty("endLoc")
+  private Position3D endLoc;
+
+  @Asn1Property(tag = 5, name = "endAccOfPos")
+  @JsonProperty("endAccOfPos")
+  private PositionalAccuracy endAccOfPos;
+
+  @Asn1Property(tag = 6, name = "record")
+  @JsonProperty("record")
+  private RptAvgAndSummaryRecordData record_;
+
+  public RptAveragedAndSummaryRecord() {
+    super(true);
+  }
 }

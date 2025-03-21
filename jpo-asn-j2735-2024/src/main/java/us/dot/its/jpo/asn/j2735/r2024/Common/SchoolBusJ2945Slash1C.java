@@ -38,41 +38,51 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SchoolBusJ2945Slash1C extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "flashingAmberLights")
-	@JsonProperty("flashingAmberLights")
-	private Asn1Boolean flashingAmberLights;
-	@Asn1Property(tag = 1, name = "flashingRedLights")
-	@JsonProperty("flashingRedLights")
-	private Asn1Boolean flashingRedLights;
-	@Asn1Property(tag = 2, name = "studentsCrossingFront", optional = true)
-	@JsonProperty("studentsCrossingFront")
-	private Asn1Boolean studentsCrossingFront;
-	@Asn1Property(tag = 3, name = "studentsCrossingBehind", optional = true)
-	@JsonProperty("studentsCrossingBehind")
-	private Asn1Boolean studentsCrossingBehind;
-	@Asn1Property(tag = 4, name = "studentsLoading", optional = true)
-	@JsonProperty("studentsLoading")
-	private Asn1Boolean studentsLoading;
-	@Asn1Property(tag = 5, name = "studentsUnloading", optional = true)
-	@JsonProperty("studentsUnloading")
-	private Asn1Boolean studentsUnloading;
-	@Asn1Property(tag = 6, name = "wheelchairLiftInUse", optional = true)
-	@JsonProperty("wheelchairLiftInUse")
-	private Asn1Boolean wheelchairLiftInUse;
-	@Asn1Property(tag = 7, name = "emergencyExitOpen", optional = true)
-	@JsonProperty("emergencyExitOpen")
-	private Asn1Boolean emergencyExitOpen;
-	@Asn1Property(tag = 8, name = "emergencyRequestMedical", optional = true)
-	@JsonProperty("emergencyRequestMedical")
-	private Asn1Boolean emergencyRequestMedical;
-	@Asn1Property(tag = 9, name = "emergencyRequestFire", optional = true)
-	@JsonProperty("emergencyRequestFire")
-	private Asn1Boolean emergencyRequestFire;
-	@Asn1Property(tag = 10, name = "emergencyRequestPolice", optional = true)
-	@JsonProperty("emergencyRequestPolice")
-	private Asn1Boolean emergencyRequestPolice;
+  @Asn1Property(tag = 0, name = "flashingAmberLights")
+  @JsonProperty("flashingAmberLights")
+  private Asn1Boolean flashingAmberLights;
 
-	public SchoolBusJ2945Slash1C() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "flashingRedLights")
+  @JsonProperty("flashingRedLights")
+  private Asn1Boolean flashingRedLights;
+
+  @Asn1Property(tag = 2, name = "studentsCrossingFront", optional = true)
+  @JsonProperty("studentsCrossingFront")
+  private Asn1Boolean studentsCrossingFront;
+
+  @Asn1Property(tag = 3, name = "studentsCrossingBehind", optional = true)
+  @JsonProperty("studentsCrossingBehind")
+  private Asn1Boolean studentsCrossingBehind;
+
+  @Asn1Property(tag = 4, name = "studentsLoading", optional = true)
+  @JsonProperty("studentsLoading")
+  private Asn1Boolean studentsLoading;
+
+  @Asn1Property(tag = 5, name = "studentsUnloading", optional = true)
+  @JsonProperty("studentsUnloading")
+  private Asn1Boolean studentsUnloading;
+
+  @Asn1Property(tag = 6, name = "wheelchairLiftInUse", optional = true)
+  @JsonProperty("wheelchairLiftInUse")
+  private Asn1Boolean wheelchairLiftInUse;
+
+  @Asn1Property(tag = 7, name = "emergencyExitOpen", optional = true)
+  @JsonProperty("emergencyExitOpen")
+  private Asn1Boolean emergencyExitOpen;
+
+  @Asn1Property(tag = 8, name = "emergencyRequestMedical", optional = true)
+  @JsonProperty("emergencyRequestMedical")
+  private Asn1Boolean emergencyRequestMedical;
+
+  @Asn1Property(tag = 9, name = "emergencyRequestFire", optional = true)
+  @JsonProperty("emergencyRequestFire")
+  private Asn1Boolean emergencyRequestFire;
+
+  @Asn1Property(tag = 10, name = "emergencyRequestPolice", optional = true)
+  @JsonProperty("emergencyRequestPolice")
+  private Asn1Boolean emergencyRequestPolice;
+
+  public SchoolBusJ2945Slash1C() {
+    super(true);
+  }
 }

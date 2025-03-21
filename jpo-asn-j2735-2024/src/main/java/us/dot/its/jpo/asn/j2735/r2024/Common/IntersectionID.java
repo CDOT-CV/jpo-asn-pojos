@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = IntersectionID.IntersectionIDDeserializer.class)
 public class IntersectionID extends Asn1Integer {
 
-	public IntersectionID() {
-		super(0L, 65535L);
-	}
+  public IntersectionID() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public IntersectionID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public IntersectionID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class IntersectionIDDeserializer extends IntegerDeserializer<IntersectionID> {
-		public IntersectionIDDeserializer() {
-			super(IntersectionID.class);
-		}
+  public static class IntersectionIDDeserializer extends IntegerDeserializer<IntersectionID> {
+    public IntersectionIDDeserializer() {
+      super(IntersectionID.class);
+    }
 
-		@Override
-		protected IntersectionID construct() {
-			return new IntersectionID();
-		}
-	}
+    @Override
+    protected IntersectionID construct() {
+      return new IntersectionID();
+    }
+  }
 }

@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class RptAvgAndSummaryRecordData extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "averagedRecord")
-	@JsonProperty("averagedRecord")
-	private RptAveragedRecord averagedRecord;
-	@Asn1Property(tag = 1, name = "summaryRecord")
-	@JsonProperty("summaryRecord")
-	private RptSummaryRecord summaryRecord;
+  @Asn1Property(tag = 0, name = "averagedRecord")
+  @JsonProperty("averagedRecord")
+  private RptAveragedRecord averagedRecord;
 
-	public RptAvgAndSummaryRecordData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "summaryRecord")
+  @JsonProperty("summaryRecord")
+  private RptSummaryRecord summaryRecord;
+
+  public RptAvgAndSummaryRecordData() {
+    super(true);
+  }
 }

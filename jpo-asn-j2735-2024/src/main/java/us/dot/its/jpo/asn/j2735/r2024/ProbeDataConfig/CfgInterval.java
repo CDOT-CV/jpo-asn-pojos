@@ -37,38 +37,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonInclude(Include.NON_NULL)
 public class CfgInterval extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "timeInterval")
-	@JsonProperty("timeInterval")
-	private TimeIntervalInteger timeInterval;
-	@Asn1Property(tag = 1, name = "distanceInterval")
-	@JsonProperty("distanceInterval")
-	private DistanceIntervalInteger distanceInterval;
+  @Asn1Property(tag = 0, name = "timeInterval")
+  @JsonProperty("timeInterval")
+  private TimeIntervalInteger timeInterval;
 
-	public CfgInterval() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "distanceInterval")
+  @JsonProperty("distanceInterval")
+  private DistanceIntervalInteger distanceInterval;
 
-	public static class TimeIntervalInteger extends Asn1Integer {
-		public TimeIntervalInteger() {
-			super(1L, 36000L);
-		}
+  public CfgInterval() {
+    super(true);
+  }
 
-		@JsonCreator
-		public TimeIntervalInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class TimeIntervalInteger extends Asn1Integer {
+    public TimeIntervalInteger() {
+      super(1L, 36000L);
+    }
 
-	public static class DistanceIntervalInteger extends Asn1Integer {
-		public DistanceIntervalInteger() {
-			super(1L, 100L);
-		}
+    @JsonCreator
+    public TimeIntervalInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public DistanceIntervalInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class DistanceIntervalInteger extends Asn1Integer {
+    public DistanceIntervalInteger() {
+      super(1L, 100L);
+    }
+
+    @JsonCreator
+    public DistanceIntervalInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 }

@@ -36,29 +36,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 @JsonInclude(Include.NON_NULL)
 public class RptTrafficMetrics extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "trfsigApproachDelay")
-	@JsonProperty("trfsigApproachDelay")
-	private Asn1Null trfsigApproachDelay;
-	@Asn1Property(tag = 1, name = "trfsigApproachSpeed")
-	@JsonProperty("trfsigApproachSpeed")
-	private Asn1Null trfsigApproachSpeed;
-	@Asn1Property(tag = 2, name = "trfsigArrivalGreen")
-	@JsonProperty("trfsigArrivalGreen")
-	private Asn1Null trfsigArrivalGreen;
-	@Asn1Property(tag = 3, name = "trfsigArrivalRed")
-	@JsonProperty("trfsigArrivalRed")
-	private Asn1Null trfsigArrivalRed;
-	@Asn1Property(tag = 4, name = "trfsigPedDelay")
-	@JsonProperty("trfsigPedDelay")
-	private Asn1Null trfsigPedDelay;
-	@Asn1Property(tag = 5, name = "trfsigSpatMismatch")
-	@JsonProperty("trfsigSpatMismatch")
-	private Asn1Null trfsigSpatMismatch;
-	@Asn1Property(tag = 6, name = "trfsigSpatTimingError")
-	@JsonProperty("trfsigSpatTimingError")
-	private Asn1Null trfsigSpatTimingError;
+  @Asn1Property(tag = 0, name = "trfsigApproachDelay")
+  @JsonProperty("trfsigApproachDelay")
+  private Asn1Null trfsigApproachDelay;
 
-	public RptTrafficMetrics() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "trfsigApproachSpeed")
+  @JsonProperty("trfsigApproachSpeed")
+  private Asn1Null trfsigApproachSpeed;
+
+  @Asn1Property(tag = 2, name = "trfsigArrivalGreen")
+  @JsonProperty("trfsigArrivalGreen")
+  private Asn1Null trfsigArrivalGreen;
+
+  @Asn1Property(tag = 3, name = "trfsigArrivalRed")
+  @JsonProperty("trfsigArrivalRed")
+  private Asn1Null trfsigArrivalRed;
+
+  @Asn1Property(tag = 4, name = "trfsigPedDelay")
+  @JsonProperty("trfsigPedDelay")
+  private Asn1Null trfsigPedDelay;
+
+  @Asn1Property(tag = 5, name = "trfsigSpatMismatch")
+  @JsonProperty("trfsigSpatMismatch")
+  private Asn1Null trfsigSpatMismatch;
+
+  @Asn1Property(tag = 6, name = "trfsigSpatTimingError")
+  @JsonProperty("trfsigSpatTimingError")
+  private Asn1Null trfsigSpatTimingError;
+
+  public RptTrafficMetrics() {
+    super(true);
+  }
 }

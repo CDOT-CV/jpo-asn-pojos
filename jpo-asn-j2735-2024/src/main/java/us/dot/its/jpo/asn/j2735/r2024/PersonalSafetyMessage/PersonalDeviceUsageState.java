@@ -26,94 +26,110 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = PersonalDeviceUsageState.PersonalDeviceUsageStateDeserializer.class)
+@JsonDeserialize(
+    using =
+        PersonalDeviceUsageState
+            .PersonalDeviceUsageStateDeserializer.class)
 public class PersonalDeviceUsageState extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isOther() {
-		return get(1);
-	}
+  public boolean isOther() {
+    return get(1);
+  }
 
-	public void setOther(boolean other) {
-		set(1, other);
-	}
+  public void setOther(boolean other) {
+    set(1, other);
+  }
 
-	public boolean isIdle() {
-		return get(2);
-	}
+  public boolean isIdle() {
+    return get(2);
+  }
 
-	public void setIdle(boolean idle) {
-		set(2, idle);
-	}
+  public void setIdle(boolean idle) {
+    set(2, idle);
+  }
 
-	public boolean isListeningToAudio() {
-		return get(3);
-	}
+  public boolean isListeningToAudio() {
+    return get(3);
+  }
 
-	public void setListeningToAudio(boolean listeningToAudio) {
-		set(3, listeningToAudio);
-	}
+  public void setListeningToAudio(boolean listeningToAudio) {
+    set(3, listeningToAudio);
+  }
 
-	public boolean isTyping() {
-		return get(4);
-	}
+  public boolean isTyping() {
+    return get(4);
+  }
 
-	public void setTyping(boolean typing) {
-		set(4, typing);
-	}
+  public void setTyping(boolean typing) {
+    set(4, typing);
+  }
 
-	public boolean isCalling() {
-		return get(5);
-	}
+  public boolean isCalling() {
+    return get(5);
+  }
 
-	public void setCalling(boolean calling) {
-		set(5, calling);
-	}
+  public void setCalling(boolean calling) {
+    set(5, calling);
+  }
 
-	public boolean isPlayingGames() {
-		return get(6);
-	}
+  public boolean isPlayingGames() {
+    return get(6);
+  }
 
-	public void setPlayingGames(boolean playingGames) {
-		set(6, playingGames);
-	}
+  public void setPlayingGames(boolean playingGames) {
+    set(6, playingGames);
+  }
 
-	public boolean isReading() {
-		return get(7);
-	}
+  public boolean isReading() {
+    return get(7);
+  }
 
-	public void setReading(boolean reading) {
-		set(7, reading);
-	}
+  public void setReading(boolean reading) {
+    set(7, reading);
+  }
 
-	public boolean isViewing() {
-		return get(8);
-	}
+  public boolean isViewing() {
+    return get(8);
+  }
 
-	public void setViewing(boolean viewing) {
-		set(8, viewing);
-	}
+  public void setViewing(boolean viewing) {
+    set(8, viewing);
+  }
 
-	public PersonalDeviceUsageState() {
-		super(9, false, new String[]{"unavailable", "other", "idle", "listeningToAudio", "typing", "calling",
-				"playingGames", "reading", "viewing"});
-	}
+  public PersonalDeviceUsageState() {
+    super(
+        9,
+        false,
+        new String[] {
+          "unavailable",
+          "other",
+          "idle",
+          "listeningToAudio",
+          "typing",
+          "calling",
+          "playingGames",
+          "reading",
+          "viewing"
+        });
+  }
 
-	public static class PersonalDeviceUsageStateDeserializer extends BitStringDeserializer<PersonalDeviceUsageState> {
-		public PersonalDeviceUsageStateDeserializer() {
-			super(PersonalDeviceUsageState.class);
-		}
+  public static class PersonalDeviceUsageStateDeserializer
+      extends BitStringDeserializer<PersonalDeviceUsageState> {
+    public PersonalDeviceUsageStateDeserializer() {
+      super(PersonalDeviceUsageState.class);
+    }
 
-		@Override
-		protected PersonalDeviceUsageState construct() {
-			return new PersonalDeviceUsageState();
-		}
-	}
+    @Override
+    protected PersonalDeviceUsageState construct() {
+      return new PersonalDeviceUsageState();
+    }
+  }
 }

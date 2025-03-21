@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = GenericLocations.GenericLocationsDeserializer.class)
 public class GenericLocations extends Asn1Integer {
 
-	public GenericLocations() {
-		super(0L, 65535L);
-	}
+  public GenericLocations() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public GenericLocations(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public GenericLocations(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class GenericLocationsDeserializer extends IntegerDeserializer<GenericLocations> {
-		public GenericLocationsDeserializer() {
-			super(GenericLocations.class);
-		}
+  public static class GenericLocationsDeserializer extends IntegerDeserializer<GenericLocations> {
+    public GenericLocationsDeserializer() {
+      super(GenericLocations.class);
+    }
 
-		@Override
-		protected GenericLocations construct() {
-			return new GenericLocations();
-		}
-	}
+    @Override
+    protected GenericLocations construct() {
+      return new GenericLocations();
+    }
+  }
 }

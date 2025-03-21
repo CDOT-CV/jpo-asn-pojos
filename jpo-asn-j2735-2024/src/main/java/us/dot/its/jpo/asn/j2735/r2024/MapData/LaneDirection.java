@@ -26,37 +26,38 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneDirection.LaneDirectionDeserializer.class)
+@JsonDeserialize(
+    using = LaneDirection.LaneDirectionDeserializer.class)
 public class LaneDirection extends Asn1Bitstring {
 
-	public boolean isIngressPath() {
-		return get(0);
-	}
+  public boolean isIngressPath() {
+    return get(0);
+  }
 
-	public void setIngressPath(boolean ingressPath) {
-		set(0, ingressPath);
-	}
+  public void setIngressPath(boolean ingressPath) {
+    set(0, ingressPath);
+  }
 
-	public boolean isEgressPath() {
-		return get(1);
-	}
+  public boolean isEgressPath() {
+    return get(1);
+  }
 
-	public void setEgressPath(boolean egressPath) {
-		set(1, egressPath);
-	}
+  public void setEgressPath(boolean egressPath) {
+    set(1, egressPath);
+  }
 
-	public LaneDirection() {
-		super(2, false, new String[]{"ingressPath", "egressPath"});
-	}
+  public LaneDirection() {
+    super(2, false, new String[] {"ingressPath", "egressPath"});
+  }
 
-	public static class LaneDirectionDeserializer extends BitStringDeserializer<LaneDirection> {
-		public LaneDirectionDeserializer() {
-			super(LaneDirection.class);
-		}
+  public static class LaneDirectionDeserializer extends BitStringDeserializer<LaneDirection> {
+    public LaneDirectionDeserializer() {
+      super(LaneDirection.class);
+    }
 
-		@Override
-		protected LaneDirection construct() {
-			return new LaneDirection();
-		}
-	}
+    @Override
+    protected LaneDirection construct() {
+      return new LaneDirection();
+    }
+  }
 }

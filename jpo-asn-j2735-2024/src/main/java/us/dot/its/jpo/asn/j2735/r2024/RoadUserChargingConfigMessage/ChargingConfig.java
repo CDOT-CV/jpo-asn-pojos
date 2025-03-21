@@ -45,64 +45,73 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ChargingConfig extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "configInfo")
-	@JsonProperty("configInfo")
-	private ConfigInfo configInfo;
-	@Asn1Property(tag = 1, name = "reportSched")
-	@JsonProperty("reportSched")
-	private EnumeratedReportSched reportSched;
-	@Asn1Property(tag = 2, name = "byPrimaryRegion")
-	@JsonProperty("byPrimaryRegion")
-	private PrimaryRegionChargingInfo byPrimaryRegion;
-	@Asn1Property(tag = 3, name = "bySubRegion", optional = true)
-	@JsonProperty("bySubRegion")
-	@JacksonXmlElementWrapper(localName = "bySubRegion")
-	@JacksonXmlProperty(localName = "SubRegionChargingInfo")
-	private SequenceOfBySubRegion bySubRegion;
-	@Asn1Property(tag = 4, name = "byAreaOrSegment", optional = true)
-	@JsonProperty("byAreaOrSegment")
-	private AreaOrSegmentChargingInfo byAreaOrSegment;
+  @Asn1Property(tag = 0, name = "configInfo")
+  @JsonProperty("configInfo")
+  private ConfigInfo configInfo;
 
-	@Getter
-	@JsonSerialize(using = EnumeratedReportSchedSerializer.class)
-	@JsonDeserialize(using = EnumeratedReportSchedDeserializer.class)
-	public enum EnumeratedReportSched implements Asn1Enumerated {
-		HOURLY(0, "hourly"), WEEKLY(1, "weekly"), MONTHLY(2, "monthly"), QUARTERLY(3, "quarterly");
+  @Asn1Property(tag = 1, name = "reportSched")
+  @JsonProperty("reportSched")
+  private EnumeratedReportSched reportSched;
 
-		private final int index;
-		private final String name;
+  @Asn1Property(tag = 2, name = "byPrimaryRegion")
+  @JsonProperty("byPrimaryRegion")
+  private PrimaryRegionChargingInfo byPrimaryRegion;
 
-		private EnumeratedReportSched(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+  @Asn1Property(tag = 3, name = "bySubRegion", optional = true)
+  @JsonProperty("bySubRegion")
+  @JacksonXmlElementWrapper(localName = "bySubRegion")
+  @JacksonXmlProperty(localName = "SubRegionChargingInfo")
+  private SequenceOfBySubRegion bySubRegion;
 
-	public static class EnumeratedReportSchedSerializer extends EnumeratedSerializer<EnumeratedReportSched> {
-		public EnumeratedReportSchedSerializer() {
-			super(EnumeratedReportSched.class);
-		}
-	}
+  @Asn1Property(tag = 4, name = "byAreaOrSegment", optional = true)
+  @JsonProperty("byAreaOrSegment")
+  private AreaOrSegmentChargingInfo byAreaOrSegment;
 
-	public static class EnumeratedReportSchedDeserializer extends EnumeratedDeserializer<EnumeratedReportSched> {
-		public EnumeratedReportSchedDeserializer() {
-			super(EnumeratedReportSched.class);
-		}
+  @Getter
+  @JsonSerialize(using = EnumeratedReportSchedSerializer.class)
+  @JsonDeserialize(using = EnumeratedReportSchedDeserializer.class)
+  public enum EnumeratedReportSched implements Asn1Enumerated {
+    HOURLY(0, "hourly"),
+    WEEKLY(1, "weekly"),
+    MONTHLY(2, "monthly"),
+    QUARTERLY(3, "quarterly");
 
-		@Override
-		protected EnumeratedReportSched[] listEnumValues() {
-			return EnumeratedReportSched.values();
-		}
-	}
+    private final int index;
+    private final String name;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfBySubRegion extends Asn1SequenceOf<SubRegionChargingInfo> {
-		public SequenceOfBySubRegion() {
-			super(SubRegionChargingInfo.class, 1L, 999L);
-		}
-	}
+    private EnumeratedReportSched(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
 
-	public ChargingConfig() {
-		super(true);
-	}
+  public static class EnumeratedReportSchedSerializer
+      extends EnumeratedSerializer<EnumeratedReportSched> {
+    public EnumeratedReportSchedSerializer() {
+      super(EnumeratedReportSched.class);
+    }
+  }
+
+  public static class EnumeratedReportSchedDeserializer
+      extends EnumeratedDeserializer<EnumeratedReportSched> {
+    public EnumeratedReportSchedDeserializer() {
+      super(EnumeratedReportSched.class);
+    }
+
+    @Override
+    protected EnumeratedReportSched[] listEnumValues() {
+      return EnumeratedReportSched.values();
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfBySubRegion extends Asn1SequenceOf<SubRegionChargingInfo> {
+    public SequenceOfBySubRegion() {
+      super(SubRegionChargingInfo.class, 1L, 999L);
+    }
+  }
+
+  public ChargingConfig() {
+    super(true);
+  }
 }

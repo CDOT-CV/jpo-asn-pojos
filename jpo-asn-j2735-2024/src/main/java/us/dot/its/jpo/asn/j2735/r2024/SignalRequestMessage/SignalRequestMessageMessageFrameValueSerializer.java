@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class SignalRequestMessageMessageFrameValueSerializer extends OpenTypeSerializer<SignalRequestMessage> {
+public class SignalRequestMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<SignalRequestMessage> {
 
-	public SignalRequestMessageMessageFrameValueSerializer() {
-		super(SignalRequestMessage.class, "value", "SignalRequestMessage");
-	}
+  public SignalRequestMessageMessageFrameValueSerializer() {
+    super(SignalRequestMessage.class, "value", "SignalRequestMessage");
+  }
 }

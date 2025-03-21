@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class FrontCutInDeserializer extends BooleanDeserializer<FrontCutIn> {
 
-	public FrontCutInDeserializer() {
-		super(FrontCutIn.class);
-	}
+  public FrontCutInDeserializer() {
+    super(FrontCutIn.class);
+  }
 
-	@Override
-	protected FrontCutIn construct() {
-		return new FrontCutIn();
-	}
+  @Override
+  protected FrontCutIn construct() {
+    return new FrontCutIn();
+  }
 }

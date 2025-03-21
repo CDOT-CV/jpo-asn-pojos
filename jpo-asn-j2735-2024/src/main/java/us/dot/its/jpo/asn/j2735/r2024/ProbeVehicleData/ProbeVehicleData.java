@@ -44,47 +44,53 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ProbeVehicleData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "segNum", optional = true)
-	@JsonProperty("segNum")
-	private ProbeSegmentNumber segNum;
-	@Asn1Property(tag = 2, name = "probeID", optional = true)
-	@JsonProperty("probeID")
-	private VehicleIdent probeID;
-	@Asn1Property(tag = 3, name = "startVector")
-	@JsonProperty("startVector")
-	private FullPositionVector startVector;
-	@Asn1Property(tag = 4, name = "vehicleType")
-	@JsonProperty("vehicleType")
-	private VehicleClassification vehicleType;
-	@Asn1Property(tag = 5, name = "snapshots")
-	@JsonProperty("snapshots")
-	@JacksonXmlElementWrapper(localName = "snapshots")
-	@JacksonXmlProperty(localName = "Snapshot")
-	private SequenceOfSnapshots snapshots;
-	@Asn1Property(tag = 6, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-ProbeVehicleData")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfSnapshots extends Asn1SequenceOf<Snapshot> {
-		public SequenceOfSnapshots() {
-			super(Snapshot.class, 1L, 32L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "segNum", optional = true)
+  @JsonProperty("segNum")
+  private ProbeSegmentNumber segNum;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ProbeVehicleData> {
-		public SequenceOfRegional() {
-			super(Reg_ProbeVehicleData.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "probeID", optional = true)
+  @JsonProperty("probeID")
+  private VehicleIdent probeID;
 
-	public ProbeVehicleData() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "startVector")
+  @JsonProperty("startVector")
+  private FullPositionVector startVector;
+
+  @Asn1Property(tag = 4, name = "vehicleType")
+  @JsonProperty("vehicleType")
+  private VehicleClassification vehicleType;
+
+  @Asn1Property(tag = 5, name = "snapshots")
+  @JsonProperty("snapshots")
+  @JacksonXmlElementWrapper(localName = "snapshots")
+  @JacksonXmlProperty(localName = "Snapshot")
+  private SequenceOfSnapshots snapshots;
+
+  @Asn1Property(tag = 6, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-ProbeVehicleData")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfSnapshots extends Asn1SequenceOf<Snapshot> {
+    public SequenceOfSnapshots() {
+      super(Snapshot.class, 1L, 32L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ProbeVehicleData> {
+    public SequenceOfRegional() {
+      super(Reg_ProbeVehicleData.class, 1L, 4L);
+    }
+  }
+
+  public ProbeVehicleData() {
+    super(true);
+  }
 }

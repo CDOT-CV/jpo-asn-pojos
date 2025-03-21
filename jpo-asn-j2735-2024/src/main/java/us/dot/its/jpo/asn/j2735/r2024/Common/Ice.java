@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Ice extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private IceType type;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private IceType type;
 
-	public Ice() {
-		super(true);
-	}
+  public Ice() {
+    super(true);
+  }
 }

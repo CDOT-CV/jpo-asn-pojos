@@ -33,30 +33,32 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = EssPrecipYesNo.EssPrecipYesNoSerializer.class)
 @JsonDeserialize(using = EssPrecipYesNo.EssPrecipYesNoDeserializer.class)
 public enum EssPrecipYesNo implements Asn1Enumerated {
-	PRECIP(1, "precip"), NOPRECIP(2, "noPrecip"), ERROR(3, "error");
+  PRECIP(1, "precip"),
+  NOPRECIP(2, "noPrecip"),
+  ERROR(3, "error");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private EssPrecipYesNo(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private EssPrecipYesNo(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class EssPrecipYesNoSerializer extends EnumeratedSerializer<EssPrecipYesNo> {
-		public EssPrecipYesNoSerializer() {
-			super(EssPrecipYesNo.class);
-		}
-	}
+  public static class EssPrecipYesNoSerializer extends EnumeratedSerializer<EssPrecipYesNo> {
+    public EssPrecipYesNoSerializer() {
+      super(EssPrecipYesNo.class);
+    }
+  }
 
-	public static class EssPrecipYesNoDeserializer extends EnumeratedDeserializer<EssPrecipYesNo> {
-		public EssPrecipYesNoDeserializer() {
-			super(EssPrecipYesNo.class);
-		}
+  public static class EssPrecipYesNoDeserializer extends EnumeratedDeserializer<EssPrecipYesNo> {
+    public EssPrecipYesNoDeserializer() {
+      super(EssPrecipYesNo.class);
+    }
 
-		@Override
-		protected EssPrecipYesNo[] listEnumValues() {
-			return EssPrecipYesNo.values();
-		}
-	}
+    @Override
+    protected EssPrecipYesNo[] listEnumValues() {
+      return EssPrecipYesNo.values();
+    }
+  }
 }

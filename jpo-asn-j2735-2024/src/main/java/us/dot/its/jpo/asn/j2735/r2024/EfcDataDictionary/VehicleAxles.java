@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleAxles extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleFirstAxleHeight")
-	@JsonProperty("vehicleFirstAxleHeight")
-	private Int1Unsigned vehicleFirstAxleHeight;
-	@Asn1Property(tag = 1, name = "vehicleAxlesNumber")
-	@JsonProperty("vehicleAxlesNumber")
-	private VehicleAxlesNumber vehicleAxlesNumber;
+  @Asn1Property(tag = 0, name = "vehicleFirstAxleHeight")
+  @JsonProperty("vehicleFirstAxleHeight")
+  private Int1Unsigned vehicleFirstAxleHeight;
 
-	public VehicleAxles() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "vehicleAxlesNumber")
+  @JsonProperty("vehicleAxlesNumber")
+  private VehicleAxlesNumber vehicleAxlesNumber;
+
+  public VehicleAxles() {
+    super(false);
+  }
 }

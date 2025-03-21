@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class Position3D_addGrpBReg_Position3DValueSerializer extends OpenTypeSerializer<Position3D_addGrpB> {
+public class Position3D_addGrpBReg_Position3DValueSerializer
+    extends OpenTypeSerializer<Position3D_addGrpB> {
 
-	public Position3D_addGrpBReg_Position3DValueSerializer() {
-		super(Position3D_addGrpB.class, "regExtValue", "Position3D_addGrpB");
-	}
+  public Position3D_addGrpBReg_Position3DValueSerializer() {
+    super(Position3D_addGrpB.class, "regExtValue", "Position3D_addGrpB");
+  }
 }

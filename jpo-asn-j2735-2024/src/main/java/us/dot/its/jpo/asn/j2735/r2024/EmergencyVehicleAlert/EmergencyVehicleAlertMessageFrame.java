@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class EmergencyVehicleAlertMessageFrame extends MessageFrame<EmergencyVehicleAlert> {
 
-	public EmergencyVehicleAlertMessageFrame() {
-		super(22, "EmergencyVehicleAlert");
-	}
+  public EmergencyVehicleAlertMessageFrame() {
+    super(22, "EmergencyVehicleAlert");
+  }
 
-	@Override
-	@JsonSerialize(using = EmergencyVehicleAlertMessageFrameValueSerializer.class)
-	public EmergencyVehicleAlert getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = EmergencyVehicleAlertMessageFrameValueSerializer.class)
+  public EmergencyVehicleAlert getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = EmergencyVehicleAlertMessageFrameValueDeserializer.class)
-	public void setValue(EmergencyVehicleAlert value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = EmergencyVehicleAlertMessageFrameValueDeserializer.class)
+  public void setValue(EmergencyVehicleAlert value) {
+    super.setValue(value);
+  }
 }

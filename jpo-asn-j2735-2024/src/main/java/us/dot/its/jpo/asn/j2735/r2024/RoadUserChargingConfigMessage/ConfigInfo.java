@@ -45,84 +45,87 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ConfigInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "configID")
-	@JsonProperty("configID")
-	private ConfigIDInteger configID;
-	@Asn1Property(tag = 1, name = "configVersion")
-	@JsonProperty("configVersion")
-	private ConfigVersionInteger configVersion;
-	@Asn1Property(tag = 2, name = "startDate")
-	@JsonProperty("startDate")
-	private DDateTime startDate;
-	@Asn1Property(tag = 3, name = "expirationDate")
-	@JsonProperty("expirationDate")
-	private DDateTime expirationDate;
-	@Asn1Property(tag = 4, name = "configurationFeeType")
-	@JsonProperty("configurationFeeType")
-	private EnumeratedConfigurationFeeType configurationFeeType;
+  @Asn1Property(tag = 0, name = "configID")
+  @JsonProperty("configID")
+  private ConfigIDInteger configID;
 
-	public static class ConfigIDInteger extends Asn1Integer {
-		public ConfigIDInteger() {
-			super(0L, 64L);
-		}
+  @Asn1Property(tag = 1, name = "configVersion")
+  @JsonProperty("configVersion")
+  private ConfigVersionInteger configVersion;
 
-		@JsonCreator
-		public ConfigIDInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "startDate")
+  @JsonProperty("startDate")
+  private DDateTime startDate;
 
-	public static class ConfigVersionInteger extends Asn1Integer {
-		public ConfigVersionInteger() {
-			super(0L, 64L);
-		}
+  @Asn1Property(tag = 3, name = "expirationDate")
+  @JsonProperty("expirationDate")
+  private DDateTime expirationDate;
 
-		@JsonCreator
-		public ConfigVersionInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "configurationFeeType")
+  @JsonProperty("configurationFeeType")
+  private EnumeratedConfigurationFeeType configurationFeeType;
 
-	@Getter
-	@JsonSerialize(using = EnumeratedConfigurationFeeTypeSerializer.class)
-	@JsonDeserialize(using = EnumeratedConfigurationFeeTypeDeserializer.class)
-	public enum EnumeratedConfigurationFeeType implements Asn1Enumerated {
-		EXCLUDED(0, "excluded"), REPLACESOTHERCHARGES(1, "replacesOtherCharges"), ADDEDTOOTHERCHARGES(2,
-				"addedToOtherCharges");
+  public static class ConfigIDInteger extends Asn1Integer {
+    public ConfigIDInteger() {
+      super(0L, 64L);
+    }
 
-		private final int index;
-		private final String name;
+    @JsonCreator
+    public ConfigIDInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		private EnumeratedConfigurationFeeType(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+  public static class ConfigVersionInteger extends Asn1Integer {
+    public ConfigVersionInteger() {
+      super(0L, 64L);
+    }
 
-	public static class EnumeratedConfigurationFeeTypeSerializer
-			extends
-				EnumeratedSerializer<EnumeratedConfigurationFeeType> {
-		public EnumeratedConfigurationFeeTypeSerializer() {
-			super(EnumeratedConfigurationFeeType.class);
-		}
-	}
+    @JsonCreator
+    public ConfigVersionInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class EnumeratedConfigurationFeeTypeDeserializer
-			extends
-				EnumeratedDeserializer<EnumeratedConfigurationFeeType> {
-		public EnumeratedConfigurationFeeTypeDeserializer() {
-			super(EnumeratedConfigurationFeeType.class);
-		}
+  @Getter
+  @JsonSerialize(using = EnumeratedConfigurationFeeTypeSerializer.class)
+  @JsonDeserialize(using = EnumeratedConfigurationFeeTypeDeserializer.class)
+  public enum EnumeratedConfigurationFeeType implements Asn1Enumerated {
+    EXCLUDED(0, "excluded"),
+    REPLACESOTHERCHARGES(1, "replacesOtherCharges"),
+    ADDEDTOOTHERCHARGES(2, "addedToOtherCharges");
 
-		@Override
-		protected EnumeratedConfigurationFeeType[] listEnumValues() {
-			return EnumeratedConfigurationFeeType.values();
-		}
-	}
+    private final int index;
+    private final String name;
 
-	public ConfigInfo() {
-		super(true);
-	}
+    private EnumeratedConfigurationFeeType(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
+
+  public static class EnumeratedConfigurationFeeTypeSerializer
+      extends EnumeratedSerializer<EnumeratedConfigurationFeeType> {
+    public EnumeratedConfigurationFeeTypeSerializer() {
+      super(EnumeratedConfigurationFeeType.class);
+    }
+  }
+
+  public static class EnumeratedConfigurationFeeTypeDeserializer
+      extends EnumeratedDeserializer<EnumeratedConfigurationFeeType> {
+    public EnumeratedConfigurationFeeTypeDeserializer() {
+      super(EnumeratedConfigurationFeeType.class);
+    }
+
+    @Override
+    protected EnumeratedConfigurationFeeType[] listEnumValues() {
+      return EnumeratedConfigurationFeeType.values();
+    }
+  }
+
+  public ConfigInfo() {
+    super(true);
+  }
 }

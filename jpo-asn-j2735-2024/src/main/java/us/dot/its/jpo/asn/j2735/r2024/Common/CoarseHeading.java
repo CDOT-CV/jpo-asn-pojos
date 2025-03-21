@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = CoarseHeading.CoarseHeadingDeserializer.class)
 public class CoarseHeading extends Asn1Integer {
 
-	public CoarseHeading() {
-		super(0L, 240L);
-	}
+  public CoarseHeading() {
+    super(0L, 240L);
+  }
 
-	@JsonCreator
-	public CoarseHeading(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public CoarseHeading(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class CoarseHeadingDeserializer extends IntegerDeserializer<CoarseHeading> {
-		public CoarseHeadingDeserializer() {
-			super(CoarseHeading.class);
-		}
+  public static class CoarseHeadingDeserializer extends IntegerDeserializer<CoarseHeading> {
+    public CoarseHeadingDeserializer() {
+      super(CoarseHeading.class);
+    }
 
-		@Override
-		protected CoarseHeading construct() {
-			return new CoarseHeading();
-		}
-	}
+    @Override
+    protected CoarseHeading construct() {
+      return new CoarseHeading();
+    }
+  }
 }

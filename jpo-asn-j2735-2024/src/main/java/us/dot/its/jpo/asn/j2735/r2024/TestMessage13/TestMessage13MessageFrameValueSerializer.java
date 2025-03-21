@@ -26,7 +26,7 @@ import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class TestMessage13MessageFrameValueSerializer extends OpenTypeSerializer<TestMessage13> {
 
-	public TestMessage13MessageFrameValueSerializer() {
-		super(TestMessage13.class, "value", "TestMessage13");
-	}
+  public TestMessage13MessageFrameValueSerializer() {
+    super(TestMessage13.class, "value", "TestMessage13");
+  }
 }

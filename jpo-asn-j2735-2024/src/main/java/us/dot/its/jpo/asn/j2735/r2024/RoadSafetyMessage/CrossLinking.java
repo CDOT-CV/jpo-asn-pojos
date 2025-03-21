@@ -40,44 +40,46 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class CrossLinking extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "audioLinks", optional = true)
-	@JsonProperty("audioLinks")
-	@JacksonXmlElementWrapper(localName = "audioLinks")
-	@JacksonXmlProperty(localName = "AudioLink")
-	private SequenceOfAudioLinks audioLinks;
-	@Asn1Property(tag = 1, name = "visualLink", optional = true)
-	@JsonProperty("visualLink")
-	@JacksonXmlElementWrapper(localName = "visualLink")
-	@JacksonXmlProperty(localName = "VisualLink")
-	private SequenceOfVisualLink visualLink;
-	@Asn1Property(tag = 2, name = "rsmLink", optional = true)
-	@JsonProperty("rsmLink")
-	@JacksonXmlElementWrapper(localName = "rsmLink")
-	@JacksonXmlProperty(localName = "EventIdentifier")
-	private SequenceOfRsmLink rsmLink;
+  @Asn1Property(tag = 0, name = "audioLinks", optional = true)
+  @JsonProperty("audioLinks")
+  @JacksonXmlElementWrapper(localName = "audioLinks")
+  @JacksonXmlProperty(localName = "AudioLink")
+  private SequenceOfAudioLinks audioLinks;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfAudioLinks extends Asn1SequenceOf<AudioLink> {
-		public SequenceOfAudioLinks() {
-			super(AudioLink.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "visualLink", optional = true)
+  @JsonProperty("visualLink")
+  @JacksonXmlElementWrapper(localName = "visualLink")
+  @JacksonXmlProperty(localName = "VisualLink")
+  private SequenceOfVisualLink visualLink;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfVisualLink extends Asn1SequenceOf<VisualLink> {
-		public SequenceOfVisualLink() {
-			super(VisualLink.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "rsmLink", optional = true)
+  @JsonProperty("rsmLink")
+  @JacksonXmlElementWrapper(localName = "rsmLink")
+  @JacksonXmlProperty(localName = "EventIdentifier")
+  private SequenceOfRsmLink rsmLink;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRsmLink extends Asn1SequenceOf<EventIdentifier> {
-		public SequenceOfRsmLink() {
-			super(EventIdentifier.class, 1L, 4L);
-		}
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfAudioLinks extends Asn1SequenceOf<AudioLink> {
+    public SequenceOfAudioLinks() {
+      super(AudioLink.class, 1L, 4L);
+    }
+  }
 
-	public CrossLinking() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfVisualLink extends Asn1SequenceOf<VisualLink> {
+    public SequenceOfVisualLink() {
+      super(VisualLink.class, 1L, 4L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRsmLink extends Asn1SequenceOf<EventIdentifier> {
+    public SequenceOfRsmLink() {
+      super(EventIdentifier.class, 1L, 4L);
+    }
+  }
+
+  public CrossLinking() {
+    super(true);
+  }
 }

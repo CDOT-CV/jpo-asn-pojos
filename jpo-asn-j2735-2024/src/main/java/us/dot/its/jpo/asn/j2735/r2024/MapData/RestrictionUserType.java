@@ -39,23 +39,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RestrictionUserType extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "basicType")
-	@JsonProperty("basicType")
-	private RestrictionAppliesTo basicType;
-	@Asn1Property(tag = 1, name = "regional")
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-RestrictionUserType")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "basicType")
+  @JsonProperty("basicType")
+  private RestrictionAppliesTo basicType;
 
-	public RestrictionUserType() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "regional")
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-RestrictionUserType")
+  private SequenceOfRegional regional;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RestrictionUserType> {
-		public SequenceOfRegional() {
-			super(Reg_RestrictionUserType.class, 1L, 4L);
-		}
-	}
+  public RestrictionUserType() {
+    super(true);
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RestrictionUserType> {
+    public SequenceOfRegional() {
+      super(Reg_RestrictionUserType.class, 1L, 4L);
+    }
+  }
 }

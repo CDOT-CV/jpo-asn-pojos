@@ -39,23 +39,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CurveContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "advisorySpeed")
-	@JsonProperty("advisorySpeed")
-	private SpeedAdvice advisorySpeed;
-	@Asn1Property(tag = 1, name = "surfaceCondition", optional = true)
-	@JsonProperty("surfaceCondition")
-	private FrictionInformation surfaceCondition;
-	@Asn1Property(tag = 2, name = "minRadius", optional = true)
-	@JsonProperty("minRadius")
-	private Radius minRadius;
-	@Asn1Property(tag = 3, name = "bankAngle", optional = true)
-	@JsonProperty("bankAngle")
-	private BankAngle bankAngle;
-	@Asn1Property(tag = 4, name = "curveRegion", optional = true)
-	@JsonProperty("curveRegion")
-	private RegionInfo curveRegion;
+  @Asn1Property(tag = 0, name = "advisorySpeed")
+  @JsonProperty("advisorySpeed")
+  private SpeedAdvice advisorySpeed;
 
-	public CurveContainer() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "surfaceCondition", optional = true)
+  @JsonProperty("surfaceCondition")
+  private FrictionInformation surfaceCondition;
+
+  @Asn1Property(tag = 2, name = "minRadius", optional = true)
+  @JsonProperty("minRadius")
+  private Radius minRadius;
+
+  @Asn1Property(tag = 3, name = "bankAngle", optional = true)
+  @JsonProperty("bankAngle")
+  private BankAngle bankAngle;
+
+  @Asn1Property(tag = 4, name = "curveRegion", optional = true)
+  @JsonProperty("curveRegion")
+  private RegionInfo curveRegion;
+
+  public CurveContainer() {
+    super(true);
+  }
 }

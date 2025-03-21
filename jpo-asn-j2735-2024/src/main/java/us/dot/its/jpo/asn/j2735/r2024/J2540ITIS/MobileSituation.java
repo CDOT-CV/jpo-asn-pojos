@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MobileSituation.MobileSituationDeserializer.class)
 public class MobileSituation extends Asn1Integer {
 
-	public MobileSituation() {
-		super(0L, 65535L);
-	}
+  public MobileSituation() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public MobileSituation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MobileSituation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MobileSituationDeserializer extends IntegerDeserializer<MobileSituation> {
-		public MobileSituationDeserializer() {
-			super(MobileSituation.class);
-		}
+  public static class MobileSituationDeserializer extends IntegerDeserializer<MobileSituation> {
+    public MobileSituationDeserializer() {
+      super(MobileSituation.class);
+    }
 
-		@Override
-		protected MobileSituation construct() {
-			return new MobileSituation();
-		}
-	}
+    @Override
+    protected MobileSituation construct() {
+      return new MobileSituation();
+    }
+  }
 }

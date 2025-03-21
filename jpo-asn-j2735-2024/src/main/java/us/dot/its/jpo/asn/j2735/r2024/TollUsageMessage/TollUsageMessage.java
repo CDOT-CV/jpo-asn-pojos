@@ -40,26 +40,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TollUsageMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tollPointInfo")
-	@JsonProperty("tollPointInfo")
-	private TollChargerInfo tollPointInfo;
-	@Asn1Property(tag = 1, name = "tempID")
-	@JsonProperty("tempID")
-	private TemporaryID tempID;
-	@Asn1Property(tag = 2, name = "tumSequenceNum")
-	@JsonProperty("tumSequenceNum")
-	private MsgCount tumSequenceNum;
-	@Asn1Property(tag = 3, name = "tamSequenceNum")
-	@JsonProperty("tamSequenceNum")
-	private MsgCount tamSequenceNum;
-	@Asn1Property(tag = 4, name = "tumHash", optional = true)
-	@JsonProperty("tumHash")
-	private TumHash tumHash;
-	@Asn1Property(tag = 5, name = "encryptedTumData")
-	@JsonProperty("encryptedTumData")
-	private EncryptedTumData encryptedTumData;
+  @Asn1Property(tag = 0, name = "tollPointInfo")
+  @JsonProperty("tollPointInfo")
+  private TollChargerInfo tollPointInfo;
 
-	public TollUsageMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tempID")
+  @JsonProperty("tempID")
+  private TemporaryID tempID;
+
+  @Asn1Property(tag = 2, name = "tumSequenceNum")
+  @JsonProperty("tumSequenceNum")
+  private MsgCount tumSequenceNum;
+
+  @Asn1Property(tag = 3, name = "tamSequenceNum")
+  @JsonProperty("tamSequenceNum")
+  private MsgCount tamSequenceNum;
+
+  @Asn1Property(tag = 4, name = "tumHash", optional = true)
+  @JsonProperty("tumHash")
+  private TumHash tumHash;
+
+  @Asn1Property(tag = 5, name = "encryptedTumData")
+  @JsonProperty("encryptedTumData")
+  private EncryptedTumData encryptedTumData;
+
+  public TollUsageMessage() {
+    super(true);
+  }
 }

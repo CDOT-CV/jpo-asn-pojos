@@ -40,83 +40,95 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ReceiptData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "sessionTime")
-	@JsonProperty("sessionTime")
-	private DateAndTime sessionTime;
-	@Asn1Property(tag = 1, name = "sessionServiceProvider")
-	@JsonProperty("sessionServiceProvider")
-	private Provider sessionServiceProvider;
-	@Asn1Property(tag = 2, name = "locationOfStation")
-	@JsonProperty("locationOfStation")
-	private Int2Unsigned locationOfStation;
-	@Asn1Property(tag = 3, name = "sessionLocation")
-	@JsonProperty("sessionLocation")
-	private SessionLocation sessionLocation;
-	@Asn1Property(tag = 4, name = "sessionType")
-	@JsonProperty("sessionType")
-	private Int1Unsigned sessionType;
-	@Asn1Property(tag = 5, name = "sessionResult")
-	@JsonProperty("sessionResult")
-	private ResultOp sessionResult;
-	@Asn1Property(tag = 6, name = "sessionTariffClass")
-	@JsonProperty("sessionTariffClass")
-	private Int1Unsigned sessionTariffClass;
-	@Asn1Property(tag = 7, name = "sessionClaimedClass")
-	@JsonProperty("sessionClaimedClass")
-	private Int1Unsigned sessionClaimedClass;
-	@Asn1Property(tag = 8, name = "sessionFee")
-	@JsonProperty("sessionFee")
-	private PaymentFee sessionFee;
-	@Asn1Property(tag = 9, name = "sessionContractProvider")
-	@JsonProperty("sessionContractProvider")
-	private Provider sessionContractProvider;
-	@Asn1Property(tag = 10, name = "sessionTypeOfContract")
-	@JsonProperty("sessionTypeOfContract")
-	private SessionTypeOfContractOctetString sessionTypeOfContract;
-	@Asn1Property(tag = 11, name = "sessionContextVersion")
-	@JsonProperty("sessionContextVersion")
-	private SessionContextVersionInteger sessionContextVersion;
-	@Asn1Property(tag = 12, name = "receiptDataAuthenticator")
-	@JsonProperty("receiptDataAuthenticator")
-	private ReceiptDataAuthenticatorOctetString receiptDataAuthenticator;
+  @Asn1Property(tag = 0, name = "sessionTime")
+  @JsonProperty("sessionTime")
+  private DateAndTime sessionTime;
 
-	public static class SessionTypeOfContractOctetString extends Asn1OctetString {
-		public SessionTypeOfContractOctetString() {
-			super(2, 2);
-		}
+  @Asn1Property(tag = 1, name = "sessionServiceProvider")
+  @JsonProperty("sessionServiceProvider")
+  private Provider sessionServiceProvider;
 
-		@JsonCreator
-		public SessionTypeOfContractOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 2, name = "locationOfStation")
+  @JsonProperty("locationOfStation")
+  private Int2Unsigned locationOfStation;
 
-	public static class SessionContextVersionInteger extends Asn1Integer {
-		public SessionContextVersionInteger() {
-			super(0L, 127L);
-		}
+  @Asn1Property(tag = 3, name = "sessionLocation")
+  @JsonProperty("sessionLocation")
+  private SessionLocation sessionLocation;
 
-		@JsonCreator
-		public SessionContextVersionInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "sessionType")
+  @JsonProperty("sessionType")
+  private Int1Unsigned sessionType;
 
-	public static class ReceiptDataAuthenticatorOctetString extends Asn1OctetString {
-		public ReceiptDataAuthenticatorOctetString() {
-			super(4, 4);
-		}
+  @Asn1Property(tag = 5, name = "sessionResult")
+  @JsonProperty("sessionResult")
+  private ResultOp sessionResult;
 
-		@JsonCreator
-		public ReceiptDataAuthenticatorOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 6, name = "sessionTariffClass")
+  @JsonProperty("sessionTariffClass")
+  private Int1Unsigned sessionTariffClass;
 
-	public ReceiptData() {
-		super(false);
-	}
+  @Asn1Property(tag = 7, name = "sessionClaimedClass")
+  @JsonProperty("sessionClaimedClass")
+  private Int1Unsigned sessionClaimedClass;
+
+  @Asn1Property(tag = 8, name = "sessionFee")
+  @JsonProperty("sessionFee")
+  private PaymentFee sessionFee;
+
+  @Asn1Property(tag = 9, name = "sessionContractProvider")
+  @JsonProperty("sessionContractProvider")
+  private Provider sessionContractProvider;
+
+  @Asn1Property(tag = 10, name = "sessionTypeOfContract")
+  @JsonProperty("sessionTypeOfContract")
+  private SessionTypeOfContractOctetString sessionTypeOfContract;
+
+  @Asn1Property(tag = 11, name = "sessionContextVersion")
+  @JsonProperty("sessionContextVersion")
+  private SessionContextVersionInteger sessionContextVersion;
+
+  @Asn1Property(tag = 12, name = "receiptDataAuthenticator")
+  @JsonProperty("receiptDataAuthenticator")
+  private ReceiptDataAuthenticatorOctetString receiptDataAuthenticator;
+
+  public static class SessionTypeOfContractOctetString extends Asn1OctetString {
+    public SessionTypeOfContractOctetString() {
+      super(2, 2);
+    }
+
+    @JsonCreator
+    public SessionTypeOfContractOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public static class SessionContextVersionInteger extends Asn1Integer {
+    public SessionContextVersionInteger() {
+      super(0L, 127L);
+    }
+
+    @JsonCreator
+    public SessionContextVersionInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class ReceiptDataAuthenticatorOctetString extends Asn1OctetString {
+    public ReceiptDataAuthenticatorOctetString() {
+      super(4, 4);
+    }
+
+    @JsonCreator
+    public ReceiptDataAuthenticatorOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public ReceiptData() {
+    super(false);
+  }
 }

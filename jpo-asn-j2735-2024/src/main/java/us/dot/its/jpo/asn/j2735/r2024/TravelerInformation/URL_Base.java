@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class URL_Base extends IA5String {
 
-	public URL_Base() {
-		super(1, 45);
-	}
+  public URL_Base() {
+    super(1, 45);
+  }
 
-	@JsonCreator
-	public URL_Base(String value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public URL_Base(String value) {
+    this();
+    this.value = value;
+  }
 }

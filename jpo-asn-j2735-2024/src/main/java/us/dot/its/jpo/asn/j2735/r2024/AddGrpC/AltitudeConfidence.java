@@ -33,35 +33,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AltitudeConfidence.AltitudeConfidenceSerializer.class)
 @JsonDeserialize(using = AltitudeConfidence.AltitudeConfidenceDeserializer.class)
 public enum AltitudeConfidence implements Asn1Enumerated {
-	ALT_000_01(0, "alt-000-01"), ALT_000_02(1, "alt-000-02"), ALT_000_05(2, "alt-000-05"), ALT_000_10(3,
-			"alt-000-10"), ALT_000_20(4, "alt-000-20"), ALT_000_50(5, "alt-000-50"), ALT_001_00(6,
-					"alt-001-00"), ALT_002_00(7, "alt-002-00"), ALT_005_00(8, "alt-005-00"), ALT_010_00(9,
-							"alt-010-00"), ALT_020_00(10, "alt-020-00"), ALT_050_00(11, "alt-050-00"), ALT_100_00(12,
-									"alt-100-00"), ALT_200_00(13,
-											"alt-200-00"), OUTOFRANGE(14, "outOfRange"), UNAVAILABLE(15, "unavailable");
+  ALT_000_01(0, "alt-000-01"),
+  ALT_000_02(1, "alt-000-02"),
+  ALT_000_05(2, "alt-000-05"),
+  ALT_000_10(3, "alt-000-10"),
+  ALT_000_20(4, "alt-000-20"),
+  ALT_000_50(5, "alt-000-50"),
+  ALT_001_00(6, "alt-001-00"),
+  ALT_002_00(7, "alt-002-00"),
+  ALT_005_00(8, "alt-005-00"),
+  ALT_010_00(9, "alt-010-00"),
+  ALT_020_00(10, "alt-020-00"),
+  ALT_050_00(11, "alt-050-00"),
+  ALT_100_00(12, "alt-100-00"),
+  ALT_200_00(13, "alt-200-00"),
+  OUTOFRANGE(14, "outOfRange"),
+  UNAVAILABLE(15, "unavailable");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AltitudeConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AltitudeConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AltitudeConfidenceSerializer extends EnumeratedSerializer<AltitudeConfidence> {
-		public AltitudeConfidenceSerializer() {
-			super(AltitudeConfidence.class);
-		}
-	}
+  public static class AltitudeConfidenceSerializer
+      extends EnumeratedSerializer<AltitudeConfidence> {
+    public AltitudeConfidenceSerializer() {
+      super(AltitudeConfidence.class);
+    }
+  }
 
-	public static class AltitudeConfidenceDeserializer extends EnumeratedDeserializer<AltitudeConfidence> {
-		public AltitudeConfidenceDeserializer() {
-			super(AltitudeConfidence.class);
-		}
+  public static class AltitudeConfidenceDeserializer
+      extends EnumeratedDeserializer<AltitudeConfidence> {
+    public AltitudeConfidenceDeserializer() {
+      super(AltitudeConfidence.class);
+    }
 
-		@Override
-		protected AltitudeConfidence[] listEnumValues() {
-			return AltitudeConfidence.values();
-		}
-	}
+    @Override
+    protected AltitudeConfidence[] listEnumValues() {
+      return AltitudeConfidence.values();
+    }
+  }
 }

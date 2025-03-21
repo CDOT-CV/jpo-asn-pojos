@@ -45,44 +45,51 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "height", optional = true)
-	@JsonProperty("height")
-	private VehicleHeight height;
-	@Asn1Property(tag = 1, name = "bumpers", optional = true)
-	@JsonProperty("bumpers")
-	private BumperHeights bumpers;
-	@Asn1Property(tag = 2, name = "mass", optional = true)
-	@JsonProperty("mass")
-	private VehicleMass mass;
-	@Asn1Property(tag = 3, name = "doNotUse", optional = true)
-	@JsonProperty("doNotUse")
-	private TrailerWeight doNotUse;
-	@Asn1Property(tag = 4, name = "trailerPresent", optional = true, extension = true)
-	@JsonProperty("trailerPresent")
-	private Asn1Boolean trailerPresent;
-	@Asn1Property(tag = 5, name = "pivotPoint", optional = true, extension = true)
-	@JsonProperty("pivotPoint")
-	private PivotPointDescription pivotPoint;
-	@Asn1Property(tag = 6, name = "axles", optional = true, extension = true)
-	@JsonProperty("axles")
-	private Axles axles;
-	@Asn1Property(tag = 7, name = "leanAngle", optional = true, extension = true)
-	@JsonProperty("leanAngle")
-	private LeanAngleInteger leanAngle;
+  @Asn1Property(tag = 0, name = "height", optional = true)
+  @JsonProperty("height")
+  private VehicleHeight height;
 
-	public static class LeanAngleInteger extends Asn1Integer {
-		public LeanAngleInteger() {
-			super(-90L, 90L);
-		}
+  @Asn1Property(tag = 1, name = "bumpers", optional = true)
+  @JsonProperty("bumpers")
+  private BumperHeights bumpers;
 
-		@JsonCreator
-		public LeanAngleInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "mass", optional = true)
+  @JsonProperty("mass")
+  private VehicleMass mass;
 
-	public VehicleData() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "doNotUse", optional = true)
+  @JsonProperty("doNotUse")
+  private TrailerWeight doNotUse;
+
+  @Asn1Property(tag = 4, name = "trailerPresent", optional = true, extension = true)
+  @JsonProperty("trailerPresent")
+  private Asn1Boolean trailerPresent;
+
+  @Asn1Property(tag = 5, name = "pivotPoint", optional = true, extension = true)
+  @JsonProperty("pivotPoint")
+  private PivotPointDescription pivotPoint;
+
+  @Asn1Property(tag = 6, name = "axles", optional = true, extension = true)
+  @JsonProperty("axles")
+  private Axles axles;
+
+  @Asn1Property(tag = 7, name = "leanAngle", optional = true, extension = true)
+  @JsonProperty("leanAngle")
+  private LeanAngleInteger leanAngle;
+
+  public static class LeanAngleInteger extends Asn1Integer {
+    public LeanAngleInteger() {
+      super(-90L, 90L);
+    }
+
+    @JsonCreator
+    public LeanAngleInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public VehicleData() {
+    super(true);
+  }
 }

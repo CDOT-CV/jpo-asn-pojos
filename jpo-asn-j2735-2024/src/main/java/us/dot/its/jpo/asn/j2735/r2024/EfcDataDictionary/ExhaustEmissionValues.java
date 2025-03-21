@@ -39,35 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ExhaustEmissionValues extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "unitType")
-	@JsonProperty("unitType")
-	private EmissionUnit unitType;
-	@Asn1Property(tag = 1, name = "emissionCo")
-	@JsonProperty("emissionCo")
-	private EmissionCoInteger emissionCo;
-	@Asn1Property(tag = 2, name = "emissionHc")
-	@JsonProperty("emissionHc")
-	private Int2Unsigned emissionHc;
-	@Asn1Property(tag = 3, name = "emissionNox")
-	@JsonProperty("emissionNox")
-	private Int2Unsigned emissionNox;
-	@Asn1Property(tag = 4, name = "emissionHcNox")
-	@JsonProperty("emissionHcNox")
-	private Int2Unsigned emissionHcNox;
+  @Asn1Property(tag = 0, name = "unitType")
+  @JsonProperty("unitType")
+  private EmissionUnit unitType;
 
-	public static class EmissionCoInteger extends Asn1Integer {
-		public EmissionCoInteger() {
-			super(0L, 32767L);
-		}
+  @Asn1Property(tag = 1, name = "emissionCo")
+  @JsonProperty("emissionCo")
+  private EmissionCoInteger emissionCo;
 
-		@JsonCreator
-		public EmissionCoInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "emissionHc")
+  @JsonProperty("emissionHc")
+  private Int2Unsigned emissionHc;
 
-	public ExhaustEmissionValues() {
-		super(false);
-	}
+  @Asn1Property(tag = 3, name = "emissionNox")
+  @JsonProperty("emissionNox")
+  private Int2Unsigned emissionNox;
+
+  @Asn1Property(tag = 4, name = "emissionHcNox")
+  @JsonProperty("emissionHcNox")
+  private Int2Unsigned emissionHcNox;
+
+  public static class EmissionCoInteger extends Asn1Integer {
+    public EmissionCoInteger() {
+      super(0L, 32767L);
+    }
+
+    @JsonCreator
+    public EmissionCoInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ExhaustEmissionValues() {
+    super(false);
+  }
 }

@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TestMessage01 extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "header", optional = true)
-	@JsonProperty("header")
-	private Header header;
-	@Asn1Property(tag = 1, name = "regional", optional = true)
-	@JsonProperty("regional")
-	private Reg_TestMessage01 regional;
+  @Asn1Property(tag = 0, name = "header", optional = true)
+  @JsonProperty("header")
+  private Header header;
 
-	public TestMessage01() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "regional", optional = true)
+  @JsonProperty("regional")
+  private Reg_TestMessage01 regional;
+
+  public TestMessage01() {
+    super(true);
+  }
 }

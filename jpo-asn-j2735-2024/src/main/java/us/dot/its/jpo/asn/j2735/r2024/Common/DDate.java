@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DDate extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "year")
-	@JsonProperty("year")
-	private DYear year;
-	@Asn1Property(tag = 1, name = "month")
-	@JsonProperty("month")
-	private DMonth month;
-	@Asn1Property(tag = 2, name = "day")
-	@JsonProperty("day")
-	private DDay day;
+  @Asn1Property(tag = 0, name = "year")
+  @JsonProperty("year")
+  private DYear year;
 
-	public DDate() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "month")
+  @JsonProperty("month")
+  private DMonth month;
+
+  @Asn1Property(tag = 2, name = "day")
+  @JsonProperty("day")
+  private DDay day;
+
+  public DDate() {
+    super(false);
+  }
 }

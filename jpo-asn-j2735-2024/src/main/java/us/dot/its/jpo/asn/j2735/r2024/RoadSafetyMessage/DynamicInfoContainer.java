@@ -45,59 +45,65 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class DynamicInfoContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "priority")
-	@JsonProperty("priority")
-	private EnumeratedPriority priority;
-	@Asn1Property(tag = 1, name = "dmsSignString")
-	@JsonProperty("dmsSignString")
-	@JacksonXmlElementWrapper(localName = "dmsSignString")
-	@JacksonXmlProperty(localName = "ShortString")
-	private SequenceOfDmsSignString dmsSignString;
-	@Asn1Property(tag = 2, name = "applicableRegion")
-	@JsonProperty("applicableRegion")
-	private RegionInfo applicableRegion;
+  @Asn1Property(tag = 0, name = "priority")
+  @JsonProperty("priority")
+  private EnumeratedPriority priority;
 
-	@Getter
-	@JsonSerialize(using = EnumeratedPrioritySerializer.class)
-	@JsonDeserialize(using = EnumeratedPriorityDeserializer.class)
-	public enum EnumeratedPriority implements Asn1Enumerated {
-		LOW_PRIORITY(0, "low-priority"), MEDIUM_PRIORITY(1, "medium-priority"), HIGH_PRIORITY(2,
-				"high-priority"), CRITICAL(3, "critical");
+  @Asn1Property(tag = 1, name = "dmsSignString")
+  @JsonProperty("dmsSignString")
+  @JacksonXmlElementWrapper(localName = "dmsSignString")
+  @JacksonXmlProperty(localName = "ShortString")
+  private SequenceOfDmsSignString dmsSignString;
 
-		private final int index;
-		private final String name;
+  @Asn1Property(tag = 2, name = "applicableRegion")
+  @JsonProperty("applicableRegion")
+  private RegionInfo applicableRegion;
 
-		private EnumeratedPriority(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+  @Getter
+  @JsonSerialize(using = EnumeratedPrioritySerializer.class)
+  @JsonDeserialize(using = EnumeratedPriorityDeserializer.class)
+  public enum EnumeratedPriority implements Asn1Enumerated {
+    LOW_PRIORITY(0, "low-priority"),
+    MEDIUM_PRIORITY(1, "medium-priority"),
+    HIGH_PRIORITY(2, "high-priority"),
+    CRITICAL(3, "critical");
 
-	public static class EnumeratedPrioritySerializer extends EnumeratedSerializer<EnumeratedPriority> {
-		public EnumeratedPrioritySerializer() {
-			super(EnumeratedPriority.class);
-		}
-	}
+    private final int index;
+    private final String name;
 
-	public static class EnumeratedPriorityDeserializer extends EnumeratedDeserializer<EnumeratedPriority> {
-		public EnumeratedPriorityDeserializer() {
-			super(EnumeratedPriority.class);
-		}
+    private EnumeratedPriority(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
 
-		@Override
-		protected EnumeratedPriority[] listEnumValues() {
-			return EnumeratedPriority.values();
-		}
-	}
+  public static class EnumeratedPrioritySerializer
+      extends EnumeratedSerializer<EnumeratedPriority> {
+    public EnumeratedPrioritySerializer() {
+      super(EnumeratedPriority.class);
+    }
+  }
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfDmsSignString extends Asn1SequenceOf<ShortString> {
-		public SequenceOfDmsSignString() {
-			super(ShortString.class, 0L, 2147483647L);
-		}
-	}
+  public static class EnumeratedPriorityDeserializer
+      extends EnumeratedDeserializer<EnumeratedPriority> {
+    public EnumeratedPriorityDeserializer() {
+      super(EnumeratedPriority.class);
+    }
 
-	public DynamicInfoContainer() {
-		super(true);
-	}
+    @Override
+    protected EnumeratedPriority[] listEnumValues() {
+      return EnumeratedPriority.values();
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfDmsSignString extends Asn1SequenceOf<ShortString> {
+    public SequenceOfDmsSignString() {
+      super(ShortString.class, 0L, 2147483647L);
+    }
+  }
+
+  public DynamicInfoContainer() {
+    super(true);
+  }
 }

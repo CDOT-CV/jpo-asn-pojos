@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class BasicSafetyMessageMessageFrameValueSerializer extends OpenTypeSerializer<BasicSafetyMessage> {
+public class BasicSafetyMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<BasicSafetyMessage> {
 
-	public BasicSafetyMessageMessageFrameValueSerializer() {
-		super(BasicSafetyMessage.class, "value", "BasicSafetyMessage");
-	}
+  public BasicSafetyMessageMessageFrameValueSerializer() {
+    super(BasicSafetyMessage.class, "value", "BasicSafetyMessage");
+  }
 }

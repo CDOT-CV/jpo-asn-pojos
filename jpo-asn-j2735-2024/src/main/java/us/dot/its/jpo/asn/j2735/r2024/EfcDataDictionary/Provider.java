@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Provider extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "countryCode")
-	@JsonProperty("countryCode")
-	private CountryCode countryCode;
-	@Asn1Property(tag = 1, name = "providerIdentifier")
-	@JsonProperty("providerIdentifier")
-	private IssuerIdentifier providerIdentifier;
+  @Asn1Property(tag = 0, name = "countryCode")
+  @JsonProperty("countryCode")
+  private CountryCode countryCode;
 
-	public Provider() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "providerIdentifier")
+  @JsonProperty("providerIdentifier")
+  private IssuerIdentifier providerIdentifier;
+
+  public Provider() {
+    super(false);
+  }
 }

@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = Latitude.LatitudeDeserializer.class)
 public class Latitude extends Int4Signed {
 
-	public Latitude() {
-		super();
-	}
+  public Latitude() {
+    super();
+  }
 
-	@JsonCreator
-	public Latitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Latitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LatitudeDeserializer extends IntegerDeserializer<Latitude> {
-		public LatitudeDeserializer() {
-			super(Latitude.class);
-		}
+  public static class LatitudeDeserializer extends IntegerDeserializer<Latitude> {
+    public LatitudeDeserializer() {
+      super(Latitude.class);
+    }
 
-		@Override
-		protected Latitude construct() {
-			return new Latitude();
-		}
-	}
+    @Override
+    protected Latitude construct() {
+      return new Latitude();
+    }
+  }
 }

@@ -33,31 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = PersonalDeviceUserType.PersonalDeviceUserTypeSerializer.class)
 @JsonDeserialize(using = PersonalDeviceUserType.PersonalDeviceUserTypeDeserializer.class)
 public enum PersonalDeviceUserType implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), APEDESTRIAN(1, "aPEDESTRIAN"), APEDALCYCLIST(2,
-			"aPEDALCYCLIST"), APUBLICSAFETYWORKER(3, "aPUBLICSAFETYWORKER"), ANANIMAL(4, "anANIMAL");
+  UNAVAILABLE(0, "unavailable"),
+  APEDESTRIAN(1, "aPEDESTRIAN"),
+  APEDALCYCLIST(2, "aPEDALCYCLIST"),
+  APUBLICSAFETYWORKER(3, "aPUBLICSAFETYWORKER"),
+  ANANIMAL(4, "anANIMAL");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PersonalDeviceUserType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PersonalDeviceUserType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PersonalDeviceUserTypeSerializer extends EnumeratedSerializer<PersonalDeviceUserType> {
-		public PersonalDeviceUserTypeSerializer() {
-			super(PersonalDeviceUserType.class);
-		}
-	}
+  public static class PersonalDeviceUserTypeSerializer
+      extends EnumeratedSerializer<PersonalDeviceUserType> {
+    public PersonalDeviceUserTypeSerializer() {
+      super(PersonalDeviceUserType.class);
+    }
+  }
 
-	public static class PersonalDeviceUserTypeDeserializer extends EnumeratedDeserializer<PersonalDeviceUserType> {
-		public PersonalDeviceUserTypeDeserializer() {
-			super(PersonalDeviceUserType.class);
-		}
+  public static class PersonalDeviceUserTypeDeserializer
+      extends EnumeratedDeserializer<PersonalDeviceUserType> {
+    public PersonalDeviceUserTypeDeserializer() {
+      super(PersonalDeviceUserType.class);
+    }
 
-		@Override
-		protected PersonalDeviceUserType[] listEnumValues() {
-			return PersonalDeviceUserType.values();
-		}
-	}
+    @Override
+    protected PersonalDeviceUserType[] listEnumValues() {
+      return PersonalDeviceUserType.values();
+    }
+  }
 }

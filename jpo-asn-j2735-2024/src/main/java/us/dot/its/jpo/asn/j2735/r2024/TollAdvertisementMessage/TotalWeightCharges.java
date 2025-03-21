@@ -45,63 +45,66 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TotalWeightCharges extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "weightLimit")
-	@JsonProperty("weightLimit")
-	private WeightLimitInteger weightLimit;
-	@Asn1Property(tag = 1, name = "weightLimitUnits")
-	@JsonProperty("weightLimitUnits")
-	private EnumeratedWeightLimitUnits weightLimitUnits;
-	@Asn1Property(tag = 2, name = "weightCharge")
-	@JsonProperty("weightCharge")
-	private PaymentFee weightCharge;
+  @Asn1Property(tag = 0, name = "weightLimit")
+  @JsonProperty("weightLimit")
+  private WeightLimitInteger weightLimit;
 
-	public static class WeightLimitInteger extends Asn1Integer {
-		public WeightLimitInteger() {
-			super(0L, 16777215L);
-		}
+  @Asn1Property(tag = 1, name = "weightLimitUnits")
+  @JsonProperty("weightLimitUnits")
+  private EnumeratedWeightLimitUnits weightLimitUnits;
 
-		@JsonCreator
-		public WeightLimitInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "weightCharge")
+  @JsonProperty("weightCharge")
+  private PaymentFee weightCharge;
 
-	@Getter
-	@JsonSerialize(using = EnumeratedWeightLimitUnitsSerializer.class)
-	@JsonDeserialize(using = EnumeratedWeightLimitUnitsDeserializer.class)
-	public enum EnumeratedWeightLimitUnits implements Asn1Enumerated {
-		POUNDS(0, "pounds"), KILOGRAMS(1, "kilograms");
+  public static class WeightLimitInteger extends Asn1Integer {
+    public WeightLimitInteger() {
+      super(0L, 16777215L);
+    }
 
-		private final int index;
-		private final String name;
+    @JsonCreator
+    public WeightLimitInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		private EnumeratedWeightLimitUnits(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+  @Getter
+  @JsonSerialize(using = EnumeratedWeightLimitUnitsSerializer.class)
+  @JsonDeserialize(using = EnumeratedWeightLimitUnitsDeserializer.class)
+  public enum EnumeratedWeightLimitUnits implements Asn1Enumerated {
+    POUNDS(0, "pounds"),
+    KILOGRAMS(1, "kilograms");
 
-	public static class EnumeratedWeightLimitUnitsSerializer extends EnumeratedSerializer<EnumeratedWeightLimitUnits> {
-		public EnumeratedWeightLimitUnitsSerializer() {
-			super(EnumeratedWeightLimitUnits.class);
-		}
-	}
+    private final int index;
+    private final String name;
 
-	public static class EnumeratedWeightLimitUnitsDeserializer
-			extends
-				EnumeratedDeserializer<EnumeratedWeightLimitUnits> {
-		public EnumeratedWeightLimitUnitsDeserializer() {
-			super(EnumeratedWeightLimitUnits.class);
-		}
+    private EnumeratedWeightLimitUnits(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
 
-		@Override
-		protected EnumeratedWeightLimitUnits[] listEnumValues() {
-			return EnumeratedWeightLimitUnits.values();
-		}
-	}
+  public static class EnumeratedWeightLimitUnitsSerializer
+      extends EnumeratedSerializer<EnumeratedWeightLimitUnits> {
+    public EnumeratedWeightLimitUnitsSerializer() {
+      super(EnumeratedWeightLimitUnits.class);
+    }
+  }
 
-	public TotalWeightCharges() {
-		super(true);
-	}
+  public static class EnumeratedWeightLimitUnitsDeserializer
+      extends EnumeratedDeserializer<EnumeratedWeightLimitUnits> {
+    public EnumeratedWeightLimitUnitsDeserializer() {
+      super(EnumeratedWeightLimitUnits.class);
+    }
+
+    @Override
+    protected EnumeratedWeightLimitUnits[] listEnumValues() {
+      return EnumeratedWeightLimitUnits.values();
+    }
+  }
+
+  public TotalWeightCharges() {
+    super(true);
+  }
 }

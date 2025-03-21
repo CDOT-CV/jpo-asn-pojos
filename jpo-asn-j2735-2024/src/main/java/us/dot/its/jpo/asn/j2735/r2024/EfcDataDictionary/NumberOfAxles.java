@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NumberOfAxles extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "trailerAxles")
-	@JsonProperty("trailerAxles")
-	private TrailerAxlesInteger trailerAxles;
-	@Asn1Property(tag = 1, name = "tractorAxles")
-	@JsonProperty("tractorAxles")
-	private TractorAxlesInteger tractorAxles;
+  @Asn1Property(tag = 0, name = "trailerAxles")
+  @JsonProperty("trailerAxles")
+  private TrailerAxlesInteger trailerAxles;
 
-	public static class TrailerAxlesInteger extends Asn1Integer {
-		public TrailerAxlesInteger() {
-			super(0L, 7L);
-		}
+  @Asn1Property(tag = 1, name = "tractorAxles")
+  @JsonProperty("tractorAxles")
+  private TractorAxlesInteger tractorAxles;
 
-		@JsonCreator
-		public TrailerAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class TrailerAxlesInteger extends Asn1Integer {
+    public TrailerAxlesInteger() {
+      super(0L, 7L);
+    }
 
-	public static class TractorAxlesInteger extends Asn1Integer {
-		public TractorAxlesInteger() {
-			super(0L, 7L);
-		}
+    @JsonCreator
+    public TrailerAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public TractorAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class TractorAxlesInteger extends Asn1Integer {
+    public TractorAxlesInteger() {
+      super(0L, 7L);
+    }
 
-	public NumberOfAxles() {
-		super(false);
-	}
+    @JsonCreator
+    public TractorAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public NumberOfAxles() {
+    super(false);
+  }
 }

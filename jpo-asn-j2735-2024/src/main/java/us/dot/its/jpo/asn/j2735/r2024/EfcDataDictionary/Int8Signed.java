@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Int8Signed.Int8SignedDeserializer.class)
 public class Int8Signed extends Asn1Integer {
 
-	public Int8Signed() {
-		super(-9223372036854775808L, 9223372036854775807L);
-	}
+  public Int8Signed() {
+    super(-9223372036854775808L, 9223372036854775807L);
+  }
 
-	@JsonCreator
-	public Int8Signed(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Int8Signed(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class Int8SignedDeserializer extends IntegerDeserializer<Int8Signed> {
-		public Int8SignedDeserializer() {
-			super(Int8Signed.class);
-		}
+  public static class Int8SignedDeserializer extends IntegerDeserializer<Int8Signed> {
+    public Int8SignedDeserializer() {
+      super(Int8Signed.class);
+    }
 
-		@Override
-		protected Int8Signed construct() {
-			return new Int8Signed();
-		}
-	}
+    @Override
+    protected Int8Signed construct() {
+      return new Int8Signed();
+    }
+  }
 }

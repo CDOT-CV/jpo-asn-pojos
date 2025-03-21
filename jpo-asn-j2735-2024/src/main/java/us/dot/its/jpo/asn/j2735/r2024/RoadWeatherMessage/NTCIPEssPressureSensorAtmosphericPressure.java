@@ -27,29 +27,31 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPEssPressureSensorAtmosphericPressure.NTCIPEssPressureSensorAtmosphericPressureDeserializer.class)
+@JsonDeserialize(
+    using =
+        NTCIPEssPressureSensorAtmosphericPressure
+            .NTCIPEssPressureSensorAtmosphericPressureDeserializer.class)
 public class NTCIPEssPressureSensorAtmosphericPressure extends Asn1Integer {
 
-	public NTCIPEssPressureSensorAtmosphericPressure() {
-		super(0L, 65535L);
-	}
+  public NTCIPEssPressureSensorAtmosphericPressure() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public NTCIPEssPressureSensorAtmosphericPressure(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPressureSensorAtmosphericPressure(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssPressureSensorAtmosphericPressureDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssPressureSensorAtmosphericPressure> {
-		public NTCIPEssPressureSensorAtmosphericPressureDeserializer() {
-			super(NTCIPEssPressureSensorAtmosphericPressure.class);
-		}
+  public static class NTCIPEssPressureSensorAtmosphericPressureDeserializer
+      extends IntegerDeserializer<NTCIPEssPressureSensorAtmosphericPressure> {
+    public NTCIPEssPressureSensorAtmosphericPressureDeserializer() {
+      super(NTCIPEssPressureSensorAtmosphericPressure.class);
+    }
 
-		@Override
-		protected NTCIPEssPressureSensorAtmosphericPressure construct() {
-			return new NTCIPEssPressureSensorAtmosphericPressure();
-		}
-	}
+    @Override
+    protected NTCIPEssPressureSensorAtmosphericPressure construct() {
+      return new NTCIPEssPressureSensorAtmosphericPressure();
+    }
+  }
 }

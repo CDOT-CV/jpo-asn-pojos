@@ -39,41 +39,43 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgRoadSignInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "roadsignDetection")
-	@JsonProperty("roadsignDetection")
-	private CfgRoadSignTypes roadsignDetection;
-	@Asn1Property(tag = 1, name = "lowRoadsignReflect1", optional = true)
-	@JsonProperty("lowRoadsignReflect1")
-	private LowRoadsignReflect1Integer lowRoadsignReflect1;
-	@Asn1Property(tag = 2, name = "lowRoadsignReflect2", optional = true)
-	@JsonProperty("lowRoadsignReflect2")
-	private LowRoadsignReflect2Integer lowRoadsignReflect2;
+  @Asn1Property(tag = 0, name = "roadsignDetection")
+  @JsonProperty("roadsignDetection")
+  private CfgRoadSignTypes roadsignDetection;
 
-	public static class LowRoadsignReflect1Integer extends Asn1Integer {
-		public LowRoadsignReflect1Integer() {
-			super(1L, 250L);
-		}
+  @Asn1Property(tag = 1, name = "lowRoadsignReflect1", optional = true)
+  @JsonProperty("lowRoadsignReflect1")
+  private LowRoadsignReflect1Integer lowRoadsignReflect1;
 
-		@JsonCreator
-		public LowRoadsignReflect1Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "lowRoadsignReflect2", optional = true)
+  @JsonProperty("lowRoadsignReflect2")
+  private LowRoadsignReflect2Integer lowRoadsignReflect2;
 
-	public static class LowRoadsignReflect2Integer extends Asn1Integer {
-		public LowRoadsignReflect2Integer() {
-			super(1L, 250L);
-		}
+  public static class LowRoadsignReflect1Integer extends Asn1Integer {
+    public LowRoadsignReflect1Integer() {
+      super(1L, 250L);
+    }
 
-		@JsonCreator
-		public LowRoadsignReflect2Integer(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public LowRoadsignReflect1Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public CfgRoadSignInfo() {
-		super(true);
-	}
+  public static class LowRoadsignReflect2Integer extends Asn1Integer {
+    public LowRoadsignReflect2Integer() {
+      super(1L, 250L);
+    }
+
+    @JsonCreator
+    public LowRoadsignReflect2Integer(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgRoadSignInfo() {
+    super(true);
+  }
 }

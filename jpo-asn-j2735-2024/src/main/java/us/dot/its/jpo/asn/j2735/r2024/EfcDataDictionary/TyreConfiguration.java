@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TyreConfiguration.TyreConfigurationDeserializer.class)
 public class TyreConfiguration extends Asn1Integer {
 
-	public TyreConfiguration() {
-		super(0L, 3L);
-	}
+  public TyreConfiguration() {
+    super(0L, 3L);
+  }
 
-	@JsonCreator
-	public TyreConfiguration(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TyreConfiguration(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TyreConfigurationDeserializer extends IntegerDeserializer<TyreConfiguration> {
-		public TyreConfigurationDeserializer() {
-			super(TyreConfiguration.class);
-		}
+  public static class TyreConfigurationDeserializer extends IntegerDeserializer<TyreConfiguration> {
+    public TyreConfigurationDeserializer() {
+      super(TyreConfiguration.class);
+    }
 
-		@Override
-		protected TyreConfiguration construct() {
-			return new TyreConfiguration();
-		}
-	}
+    @Override
+    protected TyreConfiguration construct() {
+      return new TyreConfiguration();
+    }
+  }
 }

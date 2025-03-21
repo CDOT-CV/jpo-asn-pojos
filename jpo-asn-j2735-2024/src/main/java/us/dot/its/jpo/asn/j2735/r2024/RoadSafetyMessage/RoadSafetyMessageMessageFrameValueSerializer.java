@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class RoadSafetyMessageMessageFrameValueSerializer extends OpenTypeSerializer<RoadSafetyMessage> {
+public class RoadSafetyMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<RoadSafetyMessage> {
 
-	public RoadSafetyMessageMessageFrameValueSerializer() {
-		super(RoadSafetyMessage.class, "value", "RoadSafetyMessage");
-	}
+  public RoadSafetyMessageMessageFrameValueSerializer() {
+    super(RoadSafetyMessage.class, "value", "RoadSafetyMessage");
+  }
 }

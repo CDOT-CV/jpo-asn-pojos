@@ -42,26 +42,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ObstacleDetection extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "obDist")
-	@JsonProperty("obDist")
-	private ObstacleDistance obDist;
-	@Asn1Property(tag = 1, name = "obDirect")
-	@JsonProperty("obDirect")
-	private ObstacleDirection obDirect;
-	@Asn1Property(tag = 2, name = "description", optional = true)
-	@JsonProperty("description")
-	private ITIScodes description;
-	@Asn1Property(tag = 3, name = "locationDetails", optional = true)
-	@JsonProperty("locationDetails")
-	private GenericLocations locationDetails;
-	@Asn1Property(tag = 4, name = "dateTime")
-	@JsonProperty("dateTime")
-	private DDateTime dateTime;
-	@Asn1Property(tag = 5, name = "vertEvent", optional = true)
-	@JsonProperty("vertEvent")
-	private VerticalAccelerationThreshold vertEvent;
+  @Asn1Property(tag = 0, name = "obDist")
+  @JsonProperty("obDist")
+  private ObstacleDistance obDist;
 
-	public ObstacleDetection() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "obDirect")
+  @JsonProperty("obDirect")
+  private ObstacleDirection obDirect;
+
+  @Asn1Property(tag = 2, name = "description", optional = true)
+  @JsonProperty("description")
+  private ITIScodes description;
+
+  @Asn1Property(tag = 3, name = "locationDetails", optional = true)
+  @JsonProperty("locationDetails")
+  private GenericLocations locationDetails;
+
+  @Asn1Property(tag = 4, name = "dateTime")
+  @JsonProperty("dateTime")
+  private DDateTime dateTime;
+
+  @Asn1Property(tag = 5, name = "vertEvent", optional = true)
+  @JsonProperty("vertEvent")
+  private VerticalAccelerationThreshold vertEvent;
+
+  public ObstacleDetection() {
+    super(true);
+  }
 }

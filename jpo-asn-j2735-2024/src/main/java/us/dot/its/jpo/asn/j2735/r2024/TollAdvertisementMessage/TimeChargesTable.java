@@ -39,26 +39,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TimeChargesTable extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "maxTime")
-	@JsonProperty("maxTime")
-	private MaxTimeInteger maxTime;
-	@Asn1Property(tag = 1, name = "chargesTable")
-	@JsonProperty("chargesTable")
-	private ChargesTable chargesTable;
+  @Asn1Property(tag = 0, name = "maxTime")
+  @JsonProperty("maxTime")
+  private MaxTimeInteger maxTime;
 
-	public static class MaxTimeInteger extends Asn1Integer {
-		public MaxTimeInteger() {
-			super(1L, 1440L);
-		}
+  @Asn1Property(tag = 1, name = "chargesTable")
+  @JsonProperty("chargesTable")
+  private ChargesTable chargesTable;
 
-		@JsonCreator
-		public MaxTimeInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class MaxTimeInteger extends Asn1Integer {
+    public MaxTimeInteger() {
+      super(1L, 1440L);
+    }
 
-	public TimeChargesTable() {
-		super(true);
-	}
+    @JsonCreator
+    public MaxTimeInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TimeChargesTable() {
+    super(true);
+  }
 }

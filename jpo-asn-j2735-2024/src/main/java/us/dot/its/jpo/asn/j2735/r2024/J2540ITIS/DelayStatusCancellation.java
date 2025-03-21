@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DelayStatusCancellation.DelayStatusCancellationDeserializer.class)
 public class DelayStatusCancellation extends Asn1Integer {
 
-	public DelayStatusCancellation() {
-		super(0L, 65535L);
-	}
+  public DelayStatusCancellation() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public DelayStatusCancellation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DelayStatusCancellation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DelayStatusCancellationDeserializer extends IntegerDeserializer<DelayStatusCancellation> {
-		public DelayStatusCancellationDeserializer() {
-			super(DelayStatusCancellation.class);
-		}
+  public static class DelayStatusCancellationDeserializer
+      extends IntegerDeserializer<DelayStatusCancellation> {
+    public DelayStatusCancellationDeserializer() {
+      super(DelayStatusCancellation.class);
+    }
 
-		@Override
-		protected DelayStatusCancellation construct() {
-			return new DelayStatusCancellation();
-		}
-	}
+    @Override
+    protected DelayStatusCancellation construct() {
+      return new DelayStatusCancellation();
+    }
+  }
 }

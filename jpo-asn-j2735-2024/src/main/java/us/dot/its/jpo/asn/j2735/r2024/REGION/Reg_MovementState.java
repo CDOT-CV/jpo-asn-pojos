@@ -27,9 +27,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import us.dot.its.jpo.asn.j2735.r2024.Common.RegionalExtension;
 
 @JsonInclude(Include.NON_NULL)
-abstract public class Reg_MovementState<TValue> extends RegionalExtension<TValue> {
+public abstract class Reg_MovementState<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_MovementState(int id, String name) {
-		super(id, name);
-	}
+  public Reg_MovementState(int id, String name) {
+    super(id, name);
+  }
 }

@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_NodeOffsetPointXY;
 
 @JsonRootName("Reg_NodeOffsetPointXY")
 @JsonDeserialize(using = None.class)
-public class NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY extends Reg_NodeOffsetPointXY<NodeOffsetPointXY_addGrpB> {
+public class NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY
+    extends Reg_NodeOffsetPointXY<NodeOffsetPointXY_addGrpB> {
 
-	public NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY() {
-		super(2, "NodeOffsetPointXY_addGrpB");
-	}
+  public NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY() {
+    super(2, "NodeOffsetPointXY_addGrpB");
+  }
 
-	@Override
-	@JsonSerialize(using = NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueSerializer.class)
-	public NodeOffsetPointXY_addGrpB getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueSerializer.class)
+  public NodeOffsetPointXY_addGrpB getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer.class)
-	public void setRegExtValue(NodeOffsetPointXY_addGrpB value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer.class)
+  public void setRegExtValue(NodeOffsetPointXY_addGrpB value) {
+    super.setRegExtValue(value);
+  }
 }

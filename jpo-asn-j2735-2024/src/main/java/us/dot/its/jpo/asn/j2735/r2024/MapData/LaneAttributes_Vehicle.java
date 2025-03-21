@@ -26,88 +26,101 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Vehicle.LaneAttributes_VehicleDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Vehicle
+            .LaneAttributes_VehicleDeserializer.class)
 public class LaneAttributes_Vehicle extends Asn1Bitstring {
 
-	public boolean isIsVehicleRevocableLane() {
-		return get(0);
-	}
+  public boolean isIsVehicleRevocableLane() {
+    return get(0);
+  }
 
-	public void setIsVehicleRevocableLane(boolean isVehicleRevocableLane) {
-		set(0, isVehicleRevocableLane);
-	}
+  public void setIsVehicleRevocableLane(boolean isVehicleRevocableLane) {
+    set(0, isVehicleRevocableLane);
+  }
 
-	public boolean isIsVehicleFlyOverLane() {
-		return get(1);
-	}
+  public boolean isIsVehicleFlyOverLane() {
+    return get(1);
+  }
 
-	public void setIsVehicleFlyOverLane(boolean isVehicleFlyOverLane) {
-		set(1, isVehicleFlyOverLane);
-	}
+  public void setIsVehicleFlyOverLane(boolean isVehicleFlyOverLane) {
+    set(1, isVehicleFlyOverLane);
+  }
 
-	public boolean isHovLaneUseOnly() {
-		return get(2);
-	}
+  public boolean isHovLaneUseOnly() {
+    return get(2);
+  }
 
-	public void setHovLaneUseOnly(boolean hovLaneUseOnly) {
-		set(2, hovLaneUseOnly);
-	}
+  public void setHovLaneUseOnly(boolean hovLaneUseOnly) {
+    set(2, hovLaneUseOnly);
+  }
 
-	public boolean isRestrictedToBusUse() {
-		return get(3);
-	}
+  public boolean isRestrictedToBusUse() {
+    return get(3);
+  }
 
-	public void setRestrictedToBusUse(boolean restrictedToBusUse) {
-		set(3, restrictedToBusUse);
-	}
+  public void setRestrictedToBusUse(boolean restrictedToBusUse) {
+    set(3, restrictedToBusUse);
+  }
 
-	public boolean isRestrictedToTaxiUse() {
-		return get(4);
-	}
+  public boolean isRestrictedToTaxiUse() {
+    return get(4);
+  }
 
-	public void setRestrictedToTaxiUse(boolean restrictedToTaxiUse) {
-		set(4, restrictedToTaxiUse);
-	}
+  public void setRestrictedToTaxiUse(boolean restrictedToTaxiUse) {
+    set(4, restrictedToTaxiUse);
+  }
 
-	public boolean isRestrictedFromPublicUse() {
-		return get(5);
-	}
+  public boolean isRestrictedFromPublicUse() {
+    return get(5);
+  }
 
-	public void setRestrictedFromPublicUse(boolean restrictedFromPublicUse) {
-		set(5, restrictedFromPublicUse);
-	}
+  public void setRestrictedFromPublicUse(boolean restrictedFromPublicUse) {
+    set(5, restrictedFromPublicUse);
+  }
 
-	public boolean isHasIRbeaconCoverage() {
-		return get(6);
-	}
+  public boolean isHasIRbeaconCoverage() {
+    return get(6);
+  }
 
-	public void setHasIRbeaconCoverage(boolean hasIRbeaconCoverage) {
-		set(6, hasIRbeaconCoverage);
-	}
+  public void setHasIRbeaconCoverage(boolean hasIRbeaconCoverage) {
+    set(6, hasIRbeaconCoverage);
+  }
 
-	public boolean isPermissionOnRequest() {
-		return get(7);
-	}
+  public boolean isPermissionOnRequest() {
+    return get(7);
+  }
 
-	public void setPermissionOnRequest(boolean permissionOnRequest) {
-		set(7, permissionOnRequest);
-	}
+  public void setPermissionOnRequest(boolean permissionOnRequest) {
+    set(7, permissionOnRequest);
+  }
 
-	public LaneAttributes_Vehicle() {
-		super(8, false,
-				new String[]{"isVehicleRevocableLane", "isVehicleFlyOverLane", "hovLaneUseOnly", "restrictedToBusUse",
-						"restrictedToTaxiUse", "restrictedFromPublicUse", "hasIRbeaconCoverage",
-						"permissionOnRequest"});
-	}
+  public LaneAttributes_Vehicle() {
+    super(
+        8,
+        false,
+        new String[] {
+          "isVehicleRevocableLane",
+          "isVehicleFlyOverLane",
+          "hovLaneUseOnly",
+          "restrictedToBusUse",
+          "restrictedToTaxiUse",
+          "restrictedFromPublicUse",
+          "hasIRbeaconCoverage",
+          "permissionOnRequest"
+        });
+  }
 
-	public static class LaneAttributes_VehicleDeserializer extends BitStringDeserializer<LaneAttributes_Vehicle> {
-		public LaneAttributes_VehicleDeserializer() {
-			super(LaneAttributes_Vehicle.class);
-		}
+  public static class LaneAttributes_VehicleDeserializer
+      extends BitStringDeserializer<LaneAttributes_Vehicle> {
+    public LaneAttributes_VehicleDeserializer() {
+      super(LaneAttributes_Vehicle.class);
+    }
 
-		@Override
-		protected LaneAttributes_Vehicle construct() {
-			return new LaneAttributes_Vehicle();
-		}
-	}
+    @Override
+    protected LaneAttributes_Vehicle construct() {
+      return new LaneAttributes_Vehicle();
+    }
+  }
 }

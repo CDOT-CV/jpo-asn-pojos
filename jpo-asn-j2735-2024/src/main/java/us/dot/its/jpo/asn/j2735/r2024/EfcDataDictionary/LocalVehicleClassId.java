@@ -29,24 +29,25 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = LocalVehicleClassId.LocalVehicleClassIdDeserializer.class)
 public class LocalVehicleClassId extends Int2Unsigned {
 
-	public LocalVehicleClassId() {
-		super();
-	}
+  public LocalVehicleClassId() {
+    super();
+  }
 
-	@JsonCreator
-	public LocalVehicleClassId(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LocalVehicleClassId(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LocalVehicleClassIdDeserializer extends IntegerDeserializer<LocalVehicleClassId> {
-		public LocalVehicleClassIdDeserializer() {
-			super(LocalVehicleClassId.class);
-		}
+  public static class LocalVehicleClassIdDeserializer
+      extends IntegerDeserializer<LocalVehicleClassId> {
+    public LocalVehicleClassIdDeserializer() {
+      super(LocalVehicleClassId.class);
+    }
 
-		@Override
-		protected LocalVehicleClassId construct() {
-			return new LocalVehicleClassId();
-		}
-	}
+    @Override
+    protected LocalVehicleClassId construct() {
+      return new LocalVehicleClassId();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Precipitation.PrecipitationDeserializer.class)
 public class Precipitation extends Asn1Integer {
 
-	public Precipitation() {
-		super(0L, 65535L);
-	}
+  public Precipitation() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Precipitation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Precipitation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class PrecipitationDeserializer extends IntegerDeserializer<Precipitation> {
-		public PrecipitationDeserializer() {
-			super(Precipitation.class);
-		}
+  public static class PrecipitationDeserializer extends IntegerDeserializer<Precipitation> {
+    public PrecipitationDeserializer() {
+      super(Precipitation.class);
+    }
 
-		@Override
-		protected Precipitation construct() {
-			return new Precipitation();
-		}
-	}
+    @Override
+    protected Precipitation construct() {
+      return new Precipitation();
+    }
+  }
 }

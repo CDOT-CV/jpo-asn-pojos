@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class FeeReport extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "userData")
-	@JsonProperty("userData")
-	private UserData userData;
-	@Asn1Property(tag = 1, name = "fees")
-	@JsonProperty("fees")
-	private UserFeeInfo fees;
+  @Asn1Property(tag = 0, name = "userData")
+  @JsonProperty("userData")
+  private UserData userData;
 
-	public FeeReport() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "fees")
+  @JsonProperty("fees")
+  private UserFeeInfo fees;
+
+  public FeeReport() {
+    super(true);
+  }
 }

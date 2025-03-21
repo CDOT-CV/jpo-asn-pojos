@@ -33,32 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = Attachment.AttachmentSerializer.class)
 @JsonDeserialize(using = Attachment.AttachmentDeserializer.class)
 public enum Attachment implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), STROLLER(1, "stroller"), BICYCLETRAILER(2, "bicycleTrailer"), CART(3,
-			"cart"), WHEELCHAIR(4,
-					"wheelchair"), OTHERWALKASSISTATTACHMENTS(5, "otherWalkAssistAttachments"), PET(6, "pet");
+  UNAVAILABLE(0, "unavailable"),
+  STROLLER(1, "stroller"),
+  BICYCLETRAILER(2, "bicycleTrailer"),
+  CART(3, "cart"),
+  WHEELCHAIR(4, "wheelchair"),
+  OTHERWALKASSISTATTACHMENTS(5, "otherWalkAssistAttachments"),
+  PET(6, "pet");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private Attachment(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private Attachment(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AttachmentSerializer extends EnumeratedSerializer<Attachment> {
-		public AttachmentSerializer() {
-			super(Attachment.class);
-		}
-	}
+  public static class AttachmentSerializer extends EnumeratedSerializer<Attachment> {
+    public AttachmentSerializer() {
+      super(Attachment.class);
+    }
+  }
 
-	public static class AttachmentDeserializer extends EnumeratedDeserializer<Attachment> {
-		public AttachmentDeserializer() {
-			super(Attachment.class);
-		}
+  public static class AttachmentDeserializer extends EnumeratedDeserializer<Attachment> {
+    public AttachmentDeserializer() {
+      super(Attachment.class);
+    }
 
-		@Override
-		protected Attachment[] listEnumValues() {
-			return Attachment.values();
-		}
-	}
+    @Override
+    protected Attachment[] listEnumValues() {
+      return Attachment.values();
+    }
+  }
 }

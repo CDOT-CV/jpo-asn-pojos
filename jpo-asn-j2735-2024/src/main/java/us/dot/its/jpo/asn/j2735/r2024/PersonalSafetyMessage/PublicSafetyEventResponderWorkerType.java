@@ -30,40 +30,46 @@ import us.dot.its.jpo.asn.runtime.serialization.EnumeratedSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
-@JsonSerialize(using = PublicSafetyEventResponderWorkerType.PublicSafetyEventResponderWorkerTypeSerializer.class)
-@JsonDeserialize(using = PublicSafetyEventResponderWorkerType.PublicSafetyEventResponderWorkerTypeDeserializer.class)
+@JsonSerialize(
+    using =
+        PublicSafetyEventResponderWorkerType.PublicSafetyEventResponderWorkerTypeSerializer.class)
+@JsonDeserialize(
+    using =
+        PublicSafetyEventResponderWorkerType.PublicSafetyEventResponderWorkerTypeDeserializer.class)
 public enum PublicSafetyEventResponderWorkerType implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), TOWOPERATER(1, "towOperater"), FIREANDEMSWORKER(2, "fireAndEMSWorker"), ADOTWORKER(3,
-			"aDOTWorker"), LAWENFORCEMENT(4, "lawEnforcement"), HAZMATRESPONDER(5,
-					"hazmatResponder"), ANIMALCONTROLWORKER(6,
-							"animalControlWorker"), OTHERPERSONNEL(7, "otherPersonnel");
+  UNAVAILABLE(0, "unavailable"),
+  TOWOPERATER(1, "towOperater"),
+  FIREANDEMSWORKER(2, "fireAndEMSWorker"),
+  ADOTWORKER(3, "aDOTWorker"),
+  LAWENFORCEMENT(4, "lawEnforcement"),
+  HAZMATRESPONDER(5, "hazmatResponder"),
+  ANIMALCONTROLWORKER(6, "animalControlWorker"),
+  OTHERPERSONNEL(7, "otherPersonnel");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PublicSafetyEventResponderWorkerType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PublicSafetyEventResponderWorkerType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PublicSafetyEventResponderWorkerTypeSerializer
-			extends
-				EnumeratedSerializer<PublicSafetyEventResponderWorkerType> {
-		public PublicSafetyEventResponderWorkerTypeSerializer() {
-			super(PublicSafetyEventResponderWorkerType.class);
-		}
-	}
+  public static class PublicSafetyEventResponderWorkerTypeSerializer
+      extends EnumeratedSerializer<PublicSafetyEventResponderWorkerType> {
+    public PublicSafetyEventResponderWorkerTypeSerializer() {
+      super(PublicSafetyEventResponderWorkerType.class);
+    }
+  }
 
-	public static class PublicSafetyEventResponderWorkerTypeDeserializer
-			extends
-				EnumeratedDeserializer<PublicSafetyEventResponderWorkerType> {
-		public PublicSafetyEventResponderWorkerTypeDeserializer() {
-			super(PublicSafetyEventResponderWorkerType.class);
-		}
+  public static class PublicSafetyEventResponderWorkerTypeDeserializer
+      extends EnumeratedDeserializer<PublicSafetyEventResponderWorkerType> {
+    public PublicSafetyEventResponderWorkerTypeDeserializer() {
+      super(PublicSafetyEventResponderWorkerType.class);
+    }
 
-		@Override
-		protected PublicSafetyEventResponderWorkerType[] listEnumValues() {
-			return PublicSafetyEventResponderWorkerType.values();
-		}
-	}
+    @Override
+    protected PublicSafetyEventResponderWorkerType[] listEnumValues() {
+      return PublicSafetyEventResponderWorkerType.values();
+    }
+  }
 }

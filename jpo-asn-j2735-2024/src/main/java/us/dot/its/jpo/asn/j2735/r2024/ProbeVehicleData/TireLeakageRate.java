@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TireLeakageRate.TireLeakageRateDeserializer.class)
 public class TireLeakageRate extends Asn1Integer {
 
-	public TireLeakageRate() {
-		super(0L, 64255L);
-	}
+  public TireLeakageRate() {
+    super(0L, 64255L);
+  }
 
-	@JsonCreator
-	public TireLeakageRate(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TireLeakageRate(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TireLeakageRateDeserializer extends IntegerDeserializer<TireLeakageRate> {
-		public TireLeakageRateDeserializer() {
-			super(TireLeakageRate.class);
-		}
+  public static class TireLeakageRateDeserializer extends IntegerDeserializer<TireLeakageRate> {
+    public TireLeakageRateDeserializer() {
+      super(TireLeakageRate.class);
+    }
 
-		@Override
-		protected TireLeakageRate construct() {
-			return new TireLeakageRate();
-		}
-	}
+    @Override
+    protected TireLeakageRate construct() {
+      return new TireLeakageRate();
+    }
+  }
 }

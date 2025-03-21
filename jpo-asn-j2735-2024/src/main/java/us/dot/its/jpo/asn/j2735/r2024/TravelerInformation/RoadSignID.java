@@ -39,20 +39,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RoadSignID extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "position")
-	@JsonProperty("position")
-	private Position3D position;
-	@Asn1Property(tag = 1, name = "viewAngle")
-	@JsonProperty("viewAngle")
-	private HeadingSlice viewAngle;
-	@Asn1Property(tag = 2, name = "mutcdCode", optional = true)
-	@JsonProperty("mutcdCode")
-	private MUTCDCode mutcdCode;
-	@Asn1Property(tag = 3, name = "crc", optional = true)
-	@JsonProperty("crc")
-	private MsgCRC crc;
+  @Asn1Property(tag = 0, name = "position")
+  @JsonProperty("position")
+  private Position3D position;
 
-	public RoadSignID() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "viewAngle")
+  @JsonProperty("viewAngle")
+  private HeadingSlice viewAngle;
+
+  @Asn1Property(tag = 2, name = "mutcdCode", optional = true)
+  @JsonProperty("mutcdCode")
+  private MUTCDCode mutcdCode;
+
+  @Asn1Property(tag = 3, name = "crc", optional = true)
+  @JsonProperty("crc")
+  private MsgCRC crc;
+
+  public RoadSignID() {
+    super(false);
+  }
 }

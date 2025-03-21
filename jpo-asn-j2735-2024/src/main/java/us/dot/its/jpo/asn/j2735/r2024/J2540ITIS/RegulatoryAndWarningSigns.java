@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RegulatoryAndWarningSigns.RegulatoryAndWarningSignsDeserializer.class)
 public class RegulatoryAndWarningSigns extends Asn1Integer {
 
-	public RegulatoryAndWarningSigns() {
-		super(0L, 65535L);
-	}
+  public RegulatoryAndWarningSigns() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public RegulatoryAndWarningSigns(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RegulatoryAndWarningSigns(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RegulatoryAndWarningSignsDeserializer extends IntegerDeserializer<RegulatoryAndWarningSigns> {
-		public RegulatoryAndWarningSignsDeserializer() {
-			super(RegulatoryAndWarningSigns.class);
-		}
+  public static class RegulatoryAndWarningSignsDeserializer
+      extends IntegerDeserializer<RegulatoryAndWarningSigns> {
+    public RegulatoryAndWarningSignsDeserializer() {
+      super(RegulatoryAndWarningSigns.class);
+    }
 
-		@Override
-		protected RegulatoryAndWarningSigns construct() {
-			return new RegulatoryAndWarningSigns();
-		}
-	}
+    @Override
+    protected RegulatoryAndWarningSigns construct() {
+      return new RegulatoryAndWarningSigns();
+    }
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleReport extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "snapShot")
-	@JsonProperty("snapShot")
-	private SnapShot snapShot;
-	@Asn1Property(tag = 1, name = "wdmsFleetData", optional = true)
-	@JsonProperty("wdmsFleetData")
-	private WDMSFleetData wdmsFleetData;
+  @Asn1Property(tag = 0, name = "snapShot")
+  @JsonProperty("snapShot")
+  private SnapShot snapShot;
 
-	public VehicleReport() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "wdmsFleetData", optional = true)
+  @JsonProperty("wdmsFleetData")
+  private WDMSFleetData wdmsFleetData;
+
+  public VehicleReport() {
+    super(true);
+  }
 }

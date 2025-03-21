@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ITISgroups.ITISgroupsDeserializer.class)
 public class ITISgroups extends Asn1Integer {
 
-	public ITISgroups() {
-		super(0L, 255L);
-	}
+  public ITISgroups() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public ITISgroups(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ITISgroups(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ITISgroupsDeserializer extends IntegerDeserializer<ITISgroups> {
-		public ITISgroupsDeserializer() {
-			super(ITISgroups.class);
-		}
+  public static class ITISgroupsDeserializer extends IntegerDeserializer<ITISgroups> {
+    public ITISgroupsDeserializer() {
+      super(ITISgroups.class);
+    }
 
-		@Override
-		protected ITISgroups construct() {
-			return new ITISgroups();
-		}
-	}
+    @Override
+    protected ITISgroups construct() {
+      return new ITISgroups();
+    }
+  }
 }

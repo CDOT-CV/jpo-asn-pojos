@@ -26,69 +26,70 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = TransitStatus.TransitStatusDeserializer.class)
+@JsonDeserialize(
+    using = TransitStatus.TransitStatusDeserializer.class)
 public class TransitStatus extends Asn1Bitstring {
 
-	public boolean isNone() {
-		return get(0);
-	}
+  public boolean isNone() {
+    return get(0);
+  }
 
-	public void setNone(boolean none) {
-		set(0, none);
-	}
+  public void setNone(boolean none) {
+    set(0, none);
+  }
 
-	public boolean isAnADAuse() {
-		return get(1);
-	}
+  public boolean isAnADAuse() {
+    return get(1);
+  }
 
-	public void setAnADAuse(boolean anADAuse) {
-		set(1, anADAuse);
-	}
+  public void setAnADAuse(boolean anADAuse) {
+    set(1, anADAuse);
+  }
 
-	public boolean isABikeLoad() {
-		return get(2);
-	}
+  public boolean isABikeLoad() {
+    return get(2);
+  }
 
-	public void setABikeLoad(boolean aBikeLoad) {
-		set(2, aBikeLoad);
-	}
+  public void setABikeLoad(boolean aBikeLoad) {
+    set(2, aBikeLoad);
+  }
 
-	public boolean isDoorOpen() {
-		return get(3);
-	}
+  public boolean isDoorOpen() {
+    return get(3);
+  }
 
-	public void setDoorOpen(boolean doorOpen) {
-		set(3, doorOpen);
-	}
+  public void setDoorOpen(boolean doorOpen) {
+    set(3, doorOpen);
+  }
 
-	public boolean isOccM() {
-		return get(4);
-	}
+  public boolean isOccM() {
+    return get(4);
+  }
 
-	public void setOccM(boolean occM) {
-		set(4, occM);
-	}
+  public void setOccM(boolean occM) {
+    set(4, occM);
+  }
 
-	public boolean isOccL() {
-		return get(5);
-	}
+  public boolean isOccL() {
+    return get(5);
+  }
 
-	public void setOccL(boolean occL) {
-		set(5, occL);
-	}
+  public void setOccL(boolean occL) {
+    set(5, occL);
+  }
 
-	public TransitStatus() {
-		super(6, false, new String[]{"none", "anADAuse", "aBikeLoad", "doorOpen", "occM", "occL"});
-	}
+  public TransitStatus() {
+    super(6, false, new String[] {"none", "anADAuse", "aBikeLoad", "doorOpen", "occM", "occL"});
+  }
 
-	public static class TransitStatusDeserializer extends BitStringDeserializer<TransitStatus> {
-		public TransitStatusDeserializer() {
-			super(TransitStatus.class);
-		}
+  public static class TransitStatusDeserializer extends BitStringDeserializer<TransitStatus> {
+    public TransitStatusDeserializer() {
+      super(TransitStatus.class);
+    }
 
-		@Override
-		protected TransitStatus construct() {
-			return new TransitStatus();
-		}
-	}
+    @Override
+    protected TransitStatus construct() {
+      return new TransitStatus();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = GrossSpeed.GrossSpeedDeserializer.class)
 public class GrossSpeed extends Asn1Integer {
 
-	public GrossSpeed() {
-		super(0L, 31L);
-	}
+  public GrossSpeed() {
+    super(0L, 31L);
+  }
 
-	@JsonCreator
-	public GrossSpeed(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public GrossSpeed(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class GrossSpeedDeserializer extends IntegerDeserializer<GrossSpeed> {
-		public GrossSpeedDeserializer() {
-			super(GrossSpeed.class);
-		}
+  public static class GrossSpeedDeserializer extends IntegerDeserializer<GrossSpeed> {
+    public GrossSpeedDeserializer() {
+      super(GrossSpeed.class);
+    }
 
-		@Override
-		protected GrossSpeed construct() {
-			return new GrossSpeed();
-		}
-	}
+    @Override
+    protected GrossSpeed construct() {
+      return new GrossSpeed();
+    }
+  }
 }

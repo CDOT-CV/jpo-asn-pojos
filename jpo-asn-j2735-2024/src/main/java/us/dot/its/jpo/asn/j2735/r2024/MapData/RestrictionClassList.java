@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RestrictionClassList extends Asn1SequenceOf<RestrictionClassAssignment> {
 
-	public RestrictionClassList() {
-		super(RestrictionClassAssignment.class, 1L, 254L);
-	}
+  public RestrictionClassList() {
+    super(RestrictionClassAssignment.class, 1L, 254L);
+  }
 }

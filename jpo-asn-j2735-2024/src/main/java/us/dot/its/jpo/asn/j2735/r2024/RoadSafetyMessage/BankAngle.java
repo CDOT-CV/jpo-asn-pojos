@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = BankAngle.BankAngleDeserializer.class)
 public class BankAngle extends Asn1Integer {
 
-	public BankAngle() {
-		super(-512L, 512L);
-	}
+  public BankAngle() {
+    super(-512L, 512L);
+  }
 
-	@JsonCreator
-	public BankAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public BankAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class BankAngleDeserializer extends IntegerDeserializer<BankAngle> {
-		public BankAngleDeserializer() {
-			super(BankAngle.class);
-		}
+  public static class BankAngleDeserializer extends IntegerDeserializer<BankAngle> {
+    public BankAngleDeserializer() {
+      super(BankAngle.class);
+    }
 
-		@Override
-		protected BankAngle construct() {
-			return new BankAngle();
-		}
-	}
+    @Override
+    protected BankAngle construct() {
+      return new BankAngle();
+    }
+  }
 }

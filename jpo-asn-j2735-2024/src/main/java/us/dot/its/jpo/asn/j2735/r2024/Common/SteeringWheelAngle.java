@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SteeringWheelAngle.SteeringWheelAngleDeserializer.class)
 public class SteeringWheelAngle extends Asn1Integer {
 
-	public SteeringWheelAngle() {
-		super(-126L, 127L);
-	}
+  public SteeringWheelAngle() {
+    super(-126L, 127L);
+  }
 
-	@JsonCreator
-	public SteeringWheelAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SteeringWheelAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SteeringWheelAngleDeserializer extends IntegerDeserializer<SteeringWheelAngle> {
-		public SteeringWheelAngleDeserializer() {
-			super(SteeringWheelAngle.class);
-		}
+  public static class SteeringWheelAngleDeserializer
+      extends IntegerDeserializer<SteeringWheelAngle> {
+    public SteeringWheelAngleDeserializer() {
+      super(SteeringWheelAngle.class);
+    }
 
-		@Override
-		protected SteeringWheelAngle construct() {
-			return new SteeringWheelAngle();
-		}
-	}
+    @Override
+    protected SteeringWheelAngle construct() {
+      return new SteeringWheelAngle();
+    }
+  }
 }

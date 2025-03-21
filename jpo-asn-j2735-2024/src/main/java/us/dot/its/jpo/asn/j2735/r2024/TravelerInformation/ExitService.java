@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class ExitService extends Asn1SequenceOf<ExitServiceSequence> {
 
-	public ExitService() {
-		super(ExitServiceSequence.class, 1L, 16L);
-	}
+  public ExitService() {
+    super(ExitServiceSequence.class, 1L, 16L);
+  }
 }

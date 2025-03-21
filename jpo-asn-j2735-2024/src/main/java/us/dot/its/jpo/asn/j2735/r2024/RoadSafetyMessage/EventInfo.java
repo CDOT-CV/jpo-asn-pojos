@@ -49,79 +49,85 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class EventInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "eventID")
-	@JsonProperty("eventID")
-	private EventIdentifier eventID;
-	@Asn1Property(tag = 1, name = "eventUpdate")
-	@JsonProperty("eventUpdate")
-	private MsgCount eventUpdate;
-	@Asn1Property(tag = 2, name = "eventCancellation")
-	@JsonProperty("eventCancellation")
-	private Activity eventCancellation;
-	@Asn1Property(tag = 3, name = "startDateTime")
-	@JsonProperty("startDateTime")
-	private DDateTime startDateTime;
-	@Asn1Property(tag = 4, name = "endDateTime", optional = true)
-	@JsonProperty("endDateTime")
-	private DDateTime endDateTime;
-	@Asn1Property(tag = 5, name = "eventRecurrence", optional = true)
-	@JsonProperty("eventRecurrence")
-	@JacksonXmlElementWrapper(localName = "eventRecurrence")
-	@JacksonXmlProperty(localName = "EventRecurrence")
-	private SequenceOfEventRecurrence eventRecurrence;
-	@Asn1Property(tag = 6, name = "causeCode")
-	@JsonProperty("causeCode")
-	private ITISgroups causeCode;
-	@Asn1Property(tag = 7, name = "subCauseCode", optional = true)
-	@JsonProperty("subCauseCode")
-	private ITIScodes subCauseCode;
-	@Asn1Property(tag = 8, name = "affectedVehicles", optional = true)
-	@JsonProperty("affectedVehicles")
-	@JsonSerialize(using = SequenceOfAffectedVehiclesSerializer.class)
-	@JsonDeserialize(using = SequenceOfAffectedVehiclesDeserializer.class)
-	private SequenceOfAffectedVehicles affectedVehicles;
+  @Asn1Property(tag = 0, name = "eventID")
+  @JsonProperty("eventID")
+  private EventIdentifier eventID;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfEventRecurrence extends Asn1SequenceOf<EventRecurrence> {
-		public SequenceOfEventRecurrence() {
-			super(EventRecurrence.class, 1L, 5L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "eventUpdate")
+  @JsonProperty("eventUpdate")
+  private MsgCount eventUpdate;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfAffectedVehicles extends Asn1SequenceOf<VehicleGroupAffected> {
-		public SequenceOfAffectedVehicles() {
-			super(VehicleGroupAffected.class, 1L, 10L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "eventCancellation")
+  @JsonProperty("eventCancellation")
+  private Activity eventCancellation;
 
-	public EventInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "startDateTime")
+  @JsonProperty("startDateTime")
+  private DDateTime startDateTime;
 
-	public static class SequenceOfAffectedVehiclesSerializer
-			extends
-				SequenceOfEnumeratedSerializer<VehicleGroupAffected, SequenceOfAffectedVehicles> {
-		public SequenceOfAffectedVehiclesSerializer() {
-			super(VehicleGroupAffected.class, SequenceOfAffectedVehicles.class);
-		}
-	}
+  @Asn1Property(tag = 4, name = "endDateTime", optional = true)
+  @JsonProperty("endDateTime")
+  private DDateTime endDateTime;
 
-	public static class SequenceOfAffectedVehiclesDeserializer
-			extends
-				SequenceOfEnumeratedDeserializer<VehicleGroupAffected, SequenceOfAffectedVehicles> {
-		public SequenceOfAffectedVehiclesDeserializer() {
-			super(SequenceOfAffectedVehicles.class, VehicleGroupAffected.class);
-		}
+  @Asn1Property(tag = 5, name = "eventRecurrence", optional = true)
+  @JsonProperty("eventRecurrence")
+  @JacksonXmlElementWrapper(localName = "eventRecurrence")
+  @JacksonXmlProperty(localName = "EventRecurrence")
+  private SequenceOfEventRecurrence eventRecurrence;
 
-		@Override
-		protected VehicleGroupAffected[] listEnumValues() {
-			return VehicleGroupAffected.values();
-		}
+  @Asn1Property(tag = 6, name = "causeCode")
+  @JsonProperty("causeCode")
+  private ITISgroups causeCode;
 
-		@Override
-		protected SequenceOfAffectedVehicles construct() {
-			return new SequenceOfAffectedVehicles();
-		}
-	}
+  @Asn1Property(tag = 7, name = "subCauseCode", optional = true)
+  @JsonProperty("subCauseCode")
+  private ITIScodes subCauseCode;
+
+  @Asn1Property(tag = 8, name = "affectedVehicles", optional = true)
+  @JsonProperty("affectedVehicles")
+  @JsonSerialize(using = SequenceOfAffectedVehiclesSerializer.class)
+  @JsonDeserialize(using = SequenceOfAffectedVehiclesDeserializer.class)
+  private SequenceOfAffectedVehicles affectedVehicles;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfEventRecurrence extends Asn1SequenceOf<EventRecurrence> {
+    public SequenceOfEventRecurrence() {
+      super(EventRecurrence.class, 1L, 5L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfAffectedVehicles extends Asn1SequenceOf<VehicleGroupAffected> {
+    public SequenceOfAffectedVehicles() {
+      super(VehicleGroupAffected.class, 1L, 10L);
+    }
+  }
+
+  public EventInfo() {
+    super(true);
+  }
+
+  public static class SequenceOfAffectedVehiclesSerializer
+      extends SequenceOfEnumeratedSerializer<VehicleGroupAffected, SequenceOfAffectedVehicles> {
+    public SequenceOfAffectedVehiclesSerializer() {
+      super(VehicleGroupAffected.class, SequenceOfAffectedVehicles.class);
+    }
+  }
+
+  public static class SequenceOfAffectedVehiclesDeserializer
+      extends SequenceOfEnumeratedDeserializer<VehicleGroupAffected, SequenceOfAffectedVehicles> {
+    public SequenceOfAffectedVehiclesDeserializer() {
+      super(SequenceOfAffectedVehicles.class, VehicleGroupAffected.class);
+    }
+
+    @Override
+    protected VehicleGroupAffected[] listEnumValues() {
+      return VehicleGroupAffected.values();
+    }
+
+    @Override
+    protected SequenceOfAffectedVehicles construct() {
+      return new SequenceOfAffectedVehicles();
+    }
+  }
 }

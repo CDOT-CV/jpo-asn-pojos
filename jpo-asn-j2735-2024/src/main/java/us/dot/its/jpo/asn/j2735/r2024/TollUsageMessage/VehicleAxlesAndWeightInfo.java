@@ -45,95 +45,102 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class VehicleAxlesAndWeightInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehNumAxles")
-	@JsonProperty("vehNumAxles")
-	private VehNumAxlesInteger vehNumAxles;
-	@Asn1Property(tag = 1, name = "vehWeightPerAxle")
-	@JsonProperty("vehWeightPerAxle")
-	private SequenceOfVehWeightPerAxle vehWeightPerAxle;
-	@Asn1Property(tag = 2, name = "vehTotalWeight")
-	@JsonProperty("vehTotalWeight")
-	private VehTotalWeightInteger vehTotalWeight;
-	@Asn1Property(tag = 3, name = "vehWeightUnits")
-	@JsonProperty("vehWeightUnits")
-	private EnumeratedVehWeightUnits vehWeightUnits;
+  @Asn1Property(tag = 0, name = "vehNumAxles")
+  @JsonProperty("vehNumAxles")
+  private VehNumAxlesInteger vehNumAxles;
 
-	public static class VehNumAxlesInteger extends Asn1Integer {
-		public VehNumAxlesInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "vehWeightPerAxle")
+  @JsonProperty("vehWeightPerAxle")
+  private SequenceOfVehWeightPerAxle vehWeightPerAxle;
 
-		@JsonCreator
-		public VehNumAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "vehTotalWeight")
+  @JsonProperty("vehTotalWeight")
+  private VehTotalWeightInteger vehTotalWeight;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfVehWeightPerAxle extends Asn1SequenceOf<SequenceOfVehWeightPerAxleInteger> {
-		public SequenceOfVehWeightPerAxle() {
-			super(SequenceOfVehWeightPerAxleInteger.class, 1L, 10L);
-		}
-	}
+  @Asn1Property(tag = 3, name = "vehWeightUnits")
+  @JsonProperty("vehWeightUnits")
+  private EnumeratedVehWeightUnits vehWeightUnits;
 
-	public static class SequenceOfVehWeightPerAxleInteger extends Asn1Integer {
-		public SequenceOfVehWeightPerAxleInteger() {
-			super(0L, 65535L);
-		}
+  public static class VehNumAxlesInteger extends Asn1Integer {
+    public VehNumAxlesInteger() {
+      super(1L, 10L);
+    }
 
-		@JsonCreator
-		public SequenceOfVehWeightPerAxleInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public VehNumAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class VehTotalWeightInteger extends Asn1Integer {
-		public VehTotalWeightInteger() {
-			super(0L, 16777215L);
-		}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfVehWeightPerAxle
+      extends Asn1SequenceOf<SequenceOfVehWeightPerAxleInteger> {
+    public SequenceOfVehWeightPerAxle() {
+      super(SequenceOfVehWeightPerAxleInteger.class, 1L, 10L);
+    }
+  }
 
-		@JsonCreator
-		public VehTotalWeightInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class SequenceOfVehWeightPerAxleInteger extends Asn1Integer {
+    public SequenceOfVehWeightPerAxleInteger() {
+      super(0L, 65535L);
+    }
 
-	@Getter
-	@JsonSerialize(using = EnumeratedVehWeightUnitsSerializer.class)
-	@JsonDeserialize(using = EnumeratedVehWeightUnitsDeserializer.class)
-	public enum EnumeratedVehWeightUnits implements Asn1Enumerated {
-		POUNDS(0, "pounds"), KILOGRAMS(1, "kilograms");
+    @JsonCreator
+    public SequenceOfVehWeightPerAxleInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		private final int index;
-		private final String name;
+  public static class VehTotalWeightInteger extends Asn1Integer {
+    public VehTotalWeightInteger() {
+      super(0L, 16777215L);
+    }
 
-		private EnumeratedVehWeightUnits(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+    @JsonCreator
+    public VehTotalWeightInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class EnumeratedVehWeightUnitsSerializer extends EnumeratedSerializer<EnumeratedVehWeightUnits> {
-		public EnumeratedVehWeightUnitsSerializer() {
-			super(EnumeratedVehWeightUnits.class);
-		}
-	}
+  @Getter
+  @JsonSerialize(using = EnumeratedVehWeightUnitsSerializer.class)
+  @JsonDeserialize(using = EnumeratedVehWeightUnitsDeserializer.class)
+  public enum EnumeratedVehWeightUnits implements Asn1Enumerated {
+    POUNDS(0, "pounds"),
+    KILOGRAMS(1, "kilograms");
 
-	public static class EnumeratedVehWeightUnitsDeserializer extends EnumeratedDeserializer<EnumeratedVehWeightUnits> {
-		public EnumeratedVehWeightUnitsDeserializer() {
-			super(EnumeratedVehWeightUnits.class);
-		}
+    private final int index;
+    private final String name;
 
-		@Override
-		protected EnumeratedVehWeightUnits[] listEnumValues() {
-			return EnumeratedVehWeightUnits.values();
-		}
-	}
+    private EnumeratedVehWeightUnits(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
 
-	public VehicleAxlesAndWeightInfo() {
-		super(true);
-	}
+  public static class EnumeratedVehWeightUnitsSerializer
+      extends EnumeratedSerializer<EnumeratedVehWeightUnits> {
+    public EnumeratedVehWeightUnitsSerializer() {
+      super(EnumeratedVehWeightUnits.class);
+    }
+  }
+
+  public static class EnumeratedVehWeightUnitsDeserializer
+      extends EnumeratedDeserializer<EnumeratedVehWeightUnits> {
+    public EnumeratedVehWeightUnitsDeserializer() {
+      super(EnumeratedVehWeightUnits.class);
+    }
+
+    @Override
+    protected EnumeratedVehWeightUnits[] listEnumValues() {
+      return EnumeratedVehWeightUnits.values();
+    }
+  }
+
+  public VehicleAxlesAndWeightInfo() {
+    super(true);
+  }
 }

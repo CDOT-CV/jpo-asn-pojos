@@ -31,20 +31,31 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpC.ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist.class, intId = 3)})
-@JsonDeserialize(using = Reg_ConnectionManeuverAssist.Reg_ConnectionManeuverAssistDeserializer.class)
-abstract public class Reg_ConnectionManeuverAssist<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.AddGrpC
+                  .ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist.class,
+          intId = 3)
+    })
+@JsonDeserialize(
+    using =
+        Reg_ConnectionManeuverAssist
+            .Reg_ConnectionManeuverAssistDeserializer.class)
+public abstract class Reg_ConnectionManeuverAssist<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_ConnectionManeuverAssist(int id, String name) {
-		super(id, name);
-	}
+  public Reg_ConnectionManeuverAssist(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_ConnectionManeuverAssistDeserializer
-			extends
-				ParameterizedTypeDeserializer<Reg_ConnectionManeuverAssist> {
-		public Reg_ConnectionManeuverAssistDeserializer() {
-			super(Reg_ConnectionManeuverAssist.class);
-		}
-	}
+  public static class Reg_ConnectionManeuverAssistDeserializer
+      extends ParameterizedTypeDeserializer<Reg_ConnectionManeuverAssist> {
+    public Reg_ConnectionManeuverAssistDeserializer() {
+      super(Reg_ConnectionManeuverAssist.class);
+    }
+  }
 }

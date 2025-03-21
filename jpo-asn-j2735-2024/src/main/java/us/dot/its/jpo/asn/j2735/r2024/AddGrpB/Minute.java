@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Minute.MinuteDeserializer.class)
 public class Minute extends Asn1Integer {
 
-	public Minute() {
-		super(0L, 255L);
-	}
+  public Minute() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public Minute(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Minute(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MinuteDeserializer extends IntegerDeserializer<Minute> {
-		public MinuteDeserializer() {
-			super(Minute.class);
-		}
+  public static class MinuteDeserializer extends IntegerDeserializer<Minute> {
+    public MinuteDeserializer() {
+      super(Minute.class);
+    }
 
-		@Override
-		protected Minute construct() {
-			return new Minute();
-		}
-	}
+    @Override
+    protected Minute construct() {
+      return new Minute();
+    }
+  }
 }

@@ -38,47 +38,59 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgVehicleClass extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "motorcycles")
-	@JsonProperty("motorcycles")
-	private Asn1Boolean motorcycles;
-	@Asn1Property(tag = 1, name = "passengerCars")
-	@JsonProperty("passengerCars")
-	private Asn1Boolean passengerCars;
-	@Asn1Property(tag = 2, name = "other2axle4tireSingleUnitVehs")
-	@JsonProperty("other2axle4tireSingleUnitVehs")
-	private Asn1Boolean other2axle4tireSingleUnitVehs;
-	@Asn1Property(tag = 3, name = "buses")
-	@JsonProperty("buses")
-	private Asn1Boolean buses;
-	@Asn1Property(tag = 4, name = "twoAxle6TireSingleUnitTrucks")
-	@JsonProperty("twoAxle6TireSingleUnitTrucks")
-	private Asn1Boolean twoAxle6TireSingleUnitTrucks;
-	@Asn1Property(tag = 5, name = "threeAxleSingleUnitTrucks")
-	@JsonProperty("threeAxleSingleUnitTrucks")
-	private Asn1Boolean threeAxleSingleUnitTrucks;
-	@Asn1Property(tag = 6, name = "fourOrMoreAxleSingleUnitTrucks")
-	@JsonProperty("fourOrMoreAxleSingleUnitTrucks")
-	private Asn1Boolean fourOrMoreAxleSingleUnitTrucks;
-	@Asn1Property(tag = 7, name = "fourOrFewerAxleSingleTrailerTrucks")
-	@JsonProperty("fourOrFewerAxleSingleTrailerTrucks")
-	private Asn1Boolean fourOrFewerAxleSingleTrailerTrucks;
-	@Asn1Property(tag = 8, name = "fiveAxleSingleTrailerTrucks")
-	@JsonProperty("fiveAxleSingleTrailerTrucks")
-	private Asn1Boolean fiveAxleSingleTrailerTrucks;
-	@Asn1Property(tag = 9, name = "sixOrMoreAxleSingleTrailerTrucks")
-	@JsonProperty("sixOrMoreAxleSingleTrailerTrucks")
-	private Asn1Boolean sixOrMoreAxleSingleTrailerTrucks;
-	@Asn1Property(tag = 10, name = "fiveOrFewerAxleMultiTrailerTrucks")
-	@JsonProperty("fiveOrFewerAxleMultiTrailerTrucks")
-	private Asn1Boolean fiveOrFewerAxleMultiTrailerTrucks;
-	@Asn1Property(tag = 11, name = "sixAxleMultiTrailerTrucks")
-	@JsonProperty("sixAxleMultiTrailerTrucks")
-	private Asn1Boolean sixAxleMultiTrailerTrucks;
-	@Asn1Property(tag = 12, name = "sevenOrMoreAxleMultiTrailerTrucks")
-	@JsonProperty("sevenOrMoreAxleMultiTrailerTrucks")
-	private Asn1Boolean sevenOrMoreAxleMultiTrailerTrucks;
+  @Asn1Property(tag = 0, name = "motorcycles")
+  @JsonProperty("motorcycles")
+  private Asn1Boolean motorcycles;
 
-	public CfgVehicleClass() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "passengerCars")
+  @JsonProperty("passengerCars")
+  private Asn1Boolean passengerCars;
+
+  @Asn1Property(tag = 2, name = "other2axle4tireSingleUnitVehs")
+  @JsonProperty("other2axle4tireSingleUnitVehs")
+  private Asn1Boolean other2axle4tireSingleUnitVehs;
+
+  @Asn1Property(tag = 3, name = "buses")
+  @JsonProperty("buses")
+  private Asn1Boolean buses;
+
+  @Asn1Property(tag = 4, name = "twoAxle6TireSingleUnitTrucks")
+  @JsonProperty("twoAxle6TireSingleUnitTrucks")
+  private Asn1Boolean twoAxle6TireSingleUnitTrucks;
+
+  @Asn1Property(tag = 5, name = "threeAxleSingleUnitTrucks")
+  @JsonProperty("threeAxleSingleUnitTrucks")
+  private Asn1Boolean threeAxleSingleUnitTrucks;
+
+  @Asn1Property(tag = 6, name = "fourOrMoreAxleSingleUnitTrucks")
+  @JsonProperty("fourOrMoreAxleSingleUnitTrucks")
+  private Asn1Boolean fourOrMoreAxleSingleUnitTrucks;
+
+  @Asn1Property(tag = 7, name = "fourOrFewerAxleSingleTrailerTrucks")
+  @JsonProperty("fourOrFewerAxleSingleTrailerTrucks")
+  private Asn1Boolean fourOrFewerAxleSingleTrailerTrucks;
+
+  @Asn1Property(tag = 8, name = "fiveAxleSingleTrailerTrucks")
+  @JsonProperty("fiveAxleSingleTrailerTrucks")
+  private Asn1Boolean fiveAxleSingleTrailerTrucks;
+
+  @Asn1Property(tag = 9, name = "sixOrMoreAxleSingleTrailerTrucks")
+  @JsonProperty("sixOrMoreAxleSingleTrailerTrucks")
+  private Asn1Boolean sixOrMoreAxleSingleTrailerTrucks;
+
+  @Asn1Property(tag = 10, name = "fiveOrFewerAxleMultiTrailerTrucks")
+  @JsonProperty("fiveOrFewerAxleMultiTrailerTrucks")
+  private Asn1Boolean fiveOrFewerAxleMultiTrailerTrucks;
+
+  @Asn1Property(tag = 11, name = "sixAxleMultiTrailerTrucks")
+  @JsonProperty("sixAxleMultiTrailerTrucks")
+  private Asn1Boolean sixAxleMultiTrailerTrucks;
+
+  @Asn1Property(tag = 12, name = "sevenOrMoreAxleMultiTrailerTrucks")
+  @JsonProperty("sevenOrMoreAxleMultiTrailerTrucks")
+  private Asn1Boolean sevenOrMoreAxleMultiTrailerTrucks;
+
+  public CfgVehicleClass() {
+    super(true);
+  }
 }

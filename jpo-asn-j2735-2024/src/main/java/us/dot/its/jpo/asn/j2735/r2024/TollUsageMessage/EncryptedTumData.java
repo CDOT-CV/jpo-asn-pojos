@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class EncryptedTumData extends Asn1OctetString {
 
-	public EncryptedTumData() {
-		super(1, 7000);
-	}
+  public EncryptedTumData() {
+    super(1, 7000);
+  }
 
-	@JsonCreator
-	public EncryptedTumData(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public EncryptedTumData(String value) {
+    this();
+    setValue(value);
+  }
 }

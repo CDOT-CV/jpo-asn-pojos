@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class LocAndTimeStamps extends Asn1SequenceOf<LocAndTimeStamp> {
 
-	public LocAndTimeStamps() {
-		super(LocAndTimeStamp.class, 1L, 5L);
-	}
+  public LocAndTimeStamps() {
+    super(LocAndTimeStamp.class, 1L, 5L);
+  }
 }

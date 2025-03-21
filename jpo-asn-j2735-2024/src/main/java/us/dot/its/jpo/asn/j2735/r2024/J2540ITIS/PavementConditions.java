@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = PavementConditions.PavementConditionsDeserializer.class)
 public class PavementConditions extends Asn1Integer {
 
-	public PavementConditions() {
-		super(0L, 65535L);
-	}
+  public PavementConditions() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public PavementConditions(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public PavementConditions(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class PavementConditionsDeserializer extends IntegerDeserializer<PavementConditions> {
-		public PavementConditionsDeserializer() {
-			super(PavementConditions.class);
-		}
+  public static class PavementConditionsDeserializer
+      extends IntegerDeserializer<PavementConditions> {
+    public PavementConditionsDeserializer() {
+      super(PavementConditions.class);
+    }
 
-		@Override
-		protected PavementConditions construct() {
-			return new PavementConditions();
-		}
-	}
+    @Override
+    protected PavementConditions construct() {
+      return new PavementConditions();
+    }
+  }
 }

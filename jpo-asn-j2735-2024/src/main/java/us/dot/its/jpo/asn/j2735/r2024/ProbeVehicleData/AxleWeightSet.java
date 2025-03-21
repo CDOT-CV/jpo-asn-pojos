@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AxleWeightSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "location", optional = true)
-	@JsonProperty("location")
-	private AxleLocation location;
-	@Asn1Property(tag = 1, name = "weight", optional = true)
-	@JsonProperty("weight")
-	private AxleWeight weight;
+  @Asn1Property(tag = 0, name = "location", optional = true)
+  @JsonProperty("location")
+  private AxleLocation location;
 
-	public AxleWeightSet() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "weight", optional = true)
+  @JsonProperty("weight")
+  private AxleWeight weight;
+
+  public AxleWeightSet() {
+    super(true);
+  }
 }

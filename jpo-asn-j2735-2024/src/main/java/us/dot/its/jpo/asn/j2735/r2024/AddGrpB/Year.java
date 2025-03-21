@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Year.YearDeserializer.class)
 public class Year extends Asn1Integer {
 
-	public Year() {
-		super(1L, 65535L);
-	}
+  public Year() {
+    super(1L, 65535L);
+  }
 
-	@JsonCreator
-	public Year(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Year(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class YearDeserializer extends IntegerDeserializer<Year> {
-		public YearDeserializer() {
-			super(Year.class);
-		}
+  public static class YearDeserializer extends IntegerDeserializer<Year> {
+    public YearDeserializer() {
+      super(Year.class);
+    }
 
-		@Override
-		protected Year construct() {
-			return new Year();
-		}
-	}
+    @Override
+    protected Year construct() {
+      return new Year();
+    }
+  }
 }

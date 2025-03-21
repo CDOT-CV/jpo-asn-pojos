@@ -30,39 +30,44 @@ import us.dot.its.jpo.asn.runtime.serialization.EnumeratedSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
-@JsonSerialize(using = TirePressureThresholdDetection.TirePressureThresholdDetectionSerializer.class)
-@JsonDeserialize(using = TirePressureThresholdDetection.TirePressureThresholdDetectionDeserializer.class)
+@JsonSerialize(
+    using = TirePressureThresholdDetection.TirePressureThresholdDetectionSerializer.class)
+@JsonDeserialize(
+    using = TirePressureThresholdDetection.TirePressureThresholdDetectionDeserializer.class)
 public enum TirePressureThresholdDetection implements Asn1Enumerated {
-	NODATA(0, "noData"), OVERPRESSURE(1, "overPressure"), NOWARNINGPRESSURE(2, "noWarningPressure"), UNDERPRESSURE(3,
-			"underPressure"), EXTREMEUNDERPRESSURE(4, "extremeUnderPressure"), UNDEFINED(5,
-					"undefined"), ERRORINDICATOR(6, "errorIndicator"), NOTAVAILABLE(7, "notAvailable");
+  NODATA(0, "noData"),
+  OVERPRESSURE(1, "overPressure"),
+  NOWARNINGPRESSURE(2, "noWarningPressure"),
+  UNDERPRESSURE(3, "underPressure"),
+  EXTREMEUNDERPRESSURE(4, "extremeUnderPressure"),
+  UNDEFINED(5, "undefined"),
+  ERRORINDICATOR(6, "errorIndicator"),
+  NOTAVAILABLE(7, "notAvailable");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TirePressureThresholdDetection(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TirePressureThresholdDetection(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TirePressureThresholdDetectionSerializer
-			extends
-				EnumeratedSerializer<TirePressureThresholdDetection> {
-		public TirePressureThresholdDetectionSerializer() {
-			super(TirePressureThresholdDetection.class);
-		}
-	}
+  public static class TirePressureThresholdDetectionSerializer
+      extends EnumeratedSerializer<TirePressureThresholdDetection> {
+    public TirePressureThresholdDetectionSerializer() {
+      super(TirePressureThresholdDetection.class);
+    }
+  }
 
-	public static class TirePressureThresholdDetectionDeserializer
-			extends
-				EnumeratedDeserializer<TirePressureThresholdDetection> {
-		public TirePressureThresholdDetectionDeserializer() {
-			super(TirePressureThresholdDetection.class);
-		}
+  public static class TirePressureThresholdDetectionDeserializer
+      extends EnumeratedDeserializer<TirePressureThresholdDetection> {
+    public TirePressureThresholdDetectionDeserializer() {
+      super(TirePressureThresholdDetection.class);
+    }
 
-		@Override
-		protected TirePressureThresholdDetection[] listEnumValues() {
-			return TirePressureThresholdDetection.values();
-		}
-	}
+    @Override
+    protected TirePressureThresholdDetection[] listEnumValues() {
+      return TirePressureThresholdDetection.values();
+    }
+  }
 }

@@ -33,30 +33,30 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = GrassType.GrassTypeSerializer.class)
 @JsonDeserialize(using = GrassType.GrassTypeDeserializer.class)
 public enum GrassType implements Asn1Enumerated {
-	LESSTHAN30MPH(0, "lessThan30Mph");
+  LESSTHAN30MPH(0, "lessThan30Mph");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private GrassType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private GrassType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class GrassTypeSerializer extends EnumeratedSerializer<GrassType> {
-		public GrassTypeSerializer() {
-			super(GrassType.class);
-		}
-	}
+  public static class GrassTypeSerializer extends EnumeratedSerializer<GrassType> {
+    public GrassTypeSerializer() {
+      super(GrassType.class);
+    }
+  }
 
-	public static class GrassTypeDeserializer extends EnumeratedDeserializer<GrassType> {
-		public GrassTypeDeserializer() {
-			super(GrassType.class);
-		}
+  public static class GrassTypeDeserializer extends EnumeratedDeserializer<GrassType> {
+    public GrassTypeDeserializer() {
+      super(GrassType.class);
+    }
 
-		@Override
-		protected GrassType[] listEnumValues() {
-			return GrassType.values();
-		}
-	}
+    @Override
+    protected GrassType[] listEnumValues() {
+      return GrassType.values();
+    }
+  }
 }

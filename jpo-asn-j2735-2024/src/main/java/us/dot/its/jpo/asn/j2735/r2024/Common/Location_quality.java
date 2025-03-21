@@ -33,33 +33,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = Location_quality.Location_qualitySerializer.class)
 @JsonDeserialize(using = Location_quality.Location_qualityDeserializer.class)
 public enum Location_quality implements Asn1Enumerated {
-	LOC_QUAL_BT1M(0, "loc-qual-bt1m"), LOC_QUAL_BT5M(1, "loc-qual-bt5m"), LOC_QUAL_BT12M(2,
-			"loc-qual-bt12m"), LOC_QUAL_BT50M(3, "loc-qual-bt50m"), LOC_QUAL_BT125M(4,
-					"loc-qual-bt125m"), LOC_QUAL_BT500M(5, "loc-qual-bt500m"), LOC_QUAL_BT1250M(6,
-							"loc-qual-bt1250m"), LOC_QUAL_UNKNOWN(7, "loc-qual-unknown");
+  LOC_QUAL_BT1M(0, "loc-qual-bt1m"),
+  LOC_QUAL_BT5M(1, "loc-qual-bt5m"),
+  LOC_QUAL_BT12M(2, "loc-qual-bt12m"),
+  LOC_QUAL_BT50M(3, "loc-qual-bt50m"),
+  LOC_QUAL_BT125M(4, "loc-qual-bt125m"),
+  LOC_QUAL_BT500M(5, "loc-qual-bt500m"),
+  LOC_QUAL_BT1250M(6, "loc-qual-bt1250m"),
+  LOC_QUAL_UNKNOWN(7, "loc-qual-unknown");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private Location_quality(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private Location_quality(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class Location_qualitySerializer extends EnumeratedSerializer<Location_quality> {
-		public Location_qualitySerializer() {
-			super(Location_quality.class);
-		}
-	}
+  public static class Location_qualitySerializer extends EnumeratedSerializer<Location_quality> {
+    public Location_qualitySerializer() {
+      super(Location_quality.class);
+    }
+  }
 
-	public static class Location_qualityDeserializer extends EnumeratedDeserializer<Location_quality> {
-		public Location_qualityDeserializer() {
-			super(Location_quality.class);
-		}
+  public static class Location_qualityDeserializer
+      extends EnumeratedDeserializer<Location_quality> {
+    public Location_qualityDeserializer() {
+      super(Location_quality.class);
+    }
 
-		@Override
-		protected Location_quality[] listEnumValues() {
-			return Location_quality.values();
-		}
-	}
+    @Override
+    protected Location_quality[] listEnumValues() {
+      return Location_quality.values();
+    }
+  }
 }

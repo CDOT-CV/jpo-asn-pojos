@@ -33,32 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = LightbarInUse.LightbarInUseSerializer.class)
 @JsonDeserialize(using = LightbarInUse.LightbarInUseDeserializer.class)
 public enum LightbarInUse implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), NOTINUSE(1, "notInUse"), INUSE(2, "inUse"), YELLOWCAUTIONLIGHTS(3,
-			"yellowCautionLights"), SCHOOLDBUSLIGHTS(4, "schooldBusLights"), ARROWSIGNSACTIVE(5,
-					"arrowSignsActive"), SLOWMOVINGVEHICLE(6, "slowMovingVehicle"), FREQSTOPS(7, "freqStops");
+  UNAVAILABLE(0, "unavailable"),
+  NOTINUSE(1, "notInUse"),
+  INUSE(2, "inUse"),
+  YELLOWCAUTIONLIGHTS(3, "yellowCautionLights"),
+  SCHOOLDBUSLIGHTS(4, "schooldBusLights"),
+  ARROWSIGNSACTIVE(5, "arrowSignsActive"),
+  SLOWMOVINGVEHICLE(6, "slowMovingVehicle"),
+  FREQSTOPS(7, "freqStops");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private LightbarInUse(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private LightbarInUse(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class LightbarInUseSerializer extends EnumeratedSerializer<LightbarInUse> {
-		public LightbarInUseSerializer() {
-			super(LightbarInUse.class);
-		}
-	}
+  public static class LightbarInUseSerializer extends EnumeratedSerializer<LightbarInUse> {
+    public LightbarInUseSerializer() {
+      super(LightbarInUse.class);
+    }
+  }
 
-	public static class LightbarInUseDeserializer extends EnumeratedDeserializer<LightbarInUse> {
-		public LightbarInUseDeserializer() {
-			super(LightbarInUse.class);
-		}
+  public static class LightbarInUseDeserializer extends EnumeratedDeserializer<LightbarInUse> {
+    public LightbarInUseDeserializer() {
+      super(LightbarInUse.class);
+    }
 
-		@Override
-		protected LightbarInUse[] listEnumValues() {
-			return LightbarInUse.values();
-		}
-	}
+    @Override
+    protected LightbarInUse[] listEnumValues() {
+      return LightbarInUse.values();
+    }
+  }
 }

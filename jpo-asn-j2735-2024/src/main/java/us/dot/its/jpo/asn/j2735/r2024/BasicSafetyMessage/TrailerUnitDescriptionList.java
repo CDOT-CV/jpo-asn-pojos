@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class TrailerUnitDescriptionList extends Asn1SequenceOf<TrailerUnitDescription> {
 
-	public TrailerUnitDescriptionList() {
-		super(TrailerUnitDescription.class, 1L, 8L);
-	}
+  public TrailerUnitDescriptionList() {
+    super(TrailerUnitDescription.class, 1L, 8L);
+  }
 }

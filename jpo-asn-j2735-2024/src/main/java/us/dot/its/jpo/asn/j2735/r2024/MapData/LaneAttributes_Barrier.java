@@ -26,103 +26,119 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Barrier.LaneAttributes_BarrierDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Barrier
+            .LaneAttributes_BarrierDeserializer.class)
 public class LaneAttributes_Barrier extends Asn1Bitstring {
 
-	public boolean isMedian_RevocableLane() {
-		return get(0);
-	}
+  public boolean isMedian_RevocableLane() {
+    return get(0);
+  }
 
-	public void setMedian_RevocableLane(boolean median_RevocableLane) {
-		set(0, median_RevocableLane);
-	}
+  public void setMedian_RevocableLane(boolean median_RevocableLane) {
+    set(0, median_RevocableLane);
+  }
 
-	public boolean isMedian() {
-		return get(1);
-	}
+  public boolean isMedian() {
+    return get(1);
+  }
 
-	public void setMedian(boolean median) {
-		set(1, median);
-	}
+  public void setMedian(boolean median) {
+    set(1, median);
+  }
 
-	public boolean isWhiteLineHashing() {
-		return get(2);
-	}
+  public boolean isWhiteLineHashing() {
+    return get(2);
+  }
 
-	public void setWhiteLineHashing(boolean whiteLineHashing) {
-		set(2, whiteLineHashing);
-	}
+  public void setWhiteLineHashing(boolean whiteLineHashing) {
+    set(2, whiteLineHashing);
+  }
 
-	public boolean isStripedLines() {
-		return get(3);
-	}
+  public boolean isStripedLines() {
+    return get(3);
+  }
 
-	public void setStripedLines(boolean stripedLines) {
-		set(3, stripedLines);
-	}
+  public void setStripedLines(boolean stripedLines) {
+    set(3, stripedLines);
+  }
 
-	public boolean isDoubleStripedLines() {
-		return get(4);
-	}
+  public boolean isDoubleStripedLines() {
+    return get(4);
+  }
 
-	public void setDoubleStripedLines(boolean doubleStripedLines) {
-		set(4, doubleStripedLines);
-	}
+  public void setDoubleStripedLines(boolean doubleStripedLines) {
+    set(4, doubleStripedLines);
+  }
 
-	public boolean isTrafficCones() {
-		return get(5);
-	}
+  public boolean isTrafficCones() {
+    return get(5);
+  }
 
-	public void setTrafficCones(boolean trafficCones) {
-		set(5, trafficCones);
-	}
+  public void setTrafficCones(boolean trafficCones) {
+    set(5, trafficCones);
+  }
 
-	public boolean isConstructionBarrier() {
-		return get(6);
-	}
+  public boolean isConstructionBarrier() {
+    return get(6);
+  }
 
-	public void setConstructionBarrier(boolean constructionBarrier) {
-		set(6, constructionBarrier);
-	}
+  public void setConstructionBarrier(boolean constructionBarrier) {
+    set(6, constructionBarrier);
+  }
 
-	public boolean isTrafficChannels() {
-		return get(7);
-	}
+  public boolean isTrafficChannels() {
+    return get(7);
+  }
 
-	public void setTrafficChannels(boolean trafficChannels) {
-		set(7, trafficChannels);
-	}
+  public void setTrafficChannels(boolean trafficChannels) {
+    set(7, trafficChannels);
+  }
 
-	public boolean isLowCurbs() {
-		return get(8);
-	}
+  public boolean isLowCurbs() {
+    return get(8);
+  }
 
-	public void setLowCurbs(boolean lowCurbs) {
-		set(8, lowCurbs);
-	}
+  public void setLowCurbs(boolean lowCurbs) {
+    set(8, lowCurbs);
+  }
 
-	public boolean isHighCurbs() {
-		return get(9);
-	}
+  public boolean isHighCurbs() {
+    return get(9);
+  }
 
-	public void setHighCurbs(boolean highCurbs) {
-		set(9, highCurbs);
-	}
+  public void setHighCurbs(boolean highCurbs) {
+    set(9, highCurbs);
+  }
 
-	public LaneAttributes_Barrier() {
-		super(16, false,
-				new String[]{"median-RevocableLane", "median", "whiteLineHashing", "stripedLines", "doubleStripedLines",
-						"trafficCones", "constructionBarrier", "trafficChannels", "lowCurbs", "highCurbs"});
-	}
+  public LaneAttributes_Barrier() {
+    super(
+        16,
+        false,
+        new String[] {
+          "median-RevocableLane",
+          "median",
+          "whiteLineHashing",
+          "stripedLines",
+          "doubleStripedLines",
+          "trafficCones",
+          "constructionBarrier",
+          "trafficChannels",
+          "lowCurbs",
+          "highCurbs"
+        });
+  }
 
-	public static class LaneAttributes_BarrierDeserializer extends BitStringDeserializer<LaneAttributes_Barrier> {
-		public LaneAttributes_BarrierDeserializer() {
-			super(LaneAttributes_Barrier.class);
-		}
+  public static class LaneAttributes_BarrierDeserializer
+      extends BitStringDeserializer<LaneAttributes_Barrier> {
+    public LaneAttributes_BarrierDeserializer() {
+      super(LaneAttributes_Barrier.class);
+    }
 
-		@Override
-		protected LaneAttributes_Barrier construct() {
-			return new LaneAttributes_Barrier();
-		}
-	}
+    @Override
+    protected LaneAttributes_Barrier construct() {
+      return new LaneAttributes_Barrier();
+    }
+  }
 }

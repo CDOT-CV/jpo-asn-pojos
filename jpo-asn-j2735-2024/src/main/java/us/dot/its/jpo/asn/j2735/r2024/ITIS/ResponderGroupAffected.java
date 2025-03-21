@@ -33,40 +33,45 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ResponderGroupAffected.ResponderGroupAffectedSerializer.class)
 @JsonDeserialize(using = ResponderGroupAffected.ResponderGroupAffectedDeserializer.class)
 public enum ResponderGroupAffected implements Asn1Enumerated {
-	EMERGENCY_VEHICLE_UNITS(9729, "emergency-vehicle-units"), FEDERAL_LAW_ENFORCEMENT_UNITS(9730,
-			"federal-law-enforcement-units"), STATE_POLICE_UNITS(9731, "state-police-units"), COUNTY_POLICE_UNITS(9732,
-					"county-police-units"), LOCAL_POLICE_UNITS(9733, "local-police-units"), AMBULANCE_UNITS(9734,
-							"ambulance-units"), RESCUE_UNITS(9735, "rescue-units"), FIRE_UNITS(9736,
-									"fire-units"), HAZMAT_UNITS(9737, "hAZMAT-units"), LIGHT_TOW_UNIT(9738,
-											"light-tow-unit"), HEAVY_TOW_UNIT(9739,
-													"heavy-tow-unit"), FREEWAY_SERVICE_PATROLS(9740,
-															"freeway-service-patrols"), TRANSPORTATION_RESPONSE_UNITS(
-																	9741,
-																	"transportation-response-units"), PRIVATE_CONTRACTOR_RESPONSE_UNITS(
-																			9742, "private-contractor-response-units");
+  EMERGENCY_VEHICLE_UNITS(9729, "emergency-vehicle-units"),
+  FEDERAL_LAW_ENFORCEMENT_UNITS(9730, "federal-law-enforcement-units"),
+  STATE_POLICE_UNITS(9731, "state-police-units"),
+  COUNTY_POLICE_UNITS(9732, "county-police-units"),
+  LOCAL_POLICE_UNITS(9733, "local-police-units"),
+  AMBULANCE_UNITS(9734, "ambulance-units"),
+  RESCUE_UNITS(9735, "rescue-units"),
+  FIRE_UNITS(9736, "fire-units"),
+  HAZMAT_UNITS(9737, "hAZMAT-units"),
+  LIGHT_TOW_UNIT(9738, "light-tow-unit"),
+  HEAVY_TOW_UNIT(9739, "heavy-tow-unit"),
+  FREEWAY_SERVICE_PATROLS(9740, "freeway-service-patrols"),
+  TRANSPORTATION_RESPONSE_UNITS(9741, "transportation-response-units"),
+  PRIVATE_CONTRACTOR_RESPONSE_UNITS(9742, "private-contractor-response-units");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ResponderGroupAffected(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ResponderGroupAffected(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ResponderGroupAffectedSerializer extends EnumeratedSerializer<ResponderGroupAffected> {
-		public ResponderGroupAffectedSerializer() {
-			super(ResponderGroupAffected.class);
-		}
-	}
+  public static class ResponderGroupAffectedSerializer
+      extends EnumeratedSerializer<ResponderGroupAffected> {
+    public ResponderGroupAffectedSerializer() {
+      super(ResponderGroupAffected.class);
+    }
+  }
 
-	public static class ResponderGroupAffectedDeserializer extends EnumeratedDeserializer<ResponderGroupAffected> {
-		public ResponderGroupAffectedDeserializer() {
-			super(ResponderGroupAffected.class);
-		}
+  public static class ResponderGroupAffectedDeserializer
+      extends EnumeratedDeserializer<ResponderGroupAffected> {
+    public ResponderGroupAffectedDeserializer() {
+      super(ResponderGroupAffected.class);
+    }
 
-		@Override
-		protected ResponderGroupAffected[] listEnumValues() {
-			return ResponderGroupAffected.values();
-		}
-	}
+    @Override
+    protected ResponderGroupAffected[] listEnumValues() {
+      return ResponderGroupAffected.values();
+    }
+  }
 }

@@ -48,63 +48,73 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class GeographicalPath extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 1, name = "id", optional = true)
-	@JsonProperty("id")
-	private RoadSegmentReferenceID id;
-	@Asn1Property(tag = 2, name = "anchor", optional = true)
-	@JsonProperty("anchor")
-	private Position3D anchor;
-	@Asn1Property(tag = 3, name = "laneWidth", optional = true)
-	@JsonProperty("laneWidth")
-	private LaneWidth laneWidth;
-	@Asn1Property(tag = 4, name = "directionality", optional = true)
-	@JsonProperty("directionality")
-	private DirectionOfUse directionality;
-	@Asn1Property(tag = 5, name = "closedPath", optional = true)
-	@JsonProperty("closedPath")
-	private Asn1Boolean closedPath;
-	@Asn1Property(tag = 6, name = "direction", optional = true)
-	@JsonProperty("direction")
-	private HeadingSlice direction;
-	@Asn1Property(tag = 7, name = "description", optional = true)
-	@JsonProperty("description")
-	private DescriptionChoice description;
-	@Asn1Property(tag = 8, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-GeographicalPath")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class DescriptionChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "path")
-		@JsonProperty("path")
-		private OffsetSystem path;
-		@Asn1Property(tag = 1, name = "geometry")
-		@JsonProperty("geometry")
-		private GeometricProjection geometry;
-		@Asn1Property(tag = 2, name = "oldRegion")
-		@JsonProperty("oldRegion")
-		private ValidRegion oldRegion;
+  @Asn1Property(tag = 1, name = "id", optional = true)
+  @JsonProperty("id")
+  private RoadSegmentReferenceID id;
 
-		public DescriptionChoice() {
-			super(true);
-		}
-	}
+  @Asn1Property(tag = 2, name = "anchor", optional = true)
+  @JsonProperty("anchor")
+  private Position3D anchor;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GeographicalPath> {
-		public SequenceOfRegional() {
-			super(Reg_GeographicalPath.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 3, name = "laneWidth", optional = true)
+  @JsonProperty("laneWidth")
+  private LaneWidth laneWidth;
 
-	public GeographicalPath() {
-		super(true);
-	}
+  @Asn1Property(tag = 4, name = "directionality", optional = true)
+  @JsonProperty("directionality")
+  private DirectionOfUse directionality;
+
+  @Asn1Property(tag = 5, name = "closedPath", optional = true)
+  @JsonProperty("closedPath")
+  private Asn1Boolean closedPath;
+
+  @Asn1Property(tag = 6, name = "direction", optional = true)
+  @JsonProperty("direction")
+  private HeadingSlice direction;
+
+  @Asn1Property(tag = 7, name = "description", optional = true)
+  @JsonProperty("description")
+  private DescriptionChoice description;
+
+  @Asn1Property(tag = 8, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-GeographicalPath")
+  private SequenceOfRegional regional;
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class DescriptionChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "path")
+    @JsonProperty("path")
+    private OffsetSystem path;
+
+    @Asn1Property(tag = 1, name = "geometry")
+    @JsonProperty("geometry")
+    private GeometricProjection geometry;
+
+    @Asn1Property(tag = 2, name = "oldRegion")
+    @JsonProperty("oldRegion")
+    private ValidRegion oldRegion;
+
+    public DescriptionChoice() {
+      super(true);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GeographicalPath> {
+    public SequenceOfRegional() {
+      super(Reg_GeographicalPath.class, 1L, 4L);
+    }
+  }
+
+  public GeographicalPath() {
+    super(true);
+  }
 }

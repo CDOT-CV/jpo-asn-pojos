@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DeltaAngle.DeltaAngleDeserializer.class)
 public class DeltaAngle extends Asn1Integer {
 
-	public DeltaAngle() {
-		super(-150L, 150L);
-	}
+  public DeltaAngle() {
+    super(-150L, 150L);
+  }
 
-	@JsonCreator
-	public DeltaAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DeltaAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DeltaAngleDeserializer extends IntegerDeserializer<DeltaAngle> {
-		public DeltaAngleDeserializer() {
-			super(DeltaAngle.class);
-		}
+  public static class DeltaAngleDeserializer extends IntegerDeserializer<DeltaAngle> {
+    public DeltaAngleDeserializer() {
+      super(DeltaAngle.class);
+    }
 
-		@Override
-		protected DeltaAngle construct() {
-			return new DeltaAngle();
-		}
-	}
+    @Override
+    protected DeltaAngle construct() {
+      return new DeltaAngle();
+    }
+  }
 }

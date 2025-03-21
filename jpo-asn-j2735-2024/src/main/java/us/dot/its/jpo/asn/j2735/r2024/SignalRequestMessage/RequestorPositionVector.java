@@ -40,17 +40,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RequestorPositionVector extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "position")
-	@JsonProperty("position")
-	private Position3D position;
-	@Asn1Property(tag = 1, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private Angle heading;
-	@Asn1Property(tag = 2, name = "speed", optional = true)
-	@JsonProperty("speed")
-	private TransmissionAndSpeed speed;
+  @Asn1Property(tag = 0, name = "position")
+  @JsonProperty("position")
+  private Position3D position;
 
-	public RequestorPositionVector() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private Angle heading;
+
+  @Asn1Property(tag = 2, name = "speed", optional = true)
+  @JsonProperty("speed")
+  private TransmissionAndSpeed speed;
+
+  public RequestorPositionVector() {
+    super(true);
+  }
 }

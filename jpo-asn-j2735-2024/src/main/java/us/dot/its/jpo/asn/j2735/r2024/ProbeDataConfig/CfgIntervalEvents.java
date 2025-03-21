@@ -38,26 +38,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgIntervalEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "interval")
-	@JsonProperty("interval")
-	private CfgInterval interval;
-	@Asn1Property(tag = 1, name = "wiperStatus", optional = true)
-	@JsonProperty("wiperStatus")
-	private Asn1Boolean wiperStatus;
-	@Asn1Property(tag = 2, name = "vehCount", optional = true)
-	@JsonProperty("vehCount")
-	private Asn1Boolean vehCount;
-	@Asn1Property(tag = 3, name = "weatherData", optional = true)
-	@JsonProperty("weatherData")
-	private Asn1Boolean weatherData;
-	@Asn1Property(tag = 4, name = "transitVehData", optional = true)
-	@JsonProperty("transitVehData")
-	private CfgTransitVehicleData transitVehData;
-	@Asn1Property(tag = 5, name = "numOfOccupants", optional = true)
-	@JsonProperty("numOfOccupants")
-	private Asn1Boolean numOfOccupants;
+  @Asn1Property(tag = 0, name = "interval")
+  @JsonProperty("interval")
+  private CfgInterval interval;
 
-	public CfgIntervalEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "wiperStatus", optional = true)
+  @JsonProperty("wiperStatus")
+  private Asn1Boolean wiperStatus;
+
+  @Asn1Property(tag = 2, name = "vehCount", optional = true)
+  @JsonProperty("vehCount")
+  private Asn1Boolean vehCount;
+
+  @Asn1Property(tag = 3, name = "weatherData", optional = true)
+  @JsonProperty("weatherData")
+  private Asn1Boolean weatherData;
+
+  @Asn1Property(tag = 4, name = "transitVehData", optional = true)
+  @JsonProperty("transitVehData")
+  private CfgTransitVehicleData transitVehData;
+
+  @Asn1Property(tag = 5, name = "numOfOccupants", optional = true)
+  @JsonProperty("numOfOccupants")
+  private Asn1Boolean numOfOccupants;
+
+  public CfgIntervalEvents() {
+    super(true);
+  }
 }

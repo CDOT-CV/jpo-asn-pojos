@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Temperature.TemperatureDeserializer.class)
 public class Temperature extends Asn1Integer {
 
-	public Temperature() {
-		super(0L, 65535L);
-	}
+  public Temperature() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Temperature(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Temperature(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TemperatureDeserializer extends IntegerDeserializer<Temperature> {
-		public TemperatureDeserializer() {
-			super(Temperature.class);
-		}
+  public static class TemperatureDeserializer extends IntegerDeserializer<Temperature> {
+    public TemperatureDeserializer() {
+      super(Temperature.class);
+    }
 
-		@Override
-		protected Temperature construct() {
-			return new Temperature();
-		}
-	}
+    @Override
+    protected Temperature construct() {
+      return new Temperature();
+    }
+  }
 }

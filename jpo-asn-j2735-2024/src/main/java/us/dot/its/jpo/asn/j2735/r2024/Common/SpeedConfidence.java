@@ -33,31 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SpeedConfidence.SpeedConfidenceSerializer.class)
 @JsonDeserialize(using = SpeedConfidence.SpeedConfidenceDeserializer.class)
 public enum SpeedConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), PREC100MS(1, "prec100ms"), PREC10MS(2, "prec10ms"), PREC5MS(3, "prec5ms"), PREC1MS(4,
-			"prec1ms"), PREC0_1MS(5, "prec0-1ms"), PREC0_05MS(6, "prec0-05ms"), PREC0_01MS(7, "prec0-01ms");
+  UNAVAILABLE(0, "unavailable"),
+  PREC100MS(1, "prec100ms"),
+  PREC10MS(2, "prec10ms"),
+  PREC5MS(3, "prec5ms"),
+  PREC1MS(4, "prec1ms"),
+  PREC0_1MS(5, "prec0-1ms"),
+  PREC0_05MS(6, "prec0-05ms"),
+  PREC0_01MS(7, "prec0-01ms");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SpeedConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SpeedConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SpeedConfidenceSerializer extends EnumeratedSerializer<SpeedConfidence> {
-		public SpeedConfidenceSerializer() {
-			super(SpeedConfidence.class);
-		}
-	}
+  public static class SpeedConfidenceSerializer extends EnumeratedSerializer<SpeedConfidence> {
+    public SpeedConfidenceSerializer() {
+      super(SpeedConfidence.class);
+    }
+  }
 
-	public static class SpeedConfidenceDeserializer extends EnumeratedDeserializer<SpeedConfidence> {
-		public SpeedConfidenceDeserializer() {
-			super(SpeedConfidence.class);
-		}
+  public static class SpeedConfidenceDeserializer extends EnumeratedDeserializer<SpeedConfidence> {
+    public SpeedConfidenceDeserializer() {
+      super(SpeedConfidence.class);
+    }
 
-		@Override
-		protected SpeedConfidence[] listEnumValues() {
-			return SpeedConfidence.values();
-		}
-	}
+    @Override
+    protected SpeedConfidence[] listEnumValues() {
+      return SpeedConfidence.values();
+    }
+  }
 }

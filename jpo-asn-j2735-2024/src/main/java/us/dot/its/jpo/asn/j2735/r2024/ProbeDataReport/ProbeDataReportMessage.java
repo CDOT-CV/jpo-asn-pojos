@@ -41,25 +41,29 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ProbeDataReportMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "configId")
-	@JsonProperty("configId")
-	private ConfigId configId;
-	@Asn1Property(tag = 1, name = "reportChar")
-	@JsonProperty("reportChar")
-	private ReportCharacteristics reportChar;
-	@Asn1Property(tag = 2, name = "roadAuthorityID", optional = true)
-	@JsonProperty("roadAuthorityID")
-	private RoadAuthorityID roadAuthorityID;
-	@Asn1Property(tag = 3, name = "instantaneousRecs", optional = true)
-	@JsonProperty("instantaneousRecs")
-	@JacksonXmlElementWrapper(localName = "instantaneousRecs")
-	@JacksonXmlProperty(localName = "RptInstantaneousRecord")
-	private RptInstantaneousRecords instantaneousRecs;
-	@Asn1Property(tag = 4, name = "avgAndSumRec", optional = true)
-	@JsonProperty("avgAndSumRec")
-	private RptAveragedAndSummaryRecord avgAndSumRec;
+  @Asn1Property(tag = 0, name = "configId")
+  @JsonProperty("configId")
+  private ConfigId configId;
 
-	public ProbeDataReportMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "reportChar")
+  @JsonProperty("reportChar")
+  private ReportCharacteristics reportChar;
+
+  @Asn1Property(tag = 2, name = "roadAuthorityID", optional = true)
+  @JsonProperty("roadAuthorityID")
+  private RoadAuthorityID roadAuthorityID;
+
+  @Asn1Property(tag = 3, name = "instantaneousRecs", optional = true)
+  @JsonProperty("instantaneousRecs")
+  @JacksonXmlElementWrapper(localName = "instantaneousRecs")
+  @JacksonXmlProperty(localName = "RptInstantaneousRecord")
+  private RptInstantaneousRecords instantaneousRecs;
+
+  @Asn1Property(tag = 4, name = "avgAndSumRec", optional = true)
+  @JsonProperty("avgAndSumRec")
+  private RptAveragedAndSummaryRecord avgAndSumRec;
+
+  public ProbeDataReportMessage() {
+    super(true);
+  }
 }

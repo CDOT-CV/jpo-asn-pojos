@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PositionConfidenceSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pos")
-	@JsonProperty("pos")
-	private PositionConfidence pos;
-	@Asn1Property(tag = 1, name = "elevation")
-	@JsonProperty("elevation")
-	private ElevationConfidence elevation;
+  @Asn1Property(tag = 0, name = "pos")
+  @JsonProperty("pos")
+  private PositionConfidence pos;
 
-	public PositionConfidenceSet() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "elevation")
+  @JsonProperty("elevation")
+  private ElevationConfidence elevation;
+
+  public PositionConfidenceSet() {
+    super(false);
+  }
 }

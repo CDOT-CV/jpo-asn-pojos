@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = BrakeBoostApplied.BrakeBoostAppliedSerializer.class)
 @JsonDeserialize(using = BrakeBoostApplied.BrakeBoostAppliedDeserializer.class)
 public enum BrakeBoostApplied implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OFF(1, "off"), ON(2, "on");
+  UNAVAILABLE(0, "unavailable"),
+  OFF(1, "off"),
+  ON(2, "on");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private BrakeBoostApplied(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private BrakeBoostApplied(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class BrakeBoostAppliedSerializer extends EnumeratedSerializer<BrakeBoostApplied> {
-		public BrakeBoostAppliedSerializer() {
-			super(BrakeBoostApplied.class);
-		}
-	}
+  public static class BrakeBoostAppliedSerializer extends EnumeratedSerializer<BrakeBoostApplied> {
+    public BrakeBoostAppliedSerializer() {
+      super(BrakeBoostApplied.class);
+    }
+  }
 
-	public static class BrakeBoostAppliedDeserializer extends EnumeratedDeserializer<BrakeBoostApplied> {
-		public BrakeBoostAppliedDeserializer() {
-			super(BrakeBoostApplied.class);
-		}
+  public static class BrakeBoostAppliedDeserializer
+      extends EnumeratedDeserializer<BrakeBoostApplied> {
+    public BrakeBoostAppliedDeserializer() {
+      super(BrakeBoostApplied.class);
+    }
 
-		@Override
-		protected BrakeBoostApplied[] listEnumValues() {
-			return BrakeBoostApplied.values();
-		}
-	}
+    @Override
+    protected BrakeBoostApplied[] listEnumValues() {
+      return BrakeBoostApplied.values();
+    }
+  }
 }

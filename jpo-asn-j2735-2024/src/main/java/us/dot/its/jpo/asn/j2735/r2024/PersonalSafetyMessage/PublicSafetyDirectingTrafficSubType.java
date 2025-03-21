@@ -26,82 +26,93 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = PublicSafetyDirectingTrafficSubType.PublicSafetyDirectingTrafficSubTypeDeserializer.class)
+@JsonDeserialize(
+    using =
+        PublicSafetyDirectingTrafficSubType
+            .PublicSafetyDirectingTrafficSubTypeDeserializer.class)
 public class PublicSafetyDirectingTrafficSubType extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isPoliceAndTrafficOfficers() {
-		return get(1);
-	}
+  public boolean isPoliceAndTrafficOfficers() {
+    return get(1);
+  }
 
-	public void setPoliceAndTrafficOfficers(boolean policeAndTrafficOfficers) {
-		set(1, policeAndTrafficOfficers);
-	}
+  public void setPoliceAndTrafficOfficers(boolean policeAndTrafficOfficers) {
+    set(1, policeAndTrafficOfficers);
+  }
 
-	public boolean isTrafficControlPersons() {
-		return get(2);
-	}
+  public boolean isTrafficControlPersons() {
+    return get(2);
+  }
 
-	public void setTrafficControlPersons(boolean trafficControlPersons) {
-		set(2, trafficControlPersons);
-	}
+  public void setTrafficControlPersons(boolean trafficControlPersons) {
+    set(2, trafficControlPersons);
+  }
 
-	public boolean isRailroadCrossingGuards() {
-		return get(3);
-	}
+  public boolean isRailroadCrossingGuards() {
+    return get(3);
+  }
 
-	public void setRailroadCrossingGuards(boolean railroadCrossingGuards) {
-		set(3, railroadCrossingGuards);
-	}
+  public void setRailroadCrossingGuards(boolean railroadCrossingGuards) {
+    set(3, railroadCrossingGuards);
+  }
 
-	public boolean isCivilDefenseNationalGuardMilitaryPolice() {
-		return get(4);
-	}
+  public boolean isCivilDefenseNationalGuardMilitaryPolice() {
+    return get(4);
+  }
 
-	public void setCivilDefenseNationalGuardMilitaryPolice(boolean civilDefenseNationalGuardMilitaryPolice) {
-		set(4, civilDefenseNationalGuardMilitaryPolice);
-	}
+  public void setCivilDefenseNationalGuardMilitaryPolice(
+      boolean civilDefenseNationalGuardMilitaryPolice) {
+    set(4, civilDefenseNationalGuardMilitaryPolice);
+  }
 
-	public boolean isEmergencyOrganizationPersonnel() {
-		return get(5);
-	}
+  public boolean isEmergencyOrganizationPersonnel() {
+    return get(5);
+  }
 
-	public void setEmergencyOrganizationPersonnel(boolean emergencyOrganizationPersonnel) {
-		set(5, emergencyOrganizationPersonnel);
-	}
+  public void setEmergencyOrganizationPersonnel(boolean emergencyOrganizationPersonnel) {
+    set(5, emergencyOrganizationPersonnel);
+  }
 
-	public boolean isHighwayServiceVehiclePersonnel() {
-		return get(6);
-	}
+  public boolean isHighwayServiceVehiclePersonnel() {
+    return get(6);
+  }
 
-	public void setHighwayServiceVehiclePersonnel(boolean highwayServiceVehiclePersonnel) {
-		set(6, highwayServiceVehiclePersonnel);
-	}
+  public void setHighwayServiceVehiclePersonnel(boolean highwayServiceVehiclePersonnel) {
+    set(6, highwayServiceVehiclePersonnel);
+  }
 
-	public PublicSafetyDirectingTrafficSubType() {
-		super(7, false,
-				new String[]{"unavailable", "policeAndTrafficOfficers", "trafficControlPersons",
-						"railroadCrossingGuards", "civilDefenseNationalGuardMilitaryPolice",
-						"emergencyOrganizationPersonnel", "highwayServiceVehiclePersonnel"});
-	}
+  public PublicSafetyDirectingTrafficSubType() {
+    super(
+        7,
+        false,
+        new String[] {
+          "unavailable",
+          "policeAndTrafficOfficers",
+          "trafficControlPersons",
+          "railroadCrossingGuards",
+          "civilDefenseNationalGuardMilitaryPolice",
+          "emergencyOrganizationPersonnel",
+          "highwayServiceVehiclePersonnel"
+        });
+  }
 
-	public static class PublicSafetyDirectingTrafficSubTypeDeserializer
-			extends
-				BitStringDeserializer<PublicSafetyDirectingTrafficSubType> {
-		public PublicSafetyDirectingTrafficSubTypeDeserializer() {
-			super(PublicSafetyDirectingTrafficSubType.class);
-		}
+  public static class PublicSafetyDirectingTrafficSubTypeDeserializer
+      extends BitStringDeserializer<PublicSafetyDirectingTrafficSubType> {
+    public PublicSafetyDirectingTrafficSubTypeDeserializer() {
+      super(PublicSafetyDirectingTrafficSubType.class);
+    }
 
-		@Override
-		protected PublicSafetyDirectingTrafficSubType construct() {
-			return new PublicSafetyDirectingTrafficSubType();
-		}
-	}
+    @Override
+    protected PublicSafetyDirectingTrafficSubType construct() {
+      return new PublicSafetyDirectingTrafficSubType();
+    }
+  }
 }

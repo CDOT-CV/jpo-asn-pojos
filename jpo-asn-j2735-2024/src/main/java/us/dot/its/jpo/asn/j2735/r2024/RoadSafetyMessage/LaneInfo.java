@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LaneInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lanePosition")
-	@JsonProperty("lanePosition")
-	private RSMLanePosition lanePosition;
-	@Asn1Property(tag = 1, name = "laneClosed")
-	@JsonProperty("laneClosed")
-	private LaneClosed laneClosed;
-	@Asn1Property(tag = 2, name = "laneCloseOffset", optional = true)
-	@JsonProperty("laneCloseOffset")
-	private ObstacleDistance laneCloseOffset;
+  @Asn1Property(tag = 0, name = "lanePosition")
+  @JsonProperty("lanePosition")
+  private RSMLanePosition lanePosition;
 
-	public LaneInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "laneClosed")
+  @JsonProperty("laneClosed")
+  private LaneClosed laneClosed;
+
+  @Asn1Property(tag = 2, name = "laneCloseOffset", optional = true)
+  @JsonProperty("laneCloseOffset")
+  private ObstacleDistance laneCloseOffset;
+
+  public LaneInfo() {
+    super(true);
+  }
 }

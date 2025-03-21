@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class SensorDataSharingMessageMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<SensorDataSharingMessage> {
+    extends OpenTypeDeserializer<SensorDataSharingMessage> {
 
-	public SensorDataSharingMessageMessageFrameValueDeserializer() {
-		super(SensorDataSharingMessage.class, "SensorDataSharingMessage");
-	}
+  public SensorDataSharingMessageMessageFrameValueDeserializer() {
+    super(SensorDataSharingMessage.class, "SensorDataSharingMessage");
+  }
 }

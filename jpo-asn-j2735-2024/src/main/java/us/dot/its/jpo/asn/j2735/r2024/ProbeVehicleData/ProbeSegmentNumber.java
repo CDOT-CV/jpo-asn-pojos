@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ProbeSegmentNumber.ProbeSegmentNumberDeserializer.class)
 public class ProbeSegmentNumber extends Asn1Integer {
 
-	public ProbeSegmentNumber() {
-		super(0L, 32767L);
-	}
+  public ProbeSegmentNumber() {
+    super(0L, 32767L);
+  }
 
-	@JsonCreator
-	public ProbeSegmentNumber(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ProbeSegmentNumber(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ProbeSegmentNumberDeserializer extends IntegerDeserializer<ProbeSegmentNumber> {
-		public ProbeSegmentNumberDeserializer() {
-			super(ProbeSegmentNumber.class);
-		}
+  public static class ProbeSegmentNumberDeserializer
+      extends IntegerDeserializer<ProbeSegmentNumber> {
+    public ProbeSegmentNumberDeserializer() {
+      super(ProbeSegmentNumber.class);
+    }
 
-		@Override
-		protected ProbeSegmentNumber construct() {
-			return new ProbeSegmentNumber();
-		}
-	}
+    @Override
+    protected ProbeSegmentNumber construct() {
+      return new ProbeSegmentNumber();
+    }
+  }
 }

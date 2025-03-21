@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.TollAdvertisementMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class TollAdvertisementMessageMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<TollAdvertisementMessage> {
+    extends OpenTypeDeserializer<TollAdvertisementMessage> {
 
-	public TollAdvertisementMessageMessageFrameValueDeserializer() {
-		super(TollAdvertisementMessage.class, "TollAdvertisementMessage");
-	}
+  public TollAdvertisementMessageMessageFrameValueDeserializer() {
+    super(TollAdvertisementMessage.class, "TollAdvertisementMessage");
+  }
 }

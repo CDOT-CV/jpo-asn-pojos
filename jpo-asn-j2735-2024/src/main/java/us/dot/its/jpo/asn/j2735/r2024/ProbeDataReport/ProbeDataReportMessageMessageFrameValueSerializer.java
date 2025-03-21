@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.ProbeDataReport;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class ProbeDataReportMessageMessageFrameValueSerializer extends OpenTypeSerializer<ProbeDataReportMessage> {
+public class ProbeDataReportMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<ProbeDataReportMessage> {
 
-	public ProbeDataReportMessageMessageFrameValueSerializer() {
-		super(ProbeDataReportMessage.class, "value", "ProbeDataReportMessage");
-	}
+  public ProbeDataReportMessageMessageFrameValueSerializer() {
+    super(ProbeDataReportMessage.class, "value", "ProbeDataReportMessage");
+  }
 }

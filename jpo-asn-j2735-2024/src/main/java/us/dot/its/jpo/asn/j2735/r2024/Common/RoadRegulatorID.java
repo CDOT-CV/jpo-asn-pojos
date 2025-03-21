@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RoadRegulatorID.RoadRegulatorIDDeserializer.class)
 public class RoadRegulatorID extends Asn1Integer {
 
-	public RoadRegulatorID() {
-		super(0L, 65535L);
-	}
+  public RoadRegulatorID() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public RoadRegulatorID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RoadRegulatorID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RoadRegulatorIDDeserializer extends IntegerDeserializer<RoadRegulatorID> {
-		public RoadRegulatorIDDeserializer() {
-			super(RoadRegulatorID.class);
-		}
+  public static class RoadRegulatorIDDeserializer extends IntegerDeserializer<RoadRegulatorID> {
+    public RoadRegulatorIDDeserializer() {
+      super(RoadRegulatorID.class);
+    }
 
-		@Override
-		protected RoadRegulatorID construct() {
-			return new RoadRegulatorID();
-		}
-	}
+    @Override
+    protected RoadRegulatorID construct() {
+      return new RoadRegulatorID();
+    }
+  }
 }

@@ -40,16 +40,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ConnectionManeuverAssist_addGrpC extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleToLanePositions")
-	@JsonProperty("vehicleToLanePositions")
-	@JacksonXmlElementWrapper(localName = "vehicleToLanePositions")
-	@JacksonXmlProperty(localName = "VehicleToLanePosition")
-	private VehicleToLanePositionList vehicleToLanePositions;
-	@Asn1Property(tag = 1, name = "rsuDistanceFromAnchor", optional = true)
-	@JsonProperty("rsuDistanceFromAnchor")
-	private NodeOffsetPointXY rsuDistanceFromAnchor;
+  @Asn1Property(tag = 0, name = "vehicleToLanePositions")
+  @JsonProperty("vehicleToLanePositions")
+  @JacksonXmlElementWrapper(localName = "vehicleToLanePositions")
+  @JacksonXmlProperty(localName = "VehicleToLanePosition")
+  private VehicleToLanePositionList vehicleToLanePositions;
 
-	public ConnectionManeuverAssist_addGrpC() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "rsuDistanceFromAnchor", optional = true)
+  @JsonProperty("rsuDistanceFromAnchor")
+  private NodeOffsetPointXY rsuDistanceFromAnchor;
+
+  public ConnectionManeuverAssist_addGrpC() {
+    super(false);
+  }
 }

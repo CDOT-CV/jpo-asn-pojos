@@ -33,30 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = StabilityControlStatus.StabilityControlStatusSerializer.class)
 @JsonDeserialize(using = StabilityControlStatus.StabilityControlStatusDeserializer.class)
 public enum StabilityControlStatus implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OFF(1, "off"), ON(2, "on"), ENGAGED(3, "engaged");
+  UNAVAILABLE(0, "unavailable"),
+  OFF(1, "off"),
+  ON(2, "on"),
+  ENGAGED(3, "engaged");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private StabilityControlStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private StabilityControlStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class StabilityControlStatusSerializer extends EnumeratedSerializer<StabilityControlStatus> {
-		public StabilityControlStatusSerializer() {
-			super(StabilityControlStatus.class);
-		}
-	}
+  public static class StabilityControlStatusSerializer
+      extends EnumeratedSerializer<StabilityControlStatus> {
+    public StabilityControlStatusSerializer() {
+      super(StabilityControlStatus.class);
+    }
+  }
 
-	public static class StabilityControlStatusDeserializer extends EnumeratedDeserializer<StabilityControlStatus> {
-		public StabilityControlStatusDeserializer() {
-			super(StabilityControlStatus.class);
-		}
+  public static class StabilityControlStatusDeserializer
+      extends EnumeratedDeserializer<StabilityControlStatus> {
+    public StabilityControlStatusDeserializer() {
+      super(StabilityControlStatus.class);
+    }
 
-		@Override
-		protected StabilityControlStatus[] listEnumValues() {
-			return StabilityControlStatus.values();
-		}
-	}
+    @Override
+    protected StabilityControlStatus[] listEnumValues() {
+      return StabilityControlStatus.values();
+    }
+  }
 }

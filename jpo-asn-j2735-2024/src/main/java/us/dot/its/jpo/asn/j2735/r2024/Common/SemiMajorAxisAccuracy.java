@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SemiMajorAxisAccuracy.SemiMajorAxisAccuracyDeserializer.class)
 public class SemiMajorAxisAccuracy extends Asn1Integer {
 
-	public SemiMajorAxisAccuracy() {
-		super(0L, 255L);
-	}
+  public SemiMajorAxisAccuracy() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public SemiMajorAxisAccuracy(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SemiMajorAxisAccuracy(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SemiMajorAxisAccuracyDeserializer extends IntegerDeserializer<SemiMajorAxisAccuracy> {
-		public SemiMajorAxisAccuracyDeserializer() {
-			super(SemiMajorAxisAccuracy.class);
-		}
+  public static class SemiMajorAxisAccuracyDeserializer
+      extends IntegerDeserializer<SemiMajorAxisAccuracy> {
+    public SemiMajorAxisAccuracyDeserializer() {
+      super(SemiMajorAxisAccuracy.class);
+    }
 
-		@Override
-		protected SemiMajorAxisAccuracy construct() {
-			return new SemiMajorAxisAccuracy();
-		}
-	}
+    @Override
+    protected SemiMajorAxisAccuracy construct() {
+      return new SemiMajorAxisAccuracy();
+    }
+  }
 }

@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ReducedSpeedZoneContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "speedLimit")
-	@JsonProperty("speedLimit")
-	private RegulatorySpeedLimit speedLimit;
-	@Asn1Property(tag = 1, name = "rszRegion")
-	@JsonProperty("rszRegion")
-	private RegionInfo rszRegion;
+  @Asn1Property(tag = 0, name = "speedLimit")
+  @JsonProperty("speedLimit")
+  private RegulatorySpeedLimit speedLimit;
 
-	public ReducedSpeedZoneContainer() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "rszRegion")
+  @JsonProperty("rszRegion")
+  private RegionInfo rszRegion;
+
+  public ReducedSpeedZoneContainer() {
+    super(true);
+  }
 }

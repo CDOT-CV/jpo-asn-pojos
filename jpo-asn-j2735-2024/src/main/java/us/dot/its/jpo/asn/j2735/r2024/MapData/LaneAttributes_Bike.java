@@ -26,78 +26,92 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Bike.LaneAttributes_BikeDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Bike.LaneAttributes_BikeDeserializer
+            .class)
 public class LaneAttributes_Bike extends Asn1Bitstring {
 
-	public boolean isBikeRevocableLane() {
-		return get(0);
-	}
+  public boolean isBikeRevocableLane() {
+    return get(0);
+  }
 
-	public void setBikeRevocableLane(boolean bikeRevocableLane) {
-		set(0, bikeRevocableLane);
-	}
+  public void setBikeRevocableLane(boolean bikeRevocableLane) {
+    set(0, bikeRevocableLane);
+  }
 
-	public boolean isPedestrianUseAllowed() {
-		return get(1);
-	}
+  public boolean isPedestrianUseAllowed() {
+    return get(1);
+  }
 
-	public void setPedestrianUseAllowed(boolean pedestrianUseAllowed) {
-		set(1, pedestrianUseAllowed);
-	}
+  public void setPedestrianUseAllowed(boolean pedestrianUseAllowed) {
+    set(1, pedestrianUseAllowed);
+  }
 
-	public boolean isIsBikeFlyOverLane() {
-		return get(2);
-	}
+  public boolean isIsBikeFlyOverLane() {
+    return get(2);
+  }
 
-	public void setIsBikeFlyOverLane(boolean isBikeFlyOverLane) {
-		set(2, isBikeFlyOverLane);
-	}
+  public void setIsBikeFlyOverLane(boolean isBikeFlyOverLane) {
+    set(2, isBikeFlyOverLane);
+  }
 
-	public boolean isFixedCycleTime() {
-		return get(3);
-	}
+  public boolean isFixedCycleTime() {
+    return get(3);
+  }
 
-	public void setFixedCycleTime(boolean fixedCycleTime) {
-		set(3, fixedCycleTime);
-	}
+  public void setFixedCycleTime(boolean fixedCycleTime) {
+    set(3, fixedCycleTime);
+  }
 
-	public boolean isBiDirectionalCycleTimes() {
-		return get(4);
-	}
+  public boolean isBiDirectionalCycleTimes() {
+    return get(4);
+  }
 
-	public void setBiDirectionalCycleTimes(boolean biDirectionalCycleTimes) {
-		set(4, biDirectionalCycleTimes);
-	}
+  public void setBiDirectionalCycleTimes(boolean biDirectionalCycleTimes) {
+    set(4, biDirectionalCycleTimes);
+  }
 
-	public boolean isIsolatedByBarrier() {
-		return get(5);
-	}
+  public boolean isIsolatedByBarrier() {
+    return get(5);
+  }
 
-	public void setIsolatedByBarrier(boolean isolatedByBarrier) {
-		set(5, isolatedByBarrier);
-	}
+  public void setIsolatedByBarrier(boolean isolatedByBarrier) {
+    set(5, isolatedByBarrier);
+  }
 
-	public boolean isUnsignalizedSegmentsPresent() {
-		return get(6);
-	}
+  public boolean isUnsignalizedSegmentsPresent() {
+    return get(6);
+  }
 
-	public void setUnsignalizedSegmentsPresent(boolean unsignalizedSegmentsPresent) {
-		set(6, unsignalizedSegmentsPresent);
-	}
+  public void setUnsignalizedSegmentsPresent(boolean unsignalizedSegmentsPresent) {
+    set(6, unsignalizedSegmentsPresent);
+  }
 
-	public LaneAttributes_Bike() {
-		super(16, false, new String[]{"bikeRevocableLane", "pedestrianUseAllowed", "isBikeFlyOverLane",
-				"fixedCycleTime", "biDirectionalCycleTimes", "isolatedByBarrier", "unsignalizedSegmentsPresent"});
-	}
+  public LaneAttributes_Bike() {
+    super(
+        16,
+        false,
+        new String[] {
+          "bikeRevocableLane",
+          "pedestrianUseAllowed",
+          "isBikeFlyOverLane",
+          "fixedCycleTime",
+          "biDirectionalCycleTimes",
+          "isolatedByBarrier",
+          "unsignalizedSegmentsPresent"
+        });
+  }
 
-	public static class LaneAttributes_BikeDeserializer extends BitStringDeserializer<LaneAttributes_Bike> {
-		public LaneAttributes_BikeDeserializer() {
-			super(LaneAttributes_Bike.class);
-		}
+  public static class LaneAttributes_BikeDeserializer
+      extends BitStringDeserializer<LaneAttributes_Bike> {
+    public LaneAttributes_BikeDeserializer() {
+      super(LaneAttributes_Bike.class);
+    }
 
-		@Override
-		protected LaneAttributes_Bike construct() {
-			return new LaneAttributes_Bike();
-		}
-	}
+    @Override
+    protected LaneAttributes_Bike construct() {
+      return new LaneAttributes_Bike();
+    }
+  }
 }

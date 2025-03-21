@@ -26,96 +26,110 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Crosswalk.LaneAttributes_CrosswalkDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Crosswalk
+            .LaneAttributes_CrosswalkDeserializer.class)
 public class LaneAttributes_Crosswalk extends Asn1Bitstring {
 
-	public boolean isCrosswalkRevocableLane() {
-		return get(0);
-	}
+  public boolean isCrosswalkRevocableLane() {
+    return get(0);
+  }
 
-	public void setCrosswalkRevocableLane(boolean crosswalkRevocableLane) {
-		set(0, crosswalkRevocableLane);
-	}
+  public void setCrosswalkRevocableLane(boolean crosswalkRevocableLane) {
+    set(0, crosswalkRevocableLane);
+  }
 
-	public boolean isBicyleUseAllowed() {
-		return get(1);
-	}
+  public boolean isBicyleUseAllowed() {
+    return get(1);
+  }
 
-	public void setBicyleUseAllowed(boolean bicyleUseAllowed) {
-		set(1, bicyleUseAllowed);
-	}
+  public void setBicyleUseAllowed(boolean bicyleUseAllowed) {
+    set(1, bicyleUseAllowed);
+  }
 
-	public boolean isIsXwalkFlyOverLane() {
-		return get(2);
-	}
+  public boolean isIsXwalkFlyOverLane() {
+    return get(2);
+  }
 
-	public void setIsXwalkFlyOverLane(boolean isXwalkFlyOverLane) {
-		set(2, isXwalkFlyOverLane);
-	}
+  public void setIsXwalkFlyOverLane(boolean isXwalkFlyOverLane) {
+    set(2, isXwalkFlyOverLane);
+  }
 
-	public boolean isFixedCycleTime() {
-		return get(3);
-	}
+  public boolean isFixedCycleTime() {
+    return get(3);
+  }
 
-	public void setFixedCycleTime(boolean fixedCycleTime) {
-		set(3, fixedCycleTime);
-	}
+  public void setFixedCycleTime(boolean fixedCycleTime) {
+    set(3, fixedCycleTime);
+  }
 
-	public boolean isBiDirectionalCycleTimes() {
-		return get(4);
-	}
+  public boolean isBiDirectionalCycleTimes() {
+    return get(4);
+  }
 
-	public void setBiDirectionalCycleTimes(boolean biDirectionalCycleTimes) {
-		set(4, biDirectionalCycleTimes);
-	}
+  public void setBiDirectionalCycleTimes(boolean biDirectionalCycleTimes) {
+    set(4, biDirectionalCycleTimes);
+  }
 
-	public boolean isHasPushToWalkButton() {
-		return get(5);
-	}
+  public boolean isHasPushToWalkButton() {
+    return get(5);
+  }
 
-	public void setHasPushToWalkButton(boolean hasPushToWalkButton) {
-		set(5, hasPushToWalkButton);
-	}
+  public void setHasPushToWalkButton(boolean hasPushToWalkButton) {
+    set(5, hasPushToWalkButton);
+  }
 
-	public boolean isAudioSupport() {
-		return get(6);
-	}
+  public boolean isAudioSupport() {
+    return get(6);
+  }
 
-	public void setAudioSupport(boolean audioSupport) {
-		set(6, audioSupport);
-	}
+  public void setAudioSupport(boolean audioSupport) {
+    set(6, audioSupport);
+  }
 
-	public boolean isRfSignalRequestPresent() {
-		return get(7);
-	}
+  public boolean isRfSignalRequestPresent() {
+    return get(7);
+  }
 
-	public void setRfSignalRequestPresent(boolean rfSignalRequestPresent) {
-		set(7, rfSignalRequestPresent);
-	}
+  public void setRfSignalRequestPresent(boolean rfSignalRequestPresent) {
+    set(7, rfSignalRequestPresent);
+  }
 
-	public boolean isUnsignalizedSegmentsPresent() {
-		return get(8);
-	}
+  public boolean isUnsignalizedSegmentsPresent() {
+    return get(8);
+  }
 
-	public void setUnsignalizedSegmentsPresent(boolean unsignalizedSegmentsPresent) {
-		set(8, unsignalizedSegmentsPresent);
-	}
+  public void setUnsignalizedSegmentsPresent(boolean unsignalizedSegmentsPresent) {
+    set(8, unsignalizedSegmentsPresent);
+  }
 
-	public LaneAttributes_Crosswalk() {
-		super(16, false,
-				new String[]{"crosswalkRevocableLane", "bicyleUseAllowed", "isXwalkFlyOverLane", "fixedCycleTime",
-						"biDirectionalCycleTimes", "hasPushToWalkButton", "audioSupport", "rfSignalRequestPresent",
-						"unsignalizedSegmentsPresent"});
-	}
+  public LaneAttributes_Crosswalk() {
+    super(
+        16,
+        false,
+        new String[] {
+          "crosswalkRevocableLane",
+          "bicyleUseAllowed",
+          "isXwalkFlyOverLane",
+          "fixedCycleTime",
+          "biDirectionalCycleTimes",
+          "hasPushToWalkButton",
+          "audioSupport",
+          "rfSignalRequestPresent",
+          "unsignalizedSegmentsPresent"
+        });
+  }
 
-	public static class LaneAttributes_CrosswalkDeserializer extends BitStringDeserializer<LaneAttributes_Crosswalk> {
-		public LaneAttributes_CrosswalkDeserializer() {
-			super(LaneAttributes_Crosswalk.class);
-		}
+  public static class LaneAttributes_CrosswalkDeserializer
+      extends BitStringDeserializer<LaneAttributes_Crosswalk> {
+    public LaneAttributes_CrosswalkDeserializer() {
+      super(LaneAttributes_Crosswalk.class);
+    }
 
-		@Override
-		protected LaneAttributes_Crosswalk construct() {
-			return new LaneAttributes_Crosswalk();
-		}
-	}
+    @Override
+    protected LaneAttributes_Crosswalk construct() {
+      return new LaneAttributes_Crosswalk();
+    }
+  }
 }

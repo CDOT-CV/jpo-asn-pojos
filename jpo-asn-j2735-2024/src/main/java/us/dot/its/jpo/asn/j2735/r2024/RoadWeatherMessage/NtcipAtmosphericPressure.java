@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipAtmosphericPressure extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pressure")
-	@JsonProperty("pressure")
-	private NTCIPEssPressureSensorAtmosphericPressure pressure;
-	@Asn1Property(tag = 1, name = "measurementStdDev", optional = true)
-	@JsonProperty("measurementStdDev")
-	private AtmosPressureMeasurementStdDev measurementStdDev;
+  @Asn1Property(tag = 0, name = "pressure")
+  @JsonProperty("pressure")
+  private NTCIPEssPressureSensorAtmosphericPressure pressure;
 
-	public NtcipAtmosphericPressure() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "measurementStdDev", optional = true)
+  @JsonProperty("measurementStdDev")
+  private AtmosPressureMeasurementStdDev measurementStdDev;
+
+  public NtcipAtmosphericPressure() {
+    super(true);
+  }
 }

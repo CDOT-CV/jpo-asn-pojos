@@ -40,19 +40,21 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrailerData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "doNotUse")
-	@JsonProperty("doNotUse")
-	private SSPindex doNotUse;
-	@Asn1Property(tag = 1, name = "connection")
-	@JsonProperty("connection")
-	private PivotPointDescription connection;
-	@Asn1Property(tag = 2, name = "units")
-	@JsonProperty("units")
-	@JacksonXmlElementWrapper(localName = "units")
-	@JacksonXmlProperty(localName = "TrailerUnitDescription")
-	private TrailerUnitDescriptionList units;
+  @Asn1Property(tag = 0, name = "doNotUse")
+  @JsonProperty("doNotUse")
+  private SSPindex doNotUse;
 
-	public TrailerData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "connection")
+  @JsonProperty("connection")
+  private PivotPointDescription connection;
+
+  @Asn1Property(tag = 2, name = "units")
+  @JsonProperty("units")
+  @JacksonXmlElementWrapper(localName = "units")
+  @JacksonXmlProperty(localName = "TrailerUnitDescription")
+  private TrailerUnitDescriptionList units;
+
+  public TrailerData() {
+    super(true);
+  }
 }

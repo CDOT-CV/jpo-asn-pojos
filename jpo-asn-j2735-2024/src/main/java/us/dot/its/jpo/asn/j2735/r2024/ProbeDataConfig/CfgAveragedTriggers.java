@@ -38,23 +38,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgAveragedTriggers extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "avgSpeed", optional = true)
-	@JsonProperty("avgSpeed")
-	private Asn1Boolean avgSpeed;
-	@Asn1Property(tag = 1, name = "avgStopDuration", optional = true)
-	@JsonProperty("avgStopDuration")
-	private Asn1Boolean avgStopDuration;
-	@Asn1Property(tag = 2, name = "avgFuelConsumption", optional = true)
-	@JsonProperty("avgFuelConsumption")
-	private Asn1Boolean avgFuelConsumption;
-	@Asn1Property(tag = 3, name = "avgEmissions", optional = true)
-	@JsonProperty("avgEmissions")
-	private Asn1Boolean avgEmissions;
-	@Asn1Property(tag = 4, name = "avgNumOfOccupants", optional = true)
-	@JsonProperty("avgNumOfOccupants")
-	private Asn1Boolean avgNumOfOccupants;
+  @Asn1Property(tag = 0, name = "avgSpeed", optional = true)
+  @JsonProperty("avgSpeed")
+  private Asn1Boolean avgSpeed;
 
-	public CfgAveragedTriggers() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "avgStopDuration", optional = true)
+  @JsonProperty("avgStopDuration")
+  private Asn1Boolean avgStopDuration;
+
+  @Asn1Property(tag = 2, name = "avgFuelConsumption", optional = true)
+  @JsonProperty("avgFuelConsumption")
+  private Asn1Boolean avgFuelConsumption;
+
+  @Asn1Property(tag = 3, name = "avgEmissions", optional = true)
+  @JsonProperty("avgEmissions")
+  private Asn1Boolean avgEmissions;
+
+  @Asn1Property(tag = 4, name = "avgNumOfOccupants", optional = true)
+  @JsonProperty("avgNumOfOccupants")
+  private Asn1Boolean avgNumOfOccupants;
+
+  public CfgAveragedTriggers() {
+    super(true);
+  }
 }

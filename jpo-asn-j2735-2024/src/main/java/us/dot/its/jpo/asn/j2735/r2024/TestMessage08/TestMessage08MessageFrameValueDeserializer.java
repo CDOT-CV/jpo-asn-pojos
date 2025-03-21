@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.TestMessage08;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class TestMessage08MessageFrameValueDeserializer extends OpenTypeDeserializer<TestMessage08> {
+public class TestMessage08MessageFrameValueDeserializer
+    extends OpenTypeDeserializer<TestMessage08> {
 
-	public TestMessage08MessageFrameValueDeserializer() {
-		super(TestMessage08.class, "TestMessage08");
-	}
+  public TestMessage08MessageFrameValueDeserializer() {
+    super(TestMessage08.class, "TestMessage08");
+  }
 }

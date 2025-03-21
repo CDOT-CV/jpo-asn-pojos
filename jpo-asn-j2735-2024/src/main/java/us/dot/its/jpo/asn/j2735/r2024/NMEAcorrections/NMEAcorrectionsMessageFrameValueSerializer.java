@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.NMEAcorrections;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class NMEAcorrectionsMessageFrameValueSerializer extends OpenTypeSerializer<NMEAcorrections> {
+public class NMEAcorrectionsMessageFrameValueSerializer
+    extends OpenTypeSerializer<NMEAcorrections> {
 
-	public NMEAcorrectionsMessageFrameValueSerializer() {
-		super(NMEAcorrections.class, "value", "NMEAcorrections");
-	}
+  public NMEAcorrectionsMessageFrameValueSerializer() {
+    super(NMEAcorrections.class, "value", "NMEAcorrections");
+  }
 }

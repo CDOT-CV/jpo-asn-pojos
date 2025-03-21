@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TrailerMass.TrailerMassDeserializer.class)
 public class TrailerMass extends Asn1Integer {
 
-	public TrailerMass() {
-		super(0L, 255L);
-	}
+  public TrailerMass() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public TrailerMass(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TrailerMass(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TrailerMassDeserializer extends IntegerDeserializer<TrailerMass> {
-		public TrailerMassDeserializer() {
-			super(TrailerMass.class);
-		}
+  public static class TrailerMassDeserializer extends IntegerDeserializer<TrailerMass> {
+    public TrailerMassDeserializer() {
+      super(TrailerMass.class);
+    }
 
-		@Override
-		protected TrailerMass construct() {
-			return new TrailerMass();
-		}
-	}
+    @Override
+    protected TrailerMass construct() {
+      return new TrailerMass();
+    }
+  }
 }

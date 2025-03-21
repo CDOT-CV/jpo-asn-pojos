@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AngularVelocityConfidence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pitchRateConfidence", optional = true)
-	@JsonProperty("pitchRateConfidence")
-	private PitchRateConfidence pitchRateConfidence;
-	@Asn1Property(tag = 1, name = "rollRateConfidence", optional = true)
-	@JsonProperty("rollRateConfidence")
-	private RollRateConfidence rollRateConfidence;
+  @Asn1Property(tag = 0, name = "pitchRateConfidence", optional = true)
+  @JsonProperty("pitchRateConfidence")
+  private PitchRateConfidence pitchRateConfidence;
 
-	public AngularVelocityConfidence() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "rollRateConfidence", optional = true)
+  @JsonProperty("rollRateConfidence")
+  private RollRateConfidence rollRateConfidence;
+
+  public AngularVelocityConfidence() {
+    super(false);
+  }
 }

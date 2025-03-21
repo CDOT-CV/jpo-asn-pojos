@@ -38,38 +38,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DetectedChargeObject extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargeObjectId")
-	@JsonProperty("chargeObjectId")
-	private ChargeObjectId chargeObjectId;
-	@Asn1Property(tag = 1, name = "subObjectNumber", optional = true)
-	@JsonProperty("subObjectNumber")
-	private Int4Unsigned subObjectNumber;
-	@Asn1Property(tag = 2, name = "timeWhenUsed", optional = true)
-	@JsonProperty("timeWhenUsed")
-	private Asn1GeneralizedTime timeWhenUsed;
-	@Asn1Property(tag = 3, name = "mileageWhenUsed", optional = true)
-	@JsonProperty("mileageWhenUsed")
-	private Distance mileageWhenUsed;
-	@Asn1Property(tag = 4, name = "currentTariffClass", optional = true)
-	@JsonProperty("currentTariffClass")
-	private TariffClassDescription currentTariffClass;
-	@Asn1Property(tag = 5, name = "vehicleDescription", optional = true)
-	@JsonProperty("vehicleDescription")
-	private VehicleDescription vehicleDescription;
-	@Asn1Property(tag = 6, name = "obeStatus", optional = true)
-	@JsonProperty("obeStatus")
-	private Int1Unsigned obeStatus;
-	@Asn1Property(tag = 7, name = "feeExclVat", optional = true)
-	@JsonProperty("feeExclVat")
-	private PaymentFee feeExclVat;
-	@Asn1Property(tag = 8, name = "sumVat", optional = true)
-	@JsonProperty("sumVat")
-	private PaymentFee sumVat;
-	@Asn1Property(tag = 9, name = "chargeObjDetectionMode", optional = true)
-	@JsonProperty("chargeObjDetectionMode")
-	private DetectionMode chargeObjDetectionMode;
+  @Asn1Property(tag = 0, name = "chargeObjectId")
+  @JsonProperty("chargeObjectId")
+  private ChargeObjectId chargeObjectId;
 
-	public DetectedChargeObject() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "subObjectNumber", optional = true)
+  @JsonProperty("subObjectNumber")
+  private Int4Unsigned subObjectNumber;
+
+  @Asn1Property(tag = 2, name = "timeWhenUsed", optional = true)
+  @JsonProperty("timeWhenUsed")
+  private Asn1GeneralizedTime timeWhenUsed;
+
+  @Asn1Property(tag = 3, name = "mileageWhenUsed", optional = true)
+  @JsonProperty("mileageWhenUsed")
+  private Distance mileageWhenUsed;
+
+  @Asn1Property(tag = 4, name = "currentTariffClass", optional = true)
+  @JsonProperty("currentTariffClass")
+  private TariffClassDescription currentTariffClass;
+
+  @Asn1Property(tag = 5, name = "vehicleDescription", optional = true)
+  @JsonProperty("vehicleDescription")
+  private VehicleDescription vehicleDescription;
+
+  @Asn1Property(tag = 6, name = "obeStatus", optional = true)
+  @JsonProperty("obeStatus")
+  private Int1Unsigned obeStatus;
+
+  @Asn1Property(tag = 7, name = "feeExclVat", optional = true)
+  @JsonProperty("feeExclVat")
+  private PaymentFee feeExclVat;
+
+  @Asn1Property(tag = 8, name = "sumVat", optional = true)
+  @JsonProperty("sumVat")
+  private PaymentFee sumVat;
+
+  @Asn1Property(tag = 9, name = "chargeObjDetectionMode", optional = true)
+  @JsonProperty("chargeObjDetectionMode")
+  private DetectionMode chargeObjDetectionMode;
+
+  public DetectedChargeObject() {
+    super(true);
+  }
 }

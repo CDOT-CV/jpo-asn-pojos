@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class NodeOffsetPointXY_addGrpB extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "posA")
-	@JsonProperty("posA")
-	private Node_LLdms_48b posA;
-	@Asn1Property(tag = 1, name = "posB")
-	@JsonProperty("posB")
-	private Node_LLdms_80b posB;
+  @Asn1Property(tag = 0, name = "posA")
+  @JsonProperty("posA")
+  private Node_LLdms_48b posA;
 
-	public NodeOffsetPointXY_addGrpB() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "posB")
+  @JsonProperty("posB")
+  private Node_LLdms_80b posB;
+
+  public NodeOffsetPointXY_addGrpB() {
+    super(true);
+  }
 }

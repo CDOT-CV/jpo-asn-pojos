@@ -26,11 +26,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1RelativeOID;
 
 public class RelativeRoadAuthorityID extends Asn1RelativeOID {
 
-	public RelativeRoadAuthorityID() {
-		super();
-	}
+  public RelativeRoadAuthorityID() {
+    super();
+  }
 
-	public RelativeRoadAuthorityID(String value) {
-		super(value);
-	}
+  public RelativeRoadAuthorityID(String value) {
+    super(value);
+  }
 }

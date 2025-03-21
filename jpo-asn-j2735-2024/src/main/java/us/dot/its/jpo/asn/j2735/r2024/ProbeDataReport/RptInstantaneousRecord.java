@@ -40,23 +40,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptInstantaneousRecord extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeOfInstantRec")
-	@JsonProperty("timeOfInstantRec")
-	private DDateTime timeOfInstantRec;
-	@Asn1Property(tag = 1, name = "locOfInstantRec")
-	@JsonProperty("locOfInstantRec")
-	private Position3D locOfInstantRec;
-	@Asn1Property(tag = 2, name = "accOfPosition")
-	@JsonProperty("accOfPosition")
-	private PositionalAccuracy accOfPosition;
-	@Asn1Property(tag = 3, name = "velOfInstantRec")
-	@JsonProperty("velOfInstantRec")
-	private RptVelocity velOfInstantRec;
-	@Asn1Property(tag = 4, name = "record", optional = true)
-	@JsonProperty("record")
-	private RptInstantaneousRecordData record_;
+  @Asn1Property(tag = 0, name = "timeOfInstantRec")
+  @JsonProperty("timeOfInstantRec")
+  private DDateTime timeOfInstantRec;
 
-	public RptInstantaneousRecord() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "locOfInstantRec")
+  @JsonProperty("locOfInstantRec")
+  private Position3D locOfInstantRec;
+
+  @Asn1Property(tag = 2, name = "accOfPosition")
+  @JsonProperty("accOfPosition")
+  private PositionalAccuracy accOfPosition;
+
+  @Asn1Property(tag = 3, name = "velOfInstantRec")
+  @JsonProperty("velOfInstantRec")
+  private RptVelocity velOfInstantRec;
+
+  @Asn1Property(tag = 4, name = "record", optional = true)
+  @JsonProperty("record")
+  private RptInstantaneousRecordData record_;
+
+  public RptInstantaneousRecord() {
+    super(true);
+  }
 }

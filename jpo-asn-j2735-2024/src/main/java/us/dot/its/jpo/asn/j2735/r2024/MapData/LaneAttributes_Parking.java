@@ -26,78 +26,92 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Parking.LaneAttributes_ParkingDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Parking
+            .LaneAttributes_ParkingDeserializer.class)
 public class LaneAttributes_Parking extends Asn1Bitstring {
 
-	public boolean isParkingRevocableLane() {
-		return get(0);
-	}
+  public boolean isParkingRevocableLane() {
+    return get(0);
+  }
 
-	public void setParkingRevocableLane(boolean parkingRevocableLane) {
-		set(0, parkingRevocableLane);
-	}
+  public void setParkingRevocableLane(boolean parkingRevocableLane) {
+    set(0, parkingRevocableLane);
+  }
 
-	public boolean isParallelParkingInUse() {
-		return get(1);
-	}
+  public boolean isParallelParkingInUse() {
+    return get(1);
+  }
 
-	public void setParallelParkingInUse(boolean parallelParkingInUse) {
-		set(1, parallelParkingInUse);
-	}
+  public void setParallelParkingInUse(boolean parallelParkingInUse) {
+    set(1, parallelParkingInUse);
+  }
 
-	public boolean isHeadInParkingInUse() {
-		return get(2);
-	}
+  public boolean isHeadInParkingInUse() {
+    return get(2);
+  }
 
-	public void setHeadInParkingInUse(boolean headInParkingInUse) {
-		set(2, headInParkingInUse);
-	}
+  public void setHeadInParkingInUse(boolean headInParkingInUse) {
+    set(2, headInParkingInUse);
+  }
 
-	public boolean isDoNotParkZone() {
-		return get(3);
-	}
+  public boolean isDoNotParkZone() {
+    return get(3);
+  }
 
-	public void setDoNotParkZone(boolean doNotParkZone) {
-		set(3, doNotParkZone);
-	}
+  public void setDoNotParkZone(boolean doNotParkZone) {
+    set(3, doNotParkZone);
+  }
 
-	public boolean isParkingForBusUse() {
-		return get(4);
-	}
+  public boolean isParkingForBusUse() {
+    return get(4);
+  }
 
-	public void setParkingForBusUse(boolean parkingForBusUse) {
-		set(4, parkingForBusUse);
-	}
+  public void setParkingForBusUse(boolean parkingForBusUse) {
+    set(4, parkingForBusUse);
+  }
 
-	public boolean isParkingForTaxiUse() {
-		return get(5);
-	}
+  public boolean isParkingForTaxiUse() {
+    return get(5);
+  }
 
-	public void setParkingForTaxiUse(boolean parkingForTaxiUse) {
-		set(5, parkingForTaxiUse);
-	}
+  public void setParkingForTaxiUse(boolean parkingForTaxiUse) {
+    set(5, parkingForTaxiUse);
+  }
 
-	public boolean isNoPublicParkingUse() {
-		return get(6);
-	}
+  public boolean isNoPublicParkingUse() {
+    return get(6);
+  }
 
-	public void setNoPublicParkingUse(boolean noPublicParkingUse) {
-		set(6, noPublicParkingUse);
-	}
+  public void setNoPublicParkingUse(boolean noPublicParkingUse) {
+    set(6, noPublicParkingUse);
+  }
 
-	public LaneAttributes_Parking() {
-		super(16, false, new String[]{"parkingRevocableLane", "parallelParkingInUse", "headInParkingInUse",
-				"doNotParkZone", "parkingForBusUse", "parkingForTaxiUse", "noPublicParkingUse"});
-	}
+  public LaneAttributes_Parking() {
+    super(
+        16,
+        false,
+        new String[] {
+          "parkingRevocableLane",
+          "parallelParkingInUse",
+          "headInParkingInUse",
+          "doNotParkZone",
+          "parkingForBusUse",
+          "parkingForTaxiUse",
+          "noPublicParkingUse"
+        });
+  }
 
-	public static class LaneAttributes_ParkingDeserializer extends BitStringDeserializer<LaneAttributes_Parking> {
-		public LaneAttributes_ParkingDeserializer() {
-			super(LaneAttributes_Parking.class);
-		}
+  public static class LaneAttributes_ParkingDeserializer
+      extends BitStringDeserializer<LaneAttributes_Parking> {
+    public LaneAttributes_ParkingDeserializer() {
+      super(LaneAttributes_Parking.class);
+    }
 
-		@Override
-		protected LaneAttributes_Parking construct() {
-			return new LaneAttributes_Parking();
-		}
-	}
+    @Override
+    protected LaneAttributes_Parking construct() {
+      return new LaneAttributes_Parking();
+    }
+  }
 }

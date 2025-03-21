@@ -46,56 +46,61 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class TollPointMap extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "revisionNum")
-	@JsonProperty("revisionNum")
-	private RevisionNumInteger revisionNum;
-	@Asn1Property(tag = 1, name = "referencePoint")
-	@JsonProperty("referencePoint")
-	private Position3D referencePoint;
-	@Asn1Property(tag = 2, name = "speedLimit")
-	@JsonProperty("speedLimit")
-	private RegulatorySpeedLimit speedLimit;
-	@Asn1Property(tag = 3, name = "laneWidth")
-	@JsonProperty("laneWidth")
-	private LaneWidth laneWidth;
-	@Asn1Property(tag = 4, name = "approachLanesMap")
-	@JsonProperty("approachLanesMap")
-	@JacksonXmlElementWrapper(localName = "approachLanesMap")
-	@JacksonXmlProperty(localName = "GenericLane")
-	private SequenceOfApproachLanesMap approachLanesMap;
-	@Asn1Property(tag = 5, name = "tollZoneLanesMap")
-	@JsonProperty("tollZoneLanesMap")
-	@JacksonXmlElementWrapper(localName = "tollZoneLanesMap")
-	@JacksonXmlProperty(localName = "GenericLane")
-	private SequenceOfTollZoneLanesMap tollZoneLanesMap;
+  @Asn1Property(tag = 0, name = "revisionNum")
+  @JsonProperty("revisionNum")
+  private RevisionNumInteger revisionNum;
 
-	public static class RevisionNumInteger extends Asn1Integer {
-		public RevisionNumInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "referencePoint")
+  @JsonProperty("referencePoint")
+  private Position3D referencePoint;
 
-		@JsonCreator
-		public RevisionNumInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "speedLimit")
+  @JsonProperty("speedLimit")
+  private RegulatorySpeedLimit speedLimit;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfApproachLanesMap extends Asn1SequenceOf<GenericLane> {
-		public SequenceOfApproachLanesMap() {
-			super(GenericLane.class, 1L, 64L);
-		}
-	}
+  @Asn1Property(tag = 3, name = "laneWidth")
+  @JsonProperty("laneWidth")
+  private LaneWidth laneWidth;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfTollZoneLanesMap extends Asn1SequenceOf<GenericLane> {
-		public SequenceOfTollZoneLanesMap() {
-			super(GenericLane.class, 1L, 64L);
-		}
-	}
+  @Asn1Property(tag = 4, name = "approachLanesMap")
+  @JsonProperty("approachLanesMap")
+  @JacksonXmlElementWrapper(localName = "approachLanesMap")
+  @JacksonXmlProperty(localName = "GenericLane")
+  private SequenceOfApproachLanesMap approachLanesMap;
 
-	public TollPointMap() {
-		super(true);
-	}
+  @Asn1Property(tag = 5, name = "tollZoneLanesMap")
+  @JsonProperty("tollZoneLanesMap")
+  @JacksonXmlElementWrapper(localName = "tollZoneLanesMap")
+  @JacksonXmlProperty(localName = "GenericLane")
+  private SequenceOfTollZoneLanesMap tollZoneLanesMap;
+
+  public static class RevisionNumInteger extends Asn1Integer {
+    public RevisionNumInteger() {
+      super(1L, 10L);
+    }
+
+    @JsonCreator
+    public RevisionNumInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfApproachLanesMap extends Asn1SequenceOf<GenericLane> {
+    public SequenceOfApproachLanesMap() {
+      super(GenericLane.class, 1L, 64L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfTollZoneLanesMap extends Asn1SequenceOf<GenericLane> {
+    public SequenceOfTollZoneLanesMap() {
+      super(GenericLane.class, 1L, 64L);
+    }
+  }
+
+  public TollPointMap() {
+    super(true);
+  }
 }

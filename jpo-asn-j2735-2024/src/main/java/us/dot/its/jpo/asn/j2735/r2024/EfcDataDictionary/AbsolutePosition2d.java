@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AbsolutePosition2d extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "gnssLon")
-	@JsonProperty("gnssLon")
-	private Longitude gnssLon;
-	@Asn1Property(tag = 1, name = "gnssLat")
-	@JsonProperty("gnssLat")
-	private Latitude gnssLat;
+  @Asn1Property(tag = 0, name = "gnssLon")
+  @JsonProperty("gnssLon")
+  private Longitude gnssLon;
 
-	public AbsolutePosition2d() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "gnssLat")
+  @JsonProperty("gnssLat")
+  private Latitude gnssLat;
+
+  public AbsolutePosition2d() {
+    super(false);
+  }
 }

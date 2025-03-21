@@ -31,28 +31,26 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class WeightChargesTable extends Asn1SequenceOf<WeightCharges> {
 
-	public WeightChargesTable() {
-		super(WeightCharges.class, 1L, 10L);
-	}
+  public WeightChargesTable() {
+    super(WeightCharges.class, 1L, 10L);
+  }
 
-	public static class WeightChargesTableSerializer
-			extends
-				SequenceOfChoiceSerializer<WeightCharges, WeightChargesTable> {
-		public WeightChargesTableSerializer() {
-			super(WeightCharges.class, WeightChargesTable.class);
-		}
-	}
+  public static class WeightChargesTableSerializer
+      extends SequenceOfChoiceSerializer<WeightCharges, WeightChargesTable> {
+    public WeightChargesTableSerializer() {
+      super(WeightCharges.class, WeightChargesTable.class);
+    }
+  }
 
-	public static class WeightChargesTableDeserializer
-			extends
-				SequenceOfChoiceDeserializer<WeightCharges, WeightChargesTable> {
-		public WeightChargesTableDeserializer() {
-			super(WeightCharges.class, WeightChargesTable.class);
-		}
+  public static class WeightChargesTableDeserializer
+      extends SequenceOfChoiceDeserializer<WeightCharges, WeightChargesTable> {
+    public WeightChargesTableDeserializer() {
+      super(WeightCharges.class, WeightChargesTable.class);
+    }
 
-		@Override
-		protected WeightChargesTable construct() {
-			return new WeightChargesTable();
-		}
-	}
+    @Override
+    protected WeightChargesTable construct() {
+      return new WeightChargesTable();
+    }
+  }
 }

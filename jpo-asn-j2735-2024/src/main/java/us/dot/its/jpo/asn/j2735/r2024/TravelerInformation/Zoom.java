@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Zoom.ZoomDeserializer.class)
 public class Zoom extends Asn1Integer {
 
-	public Zoom() {
-		super(0L, 15L);
-	}
+  public Zoom() {
+    super(0L, 15L);
+  }
 
-	@JsonCreator
-	public Zoom(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Zoom(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ZoomDeserializer extends IntegerDeserializer<Zoom> {
-		public ZoomDeserializer() {
-			super(Zoom.class);
-		}
+  public static class ZoomDeserializer extends IntegerDeserializer<Zoom> {
+    public ZoomDeserializer() {
+      super(Zoom.class);
+    }
 
-		@Override
-		protected Zoom construct() {
-			return new Zoom();
-		}
-	}
+    @Override
+    protected Zoom construct() {
+      return new Zoom();
+    }
+  }
 }

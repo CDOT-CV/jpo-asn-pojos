@@ -30,26 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssPaveTreatmentAmount.NTCIPEssPaveTreatmentAmountDeserializer.class)
 public class NTCIPEssPaveTreatmentAmount extends Asn1Integer {
 
-	public NTCIPEssPaveTreatmentAmount() {
-		super(0L, 255L);
-	}
+  public NTCIPEssPaveTreatmentAmount() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public NTCIPEssPaveTreatmentAmount(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPaveTreatmentAmount(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssPaveTreatmentAmountDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssPaveTreatmentAmount> {
-		public NTCIPEssPaveTreatmentAmountDeserializer() {
-			super(NTCIPEssPaveTreatmentAmount.class);
-		}
+  public static class NTCIPEssPaveTreatmentAmountDeserializer
+      extends IntegerDeserializer<NTCIPEssPaveTreatmentAmount> {
+    public NTCIPEssPaveTreatmentAmountDeserializer() {
+      super(NTCIPEssPaveTreatmentAmount.class);
+    }
 
-		@Override
-		protected NTCIPEssPaveTreatmentAmount construct() {
-			return new NTCIPEssPaveTreatmentAmount();
-		}
-	}
+    @Override
+    protected NTCIPEssPaveTreatmentAmount construct() {
+      return new NTCIPEssPaveTreatmentAmount();
+    }
+  }
 }

@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = AdviceInstructionsRecommendations.AdviceInstructionsRecommendationsDeserializer.class)
+@JsonDeserialize(
+    using = AdviceInstructionsRecommendations.AdviceInstructionsRecommendationsDeserializer.class)
 public class AdviceInstructionsRecommendations extends Asn1Integer {
 
-	public AdviceInstructionsRecommendations() {
-		super(0L, 65535L);
-	}
+  public AdviceInstructionsRecommendations() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public AdviceInstructionsRecommendations(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AdviceInstructionsRecommendations(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AdviceInstructionsRecommendationsDeserializer
-			extends
-				IntegerDeserializer<AdviceInstructionsRecommendations> {
-		public AdviceInstructionsRecommendationsDeserializer() {
-			super(AdviceInstructionsRecommendations.class);
-		}
+  public static class AdviceInstructionsRecommendationsDeserializer
+      extends IntegerDeserializer<AdviceInstructionsRecommendations> {
+    public AdviceInstructionsRecommendationsDeserializer() {
+      super(AdviceInstructionsRecommendations.class);
+    }
 
-		@Override
-		protected AdviceInstructionsRecommendations construct() {
-			return new AdviceInstructionsRecommendations();
-		}
-	}
+    @Override
+    protected AdviceInstructionsRecommendations construct() {
+      return new AdviceInstructionsRecommendations();
+    }
+  }
 }

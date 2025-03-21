@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DateAndTime extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeDate")
-	@JsonProperty("timeDate")
-	private DateCompact timeDate;
-	@Asn1Property(tag = 1, name = "timeCompact")
-	@JsonProperty("timeCompact")
-	private TimeCompact timeCompact;
+  @Asn1Property(tag = 0, name = "timeDate")
+  @JsonProperty("timeDate")
+  private DateCompact timeDate;
 
-	public DateAndTime() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "timeCompact")
+  @JsonProperty("timeCompact")
+  private TimeCompact timeCompact;
+
+  public DateAndTime() {
+    super(false);
+  }
 }

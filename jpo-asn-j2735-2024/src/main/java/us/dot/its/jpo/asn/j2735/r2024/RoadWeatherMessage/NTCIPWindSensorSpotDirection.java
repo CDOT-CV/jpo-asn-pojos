@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPWindSensorSpotDirection.NTCIPWindSensorSpotDirectionDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPWindSensorSpotDirection.NTCIPWindSensorSpotDirectionDeserializer.class)
 public class NTCIPWindSensorSpotDirection extends Asn1Integer {
 
-	public NTCIPWindSensorSpotDirection() {
-		super(0L, 361L);
-	}
+  public NTCIPWindSensorSpotDirection() {
+    super(0L, 361L);
+  }
 
-	@JsonCreator
-	public NTCIPWindSensorSpotDirection(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPWindSensorSpotDirection(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPWindSensorSpotDirectionDeserializer
-			extends
-				IntegerDeserializer<NTCIPWindSensorSpotDirection> {
-		public NTCIPWindSensorSpotDirectionDeserializer() {
-			super(NTCIPWindSensorSpotDirection.class);
-		}
+  public static class NTCIPWindSensorSpotDirectionDeserializer
+      extends IntegerDeserializer<NTCIPWindSensorSpotDirection> {
+    public NTCIPWindSensorSpotDirectionDeserializer() {
+      super(NTCIPWindSensorSpotDirection.class);
+    }
 
-		@Override
-		protected NTCIPWindSensorSpotDirection construct() {
-			return new NTCIPWindSensorSpotDirection();
-		}
-	}
+    @Override
+    protected NTCIPWindSensorSpotDirection construct() {
+      return new NTCIPWindSensorSpotDirection();
+    }
+  }
 }

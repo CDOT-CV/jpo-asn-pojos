@@ -30,7 +30,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class EnabledLaneList extends Asn1SequenceOf<LaneID> {
 
-	public EnabledLaneList() {
-		super(LaneID.class, 1L, 16L);
-	}
+  public EnabledLaneList() {
+    super(LaneID.class, 1L, 16L);
+  }
 }

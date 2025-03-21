@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Radius_B12.Radius_B12Deserializer.class)
 public class Radius_B12 extends Asn1Integer {
 
-	public Radius_B12() {
-		super(0L, 4095L);
-	}
+  public Radius_B12() {
+    super(0L, 4095L);
+  }
 
-	@JsonCreator
-	public Radius_B12(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Radius_B12(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class Radius_B12Deserializer extends IntegerDeserializer<Radius_B12> {
-		public Radius_B12Deserializer() {
-			super(Radius_B12.class);
-		}
+  public static class Radius_B12Deserializer extends IntegerDeserializer<Radius_B12> {
+    public Radius_B12Deserializer() {
+      super(Radius_B12.class);
+    }
 
-		@Override
-		protected Radius_B12 construct() {
-			return new Radius_B12();
-		}
-	}
+    @Override
+    protected Radius_B12 construct() {
+      return new Radius_B12();
+    }
+  }
 }

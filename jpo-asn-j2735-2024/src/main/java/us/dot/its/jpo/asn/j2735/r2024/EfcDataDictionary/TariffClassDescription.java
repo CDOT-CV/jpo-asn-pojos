@@ -37,23 +37,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TariffClassDescription extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tariffClassId", defaultValue = "0")
-	@JsonProperty("tariffClassId")
-	private TariffClassId tariffClassId;
-	@Asn1Property(tag = 1, name = "localVehicleClassId", optional = true)
-	@JsonProperty("localVehicleClassId")
-	private LocalVehicleClassId localVehicleClassId;
-	@Asn1Property(tag = 2, name = "timeClassId", optional = true)
-	@JsonProperty("timeClassId")
-	private TimeClassId timeClassId;
-	@Asn1Property(tag = 3, name = "locationClassId", optional = true)
-	@JsonProperty("locationClassId")
-	private LocationClassId locationClassId;
-	@Asn1Property(tag = 4, name = "userClassId", optional = true)
-	@JsonProperty("userClassId")
-	private UserClassId userClassId;
+  @Asn1Property(tag = 0, name = "tariffClassId", defaultValue = "0")
+  @JsonProperty("tariffClassId")
+  private TariffClassId tariffClassId;
 
-	public TariffClassDescription() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "localVehicleClassId", optional = true)
+  @JsonProperty("localVehicleClassId")
+  private LocalVehicleClassId localVehicleClassId;
+
+  @Asn1Property(tag = 2, name = "timeClassId", optional = true)
+  @JsonProperty("timeClassId")
+  private TimeClassId timeClassId;
+
+  @Asn1Property(tag = 3, name = "locationClassId", optional = true)
+  @JsonProperty("locationClassId")
+  private LocationClassId locationClassId;
+
+  @Asn1Property(tag = 4, name = "userClassId", optional = true)
+  @JsonProperty("userClassId")
+  private UserClassId userClassId;
+
+  public TariffClassDescription() {
+    super(false);
+  }
 }

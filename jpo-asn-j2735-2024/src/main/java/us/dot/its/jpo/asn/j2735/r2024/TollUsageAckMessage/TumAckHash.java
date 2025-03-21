@@ -41,29 +41,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TumAckHash extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "signedTumHash", optional = true)
-	@JsonProperty("signedTumHash")
-	private SignedTumHashOctetString signedTumHash;
-	@Asn1Property(tag = 1, name = "tempId")
-	@JsonProperty("tempId")
-	private TemporaryID tempId;
-	@Asn1Property(tag = 2, name = "tumSequenceNum")
-	@JsonProperty("tumSequenceNum")
-	private MsgCount tumSequenceNum;
+  @Asn1Property(tag = 0, name = "signedTumHash", optional = true)
+  @JsonProperty("signedTumHash")
+  private SignedTumHashOctetString signedTumHash;
 
-	public static class SignedTumHashOctetString extends Asn1OctetString {
-		public SignedTumHashOctetString() {
-			super(32, 32);
-		}
+  @Asn1Property(tag = 1, name = "tempId")
+  @JsonProperty("tempId")
+  private TemporaryID tempId;
 
-		@JsonCreator
-		public SignedTumHashOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 2, name = "tumSequenceNum")
+  @JsonProperty("tumSequenceNum")
+  private MsgCount tumSequenceNum;
 
-	public TumAckHash() {
-		super(true);
-	}
+  public static class SignedTumHashOctetString extends Asn1OctetString {
+    public SignedTumHashOctetString() {
+      super(32, 32);
+    }
+
+    @JsonCreator
+    public SignedTumHashOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public TumAckHash() {
+    super(true);
+  }
 }

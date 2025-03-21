@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Position3D_addGrpB extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "latitude")
-	@JsonProperty("latitude")
-	private LatitudeDMS2 latitude;
-	@Asn1Property(tag = 1, name = "longitude")
-	@JsonProperty("longitude")
-	private LongitudeDMS2 longitude;
-	@Asn1Property(tag = 2, name = "elevation")
-	@JsonProperty("elevation")
-	private Elevation elevation;
+  @Asn1Property(tag = 0, name = "latitude")
+  @JsonProperty("latitude")
+  private LatitudeDMS2 latitude;
 
-	public Position3D_addGrpB() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "longitude")
+  @JsonProperty("longitude")
+  private LongitudeDMS2 longitude;
+
+  @Asn1Property(tag = 2, name = "elevation")
+  @JsonProperty("elevation")
+  private Elevation elevation;
+
+  public Position3D_addGrpB() {
+    super(true);
+  }
 }

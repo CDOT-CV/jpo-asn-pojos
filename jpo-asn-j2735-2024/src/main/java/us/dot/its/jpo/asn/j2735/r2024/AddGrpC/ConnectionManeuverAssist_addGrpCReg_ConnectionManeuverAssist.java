@@ -31,22 +31,23 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist;
 @JsonRootName("Reg_ConnectionManeuverAssist")
 @JsonDeserialize(using = None.class)
 public class ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist
-		extends
-			Reg_ConnectionManeuverAssist<ConnectionManeuverAssist_addGrpC> {
+    extends Reg_ConnectionManeuverAssist<ConnectionManeuverAssist_addGrpC> {
 
-	public ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist() {
-		super(3, "ConnectionManeuverAssist_addGrpC");
-	}
+  public ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist() {
+    super(3, "ConnectionManeuverAssist_addGrpC");
+  }
 
-	@Override
-	@JsonSerialize(using = ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueSerializer.class)
-	public ConnectionManeuverAssist_addGrpC getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(
+      using = ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueSerializer.class)
+  public ConnectionManeuverAssist_addGrpC getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer.class)
-	public void setRegExtValue(ConnectionManeuverAssist_addGrpC value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(
+      using = ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer.class)
+  public void setRegExtValue(ConnectionManeuverAssist_addGrpC value) {
+    super.setRegExtValue(value);
+  }
 }

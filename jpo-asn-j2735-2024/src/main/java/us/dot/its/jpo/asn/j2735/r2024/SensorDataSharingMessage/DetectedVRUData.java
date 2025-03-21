@@ -41,20 +41,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DetectedVRUData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "basicType", optional = true)
-	@JsonProperty("basicType")
-	private PersonalDeviceUserType basicType;
-	@Asn1Property(tag = 1, name = "propulsion", optional = true)
-	@JsonProperty("propulsion")
-	private PropelledInformation propulsion;
-	@Asn1Property(tag = 2, name = "attachment", optional = true)
-	@JsonProperty("attachment")
-	private Attachment attachment;
-	@Asn1Property(tag = 3, name = "radius", optional = true)
-	@JsonProperty("radius")
-	private AttachmentRadius radius;
+  @Asn1Property(tag = 0, name = "basicType", optional = true)
+  @JsonProperty("basicType")
+  private PersonalDeviceUserType basicType;
 
-	public DetectedVRUData() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "propulsion", optional = true)
+  @JsonProperty("propulsion")
+  private PropelledInformation propulsion;
+
+  @Asn1Property(tag = 2, name = "attachment", optional = true)
+  @JsonProperty("attachment")
+  private Attachment attachment;
+
+  @Asn1Property(tag = 3, name = "radius", optional = true)
+  @JsonProperty("radius")
+  private AttachmentRadius radius;
+
+  public DetectedVRUData() {
+    super(false);
+  }
 }

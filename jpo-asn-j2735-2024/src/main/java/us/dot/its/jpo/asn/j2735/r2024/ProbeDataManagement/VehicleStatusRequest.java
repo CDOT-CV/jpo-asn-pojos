@@ -40,59 +40,63 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleStatusRequest extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "dataType")
-	@JsonProperty("dataType")
-	private VehicleStatusDeviceTypeTag dataType;
-	@Asn1Property(tag = 1, name = "subType", optional = true)
-	@JsonProperty("subType")
-	private SubTypeInteger subType;
-	@Asn1Property(tag = 2, name = "sendOnLessThenValue", optional = true)
-	@JsonProperty("sendOnLessThenValue")
-	private SendOnLessThenValueInteger sendOnLessThenValue;
-	@Asn1Property(tag = 3, name = "sendOnMoreThenValue", optional = true)
-	@JsonProperty("sendOnMoreThenValue")
-	private SendOnMoreThenValueInteger sendOnMoreThenValue;
-	@Asn1Property(tag = 4, name = "sendAll", optional = true)
-	@JsonProperty("sendAll")
-	private Asn1Boolean sendAll;
+  @Asn1Property(tag = 0, name = "dataType")
+  @JsonProperty("dataType")
+  private VehicleStatusDeviceTypeTag dataType;
 
-	public static class SubTypeInteger extends Asn1Integer {
-		public SubTypeInteger() {
-			super(1L, 15L);
-		}
+  @Asn1Property(tag = 1, name = "subType", optional = true)
+  @JsonProperty("subType")
+  private SubTypeInteger subType;
 
-		@JsonCreator
-		public SubTypeInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "sendOnLessThenValue", optional = true)
+  @JsonProperty("sendOnLessThenValue")
+  private SendOnLessThenValueInteger sendOnLessThenValue;
 
-	public static class SendOnLessThenValueInteger extends Asn1Integer {
-		public SendOnLessThenValueInteger() {
-			super(-32767L, 32767L);
-		}
+  @Asn1Property(tag = 3, name = "sendOnMoreThenValue", optional = true)
+  @JsonProperty("sendOnMoreThenValue")
+  private SendOnMoreThenValueInteger sendOnMoreThenValue;
 
-		@JsonCreator
-		public SendOnLessThenValueInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "sendAll", optional = true)
+  @JsonProperty("sendAll")
+  private Asn1Boolean sendAll;
 
-	public static class SendOnMoreThenValueInteger extends Asn1Integer {
-		public SendOnMoreThenValueInteger() {
-			super(-32767L, 32767L);
-		}
+  public static class SubTypeInteger extends Asn1Integer {
+    public SubTypeInteger() {
+      super(1L, 15L);
+    }
 
-		@JsonCreator
-		public SendOnMoreThenValueInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public SubTypeInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public VehicleStatusRequest() {
-		super(true);
-	}
+  public static class SendOnLessThenValueInteger extends Asn1Integer {
+    public SendOnLessThenValueInteger() {
+      super(-32767L, 32767L);
+    }
+
+    @JsonCreator
+    public SendOnLessThenValueInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class SendOnMoreThenValueInteger extends Asn1Integer {
+    public SendOnMoreThenValueInteger() {
+      super(-32767L, 32767L);
+    }
+
+    @JsonCreator
+    public SendOnMoreThenValueInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public VehicleStatusRequest() {
+    super(true);
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PassengerCapacity extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "numberOfSeats")
-	@JsonProperty("numberOfSeats")
-	private Int1Unsigned numberOfSeats;
-	@Asn1Property(tag = 1, name = "numberOfStandingPlaces")
-	@JsonProperty("numberOfStandingPlaces")
-	private Int1Unsigned numberOfStandingPlaces;
+  @Asn1Property(tag = 0, name = "numberOfSeats")
+  @JsonProperty("numberOfSeats")
+  private Int1Unsigned numberOfSeats;
 
-	public PassengerCapacity() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "numberOfStandingPlaces")
+  @JsonProperty("numberOfStandingPlaces")
+  private Int1Unsigned numberOfStandingPlaces;
+
+  public PassengerCapacity() {
+    super(false);
+  }
 }

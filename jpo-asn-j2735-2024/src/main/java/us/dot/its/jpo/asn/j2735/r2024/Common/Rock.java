@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Rock extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private RockType type;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private RockType type;
 
-	public Rock() {
-		super(true);
-	}
+  public Rock() {
+    super(true);
+  }
 }

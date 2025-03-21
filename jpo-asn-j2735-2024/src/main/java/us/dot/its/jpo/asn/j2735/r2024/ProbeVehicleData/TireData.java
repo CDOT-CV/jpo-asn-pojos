@@ -37,29 +37,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TireData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "location", optional = true)
-	@JsonProperty("location")
-	private TireLocation location;
-	@Asn1Property(tag = 1, name = "pressure", optional = true)
-	@JsonProperty("pressure")
-	private TirePressure pressure;
-	@Asn1Property(tag = 2, name = "temp", optional = true)
-	@JsonProperty("temp")
-	private TireTemp temp;
-	@Asn1Property(tag = 3, name = "wheelSensorStatus", optional = true)
-	@JsonProperty("wheelSensorStatus")
-	private WheelSensorStatus wheelSensorStatus;
-	@Asn1Property(tag = 4, name = "wheelEndElectFault", optional = true)
-	@JsonProperty("wheelEndElectFault")
-	private WheelEndElectFault wheelEndElectFault;
-	@Asn1Property(tag = 5, name = "leakageRate", optional = true)
-	@JsonProperty("leakageRate")
-	private TireLeakageRate leakageRate;
-	@Asn1Property(tag = 6, name = "detection", optional = true)
-	@JsonProperty("detection")
-	private TirePressureThresholdDetection detection;
+  @Asn1Property(tag = 0, name = "location", optional = true)
+  @JsonProperty("location")
+  private TireLocation location;
 
-	public TireData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "pressure", optional = true)
+  @JsonProperty("pressure")
+  private TirePressure pressure;
+
+  @Asn1Property(tag = 2, name = "temp", optional = true)
+  @JsonProperty("temp")
+  private TireTemp temp;
+
+  @Asn1Property(tag = 3, name = "wheelSensorStatus", optional = true)
+  @JsonProperty("wheelSensorStatus")
+  private WheelSensorStatus wheelSensorStatus;
+
+  @Asn1Property(tag = 4, name = "wheelEndElectFault", optional = true)
+  @JsonProperty("wheelEndElectFault")
+  private WheelEndElectFault wheelEndElectFault;
+
+  @Asn1Property(tag = 5, name = "leakageRate", optional = true)
+  @JsonProperty("leakageRate")
+  private TireLeakageRate leakageRate;
+
+  @Asn1Property(tag = 6, name = "detection", optional = true)
+  @JsonProperty("detection")
+  private TirePressureThresholdDetection detection;
+
+  public TireData() {
+    super(true);
+  }
 }

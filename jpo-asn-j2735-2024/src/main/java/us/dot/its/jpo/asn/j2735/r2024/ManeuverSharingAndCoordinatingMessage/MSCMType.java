@@ -33,35 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = MSCMType.MSCMTypeSerializer.class)
 @JsonDeserialize(using = MSCMType.MSCMTypeDeserializer.class)
 public enum MSCMType implements Asn1Enumerated {
-	MANEUVERINTENT(0, "maneuverIntent"), MANEUVERREQUEST(1, "maneuverRequest"), MANEUVERRESPONSE(2,
-			"maneuverResponse"), MANEUVERRESERVATION(3, "maneuverReservation"), HVMANEUVERCANCELLATION(4,
-					"hVManeuverCancellation"), RVMANEUVERCANCELLATIONREQUEST(5,
-							"rVManeuverCancellationRequest"), EMERGENCYMANEUVERRESERVATION(6,
-									"emergencyManeuverReservation"), MANEUVEREXECUTIONSTATUS(7,
-											"maneuverExecutionStatus");
+  MANEUVERINTENT(0, "maneuverIntent"),
+  MANEUVERREQUEST(1, "maneuverRequest"),
+  MANEUVERRESPONSE(2, "maneuverResponse"),
+  MANEUVERRESERVATION(3, "maneuverReservation"),
+  HVMANEUVERCANCELLATION(4, "hVManeuverCancellation"),
+  RVMANEUVERCANCELLATIONREQUEST(5, "rVManeuverCancellationRequest"),
+  EMERGENCYMANEUVERRESERVATION(6, "emergencyManeuverReservation"),
+  MANEUVEREXECUTIONSTATUS(7, "maneuverExecutionStatus");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private MSCMType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private MSCMType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class MSCMTypeSerializer extends EnumeratedSerializer<MSCMType> {
-		public MSCMTypeSerializer() {
-			super(MSCMType.class);
-		}
-	}
+  public static class MSCMTypeSerializer extends EnumeratedSerializer<MSCMType> {
+    public MSCMTypeSerializer() {
+      super(MSCMType.class);
+    }
+  }
 
-	public static class MSCMTypeDeserializer extends EnumeratedDeserializer<MSCMType> {
-		public MSCMTypeDeserializer() {
-			super(MSCMType.class);
-		}
+  public static class MSCMTypeDeserializer extends EnumeratedDeserializer<MSCMType> {
+    public MSCMTypeDeserializer() {
+      super(MSCMType.class);
+    }
 
-		@Override
-		protected MSCMType[] listEnumValues() {
-			return MSCMType.values();
-		}
-	}
+    @Override
+    protected MSCMType[] listEnumValues() {
+      return MSCMType.values();
+    }
+  }
 }

@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MergeDivergeNodeAngle.MergeDivergeNodeAngleDeserializer.class)
 public class MergeDivergeNodeAngle extends Asn1Integer {
 
-	public MergeDivergeNodeAngle() {
-		super(-180L, 180L);
-	}
+  public MergeDivergeNodeAngle() {
+    super(-180L, 180L);
+  }
 
-	@JsonCreator
-	public MergeDivergeNodeAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MergeDivergeNodeAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MergeDivergeNodeAngleDeserializer extends IntegerDeserializer<MergeDivergeNodeAngle> {
-		public MergeDivergeNodeAngleDeserializer() {
-			super(MergeDivergeNodeAngle.class);
-		}
+  public static class MergeDivergeNodeAngleDeserializer
+      extends IntegerDeserializer<MergeDivergeNodeAngle> {
+    public MergeDivergeNodeAngleDeserializer() {
+      super(MergeDivergeNodeAngle.class);
+    }
 
-		@Override
-		protected MergeDivergeNodeAngle construct() {
-			return new MergeDivergeNodeAngle();
-		}
-	}
+    @Override
+    protected MergeDivergeNodeAngle construct() {
+      return new MergeDivergeNodeAngle();
+    }
+  }
 }

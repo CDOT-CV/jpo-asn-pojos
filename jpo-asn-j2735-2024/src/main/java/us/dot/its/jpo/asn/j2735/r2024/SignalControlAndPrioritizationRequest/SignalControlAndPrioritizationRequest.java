@@ -24,5 +24,4 @@ package us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationRequest;
 
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 
-public class SignalControlAndPrioritizationRequest extends Asn1Null {
-}
+public class SignalControlAndPrioritizationRequest extends Asn1Null {}

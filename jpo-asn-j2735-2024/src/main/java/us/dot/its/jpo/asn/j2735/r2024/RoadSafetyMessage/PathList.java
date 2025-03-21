@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class PathList extends Asn1SequenceOf<Path> {
 
-	public PathList() {
-		super(Path.class, 1L, 10L);
-	}
+  public PathList() {
+    super(Path.class, 1L, 10L);
+  }
 }

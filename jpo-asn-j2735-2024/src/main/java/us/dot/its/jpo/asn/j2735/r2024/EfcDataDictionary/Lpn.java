@@ -44,109 +44,97 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Lpn extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "countryCode")
-	@JsonProperty("countryCode")
-	private CountryCode countryCode;
-	@Asn1Property(tag = 1, name = "alphabetIndicator")
-	@JsonProperty("alphabetIndicator")
-	private EnumeratedAlphabetIndicator alphabetIndicator;
-	@Asn1Property(tag = 2, name = "licencePlateNumber")
-	@JsonProperty("licencePlateNumber")
-	private LicencePlateNumberOctetString licencePlateNumber;
+  @Asn1Property(tag = 0, name = "countryCode")
+  @JsonProperty("countryCode")
+  private CountryCode countryCode;
 
-	@Getter
-	@JsonSerialize(using = EnumeratedAlphabetIndicatorSerializer.class)
-	@JsonDeserialize(using = EnumeratedAlphabetIndicatorDeserializer.class)
-	public enum EnumeratedAlphabetIndicator implements Asn1Enumerated {
-		LATINALPHABETNO1(1, "latinAlphabetNo1"), LATINALPHABETNO2(2, "latinAlphabetNo2"), LATINALPHABETNO3(3,
-				"latinAlphabetNo3"), LATINALPHABETNO4(4, "latinAlphabetNo4"), LATINCYRILLICALPHABET(5,
-						"latinCyrillicAlphabet"), LATINARABICALPHABET(6, "latinArabicAlphabet"), LATINGREEKALPHABET(7,
-								"latinGreekAlphabet"), LATINHEBREWALPHABET(8, "latinHebrewAlphabet"), LATINALPHABETNO5(
-										9, "latinAlphabetNo5"), LATINALPHABETNO6(10, "latinAlphabetNo6"), TWOOCTETBMP(
-												11, "twoOctetBMP"), FOUROCTETCANONICAL(12,
-														"fourOctetCanonical"), RESERVEDFORUSE1(13,
-																"reservedForUse1"), RESERVEDFORUSE2(14,
-																		"reservedForUse2"), RESERVEDFORUSE3(15,
-																				"reservedForUse3"), RESERVEDFORUSE4(16,
-																						"reservedForUse4"), RESERVEDFORUSE5(
-																								17,
-																								"reservedForUse5"), RESERVEDFORUSE6(
-																										18,
-																										"reservedForUse6"), RESERVEDFORUSE7(
-																												19,
-																												"reservedForUse7"), RESERVEDFORUSE8(
-																														20,
-																														"reservedForUse8"), RESERVEDFORUSE9(
-																																21,
-																																"reservedForUse9"), RESERVEDFORUSE10(
-																																		22,
-																																		"reservedForUse10"), RESERVEDFORUSE11(
-																																				23,
-																																				"reservedForUse11"), RESERVEDFORUSE12(
-																																						24,
-																																						"reservedForUse12"), RESERVEDFORUSE13(
-																																								25,
-																																								"reservedForUse13"), RESERVEDFORUSE14(
-																																										26,
-																																										"reservedForUse14"), RESERVEDFORUSE15(
-																																												27,
-																																												"reservedForUse15"), RESERVEDFORUSE16(
-																																														28,
-																																														"reservedForUse16"), RESERVEDFORUSE17(
-																																																29,
-																																																"reservedForUse17"), RESERVEDFORUSE18(
-																																																		30,
-																																																		"reservedForUse18"), RESERVEDFORUSE19(
-																																																				31,
-																																																				"reservedForUse19"), RESERVEDFORUSE20(
-																																																						32,
-																																																						"reservedForUse20"), RESERVEDFORUSE21(
-																																																								33,
-																																																								"reservedForUse21");
+  @Asn1Property(tag = 1, name = "alphabetIndicator")
+  @JsonProperty("alphabetIndicator")
+  private EnumeratedAlphabetIndicator alphabetIndicator;
 
-		private final int index;
-		private final String name;
+  @Asn1Property(tag = 2, name = "licencePlateNumber")
+  @JsonProperty("licencePlateNumber")
+  private LicencePlateNumberOctetString licencePlateNumber;
 
-		private EnumeratedAlphabetIndicator(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+  @Getter
+  @JsonSerialize(using = EnumeratedAlphabetIndicatorSerializer.class)
+  @JsonDeserialize(using = EnumeratedAlphabetIndicatorDeserializer.class)
+  public enum EnumeratedAlphabetIndicator implements Asn1Enumerated {
+    LATINALPHABETNO1(1, "latinAlphabetNo1"),
+    LATINALPHABETNO2(2, "latinAlphabetNo2"),
+    LATINALPHABETNO3(3, "latinAlphabetNo3"),
+    LATINALPHABETNO4(4, "latinAlphabetNo4"),
+    LATINCYRILLICALPHABET(5, "latinCyrillicAlphabet"),
+    LATINARABICALPHABET(6, "latinArabicAlphabet"),
+    LATINGREEKALPHABET(7, "latinGreekAlphabet"),
+    LATINHEBREWALPHABET(8, "latinHebrewAlphabet"),
+    LATINALPHABETNO5(9, "latinAlphabetNo5"),
+    LATINALPHABETNO6(10, "latinAlphabetNo6"),
+    TWOOCTETBMP(11, "twoOctetBMP"),
+    FOUROCTETCANONICAL(12, "fourOctetCanonical"),
+    RESERVEDFORUSE1(13, "reservedForUse1"),
+    RESERVEDFORUSE2(14, "reservedForUse2"),
+    RESERVEDFORUSE3(15, "reservedForUse3"),
+    RESERVEDFORUSE4(16, "reservedForUse4"),
+    RESERVEDFORUSE5(17, "reservedForUse5"),
+    RESERVEDFORUSE6(18, "reservedForUse6"),
+    RESERVEDFORUSE7(19, "reservedForUse7"),
+    RESERVEDFORUSE8(20, "reservedForUse8"),
+    RESERVEDFORUSE9(21, "reservedForUse9"),
+    RESERVEDFORUSE10(22, "reservedForUse10"),
+    RESERVEDFORUSE11(23, "reservedForUse11"),
+    RESERVEDFORUSE12(24, "reservedForUse12"),
+    RESERVEDFORUSE13(25, "reservedForUse13"),
+    RESERVEDFORUSE14(26, "reservedForUse14"),
+    RESERVEDFORUSE15(27, "reservedForUse15"),
+    RESERVEDFORUSE16(28, "reservedForUse16"),
+    RESERVEDFORUSE17(29, "reservedForUse17"),
+    RESERVEDFORUSE18(30, "reservedForUse18"),
+    RESERVEDFORUSE19(31, "reservedForUse19"),
+    RESERVEDFORUSE20(32, "reservedForUse20"),
+    RESERVEDFORUSE21(33, "reservedForUse21");
 
-	public static class EnumeratedAlphabetIndicatorSerializer
-			extends
-				EnumeratedSerializer<EnumeratedAlphabetIndicator> {
-		public EnumeratedAlphabetIndicatorSerializer() {
-			super(EnumeratedAlphabetIndicator.class);
-		}
-	}
+    private final int index;
+    private final String name;
 
-	public static class EnumeratedAlphabetIndicatorDeserializer
-			extends
-				EnumeratedDeserializer<EnumeratedAlphabetIndicator> {
-		public EnumeratedAlphabetIndicatorDeserializer() {
-			super(EnumeratedAlphabetIndicator.class);
-		}
+    private EnumeratedAlphabetIndicator(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
 
-		@Override
-		protected EnumeratedAlphabetIndicator[] listEnumValues() {
-			return EnumeratedAlphabetIndicator.values();
-		}
-	}
+  public static class EnumeratedAlphabetIndicatorSerializer
+      extends EnumeratedSerializer<EnumeratedAlphabetIndicator> {
+    public EnumeratedAlphabetIndicatorSerializer() {
+      super(EnumeratedAlphabetIndicator.class);
+    }
+  }
 
-	public static class LicencePlateNumberOctetString extends Asn1OctetString {
-		public LicencePlateNumberOctetString() {
-			super(0, 2147483647);
-		}
+  public static class EnumeratedAlphabetIndicatorDeserializer
+      extends EnumeratedDeserializer<EnumeratedAlphabetIndicator> {
+    public EnumeratedAlphabetIndicatorDeserializer() {
+      super(EnumeratedAlphabetIndicator.class);
+    }
 
-		@JsonCreator
-		public LicencePlateNumberOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+    @Override
+    protected EnumeratedAlphabetIndicator[] listEnumValues() {
+      return EnumeratedAlphabetIndicator.values();
+    }
+  }
 
-	public Lpn() {
-		super(false);
-	}
+  public static class LicencePlateNumberOctetString extends Asn1OctetString {
+    public LicencePlateNumberOctetString() {
+      super(0, 2147483647);
+    }
+
+    @JsonCreator
+    public LicencePlateNumberOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public Lpn() {
+    super(false);
+  }
 }

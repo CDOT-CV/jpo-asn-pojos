@@ -38,44 +38,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgSummaryTriggers extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "regTravelTime", optional = true)
-	@JsonProperty("regTravelTime")
-	private Asn1Boolean regTravelTime;
-	@Asn1Property(tag = 1, name = "regVehDistTraveled", optional = true)
-	@JsonProperty("regVehDistTraveled")
-	private Asn1Boolean regVehDistTraveled;
-	@Asn1Property(tag = 2, name = "regVehTimeTraveled", optional = true)
-	@JsonProperty("regVehTimeTraveled")
-	private Asn1Boolean regVehTimeTraveled;
-	@Asn1Property(tag = 3, name = "fuelConsumption", optional = true)
-	@JsonProperty("fuelConsumption")
-	private Asn1Boolean fuelConsumption;
-	@Asn1Property(tag = 4, name = "totalVehEmissions", optional = true)
-	@JsonProperty("totalVehEmissions")
-	private Asn1Boolean totalVehEmissions;
-	@Asn1Property(tag = 5, name = "numOfLowSpeedEvents", optional = true)
-	@JsonProperty("numOfLowSpeedEvents")
-	private CfgLowSpeedCriteria numOfLowSpeedEvents;
-	@Asn1Property(tag = 6, name = "timeStopped", optional = true)
-	@JsonProperty("timeStopped")
-	private CfgStoppedCriteria timeStopped;
-	@Asn1Property(tag = 7, name = "numOfStopped", optional = true)
-	@JsonProperty("numOfStopped")
-	private CfgStoppedCriteria numOfStopped;
-	@Asn1Property(tag = 8, name = "locOfStops", optional = true)
-	@JsonProperty("locOfStops")
-	private Asn1Boolean locOfStops;
-	@Asn1Property(tag = 9, name = "regNumOfVehPassed", optional = true)
-	@JsonProperty("regNumOfVehPassed")
-	private Asn1Boolean regNumOfVehPassed;
-	@Asn1Property(tag = 10, name = "regNumOfSurpassedVeh", optional = true)
-	@JsonProperty("regNumOfSurpassedVeh")
-	private Asn1Boolean regNumOfSurpassedVeh;
-	@Asn1Property(tag = 11, name = "totalMsgsReceived", optional = true)
-	@JsonProperty("totalMsgsReceived")
-	private CfgMsgRecepIndicators totalMsgsReceived;
+  @Asn1Property(tag = 0, name = "regTravelTime", optional = true)
+  @JsonProperty("regTravelTime")
+  private Asn1Boolean regTravelTime;
 
-	public CfgSummaryTriggers() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "regVehDistTraveled", optional = true)
+  @JsonProperty("regVehDistTraveled")
+  private Asn1Boolean regVehDistTraveled;
+
+  @Asn1Property(tag = 2, name = "regVehTimeTraveled", optional = true)
+  @JsonProperty("regVehTimeTraveled")
+  private Asn1Boolean regVehTimeTraveled;
+
+  @Asn1Property(tag = 3, name = "fuelConsumption", optional = true)
+  @JsonProperty("fuelConsumption")
+  private Asn1Boolean fuelConsumption;
+
+  @Asn1Property(tag = 4, name = "totalVehEmissions", optional = true)
+  @JsonProperty("totalVehEmissions")
+  private Asn1Boolean totalVehEmissions;
+
+  @Asn1Property(tag = 5, name = "numOfLowSpeedEvents", optional = true)
+  @JsonProperty("numOfLowSpeedEvents")
+  private CfgLowSpeedCriteria numOfLowSpeedEvents;
+
+  @Asn1Property(tag = 6, name = "timeStopped", optional = true)
+  @JsonProperty("timeStopped")
+  private CfgStoppedCriteria timeStopped;
+
+  @Asn1Property(tag = 7, name = "numOfStopped", optional = true)
+  @JsonProperty("numOfStopped")
+  private CfgStoppedCriteria numOfStopped;
+
+  @Asn1Property(tag = 8, name = "locOfStops", optional = true)
+  @JsonProperty("locOfStops")
+  private Asn1Boolean locOfStops;
+
+  @Asn1Property(tag = 9, name = "regNumOfVehPassed", optional = true)
+  @JsonProperty("regNumOfVehPassed")
+  private Asn1Boolean regNumOfVehPassed;
+
+  @Asn1Property(tag = 10, name = "regNumOfSurpassedVeh", optional = true)
+  @JsonProperty("regNumOfSurpassedVeh")
+  private Asn1Boolean regNumOfSurpassedVeh;
+
+  @Asn1Property(tag = 11, name = "totalMsgsReceived", optional = true)
+  @JsonProperty("totalMsgsReceived")
+  private CfgMsgRecepIndicators totalMsgsReceived;
+
+  public CfgSummaryTriggers() {
+    super(true);
+  }
 }

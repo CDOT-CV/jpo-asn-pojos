@@ -40,26 +40,28 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class LaneClosureContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "laneStatus", optional = true)
-	@JsonProperty("laneStatus")
-	@JacksonXmlElementWrapper(localName = "laneStatus")
-	@JacksonXmlProperty(localName = "LaneInfo")
-	private SequenceOfLaneStatus laneStatus;
-	@Asn1Property(tag = 1, name = "laneStatusVaries", optional = true)
-	@JsonProperty("laneStatusVaries")
-	private Activity laneStatusVaries;
-	@Asn1Property(tag = 2, name = "closureRegion")
-	@JsonProperty("closureRegion")
-	private RegionInfo closureRegion;
+  @Asn1Property(tag = 0, name = "laneStatus", optional = true)
+  @JsonProperty("laneStatus")
+  @JacksonXmlElementWrapper(localName = "laneStatus")
+  @JacksonXmlProperty(localName = "LaneInfo")
+  private SequenceOfLaneStatus laneStatus;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfLaneStatus extends Asn1SequenceOf<LaneInfo> {
-		public SequenceOfLaneStatus() {
-			super(LaneInfo.class, 1L, 10L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "laneStatusVaries", optional = true)
+  @JsonProperty("laneStatusVaries")
+  private Activity laneStatusVaries;
 
-	public LaneClosureContainer() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "closureRegion")
+  @JsonProperty("closureRegion")
+  private RegionInfo closureRegion;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfLaneStatus extends Asn1SequenceOf<LaneInfo> {
+    public SequenceOfLaneStatus() {
+      super(LaneInfo.class, 1L, 10L);
+    }
+  }
+
+  public LaneClosureContainer() {
+    super(true);
+  }
 }

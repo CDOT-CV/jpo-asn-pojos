@@ -39,17 +39,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TollChargerInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tollChargerId")
-	@JsonProperty("tollChargerId")
-	private Asn1ObjectIdentifier tollChargerId;
-	@Asn1Property(tag = 1, name = "tollPointId")
-	@JsonProperty("tollPointId")
-	private TollPointID tollPointId;
-	@Asn1Property(tag = 2, name = "descriptiveName", optional = true)
-	@JsonProperty("descriptiveName")
-	private DescriptiveName descriptiveName;
+  @Asn1Property(tag = 0, name = "tollChargerId")
+  @JsonProperty("tollChargerId")
+  private Asn1ObjectIdentifier tollChargerId;
 
-	public TollChargerInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tollPointId")
+  @JsonProperty("tollPointId")
+  private TollPointID tollPointId;
+
+  @Asn1Property(tag = 2, name = "descriptiveName", optional = true)
+  @JsonProperty("descriptiveName")
+  private DescriptiveName descriptiveName;
+
+  public TollChargerInfo() {
+    super(true);
+  }
 }

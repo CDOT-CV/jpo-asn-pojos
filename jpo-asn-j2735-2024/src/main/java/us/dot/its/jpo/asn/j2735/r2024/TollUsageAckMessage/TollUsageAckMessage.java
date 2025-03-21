@@ -41,28 +41,29 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TollUsageAckMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tumAck")
-	@JsonProperty("tumAck")
-	@JacksonXmlElementWrapper(localName = "tumAck")
-	@JacksonXmlProperty(localName = "TumAckHash")
-	private TumAck tumAck;
-	@Asn1Property(tag = 1, name = "ackMaxAge")
-	@JsonProperty("ackMaxAge")
-	private AckMaxAgeInteger ackMaxAge;
+  @Asn1Property(tag = 0, name = "tumAck")
+  @JsonProperty("tumAck")
+  @JacksonXmlElementWrapper(localName = "tumAck")
+  @JacksonXmlProperty(localName = "TumAckHash")
+  private TumAck tumAck;
 
-	public static class AckMaxAgeInteger extends Asn1Integer {
-		public AckMaxAgeInteger() {
-			super(100L, 10000L);
-		}
+  @Asn1Property(tag = 1, name = "ackMaxAge")
+  @JsonProperty("ackMaxAge")
+  private AckMaxAgeInteger ackMaxAge;
 
-		@JsonCreator
-		public AckMaxAgeInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class AckMaxAgeInteger extends Asn1Integer {
+    public AckMaxAgeInteger() {
+      super(100L, 10000L);
+    }
 
-	public TollUsageAckMessage() {
-		super(true);
-	}
+    @JsonCreator
+    public AckMaxAgeInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TollUsageAckMessage() {
+    super(true);
+  }
 }

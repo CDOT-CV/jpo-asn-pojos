@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class UsageReport extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "feeReport")
-	@JsonProperty("feeReport")
-	private FeeReport feeReport;
-	@Asn1Property(tag = 1, name = "itemizedPaymentReport")
-	@JsonProperty("itemizedPaymentReport")
-	private ItemizedPaymentReport itemizedPaymentReport;
+  @Asn1Property(tag = 0, name = "feeReport")
+  @JsonProperty("feeReport")
+  private FeeReport feeReport;
 
-	public UsageReport() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "itemizedPaymentReport")
+  @JsonProperty("itemizedPaymentReport")
+  private ItemizedPaymentReport itemizedPaymentReport;
+
+  public UsageReport() {
+    super(true);
+  }
 }

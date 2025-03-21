@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AltitudeValue.AltitudeValueDeserializer.class)
 public class AltitudeValue extends Asn1Integer {
 
-	public AltitudeValue() {
-		super(-100000L, 800001L);
-	}
+  public AltitudeValue() {
+    super(-100000L, 800001L);
+  }
 
-	@JsonCreator
-	public AltitudeValue(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AltitudeValue(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AltitudeValueDeserializer extends IntegerDeserializer<AltitudeValue> {
-		public AltitudeValueDeserializer() {
-			super(AltitudeValue.class);
-		}
+  public static class AltitudeValueDeserializer extends IntegerDeserializer<AltitudeValue> {
+    public AltitudeValueDeserializer() {
+      super(AltitudeValue.class);
+    }
 
-		@Override
-		protected AltitudeValue construct() {
-			return new AltitudeValue();
-		}
-	}
+    @Override
+    protected AltitudeValue construct() {
+      return new AltitudeValue();
+    }
+  }
 }

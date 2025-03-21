@@ -44,34 +44,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class SignalStatusMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "second")
-	@JsonProperty("second")
-	private DSecond second;
-	@Asn1Property(tag = 2, name = "sequenceNumber", optional = true)
-	@JsonProperty("sequenceNumber")
-	private MsgCount sequenceNumber;
-	@Asn1Property(tag = 3, name = "status")
-	@JsonProperty("status")
-	@JacksonXmlElementWrapper(localName = "status")
-	@JacksonXmlProperty(localName = "SignalStatus")
-	private SignalStatusList status;
-	@Asn1Property(tag = 4, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-SignalStatusMessage")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalStatusMessage> {
-		public SequenceOfRegional() {
-			super(Reg_SignalStatusMessage.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "second")
+  @JsonProperty("second")
+  private DSecond second;
 
-	public SignalStatusMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "sequenceNumber", optional = true)
+  @JsonProperty("sequenceNumber")
+  private MsgCount sequenceNumber;
+
+  @Asn1Property(tag = 3, name = "status")
+  @JsonProperty("status")
+  @JacksonXmlElementWrapper(localName = "status")
+  @JacksonXmlProperty(localName = "SignalStatus")
+  private SignalStatusList status;
+
+  @Asn1Property(tag = 4, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-SignalStatusMessage")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalStatusMessage> {
+    public SequenceOfRegional() {
+      super(Reg_SignalStatusMessage.class, 1L, 4L);
+    }
+  }
+
+  public SignalStatusMessage() {
+    super(true);
+  }
 }

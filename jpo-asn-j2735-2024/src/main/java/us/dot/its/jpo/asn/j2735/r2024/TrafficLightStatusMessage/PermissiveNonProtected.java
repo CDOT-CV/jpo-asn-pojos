@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = PermissiveNonProtected.PermissiveNonProtectedSerializer.class)
 @JsonDeserialize(using = PermissiveNonProtected.PermissiveNonProtectedDeserializer.class)
 public enum PermissiveNonProtected implements Asn1Enumerated {
-	NONE(0, "none"), PERMISSIVE(1, "permissive");
+  NONE(0, "none"),
+  PERMISSIVE(1, "permissive");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PermissiveNonProtected(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PermissiveNonProtected(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PermissiveNonProtectedSerializer extends EnumeratedSerializer<PermissiveNonProtected> {
-		public PermissiveNonProtectedSerializer() {
-			super(PermissiveNonProtected.class);
-		}
-	}
+  public static class PermissiveNonProtectedSerializer
+      extends EnumeratedSerializer<PermissiveNonProtected> {
+    public PermissiveNonProtectedSerializer() {
+      super(PermissiveNonProtected.class);
+    }
+  }
 
-	public static class PermissiveNonProtectedDeserializer extends EnumeratedDeserializer<PermissiveNonProtected> {
-		public PermissiveNonProtectedDeserializer() {
-			super(PermissiveNonProtected.class);
-		}
+  public static class PermissiveNonProtectedDeserializer
+      extends EnumeratedDeserializer<PermissiveNonProtected> {
+    public PermissiveNonProtectedDeserializer() {
+      super(PermissiveNonProtected.class);
+    }
 
-		@Override
-		protected PermissiveNonProtected[] listEnumValues() {
-			return PermissiveNonProtected.values();
-		}
-	}
+    @Override
+    protected PermissiveNonProtected[] listEnumValues() {
+      return PermissiveNonProtected.values();
+    }
+  }
 }

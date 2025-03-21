@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = EssPrecipRate.EssPrecipRateDeserializer.class)
 public class EssPrecipRate extends Asn1Integer {
 
-	public EssPrecipRate() {
-		super(0L, 65535L);
-	}
+  public EssPrecipRate() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public EssPrecipRate(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public EssPrecipRate(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class EssPrecipRateDeserializer extends IntegerDeserializer<EssPrecipRate> {
-		public EssPrecipRateDeserializer() {
-			super(EssPrecipRate.class);
-		}
+  public static class EssPrecipRateDeserializer extends IntegerDeserializer<EssPrecipRate> {
+    public EssPrecipRateDeserializer() {
+      super(EssPrecipRate.class);
+    }
 
-		@Override
-		protected EssPrecipRate construct() {
-			return new EssPrecipRate();
-		}
-	}
+    @Override
+    protected EssPrecipRate construct() {
+      return new EssPrecipRate();
+    }
+  }
 }

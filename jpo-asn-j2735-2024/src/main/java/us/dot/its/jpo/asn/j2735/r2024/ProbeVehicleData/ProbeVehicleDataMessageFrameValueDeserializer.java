@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.ProbeVehicleData;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class ProbeVehicleDataMessageFrameValueDeserializer extends OpenTypeDeserializer<ProbeVehicleData> {
+public class ProbeVehicleDataMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<ProbeVehicleData> {
 
-	public ProbeVehicleDataMessageFrameValueDeserializer() {
-		super(ProbeVehicleData.class, "ProbeVehicleData");
-	}
+  public ProbeVehicleDataMessageFrameValueDeserializer() {
+    super(ProbeVehicleData.class, "ProbeVehicleData");
+  }
 }

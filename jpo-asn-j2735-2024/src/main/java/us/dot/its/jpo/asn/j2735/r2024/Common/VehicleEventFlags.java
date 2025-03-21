@@ -27,146 +27,158 @@
 package us.dot.its.jpo.asn.j2735.r2024.Common;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 @JsonDeserialize(using = VehicleEventFlags.VehicleEventFlagsDeserializer.class)
 public class VehicleEventFlags extends Asn1Bitstring {
 
-	public boolean isEventHazardLights() {
-		return get(0);
-	}
+  public boolean isEventHazardLights() {
+    return get(0);
+  }
 
-	public void setEventHazardLights(boolean eventHazardLights) {
-		set(0, eventHazardLights);
-	}
+  public void setEventHazardLights(boolean eventHazardLights) {
+    set(0, eventHazardLights);
+  }
 
-	public boolean isEventStopLineViolation() {
-		return get(1);
-	}
+  public boolean isEventStopLineViolation() {
+    return get(1);
+  }
 
-	public void setEventStopLineViolation(boolean eventStopLineViolation) {
-		set(1, eventStopLineViolation);
-	}
+  public void setEventStopLineViolation(boolean eventStopLineViolation) {
+    set(1, eventStopLineViolation);
+  }
 
-	public boolean isEventABSactivated() {
-		return get(2);
-	}
+  public boolean isEventABSactivated() {
+    return get(2);
+  }
 
-	public void setEventABSactivated(boolean eventABSactivated) {
-		set(2, eventABSactivated);
-	}
+  public void setEventABSactivated(boolean eventABSactivated) {
+    set(2, eventABSactivated);
+  }
 
-	public boolean isEventTractionControlLoss() {
-		return get(3);
-	}
+  public boolean isEventTractionControlLoss() {
+    return get(3);
+  }
 
-	public void setEventTractionControlLoss(boolean eventTractionControlLoss) {
-		set(3, eventTractionControlLoss);
-	}
+  public void setEventTractionControlLoss(boolean eventTractionControlLoss) {
+    set(3, eventTractionControlLoss);
+  }
 
-	public boolean isEventStabilityControlactivated() {
-		return get(4);
-	}
+  public boolean isEventStabilityControlactivated() {
+    return get(4);
+  }
 
-	public void setEventStabilityControlactivated(boolean eventStabilityControlactivated) {
-		set(4, eventStabilityControlactivated);
-	}
+  public void setEventStabilityControlactivated(boolean eventStabilityControlactivated) {
+    set(4, eventStabilityControlactivated);
+  }
 
-	public boolean isEventHazardousMaterials() {
-		return get(5);
-	}
+  public boolean isEventHazardousMaterials() {
+    return get(5);
+  }
 
-	public void setEventHazardousMaterials(boolean eventHazardousMaterials) {
-		set(5, eventHazardousMaterials);
-	}
+  public void setEventHazardousMaterials(boolean eventHazardousMaterials) {
+    set(5, eventHazardousMaterials);
+  }
 
-	public boolean isEventReserved1() {
-		return get(6);
-	}
+  public boolean isEventReserved1() {
+    return get(6);
+  }
 
-	public void setEventReserved1(boolean eventReserved1) {
-		set(6, eventReserved1);
-	}
+  public void setEventReserved1(boolean eventReserved1) {
+    set(6, eventReserved1);
+  }
 
-	public boolean isEventHardBraking() {
-		return get(7);
-	}
+  public boolean isEventHardBraking() {
+    return get(7);
+  }
 
-	public void setEventHardBraking(boolean eventHardBraking) {
-		set(7, eventHardBraking);
-	}
+  public void setEventHardBraking(boolean eventHardBraking) {
+    set(7, eventHardBraking);
+  }
 
-	public boolean isEventLightsChanged() {
-		return get(8);
-	}
+  public boolean isEventLightsChanged() {
+    return get(8);
+  }
 
-	public void setEventLightsChanged(boolean eventLightsChanged) {
-		set(8, eventLightsChanged);
-	}
+  public void setEventLightsChanged(boolean eventLightsChanged) {
+    set(8, eventLightsChanged);
+  }
 
-	public boolean isEventWipersChanged() {
-		return get(9);
-	}
+  public boolean isEventWipersChanged() {
+    return get(9);
+  }
 
-	public void setEventWipersChanged(boolean eventWipersChanged) {
-		set(9, eventWipersChanged);
-	}
+  public void setEventWipersChanged(boolean eventWipersChanged) {
+    set(9, eventWipersChanged);
+  }
 
-	public boolean isEventFlatTire() {
-		return get(10);
-	}
+  public boolean isEventFlatTire() {
+    return get(10);
+  }
 
-	public void setEventFlatTire(boolean eventFlatTire) {
-		set(10, eventFlatTire);
-	}
+  public void setEventFlatTire(boolean eventFlatTire) {
+    set(10, eventFlatTire);
+  }
 
-	public boolean isEventDisabledVehicle() {
-		return get(11);
-	}
+  public boolean isEventDisabledVehicle() {
+    return get(11);
+  }
 
-	public void setEventDisabledVehicle(boolean eventDisabledVehicle) {
-		set(11, eventDisabledVehicle);
-	}
+  public void setEventDisabledVehicle(boolean eventDisabledVehicle) {
+    set(11, eventDisabledVehicle);
+  }
 
-	public boolean isEventAirBagDeployment() {
-		return get(12);
-	}
+  public boolean isEventAirBagDeployment() {
+    return get(12);
+  }
 
-	public void setEventAirBagDeployment(boolean eventAirBagDeployment) {
-		set(12, eventAirBagDeployment);
-	}
+  public void setEventAirBagDeployment(boolean eventAirBagDeployment) {
+    set(12, eventAirBagDeployment);
+  }
 
-	// ADDED
-	public void setEventJackKnife(boolean eventJackKnife) {
-		set(13, eventJackKnife);
-	}
+  // ADDED
+  public void setEventJackKnife(boolean eventJackKnife) {
+    set(13, eventJackKnife);
+  }
 
-	// ADDED
-	public boolean isEventJackKnife() {
-		return get(13);
-	}
+  // ADDED
+  public boolean isEventJackKnife() {
+    return get(13);
+  }
 
+  public VehicleEventFlags() {
+    // EDITED
+    super(
+        13,
+        true,
+        new String[] {
+          "eventHazardLights",
+          "eventStopLineViolation",
+          "eventABSactivated",
+          "eventTractionControlLoss",
+          "eventStabilityControlactivated",
+          "eventHazardousMaterials",
+          "eventReserved1",
+          "eventHardBraking",
+          "eventLightsChanged",
+          "eventWipersChanged",
+          "eventFlatTire",
+          "eventDisabledVehicle",
+          "eventAirBagDeployment",
+          "eventJackKnife"
+        });
+  }
 
+  public static class VehicleEventFlagsDeserializer
+      extends BitStringDeserializer<VehicleEventFlags> {
+    public VehicleEventFlagsDeserializer() {
+      super(VehicleEventFlags.class);
+    }
 
-	public VehicleEventFlags() {
-		// EDITED
-		super(13, true,
-				new String[]{"eventHazardLights", "eventStopLineViolation", "eventABSactivated",
-						"eventTractionControlLoss", "eventStabilityControlactivated", "eventHazardousMaterials",
-						"eventReserved1", "eventHardBraking", "eventLightsChanged", "eventWipersChanged",
-						"eventFlatTire", "eventDisabledVehicle", "eventAirBagDeployment", "eventJackKnife"});
-	}
-
-	public static class VehicleEventFlagsDeserializer extends BitStringDeserializer<VehicleEventFlags> {
-		public VehicleEventFlagsDeserializer() {
-			super(VehicleEventFlags.class);
-		}
-
-		@Override
-		protected VehicleEventFlags construct() {
-			return new VehicleEventFlags();
-		}
-	}
+    @Override
+    protected VehicleEventFlags construct() {
+      return new VehicleEventFlags();
+    }
+  }
 }

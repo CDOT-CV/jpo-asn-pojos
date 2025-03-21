@@ -43,46 +43,52 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class NodeAttributeSetXY extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "localNode", optional = true)
-	@JsonProperty("localNode")
-	@JsonSerialize(using = NodeAttributeXYList.NodeAttributeXYListSerializer.class)
-	@JsonDeserialize(using = NodeAttributeXYList.NodeAttributeXYListDeserializer.class)
-	private NodeAttributeXYList localNode;
-	@Asn1Property(tag = 1, name = "disabled", optional = true)
-	@JsonProperty("disabled")
-	@JsonSerialize(using = SegmentAttributeXYList.SegmentAttributeXYListSerializer.class)
-	@JsonDeserialize(using = SegmentAttributeXYList.SegmentAttributeXYListDeserializer.class)
-	private SegmentAttributeXYList disabled;
-	@Asn1Property(tag = 2, name = "enabled", optional = true)
-	@JsonProperty("enabled")
-	@JsonSerialize(using = SegmentAttributeXYList.SegmentAttributeXYListSerializer.class)
-	@JsonDeserialize(using = SegmentAttributeXYList.SegmentAttributeXYListDeserializer.class)
-	private SegmentAttributeXYList enabled;
-	@Asn1Property(tag = 3, name = "data", optional = true)
-	@JsonProperty("data")
-	@JsonSerialize(using = LaneDataAttributeList.LaneDataAttributeListSerializer.class)
-	@JsonDeserialize(using = LaneDataAttributeList.LaneDataAttributeListDeserializer.class)
-	private LaneDataAttributeList data;
-	@Asn1Property(tag = 4, name = "dWidth", optional = true)
-	@JsonProperty("dWidth")
-	private Offset_B10 dWidth;
-	@Asn1Property(tag = 5, name = "dElevation", optional = true)
-	@JsonProperty("dElevation")
-	private Offset_B10 dElevation;
-	@Asn1Property(tag = 6, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-NodeAttributeSetXY")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "localNode", optional = true)
+  @JsonProperty("localNode")
+  @JsonSerialize(using = NodeAttributeXYList.NodeAttributeXYListSerializer.class)
+  @JsonDeserialize(using = NodeAttributeXYList.NodeAttributeXYListDeserializer.class)
+  private NodeAttributeXYList localNode;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NodeAttributeSetXY> {
-		public SequenceOfRegional() {
-			super(Reg_NodeAttributeSetXY.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "disabled", optional = true)
+  @JsonProperty("disabled")
+  @JsonSerialize(using = SegmentAttributeXYList.SegmentAttributeXYListSerializer.class)
+  @JsonDeserialize(using = SegmentAttributeXYList.SegmentAttributeXYListDeserializer.class)
+  private SegmentAttributeXYList disabled;
 
-	public NodeAttributeSetXY() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "enabled", optional = true)
+  @JsonProperty("enabled")
+  @JsonSerialize(using = SegmentAttributeXYList.SegmentAttributeXYListSerializer.class)
+  @JsonDeserialize(using = SegmentAttributeXYList.SegmentAttributeXYListDeserializer.class)
+  private SegmentAttributeXYList enabled;
+
+  @Asn1Property(tag = 3, name = "data", optional = true)
+  @JsonProperty("data")
+  @JsonSerialize(using = LaneDataAttributeList.LaneDataAttributeListSerializer.class)
+  @JsonDeserialize(using = LaneDataAttributeList.LaneDataAttributeListDeserializer.class)
+  private LaneDataAttributeList data;
+
+  @Asn1Property(tag = 4, name = "dWidth", optional = true)
+  @JsonProperty("dWidth")
+  private Offset_B10 dWidth;
+
+  @Asn1Property(tag = 5, name = "dElevation", optional = true)
+  @JsonProperty("dElevation")
+  private Offset_B10 dElevation;
+
+  @Asn1Property(tag = 6, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-NodeAttributeSetXY")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NodeAttributeSetXY> {
+    public SequenceOfRegional() {
+      super(Reg_NodeAttributeSetXY.class, 1L, 4L);
+    }
+  }
+
+  public NodeAttributeSetXY() {
+    super(true);
+  }
 }

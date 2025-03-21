@@ -35,20 +35,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class RptInstantaneousRecordData extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "intervalEvents")
-	@JsonProperty("intervalEvents")
-	private RptIntervalEvents intervalEvents;
-	@Asn1Property(tag = 1, name = "vehEvents")
-	@JsonProperty("vehEvents")
-	private RptVehicleEvents vehEvents;
-	@Asn1Property(tag = 2, name = "roadwayEvents")
-	@JsonProperty("roadwayEvents")
-	private RptRoadwayEvents roadwayEvents;
-	@Asn1Property(tag = 3, name = "commSysPerfEvents")
-	@JsonProperty("commSysPerfEvents")
-	private RptCommSysPerfEvents commSysPerfEvents;
+  @Asn1Property(tag = 0, name = "intervalEvents")
+  @JsonProperty("intervalEvents")
+  private RptIntervalEvents intervalEvents;
 
-	public RptInstantaneousRecordData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "vehEvents")
+  @JsonProperty("vehEvents")
+  private RptVehicleEvents vehEvents;
+
+  @Asn1Property(tag = 2, name = "roadwayEvents")
+  @JsonProperty("roadwayEvents")
+  private RptRoadwayEvents roadwayEvents;
+
+  @Asn1Property(tag = 3, name = "commSysPerfEvents")
+  @JsonProperty("commSysPerfEvents")
+  private RptCommSysPerfEvents commSysPerfEvents;
+
+  public RptInstantaneousRecordData() {
+    super(true);
+  }
 }

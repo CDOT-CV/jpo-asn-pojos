@@ -33,32 +33,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = HeadingConfidence.HeadingConfidenceSerializer.class)
 @JsonDeserialize(using = HeadingConfidence.HeadingConfidenceDeserializer.class)
 public enum HeadingConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), PREC10DEG(1, "prec10deg"), PREC05DEG(2, "prec05deg"), PREC01DEG(3,
-			"prec01deg"), PREC0_1DEG(4, "prec0-1deg"), PREC0_05DEG(5,
-					"prec0-05deg"), PREC0_01DEG(6, "prec0-01deg"), PREC0_0125DEG(7, "prec0-0125deg");
+  UNAVAILABLE(0, "unavailable"),
+  PREC10DEG(1, "prec10deg"),
+  PREC05DEG(2, "prec05deg"),
+  PREC01DEG(3, "prec01deg"),
+  PREC0_1DEG(4, "prec0-1deg"),
+  PREC0_05DEG(5, "prec0-05deg"),
+  PREC0_01DEG(6, "prec0-01deg"),
+  PREC0_0125DEG(7, "prec0-0125deg");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private HeadingConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private HeadingConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class HeadingConfidenceSerializer extends EnumeratedSerializer<HeadingConfidence> {
-		public HeadingConfidenceSerializer() {
-			super(HeadingConfidence.class);
-		}
-	}
+  public static class HeadingConfidenceSerializer extends EnumeratedSerializer<HeadingConfidence> {
+    public HeadingConfidenceSerializer() {
+      super(HeadingConfidence.class);
+    }
+  }
 
-	public static class HeadingConfidenceDeserializer extends EnumeratedDeserializer<HeadingConfidence> {
-		public HeadingConfidenceDeserializer() {
-			super(HeadingConfidence.class);
-		}
+  public static class HeadingConfidenceDeserializer
+      extends EnumeratedDeserializer<HeadingConfidence> {
+    public HeadingConfidenceDeserializer() {
+      super(HeadingConfidence.class);
+    }
 
-		@Override
-		protected HeadingConfidence[] listEnumValues() {
-			return HeadingConfidence.values();
-		}
-	}
+    @Override
+    protected HeadingConfidence[] listEnumValues() {
+      return HeadingConfidence.values();
+    }
+  }
 }

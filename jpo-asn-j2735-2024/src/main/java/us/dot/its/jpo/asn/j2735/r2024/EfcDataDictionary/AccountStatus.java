@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AccountStatus.AccountStatusDeserializer.class)
 public class AccountStatus extends Asn1Integer {
 
-	public AccountStatus() {
-		super(0L, 255L);
-	}
+  public AccountStatus() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public AccountStatus(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AccountStatus(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AccountStatusDeserializer extends IntegerDeserializer<AccountStatus> {
-		public AccountStatusDeserializer() {
-			super(AccountStatus.class);
-		}
+  public static class AccountStatusDeserializer extends IntegerDeserializer<AccountStatus> {
+    public AccountStatusDeserializer() {
+      super(AccountStatus.class);
+    }
 
-		@Override
-		protected AccountStatus construct() {
-			return new AccountStatus();
-		}
-	}
+    @Override
+    protected AccountStatus construct() {
+      return new AccountStatus();
+    }
+  }
 }

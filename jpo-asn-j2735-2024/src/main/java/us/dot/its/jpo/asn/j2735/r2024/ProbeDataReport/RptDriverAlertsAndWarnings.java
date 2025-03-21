@@ -36,38 +36,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 @JsonInclude(Include.NON_NULL)
 public class RptDriverAlertsAndWarnings extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "j2945Slash1Eebl")
-	@JsonProperty("j2945Slash1Eebl")
-	private Asn1Null j2945Slash1Eebl;
-	@Asn1Property(tag = 1, name = "j2945Slash1Fcw")
-	@JsonProperty("j2945Slash1Fcw")
-	private Asn1Null j2945Slash1Fcw;
-	@Asn1Property(tag = 2, name = "j2945Slash1BswLcw")
-	@JsonProperty("j2945Slash1BswLcw")
-	private Asn1Null j2945Slash1BswLcw;
-	@Asn1Property(tag = 3, name = "j2945Slash1Ima")
-	@JsonProperty("j2945Slash1Ima")
-	private Asn1Null j2945Slash1Ima;
-	@Asn1Property(tag = 4, name = "j2945Slash1Lta")
-	@JsonProperty("j2945Slash1Lta")
-	private Asn1Null j2945Slash1Lta;
-	@Asn1Property(tag = 5, name = "j2945Slash1Clw")
-	@JsonProperty("j2945Slash1Clw")
-	private Asn1Null j2945Slash1Clw;
-	@Asn1Property(tag = 6, name = "redLightViolationWarn")
-	@JsonProperty("redLightViolationWarn")
-	private Asn1Null redLightViolationWarn;
-	@Asn1Property(tag = 7, name = "emerVehAlert")
-	@JsonProperty("emerVehAlert")
-	private Asn1Null emerVehAlert;
-	@Asn1Property(tag = 8, name = "otherAlert")
-	@JsonProperty("otherAlert")
-	private Asn1Null otherAlert;
-	@Asn1Property(tag = 9, name = "otherWarning")
-	@JsonProperty("otherWarning")
-	private Asn1Null otherWarning;
+  @Asn1Property(tag = 0, name = "j2945Slash1Eebl")
+  @JsonProperty("j2945Slash1Eebl")
+  private Asn1Null j2945Slash1Eebl;
 
-	public RptDriverAlertsAndWarnings() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "j2945Slash1Fcw")
+  @JsonProperty("j2945Slash1Fcw")
+  private Asn1Null j2945Slash1Fcw;
+
+  @Asn1Property(tag = 2, name = "j2945Slash1BswLcw")
+  @JsonProperty("j2945Slash1BswLcw")
+  private Asn1Null j2945Slash1BswLcw;
+
+  @Asn1Property(tag = 3, name = "j2945Slash1Ima")
+  @JsonProperty("j2945Slash1Ima")
+  private Asn1Null j2945Slash1Ima;
+
+  @Asn1Property(tag = 4, name = "j2945Slash1Lta")
+  @JsonProperty("j2945Slash1Lta")
+  private Asn1Null j2945Slash1Lta;
+
+  @Asn1Property(tag = 5, name = "j2945Slash1Clw")
+  @JsonProperty("j2945Slash1Clw")
+  private Asn1Null j2945Slash1Clw;
+
+  @Asn1Property(tag = 6, name = "redLightViolationWarn")
+  @JsonProperty("redLightViolationWarn")
+  private Asn1Null redLightViolationWarn;
+
+  @Asn1Property(tag = 7, name = "emerVehAlert")
+  @JsonProperty("emerVehAlert")
+  private Asn1Null emerVehAlert;
+
+  @Asn1Property(tag = 8, name = "otherAlert")
+  @JsonProperty("otherAlert")
+  private Asn1Null otherAlert;
+
+  @Asn1Property(tag = 9, name = "otherWarning")
+  @JsonProperty("otherWarning")
+  private Asn1Null otherWarning;
+
+  public RptDriverAlertsAndWarnings() {
+    super(true);
+  }
 }

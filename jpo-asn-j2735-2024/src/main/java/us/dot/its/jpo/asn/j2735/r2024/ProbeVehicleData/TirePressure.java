@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TirePressure.TirePressureDeserializer.class)
 public class TirePressure extends Asn1Integer {
 
-	public TirePressure() {
-		super(0L, 250L);
-	}
+  public TirePressure() {
+    super(0L, 250L);
+  }
 
-	@JsonCreator
-	public TirePressure(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TirePressure(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TirePressureDeserializer extends IntegerDeserializer<TirePressure> {
-		public TirePressureDeserializer() {
-			super(TirePressure.class);
-		}
+  public static class TirePressureDeserializer extends IntegerDeserializer<TirePressure> {
+    public TirePressureDeserializer() {
+      super(TirePressure.class);
+    }
 
-		@Override
-		protected TirePressure construct() {
-			return new TirePressure();
-		}
-	}
+    @Override
+    protected TirePressure construct() {
+      return new TirePressure();
+    }
+  }
 }

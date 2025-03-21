@@ -26,29 +26,29 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 
-@JsonDeserialize(using = VehicleCurrentMaxTrainWeight.VehicleCurrentMaxTrainWeightDeserializer.class)
+@JsonDeserialize(
+    using = VehicleCurrentMaxTrainWeight.VehicleCurrentMaxTrainWeightDeserializer.class)
 public class VehicleCurrentMaxTrainWeight extends Int2Unsigned {
 
-	public VehicleCurrentMaxTrainWeight() {
-		super();
-	}
+  public VehicleCurrentMaxTrainWeight() {
+    super();
+  }
 
-	@JsonCreator
-	public VehicleCurrentMaxTrainWeight(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VehicleCurrentMaxTrainWeight(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VehicleCurrentMaxTrainWeightDeserializer
-			extends
-				IntegerDeserializer<VehicleCurrentMaxTrainWeight> {
-		public VehicleCurrentMaxTrainWeightDeserializer() {
-			super(VehicleCurrentMaxTrainWeight.class);
-		}
+  public static class VehicleCurrentMaxTrainWeightDeserializer
+      extends IntegerDeserializer<VehicleCurrentMaxTrainWeight> {
+    public VehicleCurrentMaxTrainWeightDeserializer() {
+      super(VehicleCurrentMaxTrainWeight.class);
+    }
 
-		@Override
-		protected VehicleCurrentMaxTrainWeight construct() {
-			return new VehicleCurrentMaxTrainWeight();
-		}
-	}
+    @Override
+    protected VehicleCurrentMaxTrainWeight construct() {
+      return new VehicleCurrentMaxTrainWeight();
+    }
+  }
 }

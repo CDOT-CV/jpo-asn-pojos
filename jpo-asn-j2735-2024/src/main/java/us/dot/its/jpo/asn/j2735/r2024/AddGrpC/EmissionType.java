@@ -33,30 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = EmissionType.EmissionTypeSerializer.class)
 @JsonDeserialize(using = EmissionType.EmissionTypeDeserializer.class)
 public enum EmissionType implements Asn1Enumerated {
-	TYPEA(0, "typeA"), TYPEB(1, "typeB"), TYPEC(2, "typeC"), TYPED(3, "typeD"), TYPEE(4, "typeE");
+  TYPEA(0, "typeA"),
+  TYPEB(1, "typeB"),
+  TYPEC(2, "typeC"),
+  TYPED(3, "typeD"),
+  TYPEE(4, "typeE");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private EmissionType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private EmissionType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class EmissionTypeSerializer extends EnumeratedSerializer<EmissionType> {
-		public EmissionTypeSerializer() {
-			super(EmissionType.class);
-		}
-	}
+  public static class EmissionTypeSerializer extends EnumeratedSerializer<EmissionType> {
+    public EmissionTypeSerializer() {
+      super(EmissionType.class);
+    }
+  }
 
-	public static class EmissionTypeDeserializer extends EnumeratedDeserializer<EmissionType> {
-		public EmissionTypeDeserializer() {
-			super(EmissionType.class);
-		}
+  public static class EmissionTypeDeserializer extends EnumeratedDeserializer<EmissionType> {
+    public EmissionTypeDeserializer() {
+      super(EmissionType.class);
+    }
 
-		@Override
-		protected EmissionType[] listEnumValues() {
-			return EmissionType.values();
-		}
-	}
+    @Override
+    protected EmissionType[] listEnumValues() {
+      return EmissionType.values();
+    }
+  }
 }

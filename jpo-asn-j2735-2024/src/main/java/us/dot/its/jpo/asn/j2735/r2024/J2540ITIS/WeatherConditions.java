@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = WeatherConditions.WeatherConditionsDeserializer.class)
 public class WeatherConditions extends Asn1Integer {
 
-	public WeatherConditions() {
-		super(0L, 65535L);
-	}
+  public WeatherConditions() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public WeatherConditions(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public WeatherConditions(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class WeatherConditionsDeserializer extends IntegerDeserializer<WeatherConditions> {
-		public WeatherConditionsDeserializer() {
-			super(WeatherConditions.class);
-		}
+  public static class WeatherConditionsDeserializer extends IntegerDeserializer<WeatherConditions> {
+    public WeatherConditionsDeserializer() {
+      super(WeatherConditions.class);
+    }
 
-		@Override
-		protected WeatherConditions construct() {
-			return new WeatherConditions();
-		}
-	}
+    @Override
+    protected WeatherConditions construct() {
+      return new WeatherConditions();
+    }
+  }
 }

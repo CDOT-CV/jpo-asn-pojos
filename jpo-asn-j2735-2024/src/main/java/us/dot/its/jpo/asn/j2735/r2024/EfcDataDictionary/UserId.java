@@ -37,23 +37,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class UserId extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pan", optional = true)
-	@JsonProperty("pan")
-	private PersonalAccountNumber pan;
-	@Asn1Property(tag = 1, name = "contractSerialNumber", optional = true)
-	@JsonProperty("contractSerialNumber")
-	private ContractSerialNumber contractSerialNumber;
-	@Asn1Property(tag = 2, name = "licencePlateNumber", optional = true)
-	@JsonProperty("licencePlateNumber")
-	private Lpn licencePlateNumber;
-	@Asn1Property(tag = 3, name = "obeId", optional = true)
-	@JsonProperty("obeId")
-	private ObeId obeId;
-	@Asn1Property(tag = 4, name = "iccId", optional = true)
-	@JsonProperty("iccId")
-	private EquipmentIccId iccId;
+  @Asn1Property(tag = 0, name = "pan", optional = true)
+  @JsonProperty("pan")
+  private PersonalAccountNumber pan;
 
-	public UserId() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "contractSerialNumber", optional = true)
+  @JsonProperty("contractSerialNumber")
+  private ContractSerialNumber contractSerialNumber;
+
+  @Asn1Property(tag = 2, name = "licencePlateNumber", optional = true)
+  @JsonProperty("licencePlateNumber")
+  private Lpn licencePlateNumber;
+
+  @Asn1Property(tag = 3, name = "obeId", optional = true)
+  @JsonProperty("obeId")
+  private ObeId obeId;
+
+  @Asn1Property(tag = 4, name = "iccId", optional = true)
+  @JsonProperty("iccId")
+  private EquipmentIccId iccId;
+
+  public UserId() {
+    super(false);
+  }
 }

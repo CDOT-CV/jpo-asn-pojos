@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class PayUnit extends Asn1OctetString {
 
-	public PayUnit() {
-		super(2, 2);
-	}
+  public PayUnit() {
+    super(2, 2);
+  }
 
-	@JsonCreator
-	public PayUnit(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public PayUnit(String value) {
+    this();
+    setValue(value);
+  }
 }

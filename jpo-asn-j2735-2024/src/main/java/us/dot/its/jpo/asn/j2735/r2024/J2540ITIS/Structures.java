@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Structures.StructuresDeserializer.class)
 public class Structures extends Asn1Integer {
 
-	public Structures() {
-		super(0L, 65535L);
-	}
+  public Structures() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Structures(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Structures(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class StructuresDeserializer extends IntegerDeserializer<Structures> {
-		public StructuresDeserializer() {
-			super(Structures.class);
-		}
+  public static class StructuresDeserializer extends IntegerDeserializer<Structures> {
+    public StructuresDeserializer() {
+      super(Structures.class);
+    }
 
-		@Override
-		protected Structures construct() {
-			return new Structures();
-		}
-	}
+    @Override
+    protected Structures construct() {
+      return new Structures();
+    }
+  }
 }

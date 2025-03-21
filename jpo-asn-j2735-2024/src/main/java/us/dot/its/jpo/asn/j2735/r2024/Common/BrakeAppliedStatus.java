@@ -26,61 +26,66 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = BrakeAppliedStatus.BrakeAppliedStatusDeserializer.class)
+@JsonDeserialize(
+    using =
+        BrakeAppliedStatus.BrakeAppliedStatusDeserializer
+            .class)
 public class BrakeAppliedStatus extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isLeftFront() {
-		return get(1);
-	}
+  public boolean isLeftFront() {
+    return get(1);
+  }
 
-	public void setLeftFront(boolean leftFront) {
-		set(1, leftFront);
-	}
+  public void setLeftFront(boolean leftFront) {
+    set(1, leftFront);
+  }
 
-	public boolean isLeftRear() {
-		return get(2);
-	}
+  public boolean isLeftRear() {
+    return get(2);
+  }
 
-	public void setLeftRear(boolean leftRear) {
-		set(2, leftRear);
-	}
+  public void setLeftRear(boolean leftRear) {
+    set(2, leftRear);
+  }
 
-	public boolean isRightFront() {
-		return get(3);
-	}
+  public boolean isRightFront() {
+    return get(3);
+  }
 
-	public void setRightFront(boolean rightFront) {
-		set(3, rightFront);
-	}
+  public void setRightFront(boolean rightFront) {
+    set(3, rightFront);
+  }
 
-	public boolean isRightRear() {
-		return get(4);
-	}
+  public boolean isRightRear() {
+    return get(4);
+  }
 
-	public void setRightRear(boolean rightRear) {
-		set(4, rightRear);
-	}
+  public void setRightRear(boolean rightRear) {
+    set(4, rightRear);
+  }
 
-	public BrakeAppliedStatus() {
-		super(5, false, new String[]{"unavailable", "leftFront", "leftRear", "rightFront", "rightRear"});
-	}
+  public BrakeAppliedStatus() {
+    super(
+        5, false, new String[] {"unavailable", "leftFront", "leftRear", "rightFront", "rightRear"});
+  }
 
-	public static class BrakeAppliedStatusDeserializer extends BitStringDeserializer<BrakeAppliedStatus> {
-		public BrakeAppliedStatusDeserializer() {
-			super(BrakeAppliedStatus.class);
-		}
+  public static class BrakeAppliedStatusDeserializer
+      extends BitStringDeserializer<BrakeAppliedStatus> {
+    public BrakeAppliedStatusDeserializer() {
+      super(BrakeAppliedStatus.class);
+    }
 
-		@Override
-		protected BrakeAppliedStatus construct() {
-			return new BrakeAppliedStatus();
-		}
-	}
+    @Override
+    protected BrakeAppliedStatus construct() {
+      return new BrakeAppliedStatus();
+    }
+  }
 }

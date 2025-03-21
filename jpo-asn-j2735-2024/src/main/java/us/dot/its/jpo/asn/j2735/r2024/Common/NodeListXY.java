@@ -37,16 +37,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class NodeListXY extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "nodes")
-	@JsonProperty("nodes")
-	@JacksonXmlElementWrapper(localName = "nodes")
-	@JacksonXmlProperty(localName = "NodeXY")
-	private NodeSetXY nodes;
-	@Asn1Property(tag = 1, name = "computed")
-	@JsonProperty("computed")
-	private ComputedLane computed;
+  @Asn1Property(tag = 0, name = "nodes")
+  @JsonProperty("nodes")
+  @JacksonXmlElementWrapper(localName = "nodes")
+  @JacksonXmlProperty(localName = "NodeXY")
+  private NodeSetXY nodes;
 
-	public NodeListXY() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "computed")
+  @JsonProperty("computed")
+  private ComputedLane computed;
+
+  public NodeListXY() {
+    super(true);
+  }
 }

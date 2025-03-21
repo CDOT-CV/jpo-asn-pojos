@@ -42,41 +42,40 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class AreaOrSegmentChargingInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargingAreaOrSegment")
-	@JsonProperty("chargingAreaOrSegment")
-	@JsonSerialize(using = SequenceOfChargingAreaOrSegmentSerializer.class)
-	@JsonDeserialize(using = SequenceOfChargingAreaOrSegmentDeserializer.class)
-	private SequenceOfChargingAreaOrSegment chargingAreaOrSegment;
+  @Asn1Property(tag = 0, name = "chargingAreaOrSegment")
+  @JsonProperty("chargingAreaOrSegment")
+  @JsonSerialize(using = SequenceOfChargingAreaOrSegmentSerializer.class)
+  @JsonDeserialize(using = SequenceOfChargingAreaOrSegmentDeserializer.class)
+  private SequenceOfChargingAreaOrSegment chargingAreaOrSegment;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfChargingAreaOrSegment extends Asn1SequenceOf<ChargingAreaOrSegment> {
-		public SequenceOfChargingAreaOrSegment() {
-			super(ChargingAreaOrSegment.class, 1L, 999L);
-		}
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfChargingAreaOrSegment
+      extends Asn1SequenceOf<ChargingAreaOrSegment> {
+    public SequenceOfChargingAreaOrSegment() {
+      super(ChargingAreaOrSegment.class, 1L, 999L);
+    }
+  }
 
-	public AreaOrSegmentChargingInfo() {
-		super(true);
-	}
+  public AreaOrSegmentChargingInfo() {
+    super(true);
+  }
 
-	public static class SequenceOfChargingAreaOrSegmentSerializer
-			extends
-				SequenceOfChoiceSerializer<ChargingAreaOrSegment, SequenceOfChargingAreaOrSegment> {
-		public SequenceOfChargingAreaOrSegmentSerializer() {
-			super(ChargingAreaOrSegment.class, SequenceOfChargingAreaOrSegment.class);
-		}
-	}
+  public static class SequenceOfChargingAreaOrSegmentSerializer
+      extends SequenceOfChoiceSerializer<ChargingAreaOrSegment, SequenceOfChargingAreaOrSegment> {
+    public SequenceOfChargingAreaOrSegmentSerializer() {
+      super(ChargingAreaOrSegment.class, SequenceOfChargingAreaOrSegment.class);
+    }
+  }
 
-	public static class SequenceOfChargingAreaOrSegmentDeserializer
-			extends
-				SequenceOfChoiceDeserializer<ChargingAreaOrSegment, SequenceOfChargingAreaOrSegment> {
-		public SequenceOfChargingAreaOrSegmentDeserializer() {
-			super(ChargingAreaOrSegment.class, SequenceOfChargingAreaOrSegment.class);
-		}
+  public static class SequenceOfChargingAreaOrSegmentDeserializer
+      extends SequenceOfChoiceDeserializer<ChargingAreaOrSegment, SequenceOfChargingAreaOrSegment> {
+    public SequenceOfChargingAreaOrSegmentDeserializer() {
+      super(ChargingAreaOrSegment.class, SequenceOfChargingAreaOrSegment.class);
+    }
 
-		@Override
-		protected SequenceOfChargingAreaOrSegment construct() {
-			return new SequenceOfChargingAreaOrSegment();
-		}
-	}
+    @Override
+    protected SequenceOfChargingAreaOrSegment construct() {
+      return new SequenceOfChargingAreaOrSegment();
+    }
+  }
 }

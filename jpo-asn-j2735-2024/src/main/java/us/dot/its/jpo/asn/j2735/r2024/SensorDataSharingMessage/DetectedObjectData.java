@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DetectedObjectData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "detObjCommon")
-	@JsonProperty("detObjCommon")
-	private DetectedObjectCommonData detObjCommon;
-	@Asn1Property(tag = 1, name = "detObjOptData", optional = true)
-	@JsonProperty("detObjOptData")
-	private DetectedObjectOptionalData detObjOptData;
+  @Asn1Property(tag = 0, name = "detObjCommon")
+  @JsonProperty("detObjCommon")
+  private DetectedObjectCommonData detObjCommon;
 
-	public DetectedObjectData() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "detObjOptData", optional = true)
+  @JsonProperty("detObjOptData")
+  private DetectedObjectOptionalData detObjOptData;
+
+  public DetectedObjectData() {
+    super(false);
+  }
 }

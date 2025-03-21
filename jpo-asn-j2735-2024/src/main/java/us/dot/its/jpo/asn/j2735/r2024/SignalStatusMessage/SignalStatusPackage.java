@@ -45,41 +45,48 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class SignalStatusPackage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "requester", optional = true)
-	@JsonProperty("requester")
-	private SignalRequesterInfo requester;
-	@Asn1Property(tag = 1, name = "inboundOn")
-	@JsonProperty("inboundOn")
-	private IntersectionAccessPoint inboundOn;
-	@Asn1Property(tag = 2, name = "outboundOn", optional = true)
-	@JsonProperty("outboundOn")
-	private IntersectionAccessPoint outboundOn;
-	@Asn1Property(tag = 3, name = "minute", optional = true)
-	@JsonProperty("minute")
-	private MinuteOfTheYear minute;
-	@Asn1Property(tag = 4, name = "second", optional = true)
-	@JsonProperty("second")
-	private DSecond second;
-	@Asn1Property(tag = 5, name = "duration", optional = true)
-	@JsonProperty("duration")
-	private DSecond duration;
-	@Asn1Property(tag = 6, name = "status")
-	@JsonProperty("status")
-	private PrioritizationResponseStatus status;
-	@Asn1Property(tag = 7, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-SignalStatusPackage")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "requester", optional = true)
+  @JsonProperty("requester")
+  private SignalRequesterInfo requester;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalStatusPackage> {
-		public SequenceOfRegional() {
-			super(Reg_SignalStatusPackage.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "inboundOn")
+  @JsonProperty("inboundOn")
+  private IntersectionAccessPoint inboundOn;
 
-	public SignalStatusPackage() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "outboundOn", optional = true)
+  @JsonProperty("outboundOn")
+  private IntersectionAccessPoint outboundOn;
+
+  @Asn1Property(tag = 3, name = "minute", optional = true)
+  @JsonProperty("minute")
+  private MinuteOfTheYear minute;
+
+  @Asn1Property(tag = 4, name = "second", optional = true)
+  @JsonProperty("second")
+  private DSecond second;
+
+  @Asn1Property(tag = 5, name = "duration", optional = true)
+  @JsonProperty("duration")
+  private DSecond duration;
+
+  @Asn1Property(tag = 6, name = "status")
+  @JsonProperty("status")
+  private PrioritizationResponseStatus status;
+
+  @Asn1Property(tag = 7, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-SignalStatusPackage")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalStatusPackage> {
+    public SequenceOfRegional() {
+      super(Reg_SignalStatusPackage.class, 1L, 4L);
+    }
+  }
+
+  public SignalStatusPackage() {
+    super(true);
+  }
 }

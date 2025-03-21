@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class NMEA_Payload extends Asn1OctetString {
 
-	public NMEA_Payload() {
-		super(1, 1023);
-	}
+  public NMEA_Payload() {
+    super(1, 1023);
+  }
 
-	@JsonCreator
-	public NMEA_Payload(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public NMEA_Payload(String value) {
+    this();
+    setValue(value);
+  }
 }

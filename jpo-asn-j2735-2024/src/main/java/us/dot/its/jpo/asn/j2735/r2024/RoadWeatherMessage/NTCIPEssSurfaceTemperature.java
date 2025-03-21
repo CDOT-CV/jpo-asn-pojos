@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssSurfaceTemperature.NTCIPEssSurfaceTemperatureDeserializer.class)
 public class NTCIPEssSurfaceTemperature extends Asn1Integer {
 
-	public NTCIPEssSurfaceTemperature() {
-		super(-1000L, 1001L);
-	}
+  public NTCIPEssSurfaceTemperature() {
+    super(-1000L, 1001L);
+  }
 
-	@JsonCreator
-	public NTCIPEssSurfaceTemperature(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssSurfaceTemperature(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssSurfaceTemperatureDeserializer extends IntegerDeserializer<NTCIPEssSurfaceTemperature> {
-		public NTCIPEssSurfaceTemperatureDeserializer() {
-			super(NTCIPEssSurfaceTemperature.class);
-		}
+  public static class NTCIPEssSurfaceTemperatureDeserializer
+      extends IntegerDeserializer<NTCIPEssSurfaceTemperature> {
+    public NTCIPEssSurfaceTemperatureDeserializer() {
+      super(NTCIPEssSurfaceTemperature.class);
+    }
 
-		@Override
-		protected NTCIPEssSurfaceTemperature construct() {
-			return new NTCIPEssSurfaceTemperature();
-		}
-	}
+    @Override
+    protected NTCIPEssSurfaceTemperature construct() {
+      return new NTCIPEssSurfaceTemperature();
+    }
+  }
 }

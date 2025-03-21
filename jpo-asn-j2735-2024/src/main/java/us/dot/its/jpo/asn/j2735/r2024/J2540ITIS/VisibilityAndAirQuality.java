@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = VisibilityAndAirQuality.VisibilityAndAirQualityDeserializer.class)
 public class VisibilityAndAirQuality extends Asn1Integer {
 
-	public VisibilityAndAirQuality() {
-		super(0L, 65535L);
-	}
+  public VisibilityAndAirQuality() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public VisibilityAndAirQuality(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VisibilityAndAirQuality(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VisibilityAndAirQualityDeserializer extends IntegerDeserializer<VisibilityAndAirQuality> {
-		public VisibilityAndAirQualityDeserializer() {
-			super(VisibilityAndAirQuality.class);
-		}
+  public static class VisibilityAndAirQualityDeserializer
+      extends IntegerDeserializer<VisibilityAndAirQuality> {
+    public VisibilityAndAirQualityDeserializer() {
+      super(VisibilityAndAirQuality.class);
+    }
 
-		@Override
-		protected VisibilityAndAirQuality construct() {
-			return new VisibilityAndAirQuality();
-		}
-	}
+    @Override
+    protected VisibilityAndAirQuality construct() {
+      return new VisibilityAndAirQuality();
+    }
+  }
 }

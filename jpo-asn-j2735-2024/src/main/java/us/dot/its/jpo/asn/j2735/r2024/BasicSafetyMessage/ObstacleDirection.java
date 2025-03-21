@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = ObstacleDirection.ObstacleDirectionDeserializer.class)
 public class ObstacleDirection extends Angle {
 
-	public ObstacleDirection() {
-		super();
-	}
+  public ObstacleDirection() {
+    super();
+  }
 
-	@JsonCreator
-	public ObstacleDirection(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ObstacleDirection(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ObstacleDirectionDeserializer extends IntegerDeserializer<ObstacleDirection> {
-		public ObstacleDirectionDeserializer() {
-			super(ObstacleDirection.class);
-		}
+  public static class ObstacleDirectionDeserializer extends IntegerDeserializer<ObstacleDirection> {
+    public ObstacleDirectionDeserializer() {
+      super(ObstacleDirection.class);
+    }
 
-		@Override
-		protected ObstacleDirection construct() {
-			return new ObstacleDirection();
-		}
-	}
+    @Override
+    protected ObstacleDirection construct() {
+      return new ObstacleDirection();
+    }
+  }
 }

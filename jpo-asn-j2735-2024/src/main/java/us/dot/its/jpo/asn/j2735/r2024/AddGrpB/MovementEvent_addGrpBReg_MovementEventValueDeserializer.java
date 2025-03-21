@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class MovementEvent_addGrpBReg_MovementEventValueDeserializer
-		extends
-			OpenTypeDeserializer<MovementEvent_addGrpB> {
+    extends OpenTypeDeserializer<MovementEvent_addGrpB> {
 
-	public MovementEvent_addGrpBReg_MovementEventValueDeserializer() {
-		super(MovementEvent_addGrpB.class, "MovementEvent_addGrpB");
-	}
+  public MovementEvent_addGrpBReg_MovementEventValueDeserializer() {
+    super(MovementEvent_addGrpB.class, "MovementEvent_addGrpB");
+  }
 }

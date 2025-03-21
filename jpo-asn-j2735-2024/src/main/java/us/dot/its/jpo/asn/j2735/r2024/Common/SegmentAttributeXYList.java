@@ -31,33 +31,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class SegmentAttributeXYList extends Asn1SequenceOf<SegmentAttributeXY> {
 
-	public SegmentAttributeXYList() {
-		super(SegmentAttributeXY.class, 1L, 8L);
-	}
+  public SegmentAttributeXYList() {
+    super(SegmentAttributeXY.class, 1L, 8L);
+  }
 
-	public static class SegmentAttributeXYListSerializer
-			extends
-				SequenceOfEnumeratedSerializer<SegmentAttributeXY, SegmentAttributeXYList> {
-		public SegmentAttributeXYListSerializer() {
-			super(SegmentAttributeXY.class, SegmentAttributeXYList.class);
-		}
-	}
+  public static class SegmentAttributeXYListSerializer
+      extends SequenceOfEnumeratedSerializer<SegmentAttributeXY, SegmentAttributeXYList> {
+    public SegmentAttributeXYListSerializer() {
+      super(SegmentAttributeXY.class, SegmentAttributeXYList.class);
+    }
+  }
 
-	public static class SegmentAttributeXYListDeserializer
-			extends
-				SequenceOfEnumeratedDeserializer<SegmentAttributeXY, SegmentAttributeXYList> {
-		public SegmentAttributeXYListDeserializer() {
-			super(SegmentAttributeXYList.class, SegmentAttributeXY.class);
-		}
+  public static class SegmentAttributeXYListDeserializer
+      extends SequenceOfEnumeratedDeserializer<SegmentAttributeXY, SegmentAttributeXYList> {
+    public SegmentAttributeXYListDeserializer() {
+      super(SegmentAttributeXYList.class, SegmentAttributeXY.class);
+    }
 
-		@Override
-		protected SegmentAttributeXY[] listEnumValues() {
-			return SegmentAttributeXY.values();
-		}
+    @Override
+    protected SegmentAttributeXY[] listEnumValues() {
+      return SegmentAttributeXY.values();
+    }
 
-		@Override
-		protected SegmentAttributeXYList construct() {
-			return new SegmentAttributeXYList();
-		}
-	}
+    @Override
+    protected SegmentAttributeXYList construct() {
+      return new SegmentAttributeXYList();
+    }
+  }
 }

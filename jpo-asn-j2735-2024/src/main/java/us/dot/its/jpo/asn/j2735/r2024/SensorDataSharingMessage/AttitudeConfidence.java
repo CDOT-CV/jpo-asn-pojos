@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AttitudeConfidence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pitchConfidence")
-	@JsonProperty("pitchConfidence")
-	private HeadingConfidence pitchConfidence;
-	@Asn1Property(tag = 1, name = "rollConfidence")
-	@JsonProperty("rollConfidence")
-	private HeadingConfidence rollConfidence;
-	@Asn1Property(tag = 2, name = "yawConfidence")
-	@JsonProperty("yawConfidence")
-	private HeadingConfidence yawConfidence;
+  @Asn1Property(tag = 0, name = "pitchConfidence")
+  @JsonProperty("pitchConfidence")
+  private HeadingConfidence pitchConfidence;
 
-	public AttitudeConfidence() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "rollConfidence")
+  @JsonProperty("rollConfidence")
+  private HeadingConfidence rollConfidence;
+
+  @Asn1Property(tag = 2, name = "yawConfidence")
+  @JsonProperty("yawConfidence")
+  private HeadingConfidence yawConfidence;
+
+  public AttitudeConfidence() {
+    super(false);
+  }
 }

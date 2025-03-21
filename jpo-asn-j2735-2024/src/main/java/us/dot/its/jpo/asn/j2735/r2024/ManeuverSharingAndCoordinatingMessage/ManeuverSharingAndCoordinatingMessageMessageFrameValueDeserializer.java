@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.ManeuverSharingAndCoordinatingMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class ManeuverSharingAndCoordinatingMessageMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<ManeuverSharingAndCoordinatingMessage> {
+    extends OpenTypeDeserializer<ManeuverSharingAndCoordinatingMessage> {
 
-	public ManeuverSharingAndCoordinatingMessageMessageFrameValueDeserializer() {
-		super(ManeuverSharingAndCoordinatingMessage.class, "ManeuverSharingAndCoordinatingMessage");
-	}
+  public ManeuverSharingAndCoordinatingMessageMessageFrameValueDeserializer() {
+    super(ManeuverSharingAndCoordinatingMessage.class, "ManeuverSharingAndCoordinatingMessage");
+  }
 }

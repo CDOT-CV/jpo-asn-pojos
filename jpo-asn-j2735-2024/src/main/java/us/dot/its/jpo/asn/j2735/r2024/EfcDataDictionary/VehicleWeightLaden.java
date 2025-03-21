@@ -29,24 +29,25 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = VehicleWeightLaden.VehicleWeightLadenDeserializer.class)
 public class VehicleWeightLaden extends Int2Unsigned {
 
-	public VehicleWeightLaden() {
-		super();
-	}
+  public VehicleWeightLaden() {
+    super();
+  }
 
-	@JsonCreator
-	public VehicleWeightLaden(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VehicleWeightLaden(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VehicleWeightLadenDeserializer extends IntegerDeserializer<VehicleWeightLaden> {
-		public VehicleWeightLadenDeserializer() {
-			super(VehicleWeightLaden.class);
-		}
+  public static class VehicleWeightLadenDeserializer
+      extends IntegerDeserializer<VehicleWeightLaden> {
+    public VehicleWeightLadenDeserializer() {
+      super(VehicleWeightLaden.class);
+    }
 
-		@Override
-		protected VehicleWeightLaden construct() {
-			return new VehicleWeightLaden();
-		}
-	}
+    @Override
+    protected VehicleWeightLaden construct() {
+      return new VehicleWeightLaden();
+    }
+  }
 }

@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgStoppedCriteria extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "stoppedSpeedThreshold")
-	@JsonProperty("stoppedSpeedThreshold")
-	private StoppedSpeedThresholdInteger stoppedSpeedThreshold;
-	@Asn1Property(tag = 1, name = "amountOfTimeBelow")
-	@JsonProperty("amountOfTimeBelow")
-	private AmountOfTimeBelowInteger amountOfTimeBelow;
+  @Asn1Property(tag = 0, name = "stoppedSpeedThreshold")
+  @JsonProperty("stoppedSpeedThreshold")
+  private StoppedSpeedThresholdInteger stoppedSpeedThreshold;
 
-	public static class StoppedSpeedThresholdInteger extends Asn1Integer {
-		public StoppedSpeedThresholdInteger() {
-			super(1L, 30L);
-		}
+  @Asn1Property(tag = 1, name = "amountOfTimeBelow")
+  @JsonProperty("amountOfTimeBelow")
+  private AmountOfTimeBelowInteger amountOfTimeBelow;
 
-		@JsonCreator
-		public StoppedSpeedThresholdInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class StoppedSpeedThresholdInteger extends Asn1Integer {
+    public StoppedSpeedThresholdInteger() {
+      super(1L, 30L);
+    }
 
-	public static class AmountOfTimeBelowInteger extends Asn1Integer {
-		public AmountOfTimeBelowInteger() {
-			super(1L, 300L);
-		}
+    @JsonCreator
+    public StoppedSpeedThresholdInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public AmountOfTimeBelowInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class AmountOfTimeBelowInteger extends Asn1Integer {
+    public AmountOfTimeBelowInteger() {
+      super(1L, 300L);
+    }
 
-	public CfgStoppedCriteria() {
-		super(true);
-	}
+    @JsonCreator
+    public AmountOfTimeBelowInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgStoppedCriteria() {
+    super(true);
+  }
 }

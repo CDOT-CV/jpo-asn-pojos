@@ -33,37 +33,46 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = EssPrecipSituation.EssPrecipSituationSerializer.class)
 @JsonDeserialize(using = EssPrecipSituation.EssPrecipSituationDeserializer.class)
 public enum EssPrecipSituation implements Asn1Enumerated {
-	OTHER(1, "other"), UNKNOWN(2, "unknown"), NOPRECIPITATION(3, "noPrecipitation"), UNIDENTIFIEDSLIGHT(4,
-			"unidentifiedSlight"), UNIDENTIFIEDMODERATE(5, "unidentifiedModerate"), UNIDENTIFIEDHEAVY(6,
-					"unidentifiedHeavy"), SNOWSLIGHT(7, "snowSlight"), SNOWMODERATE(8, "snowModerate"), SNOWHEAVY(9,
-							"snowHeavy"), RAINSLIGHT(10, "rainSlight"), RAINMODERATE(11, "rainModerate"), RAINHEAVY(12,
-									"rainHeavy"), FROZENPRECIPITATIONSLIGHT(13,
-											"frozenPrecipitationSlight"), FROZENPRECIPITATIONMODERATE(14,
-													"frozenPrecipitationModerate"), FROZENPRECIPITATIONHEAVY(15,
-															"frozenPrecipitationHeavy");
+  OTHER(1, "other"),
+  UNKNOWN(2, "unknown"),
+  NOPRECIPITATION(3, "noPrecipitation"),
+  UNIDENTIFIEDSLIGHT(4, "unidentifiedSlight"),
+  UNIDENTIFIEDMODERATE(5, "unidentifiedModerate"),
+  UNIDENTIFIEDHEAVY(6, "unidentifiedHeavy"),
+  SNOWSLIGHT(7, "snowSlight"),
+  SNOWMODERATE(8, "snowModerate"),
+  SNOWHEAVY(9, "snowHeavy"),
+  RAINSLIGHT(10, "rainSlight"),
+  RAINMODERATE(11, "rainModerate"),
+  RAINHEAVY(12, "rainHeavy"),
+  FROZENPRECIPITATIONSLIGHT(13, "frozenPrecipitationSlight"),
+  FROZENPRECIPITATIONMODERATE(14, "frozenPrecipitationModerate"),
+  FROZENPRECIPITATIONHEAVY(15, "frozenPrecipitationHeavy");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private EssPrecipSituation(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private EssPrecipSituation(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class EssPrecipSituationSerializer extends EnumeratedSerializer<EssPrecipSituation> {
-		public EssPrecipSituationSerializer() {
-			super(EssPrecipSituation.class);
-		}
-	}
+  public static class EssPrecipSituationSerializer
+      extends EnumeratedSerializer<EssPrecipSituation> {
+    public EssPrecipSituationSerializer() {
+      super(EssPrecipSituation.class);
+    }
+  }
 
-	public static class EssPrecipSituationDeserializer extends EnumeratedDeserializer<EssPrecipSituation> {
-		public EssPrecipSituationDeserializer() {
-			super(EssPrecipSituation.class);
-		}
+  public static class EssPrecipSituationDeserializer
+      extends EnumeratedDeserializer<EssPrecipSituation> {
+    public EssPrecipSituationDeserializer() {
+      super(EssPrecipSituation.class);
+    }
 
-		@Override
-		protected EssPrecipSituation[] listEnumValues() {
-			return EssPrecipSituation.values();
-		}
-	}
+    @Override
+    protected EssPrecipSituation[] listEnumValues() {
+      return EssPrecipSituation.values();
+    }
+  }
 }

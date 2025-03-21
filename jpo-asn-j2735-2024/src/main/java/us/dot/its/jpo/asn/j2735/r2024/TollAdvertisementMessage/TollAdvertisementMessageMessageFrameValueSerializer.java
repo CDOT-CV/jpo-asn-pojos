@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.TollAdvertisementMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class TollAdvertisementMessageMessageFrameValueSerializer extends OpenTypeSerializer<TollAdvertisementMessage> {
+public class TollAdvertisementMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<TollAdvertisementMessage> {
 
-	public TollAdvertisementMessageMessageFrameValueSerializer() {
-		super(TollAdvertisementMessage.class, "value", "TollAdvertisementMessage");
-	}
+  public TollAdvertisementMessageMessageFrameValueSerializer() {
+    super(TollAdvertisementMessage.class, "value", "TollAdvertisementMessage");
+  }
 }

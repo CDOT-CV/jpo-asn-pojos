@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class MsgCRC extends Asn1OctetString {
 
-	public MsgCRC() {
-		super(2, 2);
-	}
+  public MsgCRC() {
+    super(2, 2);
+  }
 
-	@JsonCreator
-	public MsgCRC(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public MsgCRC(String value) {
+    this();
+    setValue(value);
+  }
 }

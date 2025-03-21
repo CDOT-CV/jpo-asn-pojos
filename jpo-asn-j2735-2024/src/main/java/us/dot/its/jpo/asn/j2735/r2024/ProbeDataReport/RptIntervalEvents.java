@@ -41,49 +41,53 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptIntervalEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "wiperStatus", optional = true)
-	@JsonProperty("wiperStatus")
-	private RptWiperStatus wiperStatus;
-	@Asn1Property(tag = 1, name = "vehCount", optional = true)
-	@JsonProperty("vehCount")
-	private VehCountInteger vehCount;
-	@Asn1Property(tag = 2, name = "weatherData", optional = true)
-	@JsonProperty("weatherData")
-	@JacksonXmlElementWrapper(localName = "weatherData")
-	@JacksonXmlProperty(localName = "NtcipEssData")
-	private RptVehicleReport weatherData;
-	@Asn1Property(tag = 3, name = "transitVehData", optional = true)
-	@JsonProperty("transitVehData")
-	private RptTransitVehData transitVehData;
-	@Asn1Property(tag = 4, name = "numOfOccupants", optional = true)
-	@JsonProperty("numOfOccupants")
-	private NumOfOccupantsInteger numOfOccupants;
+  @Asn1Property(tag = 0, name = "wiperStatus", optional = true)
+  @JsonProperty("wiperStatus")
+  private RptWiperStatus wiperStatus;
 
-	public static class VehCountInteger extends Asn1Integer {
-		public VehCountInteger() {
-			super(0L, 10000L);
-		}
+  @Asn1Property(tag = 1, name = "vehCount", optional = true)
+  @JsonProperty("vehCount")
+  private VehCountInteger vehCount;
 
-		@JsonCreator
-		public VehCountInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "weatherData", optional = true)
+  @JsonProperty("weatherData")
+  @JacksonXmlElementWrapper(localName = "weatherData")
+  @JacksonXmlProperty(localName = "NtcipEssData")
+  private RptVehicleReport weatherData;
 
-	public static class NumOfOccupantsInteger extends Asn1Integer {
-		public NumOfOccupantsInteger() {
-			super(0L, 255L);
-		}
+  @Asn1Property(tag = 3, name = "transitVehData", optional = true)
+  @JsonProperty("transitVehData")
+  private RptTransitVehData transitVehData;
 
-		@JsonCreator
-		public NumOfOccupantsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "numOfOccupants", optional = true)
+  @JsonProperty("numOfOccupants")
+  private NumOfOccupantsInteger numOfOccupants;
 
-	public RptIntervalEvents() {
-		super(true);
-	}
+  public static class VehCountInteger extends Asn1Integer {
+    public VehCountInteger() {
+      super(0L, 10000L);
+    }
+
+    @JsonCreator
+    public VehCountInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class NumOfOccupantsInteger extends Asn1Integer {
+    public NumOfOccupantsInteger() {
+      super(0L, 255L);
+    }
+
+    @JsonCreator
+    public NumOfOccupantsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public RptIntervalEvents() {
+    super(true);
+  }
 }

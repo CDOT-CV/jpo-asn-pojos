@@ -47,56 +47,66 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class IntersectionState extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 1, name = "id")
-	@JsonProperty("id")
-	private IntersectionReferenceID id;
-	@Asn1Property(tag = 2, name = "revision")
-	@JsonProperty("revision")
-	private MsgCount revision;
-	@Asn1Property(tag = 3, name = "status")
-	@JsonProperty("status")
-	private IntersectionStatusObject status;
-	@Asn1Property(tag = 4, name = "moy", optional = true)
-	@JsonProperty("moy")
-	private MinuteOfTheYear moy;
-	@Asn1Property(tag = 5, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private DSecond timeStamp;
-	@Asn1Property(tag = 6, name = "enabledLanes", optional = true)
-	@JsonProperty("enabledLanes")
-	@JacksonXmlElementWrapper(localName = "enabledLanes")
-	@JacksonXmlProperty(localName = "LaneID")
-	private EnabledLaneList enabledLanes;
-	@Asn1Property(tag = 7, name = "states")
-	@JsonProperty("states")
-	@JacksonXmlElementWrapper(localName = "states")
-	@JacksonXmlProperty(localName = "MovementState")
-	private MovementList states;
-	@Asn1Property(tag = 8, name = "maneuverAssistList", optional = true)
-	@JsonProperty("maneuverAssistList")
-	@JacksonXmlElementWrapper(localName = "maneuverAssistList")
-	@JacksonXmlProperty(localName = "ConnectionManeuverAssist")
-	private ManeuverAssistList maneuverAssistList;
-	@Asn1Property(tag = 9, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-IntersectionState")
-	private SequenceOfRegional regional;
-	@Asn1Property(tag = 10, name = "roadAuthorityID", optional = true, extension = true)
-	@JsonProperty("roadAuthorityID")
-	private RoadAuthorityID roadAuthorityID;
+  @Asn1Property(tag = 0, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionState> {
-		public SequenceOfRegional() {
-			super(Reg_IntersectionState.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "id")
+  @JsonProperty("id")
+  private IntersectionReferenceID id;
 
-	public IntersectionState() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "revision")
+  @JsonProperty("revision")
+  private MsgCount revision;
+
+  @Asn1Property(tag = 3, name = "status")
+  @JsonProperty("status")
+  private IntersectionStatusObject status;
+
+  @Asn1Property(tag = 4, name = "moy", optional = true)
+  @JsonProperty("moy")
+  private MinuteOfTheYear moy;
+
+  @Asn1Property(tag = 5, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private DSecond timeStamp;
+
+  @Asn1Property(tag = 6, name = "enabledLanes", optional = true)
+  @JsonProperty("enabledLanes")
+  @JacksonXmlElementWrapper(localName = "enabledLanes")
+  @JacksonXmlProperty(localName = "LaneID")
+  private EnabledLaneList enabledLanes;
+
+  @Asn1Property(tag = 7, name = "states")
+  @JsonProperty("states")
+  @JacksonXmlElementWrapper(localName = "states")
+  @JacksonXmlProperty(localName = "MovementState")
+  private MovementList states;
+
+  @Asn1Property(tag = 8, name = "maneuverAssistList", optional = true)
+  @JsonProperty("maneuverAssistList")
+  @JacksonXmlElementWrapper(localName = "maneuverAssistList")
+  @JacksonXmlProperty(localName = "ConnectionManeuverAssist")
+  private ManeuverAssistList maneuverAssistList;
+
+  @Asn1Property(tag = 9, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-IntersectionState")
+  private SequenceOfRegional regional;
+
+  @Asn1Property(tag = 10, name = "roadAuthorityID", optional = true, extension = true)
+  @JsonProperty("roadAuthorityID")
+  private RoadAuthorityID roadAuthorityID;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionState> {
+    public SequenceOfRegional() {
+      super(Reg_IntersectionState.class, 1L, 4L);
+    }
+  }
+
+  public IntersectionState() {
+    super(true);
+  }
 }

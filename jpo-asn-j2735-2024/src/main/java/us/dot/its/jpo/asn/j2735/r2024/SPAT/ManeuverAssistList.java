@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class ManeuverAssistList extends Asn1SequenceOf<ConnectionManeuverAssist> {
 
-	public ManeuverAssistList() {
-		super(ConnectionManeuverAssist.class, 1L, 16L);
-	}
+  public ManeuverAssistList() {
+    super(ConnectionManeuverAssist.class, 1L, 16L);
+  }
 }

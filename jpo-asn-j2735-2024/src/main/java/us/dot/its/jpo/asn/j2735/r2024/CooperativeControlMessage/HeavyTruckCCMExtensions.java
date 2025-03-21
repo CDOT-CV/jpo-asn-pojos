@@ -40,62 +40,79 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class HeavyTruckCCMExtensions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "longCntrlState")
-	@JsonProperty("longCntrlState")
-	private LongitudinalControlState longCntrlState;
-	@Asn1Property(tag = 1, name = "targetId", optional = true)
-	@JsonProperty("targetId")
-	private TemporaryID targetId;
-	@Asn1Property(tag = 2, name = "roadGrade", optional = true)
-	@JsonProperty("roadGrade")
-	private RoadGrade roadGrade;
-	@Asn1Property(tag = 3, name = "brakePedalPos", optional = true)
-	@JsonProperty("brakePedalPos")
-	private BrakePedalPosition brakePedalPos;
-	@Asn1Property(tag = 4, name = "accelPedalPos", optional = true)
-	@JsonProperty("accelPedalPos")
-	private AcceleratorPedalPosition accelPedalPos;
-	@Asn1Property(tag = 5, name = "desiredSpeed", optional = true)
-	@JsonProperty("desiredSpeed")
-	private Speed desiredSpeed;
-	@Asn1Property(tag = 6, name = "desiredAccel", optional = true)
-	@JsonProperty("desiredAccel")
-	private Acceleration desiredAccel;
-	@Asn1Property(tag = 7, name = "desiredTorque", optional = true)
-	@JsonProperty("desiredTorque")
-	private Torque desiredTorque;
-	@Asn1Property(tag = 8, name = "desiredTmRetarderTorque", optional = true)
-	@JsonProperty("desiredTmRetarderTorque")
-	private Torque desiredTmRetarderTorque;
-	@Asn1Property(tag = 9, name = "desiredEngRetarderTorque", optional = true)
-	@JsonProperty("desiredEngRetarderTorque")
-	private Torque desiredEngRetarderTorque;
-	@Asn1Property(tag = 10, name = "axesMvmt", optional = true)
-	@JsonProperty("axesMvmt")
-	private AxesMovement axesMvmt;
-	@Asn1Property(tag = 11, name = "separationDist", optional = true)
-	@JsonProperty("separationDist")
-	private SeparationDistance separationDist;
-	@Asn1Property(tag = 12, name = "totalMass", optional = true)
-	@JsonProperty("totalMass")
-	private TotalMass totalMass;
-	@Asn1Property(tag = 13, name = "maxAvailAccel", optional = true)
-	@JsonProperty("maxAvailAccel")
-	private MaxAvailableAcceleration maxAvailAccel;
-	@Asn1Property(tag = 14, name = "maxAvailDecel", optional = true)
-	@JsonProperty("maxAvailDecel")
-	private MaxAvailableDeceleration maxAvailDecel;
-	@Asn1Property(tag = 15, name = "ccmFaultMode", optional = true)
-	@JsonProperty("ccmFaultMode")
-	private CCMFaultMode ccmFaultMode;
-	@Asn1Property(tag = 16, name = "maneuverID", optional = true)
-	@JsonProperty("maneuverID")
-	private ManeuverID maneuverID;
-	@Asn1Property(tag = 17, name = "frontCutIn", optional = true)
-	@JsonProperty("frontCutIn")
-	private FrontCutIn frontCutIn;
+  @Asn1Property(tag = 0, name = "longCntrlState")
+  @JsonProperty("longCntrlState")
+  private LongitudinalControlState longCntrlState;
 
-	public HeavyTruckCCMExtensions() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "targetId", optional = true)
+  @JsonProperty("targetId")
+  private TemporaryID targetId;
+
+  @Asn1Property(tag = 2, name = "roadGrade", optional = true)
+  @JsonProperty("roadGrade")
+  private RoadGrade roadGrade;
+
+  @Asn1Property(tag = 3, name = "brakePedalPos", optional = true)
+  @JsonProperty("brakePedalPos")
+  private BrakePedalPosition brakePedalPos;
+
+  @Asn1Property(tag = 4, name = "accelPedalPos", optional = true)
+  @JsonProperty("accelPedalPos")
+  private AcceleratorPedalPosition accelPedalPos;
+
+  @Asn1Property(tag = 5, name = "desiredSpeed", optional = true)
+  @JsonProperty("desiredSpeed")
+  private Speed desiredSpeed;
+
+  @Asn1Property(tag = 6, name = "desiredAccel", optional = true)
+  @JsonProperty("desiredAccel")
+  private Acceleration desiredAccel;
+
+  @Asn1Property(tag = 7, name = "desiredTorque", optional = true)
+  @JsonProperty("desiredTorque")
+  private Torque desiredTorque;
+
+  @Asn1Property(tag = 8, name = "desiredTmRetarderTorque", optional = true)
+  @JsonProperty("desiredTmRetarderTorque")
+  private Torque desiredTmRetarderTorque;
+
+  @Asn1Property(tag = 9, name = "desiredEngRetarderTorque", optional = true)
+  @JsonProperty("desiredEngRetarderTorque")
+  private Torque desiredEngRetarderTorque;
+
+  @Asn1Property(tag = 10, name = "axesMvmt", optional = true)
+  @JsonProperty("axesMvmt")
+  private AxesMovement axesMvmt;
+
+  @Asn1Property(tag = 11, name = "separationDist", optional = true)
+  @JsonProperty("separationDist")
+  private SeparationDistance separationDist;
+
+  @Asn1Property(tag = 12, name = "totalMass", optional = true)
+  @JsonProperty("totalMass")
+  private TotalMass totalMass;
+
+  @Asn1Property(tag = 13, name = "maxAvailAccel", optional = true)
+  @JsonProperty("maxAvailAccel")
+  private MaxAvailableAcceleration maxAvailAccel;
+
+  @Asn1Property(tag = 14, name = "maxAvailDecel", optional = true)
+  @JsonProperty("maxAvailDecel")
+  private MaxAvailableDeceleration maxAvailDecel;
+
+  @Asn1Property(tag = 15, name = "ccmFaultMode", optional = true)
+  @JsonProperty("ccmFaultMode")
+  private CCMFaultMode ccmFaultMode;
+
+  @Asn1Property(tag = 16, name = "maneuverID", optional = true)
+  @JsonProperty("maneuverID")
+  private ManeuverID maneuverID;
+
+  @Asn1Property(tag = 17, name = "frontCutIn", optional = true)
+  @JsonProperty("frontCutIn")
+  private FrontCutIn frontCutIn;
+
+  public HeavyTruckCCMExtensions() {
+    super(true);
+  }
 }

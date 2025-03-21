@@ -33,38 +33,42 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SpeedLimitType.SpeedLimitTypeSerializer.class)
 @JsonDeserialize(using = SpeedLimitType.SpeedLimitTypeDeserializer.class)
 public enum SpeedLimitType implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), MAXSPEEDINSCHOOLZONE(1, "maxSpeedInSchoolZone"), MAXSPEEDINSCHOOLZONEWHENCHILDRENAREPRESENT(
-			2, "maxSpeedInSchoolZoneWhenChildrenArePresent"), MAXSPEEDINCONSTRUCTIONZONE(3,
-					"maxSpeedInConstructionZone"), VEHICLEMINSPEED(4, "vehicleMinSpeed"), VEHICLEMAXSPEED(5,
-							"vehicleMaxSpeed"), VEHICLENIGHTMAXSPEED(6, "vehicleNightMaxSpeed"), TRUCKMINSPEED(7,
-									"truckMinSpeed"), TRUCKMAXSPEED(8, "truckMaxSpeed"), TRUCKNIGHTMAXSPEED(9,
-											"truckNightMaxSpeed"), VEHICLESWITHTRAILERSMINSPEED(10,
-													"vehiclesWithTrailersMinSpeed"), VEHICLESWITHTRAILERSMAXSPEED(11,
-															"vehiclesWithTrailersMaxSpeed"), VEHICLESWITHTRAILERSNIGHTMAXSPEED(
-																	12, "vehiclesWithTrailersNightMaxSpeed");
+  UNKNOWN(0, "unknown"),
+  MAXSPEEDINSCHOOLZONE(1, "maxSpeedInSchoolZone"),
+  MAXSPEEDINSCHOOLZONEWHENCHILDRENAREPRESENT(2, "maxSpeedInSchoolZoneWhenChildrenArePresent"),
+  MAXSPEEDINCONSTRUCTIONZONE(3, "maxSpeedInConstructionZone"),
+  VEHICLEMINSPEED(4, "vehicleMinSpeed"),
+  VEHICLEMAXSPEED(5, "vehicleMaxSpeed"),
+  VEHICLENIGHTMAXSPEED(6, "vehicleNightMaxSpeed"),
+  TRUCKMINSPEED(7, "truckMinSpeed"),
+  TRUCKMAXSPEED(8, "truckMaxSpeed"),
+  TRUCKNIGHTMAXSPEED(9, "truckNightMaxSpeed"),
+  VEHICLESWITHTRAILERSMINSPEED(10, "vehiclesWithTrailersMinSpeed"),
+  VEHICLESWITHTRAILERSMAXSPEED(11, "vehiclesWithTrailersMaxSpeed"),
+  VEHICLESWITHTRAILERSNIGHTMAXSPEED(12, "vehiclesWithTrailersNightMaxSpeed");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SpeedLimitType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SpeedLimitType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SpeedLimitTypeSerializer extends EnumeratedSerializer<SpeedLimitType> {
-		public SpeedLimitTypeSerializer() {
-			super(SpeedLimitType.class);
-		}
-	}
+  public static class SpeedLimitTypeSerializer extends EnumeratedSerializer<SpeedLimitType> {
+    public SpeedLimitTypeSerializer() {
+      super(SpeedLimitType.class);
+    }
+  }
 
-	public static class SpeedLimitTypeDeserializer extends EnumeratedDeserializer<SpeedLimitType> {
-		public SpeedLimitTypeDeserializer() {
-			super(SpeedLimitType.class);
-		}
+  public static class SpeedLimitTypeDeserializer extends EnumeratedDeserializer<SpeedLimitType> {
+    public SpeedLimitTypeDeserializer() {
+      super(SpeedLimitType.class);
+    }
 
-		@Override
-		protected SpeedLimitType[] listEnumValues() {
-			return SpeedLimitType.values();
-		}
-	}
+    @Override
+    protected SpeedLimitType[] listEnumValues() {
+      return SpeedLimitType.values();
+    }
+  }
 }

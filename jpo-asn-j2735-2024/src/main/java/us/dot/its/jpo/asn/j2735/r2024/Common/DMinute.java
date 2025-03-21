@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DMinute.DMinuteDeserializer.class)
 public class DMinute extends Asn1Integer {
 
-	public DMinute() {
-		super(0L, 60L);
-	}
+  public DMinute() {
+    super(0L, 60L);
+  }
 
-	@JsonCreator
-	public DMinute(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DMinute(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DMinuteDeserializer extends IntegerDeserializer<DMinute> {
-		public DMinuteDeserializer() {
-			super(DMinute.class);
-		}
+  public static class DMinuteDeserializer extends IntegerDeserializer<DMinute> {
+    public DMinuteDeserializer() {
+      super(DMinute.class);
+    }
 
-		@Override
-		protected DMinute construct() {
-			return new DMinute();
-		}
-	}
+    @Override
+    protected DMinute construct() {
+      return new DMinute();
+    }
+  }
 }

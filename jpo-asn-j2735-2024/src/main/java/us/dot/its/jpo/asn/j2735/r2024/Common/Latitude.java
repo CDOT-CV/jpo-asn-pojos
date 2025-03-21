@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Latitude.LatitudeDeserializer.class)
 public class Latitude extends Asn1Integer {
 
-	public Latitude() {
-		super(-900000000L, 900000001L);
-	}
+  public Latitude() {
+    super(-900000000L, 900000001L);
+  }
 
-	@JsonCreator
-	public Latitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Latitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LatitudeDeserializer extends IntegerDeserializer<Latitude> {
-		public LatitudeDeserializer() {
-			super(Latitude.class);
-		}
+  public static class LatitudeDeserializer extends IntegerDeserializer<Latitude> {
+    public LatitudeDeserializer() {
+      super(Latitude.class);
+    }
 
-		@Override
-		protected Latitude construct() {
-			return new Latitude();
-		}
-	}
+    @Override
+    protected Latitude construct() {
+      return new Latitude();
+    }
+  }
 }

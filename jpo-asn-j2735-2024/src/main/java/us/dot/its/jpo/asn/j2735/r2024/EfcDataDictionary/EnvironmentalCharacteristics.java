@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class EnvironmentalCharacteristics extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "euroValue")
-	@JsonProperty("euroValue")
-	private EuroValue euroValue;
-	@Asn1Property(tag = 1, name = "copValue")
-	@JsonProperty("copValue")
-	private CopValue copValue;
+  @Asn1Property(tag = 0, name = "euroValue")
+  @JsonProperty("euroValue")
+  private EuroValue euroValue;
 
-	public EnvironmentalCharacteristics() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "copValue")
+  @JsonProperty("copValue")
+  private CopValue copValue;
+
+  public EnvironmentalCharacteristics() {
+    super(false);
+  }
 }

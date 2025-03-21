@@ -36,14 +36,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1ObjectIdentifier;
 @JsonInclude(Include.NON_NULL)
 public class TrafficLightID extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "id")
-	@JsonProperty("id")
-	private Integer id;
-	@Asn1Property(tag = 1, name = "oid")
-	@JsonProperty("oid")
-	private Asn1ObjectIdentifier oid;
+  @Asn1Property(tag = 0, name = "id")
+  @JsonProperty("id")
+  private Integer id;
 
-	public TrafficLightID() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "oid")
+  @JsonProperty("oid")
+  private Asn1ObjectIdentifier oid;
+
+  public TrafficLightID() {
+    super(false);
+  }
 }

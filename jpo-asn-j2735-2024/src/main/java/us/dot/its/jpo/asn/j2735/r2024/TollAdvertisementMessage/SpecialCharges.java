@@ -39,29 +39,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SpecialCharges extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "hov2Charge", optional = true)
-	@JsonProperty("hov2Charge")
-	private PaymentFee hov2Charge;
-	@Asn1Property(tag = 1, name = "hov3Charge", optional = true)
-	@JsonProperty("hov3Charge")
-	private PaymentFee hov3Charge;
-	@Asn1Property(tag = 2, name = "hov4Charge", optional = true)
-	@JsonProperty("hov4Charge")
-	private PaymentFee hov4Charge;
-	@Asn1Property(tag = 3, name = "hov5PlusCharge", optional = true)
-	@JsonProperty("hov5PlusCharge")
-	private PaymentFee hov5PlusCharge;
-	@Asn1Property(tag = 4, name = "cleanAirCharge", optional = true)
-	@JsonProperty("cleanAirCharge")
-	private PaymentFee cleanAirCharge;
-	@Asn1Property(tag = 5, name = "operatorDefined", optional = true)
-	@JsonProperty("operatorDefined")
-	private OperatorDefined operatorDefined;
-	@Asn1Property(tag = 6, name = "engineCharacteristics", optional = true)
-	@JsonProperty("engineCharacteristics")
-	private EngineCharacteristics engineCharacteristics;
+  @Asn1Property(tag = 0, name = "hov2Charge", optional = true)
+  @JsonProperty("hov2Charge")
+  private PaymentFee hov2Charge;
 
-	public SpecialCharges() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "hov3Charge", optional = true)
+  @JsonProperty("hov3Charge")
+  private PaymentFee hov3Charge;
+
+  @Asn1Property(tag = 2, name = "hov4Charge", optional = true)
+  @JsonProperty("hov4Charge")
+  private PaymentFee hov4Charge;
+
+  @Asn1Property(tag = 3, name = "hov5PlusCharge", optional = true)
+  @JsonProperty("hov5PlusCharge")
+  private PaymentFee hov5PlusCharge;
+
+  @Asn1Property(tag = 4, name = "cleanAirCharge", optional = true)
+  @JsonProperty("cleanAirCharge")
+  private PaymentFee cleanAirCharge;
+
+  @Asn1Property(tag = 5, name = "operatorDefined", optional = true)
+  @JsonProperty("operatorDefined")
+  private OperatorDefined operatorDefined;
+
+  @Asn1Property(tag = 6, name = "engineCharacteristics", optional = true)
+  @JsonProperty("engineCharacteristics")
+  private EngineCharacteristics engineCharacteristics;
+
+  public SpecialCharges() {
+    super(true);
+  }
 }

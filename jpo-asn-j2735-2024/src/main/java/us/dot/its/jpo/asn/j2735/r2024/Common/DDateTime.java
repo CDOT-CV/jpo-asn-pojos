@@ -37,29 +37,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DDateTime extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "year", optional = true)
-	@JsonProperty("year")
-	private DYear year;
-	@Asn1Property(tag = 1, name = "month", optional = true)
-	@JsonProperty("month")
-	private DMonth month;
-	@Asn1Property(tag = 2, name = "day", optional = true)
-	@JsonProperty("day")
-	private DDay day;
-	@Asn1Property(tag = 3, name = "hour", optional = true)
-	@JsonProperty("hour")
-	private DHour hour;
-	@Asn1Property(tag = 4, name = "minute", optional = true)
-	@JsonProperty("minute")
-	private DMinute minute;
-	@Asn1Property(tag = 5, name = "second", optional = true)
-	@JsonProperty("second")
-	private DSecond second;
-	@Asn1Property(tag = 6, name = "offset", optional = true)
-	@JsonProperty("offset")
-	private DOffset offset;
+  @Asn1Property(tag = 0, name = "year", optional = true)
+  @JsonProperty("year")
+  private DYear year;
 
-	public DDateTime() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "month", optional = true)
+  @JsonProperty("month")
+  private DMonth month;
+
+  @Asn1Property(tag = 2, name = "day", optional = true)
+  @JsonProperty("day")
+  private DDay day;
+
+  @Asn1Property(tag = 3, name = "hour", optional = true)
+  @JsonProperty("hour")
+  private DHour hour;
+
+  @Asn1Property(tag = 4, name = "minute", optional = true)
+  @JsonProperty("minute")
+  private DMinute minute;
+
+  @Asn1Property(tag = 5, name = "second", optional = true)
+  @JsonProperty("second")
+  private DSecond second;
+
+  @Asn1Property(tag = 6, name = "offset", optional = true)
+  @JsonProperty("offset")
+  private DOffset offset;
+
+  public DDateTime() {
+    super(false);
+  }
 }

@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class CooperativeControlMessageMessageFrameValueSerializer
-		extends
-			OpenTypeSerializer<CooperativeControlMessage> {
+    extends OpenTypeSerializer<CooperativeControlMessage> {
 
-	public CooperativeControlMessageMessageFrameValueSerializer() {
-		super(CooperativeControlMessage.class, "value", "CooperativeControlMessage");
-	}
+  public CooperativeControlMessageMessageFrameValueSerializer() {
+    super(CooperativeControlMessage.class, "value", "CooperativeControlMessage");
+  }
 }

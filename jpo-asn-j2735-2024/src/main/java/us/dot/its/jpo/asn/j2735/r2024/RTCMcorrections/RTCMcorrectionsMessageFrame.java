@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class RTCMcorrectionsMessageFrame extends MessageFrame<RTCMcorrections> {
 
-	public RTCMcorrectionsMessageFrame() {
-		super(28, "RTCMcorrections");
-	}
+  public RTCMcorrectionsMessageFrame() {
+    super(28, "RTCMcorrections");
+  }
 
-	@Override
-	@JsonSerialize(using = RTCMcorrectionsMessageFrameValueSerializer.class)
-	public RTCMcorrections getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = RTCMcorrectionsMessageFrameValueSerializer.class)
+  public RTCMcorrections getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = RTCMcorrectionsMessageFrameValueDeserializer.class)
-	public void setValue(RTCMcorrections value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = RTCMcorrectionsMessageFrameValueDeserializer.class)
+  public void setValue(RTCMcorrections value) {
+    super.setValue(value);
+  }
 }

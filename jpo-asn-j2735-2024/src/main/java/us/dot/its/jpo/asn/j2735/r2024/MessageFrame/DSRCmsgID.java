@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DSRCmsgID.DSRCmsgIDDeserializer.class)
 public class DSRCmsgID extends Asn1Integer {
 
-	public DSRCmsgID() {
-		super(0L, 32767L);
-	}
+  public DSRCmsgID() {
+    super(0L, 32767L);
+  }
 
-	@JsonCreator
-	public DSRCmsgID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DSRCmsgID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DSRCmsgIDDeserializer extends IntegerDeserializer<DSRCmsgID> {
-		public DSRCmsgIDDeserializer() {
-			super(DSRCmsgID.class);
-		}
+  public static class DSRCmsgIDDeserializer extends IntegerDeserializer<DSRCmsgID> {
+    public DSRCmsgIDDeserializer() {
+      super(DSRCmsgID.class);
+    }
 
-		@Override
-		protected DSRCmsgID construct() {
-			return new DSRCmsgID();
-		}
-	}
+    @Override
+    protected DSRCmsgID construct() {
+      return new DSRCmsgID();
+    }
+  }
 }

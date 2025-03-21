@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipDewPoint extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "dewTemp")
-	@JsonProperty("dewTemp")
-	private NTCIPEssDewpointTemp dewTemp;
-	@Asn1Property(tag = 1, name = "source", optional = true)
-	@JsonProperty("source")
-	private DataSourceInfo source;
-	@Asn1Property(tag = 2, name = "measurementStdDev", optional = true)
-	@JsonProperty("measurementStdDev")
-	private DewPointTempMeasurementStdDev measurementStdDev;
+  @Asn1Property(tag = 0, name = "dewTemp")
+  @JsonProperty("dewTemp")
+  private NTCIPEssDewpointTemp dewTemp;
 
-	public NtcipDewPoint() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "source", optional = true)
+  @JsonProperty("source")
+  private DataSourceInfo source;
+
+  @Asn1Property(tag = 2, name = "measurementStdDev", optional = true)
+  @JsonProperty("measurementStdDev")
+  private DewPointTempMeasurementStdDev measurementStdDev;
+
+  public NtcipDewPoint() {
+    super(true);
+  }
 }

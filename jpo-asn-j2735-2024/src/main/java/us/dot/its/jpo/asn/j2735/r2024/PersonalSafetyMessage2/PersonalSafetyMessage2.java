@@ -24,5 +24,4 @@ package us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage2;
 
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 
-public class PersonalSafetyMessage2 extends Asn1Null {
-}
+public class PersonalSafetyMessage2 extends Asn1Null {}

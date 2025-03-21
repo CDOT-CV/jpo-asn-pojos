@@ -45,46 +45,52 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class NodeAttributeSetLL extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "localNode", optional = true)
-	@JsonProperty("localNode")
-	@JsonSerialize(using = NodeAttributeLLList.NodeAttributeLLListSerializer.class)
-	@JsonDeserialize(using = NodeAttributeLLList.NodeAttributeLLListDeserializer.class)
-	private NodeAttributeLLList localNode;
-	@Asn1Property(tag = 1, name = "disabled", optional = true)
-	@JsonProperty("disabled")
-	@JsonSerialize(using = SegmentAttributeLLList.SegmentAttributeLLListSerializer.class)
-	@JsonDeserialize(using = SegmentAttributeLLList.SegmentAttributeLLListDeserializer.class)
-	private SegmentAttributeLLList disabled;
-	@Asn1Property(tag = 2, name = "enabled", optional = true)
-	@JsonProperty("enabled")
-	@JsonSerialize(using = SegmentAttributeLLList.SegmentAttributeLLListSerializer.class)
-	@JsonDeserialize(using = SegmentAttributeLLList.SegmentAttributeLLListDeserializer.class)
-	private SegmentAttributeLLList enabled;
-	@Asn1Property(tag = 3, name = "data", optional = true)
-	@JsonProperty("data")
-	@JsonSerialize(using = LaneDataAttributeList.LaneDataAttributeListSerializer.class)
-	@JsonDeserialize(using = LaneDataAttributeList.LaneDataAttributeListDeserializer.class)
-	private LaneDataAttributeList data;
-	@Asn1Property(tag = 4, name = "dWidth", optional = true)
-	@JsonProperty("dWidth")
-	private Offset_B10 dWidth;
-	@Asn1Property(tag = 5, name = "dElevation", optional = true)
-	@JsonProperty("dElevation")
-	private Offset_B10 dElevation;
-	@Asn1Property(tag = 6, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-NodeAttributeSetLL")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "localNode", optional = true)
+  @JsonProperty("localNode")
+  @JsonSerialize(using = NodeAttributeLLList.NodeAttributeLLListSerializer.class)
+  @JsonDeserialize(using = NodeAttributeLLList.NodeAttributeLLListDeserializer.class)
+  private NodeAttributeLLList localNode;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NodeAttributeSetLL> {
-		public SequenceOfRegional() {
-			super(Reg_NodeAttributeSetLL.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "disabled", optional = true)
+  @JsonProperty("disabled")
+  @JsonSerialize(using = SegmentAttributeLLList.SegmentAttributeLLListSerializer.class)
+  @JsonDeserialize(using = SegmentAttributeLLList.SegmentAttributeLLListDeserializer.class)
+  private SegmentAttributeLLList disabled;
 
-	public NodeAttributeSetLL() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "enabled", optional = true)
+  @JsonProperty("enabled")
+  @JsonSerialize(using = SegmentAttributeLLList.SegmentAttributeLLListSerializer.class)
+  @JsonDeserialize(using = SegmentAttributeLLList.SegmentAttributeLLListDeserializer.class)
+  private SegmentAttributeLLList enabled;
+
+  @Asn1Property(tag = 3, name = "data", optional = true)
+  @JsonProperty("data")
+  @JsonSerialize(using = LaneDataAttributeList.LaneDataAttributeListSerializer.class)
+  @JsonDeserialize(using = LaneDataAttributeList.LaneDataAttributeListDeserializer.class)
+  private LaneDataAttributeList data;
+
+  @Asn1Property(tag = 4, name = "dWidth", optional = true)
+  @JsonProperty("dWidth")
+  private Offset_B10 dWidth;
+
+  @Asn1Property(tag = 5, name = "dElevation", optional = true)
+  @JsonProperty("dElevation")
+  private Offset_B10 dElevation;
+
+  @Asn1Property(tag = 6, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-NodeAttributeSetLL")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NodeAttributeSetLL> {
+    public SequenceOfRegional() {
+      super(Reg_NodeAttributeSetLL.class, 1L, 4L);
+    }
+  }
+
+  public NodeAttributeSetLL() {
+    super(true);
+  }
 }

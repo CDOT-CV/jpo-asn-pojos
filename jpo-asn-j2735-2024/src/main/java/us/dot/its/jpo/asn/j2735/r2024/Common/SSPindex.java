@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SSPindex.SSPindexDeserializer.class)
 public class SSPindex extends Asn1Integer {
 
-	public SSPindex() {
-		super(0L, 31L);
-	}
+  public SSPindex() {
+    super(0L, 31L);
+  }
 
-	@JsonCreator
-	public SSPindex(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SSPindex(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SSPindexDeserializer extends IntegerDeserializer<SSPindex> {
-		public SSPindexDeserializer() {
-			super(SSPindex.class);
-		}
+  public static class SSPindexDeserializer extends IntegerDeserializer<SSPindex> {
+    public SSPindexDeserializer() {
+      super(SSPindex.class);
+    }
 
-		@Override
-		protected SSPindex construct() {
-			return new SSPindex();
-		}
-	}
+    @Override
+    protected SSPindex construct() {
+      return new SSPindex();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AssetStatus.AssetStatusDeserializer.class)
 public class AssetStatus extends Asn1Integer {
 
-	public AssetStatus() {
-		super(0L, 65535L);
-	}
+  public AssetStatus() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public AssetStatus(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AssetStatus(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AssetStatusDeserializer extends IntegerDeserializer<AssetStatus> {
-		public AssetStatusDeserializer() {
-			super(AssetStatus.class);
-		}
+  public static class AssetStatusDeserializer extends IntegerDeserializer<AssetStatus> {
+    public AssetStatusDeserializer() {
+      super(AssetStatus.class);
+    }
 
-		@Override
-		protected AssetStatus construct() {
-			return new AssetStatus();
-		}
-	}
+    @Override
+    protected AssetStatus construct() {
+      return new AssetStatus();
+    }
+  }
 }

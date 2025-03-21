@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Roadwork.RoadworkDeserializer.class)
 public class Roadwork extends Asn1Integer {
 
-	public Roadwork() {
-		super(0L, 65535L);
-	}
+  public Roadwork() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Roadwork(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Roadwork(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RoadworkDeserializer extends IntegerDeserializer<Roadwork> {
-		public RoadworkDeserializer() {
-			super(Roadwork.class);
-		}
+  public static class RoadworkDeserializer extends IntegerDeserializer<Roadwork> {
+    public RoadworkDeserializer() {
+      super(Roadwork.class);
+    }
 
-		@Override
-		protected Roadwork construct() {
-			return new Roadwork();
-		}
-	}
+    @Override
+    protected Roadwork construct() {
+      return new Roadwork();
+    }
+  }
 }

@@ -43,74 +43,83 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TollAdvertisementInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tamSequenceNum")
-	@JsonProperty("tamSequenceNum")
-	private MsgCount tamSequenceNum;
-	@Asn1Property(tag = 1, name = "totalTams")
-	@JsonProperty("totalTams")
-	private TotalTamsInteger totalTams;
-	@Asn1Property(tag = 2, name = "tamNum")
-	@JsonProperty("tamNum")
-	private TamNumInteger tamNum;
-	@Asn1Property(tag = 3, name = "tollChargerInfo")
-	@JsonProperty("tollChargerInfo")
-	private TollChargerInfo tollChargerInfo;
-	@Asn1Property(tag = 4, name = "timestamp")
-	@JsonProperty("timestamp")
-	private DDateTime timestamp;
-	@Asn1Property(tag = 5, name = "tumInstructions", optional = true)
-	@JsonProperty("tumInstructions")
-	private TumInstructions tumInstructions;
-	@Asn1Property(tag = 6, name = "tollPointMap")
-	@JsonProperty("tollPointMap")
-	private TollPointMap tollPointMap;
-	@Asn1Property(tag = 7, name = "tumPublicKey")
-	@JsonProperty("tumPublicKey")
-	private TumPublicKeyOctetString tumPublicKey;
-	@Asn1Property(tag = 8, name = "ackPolicy")
-	@JsonProperty("ackPolicy")
-	private AckPolicy ackPolicy;
-	@Asn1Property(tag = 9, name = "lastTollPtDataReq", optional = true)
-	@JsonProperty("lastTollPtDataReq")
-	private Asn1Boolean lastTollPtDataReq;
+  @Asn1Property(tag = 0, name = "tamSequenceNum")
+  @JsonProperty("tamSequenceNum")
+  private MsgCount tamSequenceNum;
 
-	public static class TotalTamsInteger extends Asn1Integer {
-		public TotalTamsInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "totalTams")
+  @JsonProperty("totalTams")
+  private TotalTamsInteger totalTams;
 
-		@JsonCreator
-		public TotalTamsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "tamNum")
+  @JsonProperty("tamNum")
+  private TamNumInteger tamNum;
 
-	public static class TamNumInteger extends Asn1Integer {
-		public TamNumInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 3, name = "tollChargerInfo")
+  @JsonProperty("tollChargerInfo")
+  private TollChargerInfo tollChargerInfo;
 
-		@JsonCreator
-		public TamNumInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "timestamp")
+  @JsonProperty("timestamp")
+  private DDateTime timestamp;
 
-	public static class TumPublicKeyOctetString extends Asn1OctetString {
-		public TumPublicKeyOctetString() {
-			super(32, 32);
-		}
+  @Asn1Property(tag = 5, name = "tumInstructions", optional = true)
+  @JsonProperty("tumInstructions")
+  private TumInstructions tumInstructions;
 
-		@JsonCreator
-		public TumPublicKeyOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 6, name = "tollPointMap")
+  @JsonProperty("tollPointMap")
+  private TollPointMap tollPointMap;
 
-	public TollAdvertisementInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 7, name = "tumPublicKey")
+  @JsonProperty("tumPublicKey")
+  private TumPublicKeyOctetString tumPublicKey;
+
+  @Asn1Property(tag = 8, name = "ackPolicy")
+  @JsonProperty("ackPolicy")
+  private AckPolicy ackPolicy;
+
+  @Asn1Property(tag = 9, name = "lastTollPtDataReq", optional = true)
+  @JsonProperty("lastTollPtDataReq")
+  private Asn1Boolean lastTollPtDataReq;
+
+  public static class TotalTamsInteger extends Asn1Integer {
+    public TotalTamsInteger() {
+      super(1L, 10L);
+    }
+
+    @JsonCreator
+    public TotalTamsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class TamNumInteger extends Asn1Integer {
+    public TamNumInteger() {
+      super(1L, 10L);
+    }
+
+    @JsonCreator
+    public TamNumInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class TumPublicKeyOctetString extends Asn1OctetString {
+    public TumPublicKeyOctetString() {
+      super(32, 32);
+    }
+
+    @JsonCreator
+    public TumPublicKeyOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public TollAdvertisementInfo() {
+    super(true);
+  }
 }

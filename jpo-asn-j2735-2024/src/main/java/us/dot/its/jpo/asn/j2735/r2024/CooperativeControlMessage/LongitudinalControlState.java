@@ -33,31 +33,40 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = LongitudinalControlState.LongitudinalControlStateSerializer.class)
 @JsonDeserialize(using = LongitudinalControlState.LongitudinalControlStateDeserializer.class)
 public enum LongitudinalControlState implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), MANUAL(1, "manual"), CC(2, "cc"), ACC(3, "acc"), CACCONE(4, "caccOne"), CACCMULTIPLE(
-			5, "caccMultiple"), SENSORAUTO(6, "sensorAuto"), FUSEDAUTO(7, "fusedAuto"), MANUALOVER(8, "manualOver");
+  UNAVAILABLE(0, "unavailable"),
+  MANUAL(1, "manual"),
+  CC(2, "cc"),
+  ACC(3, "acc"),
+  CACCONE(4, "caccOne"),
+  CACCMULTIPLE(5, "caccMultiple"),
+  SENSORAUTO(6, "sensorAuto"),
+  FUSEDAUTO(7, "fusedAuto"),
+  MANUALOVER(8, "manualOver");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private LongitudinalControlState(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private LongitudinalControlState(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class LongitudinalControlStateSerializer extends EnumeratedSerializer<LongitudinalControlState> {
-		public LongitudinalControlStateSerializer() {
-			super(LongitudinalControlState.class);
-		}
-	}
+  public static class LongitudinalControlStateSerializer
+      extends EnumeratedSerializer<LongitudinalControlState> {
+    public LongitudinalControlStateSerializer() {
+      super(LongitudinalControlState.class);
+    }
+  }
 
-	public static class LongitudinalControlStateDeserializer extends EnumeratedDeserializer<LongitudinalControlState> {
-		public LongitudinalControlStateDeserializer() {
-			super(LongitudinalControlState.class);
-		}
+  public static class LongitudinalControlStateDeserializer
+      extends EnumeratedDeserializer<LongitudinalControlState> {
+    public LongitudinalControlStateDeserializer() {
+      super(LongitudinalControlState.class);
+    }
 
-		@Override
-		protected LongitudinalControlState[] listEnumValues() {
-			return LongitudinalControlState.values();
-		}
-	}
+    @Override
+    protected LongitudinalControlState[] listEnumValues() {
+      return LongitudinalControlState.values();
+    }
+  }
 }

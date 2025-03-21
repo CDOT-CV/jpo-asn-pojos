@@ -22,9 +22,9 @@
 
 package us.dot.its.jpo.asn.j2735.r2024.MessageFrame;
 
-abstract public class MESSAGE_ID_AND_TYPE<T> {
+public abstract class MESSAGE_ID_AND_TYPE<T> {
 
-	abstract DSRCmsgID getId();
+  abstract DSRCmsgID getId();
 
-	abstract Class<T> getType();
+  abstract Class<T> getType();
 }

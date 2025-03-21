@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Angle.AngleDeserializer.class)
 public class Angle extends Asn1Integer {
 
-	public Angle() {
-		super(0L, 28800L);
-	}
+  public Angle() {
+    super(0L, 28800L);
+  }
 
-	@JsonCreator
-	public Angle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Angle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AngleDeserializer extends IntegerDeserializer<Angle> {
-		public AngleDeserializer() {
-			super(Angle.class);
-		}
+  public static class AngleDeserializer extends IntegerDeserializer<Angle> {
+    public AngleDeserializer() {
+      super(Angle.class);
+    }
 
-		@Override
-		protected Angle construct() {
-			return new Angle();
-		}
-	}
+    @Override
+    protected Angle construct() {
+      return new Angle();
+    }
+  }
 }

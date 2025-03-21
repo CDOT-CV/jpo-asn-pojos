@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.IntersectionCollision;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class IntersectionCollisionMessageFrameValueDeserializer extends OpenTypeDeserializer<IntersectionCollision> {
+public class IntersectionCollisionMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<IntersectionCollision> {
 
-	public IntersectionCollisionMessageFrameValueDeserializer() {
-		super(IntersectionCollision.class, "IntersectionCollision");
-	}
+  public IntersectionCollisionMessageFrameValueDeserializer() {
+    super(IntersectionCollision.class, "IntersectionCollision");
+  }
 }

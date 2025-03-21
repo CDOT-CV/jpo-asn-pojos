@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BSMpartIIExtension;
 
 @JsonRootName("BSMpartIIExtension")
 @JsonDeserialize(using = None.class)
-public class VehicleSafetyExtensionsBSMpartIIExtension extends BSMpartIIExtension<VehicleSafetyExtensions> {
+public class VehicleSafetyExtensionsBSMpartIIExtension
+    extends BSMpartIIExtension<VehicleSafetyExtensions> {
 
-	public VehicleSafetyExtensionsBSMpartIIExtension() {
-		super(0, "VehicleSafetyExtensions");
-	}
+  public VehicleSafetyExtensionsBSMpartIIExtension() {
+    super(0, "VehicleSafetyExtensions");
+  }
 
-	@Override
-	@JsonSerialize(using = VehicleSafetyExtensionsBSMpartIIExtensionValueSerializer.class)
-	public VehicleSafetyExtensions getPartII_Value() {
-		return super.getPartII_Value();
-	}
+  @Override
+  @JsonSerialize(using = VehicleSafetyExtensionsBSMpartIIExtensionValueSerializer.class)
+  public VehicleSafetyExtensions getPartII_Value() {
+    return super.getPartII_Value();
+  }
 
-	@Override
-	@JsonDeserialize(using = VehicleSafetyExtensionsBSMpartIIExtensionValueDeserializer.class)
-	public void setPartII_Value(VehicleSafetyExtensions value) {
-		super.setPartII_Value(value);
-	}
+  @Override
+  @JsonDeserialize(using = VehicleSafetyExtensionsBSMpartIIExtensionValueDeserializer.class)
+  public void setPartII_Value(VehicleSafetyExtensions value) {
+    super.setPartII_Value(value);
+  }
 }

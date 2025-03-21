@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = LaneID.LaneIDDeserializer.class)
 public class LaneID extends Asn1Integer {
 
-	public LaneID() {
-		super(0L, 255L);
-	}
+  public LaneID() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public LaneID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LaneID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LaneIDDeserializer extends IntegerDeserializer<LaneID> {
-		public LaneIDDeserializer() {
-			super(LaneID.class);
-		}
+  public static class LaneIDDeserializer extends IntegerDeserializer<LaneID> {
+    public LaneIDDeserializer() {
+      super(LaneID.class);
+    }
 
-		@Override
-		protected LaneID construct() {
-			return new LaneID();
-		}
-	}
+    @Override
+    protected LaneID construct() {
+      return new LaneID();
+    }
+  }
 }

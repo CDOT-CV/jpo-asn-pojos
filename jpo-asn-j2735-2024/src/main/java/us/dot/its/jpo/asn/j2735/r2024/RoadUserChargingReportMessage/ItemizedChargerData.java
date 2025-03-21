@@ -42,35 +42,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ItemizedChargerData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargerID")
-	@JsonProperty("chargerID")
-	private Asn1ObjectIdentifier chargerID;
-	@Asn1Property(tag = 1, name = "chargingDescription", optional = true)
-	@JsonProperty("chargingDescription")
-	private DescriptiveName chargingDescription;
-	@Asn1Property(tag = 2, name = "configID", optional = true)
-	@JsonProperty("configID")
-	private ConfigIDInteger configID;
-	@Asn1Property(tag = 3, name = "tripInfo", optional = true)
-	@JsonProperty("tripInfo")
-	private TripInfo tripInfo;
-	@Asn1Property(tag = 4, name = "totalPaidToCharger")
-	@JsonProperty("totalPaidToCharger")
-	private PaymentFee totalPaidToCharger;
+  @Asn1Property(tag = 0, name = "chargerID")
+  @JsonProperty("chargerID")
+  private Asn1ObjectIdentifier chargerID;
 
-	public static class ConfigIDInteger extends Asn1Integer {
-		public ConfigIDInteger() {
-			super(0L, 64L);
-		}
+  @Asn1Property(tag = 1, name = "chargingDescription", optional = true)
+  @JsonProperty("chargingDescription")
+  private DescriptiveName chargingDescription;
 
-		@JsonCreator
-		public ConfigIDInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "configID", optional = true)
+  @JsonProperty("configID")
+  private ConfigIDInteger configID;
 
-	public ItemizedChargerData() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "tripInfo", optional = true)
+  @JsonProperty("tripInfo")
+  private TripInfo tripInfo;
+
+  @Asn1Property(tag = 4, name = "totalPaidToCharger")
+  @JsonProperty("totalPaidToCharger")
+  private PaymentFee totalPaidToCharger;
+
+  public static class ConfigIDInteger extends Asn1Integer {
+    public ConfigIDInteger() {
+      super(0L, 64L);
+    }
+
+    @JsonCreator
+    public ConfigIDInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ItemizedChargerData() {
+    super(true);
+  }
 }

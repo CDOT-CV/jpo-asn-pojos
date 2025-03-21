@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TermTime.TermTimeDeserializer.class)
 public class TermTime extends Asn1Integer {
 
-	public TermTime() {
-		super(1L, 1800L);
-	}
+  public TermTime() {
+    super(1L, 1800L);
+  }
 
-	@JsonCreator
-	public TermTime(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TermTime(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TermTimeDeserializer extends IntegerDeserializer<TermTime> {
-		public TermTimeDeserializer() {
-			super(TermTime.class);
-		}
+  public static class TermTimeDeserializer extends IntegerDeserializer<TermTime> {
+    public TermTimeDeserializer() {
+      super(TermTime.class);
+    }
 
-		@Override
-		protected TermTime construct() {
-			return new TermTime();
-		}
-	}
+    @Override
+    protected TermTime construct() {
+      return new TermTime();
+    }
+  }
 }

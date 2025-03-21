@@ -33,31 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = WiperStatus.WiperStatusSerializer.class)
 @JsonDeserialize(using = WiperStatus.WiperStatusDeserializer.class)
 public enum WiperStatus implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OFF(1, "off"), INTERMITTENT(2, "intermittent"), LOW(3, "low"), HIGH(4,
-			"high"), WASHERINUSE(5, "washerInUse"), AUTOMATICPRESENT(6, "automaticPresent");
+  UNAVAILABLE(0, "unavailable"),
+  OFF(1, "off"),
+  INTERMITTENT(2, "intermittent"),
+  LOW(3, "low"),
+  HIGH(4, "high"),
+  WASHERINUSE(5, "washerInUse"),
+  AUTOMATICPRESENT(6, "automaticPresent");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private WiperStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private WiperStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class WiperStatusSerializer extends EnumeratedSerializer<WiperStatus> {
-		public WiperStatusSerializer() {
-			super(WiperStatus.class);
-		}
-	}
+  public static class WiperStatusSerializer extends EnumeratedSerializer<WiperStatus> {
+    public WiperStatusSerializer() {
+      super(WiperStatus.class);
+    }
+  }
 
-	public static class WiperStatusDeserializer extends EnumeratedDeserializer<WiperStatus> {
-		public WiperStatusDeserializer() {
-			super(WiperStatus.class);
-		}
+  public static class WiperStatusDeserializer extends EnumeratedDeserializer<WiperStatus> {
+    public WiperStatusDeserializer() {
+      super(WiperStatus.class);
+    }
 
-		@Override
-		protected WiperStatus[] listEnumValues() {
-			return WiperStatus.values();
-		}
-	}
+    @Override
+    protected WiperStatus[] listEnumValues() {
+      return WiperStatus.values();
+    }
+  }
 }

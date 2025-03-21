@@ -33,30 +33,32 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = Parked.ParkedSerializer.class)
 @JsonDeserialize(using = Parked.ParkedDeserializer.class)
 public enum Parked implements Asn1Enumerated {
-	PERMIN(0, "perMin"), PERHOUR(1, "perHour"), PERDAY(2, "perDay");
+  PERMIN(0, "perMin"),
+  PERHOUR(1, "perHour"),
+  PERDAY(2, "perDay");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private Parked(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private Parked(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ParkedSerializer extends EnumeratedSerializer<Parked> {
-		public ParkedSerializer() {
-			super(Parked.class);
-		}
-	}
+  public static class ParkedSerializer extends EnumeratedSerializer<Parked> {
+    public ParkedSerializer() {
+      super(Parked.class);
+    }
+  }
 
-	public static class ParkedDeserializer extends EnumeratedDeserializer<Parked> {
-		public ParkedDeserializer() {
-			super(Parked.class);
-		}
+  public static class ParkedDeserializer extends EnumeratedDeserializer<Parked> {
+    public ParkedDeserializer() {
+      super(Parked.class);
+    }
 
-		@Override
-		protected Parked[] listEnumValues() {
-			return Parked.values();
-		}
-	}
+    @Override
+    protected Parked[] listEnumValues() {
+      return Parked.values();
+    }
+  }
 }

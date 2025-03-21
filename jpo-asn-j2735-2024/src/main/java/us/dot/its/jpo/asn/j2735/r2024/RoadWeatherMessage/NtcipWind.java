@@ -37,26 +37,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipWind extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "avgSpeed", optional = true)
-	@JsonProperty("avgSpeed")
-	private NTCIPWindSensorAvgSpeed avgSpeed;
-	@Asn1Property(tag = 1, name = "avgDirection", optional = true)
-	@JsonProperty("avgDirection")
-	private NTCIPWindSensorAvgDirection avgDirection;
-	@Asn1Property(tag = 2, name = "currentSpeed", optional = true)
-	@JsonProperty("currentSpeed")
-	private NTCIPWindSensorSpotSpeed currentSpeed;
-	@Asn1Property(tag = 3, name = "curDirection", optional = true)
-	@JsonProperty("curDirection")
-	private NTCIPWindSensorSpotDirection curDirection;
-	@Asn1Property(tag = 4, name = "gustSpeed", optional = true)
-	@JsonProperty("gustSpeed")
-	private NTCIPWindSensorGustSpeed gustSpeed;
-	@Asn1Property(tag = 5, name = "gustDirection", optional = true)
-	@JsonProperty("gustDirection")
-	private NTCIPWindSensorGustDirection gustDirection;
+  @Asn1Property(tag = 0, name = "avgSpeed", optional = true)
+  @JsonProperty("avgSpeed")
+  private NTCIPWindSensorAvgSpeed avgSpeed;
 
-	public NtcipWind() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "avgDirection", optional = true)
+  @JsonProperty("avgDirection")
+  private NTCIPWindSensorAvgDirection avgDirection;
+
+  @Asn1Property(tag = 2, name = "currentSpeed", optional = true)
+  @JsonProperty("currentSpeed")
+  private NTCIPWindSensorSpotSpeed currentSpeed;
+
+  @Asn1Property(tag = 3, name = "curDirection", optional = true)
+  @JsonProperty("curDirection")
+  private NTCIPWindSensorSpotDirection curDirection;
+
+  @Asn1Property(tag = 4, name = "gustSpeed", optional = true)
+  @JsonProperty("gustSpeed")
+  private NTCIPWindSensorGustSpeed gustSpeed;
+
+  @Asn1Property(tag = 5, name = "gustDirection", optional = true)
+  @JsonProperty("gustDirection")
+  private NTCIPWindSensorGustDirection gustDirection;
+
+  public NtcipWind() {
+    super(true);
+  }
 }

@@ -37,38 +37,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonInclude(Include.NON_NULL)
 public class SignedValue extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "positive")
-	@JsonProperty("positive")
-	private PositiveInteger positive;
-	@Asn1Property(tag = 1, name = "negative")
-	@JsonProperty("negative")
-	private NegativeInteger negative;
+  @Asn1Property(tag = 0, name = "positive")
+  @JsonProperty("positive")
+  private PositiveInteger positive;
 
-	public SignedValue() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "negative")
+  @JsonProperty("negative")
+  private NegativeInteger negative;
 
-	public static class PositiveInteger extends Asn1Integer {
-		public PositiveInteger() {
-			super(0L, 8388607L);
-		}
+  public SignedValue() {
+    super(false);
+  }
 
-		@JsonCreator
-		public PositiveInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class PositiveInteger extends Asn1Integer {
+    public PositiveInteger() {
+      super(0L, 8388607L);
+    }
 
-	public static class NegativeInteger extends Asn1Integer {
-		public NegativeInteger() {
-			super(-8388608L, -1L);
-		}
+    @JsonCreator
+    public PositiveInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public NegativeInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class NegativeInteger extends Asn1Integer {
+    public NegativeInteger() {
+      super(-8388608L, -1L);
+    }
+
+    @JsonCreator
+    public NegativeInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 }

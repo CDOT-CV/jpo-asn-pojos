@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RegionOffsets extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "xOffset")
-	@JsonProperty("xOffset")
-	private OffsetLL_B16 xOffset;
-	@Asn1Property(tag = 1, name = "yOffset")
-	@JsonProperty("yOffset")
-	private OffsetLL_B16 yOffset;
-	@Asn1Property(tag = 2, name = "zOffset", optional = true)
-	@JsonProperty("zOffset")
-	private OffsetLL_B16 zOffset;
+  @Asn1Property(tag = 0, name = "xOffset")
+  @JsonProperty("xOffset")
+  private OffsetLL_B16 xOffset;
 
-	public RegionOffsets() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "yOffset")
+  @JsonProperty("yOffset")
+  private OffsetLL_B16 yOffset;
+
+  @Asn1Property(tag = 2, name = "zOffset", optional = true)
+  @JsonProperty("zOffset")
+  private OffsetLL_B16 zOffset;
+
+  public RegionOffsets() {
+    super(false);
+  }
 }

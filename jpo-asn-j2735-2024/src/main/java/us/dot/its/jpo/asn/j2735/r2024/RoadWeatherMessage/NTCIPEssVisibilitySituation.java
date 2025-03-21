@@ -33,37 +33,43 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = NTCIPEssVisibilitySituation.NTCIPEssVisibilitySituationSerializer.class)
 @JsonDeserialize(using = NTCIPEssVisibilitySituation.NTCIPEssVisibilitySituationDeserializer.class)
 public enum NTCIPEssVisibilitySituation implements Asn1Enumerated {
-	OTHER(1, "other"), UNKNOWN(2, "unknown"), CLEAR(3, "clear"), FOGNOTPATCHY(4, "fogNotPatchy"), PATCHYFOG(5,
-			"patchyFog"), BLOWINGSNOW(6, "blowingSnow"), SMOKE(7, "smoke"), SEASPRAY(8, "seaSpray"), VEHICLESPRAY(9,
-					"vehicleSpray"), BLOWINGDUSTORSAND(10,
-							"blowingDustOrSand"), SUNGLARE(11, "sunGlare"), SWARMSOFINSECTS(12, "swarmsOfInsects");
+  OTHER(1, "other"),
+  UNKNOWN(2, "unknown"),
+  CLEAR(3, "clear"),
+  FOGNOTPATCHY(4, "fogNotPatchy"),
+  PATCHYFOG(5, "patchyFog"),
+  BLOWINGSNOW(6, "blowingSnow"),
+  SMOKE(7, "smoke"),
+  SEASPRAY(8, "seaSpray"),
+  VEHICLESPRAY(9, "vehicleSpray"),
+  BLOWINGDUSTORSAND(10, "blowingDustOrSand"),
+  SUNGLARE(11, "sunGlare"),
+  SWARMSOFINSECTS(12, "swarmsOfInsects");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NTCIPEssVisibilitySituation(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NTCIPEssVisibilitySituation(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NTCIPEssVisibilitySituationSerializer
-			extends
-				EnumeratedSerializer<NTCIPEssVisibilitySituation> {
-		public NTCIPEssVisibilitySituationSerializer() {
-			super(NTCIPEssVisibilitySituation.class);
-		}
-	}
+  public static class NTCIPEssVisibilitySituationSerializer
+      extends EnumeratedSerializer<NTCIPEssVisibilitySituation> {
+    public NTCIPEssVisibilitySituationSerializer() {
+      super(NTCIPEssVisibilitySituation.class);
+    }
+  }
 
-	public static class NTCIPEssVisibilitySituationDeserializer
-			extends
-				EnumeratedDeserializer<NTCIPEssVisibilitySituation> {
-		public NTCIPEssVisibilitySituationDeserializer() {
-			super(NTCIPEssVisibilitySituation.class);
-		}
+  public static class NTCIPEssVisibilitySituationDeserializer
+      extends EnumeratedDeserializer<NTCIPEssVisibilitySituation> {
+    public NTCIPEssVisibilitySituationDeserializer() {
+      super(NTCIPEssVisibilitySituation.class);
+    }
 
-		@Override
-		protected NTCIPEssVisibilitySituation[] listEnumValues() {
-			return NTCIPEssVisibilitySituation.values();
-		}
-	}
+    @Override
+    protected NTCIPEssVisibilitySituation[] listEnumValues() {
+      return NTCIPEssVisibilitySituation.values();
+    }
+  }
 }

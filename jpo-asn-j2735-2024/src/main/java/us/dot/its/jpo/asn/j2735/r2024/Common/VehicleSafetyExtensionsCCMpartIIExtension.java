@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage.CCMpartIIExtensi
 
 @JsonRootName("CCMpartIIExtension")
 @JsonDeserialize(using = None.class)
-public class VehicleSafetyExtensionsCCMpartIIExtension extends CCMpartIIExtension<VehicleSafetyExtensions> {
+public class VehicleSafetyExtensionsCCMpartIIExtension
+    extends CCMpartIIExtension<VehicleSafetyExtensions> {
 
-	public VehicleSafetyExtensionsCCMpartIIExtension() {
-		super(0, "VehicleSafetyExtensions");
-	}
+  public VehicleSafetyExtensionsCCMpartIIExtension() {
+    super(0, "VehicleSafetyExtensions");
+  }
 
-	@Override
-	@JsonSerialize(using = VehicleSafetyExtensionsCCMpartIIExtensionValueSerializer.class)
-	public VehicleSafetyExtensions getPartII_Value() {
-		return super.getPartII_Value();
-	}
+  @Override
+  @JsonSerialize(using = VehicleSafetyExtensionsCCMpartIIExtensionValueSerializer.class)
+  public VehicleSafetyExtensions getPartII_Value() {
+    return super.getPartII_Value();
+  }
 
-	@Override
-	@JsonDeserialize(using = VehicleSafetyExtensionsCCMpartIIExtensionValueDeserializer.class)
-	public void setPartII_Value(VehicleSafetyExtensions value) {
-		super.setPartII_Value(value);
-	}
+  @Override
+  @JsonDeserialize(using = VehicleSafetyExtensionsCCMpartIIExtensionValueDeserializer.class)
+  public void setPartII_Value(VehicleSafetyExtensions value) {
+    super.setPartII_Value(value);
+  }
 }

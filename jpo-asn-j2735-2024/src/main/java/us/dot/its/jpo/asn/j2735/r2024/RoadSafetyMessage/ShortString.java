@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class ShortString extends IA5String {
 
-	public ShortString() {
-		super(1, 20);
-	}
+  public ShortString() {
+    super(1, 20);
+  }
 
-	@JsonCreator
-	public ShortString(String value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ShortString(String value) {
+    this();
+    this.value = value;
+  }
 }

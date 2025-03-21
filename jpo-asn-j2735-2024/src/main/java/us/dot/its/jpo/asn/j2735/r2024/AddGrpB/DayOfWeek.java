@@ -33,31 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = DayOfWeek.DayOfWeekSerializer.class)
 @JsonDeserialize(using = DayOfWeek.DayOfWeekDeserializer.class)
 public enum DayOfWeek implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), MONDAY(1, "monday"), TUESDAY(2, "tuesday"), WEDNESDAY(3, "wednesday"), THURSDAY(4,
-			"thursday"), FRIDAY(5, "friday"), SATURDAY(6, "saturday"), SUNDAY(7, "sunday");
+  UNKNOWN(0, "unknown"),
+  MONDAY(1, "monday"),
+  TUESDAY(2, "tuesday"),
+  WEDNESDAY(3, "wednesday"),
+  THURSDAY(4, "thursday"),
+  FRIDAY(5, "friday"),
+  SATURDAY(6, "saturday"),
+  SUNDAY(7, "sunday");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private DayOfWeek(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private DayOfWeek(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class DayOfWeekSerializer extends EnumeratedSerializer<DayOfWeek> {
-		public DayOfWeekSerializer() {
-			super(DayOfWeek.class);
-		}
-	}
+  public static class DayOfWeekSerializer extends EnumeratedSerializer<DayOfWeek> {
+    public DayOfWeekSerializer() {
+      super(DayOfWeek.class);
+    }
+  }
 
-	public static class DayOfWeekDeserializer extends EnumeratedDeserializer<DayOfWeek> {
-		public DayOfWeekDeserializer() {
-			super(DayOfWeek.class);
-		}
+  public static class DayOfWeekDeserializer extends EnumeratedDeserializer<DayOfWeek> {
+    public DayOfWeekDeserializer() {
+      super(DayOfWeek.class);
+    }
 
-		@Override
-		protected DayOfWeek[] listEnumValues() {
-			return DayOfWeek.values();
-		}
-	}
+    @Override
+    protected DayOfWeek[] listEnumValues() {
+      return DayOfWeek.values();
+    }
+  }
 }

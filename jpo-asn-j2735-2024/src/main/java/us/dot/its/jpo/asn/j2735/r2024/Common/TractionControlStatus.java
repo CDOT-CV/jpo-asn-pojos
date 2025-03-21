@@ -33,30 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TractionControlStatus.TractionControlStatusSerializer.class)
 @JsonDeserialize(using = TractionControlStatus.TractionControlStatusDeserializer.class)
 public enum TractionControlStatus implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OFF(1, "off"), ON(2, "on"), ENGAGED(3, "engaged");
+  UNAVAILABLE(0, "unavailable"),
+  OFF(1, "off"),
+  ON(2, "on"),
+  ENGAGED(3, "engaged");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TractionControlStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TractionControlStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TractionControlStatusSerializer extends EnumeratedSerializer<TractionControlStatus> {
-		public TractionControlStatusSerializer() {
-			super(TractionControlStatus.class);
-		}
-	}
+  public static class TractionControlStatusSerializer
+      extends EnumeratedSerializer<TractionControlStatus> {
+    public TractionControlStatusSerializer() {
+      super(TractionControlStatus.class);
+    }
+  }
 
-	public static class TractionControlStatusDeserializer extends EnumeratedDeserializer<TractionControlStatus> {
-		public TractionControlStatusDeserializer() {
-			super(TractionControlStatus.class);
-		}
+  public static class TractionControlStatusDeserializer
+      extends EnumeratedDeserializer<TractionControlStatus> {
+    public TractionControlStatusDeserializer() {
+      super(TractionControlStatus.class);
+    }
 
-		@Override
-		protected TractionControlStatus[] listEnumValues() {
-			return TractionControlStatus.values();
-		}
-	}
+    @Override
+    protected TractionControlStatus[] listEnumValues() {
+      return TractionControlStatus.values();
+    }
+  }
 }

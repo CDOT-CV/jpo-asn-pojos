@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = LatOffset.LatOffsetDeserializer.class)
 public class LatOffset extends Asn1Integer {
 
-	public LatOffset() {
-		super(-16384L, 16383L);
-	}
+  public LatOffset() {
+    super(-16384L, 16383L);
+  }
 
-	@JsonCreator
-	public LatOffset(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LatOffset(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LatOffsetDeserializer extends IntegerDeserializer<LatOffset> {
-		public LatOffsetDeserializer() {
-			super(LatOffset.class);
-		}
+  public static class LatOffsetDeserializer extends IntegerDeserializer<LatOffset> {
+    public LatOffsetDeserializer() {
+      super(LatOffset.class);
+    }
 
-		@Override
-		protected LatOffset construct() {
-			return new LatOffset();
-		}
-	}
+    @Override
+    protected LatOffset construct() {
+      return new LatOffset();
+    }
+  }
 }

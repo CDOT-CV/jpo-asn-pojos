@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PrivilegedEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "doNotUse")
-	@JsonProperty("doNotUse")
-	private SSPindex doNotUse;
-	@Asn1Property(tag = 1, name = "event")
-	@JsonProperty("event")
-	private PrivilegedEventFlags event;
+  @Asn1Property(tag = 0, name = "doNotUse")
+  @JsonProperty("doNotUse")
+  private SSPindex doNotUse;
 
-	public PrivilegedEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "event")
+  @JsonProperty("event")
+  private PrivilegedEventFlags event;
+
+  public PrivilegedEvents() {
+    super(true);
+  }
 }

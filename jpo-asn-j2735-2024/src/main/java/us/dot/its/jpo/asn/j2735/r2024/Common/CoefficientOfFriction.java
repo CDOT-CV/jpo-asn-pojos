@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = CoefficientOfFriction.CoefficientOfFrictionDeserializer.class)
 public class CoefficientOfFriction extends Asn1Integer {
 
-	public CoefficientOfFriction() {
-		super(0L, 50L);
-	}
+  public CoefficientOfFriction() {
+    super(0L, 50L);
+  }
 
-	@JsonCreator
-	public CoefficientOfFriction(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public CoefficientOfFriction(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class CoefficientOfFrictionDeserializer extends IntegerDeserializer<CoefficientOfFriction> {
-		public CoefficientOfFrictionDeserializer() {
-			super(CoefficientOfFriction.class);
-		}
+  public static class CoefficientOfFrictionDeserializer
+      extends IntegerDeserializer<CoefficientOfFriction> {
+    public CoefficientOfFrictionDeserializer() {
+      super(CoefficientOfFriction.class);
+    }
 
-		@Override
-		protected CoefficientOfFriction construct() {
-			return new CoefficientOfFriction();
-		}
-	}
+    @Override
+    protected CoefficientOfFriction construct() {
+      return new CoefficientOfFriction();
+    }
+  }
 }

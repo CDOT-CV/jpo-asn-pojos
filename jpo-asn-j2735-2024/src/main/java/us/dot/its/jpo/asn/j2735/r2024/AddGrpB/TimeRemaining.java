@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TimeRemaining.TimeRemainingDeserializer.class)
 public class TimeRemaining extends Asn1Integer {
 
-	public TimeRemaining() {
-		super(0L, 9001L);
-	}
+  public TimeRemaining() {
+    super(0L, 9001L);
+  }
 
-	@JsonCreator
-	public TimeRemaining(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TimeRemaining(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TimeRemainingDeserializer extends IntegerDeserializer<TimeRemaining> {
-		public TimeRemainingDeserializer() {
-			super(TimeRemaining.class);
-		}
+  public static class TimeRemainingDeserializer extends IntegerDeserializer<TimeRemaining> {
+    public TimeRemainingDeserializer() {
+      super(TimeRemaining.class);
+    }
 
-		@Override
-		protected TimeRemaining construct() {
-			return new TimeRemaining();
-		}
-	}
+    @Override
+    protected TimeRemaining construct() {
+      return new TimeRemaining();
+    }
+  }
 }

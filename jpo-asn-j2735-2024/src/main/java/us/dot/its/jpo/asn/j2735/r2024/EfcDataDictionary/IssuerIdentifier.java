@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = IssuerIdentifier.IssuerIdentifierDeserializer.class)
 public class IssuerIdentifier extends Asn1Integer {
 
-	public IssuerIdentifier() {
-		super(0L, 16383L);
-	}
+  public IssuerIdentifier() {
+    super(0L, 16383L);
+  }
 
-	@JsonCreator
-	public IssuerIdentifier(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public IssuerIdentifier(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class IssuerIdentifierDeserializer extends IntegerDeserializer<IssuerIdentifier> {
-		public IssuerIdentifierDeserializer() {
-			super(IssuerIdentifier.class);
-		}
+  public static class IssuerIdentifierDeserializer extends IntegerDeserializer<IssuerIdentifier> {
+    public IssuerIdentifierDeserializer() {
+      super(IssuerIdentifier.class);
+    }
 
-		@Override
-		protected IssuerIdentifier construct() {
-			return new IssuerIdentifier();
-		}
-	}
+    @Override
+    protected IssuerIdentifier construct() {
+      return new IssuerIdentifier();
+    }
+  }
 }

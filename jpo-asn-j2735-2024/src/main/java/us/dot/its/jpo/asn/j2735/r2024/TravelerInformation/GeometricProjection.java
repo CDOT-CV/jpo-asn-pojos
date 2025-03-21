@@ -44,32 +44,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class GeometricProjection extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "direction")
-	@JsonProperty("direction")
-	private HeadingSlice direction;
-	@Asn1Property(tag = 1, name = "extent", optional = true)
-	@JsonProperty("extent")
-	private Extent extent;
-	@Asn1Property(tag = 2, name = "laneWidth", optional = true)
-	@JsonProperty("laneWidth")
-	private LaneWidth laneWidth;
-	@Asn1Property(tag = 3, name = "circle")
-	@JsonProperty("circle")
-	private Circle circle;
-	@Asn1Property(tag = 4, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-GeometricProjection")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "direction")
+  @JsonProperty("direction")
+  private HeadingSlice direction;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GeometricProjection> {
-		public SequenceOfRegional() {
-			super(Reg_GeometricProjection.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "extent", optional = true)
+  @JsonProperty("extent")
+  private Extent extent;
 
-	public GeometricProjection() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "laneWidth", optional = true)
+  @JsonProperty("laneWidth")
+  private LaneWidth laneWidth;
+
+  @Asn1Property(tag = 3, name = "circle")
+  @JsonProperty("circle")
+  private Circle circle;
+
+  @Asn1Property(tag = 4, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-GeometricProjection")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GeometricProjection> {
+    public SequenceOfRegional() {
+      super(Reg_GeometricProjection.class, 1L, 4L);
+    }
+  }
+
+  public GeometricProjection() {
+    super(true);
+  }
 }

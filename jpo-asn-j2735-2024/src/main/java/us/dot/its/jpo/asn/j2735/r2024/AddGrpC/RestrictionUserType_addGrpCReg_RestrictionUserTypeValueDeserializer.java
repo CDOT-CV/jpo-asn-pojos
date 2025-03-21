@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpC;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer
-		extends
-			OpenTypeDeserializer<RestrictionUserType_addGrpC> {
+    extends OpenTypeDeserializer<RestrictionUserType_addGrpC> {
 
-	public RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer() {
-		super(RestrictionUserType_addGrpC.class, "RestrictionUserType_addGrpC");
-	}
+  public RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer() {
+    super(RestrictionUserType_addGrpC.class, "RestrictionUserType_addGrpC");
+  }
 }

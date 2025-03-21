@@ -26,11 +26,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1ObjectIdentifier;
 
 public class FullRoadAuthorityID extends Asn1ObjectIdentifier {
 
-	public FullRoadAuthorityID() {
-		super();
-	}
+  public FullRoadAuthorityID() {
+    super();
+  }
 
-	public FullRoadAuthorityID(String value) {
-		super(value);
-	}
+  public FullRoadAuthorityID(String value) {
+    super(value);
+  }
 }

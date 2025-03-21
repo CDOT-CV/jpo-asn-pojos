@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MaxTimetoChange.MaxTimetoChangeDeserializer.class)
 public class MaxTimetoChange extends Asn1Integer {
 
-	public MaxTimetoChange() {
-		super(0L, 2402L);
-	}
+  public MaxTimetoChange() {
+    super(0L, 2402L);
+  }
 
-	@JsonCreator
-	public MaxTimetoChange(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MaxTimetoChange(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MaxTimetoChangeDeserializer extends IntegerDeserializer<MaxTimetoChange> {
-		public MaxTimetoChangeDeserializer() {
-			super(MaxTimetoChange.class);
-		}
+  public static class MaxTimetoChangeDeserializer extends IntegerDeserializer<MaxTimetoChange> {
+    public MaxTimetoChangeDeserializer() {
+      super(MaxTimetoChange.class);
+    }
 
-		@Override
-		protected MaxTimetoChange construct() {
-			return new MaxTimetoChange();
-		}
-	}
+    @Override
+    protected MaxTimetoChange construct() {
+      return new MaxTimetoChange();
+    }
+  }
 }

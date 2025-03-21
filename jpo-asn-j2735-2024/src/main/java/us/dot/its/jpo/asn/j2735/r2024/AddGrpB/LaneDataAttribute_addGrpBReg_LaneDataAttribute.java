@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_LaneDataAttribute;
 
 @JsonRootName("Reg_LaneDataAttribute")
 @JsonDeserialize(using = None.class)
-public class LaneDataAttribute_addGrpBReg_LaneDataAttribute extends Reg_LaneDataAttribute<LaneDataAttribute_addGrpB> {
+public class LaneDataAttribute_addGrpBReg_LaneDataAttribute
+    extends Reg_LaneDataAttribute<LaneDataAttribute_addGrpB> {
 
-	public LaneDataAttribute_addGrpBReg_LaneDataAttribute() {
-		super(2, "LaneDataAttribute_addGrpB");
-	}
+  public LaneDataAttribute_addGrpBReg_LaneDataAttribute() {
+    super(2, "LaneDataAttribute_addGrpB");
+  }
 
-	@Override
-	@JsonSerialize(using = LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer.class)
-	public LaneDataAttribute_addGrpB getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer.class)
+  public LaneDataAttribute_addGrpB getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer.class)
-	public void setRegExtValue(LaneDataAttribute_addGrpB value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer.class)
+  public void setRegExtValue(LaneDataAttribute_addGrpB value) {
+    super.setRegExtValue(value);
+  }
 }

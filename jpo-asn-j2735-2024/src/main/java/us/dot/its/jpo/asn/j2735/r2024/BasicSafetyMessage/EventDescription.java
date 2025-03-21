@@ -45,44 +45,49 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class EventDescription extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "typeEvent")
-	@JsonProperty("typeEvent")
-	private ITIScodes typeEvent;
-	@Asn1Property(tag = 1, name = "description", optional = true)
-	@JsonProperty("description")
-	@JacksonXmlElementWrapper(localName = "description")
-	@JacksonXmlProperty(localName = "ITIScodes")
-	private SequenceOfDescription description;
-	@Asn1Property(tag = 2, name = "priority", optional = true)
-	@JsonProperty("priority")
-	private Priority priority;
-	@Asn1Property(tag = 3, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private HeadingSlice heading;
-	@Asn1Property(tag = 4, name = "extent", optional = true)
-	@JsonProperty("extent")
-	private Extent extent;
-	@Asn1Property(tag = 5, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-EventDescription")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "typeEvent")
+  @JsonProperty("typeEvent")
+  private ITIScodes typeEvent;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfDescription extends Asn1SequenceOf<ITIScodes> {
-		public SequenceOfDescription() {
-			super(ITIScodes.class, 1L, 8L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "description", optional = true)
+  @JsonProperty("description")
+  @JacksonXmlElementWrapper(localName = "description")
+  @JacksonXmlProperty(localName = "ITIScodes")
+  private SequenceOfDescription description;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_EventDescription> {
-		public SequenceOfRegional() {
-			super(Reg_EventDescription.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "priority", optional = true)
+  @JsonProperty("priority")
+  private Priority priority;
 
-	public EventDescription() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private HeadingSlice heading;
+
+  @Asn1Property(tag = 4, name = "extent", optional = true)
+  @JsonProperty("extent")
+  private Extent extent;
+
+  @Asn1Property(tag = 5, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-EventDescription")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfDescription extends Asn1SequenceOf<ITIScodes> {
+    public SequenceOfDescription() {
+      super(ITIScodes.class, 1L, 8L);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_EventDescription> {
+    public SequenceOfRegional() {
+      super(Reg_EventDescription.class, 1L, 4L);
+    }
+  }
+
+  public EventDescription() {
+    super(true);
+  }
 }

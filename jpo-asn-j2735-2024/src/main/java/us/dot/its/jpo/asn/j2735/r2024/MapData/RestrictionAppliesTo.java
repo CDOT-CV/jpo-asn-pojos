@@ -33,37 +33,45 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RestrictionAppliesTo.RestrictionAppliesToSerializer.class)
 @JsonDeserialize(using = RestrictionAppliesTo.RestrictionAppliesToDeserializer.class)
 public enum RestrictionAppliesTo implements Asn1Enumerated {
-	NONE(0, "none"), EQUIPPEDTRANSIT(1, "equippedTransit"), EQUIPPEDTAXIS(2, "equippedTaxis"), EQUIPPEDOTHER(3,
-			"equippedOther"), EMISSIONCOMPLIANT(4, "emissionCompliant"), EQUIPPEDBICYCLE(5,
-					"equippedBicycle"), WEIGHTCOMPLIANT(6, "weightCompliant"), HEIGHTCOMPLIANT(7,
-							"heightCompliant"), PEDESTRIANS(8, "pedestrians"), SLOWMOVINGPERSONS(9,
-									"slowMovingPersons"), WHEELCHAIRUSERS(10, "wheelchairUsers"), VISUALDISABILITIES(11,
-											"visualDisabilities"), AUDIODISABILITIES(12,
-													"audioDisabilities"), OTHERUNKNOWNDISABILITIES(13,
-															"otherUnknownDisabilities");
+  NONE(0, "none"),
+  EQUIPPEDTRANSIT(1, "equippedTransit"),
+  EQUIPPEDTAXIS(2, "equippedTaxis"),
+  EQUIPPEDOTHER(3, "equippedOther"),
+  EMISSIONCOMPLIANT(4, "emissionCompliant"),
+  EQUIPPEDBICYCLE(5, "equippedBicycle"),
+  WEIGHTCOMPLIANT(6, "weightCompliant"),
+  HEIGHTCOMPLIANT(7, "heightCompliant"),
+  PEDESTRIANS(8, "pedestrians"),
+  SLOWMOVINGPERSONS(9, "slowMovingPersons"),
+  WHEELCHAIRUSERS(10, "wheelchairUsers"),
+  VISUALDISABILITIES(11, "visualDisabilities"),
+  AUDIODISABILITIES(12, "audioDisabilities"),
+  OTHERUNKNOWNDISABILITIES(13, "otherUnknownDisabilities");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RestrictionAppliesTo(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RestrictionAppliesTo(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RestrictionAppliesToSerializer extends EnumeratedSerializer<RestrictionAppliesTo> {
-		public RestrictionAppliesToSerializer() {
-			super(RestrictionAppliesTo.class);
-		}
-	}
+  public static class RestrictionAppliesToSerializer
+      extends EnumeratedSerializer<RestrictionAppliesTo> {
+    public RestrictionAppliesToSerializer() {
+      super(RestrictionAppliesTo.class);
+    }
+  }
 
-	public static class RestrictionAppliesToDeserializer extends EnumeratedDeserializer<RestrictionAppliesTo> {
-		public RestrictionAppliesToDeserializer() {
-			super(RestrictionAppliesTo.class);
-		}
+  public static class RestrictionAppliesToDeserializer
+      extends EnumeratedDeserializer<RestrictionAppliesTo> {
+    public RestrictionAppliesToDeserializer() {
+      super(RestrictionAppliesTo.class);
+    }
 
-		@Override
-		protected RestrictionAppliesTo[] listEnumValues() {
-			return RestrictionAppliesTo.values();
-		}
-	}
+    @Override
+    protected RestrictionAppliesTo[] listEnumValues() {
+      return RestrictionAppliesTo.values();
+    }
+  }
 }

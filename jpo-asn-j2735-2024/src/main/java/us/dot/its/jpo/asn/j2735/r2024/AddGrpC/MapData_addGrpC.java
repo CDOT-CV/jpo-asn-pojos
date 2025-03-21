@@ -39,13 +39,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class MapData_addGrpC extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "signalHeadLocations", optional = true)
-	@JsonProperty("signalHeadLocations")
-	@JacksonXmlElementWrapper(localName = "signalHeadLocations")
-	@JacksonXmlProperty(localName = "SignalHeadLocation")
-	private SignalHeadLocationList signalHeadLocations;
+  @Asn1Property(tag = 0, name = "signalHeadLocations", optional = true)
+  @JsonProperty("signalHeadLocations")
+  @JacksonXmlElementWrapper(localName = "signalHeadLocations")
+  @JacksonXmlProperty(localName = "SignalHeadLocation")
+  private SignalHeadLocationList signalHeadLocations;
 
-	public MapData_addGrpC() {
-		super(true);
-	}
+  public MapData_addGrpC() {
+    super(true);
+  }
 }

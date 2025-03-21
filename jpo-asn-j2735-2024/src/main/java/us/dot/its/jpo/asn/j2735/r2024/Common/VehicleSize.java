@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleSize extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "width")
-	@JsonProperty("width")
-	private VehicleWidth width;
-	@Asn1Property(tag = 1, name = "length")
-	@JsonProperty("length")
-	private VehicleLength length;
+  @Asn1Property(tag = 0, name = "width")
+  @JsonProperty("width")
+  private VehicleWidth width;
 
-	public VehicleSize() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "length")
+  @JsonProperty("length")
+  private VehicleLength length;
+
+  public VehicleSize() {
+    super(false);
+  }
 }

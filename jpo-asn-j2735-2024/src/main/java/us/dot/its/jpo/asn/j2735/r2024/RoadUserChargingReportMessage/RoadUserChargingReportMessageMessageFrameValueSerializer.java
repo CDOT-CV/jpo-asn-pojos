@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingReportMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class RoadUserChargingReportMessageMessageFrameValueSerializer
-		extends
-			OpenTypeSerializer<RoadUserChargingReportMessage> {
+    extends OpenTypeSerializer<RoadUserChargingReportMessage> {
 
-	public RoadUserChargingReportMessageMessageFrameValueSerializer() {
-		super(RoadUserChargingReportMessage.class, "value", "RoadUserChargingReportMessage");
-	}
+  public RoadUserChargingReportMessageMessageFrameValueSerializer() {
+    super(RoadUserChargingReportMessage.class, "value", "RoadUserChargingReportMessage");
+  }
 }

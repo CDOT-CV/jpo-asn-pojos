@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = StreetSuffixes.StreetSuffixesDeserializer.class)
 public class StreetSuffixes extends Asn1Integer {
 
-	public StreetSuffixes() {
-		super(0L, 65535L);
-	}
+  public StreetSuffixes() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public StreetSuffixes(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public StreetSuffixes(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class StreetSuffixesDeserializer extends IntegerDeserializer<StreetSuffixes> {
-		public StreetSuffixesDeserializer() {
-			super(StreetSuffixes.class);
-		}
+  public static class StreetSuffixesDeserializer extends IntegerDeserializer<StreetSuffixes> {
+    public StreetSuffixesDeserializer() {
+      super(StreetSuffixes.class);
+    }
 
-		@Override
-		protected StreetSuffixes construct() {
-			return new StreetSuffixes();
-		}
-	}
+    @Override
+    protected StreetSuffixes construct() {
+      return new StreetSuffixes();
+    }
+  }
 }

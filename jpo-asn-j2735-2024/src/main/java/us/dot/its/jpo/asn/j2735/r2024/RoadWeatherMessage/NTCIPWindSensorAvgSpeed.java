@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPWindSensorAvgSpeed.NTCIPWindSensorAvgSpeedDeserializer.class)
 public class NTCIPWindSensorAvgSpeed extends Asn1Integer {
 
-	public NTCIPWindSensorAvgSpeed() {
-		super(0L, 65535L);
-	}
+  public NTCIPWindSensorAvgSpeed() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public NTCIPWindSensorAvgSpeed(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPWindSensorAvgSpeed(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPWindSensorAvgSpeedDeserializer extends IntegerDeserializer<NTCIPWindSensorAvgSpeed> {
-		public NTCIPWindSensorAvgSpeedDeserializer() {
-			super(NTCIPWindSensorAvgSpeed.class);
-		}
+  public static class NTCIPWindSensorAvgSpeedDeserializer
+      extends IntegerDeserializer<NTCIPWindSensorAvgSpeed> {
+    public NTCIPWindSensorAvgSpeedDeserializer() {
+      super(NTCIPWindSensorAvgSpeed.class);
+    }
 
-		@Override
-		protected NTCIPWindSensorAvgSpeed construct() {
-			return new NTCIPWindSensorAvgSpeed();
-		}
-	}
+    @Override
+    protected NTCIPWindSensorAvgSpeed construct() {
+      return new NTCIPWindSensorAvgSpeed();
+    }
+  }
 }

@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = BrakePedalPosition.BrakePedalPositionDeserializer.class)
 public class BrakePedalPosition extends Asn1Integer {
 
-	public BrakePedalPosition() {
-		super(0L, 201L);
-	}
+  public BrakePedalPosition() {
+    super(0L, 201L);
+  }
 
-	@JsonCreator
-	public BrakePedalPosition(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public BrakePedalPosition(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class BrakePedalPositionDeserializer extends IntegerDeserializer<BrakePedalPosition> {
-		public BrakePedalPositionDeserializer() {
-			super(BrakePedalPosition.class);
-		}
+  public static class BrakePedalPositionDeserializer
+      extends IntegerDeserializer<BrakePedalPosition> {
+    public BrakePedalPositionDeserializer() {
+      super(BrakePedalPosition.class);
+    }
 
-		@Override
-		protected BrakePedalPosition construct() {
-			return new BrakePedalPosition();
-		}
-	}
+    @Override
+    protected BrakePedalPosition construct() {
+      return new BrakePedalPosition();
+    }
+  }
 }

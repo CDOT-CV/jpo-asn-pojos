@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DDay.DDayDeserializer.class)
 public class DDay extends Asn1Integer {
 
-	public DDay() {
-		super(0L, 31L);
-	}
+  public DDay() {
+    super(0L, 31L);
+  }
 
-	@JsonCreator
-	public DDay(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DDay(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DDayDeserializer extends IntegerDeserializer<DDay> {
-		public DDayDeserializer() {
-			super(DDay.class);
-		}
+  public static class DDayDeserializer extends IntegerDeserializer<DDay> {
+    public DDayDeserializer() {
+      super(DDay.class);
+    }
 
-		@Override
-		protected DDay construct() {
-			return new DDay();
-		}
-	}
+    @Override
+    protected DDay construct() {
+      return new DDay();
+    }
+  }
 }

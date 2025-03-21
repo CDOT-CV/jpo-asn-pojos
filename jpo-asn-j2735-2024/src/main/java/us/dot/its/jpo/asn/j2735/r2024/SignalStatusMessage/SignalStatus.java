@@ -43,31 +43,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class SignalStatus extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "sequenceNumber")
-	@JsonProperty("sequenceNumber")
-	private MsgCount sequenceNumber;
-	@Asn1Property(tag = 1, name = "id")
-	@JsonProperty("id")
-	private IntersectionReferenceID id;
-	@Asn1Property(tag = 2, name = "sigStatus")
-	@JsonProperty("sigStatus")
-	@JacksonXmlElementWrapper(localName = "sigStatus")
-	@JacksonXmlProperty(localName = "SignalStatusPackage")
-	private SignalStatusPackageList sigStatus;
-	@Asn1Property(tag = 3, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-SignalStatus")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "sequenceNumber")
+  @JsonProperty("sequenceNumber")
+  private MsgCount sequenceNumber;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalStatus> {
-		public SequenceOfRegional() {
-			super(Reg_SignalStatus.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "id")
+  @JsonProperty("id")
+  private IntersectionReferenceID id;
 
-	public SignalStatus() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "sigStatus")
+  @JsonProperty("sigStatus")
+  @JacksonXmlElementWrapper(localName = "sigStatus")
+  @JacksonXmlProperty(localName = "SignalStatusPackage")
+  private SignalStatusPackageList sigStatus;
+
+  @Asn1Property(tag = 3, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-SignalStatus")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalStatus> {
+    public SequenceOfRegional() {
+      super(Reg_SignalStatus.class, 1L, 4L);
+    }
+  }
+
+  public SignalStatus() {
+    super(true);
+  }
 }

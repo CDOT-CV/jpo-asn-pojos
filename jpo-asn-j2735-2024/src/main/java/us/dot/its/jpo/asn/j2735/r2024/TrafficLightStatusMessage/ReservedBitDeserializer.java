@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class ReservedBitDeserializer extends BooleanDeserializer<ReservedBit> {
 
-	public ReservedBitDeserializer() {
-		super(ReservedBit.class);
-	}
+  public ReservedBitDeserializer() {
+    super(ReservedBit.class);
+  }
 
-	@Override
-	protected ReservedBit construct() {
-		return new ReservedBit();
-	}
+  @Override
+  protected ReservedBit construct() {
+    return new ReservedBit();
+  }
 }

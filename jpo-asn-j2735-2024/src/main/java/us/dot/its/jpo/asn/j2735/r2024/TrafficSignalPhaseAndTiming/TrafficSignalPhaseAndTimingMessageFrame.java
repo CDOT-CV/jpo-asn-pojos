@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
-public class TrafficSignalPhaseAndTimingMessageFrame extends MessageFrame<TrafficSignalPhaseAndTiming> {
+public class TrafficSignalPhaseAndTimingMessageFrame
+    extends MessageFrame<TrafficSignalPhaseAndTiming> {
 
-	public TrafficSignalPhaseAndTimingMessageFrame() {
-		super(45, "TrafficSignalPhaseAndTiming");
-	}
+  public TrafficSignalPhaseAndTimingMessageFrame() {
+    super(45, "TrafficSignalPhaseAndTiming");
+  }
 
-	@Override
-	@JsonSerialize(using = TrafficSignalPhaseAndTimingMessageFrameValueSerializer.class)
-	public TrafficSignalPhaseAndTiming getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = TrafficSignalPhaseAndTimingMessageFrameValueSerializer.class)
+  public TrafficSignalPhaseAndTiming getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = TrafficSignalPhaseAndTimingMessageFrameValueDeserializer.class)
-	public void setValue(TrafficSignalPhaseAndTiming value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = TrafficSignalPhaseAndTimingMessageFrameValueDeserializer.class)
+  public void setValue(TrafficSignalPhaseAndTiming value) {
+    super.setValue(value);
+  }
 }

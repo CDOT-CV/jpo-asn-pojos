@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class TRRLocationType3 extends Asn1SequenceOf<PositionOffsetXYZ> {
 
-	public TRRLocationType3() {
-		super(PositionOffsetXYZ.class, 0L, 2147483647L);
-	}
+  public TRRLocationType3() {
+    super(PositionOffsetXYZ.class, 0L, 2147483647L);
+  }
 }

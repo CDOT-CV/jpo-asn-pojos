@@ -22,9 +22,9 @@
 
 package us.dot.its.jpo.asn.j2735.r2024.Common;
 
-abstract public class REG_EXT_ID_AND_TYPE<T> {
+public abstract class REG_EXT_ID_AND_TYPE<T> {
 
-	abstract RegionId getId();
+  abstract RegionId getId();
 
-	abstract Class<T> getType();
+  abstract Class<T> getType();
 }

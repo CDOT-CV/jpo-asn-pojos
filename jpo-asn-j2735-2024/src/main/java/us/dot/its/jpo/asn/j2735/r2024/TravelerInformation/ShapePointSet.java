@@ -40,20 +40,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ShapePointSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "anchor", optional = true)
-	@JsonProperty("anchor")
-	private Position3D anchor;
-	@Asn1Property(tag = 1, name = "laneWidth", optional = true)
-	@JsonProperty("laneWidth")
-	private LaneWidth laneWidth;
-	@Asn1Property(tag = 2, name = "directionality", optional = true)
-	@JsonProperty("directionality")
-	private DirectionOfUse directionality;
-	@Asn1Property(tag = 3, name = "nodeList")
-	@JsonProperty("nodeList")
-	private NodeListXY nodeList;
+  @Asn1Property(tag = 0, name = "anchor", optional = true)
+  @JsonProperty("anchor")
+  private Position3D anchor;
 
-	public ShapePointSet() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "laneWidth", optional = true)
+  @JsonProperty("laneWidth")
+  private LaneWidth laneWidth;
+
+  @Asn1Property(tag = 2, name = "directionality", optional = true)
+  @JsonProperty("directionality")
+  private DirectionOfUse directionality;
+
+  @Asn1Property(tag = 3, name = "nodeList")
+  @JsonProperty("nodeList")
+  private NodeListXY nodeList;
+
+  public ShapePointSet() {
+    super(true);
+  }
 }

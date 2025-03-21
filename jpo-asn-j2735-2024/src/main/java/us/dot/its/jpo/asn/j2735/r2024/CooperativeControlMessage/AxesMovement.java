@@ -38,26 +38,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AxesMovement extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "yaw", optional = true)
-	@JsonProperty("yaw")
-	private Yaw yaw;
-	@Asn1Property(tag = 1, name = "pitch", optional = true)
-	@JsonProperty("pitch")
-	private Pitch pitch;
-	@Asn1Property(tag = 2, name = "roll", optional = true)
-	@JsonProperty("roll")
-	private Roll roll;
-	@Asn1Property(tag = 3, name = "yawRate", optional = true)
-	@JsonProperty("yawRate")
-	private YawRate yawRate;
-	@Asn1Property(tag = 4, name = "pitchRate", optional = true)
-	@JsonProperty("pitchRate")
-	private PitchRate pitchRate;
-	@Asn1Property(tag = 5, name = "rollRate", optional = true)
-	@JsonProperty("rollRate")
-	private RollRate rollRate;
+  @Asn1Property(tag = 0, name = "yaw", optional = true)
+  @JsonProperty("yaw")
+  private Yaw yaw;
 
-	public AxesMovement() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "pitch", optional = true)
+  @JsonProperty("pitch")
+  private Pitch pitch;
+
+  @Asn1Property(tag = 2, name = "roll", optional = true)
+  @JsonProperty("roll")
+  private Roll roll;
+
+  @Asn1Property(tag = 3, name = "yawRate", optional = true)
+  @JsonProperty("yawRate")
+  private YawRate yawRate;
+
+  @Asn1Property(tag = 4, name = "pitchRate", optional = true)
+  @JsonProperty("pitchRate")
+  private PitchRate pitchRate;
+
+  @Asn1Property(tag = 5, name = "rollRate", optional = true)
+  @JsonProperty("rollRate")
+  private RollRate rollRate;
+
+  public AxesMovement() {
+    super(false);
+  }
 }

@@ -37,38 +37,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class FullPositionVector extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "utcTime", optional = true)
-	@JsonProperty("utcTime")
-	private DDateTime utcTime;
-	@Asn1Property(tag = 1, name = "long")
-	@JsonProperty("long")
-	private Longitude long_;
-	@Asn1Property(tag = 2, name = "lat")
-	@JsonProperty("lat")
-	private Latitude lat;
-	@Asn1Property(tag = 3, name = "elevation", optional = true)
-	@JsonProperty("elevation")
-	private Elevation elevation;
-	@Asn1Property(tag = 4, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private Heading heading;
-	@Asn1Property(tag = 5, name = "speed", optional = true)
-	@JsonProperty("speed")
-	private TransmissionAndSpeed speed;
-	@Asn1Property(tag = 6, name = "posAccuracy", optional = true)
-	@JsonProperty("posAccuracy")
-	private PositionalAccuracy posAccuracy;
-	@Asn1Property(tag = 7, name = "timeConfidence", optional = true)
-	@JsonProperty("timeConfidence")
-	private TimeConfidence timeConfidence;
-	@Asn1Property(tag = 8, name = "posConfidence", optional = true)
-	@JsonProperty("posConfidence")
-	private PositionConfidenceSet posConfidence;
-	@Asn1Property(tag = 9, name = "speedConfidence", optional = true)
-	@JsonProperty("speedConfidence")
-	private SpeedandHeadingandThrottleConfidence speedConfidence;
+  @Asn1Property(tag = 0, name = "utcTime", optional = true)
+  @JsonProperty("utcTime")
+  private DDateTime utcTime;
 
-	public FullPositionVector() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "long")
+  @JsonProperty("long")
+  private Longitude long_;
+
+  @Asn1Property(tag = 2, name = "lat")
+  @JsonProperty("lat")
+  private Latitude lat;
+
+  @Asn1Property(tag = 3, name = "elevation", optional = true)
+  @JsonProperty("elevation")
+  private Elevation elevation;
+
+  @Asn1Property(tag = 4, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private Heading heading;
+
+  @Asn1Property(tag = 5, name = "speed", optional = true)
+  @JsonProperty("speed")
+  private TransmissionAndSpeed speed;
+
+  @Asn1Property(tag = 6, name = "posAccuracy", optional = true)
+  @JsonProperty("posAccuracy")
+  private PositionalAccuracy posAccuracy;
+
+  @Asn1Property(tag = 7, name = "timeConfidence", optional = true)
+  @JsonProperty("timeConfidence")
+  private TimeConfidence timeConfidence;
+
+  @Asn1Property(tag = 8, name = "posConfidence", optional = true)
+  @JsonProperty("posConfidence")
+  private PositionConfidenceSet posConfidence;
+
+  @Asn1Property(tag = 9, name = "speedConfidence", optional = true)
+  @JsonProperty("speedConfidence")
+  private SpeedandHeadingandThrottleConfidence speedConfidence;
+
+  public FullPositionVector() {
+    super(true);
+  }
 }

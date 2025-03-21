@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class RoadGeometryAndAttributesMessageFrame extends MessageFrame<RoadGeometryAndAttributes> {
 
-	public RoadGeometryAndAttributesMessageFrame() {
-		super(43, "RoadGeometryAndAttributes");
-	}
+  public RoadGeometryAndAttributesMessageFrame() {
+    super(43, "RoadGeometryAndAttributes");
+  }
 
-	@Override
-	@JsonSerialize(using = RoadGeometryAndAttributesMessageFrameValueSerializer.class)
-	public RoadGeometryAndAttributes getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = RoadGeometryAndAttributesMessageFrameValueSerializer.class)
+  public RoadGeometryAndAttributes getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = RoadGeometryAndAttributesMessageFrameValueDeserializer.class)
-	public void setValue(RoadGeometryAndAttributes value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = RoadGeometryAndAttributesMessageFrameValueDeserializer.class)
+  public void setValue(RoadGeometryAndAttributes value) {
+    super.setValue(value);
+  }
 }

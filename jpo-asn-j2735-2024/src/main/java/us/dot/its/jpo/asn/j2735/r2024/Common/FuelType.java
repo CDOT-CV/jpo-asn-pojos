@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = FuelType.FuelTypeDeserializer.class)
 public class FuelType extends Asn1Integer {
 
-	public FuelType() {
-		super(0L, 15L);
-	}
+  public FuelType() {
+    super(0L, 15L);
+  }
 
-	@JsonCreator
-	public FuelType(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public FuelType(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class FuelTypeDeserializer extends IntegerDeserializer<FuelType> {
-		public FuelTypeDeserializer() {
-			super(FuelType.class);
-		}
+  public static class FuelTypeDeserializer extends IntegerDeserializer<FuelType> {
+    public FuelTypeDeserializer() {
+      super(FuelType.class);
+    }
 
-		@Override
-		protected FuelType construct() {
-			return new FuelType();
-		}
-	}
+    @Override
+    protected FuelType construct() {
+      return new FuelType();
+    }
+  }
 }

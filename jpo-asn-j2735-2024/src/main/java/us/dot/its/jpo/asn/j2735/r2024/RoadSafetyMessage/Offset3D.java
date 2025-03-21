@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Offset3D extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lat-offset")
-	@JsonProperty("lat-offset")
-	private LatOffset lat_offset;
-	@Asn1Property(tag = 1, name = "long-offset")
-	@JsonProperty("long-offset")
-	private LongOffset long_offset;
-	@Asn1Property(tag = 2, name = "elev-offset", optional = true)
-	@JsonProperty("elev-offset")
-	private ElevOffset elev_offset;
+  @Asn1Property(tag = 0, name = "lat-offset")
+  @JsonProperty("lat-offset")
+  private LatOffset lat_offset;
 
-	public Offset3D() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "long-offset")
+  @JsonProperty("long-offset")
+  private LongOffset long_offset;
+
+  @Asn1Property(tag = 2, name = "elev-offset", optional = true)
+  @JsonProperty("elev-offset")
+  private ElevOffset elev_offset;
+
+  public Offset3D() {
+    super(true);
+  }
 }

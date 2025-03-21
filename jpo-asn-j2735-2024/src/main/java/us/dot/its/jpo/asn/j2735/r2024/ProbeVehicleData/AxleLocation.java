@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AxleLocation.AxleLocationDeserializer.class)
 public class AxleLocation extends Asn1Integer {
 
-	public AxleLocation() {
-		super(0L, 255L);
-	}
+  public AxleLocation() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public AxleLocation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AxleLocation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AxleLocationDeserializer extends IntegerDeserializer<AxleLocation> {
-		public AxleLocationDeserializer() {
-			super(AxleLocation.class);
-		}
+  public static class AxleLocationDeserializer extends IntegerDeserializer<AxleLocation> {
+    public AxleLocationDeserializer() {
+      super(AxleLocation.class);
+    }
 
-		@Override
-		protected AxleLocation construct() {
-			return new AxleLocation();
-		}
-	}
+    @Override
+    protected AxleLocation construct() {
+      return new AxleLocation();
+    }
+  }
 }

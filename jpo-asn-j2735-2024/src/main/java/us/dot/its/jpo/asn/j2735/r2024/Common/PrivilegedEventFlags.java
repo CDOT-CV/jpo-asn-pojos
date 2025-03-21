@@ -26,70 +26,83 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = PrivilegedEventFlags.PrivilegedEventFlagsDeserializer.class)
+@JsonDeserialize(
+    using =
+        PrivilegedEventFlags.PrivilegedEventFlagsDeserializer
+            .class)
 public class PrivilegedEventFlags extends Asn1Bitstring {
 
-	public boolean isPeUnavailable() {
-		return get(0);
-	}
+  public boolean isPeUnavailable() {
+    return get(0);
+  }
 
-	public void setPeUnavailable(boolean peUnavailable) {
-		set(0, peUnavailable);
-	}
+  public void setPeUnavailable(boolean peUnavailable) {
+    set(0, peUnavailable);
+  }
 
-	public boolean isPeEmergencyResponse() {
-		return get(1);
-	}
+  public boolean isPeEmergencyResponse() {
+    return get(1);
+  }
 
-	public void setPeEmergencyResponse(boolean peEmergencyResponse) {
-		set(1, peEmergencyResponse);
-	}
+  public void setPeEmergencyResponse(boolean peEmergencyResponse) {
+    set(1, peEmergencyResponse);
+  }
 
-	public boolean isPeEmergencyLightsActive() {
-		return get(2);
-	}
+  public boolean isPeEmergencyLightsActive() {
+    return get(2);
+  }
 
-	public void setPeEmergencyLightsActive(boolean peEmergencyLightsActive) {
-		set(2, peEmergencyLightsActive);
-	}
+  public void setPeEmergencyLightsActive(boolean peEmergencyLightsActive) {
+    set(2, peEmergencyLightsActive);
+  }
 
-	public boolean isPeEmergencySoundActive() {
-		return get(3);
-	}
+  public boolean isPeEmergencySoundActive() {
+    return get(3);
+  }
 
-	public void setPeEmergencySoundActive(boolean peEmergencySoundActive) {
-		set(3, peEmergencySoundActive);
-	}
+  public void setPeEmergencySoundActive(boolean peEmergencySoundActive) {
+    set(3, peEmergencySoundActive);
+  }
 
-	public boolean isPeNonEmergencyLightsActive() {
-		return get(4);
-	}
+  public boolean isPeNonEmergencyLightsActive() {
+    return get(4);
+  }
 
-	public void setPeNonEmergencyLightsActive(boolean peNonEmergencyLightsActive) {
-		set(4, peNonEmergencyLightsActive);
-	}
+  public void setPeNonEmergencyLightsActive(boolean peNonEmergencyLightsActive) {
+    set(4, peNonEmergencyLightsActive);
+  }
 
-	public boolean isPeNonEmergencySoundActive() {
-		return get(5);
-	}
+  public boolean isPeNonEmergencySoundActive() {
+    return get(5);
+  }
 
-	public void setPeNonEmergencySoundActive(boolean peNonEmergencySoundActive) {
-		set(5, peNonEmergencySoundActive);
-	}
+  public void setPeNonEmergencySoundActive(boolean peNonEmergencySoundActive) {
+    set(5, peNonEmergencySoundActive);
+  }
 
-	public PrivilegedEventFlags() {
-		super(16, false, new String[]{"peUnavailable", "peEmergencyResponse", "peEmergencyLightsActive",
-				"peEmergencySoundActive", "peNonEmergencyLightsActive", "peNonEmergencySoundActive"});
-	}
+  public PrivilegedEventFlags() {
+    super(
+        16,
+        false,
+        new String[] {
+          "peUnavailable",
+          "peEmergencyResponse",
+          "peEmergencyLightsActive",
+          "peEmergencySoundActive",
+          "peNonEmergencyLightsActive",
+          "peNonEmergencySoundActive"
+        });
+  }
 
-	public static class PrivilegedEventFlagsDeserializer extends BitStringDeserializer<PrivilegedEventFlags> {
-		public PrivilegedEventFlagsDeserializer() {
-			super(PrivilegedEventFlags.class);
-		}
+  public static class PrivilegedEventFlagsDeserializer
+      extends BitStringDeserializer<PrivilegedEventFlags> {
+    public PrivilegedEventFlagsDeserializer() {
+      super(PrivilegedEventFlags.class);
+    }
 
-		@Override
-		protected PrivilegedEventFlags construct() {
-			return new PrivilegedEventFlags();
-		}
-	}
+    @Override
+    protected PrivilegedEventFlags construct() {
+      return new PrivilegedEventFlags();
+    }
+  }
 }

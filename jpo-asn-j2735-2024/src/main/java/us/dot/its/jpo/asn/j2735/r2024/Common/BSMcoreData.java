@@ -37,50 +37,63 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class BSMcoreData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "msgCnt")
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 1, name = "id")
-	@JsonProperty("id")
-	private TemporaryID id;
-	@Asn1Property(tag = 2, name = "secMark")
-	@JsonProperty("secMark")
-	private DSecond secMark;
-	@Asn1Property(tag = 3, name = "lat")
-	@JsonProperty("lat")
-	private Latitude lat;
-	@Asn1Property(tag = 4, name = "long")
-	@JsonProperty("long")
-	private Longitude long_;
-	@Asn1Property(tag = 5, name = "elev")
-	@JsonProperty("elev")
-	private Elevation elev;
-	@Asn1Property(tag = 6, name = "accuracy")
-	@JsonProperty("accuracy")
-	private PositionalAccuracy accuracy;
-	@Asn1Property(tag = 7, name = "transmission")
-	@JsonProperty("transmission")
-	private TransmissionState transmission;
-	@Asn1Property(tag = 8, name = "speed")
-	@JsonProperty("speed")
-	private Speed speed;
-	@Asn1Property(tag = 9, name = "heading")
-	@JsonProperty("heading")
-	private Heading heading;
-	@Asn1Property(tag = 10, name = "angle")
-	@JsonProperty("angle")
-	private SteeringWheelAngle angle;
-	@Asn1Property(tag = 11, name = "accelSet")
-	@JsonProperty("accelSet")
-	private AccelerationSet4Way accelSet;
-	@Asn1Property(tag = 12, name = "brakes")
-	@JsonProperty("brakes")
-	private BrakeSystemStatus brakes;
-	@Asn1Property(tag = 13, name = "size")
-	@JsonProperty("size")
-	private VehicleSize size;
+  @Asn1Property(tag = 0, name = "msgCnt")
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
 
-	public BSMcoreData() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "id")
+  @JsonProperty("id")
+  private TemporaryID id;
+
+  @Asn1Property(tag = 2, name = "secMark")
+  @JsonProperty("secMark")
+  private DSecond secMark;
+
+  @Asn1Property(tag = 3, name = "lat")
+  @JsonProperty("lat")
+  private Latitude lat;
+
+  @Asn1Property(tag = 4, name = "long")
+  @JsonProperty("long")
+  private Longitude long_;
+
+  @Asn1Property(tag = 5, name = "elev")
+  @JsonProperty("elev")
+  private Elevation elev;
+
+  @Asn1Property(tag = 6, name = "accuracy")
+  @JsonProperty("accuracy")
+  private PositionalAccuracy accuracy;
+
+  @Asn1Property(tag = 7, name = "transmission")
+  @JsonProperty("transmission")
+  private TransmissionState transmission;
+
+  @Asn1Property(tag = 8, name = "speed")
+  @JsonProperty("speed")
+  private Speed speed;
+
+  @Asn1Property(tag = 9, name = "heading")
+  @JsonProperty("heading")
+  private Heading heading;
+
+  @Asn1Property(tag = 10, name = "angle")
+  @JsonProperty("angle")
+  private SteeringWheelAngle angle;
+
+  @Asn1Property(tag = 11, name = "accelSet")
+  @JsonProperty("accelSet")
+  private AccelerationSet4Way accelSet;
+
+  @Asn1Property(tag = 12, name = "brakes")
+  @JsonProperty("brakes")
+  private BrakeSystemStatus brakes;
+
+  @Asn1Property(tag = 13, name = "size")
+  @JsonProperty("size")
+  private VehicleSize size;
+
+  public BSMcoreData() {
+    super(false);
+  }
 }

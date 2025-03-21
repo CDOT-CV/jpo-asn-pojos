@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MeanVariation.MeanVariationDeserializer.class)
 public class MeanVariation extends Asn1Integer {
 
-	public MeanVariation() {
-		super(0L, 25000L);
-	}
+  public MeanVariation() {
+    super(0L, 25000L);
+  }
 
-	@JsonCreator
-	public MeanVariation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MeanVariation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MeanVariationDeserializer extends IntegerDeserializer<MeanVariation> {
-		public MeanVariationDeserializer() {
-			super(MeanVariation.class);
-		}
+  public static class MeanVariationDeserializer extends IntegerDeserializer<MeanVariation> {
+    public MeanVariationDeserializer() {
+      super(MeanVariation.class);
+    }
 
-		@Override
-		protected MeanVariation construct() {
-			return new MeanVariation();
-		}
-	}
+    @Override
+    protected MeanVariation construct() {
+      return new MeanVariation();
+    }
+  }
 }

@@ -48,74 +48,95 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleStatus extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lights", optional = true)
-	@JsonProperty("lights")
-	private ExteriorLights lights;
-	@Asn1Property(tag = 1, name = "lightBar", optional = true)
-	@JsonProperty("lightBar")
-	private LightbarInUse lightBar;
-	@Asn1Property(tag = 2, name = "wipers", optional = true)
-	@JsonProperty("wipers")
-	private WiperSet wipers;
-	@Asn1Property(tag = 3, name = "brakeStatus", optional = true)
-	@JsonProperty("brakeStatus")
-	private BrakeSystemStatus brakeStatus;
-	@Asn1Property(tag = 4, name = "brakePressure", optional = true)
-	@JsonProperty("brakePressure")
-	private BrakeAppliedPressure brakePressure;
-	@Asn1Property(tag = 5, name = "roadFriction", optional = true)
-	@JsonProperty("roadFriction")
-	private CoefficientOfFriction roadFriction;
-	@Asn1Property(tag = 6, name = "sunData", optional = true)
-	@JsonProperty("sunData")
-	private SunSensor sunData;
-	@Asn1Property(tag = 7, name = "rainData", optional = true)
-	@JsonProperty("rainData")
-	private RainSensor rainData;
-	@Asn1Property(tag = 8, name = "airTemp", optional = true)
-	@JsonProperty("airTemp")
-	private AmbientAirTemperature airTemp;
-	@Asn1Property(tag = 9, name = "airPres", optional = true)
-	@JsonProperty("airPres")
-	private AmbientAirPressure airPres;
-	@Asn1Property(tag = 10, name = "steering", optional = true)
-	@JsonProperty("steering")
-	private Asn1Sequence steering;
-	@Asn1Property(tag = 11, name = "accelSets", optional = true)
-	@JsonProperty("accelSets")
-	private Asn1Sequence accelSets;
-	@Asn1Property(tag = 12, name = "object", optional = true)
-	@JsonProperty("object")
-	private Asn1Sequence object;
-	@Asn1Property(tag = 13, name = "fullPos", optional = true)
-	@JsonProperty("fullPos")
-	private FullPositionVector fullPos;
-	@Asn1Property(tag = 14, name = "throttlePos", optional = true)
-	@JsonProperty("throttlePos")
-	private ThrottlePosition throttlePos;
-	@Asn1Property(tag = 15, name = "speedHeadC", optional = true)
-	@JsonProperty("speedHeadC")
-	private SpeedandHeadingandThrottleConfidence speedHeadC;
-	@Asn1Property(tag = 16, name = "speedC", optional = true)
-	@JsonProperty("speedC")
-	private SpeedConfidence speedC;
-	@Asn1Property(tag = 17, name = "vehicleData", optional = true)
-	@JsonProperty("vehicleData")
-	private Asn1Sequence vehicleData;
-	@Asn1Property(tag = 18, name = "vehicleIdent", optional = true)
-	@JsonProperty("vehicleIdent")
-	private VehicleIdent vehicleIdent;
-	@Asn1Property(tag = 19, name = "j1939data", optional = true)
-	@JsonProperty("j1939data")
-	private J1939data j1939data;
-	@Asn1Property(tag = 20, name = "weatherReport", optional = true)
-	@JsonProperty("weatherReport")
-	private Asn1Sequence weatherReport;
-	@Asn1Property(tag = 21, name = "gnssStatus", optional = true)
-	@JsonProperty("gnssStatus")
-	private GNSSstatus gnssStatus;
+  @Asn1Property(tag = 0, name = "lights", optional = true)
+  @JsonProperty("lights")
+  private ExteriorLights lights;
 
-	public VehicleStatus() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "lightBar", optional = true)
+  @JsonProperty("lightBar")
+  private LightbarInUse lightBar;
+
+  @Asn1Property(tag = 2, name = "wipers", optional = true)
+  @JsonProperty("wipers")
+  private WiperSet wipers;
+
+  @Asn1Property(tag = 3, name = "brakeStatus", optional = true)
+  @JsonProperty("brakeStatus")
+  private BrakeSystemStatus brakeStatus;
+
+  @Asn1Property(tag = 4, name = "brakePressure", optional = true)
+  @JsonProperty("brakePressure")
+  private BrakeAppliedPressure brakePressure;
+
+  @Asn1Property(tag = 5, name = "roadFriction", optional = true)
+  @JsonProperty("roadFriction")
+  private CoefficientOfFriction roadFriction;
+
+  @Asn1Property(tag = 6, name = "sunData", optional = true)
+  @JsonProperty("sunData")
+  private SunSensor sunData;
+
+  @Asn1Property(tag = 7, name = "rainData", optional = true)
+  @JsonProperty("rainData")
+  private RainSensor rainData;
+
+  @Asn1Property(tag = 8, name = "airTemp", optional = true)
+  @JsonProperty("airTemp")
+  private AmbientAirTemperature airTemp;
+
+  @Asn1Property(tag = 9, name = "airPres", optional = true)
+  @JsonProperty("airPres")
+  private AmbientAirPressure airPres;
+
+  @Asn1Property(tag = 10, name = "steering", optional = true)
+  @JsonProperty("steering")
+  private Asn1Sequence steering;
+
+  @Asn1Property(tag = 11, name = "accelSets", optional = true)
+  @JsonProperty("accelSets")
+  private Asn1Sequence accelSets;
+
+  @Asn1Property(tag = 12, name = "object", optional = true)
+  @JsonProperty("object")
+  private Asn1Sequence object;
+
+  @Asn1Property(tag = 13, name = "fullPos", optional = true)
+  @JsonProperty("fullPos")
+  private FullPositionVector fullPos;
+
+  @Asn1Property(tag = 14, name = "throttlePos", optional = true)
+  @JsonProperty("throttlePos")
+  private ThrottlePosition throttlePos;
+
+  @Asn1Property(tag = 15, name = "speedHeadC", optional = true)
+  @JsonProperty("speedHeadC")
+  private SpeedandHeadingandThrottleConfidence speedHeadC;
+
+  @Asn1Property(tag = 16, name = "speedC", optional = true)
+  @JsonProperty("speedC")
+  private SpeedConfidence speedC;
+
+  @Asn1Property(tag = 17, name = "vehicleData", optional = true)
+  @JsonProperty("vehicleData")
+  private Asn1Sequence vehicleData;
+
+  @Asn1Property(tag = 18, name = "vehicleIdent", optional = true)
+  @JsonProperty("vehicleIdent")
+  private VehicleIdent vehicleIdent;
+
+  @Asn1Property(tag = 19, name = "j1939data", optional = true)
+  @JsonProperty("j1939data")
+  private J1939data j1939data;
+
+  @Asn1Property(tag = 20, name = "weatherReport", optional = true)
+  @JsonProperty("weatherReport")
+  private Asn1Sequence weatherReport;
+
+  @Asn1Property(tag = 21, name = "gnssStatus", optional = true)
+  @JsonProperty("gnssStatus")
+  private GNSSstatus gnssStatus;
+
+  public VehicleStatus() {
+    super(true);
+  }
 }

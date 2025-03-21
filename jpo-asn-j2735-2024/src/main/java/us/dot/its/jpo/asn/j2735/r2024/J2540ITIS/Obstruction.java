@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Obstruction.ObstructionDeserializer.class)
 public class Obstruction extends Asn1Integer {
 
-	public Obstruction() {
-		super(0L, 65535L);
-	}
+  public Obstruction() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Obstruction(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Obstruction(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ObstructionDeserializer extends IntegerDeserializer<Obstruction> {
-		public ObstructionDeserializer() {
-			super(Obstruction.class);
-		}
+  public static class ObstructionDeserializer extends IntegerDeserializer<Obstruction> {
+    public ObstructionDeserializer() {
+      super(Obstruction.class);
+    }
 
-		@Override
-		protected Obstruction construct() {
-			return new Obstruction();
-		}
-	}
+    @Override
+    protected Obstruction construct() {
+      return new Obstruction();
+    }
+  }
 }

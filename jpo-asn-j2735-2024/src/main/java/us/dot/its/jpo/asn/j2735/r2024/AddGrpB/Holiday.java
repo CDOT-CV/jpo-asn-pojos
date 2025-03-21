@@ -33,30 +33,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = Holiday.HolidaySerializer.class)
 @JsonDeserialize(using = Holiday.HolidayDeserializer.class)
 public enum Holiday implements Asn1Enumerated {
-	WEEKDAY(0, "weekday"), HOLIDAY(1, "holiday");
+  WEEKDAY(0, "weekday"),
+  HOLIDAY(1, "holiday");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private Holiday(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private Holiday(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class HolidaySerializer extends EnumeratedSerializer<Holiday> {
-		public HolidaySerializer() {
-			super(Holiday.class);
-		}
-	}
+  public static class HolidaySerializer extends EnumeratedSerializer<Holiday> {
+    public HolidaySerializer() {
+      super(Holiday.class);
+    }
+  }
 
-	public static class HolidayDeserializer extends EnumeratedDeserializer<Holiday> {
-		public HolidayDeserializer() {
-			super(Holiday.class);
-		}
+  public static class HolidayDeserializer extends EnumeratedDeserializer<Holiday> {
+    public HolidayDeserializer() {
+      super(Holiday.class);
+    }
 
-		@Override
-		protected Holiday[] listEnumValues() {
-			return Holiday.values();
-		}
-	}
+    @Override
+    protected Holiday[] listEnumValues() {
+      return Holiday.values();
+    }
+  }
 }

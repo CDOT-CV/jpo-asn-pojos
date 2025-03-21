@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleSpecificCharacteristics extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "environmentalCharacteristics")
-	@JsonProperty("environmentalCharacteristics")
-	private EnvironmentalCharacteristics environmentalCharacteristics;
-	@Asn1Property(tag = 1, name = "engineCharacteristics")
-	@JsonProperty("engineCharacteristics")
-	private EngineCharacteristics engineCharacteristics;
-	@Asn1Property(tag = 2, name = "descriptiveCharacteristics")
-	@JsonProperty("descriptiveCharacteristics")
-	private DescriptiveCharacteristics descriptiveCharacteristics;
-	@Asn1Property(tag = 3, name = "futureCharacteristics")
-	@JsonProperty("futureCharacteristics")
-	private FutureCharacteristics futureCharacteristics;
+  @Asn1Property(tag = 0, name = "environmentalCharacteristics")
+  @JsonProperty("environmentalCharacteristics")
+  private EnvironmentalCharacteristics environmentalCharacteristics;
 
-	public VehicleSpecificCharacteristics() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "engineCharacteristics")
+  @JsonProperty("engineCharacteristics")
+  private EngineCharacteristics engineCharacteristics;
+
+  @Asn1Property(tag = 2, name = "descriptiveCharacteristics")
+  @JsonProperty("descriptiveCharacteristics")
+  private DescriptiveCharacteristics descriptiveCharacteristics;
+
+  @Asn1Property(tag = 3, name = "futureCharacteristics")
+  @JsonProperty("futureCharacteristics")
+  private FutureCharacteristics futureCharacteristics;
+
+  public VehicleSpecificCharacteristics() {
+    super(false);
+  }
 }

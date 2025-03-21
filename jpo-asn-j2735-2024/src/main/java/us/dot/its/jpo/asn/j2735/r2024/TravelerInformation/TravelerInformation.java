@@ -43,37 +43,42 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class TravelerInformation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "msgCnt")
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 1, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 2, name = "packetID", optional = true)
-	@JsonProperty("packetID")
-	private UniqueMSGID packetID;
-	@Asn1Property(tag = 3, name = "urlB", optional = true)
-	@JsonProperty("urlB")
-	private URL_Base urlB;
-	@Asn1Property(tag = 4, name = "dataFrames")
-	@JsonProperty("dataFrames")
-	@JacksonXmlElementWrapper(localName = "dataFrames")
-	@JacksonXmlProperty(localName = "TravelerDataFrame")
-	private TravelerDataFrameList dataFrames;
-	@Asn1Property(tag = 5, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-TravelerInformation")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "msgCnt")
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_TravelerInformation> {
-		public SequenceOfRegional() {
-			super(Reg_TravelerInformation.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	public TravelerInformation() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "packetID", optional = true)
+  @JsonProperty("packetID")
+  private UniqueMSGID packetID;
+
+  @Asn1Property(tag = 3, name = "urlB", optional = true)
+  @JsonProperty("urlB")
+  private URL_Base urlB;
+
+  @Asn1Property(tag = 4, name = "dataFrames")
+  @JsonProperty("dataFrames")
+  @JacksonXmlElementWrapper(localName = "dataFrames")
+  @JacksonXmlProperty(localName = "TravelerDataFrame")
+  private TravelerDataFrameList dataFrames;
+
+  @Asn1Property(tag = 5, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-TravelerInformation")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_TravelerInformation> {
+    public SequenceOfRegional() {
+      super(Reg_TravelerInformation.class, 1L, 4L);
+    }
+  }
+
+  public TravelerInformation() {
+    super(true);
+  }
 }

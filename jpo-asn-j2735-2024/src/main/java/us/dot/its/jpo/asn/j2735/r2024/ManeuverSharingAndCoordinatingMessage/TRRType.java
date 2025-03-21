@@ -33,30 +33,32 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TRRType.TRRTypeSerializer.class)
 @JsonDeserialize(using = TRRType.TRRTypeDeserializer.class)
 public enum TRRType implements Asn1Enumerated {
-	TRRTYPE1(0, "tRRType1"), TRRTYPE2(1, "tRRType2"), TRRTYPE3(2, "tRRType3");
+  TRRTYPE1(0, "tRRType1"),
+  TRRTYPE2(1, "tRRType2"),
+  TRRTYPE3(2, "tRRType3");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TRRType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TRRType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TRRTypeSerializer extends EnumeratedSerializer<TRRType> {
-		public TRRTypeSerializer() {
-			super(TRRType.class);
-		}
-	}
+  public static class TRRTypeSerializer extends EnumeratedSerializer<TRRType> {
+    public TRRTypeSerializer() {
+      super(TRRType.class);
+    }
+  }
 
-	public static class TRRTypeDeserializer extends EnumeratedDeserializer<TRRType> {
-		public TRRTypeDeserializer() {
-			super(TRRType.class);
-		}
+  public static class TRRTypeDeserializer extends EnumeratedDeserializer<TRRType> {
+    public TRRTypeDeserializer() {
+      super(TRRType.class);
+    }
 
-		@Override
-		protected TRRType[] listEnumValues() {
-			return TRRType.values();
-		}
-	}
+    @Override
+    protected TRRType[] listEnumValues() {
+      return TRRType.values();
+    }
+  }
 }

@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class MapDataMessageFrame extends MessageFrame<MapData> {
 
-	public MapDataMessageFrame() {
-		super(18, "MapData");
-	}
+  public MapDataMessageFrame() {
+    super(18, "MapData");
+  }
 
-	@Override
-	@JsonSerialize(using = MapDataMessageFrameValueSerializer.class)
-	public MapData getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = MapDataMessageFrameValueSerializer.class)
+  public MapData getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = MapDataMessageFrameValueDeserializer.class)
-	public void setValue(MapData value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = MapDataMessageFrameValueDeserializer.class)
+  public void setValue(MapData value) {
+    super.setValue(value);
+  }
 }

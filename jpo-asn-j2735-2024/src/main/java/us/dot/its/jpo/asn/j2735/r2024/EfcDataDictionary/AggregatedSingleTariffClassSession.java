@@ -37,32 +37,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AggregatedSingleTariffClassSession extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timePeriodCovered", optional = true)
-	@JsonProperty("timePeriodCovered")
-	private Period timePeriodCovered;
-	@Asn1Property(tag = 1, name = "currentTariffClass", optional = true)
-	@JsonProperty("currentTariffClass")
-	private TariffClassDescription currentTariffClass;
-	@Asn1Property(tag = 2, name = "vehicleDescription", optional = true)
-	@JsonProperty("vehicleDescription")
-	private VehicleDescription vehicleDescription;
-	@Asn1Property(tag = 3, name = "totalDistanceCovered", optional = true)
-	@JsonProperty("totalDistanceCovered")
-	private Distance totalDistanceCovered;
-	@Asn1Property(tag = 4, name = "numberOfDetectedEvents", optional = true)
-	@JsonProperty("numberOfDetectedEvents")
-	private Int2Unsigned numberOfDetectedEvents;
-	@Asn1Property(tag = 5, name = "obeStatus", optional = true)
-	@JsonProperty("obeStatus")
-	private Int1Unsigned obeStatus;
-	@Asn1Property(tag = 6, name = "feeExclVat", optional = true)
-	@JsonProperty("feeExclVat")
-	private PaymentFee feeExclVat;
-	@Asn1Property(tag = 7, name = "sumVat", optional = true)
-	@JsonProperty("sumVat")
-	private PaymentFee sumVat;
+  @Asn1Property(tag = 0, name = "timePeriodCovered", optional = true)
+  @JsonProperty("timePeriodCovered")
+  private Period timePeriodCovered;
 
-	public AggregatedSingleTariffClassSession() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "currentTariffClass", optional = true)
+  @JsonProperty("currentTariffClass")
+  private TariffClassDescription currentTariffClass;
+
+  @Asn1Property(tag = 2, name = "vehicleDescription", optional = true)
+  @JsonProperty("vehicleDescription")
+  private VehicleDescription vehicleDescription;
+
+  @Asn1Property(tag = 3, name = "totalDistanceCovered", optional = true)
+  @JsonProperty("totalDistanceCovered")
+  private Distance totalDistanceCovered;
+
+  @Asn1Property(tag = 4, name = "numberOfDetectedEvents", optional = true)
+  @JsonProperty("numberOfDetectedEvents")
+  private Int2Unsigned numberOfDetectedEvents;
+
+  @Asn1Property(tag = 5, name = "obeStatus", optional = true)
+  @JsonProperty("obeStatus")
+  private Int1Unsigned obeStatus;
+
+  @Asn1Property(tag = 6, name = "feeExclVat", optional = true)
+  @JsonProperty("feeExclVat")
+  private PaymentFee feeExclVat;
+
+  @Asn1Property(tag = 7, name = "sumVat", optional = true)
+  @JsonProperty("sumVat")
+  private PaymentFee sumVat;
+
+  public AggregatedSingleTariffClassSession() {
+    super(true);
+  }
 }

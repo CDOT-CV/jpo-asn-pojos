@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LastTollPointInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tollChargerInfo")
-	@JsonProperty("tollChargerInfo")
-	private TollChargerInfo tollChargerInfo;
-	@Asn1Property(tag = 1, name = "timeStamp")
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
+  @Asn1Property(tag = 0, name = "tollChargerInfo")
+  @JsonProperty("tollChargerInfo")
+  private TollChargerInfo tollChargerInfo;
 
-	public LastTollPointInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "timeStamp")
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
+
+  public LastTollPointInfo() {
+    super(true);
+  }
 }

@@ -39,164 +39,175 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptSummaryRecord extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "regTravelTime", optional = true)
-	@JsonProperty("regTravelTime")
-	private RegTravelTimeInteger regTravelTime;
-	@Asn1Property(tag = 1, name = "regVehDistTraveled", optional = true)
-	@JsonProperty("regVehDistTraveled")
-	private RegVehDistTraveledInteger regVehDistTraveled;
-	@Asn1Property(tag = 2, name = "regVehTimeTraveled", optional = true)
-	@JsonProperty("regVehTimeTraveled")
-	private RegVehTimeTraveledInteger regVehTimeTraveled;
-	@Asn1Property(tag = 3, name = "fuelConsumption", optional = true)
-	@JsonProperty("fuelConsumption")
-	private FuelConsumptionInteger fuelConsumption;
-	@Asn1Property(tag = 4, name = "totalVehEmissions", optional = true)
-	@JsonProperty("totalVehEmissions")
-	private RptEmissions totalVehEmissions;
-	@Asn1Property(tag = 5, name = "numOfLowSpeedEvents", optional = true)
-	@JsonProperty("numOfLowSpeedEvents")
-	private NumOfLowSpeedEventsInteger numOfLowSpeedEvents;
-	@Asn1Property(tag = 6, name = "timeStopped", optional = true)
-	@JsonProperty("timeStopped")
-	private TimeStoppedInteger timeStopped;
-	@Asn1Property(tag = 7, name = "numOfStopped", optional = true)
-	@JsonProperty("numOfStopped")
-	private NumOfStoppedInteger numOfStopped;
-	@Asn1Property(tag = 8, name = "locOfStops", optional = true)
-	@JsonProperty("locOfStops")
-	private RptLocOfStops locOfStops;
-	@Asn1Property(tag = 9, name = "regNumOfVehPassed", optional = true)
-	@JsonProperty("regNumOfVehPassed")
-	private RegNumOfVehPassedInteger regNumOfVehPassed;
-	@Asn1Property(tag = 10, name = "regNumOfSurpassedVeh", optional = true)
-	@JsonProperty("regNumOfSurpassedVeh")
-	private RegNumOfSurpassedVehInteger regNumOfSurpassedVeh;
-	@Asn1Property(tag = 11, name = "totalMsgsReceived", optional = true)
-	@JsonProperty("totalMsgsReceived")
-	private TotalMsgsReceivedInteger totalMsgsReceived;
+  @Asn1Property(tag = 0, name = "regTravelTime", optional = true)
+  @JsonProperty("regTravelTime")
+  private RegTravelTimeInteger regTravelTime;
 
-	public static class RegTravelTimeInteger extends Asn1Integer {
-		public RegTravelTimeInteger() {
-			super(1L, 3600L);
-		}
+  @Asn1Property(tag = 1, name = "regVehDistTraveled", optional = true)
+  @JsonProperty("regVehDistTraveled")
+  private RegVehDistTraveledInteger regVehDistTraveled;
 
-		@JsonCreator
-		public RegTravelTimeInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "regVehTimeTraveled", optional = true)
+  @JsonProperty("regVehTimeTraveled")
+  private RegVehTimeTraveledInteger regVehTimeTraveled;
 
-	public static class RegVehDistTraveledInteger extends Asn1Integer {
-		public RegVehDistTraveledInteger() {
-			super(1L, 500L);
-		}
+  @Asn1Property(tag = 3, name = "fuelConsumption", optional = true)
+  @JsonProperty("fuelConsumption")
+  private FuelConsumptionInteger fuelConsumption;
 
-		@JsonCreator
-		public RegVehDistTraveledInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "totalVehEmissions", optional = true)
+  @JsonProperty("totalVehEmissions")
+  private RptEmissions totalVehEmissions;
 
-	public static class RegVehTimeTraveledInteger extends Asn1Integer {
-		public RegVehTimeTraveledInteger() {
-			super(1L, 3600L);
-		}
+  @Asn1Property(tag = 5, name = "numOfLowSpeedEvents", optional = true)
+  @JsonProperty("numOfLowSpeedEvents")
+  private NumOfLowSpeedEventsInteger numOfLowSpeedEvents;
 
-		@JsonCreator
-		public RegVehTimeTraveledInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 6, name = "timeStopped", optional = true)
+  @JsonProperty("timeStopped")
+  private TimeStoppedInteger timeStopped;
 
-	public static class FuelConsumptionInteger extends Asn1Integer {
-		public FuelConsumptionInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 7, name = "numOfStopped", optional = true)
+  @JsonProperty("numOfStopped")
+  private NumOfStoppedInteger numOfStopped;
 
-		@JsonCreator
-		public FuelConsumptionInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 8, name = "locOfStops", optional = true)
+  @JsonProperty("locOfStops")
+  private RptLocOfStops locOfStops;
 
-	public static class NumOfLowSpeedEventsInteger extends Asn1Integer {
-		public NumOfLowSpeedEventsInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 9, name = "regNumOfVehPassed", optional = true)
+  @JsonProperty("regNumOfVehPassed")
+  private RegNumOfVehPassedInteger regNumOfVehPassed;
 
-		@JsonCreator
-		public NumOfLowSpeedEventsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 10, name = "regNumOfSurpassedVeh", optional = true)
+  @JsonProperty("regNumOfSurpassedVeh")
+  private RegNumOfSurpassedVehInteger regNumOfSurpassedVeh;
 
-	public static class TimeStoppedInteger extends Asn1Integer {
-		public TimeStoppedInteger() {
-			super(1L, 36000L);
-		}
+  @Asn1Property(tag = 11, name = "totalMsgsReceived", optional = true)
+  @JsonProperty("totalMsgsReceived")
+  private TotalMsgsReceivedInteger totalMsgsReceived;
 
-		@JsonCreator
-		public TimeStoppedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class RegTravelTimeInteger extends Asn1Integer {
+    public RegTravelTimeInteger() {
+      super(1L, 3600L);
+    }
 
-	public static class NumOfStoppedInteger extends Asn1Integer {
-		public NumOfStoppedInteger() {
-			super(1L, 255L);
-		}
+    @JsonCreator
+    public RegTravelTimeInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public NumOfStoppedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class RegVehDistTraveledInteger extends Asn1Integer {
+    public RegVehDistTraveledInteger() {
+      super(1L, 500L);
+    }
 
-	public static class RegNumOfVehPassedInteger extends Asn1Integer {
-		public RegNumOfVehPassedInteger() {
-			super(1L, 255L);
-		}
+    @JsonCreator
+    public RegVehDistTraveledInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public RegNumOfVehPassedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class RegVehTimeTraveledInteger extends Asn1Integer {
+    public RegVehTimeTraveledInteger() {
+      super(1L, 3600L);
+    }
 
-	public static class RegNumOfSurpassedVehInteger extends Asn1Integer {
-		public RegNumOfSurpassedVehInteger() {
-			super(1L, 255L);
-		}
+    @JsonCreator
+    public RegVehTimeTraveledInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public RegNumOfSurpassedVehInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class FuelConsumptionInteger extends Asn1Integer {
+    public FuelConsumptionInteger() {
+      super(1L, 255L);
+    }
 
-	public static class TotalMsgsReceivedInteger extends Asn1Integer {
-		public TotalMsgsReceivedInteger() {
-			super(1L, 255L);
-		}
+    @JsonCreator
+    public FuelConsumptionInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public TotalMsgsReceivedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class NumOfLowSpeedEventsInteger extends Asn1Integer {
+    public NumOfLowSpeedEventsInteger() {
+      super(1L, 255L);
+    }
 
-	public RptSummaryRecord() {
-		super(true);
-	}
+    @JsonCreator
+    public NumOfLowSpeedEventsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class TimeStoppedInteger extends Asn1Integer {
+    public TimeStoppedInteger() {
+      super(1L, 36000L);
+    }
+
+    @JsonCreator
+    public TimeStoppedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class NumOfStoppedInteger extends Asn1Integer {
+    public NumOfStoppedInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public NumOfStoppedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class RegNumOfVehPassedInteger extends Asn1Integer {
+    public RegNumOfVehPassedInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public RegNumOfVehPassedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class RegNumOfSurpassedVehInteger extends Asn1Integer {
+    public RegNumOfSurpassedVehInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public RegNumOfSurpassedVehInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class TotalMsgsReceivedInteger extends Asn1Integer {
+    public TotalMsgsReceivedInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public TotalMsgsReceivedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public RptSummaryRecord() {
+    super(true);
+  }
 }

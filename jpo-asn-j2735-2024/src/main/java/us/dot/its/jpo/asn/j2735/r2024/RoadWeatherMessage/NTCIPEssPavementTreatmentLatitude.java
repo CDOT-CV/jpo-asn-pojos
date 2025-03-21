@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPEssPavementTreatmentLatitude.NTCIPEssPavementTreatmentLatitudeDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssPavementTreatmentLatitude.NTCIPEssPavementTreatmentLatitudeDeserializer.class)
 public class NTCIPEssPavementTreatmentLatitude extends Asn1Integer {
 
-	public NTCIPEssPavementTreatmentLatitude() {
-		super(-90000000L, 90000001L);
-	}
+  public NTCIPEssPavementTreatmentLatitude() {
+    super(-90000000L, 90000001L);
+  }
 
-	@JsonCreator
-	public NTCIPEssPavementTreatmentLatitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPavementTreatmentLatitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssPavementTreatmentLatitudeDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssPavementTreatmentLatitude> {
-		public NTCIPEssPavementTreatmentLatitudeDeserializer() {
-			super(NTCIPEssPavementTreatmentLatitude.class);
-		}
+  public static class NTCIPEssPavementTreatmentLatitudeDeserializer
+      extends IntegerDeserializer<NTCIPEssPavementTreatmentLatitude> {
+    public NTCIPEssPavementTreatmentLatitudeDeserializer() {
+      super(NTCIPEssPavementTreatmentLatitude.class);
+    }
 
-		@Override
-		protected NTCIPEssPavementTreatmentLatitude construct() {
-			return new NTCIPEssPavementTreatmentLatitude();
-		}
-	}
+    @Override
+    protected NTCIPEssPavementTreatmentLatitude construct() {
+      return new NTCIPEssPavementTreatmentLatitude();
+    }
+  }
 }

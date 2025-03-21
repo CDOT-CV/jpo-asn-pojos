@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Position3D_addGrpC extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "altitude")
-	@JsonProperty("altitude")
-	private Altitude altitude;
+  @Asn1Property(tag = 0, name = "altitude")
+  @JsonProperty("altitude")
+  private Altitude altitude;
 
-	public Position3D_addGrpC() {
-		super(true);
-	}
+  public Position3D_addGrpC() {
+    super(true);
+  }
 }

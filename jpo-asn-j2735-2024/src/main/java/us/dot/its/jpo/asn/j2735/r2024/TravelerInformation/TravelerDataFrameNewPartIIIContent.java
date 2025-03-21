@@ -36,11 +36,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class TravelerDataFrameNewPartIIIContent extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "frictionInfo")
-	@JsonProperty("frictionInfo")
-	private FrictionInformation frictionInfo;
+  @Asn1Property(tag = 0, name = "frictionInfo")
+  @JsonProperty("frictionInfo")
+  private FrictionInformation frictionInfo;
 
-	public TravelerDataFrameNewPartIIIContent() {
-		super(true);
-	}
+  public TravelerDataFrameNewPartIIIContent() {
+    super(true);
+  }
 }

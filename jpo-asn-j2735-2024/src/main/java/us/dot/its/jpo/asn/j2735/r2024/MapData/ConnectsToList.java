@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class ConnectsToList extends Asn1SequenceOf<Connection> {
 
-	public ConnectsToList() {
-		super(Connection.class, 1L, 16L);
-	}
+  public ConnectsToList() {
+    super(Connection.class, 1L, 16L);
+  }
 }

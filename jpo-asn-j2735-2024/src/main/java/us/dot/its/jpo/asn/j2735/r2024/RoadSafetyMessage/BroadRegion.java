@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class BroadRegion extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "applicableHeading")
-	@JsonProperty("applicableHeading")
-	private ApplicableHeading applicableHeading;
-	@Asn1Property(tag = 1, name = "broadArea")
-	@JsonProperty("broadArea")
-	private BroadRegionArea broadArea;
+  @Asn1Property(tag = 0, name = "applicableHeading")
+  @JsonProperty("applicableHeading")
+  private ApplicableHeading applicableHeading;
 
-	public BroadRegion() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "broadArea")
+  @JsonProperty("broadArea")
+  private BroadRegionArea broadArea;
+
+  public BroadRegion() {
+    super(true);
+  }
 }

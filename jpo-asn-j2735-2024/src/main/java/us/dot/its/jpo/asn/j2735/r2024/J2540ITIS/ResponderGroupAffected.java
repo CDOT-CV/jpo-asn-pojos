@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ResponderGroupAffected.ResponderGroupAffectedDeserializer.class)
 public class ResponderGroupAffected extends Asn1Integer {
 
-	public ResponderGroupAffected() {
-		super(0L, 65535L);
-	}
+  public ResponderGroupAffected() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public ResponderGroupAffected(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ResponderGroupAffected(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ResponderGroupAffectedDeserializer extends IntegerDeserializer<ResponderGroupAffected> {
-		public ResponderGroupAffectedDeserializer() {
-			super(ResponderGroupAffected.class);
-		}
+  public static class ResponderGroupAffectedDeserializer
+      extends IntegerDeserializer<ResponderGroupAffected> {
+    public ResponderGroupAffectedDeserializer() {
+      super(ResponderGroupAffected.class);
+    }
 
-		@Override
-		protected ResponderGroupAffected construct() {
-			return new ResponderGroupAffected();
-		}
-	}
+    @Override
+    protected ResponderGroupAffected construct() {
+      return new ResponderGroupAffected();
+    }
+  }
 }

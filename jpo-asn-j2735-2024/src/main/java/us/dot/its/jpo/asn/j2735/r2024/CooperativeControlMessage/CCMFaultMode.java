@@ -26,86 +26,100 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = CCMFaultMode.CCMFaultModeDeserializer.class)
+@JsonDeserialize(
+    using =
+        CCMFaultMode
+            .CCMFaultModeDeserializer.class)
 public class CCMFaultMode extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isCommFault() {
-		return get(1);
-	}
+  public boolean isCommFault() {
+    return get(1);
+  }
 
-	public void setCommFault(boolean commFault) {
-		set(1, commFault);
-	}
+  public void setCommFault(boolean commFault) {
+    set(1, commFault);
+  }
 
-	public boolean isRadarFault() {
-		return get(2);
-	}
+  public boolean isRadarFault() {
+    return get(2);
+  }
 
-	public void setRadarFault(boolean radarFault) {
-		set(2, radarFault);
-	}
+  public void setRadarFault(boolean radarFault) {
+    set(2, radarFault);
+  }
 
-	public boolean isLidarFault() {
-		return get(3);
-	}
+  public boolean isLidarFault() {
+    return get(3);
+  }
 
-	public void setLidarFault(boolean lidarFault) {
-		set(3, lidarFault);
-	}
+  public void setLidarFault(boolean lidarFault) {
+    set(3, lidarFault);
+  }
 
-	public boolean isEngingBrkCtlFault() {
-		return get(4);
-	}
+  public boolean isEngingBrkCtlFault() {
+    return get(4);
+  }
 
-	public void setEngingBrkCtlFault(boolean engingBrkCtlFault) {
-		set(4, engingBrkCtlFault);
-	}
+  public void setEngingBrkCtlFault(boolean engingBrkCtlFault) {
+    set(4, engingBrkCtlFault);
+  }
 
-	public boolean isServiceBrkCtlFault() {
-		return get(5);
-	}
+  public boolean isServiceBrkCtlFault() {
+    return get(5);
+  }
 
-	public void setServiceBrkCtlFault(boolean serviceBrkCtlFault) {
-		set(5, serviceBrkCtlFault);
-	}
+  public void setServiceBrkCtlFault(boolean serviceBrkCtlFault) {
+    set(5, serviceBrkCtlFault);
+  }
 
-	public boolean isTransRetarderFault() {
-		return get(6);
-	}
+  public boolean isTransRetarderFault() {
+    return get(6);
+  }
 
-	public void setTransRetarderFault(boolean transRetarderFault) {
-		set(6, transRetarderFault);
-	}
+  public void setTransRetarderFault(boolean transRetarderFault) {
+    set(6, transRetarderFault);
+  }
 
-	public boolean isEngineCtlFault() {
-		return get(7);
-	}
+  public boolean isEngineCtlFault() {
+    return get(7);
+  }
 
-	public void setEngineCtlFault(boolean engineCtlFault) {
-		set(7, engineCtlFault);
-	}
+  public void setEngineCtlFault(boolean engineCtlFault) {
+    set(7, engineCtlFault);
+  }
 
-	public CCMFaultMode() {
-		super(8, false, new String[]{"unavailable", "commFault", "radarFault", "lidarFault", "engingBrkCtlFault",
-				"serviceBrkCtlFault", "transRetarderFault", "engineCtlFault"});
-	}
+  public CCMFaultMode() {
+    super(
+        8,
+        false,
+        new String[] {
+          "unavailable",
+          "commFault",
+          "radarFault",
+          "lidarFault",
+          "engingBrkCtlFault",
+          "serviceBrkCtlFault",
+          "transRetarderFault",
+          "engineCtlFault"
+        });
+  }
 
-	public static class CCMFaultModeDeserializer extends BitStringDeserializer<CCMFaultMode> {
-		public CCMFaultModeDeserializer() {
-			super(CCMFaultMode.class);
-		}
+  public static class CCMFaultModeDeserializer extends BitStringDeserializer<CCMFaultMode> {
+    public CCMFaultModeDeserializer() {
+      super(CCMFaultMode.class);
+    }
 
-		@Override
-		protected CCMFaultMode construct() {
-			return new CCMFaultMode();
-		}
-	}
+    @Override
+    protected CCMFaultMode construct() {
+      return new CCMFaultMode();
+    }
+  }
 }

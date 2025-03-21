@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipRelativeHumidity extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "relHumidity")
-	@JsonProperty("relHumidity")
-	private NTCIPHumiditySensorRelativeHumidity relHumidity;
-	@Asn1Property(tag = 1, name = "source", optional = true)
-	@JsonProperty("source")
-	private DataSourceInfo source;
+  @Asn1Property(tag = 0, name = "relHumidity")
+  @JsonProperty("relHumidity")
+  private NTCIPHumiditySensorRelativeHumidity relHumidity;
 
-	public NtcipRelativeHumidity() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "source", optional = true)
+  @JsonProperty("source")
+  private DataSourceInfo source;
+
+  public NtcipRelativeHumidity() {
+    super(true);
+  }
 }

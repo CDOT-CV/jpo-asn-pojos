@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SpeedandHeadingandThrottleConfidence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "heading")
-	@JsonProperty("heading")
-	private HeadingConfidence heading;
-	@Asn1Property(tag = 1, name = "speed")
-	@JsonProperty("speed")
-	private SpeedConfidence speed;
-	@Asn1Property(tag = 2, name = "throttle")
-	@JsonProperty("throttle")
-	private ThrottleConfidence throttle;
+  @Asn1Property(tag = 0, name = "heading")
+  @JsonProperty("heading")
+  private HeadingConfidence heading;
 
-	public SpeedandHeadingandThrottleConfidence() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "speed")
+  @JsonProperty("speed")
+  private SpeedConfidence speed;
+
+  @Asn1Property(tag = 2, name = "throttle")
+  @JsonProperty("throttle")
+  private ThrottleConfidence throttle;
+
+  public SpeedandHeadingandThrottleConfidence() {
+    super(false);
+  }
 }

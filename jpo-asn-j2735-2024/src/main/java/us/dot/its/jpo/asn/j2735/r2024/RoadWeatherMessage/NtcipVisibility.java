@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipVisibility extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "visibility")
-	@JsonProperty("visibility")
-	private NTCIPEssVisibility visibility;
+  @Asn1Property(tag = 0, name = "visibility")
+  @JsonProperty("visibility")
+  private NTCIPEssVisibility visibility;
 
-	public NtcipVisibility() {
-		super(true);
-	}
+  public NtcipVisibility() {
+    super(true);
+  }
 }

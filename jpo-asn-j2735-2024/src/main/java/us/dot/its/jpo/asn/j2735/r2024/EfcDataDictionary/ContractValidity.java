@@ -39,26 +39,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ContractValidity extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "contractRestrictions")
-	@JsonProperty("contractRestrictions")
-	private ContractRestrictionsOctetString contractRestrictions;
-	@Asn1Property(tag = 1, name = "contractExpiryDate")
-	@JsonProperty("contractExpiryDate")
-	private DateCompact contractExpiryDate;
+  @Asn1Property(tag = 0, name = "contractRestrictions")
+  @JsonProperty("contractRestrictions")
+  private ContractRestrictionsOctetString contractRestrictions;
 
-	public static class ContractRestrictionsOctetString extends Asn1OctetString {
-		public ContractRestrictionsOctetString() {
-			super(4, 4);
-		}
+  @Asn1Property(tag = 1, name = "contractExpiryDate")
+  @JsonProperty("contractExpiryDate")
+  private DateCompact contractExpiryDate;
 
-		@JsonCreator
-		public ContractRestrictionsOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  public static class ContractRestrictionsOctetString extends Asn1OctetString {
+    public ContractRestrictionsOctetString() {
+      super(4, 4);
+    }
 
-	public ContractValidity() {
-		super(false);
-	}
+    @JsonCreator
+    public ContractRestrictionsOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public ContractValidity() {
+    super(false);
+  }
 }

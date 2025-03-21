@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class SignalRequestMessageMessageFrame extends MessageFrame<SignalRequestMessage> {
 
-	public SignalRequestMessageMessageFrame() {
-		super(29, "SignalRequestMessage");
-	}
+  public SignalRequestMessageMessageFrame() {
+    super(29, "SignalRequestMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = SignalRequestMessageMessageFrameValueSerializer.class)
-	public SignalRequestMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = SignalRequestMessageMessageFrameValueSerializer.class)
+  public SignalRequestMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = SignalRequestMessageMessageFrameValueDeserializer.class)
-	public void setValue(SignalRequestMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = SignalRequestMessageMessageFrameValueDeserializer.class)
+  public void setValue(SignalRequestMessage value) {
+    super.setValue(value);
+  }
 }

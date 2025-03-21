@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = BasicVehicleClass.BasicVehicleClassDeserializer.class)
 public class BasicVehicleClass extends Asn1Integer {
 
-	public BasicVehicleClass() {
-		super(0L, 255L);
-	}
+  public BasicVehicleClass() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public BasicVehicleClass(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public BasicVehicleClass(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class BasicVehicleClassDeserializer extends IntegerDeserializer<BasicVehicleClass> {
-		public BasicVehicleClassDeserializer() {
-			super(BasicVehicleClass.class);
-		}
+  public static class BasicVehicleClassDeserializer extends IntegerDeserializer<BasicVehicleClass> {
+    public BasicVehicleClassDeserializer() {
+      super(BasicVehicleClass.class);
+    }
 
-		@Override
-		protected BasicVehicleClass construct() {
-			return new BasicVehicleClass();
-		}
-	}
+    @Override
+    protected BasicVehicleClass construct() {
+      return new BasicVehicleClass();
+    }
+  }
 }

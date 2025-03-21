@@ -41,35 +41,39 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 @Setter
 public class VehicleId extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleIdentity", optional = true)
-	@JsonProperty("vehicleIdentity")
-	private VehicleIdentityOctetString vehicleIdentity;
-	@Asn1Property(tag = 1, name = "licPlateState", optional = true)
-	@JsonProperty("licPlateState")
-	private IA5String licPlateState;
-	@Asn1Property(tag = 2, name = "licPlateNumVeh", optional = true)
-	@JsonProperty("licPlateNumVeh")
-	private IA5String licPlateNumVeh;
-	@Asn1Property(tag = 3, name = "licPlateNumTrailer", optional = true)
-	@JsonProperty("licPlateNumTrailer")
-	private IA5String licPlateNumTrailer;
-	@Asn1Property(tag = 4, name = "userId", optional = true)
-	@JsonProperty("userId")
-	private UserId userId;
+  @Asn1Property(tag = 0, name = "vehicleIdentity", optional = true)
+  @JsonProperty("vehicleIdentity")
+  private VehicleIdentityOctetString vehicleIdentity;
 
-	public static class VehicleIdentityOctetString extends Asn1OctetString {
-		public VehicleIdentityOctetString() {
-			super(16, 16);
-		}
+  @Asn1Property(tag = 1, name = "licPlateState", optional = true)
+  @JsonProperty("licPlateState")
+  private IA5String licPlateState;
 
-		@JsonCreator
-		public VehicleIdentityOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 2, name = "licPlateNumVeh", optional = true)
+  @JsonProperty("licPlateNumVeh")
+  private IA5String licPlateNumVeh;
 
-	public VehicleId() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "licPlateNumTrailer", optional = true)
+  @JsonProperty("licPlateNumTrailer")
+  private IA5String licPlateNumTrailer;
+
+  @Asn1Property(tag = 4, name = "userId", optional = true)
+  @JsonProperty("userId")
+  private UserId userId;
+
+  public static class VehicleIdentityOctetString extends Asn1OctetString {
+    public VehicleIdentityOctetString() {
+      super(16, 16);
+    }
+
+    @JsonCreator
+    public VehicleIdentityOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public VehicleId() {
+    super(true);
+  }
 }

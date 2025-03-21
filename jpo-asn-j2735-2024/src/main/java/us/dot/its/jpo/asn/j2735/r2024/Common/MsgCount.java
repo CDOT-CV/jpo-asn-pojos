@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MsgCount.MsgCountDeserializer.class)
 public class MsgCount extends Asn1Integer {
 
-	public MsgCount() {
-		super(0L, 127L);
-	}
+  public MsgCount() {
+    super(0L, 127L);
+  }
 
-	@JsonCreator
-	public MsgCount(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MsgCount(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MsgCountDeserializer extends IntegerDeserializer<MsgCount> {
-		public MsgCountDeserializer() {
-			super(MsgCount.class);
-		}
+  public static class MsgCountDeserializer extends IntegerDeserializer<MsgCount> {
+    public MsgCountDeserializer() {
+      super(MsgCount.class);
+    }
 
-		@Override
-		protected MsgCount construct() {
-			return new MsgCount();
-		}
-	}
+    @Override
+    protected MsgCount construct() {
+      return new MsgCount();
+    }
+  }
 }

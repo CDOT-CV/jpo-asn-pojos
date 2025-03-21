@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipCloudSituation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "situation")
-	@JsonProperty("situation")
-	private NTCIPEssCloudSituationV4 situation;
+  @Asn1Property(tag = 0, name = "situation")
+  @JsonProperty("situation")
+  private NTCIPEssCloudSituationV4 situation;
 
-	public NtcipCloudSituation() {
-		super(true);
-	}
+  public NtcipCloudSituation() {
+    super(true);
+  }
 }

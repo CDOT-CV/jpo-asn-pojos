@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class MessageBLOB extends Asn1OctetString {
 
-	public MessageBLOB() {
-		super(10, 2000);
-	}
+  public MessageBLOB() {
+    super(10, 2000);
+  }
 
-	@JsonCreator
-	public MessageBLOB(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public MessageBLOB(String value) {
+    this();
+    setValue(value);
+  }
 }

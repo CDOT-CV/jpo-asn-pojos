@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ConfigTriggers extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "instantaneousTriggers")
-	@JsonProperty("instantaneousTriggers")
-	private CfgInstantaneousEventTriggers instantaneousTriggers;
-	@Asn1Property(tag = 1, name = "avgAndSumTriggers")
-	@JsonProperty("avgAndSumTriggers")
-	private CfgAveragedAndSummaryTriggers avgAndSumTriggers;
+  @Asn1Property(tag = 0, name = "instantaneousTriggers")
+  @JsonProperty("instantaneousTriggers")
+  private CfgInstantaneousEventTriggers instantaneousTriggers;
 
-	public ConfigTriggers() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "avgAndSumTriggers")
+  @JsonProperty("avgAndSumTriggers")
+  private CfgAveragedAndSummaryTriggers avgAndSumTriggers;
+
+  public ConfigTriggers() {
+    super(true);
+  }
 }

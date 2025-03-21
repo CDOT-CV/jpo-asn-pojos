@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class WiperSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "statusFront")
-	@JsonProperty("statusFront")
-	private WiperStatus statusFront;
-	@Asn1Property(tag = 1, name = "rateFront")
-	@JsonProperty("rateFront")
-	private WiperRate rateFront;
-	@Asn1Property(tag = 2, name = "statusRear", optional = true)
-	@JsonProperty("statusRear")
-	private WiperStatus statusRear;
-	@Asn1Property(tag = 3, name = "rateRear", optional = true)
-	@JsonProperty("rateRear")
-	private WiperRate rateRear;
+  @Asn1Property(tag = 0, name = "statusFront")
+  @JsonProperty("statusFront")
+  private WiperStatus statusFront;
 
-	public WiperSet() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "rateFront")
+  @JsonProperty("rateFront")
+  private WiperRate rateFront;
+
+  @Asn1Property(tag = 2, name = "statusRear", optional = true)
+  @JsonProperty("statusRear")
+  private WiperStatus statusRear;
+
+  @Asn1Property(tag = 3, name = "rateRear", optional = true)
+  @JsonProperty("rateRear")
+  private WiperRate rateRear;
+
+  public WiperSet() {
+    super(false);
+  }
 }

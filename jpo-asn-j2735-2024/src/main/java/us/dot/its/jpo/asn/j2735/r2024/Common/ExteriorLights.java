@@ -26,96 +26,107 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = ExteriorLights.ExteriorLightsDeserializer.class)
+@JsonDeserialize(
+    using = ExteriorLights.ExteriorLightsDeserializer.class)
 public class ExteriorLights extends Asn1Bitstring {
 
-	public boolean isLowBeamHeadlightsOn() {
-		return get(0);
-	}
+  public boolean isLowBeamHeadlightsOn() {
+    return get(0);
+  }
 
-	public void setLowBeamHeadlightsOn(boolean lowBeamHeadlightsOn) {
-		set(0, lowBeamHeadlightsOn);
-	}
+  public void setLowBeamHeadlightsOn(boolean lowBeamHeadlightsOn) {
+    set(0, lowBeamHeadlightsOn);
+  }
 
-	public boolean isHighBeamHeadlightsOn() {
-		return get(1);
-	}
+  public boolean isHighBeamHeadlightsOn() {
+    return get(1);
+  }
 
-	public void setHighBeamHeadlightsOn(boolean highBeamHeadlightsOn) {
-		set(1, highBeamHeadlightsOn);
-	}
+  public void setHighBeamHeadlightsOn(boolean highBeamHeadlightsOn) {
+    set(1, highBeamHeadlightsOn);
+  }
 
-	public boolean isLeftTurnSignalOn() {
-		return get(2);
-	}
+  public boolean isLeftTurnSignalOn() {
+    return get(2);
+  }
 
-	public void setLeftTurnSignalOn(boolean leftTurnSignalOn) {
-		set(2, leftTurnSignalOn);
-	}
+  public void setLeftTurnSignalOn(boolean leftTurnSignalOn) {
+    set(2, leftTurnSignalOn);
+  }
 
-	public boolean isRightTurnSignalOn() {
-		return get(3);
-	}
+  public boolean isRightTurnSignalOn() {
+    return get(3);
+  }
 
-	public void setRightTurnSignalOn(boolean rightTurnSignalOn) {
-		set(3, rightTurnSignalOn);
-	}
+  public void setRightTurnSignalOn(boolean rightTurnSignalOn) {
+    set(3, rightTurnSignalOn);
+  }
 
-	public boolean isHazardSignalOn() {
-		return get(4);
-	}
+  public boolean isHazardSignalOn() {
+    return get(4);
+  }
 
-	public void setHazardSignalOn(boolean hazardSignalOn) {
-		set(4, hazardSignalOn);
-	}
+  public void setHazardSignalOn(boolean hazardSignalOn) {
+    set(4, hazardSignalOn);
+  }
 
-	public boolean isAutomaticLightControlOn() {
-		return get(5);
-	}
+  public boolean isAutomaticLightControlOn() {
+    return get(5);
+  }
 
-	public void setAutomaticLightControlOn(boolean automaticLightControlOn) {
-		set(5, automaticLightControlOn);
-	}
+  public void setAutomaticLightControlOn(boolean automaticLightControlOn) {
+    set(5, automaticLightControlOn);
+  }
 
-	public boolean isDaytimeRunningLightsOn() {
-		return get(6);
-	}
+  public boolean isDaytimeRunningLightsOn() {
+    return get(6);
+  }
 
-	public void setDaytimeRunningLightsOn(boolean daytimeRunningLightsOn) {
-		set(6, daytimeRunningLightsOn);
-	}
+  public void setDaytimeRunningLightsOn(boolean daytimeRunningLightsOn) {
+    set(6, daytimeRunningLightsOn);
+  }
 
-	public boolean isFogLightOn() {
-		return get(7);
-	}
+  public boolean isFogLightOn() {
+    return get(7);
+  }
 
-	public void setFogLightOn(boolean fogLightOn) {
-		set(7, fogLightOn);
-	}
+  public void setFogLightOn(boolean fogLightOn) {
+    set(7, fogLightOn);
+  }
 
-	public boolean isParkingLightsOn() {
-		return get(8);
-	}
+  public boolean isParkingLightsOn() {
+    return get(8);
+  }
 
-	public void setParkingLightsOn(boolean parkingLightsOn) {
-		set(8, parkingLightsOn);
-	}
+  public void setParkingLightsOn(boolean parkingLightsOn) {
+    set(8, parkingLightsOn);
+  }
 
-	public ExteriorLights() {
-		super(9, false,
-				new String[]{"lowBeamHeadlightsOn", "highBeamHeadlightsOn", "leftTurnSignalOn", "rightTurnSignalOn",
-						"hazardSignalOn", "automaticLightControlOn", "daytimeRunningLightsOn", "fogLightOn",
-						"parkingLightsOn"});
-	}
+  public ExteriorLights() {
+    super(
+        9,
+        false,
+        new String[] {
+          "lowBeamHeadlightsOn",
+          "highBeamHeadlightsOn",
+          "leftTurnSignalOn",
+          "rightTurnSignalOn",
+          "hazardSignalOn",
+          "automaticLightControlOn",
+          "daytimeRunningLightsOn",
+          "fogLightOn",
+          "parkingLightsOn"
+        });
+  }
 
-	public static class ExteriorLightsDeserializer extends BitStringDeserializer<ExteriorLights> {
-		public ExteriorLightsDeserializer() {
-			super(ExteriorLights.class);
-		}
+  public static class ExteriorLightsDeserializer extends BitStringDeserializer<ExteriorLights> {
+    public ExteriorLightsDeserializer() {
+      super(ExteriorLights.class);
+    }
 
-		@Override
-		protected ExteriorLights construct() {
-			return new ExteriorLights();
-		}
-	}
+    @Override
+    protected ExteriorLights construct() {
+      return new ExteriorLights();
+    }
+  }
 }

@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpC;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class IntersectionState_addGrpCReg_IntersectionStateValueDeserializer
-		extends
-			OpenTypeDeserializer<IntersectionState_addGrpC> {
+    extends OpenTypeDeserializer<IntersectionState_addGrpC> {
 
-	public IntersectionState_addGrpCReg_IntersectionStateValueDeserializer() {
-		super(IntersectionState_addGrpC.class, "IntersectionState_addGrpC");
-	}
+  public IntersectionState_addGrpCReg_IntersectionStateValueDeserializer() {
+    super(IntersectionState_addGrpC.class, "IntersectionState_addGrpC");
+  }
 }

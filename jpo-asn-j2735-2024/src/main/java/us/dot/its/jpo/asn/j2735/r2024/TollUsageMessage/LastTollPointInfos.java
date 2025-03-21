@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class LastTollPointInfos extends Asn1SequenceOf<LastTollPointInfo> {
 
-	public LastTollPointInfos() {
-		super(LastTollPointInfo.class, 1L, 5L);
-	}
+  public LastTollPointInfos() {
+    super(LastTollPointInfo.class, 1L, 5L);
+  }
 }

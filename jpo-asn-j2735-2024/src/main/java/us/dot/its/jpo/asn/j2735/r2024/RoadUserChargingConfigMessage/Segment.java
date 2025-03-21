@@ -42,26 +42,28 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class Segment extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "segmentID")
-	@JsonProperty("segmentID")
-	private Asn1ObjectIdentifier segmentID;
-	@Asn1Property(tag = 1, name = "chargingSegment")
-	@JsonProperty("chargingSegment")
-	@JacksonXmlElementWrapper(localName = "chargingSegment")
-	@JacksonXmlProperty(localName = "TollAdvertisementMessage")
-	private SequenceOfChargingSegment chargingSegment;
-	@Asn1Property(tag = 2, name = "chargingUnits", optional = true)
-	@JsonProperty("chargingUnits")
-	private ChargingUnits chargingUnits;
+  @Asn1Property(tag = 0, name = "segmentID")
+  @JsonProperty("segmentID")
+  private Asn1ObjectIdentifier segmentID;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfChargingSegment extends Asn1SequenceOf<TollAdvertisementMessage> {
-		public SequenceOfChargingSegment() {
-			super(TollAdvertisementMessage.class, 1L, 999L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "chargingSegment")
+  @JsonProperty("chargingSegment")
+  @JacksonXmlElementWrapper(localName = "chargingSegment")
+  @JacksonXmlProperty(localName = "TollAdvertisementMessage")
+  private SequenceOfChargingSegment chargingSegment;
 
-	public Segment() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "chargingUnits", optional = true)
+  @JsonProperty("chargingUnits")
+  private ChargingUnits chargingUnits;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfChargingSegment extends Asn1SequenceOf<TollAdvertisementMessage> {
+    public SequenceOfChargingSegment() {
+      super(TollAdvertisementMessage.class, 1L, 999L);
+    }
+  }
+
+  public Segment() {
+    super(true);
+  }
 }

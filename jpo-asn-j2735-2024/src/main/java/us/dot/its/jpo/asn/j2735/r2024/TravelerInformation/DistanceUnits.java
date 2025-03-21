@@ -33,31 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = DistanceUnits.DistanceUnitsSerializer.class)
 @JsonDeserialize(using = DistanceUnits.DistanceUnitsDeserializer.class)
 public enum DistanceUnits implements Asn1Enumerated {
-	CENTIMETER(0, "centimeter"), CM2_5(1, "cm2-5"), DECIMETER(2, "decimeter"), METER(3, "meter"), KILOMETER(4,
-			"kilometer"), FOOT(5, "foot"), YARD(6, "yard"), MILE(7, "mile");
+  CENTIMETER(0, "centimeter"),
+  CM2_5(1, "cm2-5"),
+  DECIMETER(2, "decimeter"),
+  METER(3, "meter"),
+  KILOMETER(4, "kilometer"),
+  FOOT(5, "foot"),
+  YARD(6, "yard"),
+  MILE(7, "mile");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private DistanceUnits(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private DistanceUnits(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class DistanceUnitsSerializer extends EnumeratedSerializer<DistanceUnits> {
-		public DistanceUnitsSerializer() {
-			super(DistanceUnits.class);
-		}
-	}
+  public static class DistanceUnitsSerializer extends EnumeratedSerializer<DistanceUnits> {
+    public DistanceUnitsSerializer() {
+      super(DistanceUnits.class);
+    }
+  }
 
-	public static class DistanceUnitsDeserializer extends EnumeratedDeserializer<DistanceUnits> {
-		public DistanceUnitsDeserializer() {
-			super(DistanceUnits.class);
-		}
+  public static class DistanceUnitsDeserializer extends EnumeratedDeserializer<DistanceUnits> {
+    public DistanceUnitsDeserializer() {
+      super(DistanceUnits.class);
+    }
 
-		@Override
-		protected DistanceUnits[] listEnumValues() {
-			return DistanceUnits.values();
-		}
-	}
+    @Override
+    protected DistanceUnits[] listEnumValues() {
+      return DistanceUnits.values();
+    }
+  }
 }

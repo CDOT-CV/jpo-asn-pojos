@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SecondOfTime.SecondOfTimeDeserializer.class)
 public class SecondOfTime extends Asn1Integer {
 
-	public SecondOfTime() {
-		super(0L, 61L);
-	}
+  public SecondOfTime() {
+    super(0L, 61L);
+  }
 
-	@JsonCreator
-	public SecondOfTime(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SecondOfTime(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SecondOfTimeDeserializer extends IntegerDeserializer<SecondOfTime> {
-		public SecondOfTimeDeserializer() {
-			super(SecondOfTime.class);
-		}
+  public static class SecondOfTimeDeserializer extends IntegerDeserializer<SecondOfTime> {
+    public SecondOfTimeDeserializer() {
+      super(SecondOfTime.class);
+    }
 
-		@Override
-		protected SecondOfTime construct() {
-			return new SecondOfTime();
-		}
-	}
+    @Override
+    protected SecondOfTime construct() {
+      return new SecondOfTime();
+    }
+  }
 }

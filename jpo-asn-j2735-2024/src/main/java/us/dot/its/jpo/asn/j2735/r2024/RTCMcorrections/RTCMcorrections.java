@@ -46,40 +46,46 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class RTCMcorrections extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "msgCnt")
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 1, name = "rev")
-	@JsonProperty("rev")
-	private RTCM_Revision rev;
-	@Asn1Property(tag = 2, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 3, name = "anchorPoint", optional = true)
-	@JsonProperty("anchorPoint")
-	private FullPositionVector anchorPoint;
-	@Asn1Property(tag = 4, name = "rtcmHeader", optional = true)
-	@JsonProperty("rtcmHeader")
-	private RTCMheader rtcmHeader;
-	@Asn1Property(tag = 5, name = "msgs")
-	@JsonProperty("msgs")
-	@JacksonXmlElementWrapper(localName = "msgs")
-	@JacksonXmlProperty(localName = "RTCMmessage")
-	private RTCMmessageList msgs;
-	@Asn1Property(tag = 6, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-RTCMcorrections")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "msgCnt")
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RTCMcorrections> {
-		public SequenceOfRegional() {
-			super(Reg_RTCMcorrections.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "rev")
+  @JsonProperty("rev")
+  private RTCM_Revision rev;
 
-	public RTCMcorrections() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
+
+  @Asn1Property(tag = 3, name = "anchorPoint", optional = true)
+  @JsonProperty("anchorPoint")
+  private FullPositionVector anchorPoint;
+
+  @Asn1Property(tag = 4, name = "rtcmHeader", optional = true)
+  @JsonProperty("rtcmHeader")
+  private RTCMheader rtcmHeader;
+
+  @Asn1Property(tag = 5, name = "msgs")
+  @JsonProperty("msgs")
+  @JacksonXmlElementWrapper(localName = "msgs")
+  @JacksonXmlProperty(localName = "RTCMmessage")
+  private RTCMmessageList msgs;
+
+  @Asn1Property(tag = 6, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-RTCMcorrections")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RTCMcorrections> {
+    public SequenceOfRegional() {
+      super(Reg_RTCMcorrections.class, 1L, 4L);
+    }
+  }
+
+  public RTCMcorrections() {
+    super(true);
+  }
 }

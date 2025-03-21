@@ -38,32 +38,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrailerUnitDescJ2945Slash1B extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "width")
-	@JsonProperty("width")
-	private VehicleWidth width;
-	@Asn1Property(tag = 1, name = "length")
-	@JsonProperty("length")
-	private VehicleLength length;
-	@Asn1Property(tag = 2, name = "height", optional = true)
-	@JsonProperty("height")
-	private VehicleHeight height;
-	@Asn1Property(tag = 3, name = "weight", optional = true)
-	@JsonProperty("weight")
-	private TrailerWeight weight;
-	@Asn1Property(tag = 4, name = "frontPivot")
-	@JsonProperty("frontPivot")
-	private PivotPointDescription frontPivot;
-	@Asn1Property(tag = 5, name = "rearPivot", optional = true)
-	@JsonProperty("rearPivot")
-	private PivotPointDescription rearPivot;
-	@Asn1Property(tag = 6, name = "bumpers", optional = true)
-	@JsonProperty("bumpers")
-	private BumperHeights bumpers;
-	@Asn1Property(tag = 7, name = "axles", optional = true)
-	@JsonProperty("axles")
-	private Axles axles;
+  @Asn1Property(tag = 0, name = "width")
+  @JsonProperty("width")
+  private VehicleWidth width;
 
-	public TrailerUnitDescJ2945Slash1B() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "length")
+  @JsonProperty("length")
+  private VehicleLength length;
+
+  @Asn1Property(tag = 2, name = "height", optional = true)
+  @JsonProperty("height")
+  private VehicleHeight height;
+
+  @Asn1Property(tag = 3, name = "weight", optional = true)
+  @JsonProperty("weight")
+  private TrailerWeight weight;
+
+  @Asn1Property(tag = 4, name = "frontPivot")
+  @JsonProperty("frontPivot")
+  private PivotPointDescription frontPivot;
+
+  @Asn1Property(tag = 5, name = "rearPivot", optional = true)
+  @JsonProperty("rearPivot")
+  private PivotPointDescription rearPivot;
+
+  @Asn1Property(tag = 6, name = "bumpers", optional = true)
+  @JsonProperty("bumpers")
+  private BumperHeights bumpers;
+
+  @Asn1Property(tag = 7, name = "axles", optional = true)
+  @JsonProperty("axles")
+  private Axles axles;
+
+  public TrailerUnitDescJ2945Slash1B() {
+    super(true);
+  }
 }

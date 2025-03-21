@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SunSensor.SunSensorDeserializer.class)
 public class SunSensor extends Asn1Integer {
 
-	public SunSensor() {
-		super(0L, 1000L);
-	}
+  public SunSensor() {
+    super(0L, 1000L);
+  }
 
-	@JsonCreator
-	public SunSensor(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SunSensor(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SunSensorDeserializer extends IntegerDeserializer<SunSensor> {
-		public SunSensorDeserializer() {
-			super(SunSensor.class);
-		}
+  public static class SunSensorDeserializer extends IntegerDeserializer<SunSensor> {
+    public SunSensorDeserializer() {
+      super(SunSensor.class);
+    }
 
-		@Override
-		protected SunSensor construct() {
-			return new SunSensor();
-		}
-	}
+    @Override
+    protected SunSensor construct() {
+      return new SunSensor();
+    }
+  }
 }

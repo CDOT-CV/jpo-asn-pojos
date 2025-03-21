@@ -33,30 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AntiLockBrakeStatus.AntiLockBrakeStatusSerializer.class)
 @JsonDeserialize(using = AntiLockBrakeStatus.AntiLockBrakeStatusDeserializer.class)
 public enum AntiLockBrakeStatus implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OFF(1, "off"), ON(2, "on"), ENGAGED(3, "engaged");
+  UNAVAILABLE(0, "unavailable"),
+  OFF(1, "off"),
+  ON(2, "on"),
+  ENGAGED(3, "engaged");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AntiLockBrakeStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AntiLockBrakeStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AntiLockBrakeStatusSerializer extends EnumeratedSerializer<AntiLockBrakeStatus> {
-		public AntiLockBrakeStatusSerializer() {
-			super(AntiLockBrakeStatus.class);
-		}
-	}
+  public static class AntiLockBrakeStatusSerializer
+      extends EnumeratedSerializer<AntiLockBrakeStatus> {
+    public AntiLockBrakeStatusSerializer() {
+      super(AntiLockBrakeStatus.class);
+    }
+  }
 
-	public static class AntiLockBrakeStatusDeserializer extends EnumeratedDeserializer<AntiLockBrakeStatus> {
-		public AntiLockBrakeStatusDeserializer() {
-			super(AntiLockBrakeStatus.class);
-		}
+  public static class AntiLockBrakeStatusDeserializer
+      extends EnumeratedDeserializer<AntiLockBrakeStatus> {
+    public AntiLockBrakeStatusDeserializer() {
+      super(AntiLockBrakeStatus.class);
+    }
 
-		@Override
-		protected AntiLockBrakeStatus[] listEnumValues() {
-			return AntiLockBrakeStatus.values();
-		}
-	}
+    @Override
+    protected AntiLockBrakeStatus[] listEnumValues() {
+      return AntiLockBrakeStatus.values();
+    }
+  }
 }

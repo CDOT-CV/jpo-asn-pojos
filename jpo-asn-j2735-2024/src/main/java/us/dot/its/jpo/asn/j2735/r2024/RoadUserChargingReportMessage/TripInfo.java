@@ -40,41 +40,43 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TripInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "distanceTraveled", optional = true)
-	@JsonProperty("distanceTraveled")
-	private DistanceTraveledInteger distanceTraveled;
-	@Asn1Property(tag = 1, name = "distanceUnits", optional = true)
-	@JsonProperty("distanceUnits")
-	private DistanceUnits distanceUnits;
-	@Asn1Property(tag = 2, name = "timeTraveled", optional = true)
-	@JsonProperty("timeTraveled")
-	private TimeTraveledInteger timeTraveled;
+  @Asn1Property(tag = 0, name = "distanceTraveled", optional = true)
+  @JsonProperty("distanceTraveled")
+  private DistanceTraveledInteger distanceTraveled;
 
-	public static class DistanceTraveledInteger extends Asn1Integer {
-		public DistanceTraveledInteger() {
-			super(1L, 65535L);
-		}
+  @Asn1Property(tag = 1, name = "distanceUnits", optional = true)
+  @JsonProperty("distanceUnits")
+  private DistanceUnits distanceUnits;
 
-		@JsonCreator
-		public DistanceTraveledInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "timeTraveled", optional = true)
+  @JsonProperty("timeTraveled")
+  private TimeTraveledInteger timeTraveled;
 
-	public static class TimeTraveledInteger extends Asn1Integer {
-		public TimeTraveledInteger() {
-			super(1L, 600000L);
-		}
+  public static class DistanceTraveledInteger extends Asn1Integer {
+    public DistanceTraveledInteger() {
+      super(1L, 65535L);
+    }
 
-		@JsonCreator
-		public TimeTraveledInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public DistanceTraveledInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public TripInfo() {
-		super(true);
-	}
+  public static class TimeTraveledInteger extends Asn1Integer {
+    public TimeTraveledInteger() {
+      super(1L, 600000L);
+    }
+
+    @JsonCreator
+    public TimeTraveledInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TripInfo() {
+    super(true);
+  }
 }

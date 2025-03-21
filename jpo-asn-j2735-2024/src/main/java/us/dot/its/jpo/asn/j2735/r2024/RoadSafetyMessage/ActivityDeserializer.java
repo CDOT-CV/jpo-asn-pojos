@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class ActivityDeserializer extends BooleanDeserializer<Activity> {
 
-	public ActivityDeserializer() {
-		super(Activity.class);
-	}
+  public ActivityDeserializer() {
+    super(Activity.class);
+  }
 
-	@Override
-	protected Activity construct() {
-		return new Activity();
-	}
+  @Override
+  protected Activity construct() {
+    return new Activity();
+  }
 }

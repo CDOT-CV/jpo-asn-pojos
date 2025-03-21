@@ -46,34 +46,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class CommonSafetyRequest extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "msgCnt", optional = true)
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 2, name = "id", optional = true)
-	@JsonProperty("id")
-	private TemporaryID id;
-	@Asn1Property(tag = 3, name = "requests")
-	@JsonProperty("requests")
-	@JsonSerialize(using = RequestedItemList.RequestedItemListSerializer.class)
-	@JsonDeserialize(using = RequestedItemList.RequestedItemListDeserializer.class)
-	private RequestedItemList requests;
-	@Asn1Property(tag = 4, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-CommonSafetyRequest")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_CommonSafetyRequest> {
-		public SequenceOfRegional() {
-			super(Reg_CommonSafetyRequest.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "msgCnt", optional = true)
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
 
-	public CommonSafetyRequest() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "id", optional = true)
+  @JsonProperty("id")
+  private TemporaryID id;
+
+  @Asn1Property(tag = 3, name = "requests")
+  @JsonProperty("requests")
+  @JsonSerialize(using = RequestedItemList.RequestedItemListSerializer.class)
+  @JsonDeserialize(using = RequestedItemList.RequestedItemListDeserializer.class)
+  private RequestedItemList requests;
+
+  @Asn1Property(tag = 4, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-CommonSafetyRequest")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_CommonSafetyRequest> {
+    public SequenceOfRegional() {
+      super(Reg_CommonSafetyRequest.class, 1L, 4L);
+    }
+  }
+
+  public CommonSafetyRequest() {
+    super(true);
+  }
 }

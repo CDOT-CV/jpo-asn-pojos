@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class DetectedObjectList extends Asn1SequenceOf<DetectedObjectData> {
 
-	public DetectedObjectList() {
-		super(DetectedObjectData.class, 1L, 256L);
-	}
+  public DetectedObjectList() {
+    super(DetectedObjectData.class, 1L, 256L);
+  }
 }

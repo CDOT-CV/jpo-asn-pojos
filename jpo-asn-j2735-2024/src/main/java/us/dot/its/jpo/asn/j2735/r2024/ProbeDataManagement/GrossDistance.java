@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = GrossDistance.GrossDistanceDeserializer.class)
 public class GrossDistance extends Asn1Integer {
 
-	public GrossDistance() {
-		super(0L, 1023L);
-	}
+  public GrossDistance() {
+    super(0L, 1023L);
+  }
 
-	@JsonCreator
-	public GrossDistance(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public GrossDistance(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class GrossDistanceDeserializer extends IntegerDeserializer<GrossDistance> {
-		public GrossDistanceDeserializer() {
-			super(GrossDistance.class);
-		}
+  public static class GrossDistanceDeserializer extends IntegerDeserializer<GrossDistance> {
+    public GrossDistanceDeserializer() {
+      super(GrossDistance.class);
+    }
 
-		@Override
-		protected GrossDistance construct() {
-			return new GrossDistance();
-		}
-	}
+    @Override
+    protected GrossDistance construct() {
+      return new GrossDistance();
+    }
+  }
 }

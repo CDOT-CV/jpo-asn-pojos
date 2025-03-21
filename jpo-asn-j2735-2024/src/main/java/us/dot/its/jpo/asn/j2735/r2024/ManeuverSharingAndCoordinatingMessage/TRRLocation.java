@@ -37,19 +37,21 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class TRRLocation extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "tRRLocationType1")
-	@JsonProperty("tRRLocationType1")
-	private TRRLocationType1 tRRLocationType1;
-	@Asn1Property(tag = 1, name = "tRRLocationType2")
-	@JsonProperty("tRRLocationType2")
-	private TRRLocationType2 tRRLocationType2;
-	@Asn1Property(tag = 2, name = "tRRLocationType3")
-	@JsonProperty("tRRLocationType3")
-	@JacksonXmlElementWrapper(localName = "tRRLocationType3")
-	@JacksonXmlProperty(localName = "PositionOffsetXYZ")
-	private TRRLocationType3 tRRLocationType3;
+  @Asn1Property(tag = 0, name = "tRRLocationType1")
+  @JsonProperty("tRRLocationType1")
+  private TRRLocationType1 tRRLocationType1;
 
-	public TRRLocation() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tRRLocationType2")
+  @JsonProperty("tRRLocationType2")
+  private TRRLocationType2 tRRLocationType2;
+
+  @Asn1Property(tag = 2, name = "tRRLocationType3")
+  @JsonProperty("tRRLocationType3")
+  @JacksonXmlElementWrapper(localName = "tRRLocationType3")
+  @JacksonXmlProperty(localName = "PositionOffsetXYZ")
+  private TRRLocationType3 tRRLocationType3;
+
+  public TRRLocation() {
+    super(true);
+  }
 }

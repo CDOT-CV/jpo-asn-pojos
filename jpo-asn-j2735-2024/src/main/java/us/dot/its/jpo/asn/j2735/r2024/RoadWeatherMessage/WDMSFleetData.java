@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class WDMSFleetData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pavementTreat", optional = true)
-	@JsonProperty("pavementTreat")
-	private NtcipPavementTreatment pavementTreat;
-	@Asn1Property(tag = 1, name = "routingAdvice", optional = true)
-	@JsonProperty("routingAdvice")
-	private ITIStext routingAdvice;
+  @Asn1Property(tag = 0, name = "pavementTreat", optional = true)
+  @JsonProperty("pavementTreat")
+  private NtcipPavementTreatment pavementTreat;
 
-	public WDMSFleetData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "routingAdvice", optional = true)
+  @JsonProperty("routingAdvice")
+  private ITIStext routingAdvice;
+
+  public WDMSFleetData() {
+    super(true);
+  }
 }

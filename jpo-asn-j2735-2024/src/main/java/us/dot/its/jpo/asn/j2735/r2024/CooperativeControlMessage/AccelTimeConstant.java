@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AccelTimeConstant extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "accelTimeConst", optional = true)
-	@JsonProperty("accelTimeConst")
-	private TimeConstant accelTimeConst;
-	@Asn1Property(tag = 1, name = "decelTimeConst", optional = true)
-	@JsonProperty("decelTimeConst")
-	private TimeConstant decelTimeConst;
+  @Asn1Property(tag = 0, name = "accelTimeConst", optional = true)
+  @JsonProperty("accelTimeConst")
+  private TimeConstant accelTimeConst;
 
-	public AccelTimeConstant() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "decelTimeConst", optional = true)
+  @JsonProperty("decelTimeConst")
+  private TimeConstant decelTimeConst;
+
+  public AccelTimeConstant() {
+    super(false);
+  }
 }

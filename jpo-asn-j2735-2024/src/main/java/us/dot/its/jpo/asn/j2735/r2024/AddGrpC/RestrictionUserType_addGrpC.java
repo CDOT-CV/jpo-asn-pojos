@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RestrictionUserType_addGrpC extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "emission", optional = true)
-	@JsonProperty("emission")
-	private EmissionType emission;
+  @Asn1Property(tag = 0, name = "emission", optional = true)
+  @JsonProperty("emission")
+  private EmissionType emission;
 
-	public RestrictionUserType_addGrpC() {
-		super(true);
-	}
+  public RestrictionUserType_addGrpC() {
+    super(true);
+  }
 }

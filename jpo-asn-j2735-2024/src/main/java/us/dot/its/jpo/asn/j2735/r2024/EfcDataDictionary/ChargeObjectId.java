@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ChargeObjectId extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargeObjectOperator", optional = true)
-	@JsonProperty("chargeObjectOperator")
-	private Provider chargeObjectOperator;
-	@Asn1Property(tag = 1, name = "chargeObjectDesignation")
-	@JsonProperty("chargeObjectDesignation")
-	private Int4Unsigned chargeObjectDesignation;
+  @Asn1Property(tag = 0, name = "chargeObjectOperator", optional = true)
+  @JsonProperty("chargeObjectOperator")
+  private Provider chargeObjectOperator;
 
-	public ChargeObjectId() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "chargeObjectDesignation")
+  @JsonProperty("chargeObjectDesignation")
+  private Int4Unsigned chargeObjectDesignation;
+
+  public ChargeObjectId() {
+    super(false);
+  }
 }

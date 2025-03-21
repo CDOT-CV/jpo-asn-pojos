@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Period extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "beginOfPeriod")
-	@JsonProperty("beginOfPeriod")
-	private Asn1GeneralizedTime beginOfPeriod;
-	@Asn1Property(tag = 1, name = "endOfPeriod")
-	@JsonProperty("endOfPeriod")
-	private Asn1GeneralizedTime endOfPeriod;
+  @Asn1Property(tag = 0, name = "beginOfPeriod")
+  @JsonProperty("beginOfPeriod")
+  private Asn1GeneralizedTime beginOfPeriod;
 
-	public Period() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "endOfPeriod")
+  @JsonProperty("endOfPeriod")
+  private Asn1GeneralizedTime endOfPeriod;
+
+  public Period() {
+    super(false);
+  }
 }

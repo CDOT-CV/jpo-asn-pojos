@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TenthSecond.TenthSecondDeserializer.class)
 public class TenthSecond extends Asn1Integer {
 
-	public TenthSecond() {
-		super(0L, 9L);
-	}
+  public TenthSecond() {
+    super(0L, 9L);
+  }
 
-	@JsonCreator
-	public TenthSecond(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TenthSecond(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TenthSecondDeserializer extends IntegerDeserializer<TenthSecond> {
-		public TenthSecondDeserializer() {
-			super(TenthSecond.class);
-		}
+  public static class TenthSecondDeserializer extends IntegerDeserializer<TenthSecond> {
+    public TenthSecondDeserializer() {
+      super(TenthSecond.class);
+    }
 
-		@Override
-		protected TenthSecond construct() {
-			return new TenthSecond();
-		}
-	}
+    @Override
+    protected TenthSecond construct() {
+      return new TenthSecond();
+    }
+  }
 }

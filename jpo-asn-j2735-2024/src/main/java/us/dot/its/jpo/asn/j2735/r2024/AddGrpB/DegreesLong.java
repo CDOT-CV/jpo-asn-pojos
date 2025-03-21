@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DegreesLong.DegreesLongDeserializer.class)
 public class DegreesLong extends Asn1Integer {
 
-	public DegreesLong() {
-		super(-180L, 180L);
-	}
+  public DegreesLong() {
+    super(-180L, 180L);
+  }
 
-	@JsonCreator
-	public DegreesLong(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DegreesLong(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DegreesLongDeserializer extends IntegerDeserializer<DegreesLong> {
-		public DegreesLongDeserializer() {
-			super(DegreesLong.class);
-		}
+  public static class DegreesLongDeserializer extends IntegerDeserializer<DegreesLong> {
+    public DegreesLongDeserializer() {
+      super(DegreesLong.class);
+    }
 
-		@Override
-		protected DegreesLong construct() {
-			return new DegreesLong();
-		}
-	}
+    @Override
+    protected DegreesLong construct() {
+      return new DegreesLong();
+    }
+  }
 }

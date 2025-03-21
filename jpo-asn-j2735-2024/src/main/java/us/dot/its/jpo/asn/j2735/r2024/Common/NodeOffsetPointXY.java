@@ -36,32 +36,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class NodeOffsetPointXY extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "node-XY1")
-	@JsonProperty("node-XY1")
-	private Node_XY_20b node_XY1;
-	@Asn1Property(tag = 1, name = "node-XY2")
-	@JsonProperty("node-XY2")
-	private Node_XY_22b node_XY2;
-	@Asn1Property(tag = 2, name = "node-XY3")
-	@JsonProperty("node-XY3")
-	private Node_XY_24b node_XY3;
-	@Asn1Property(tag = 3, name = "node-XY4")
-	@JsonProperty("node-XY4")
-	private Node_XY_26b node_XY4;
-	@Asn1Property(tag = 4, name = "node-XY5")
-	@JsonProperty("node-XY5")
-	private Node_XY_28b node_XY5;
-	@Asn1Property(tag = 5, name = "node-XY6")
-	@JsonProperty("node-XY6")
-	private Node_XY_32b node_XY6;
-	@Asn1Property(tag = 6, name = "node-LatLon")
-	@JsonProperty("node-LatLon")
-	private Node_LLmD_64b node_LatLon;
-	@Asn1Property(tag = 7, name = "regional")
-	@JsonProperty("regional")
-	private Reg_NodeOffsetPointXY regional;
+  @Asn1Property(tag = 0, name = "node-XY1")
+  @JsonProperty("node-XY1")
+  private Node_XY_20b node_XY1;
 
-	public NodeOffsetPointXY() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "node-XY2")
+  @JsonProperty("node-XY2")
+  private Node_XY_22b node_XY2;
+
+  @Asn1Property(tag = 2, name = "node-XY3")
+  @JsonProperty("node-XY3")
+  private Node_XY_24b node_XY3;
+
+  @Asn1Property(tag = 3, name = "node-XY4")
+  @JsonProperty("node-XY4")
+  private Node_XY_26b node_XY4;
+
+  @Asn1Property(tag = 4, name = "node-XY5")
+  @JsonProperty("node-XY5")
+  private Node_XY_28b node_XY5;
+
+  @Asn1Property(tag = 5, name = "node-XY6")
+  @JsonProperty("node-XY6")
+  private Node_XY_32b node_XY6;
+
+  @Asn1Property(tag = 6, name = "node-LatLon")
+  @JsonProperty("node-LatLon")
+  private Node_LLmD_64b node_LatLon;
+
+  @Asn1Property(tag = 7, name = "regional")
+  @JsonProperty("regional")
+  private Reg_NodeOffsetPointXY regional;
+
+  public NodeOffsetPointXY() {
+    super(false);
+  }
 }

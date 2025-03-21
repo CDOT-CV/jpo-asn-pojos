@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class SpeedLimitList extends Asn1SequenceOf<RegulatorySpeedLimit> {
 
-	public SpeedLimitList() {
-		super(RegulatorySpeedLimit.class, 1L, 9L);
-	}
+  public SpeedLimitList() {
+    super(RegulatorySpeedLimit.class, 1L, 9L);
+  }
 }

@@ -41,16 +41,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RTCMPackage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "rtcmHeader", optional = true)
-	@JsonProperty("rtcmHeader")
-	private RTCMheader rtcmHeader;
-	@Asn1Property(tag = 1, name = "msgs")
-	@JsonProperty("msgs")
-	@JacksonXmlElementWrapper(localName = "msgs")
-	@JacksonXmlProperty(localName = "RTCMmessage")
-	private RTCMmessageList msgs;
+  @Asn1Property(tag = 0, name = "rtcmHeader", optional = true)
+  @JsonProperty("rtcmHeader")
+  private RTCMheader rtcmHeader;
 
-	public RTCMPackage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "msgs")
+  @JsonProperty("msgs")
+  @JacksonXmlElementWrapper(localName = "msgs")
+  @JacksonXmlProperty(localName = "RTCMmessage")
+  private RTCMmessageList msgs;
+
+  public RTCMPackage() {
+    super(true);
+  }
 }

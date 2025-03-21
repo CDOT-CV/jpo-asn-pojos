@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadSideAlert;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class RoadSideAlertMessageFrameValueDeserializer extends OpenTypeDeserializer<RoadSideAlert> {
+public class RoadSideAlertMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<RoadSideAlert> {
 
-	public RoadSideAlertMessageFrameValueDeserializer() {
-		super(RoadSideAlert.class, "RoadSideAlert");
-	}
+  public RoadSideAlertMessageFrameValueDeserializer() {
+    super(RoadSideAlert.class, "RoadSideAlert");
+  }
 }

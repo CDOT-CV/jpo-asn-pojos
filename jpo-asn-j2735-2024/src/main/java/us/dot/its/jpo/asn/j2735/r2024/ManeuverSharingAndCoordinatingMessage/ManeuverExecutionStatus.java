@@ -33,30 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ManeuverExecutionStatus.ManeuverExecutionStatusSerializer.class)
 @JsonDeserialize(using = ManeuverExecutionStatus.ManeuverExecutionStatusDeserializer.class)
 public enum ManeuverExecutionStatus implements Asn1Enumerated {
-	STARTED(0, "started"), INPROGRESS(1, "inProgress"), COMPLETED(2, "completed"), TERMINATED(3, "terminated");
+  STARTED(0, "started"),
+  INPROGRESS(1, "inProgress"),
+  COMPLETED(2, "completed"),
+  TERMINATED(3, "terminated");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ManeuverExecutionStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ManeuverExecutionStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ManeuverExecutionStatusSerializer extends EnumeratedSerializer<ManeuverExecutionStatus> {
-		public ManeuverExecutionStatusSerializer() {
-			super(ManeuverExecutionStatus.class);
-		}
-	}
+  public static class ManeuverExecutionStatusSerializer
+      extends EnumeratedSerializer<ManeuverExecutionStatus> {
+    public ManeuverExecutionStatusSerializer() {
+      super(ManeuverExecutionStatus.class);
+    }
+  }
 
-	public static class ManeuverExecutionStatusDeserializer extends EnumeratedDeserializer<ManeuverExecutionStatus> {
-		public ManeuverExecutionStatusDeserializer() {
-			super(ManeuverExecutionStatus.class);
-		}
+  public static class ManeuverExecutionStatusDeserializer
+      extends EnumeratedDeserializer<ManeuverExecutionStatus> {
+    public ManeuverExecutionStatusDeserializer() {
+      super(ManeuverExecutionStatus.class);
+    }
 
-		@Override
-		protected ManeuverExecutionStatus[] listEnumValues() {
-			return ManeuverExecutionStatus.values();
-		}
-	}
+    @Override
+    protected ManeuverExecutionStatus[] listEnumValues() {
+      return ManeuverExecutionStatus.values();
+    }
+  }
 }

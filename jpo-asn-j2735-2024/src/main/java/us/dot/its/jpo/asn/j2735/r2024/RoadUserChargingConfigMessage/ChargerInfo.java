@@ -40,20 +40,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ChargerInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargerID")
-	@JsonProperty("chargerID")
-	private Asn1ObjectIdentifier chargerID;
-	@Asn1Property(tag = 1, name = "descriptiveName", optional = true)
-	@JsonProperty("descriptiveName")
-	private DescriptiveName descriptiveName;
-	@Asn1Property(tag = 2, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
-	@Asn1Property(tag = 3, name = "chargingConfig")
-	@JsonProperty("chargingConfig")
-	private ChargingConfig chargingConfig;
+  @Asn1Property(tag = 0, name = "chargerID")
+  @JsonProperty("chargerID")
+  private Asn1ObjectIdentifier chargerID;
 
-	public ChargerInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "descriptiveName", optional = true)
+  @JsonProperty("descriptiveName")
+  private DescriptiveName descriptiveName;
+
+  @Asn1Property(tag = 2, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
+
+  @Asn1Property(tag = 3, name = "chargingConfig")
+  @JsonProperty("chargingConfig")
+  private ChargingConfig chargingConfig;
+
+  public ChargerInfo() {
+    super(true);
+  }
 }

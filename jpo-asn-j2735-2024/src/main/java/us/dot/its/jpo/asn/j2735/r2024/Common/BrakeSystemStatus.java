@@ -37,26 +37,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class BrakeSystemStatus extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "wheelBrakes")
-	@JsonProperty("wheelBrakes")
-	private BrakeAppliedStatus wheelBrakes;
-	@Asn1Property(tag = 1, name = "traction")
-	@JsonProperty("traction")
-	private TractionControlStatus traction;
-	@Asn1Property(tag = 2, name = "abs")
-	@JsonProperty("abs")
-	private AntiLockBrakeStatus abs;
-	@Asn1Property(tag = 3, name = "scs")
-	@JsonProperty("scs")
-	private StabilityControlStatus scs;
-	@Asn1Property(tag = 4, name = "brakeBoost")
-	@JsonProperty("brakeBoost")
-	private BrakeBoostApplied brakeBoost;
-	@Asn1Property(tag = 5, name = "auxBrakes")
-	@JsonProperty("auxBrakes")
-	private AuxiliaryBrakeStatus auxBrakes;
+  @Asn1Property(tag = 0, name = "wheelBrakes")
+  @JsonProperty("wheelBrakes")
+  private BrakeAppliedStatus wheelBrakes;
 
-	public BrakeSystemStatus() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "traction")
+  @JsonProperty("traction")
+  private TractionControlStatus traction;
+
+  @Asn1Property(tag = 2, name = "abs")
+  @JsonProperty("abs")
+  private AntiLockBrakeStatus abs;
+
+  @Asn1Property(tag = 3, name = "scs")
+  @JsonProperty("scs")
+  private StabilityControlStatus scs;
+
+  @Asn1Property(tag = 4, name = "brakeBoost")
+  @JsonProperty("brakeBoost")
+  private BrakeBoostApplied brakeBoost;
+
+  @Asn1Property(tag = 5, name = "auxBrakes")
+  @JsonProperty("auxBrakes")
+  private AuxiliaryBrakeStatus auxBrakes;
+
+  public BrakeSystemStatus() {
+    super(false);
+  }
 }

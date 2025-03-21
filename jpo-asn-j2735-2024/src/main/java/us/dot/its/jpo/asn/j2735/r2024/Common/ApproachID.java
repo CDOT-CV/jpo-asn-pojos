@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ApproachID.ApproachIDDeserializer.class)
 public class ApproachID extends Asn1Integer {
 
-	public ApproachID() {
-		super(0L, 15L);
-	}
+  public ApproachID() {
+    super(0L, 15L);
+  }
 
-	@JsonCreator
-	public ApproachID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ApproachID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ApproachIDDeserializer extends IntegerDeserializer<ApproachID> {
-		public ApproachIDDeserializer() {
-			super(ApproachID.class);
-		}
+  public static class ApproachIDDeserializer extends IntegerDeserializer<ApproachID> {
+    public ApproachIDDeserializer() {
+      super(ApproachID.class);
+    }
 
-		@Override
-		protected ApproachID construct() {
-			return new ApproachID();
-		}
-	}
+    @Override
+    protected ApproachID construct() {
+      return new ApproachID();
+    }
+  }
 }

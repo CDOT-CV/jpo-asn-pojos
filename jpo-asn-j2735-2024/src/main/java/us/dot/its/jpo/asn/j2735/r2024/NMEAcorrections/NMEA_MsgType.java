@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NMEA_MsgType.NMEA_MsgTypeDeserializer.class)
 public class NMEA_MsgType extends Asn1Integer {
 
-	public NMEA_MsgType() {
-		super(0L, 32767L);
-	}
+  public NMEA_MsgType() {
+    super(0L, 32767L);
+  }
 
-	@JsonCreator
-	public NMEA_MsgType(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NMEA_MsgType(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NMEA_MsgTypeDeserializer extends IntegerDeserializer<NMEA_MsgType> {
-		public NMEA_MsgTypeDeserializer() {
-			super(NMEA_MsgType.class);
-		}
+  public static class NMEA_MsgTypeDeserializer extends IntegerDeserializer<NMEA_MsgType> {
+    public NMEA_MsgTypeDeserializer() {
+      super(NMEA_MsgType.class);
+    }
 
-		@Override
-		protected NMEA_MsgType construct() {
-			return new NMEA_MsgType();
-		}
-	}
+    @Override
+    protected NMEA_MsgType construct() {
+      return new NMEA_MsgType();
+    }
+  }
 }

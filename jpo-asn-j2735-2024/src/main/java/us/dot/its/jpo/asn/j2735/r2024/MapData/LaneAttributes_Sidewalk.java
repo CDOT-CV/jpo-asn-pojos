@@ -26,54 +26,62 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneAttributes_Sidewalk.LaneAttributes_SidewalkDeserializer.class)
+@JsonDeserialize(
+    using =
+        LaneAttributes_Sidewalk
+            .LaneAttributes_SidewalkDeserializer.class)
 public class LaneAttributes_Sidewalk extends Asn1Bitstring {
 
-	public boolean isSidewalk_RevocableLane() {
-		return get(0);
-	}
+  public boolean isSidewalk_RevocableLane() {
+    return get(0);
+  }
 
-	public void setSidewalk_RevocableLane(boolean sidewalk_RevocableLane) {
-		set(0, sidewalk_RevocableLane);
-	}
+  public void setSidewalk_RevocableLane(boolean sidewalk_RevocableLane) {
+    set(0, sidewalk_RevocableLane);
+  }
 
-	public boolean isBicyleUseAllowed() {
-		return get(1);
-	}
+  public boolean isBicyleUseAllowed() {
+    return get(1);
+  }
 
-	public void setBicyleUseAllowed(boolean bicyleUseAllowed) {
-		set(1, bicyleUseAllowed);
-	}
+  public void setBicyleUseAllowed(boolean bicyleUseAllowed) {
+    set(1, bicyleUseAllowed);
+  }
 
-	public boolean isIsSidewalkFlyOverLane() {
-		return get(2);
-	}
+  public boolean isIsSidewalkFlyOverLane() {
+    return get(2);
+  }
 
-	public void setIsSidewalkFlyOverLane(boolean isSidewalkFlyOverLane) {
-		set(2, isSidewalkFlyOverLane);
-	}
+  public void setIsSidewalkFlyOverLane(boolean isSidewalkFlyOverLane) {
+    set(2, isSidewalkFlyOverLane);
+  }
 
-	public boolean isWalkBikes() {
-		return get(3);
-	}
+  public boolean isWalkBikes() {
+    return get(3);
+  }
 
-	public void setWalkBikes(boolean walkBikes) {
-		set(3, walkBikes);
-	}
+  public void setWalkBikes(boolean walkBikes) {
+    set(3, walkBikes);
+  }
 
-	public LaneAttributes_Sidewalk() {
-		super(16, false,
-				new String[]{"sidewalk-RevocableLane", "bicyleUseAllowed", "isSidewalkFlyOverLane", "walkBikes"});
-	}
+  public LaneAttributes_Sidewalk() {
+    super(
+        16,
+        false,
+        new String[] {
+          "sidewalk-RevocableLane", "bicyleUseAllowed", "isSidewalkFlyOverLane", "walkBikes"
+        });
+  }
 
-	public static class LaneAttributes_SidewalkDeserializer extends BitStringDeserializer<LaneAttributes_Sidewalk> {
-		public LaneAttributes_SidewalkDeserializer() {
-			super(LaneAttributes_Sidewalk.class);
-		}
+  public static class LaneAttributes_SidewalkDeserializer
+      extends BitStringDeserializer<LaneAttributes_Sidewalk> {
+    public LaneAttributes_SidewalkDeserializer() {
+      super(LaneAttributes_Sidewalk.class);
+    }
 
-		@Override
-		protected LaneAttributes_Sidewalk construct() {
-			return new LaneAttributes_Sidewalk();
-		}
-	}
+    @Override
+    protected LaneAttributes_Sidewalk construct() {
+      return new LaneAttributes_Sidewalk();
+    }
+  }
 }

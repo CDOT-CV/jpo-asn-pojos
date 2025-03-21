@@ -31,36 +31,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
 @JsonSerialize(using = NTCIPEssPaveTreatProductForm.NTCIPEssPaveTreatProductFormSerializer.class)
-@JsonDeserialize(using = NTCIPEssPaveTreatProductForm.NTCIPEssPaveTreatProductFormDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssPaveTreatProductForm.NTCIPEssPaveTreatProductFormDeserializer.class)
 public enum NTCIPEssPaveTreatProductForm implements Asn1Enumerated {
-	OTHER(1, "other"), DRY(2, "dry"), PREWET(3, "prewet"), LIQUID(4, "liquid");
+  OTHER(1, "other"),
+  DRY(2, "dry"),
+  PREWET(3, "prewet"),
+  LIQUID(4, "liquid");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NTCIPEssPaveTreatProductForm(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NTCIPEssPaveTreatProductForm(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NTCIPEssPaveTreatProductFormSerializer
-			extends
-				EnumeratedSerializer<NTCIPEssPaveTreatProductForm> {
-		public NTCIPEssPaveTreatProductFormSerializer() {
-			super(NTCIPEssPaveTreatProductForm.class);
-		}
-	}
+  public static class NTCIPEssPaveTreatProductFormSerializer
+      extends EnumeratedSerializer<NTCIPEssPaveTreatProductForm> {
+    public NTCIPEssPaveTreatProductFormSerializer() {
+      super(NTCIPEssPaveTreatProductForm.class);
+    }
+  }
 
-	public static class NTCIPEssPaveTreatProductFormDeserializer
-			extends
-				EnumeratedDeserializer<NTCIPEssPaveTreatProductForm> {
-		public NTCIPEssPaveTreatProductFormDeserializer() {
-			super(NTCIPEssPaveTreatProductForm.class);
-		}
+  public static class NTCIPEssPaveTreatProductFormDeserializer
+      extends EnumeratedDeserializer<NTCIPEssPaveTreatProductForm> {
+    public NTCIPEssPaveTreatProductFormDeserializer() {
+      super(NTCIPEssPaveTreatProductForm.class);
+    }
 
-		@Override
-		protected NTCIPEssPaveTreatProductForm[] listEnumValues() {
-			return NTCIPEssPaveTreatProductForm.values();
-		}
-	}
+    @Override
+    protected NTCIPEssPaveTreatProductForm[] listEnumValues() {
+      return NTCIPEssPaveTreatProductForm.values();
+    }
+  }
 }

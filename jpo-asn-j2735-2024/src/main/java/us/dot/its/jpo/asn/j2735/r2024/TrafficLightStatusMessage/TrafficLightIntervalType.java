@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TrafficLightIntervalType.TrafficLightIntervalTypeSerializer.class)
 @JsonDeserialize(using = TrafficLightIntervalType.TrafficLightIntervalTypeDeserializer.class)
 public enum TrafficLightIntervalType implements Asn1Enumerated {
-	STATIC_(0, "static"), VARIABLE(1, "variable");
+  STATIC_(0, "static"),
+  VARIABLE(1, "variable");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TrafficLightIntervalType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TrafficLightIntervalType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TrafficLightIntervalTypeSerializer extends EnumeratedSerializer<TrafficLightIntervalType> {
-		public TrafficLightIntervalTypeSerializer() {
-			super(TrafficLightIntervalType.class);
-		}
-	}
+  public static class TrafficLightIntervalTypeSerializer
+      extends EnumeratedSerializer<TrafficLightIntervalType> {
+    public TrafficLightIntervalTypeSerializer() {
+      super(TrafficLightIntervalType.class);
+    }
+  }
 
-	public static class TrafficLightIntervalTypeDeserializer extends EnumeratedDeserializer<TrafficLightIntervalType> {
-		public TrafficLightIntervalTypeDeserializer() {
-			super(TrafficLightIntervalType.class);
-		}
+  public static class TrafficLightIntervalTypeDeserializer
+      extends EnumeratedDeserializer<TrafficLightIntervalType> {
+    public TrafficLightIntervalTypeDeserializer() {
+      super(TrafficLightIntervalType.class);
+    }
 
-		@Override
-		protected TrafficLightIntervalType[] listEnumValues() {
-			return TrafficLightIntervalType.values();
-		}
-	}
+    @Override
+    protected TrafficLightIntervalType[] listEnumValues() {
+      return TrafficLightIntervalType.values();
+    }
+  }
 }

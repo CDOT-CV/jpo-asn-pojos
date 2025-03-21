@@ -51,95 +51,120 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class PersonalSafetyMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "basicType")
-	@JsonProperty("basicType")
-	private PersonalDeviceUserType basicType;
-	@Asn1Property(tag = 1, name = "secMark")
-	@JsonProperty("secMark")
-	private DSecond secMark;
-	@Asn1Property(tag = 2, name = "msgCnt")
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 3, name = "id")
-	@JsonProperty("id")
-	private TemporaryID id;
-	@Asn1Property(tag = 4, name = "position")
-	@JsonProperty("position")
-	private Position3D position;
-	@Asn1Property(tag = 5, name = "accuracy")
-	@JsonProperty("accuracy")
-	private PositionalAccuracy accuracy;
-	@Asn1Property(tag = 6, name = "speed")
-	@JsonProperty("speed")
-	private Velocity speed;
-	@Asn1Property(tag = 7, name = "heading")
-	@JsonProperty("heading")
-	private Heading heading;
-	@Asn1Property(tag = 8, name = "accelSet", optional = true)
-	@JsonProperty("accelSet")
-	private AccelerationSet4Way accelSet;
-	@Asn1Property(tag = 9, name = "pathHistory", optional = true)
-	@JsonProperty("pathHistory")
-	private PathHistory pathHistory;
-	@Asn1Property(tag = 10, name = "pathPrediction", optional = true)
-	@JsonProperty("pathPrediction")
-	private PathPrediction pathPrediction;
-	@Asn1Property(tag = 11, name = "propulsion", optional = true)
-	@JsonProperty("propulsion")
-	private PropelledInformation propulsion;
-	@Asn1Property(tag = 12, name = "useState", optional = true)
-	@JsonProperty("useState")
-	private PersonalDeviceUsageState useState;
-	@Asn1Property(tag = 13, name = "crossRequest", optional = true)
-	@JsonProperty("crossRequest")
-	private PersonalCrossingRequest crossRequest;
-	@Asn1Property(tag = 14, name = "crossState", optional = true)
-	@JsonProperty("crossState")
-	private PersonalCrossingInProgress crossState;
-	@Asn1Property(tag = 15, name = "clusterSize", optional = true)
-	@JsonProperty("clusterSize")
-	private NumberOfParticipantsInCluster clusterSize;
-	@Asn1Property(tag = 16, name = "clusterRadius", optional = true)
-	@JsonProperty("clusterRadius")
-	private PersonalClusterRadius clusterRadius;
-	@Asn1Property(tag = 17, name = "eventResponderType", optional = true)
-	@JsonProperty("eventResponderType")
-	private PublicSafetyEventResponderWorkerType eventResponderType;
-	@Asn1Property(tag = 18, name = "activityType", optional = true)
-	@JsonProperty("activityType")
-	private PublicSafetyAndRoadWorkerActivity activityType;
-	@Asn1Property(tag = 19, name = "activitySubType", optional = true)
-	@JsonProperty("activitySubType")
-	private PublicSafetyDirectingTrafficSubType activitySubType;
-	@Asn1Property(tag = 20, name = "assistType", optional = true)
-	@JsonProperty("assistType")
-	private PersonalAssistive assistType;
-	@Asn1Property(tag = 21, name = "sizing", optional = true)
-	@JsonProperty("sizing")
-	private UserSizeAndBehaviour sizing;
-	@Asn1Property(tag = 22, name = "attachment", optional = true)
-	@JsonProperty("attachment")
-	private Attachment attachment;
-	@Asn1Property(tag = 23, name = "attachmentRadius", optional = true)
-	@JsonProperty("attachmentRadius")
-	private AttachmentRadius attachmentRadius;
-	@Asn1Property(tag = 24, name = "animalType", optional = true)
-	@JsonProperty("animalType")
-	private AnimalType animalType;
-	@Asn1Property(tag = 25, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-PersonalSafetyMessage")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "basicType")
+  @JsonProperty("basicType")
+  private PersonalDeviceUserType basicType;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_PersonalSafetyMessage> {
-		public SequenceOfRegional() {
-			super(Reg_PersonalSafetyMessage.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "secMark")
+  @JsonProperty("secMark")
+  private DSecond secMark;
 
-	public PersonalSafetyMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "msgCnt")
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
+
+  @Asn1Property(tag = 3, name = "id")
+  @JsonProperty("id")
+  private TemporaryID id;
+
+  @Asn1Property(tag = 4, name = "position")
+  @JsonProperty("position")
+  private Position3D position;
+
+  @Asn1Property(tag = 5, name = "accuracy")
+  @JsonProperty("accuracy")
+  private PositionalAccuracy accuracy;
+
+  @Asn1Property(tag = 6, name = "speed")
+  @JsonProperty("speed")
+  private Velocity speed;
+
+  @Asn1Property(tag = 7, name = "heading")
+  @JsonProperty("heading")
+  private Heading heading;
+
+  @Asn1Property(tag = 8, name = "accelSet", optional = true)
+  @JsonProperty("accelSet")
+  private AccelerationSet4Way accelSet;
+
+  @Asn1Property(tag = 9, name = "pathHistory", optional = true)
+  @JsonProperty("pathHistory")
+  private PathHistory pathHistory;
+
+  @Asn1Property(tag = 10, name = "pathPrediction", optional = true)
+  @JsonProperty("pathPrediction")
+  private PathPrediction pathPrediction;
+
+  @Asn1Property(tag = 11, name = "propulsion", optional = true)
+  @JsonProperty("propulsion")
+  private PropelledInformation propulsion;
+
+  @Asn1Property(tag = 12, name = "useState", optional = true)
+  @JsonProperty("useState")
+  private PersonalDeviceUsageState useState;
+
+  @Asn1Property(tag = 13, name = "crossRequest", optional = true)
+  @JsonProperty("crossRequest")
+  private PersonalCrossingRequest crossRequest;
+
+  @Asn1Property(tag = 14, name = "crossState", optional = true)
+  @JsonProperty("crossState")
+  private PersonalCrossingInProgress crossState;
+
+  @Asn1Property(tag = 15, name = "clusterSize", optional = true)
+  @JsonProperty("clusterSize")
+  private NumberOfParticipantsInCluster clusterSize;
+
+  @Asn1Property(tag = 16, name = "clusterRadius", optional = true)
+  @JsonProperty("clusterRadius")
+  private PersonalClusterRadius clusterRadius;
+
+  @Asn1Property(tag = 17, name = "eventResponderType", optional = true)
+  @JsonProperty("eventResponderType")
+  private PublicSafetyEventResponderWorkerType eventResponderType;
+
+  @Asn1Property(tag = 18, name = "activityType", optional = true)
+  @JsonProperty("activityType")
+  private PublicSafetyAndRoadWorkerActivity activityType;
+
+  @Asn1Property(tag = 19, name = "activitySubType", optional = true)
+  @JsonProperty("activitySubType")
+  private PublicSafetyDirectingTrafficSubType activitySubType;
+
+  @Asn1Property(tag = 20, name = "assistType", optional = true)
+  @JsonProperty("assistType")
+  private PersonalAssistive assistType;
+
+  @Asn1Property(tag = 21, name = "sizing", optional = true)
+  @JsonProperty("sizing")
+  private UserSizeAndBehaviour sizing;
+
+  @Asn1Property(tag = 22, name = "attachment", optional = true)
+  @JsonProperty("attachment")
+  private Attachment attachment;
+
+  @Asn1Property(tag = 23, name = "attachmentRadius", optional = true)
+  @JsonProperty("attachmentRadius")
+  private AttachmentRadius attachmentRadius;
+
+  @Asn1Property(tag = 24, name = "animalType", optional = true)
+  @JsonProperty("animalType")
+  private AnimalType animalType;
+
+  @Asn1Property(tag = 25, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-PersonalSafetyMessage")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_PersonalSafetyMessage> {
+    public SequenceOfRegional() {
+      super(Reg_PersonalSafetyMessage.class, 1L, 4L);
+    }
+  }
+
+  public PersonalSafetyMessage() {
+    super(true);
+  }
 }

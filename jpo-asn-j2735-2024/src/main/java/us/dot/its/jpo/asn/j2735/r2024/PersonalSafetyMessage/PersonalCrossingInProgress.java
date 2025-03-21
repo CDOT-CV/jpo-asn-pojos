@@ -26,5 +26,4 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 @JsonDeserialize(using = PersonalCrossingInProgressDeserializer.class)
-public class PersonalCrossingInProgress extends Asn1Boolean {
-}
+public class PersonalCrossingInProgress extends Asn1Boolean {}

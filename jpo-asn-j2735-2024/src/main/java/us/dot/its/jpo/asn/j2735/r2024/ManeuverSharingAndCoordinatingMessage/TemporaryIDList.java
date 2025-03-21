@@ -30,7 +30,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class TemporaryIDList extends Asn1SequenceOf<TemporaryID> {
 
-	public TemporaryIDList() {
-		super(TemporaryID.class, 1L, 32L);
-	}
+  public TemporaryIDList() {
+    super(TemporaryID.class, 1L, 32L);
+  }
 }

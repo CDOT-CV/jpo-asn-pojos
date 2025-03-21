@@ -26,7 +26,7 @@ import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class MapDataMessageFrameValueSerializer extends OpenTypeSerializer<MapData> {
 
-	public MapDataMessageFrameValueSerializer() {
-		super(MapData.class, "value", "MapData");
-	}
+  public MapDataMessageFrameValueSerializer() {
+    super(MapData.class, "value", "MapData");
+  }
 }

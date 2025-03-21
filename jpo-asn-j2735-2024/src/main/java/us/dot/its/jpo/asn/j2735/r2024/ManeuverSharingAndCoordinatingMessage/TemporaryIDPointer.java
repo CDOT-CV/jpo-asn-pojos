@@ -26,21 +26,25 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = TemporaryIDPointer.TemporaryIDPointerDeserializer.class)
+@JsonDeserialize(
+    using =
+        TemporaryIDPointer
+            .TemporaryIDPointerDeserializer.class)
 public class TemporaryIDPointer extends Asn1Bitstring {
 
-	public TemporaryIDPointer() {
-		super(-1, false, new String[]{});
-	}
+  public TemporaryIDPointer() {
+    super(-1, false, new String[] {});
+  }
 
-	public static class TemporaryIDPointerDeserializer extends BitStringDeserializer<TemporaryIDPointer> {
-		public TemporaryIDPointerDeserializer() {
-			super(TemporaryIDPointer.class);
-		}
+  public static class TemporaryIDPointerDeserializer
+      extends BitStringDeserializer<TemporaryIDPointer> {
+    public TemporaryIDPointerDeserializer() {
+      super(TemporaryIDPointer.class);
+    }
 
-		@Override
-		protected TemporaryIDPointer construct() {
-			return new TemporaryIDPointer();
-		}
-	}
+    @Override
+    protected TemporaryIDPointer construct() {
+      return new TemporaryIDPointer();
+    }
+  }
 }

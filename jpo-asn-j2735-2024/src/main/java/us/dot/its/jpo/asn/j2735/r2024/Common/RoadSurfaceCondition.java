@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RoadSurfaceCondition.RoadSurfaceConditionSerializer.class)
 @JsonDeserialize(using = RoadSurfaceCondition.RoadSurfaceConditionDeserializer.class)
 public enum RoadSurfaceCondition implements Asn1Enumerated {
-	DRY(0, "dry"), WET(1, "wet");
+  DRY(0, "dry"),
+  WET(1, "wet");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RoadSurfaceCondition(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RoadSurfaceCondition(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RoadSurfaceConditionSerializer extends EnumeratedSerializer<RoadSurfaceCondition> {
-		public RoadSurfaceConditionSerializer() {
-			super(RoadSurfaceCondition.class);
-		}
-	}
+  public static class RoadSurfaceConditionSerializer
+      extends EnumeratedSerializer<RoadSurfaceCondition> {
+    public RoadSurfaceConditionSerializer() {
+      super(RoadSurfaceCondition.class);
+    }
+  }
 
-	public static class RoadSurfaceConditionDeserializer extends EnumeratedDeserializer<RoadSurfaceCondition> {
-		public RoadSurfaceConditionDeserializer() {
-			super(RoadSurfaceCondition.class);
-		}
+  public static class RoadSurfaceConditionDeserializer
+      extends EnumeratedDeserializer<RoadSurfaceCondition> {
+    public RoadSurfaceConditionDeserializer() {
+      super(RoadSurfaceCondition.class);
+    }
 
-		@Override
-		protected RoadSurfaceCondition[] listEnumValues() {
-			return RoadSurfaceCondition.values();
-		}
-	}
+    @Override
+    protected RoadSurfaceCondition[] listEnumValues() {
+      return RoadSurfaceCondition.values();
+    }
+  }
 }

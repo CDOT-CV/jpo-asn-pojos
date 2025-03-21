@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ClassificationConfidence.ClassificationConfidenceDeserializer.class)
 public class ClassificationConfidence extends Asn1Integer {
 
-	public ClassificationConfidence() {
-		super(0L, 101L);
-	}
+  public ClassificationConfidence() {
+    super(0L, 101L);
+  }
 
-	@JsonCreator
-	public ClassificationConfidence(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ClassificationConfidence(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ClassificationConfidenceDeserializer extends IntegerDeserializer<ClassificationConfidence> {
-		public ClassificationConfidenceDeserializer() {
-			super(ClassificationConfidence.class);
-		}
+  public static class ClassificationConfidenceDeserializer
+      extends IntegerDeserializer<ClassificationConfidence> {
+    public ClassificationConfidenceDeserializer() {
+      super(ClassificationConfidence.class);
+    }
 
-		@Override
-		protected ClassificationConfidence construct() {
-			return new ClassificationConfidence();
-		}
-	}
+    @Override
+    protected ClassificationConfidence construct() {
+      return new ClassificationConfidence();
+    }
+  }
 }

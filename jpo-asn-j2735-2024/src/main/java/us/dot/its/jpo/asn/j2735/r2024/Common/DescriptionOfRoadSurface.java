@@ -35,32 +35,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class DescriptionOfRoadSurface extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "portlandCement")
-	@JsonProperty("portlandCement")
-	private PortlandCement portlandCement;
-	@Asn1Property(tag = 1, name = "asphaltOrTar")
-	@JsonProperty("asphaltOrTar")
-	private AsphaltOrTar asphaltOrTar;
-	@Asn1Property(tag = 2, name = "gravel")
-	@JsonProperty("gravel")
-	private Gravel gravel;
-	@Asn1Property(tag = 3, name = "grass")
-	@JsonProperty("grass")
-	private Grass grass;
-	@Asn1Property(tag = 4, name = "cinders")
-	@JsonProperty("cinders")
-	private Cinders cinders;
-	@Asn1Property(tag = 5, name = "rock")
-	@JsonProperty("rock")
-	private Rock rock;
-	@Asn1Property(tag = 6, name = "ice")
-	@JsonProperty("ice")
-	private Ice ice;
-	@Asn1Property(tag = 7, name = "snow")
-	@JsonProperty("snow")
-	private Snow snow;
+  @Asn1Property(tag = 0, name = "portlandCement")
+  @JsonProperty("portlandCement")
+  private PortlandCement portlandCement;
 
-	public DescriptionOfRoadSurface() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "asphaltOrTar")
+  @JsonProperty("asphaltOrTar")
+  private AsphaltOrTar asphaltOrTar;
+
+  @Asn1Property(tag = 2, name = "gravel")
+  @JsonProperty("gravel")
+  private Gravel gravel;
+
+  @Asn1Property(tag = 3, name = "grass")
+  @JsonProperty("grass")
+  private Grass grass;
+
+  @Asn1Property(tag = 4, name = "cinders")
+  @JsonProperty("cinders")
+  private Cinders cinders;
+
+  @Asn1Property(tag = 5, name = "rock")
+  @JsonProperty("rock")
+  private Rock rock;
+
+  @Asn1Property(tag = 6, name = "ice")
+  @JsonProperty("ice")
+  private Ice ice;
+
+  @Asn1Property(tag = 7, name = "snow")
+  @JsonProperty("snow")
+  private Snow snow;
+
+  public DescriptionOfRoadSurface() {
+    super(true);
+  }
 }

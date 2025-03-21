@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RoadsideAssets.RoadsideAssetsDeserializer.class)
 public class RoadsideAssets extends Asn1Integer {
 
-	public RoadsideAssets() {
-		super(0L, 65535L);
-	}
+  public RoadsideAssets() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public RoadsideAssets(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RoadsideAssets(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RoadsideAssetsDeserializer extends IntegerDeserializer<RoadsideAssets> {
-		public RoadsideAssetsDeserializer() {
-			super(RoadsideAssets.class);
-		}
+  public static class RoadsideAssetsDeserializer extends IntegerDeserializer<RoadsideAssets> {
+    public RoadsideAssetsDeserializer() {
+      super(RoadsideAssets.class);
+    }
 
-		@Override
-		protected RoadsideAssets construct() {
-			return new RoadsideAssets();
-		}
-	}
+    @Override
+    protected RoadsideAssets construct() {
+      return new RoadsideAssets();
+    }
+  }
 }

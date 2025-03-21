@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class TumAck extends Asn1SequenceOf<TumAckHash> {
 
-	public TumAck() {
-		super(TumAckHash.class, 1L, 32L);
-	}
+  public TumAck() {
+    super(TumAckHash.class, 1L, 32L);
+  }
 }

@@ -33,30 +33,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = DataSourceInfo.DataSourceInfoSerializer.class)
 @JsonDeserialize(using = DataSourceInfo.DataSourceInfoDeserializer.class)
 public enum DataSourceInfo implements Asn1Enumerated {
-	MEASURED(0, "measured"), DERIVED(1, "derived");
+  MEASURED(0, "measured"),
+  DERIVED(1, "derived");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private DataSourceInfo(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private DataSourceInfo(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class DataSourceInfoSerializer extends EnumeratedSerializer<DataSourceInfo> {
-		public DataSourceInfoSerializer() {
-			super(DataSourceInfo.class);
-		}
-	}
+  public static class DataSourceInfoSerializer extends EnumeratedSerializer<DataSourceInfo> {
+    public DataSourceInfoSerializer() {
+      super(DataSourceInfo.class);
+    }
+  }
 
-	public static class DataSourceInfoDeserializer extends EnumeratedDeserializer<DataSourceInfo> {
-		public DataSourceInfoDeserializer() {
-			super(DataSourceInfo.class);
-		}
+  public static class DataSourceInfoDeserializer extends EnumeratedDeserializer<DataSourceInfo> {
+    public DataSourceInfoDeserializer() {
+      super(DataSourceInfo.class);
+    }
 
-		@Override
-		protected DataSourceInfo[] listEnumValues() {
-			return DataSourceInfo.values();
-		}
-	}
+    @Override
+    protected DataSourceInfo[] listEnumValues() {
+      return DataSourceInfo.values();
+    }
+  }
 }

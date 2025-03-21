@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AxleWeight.AxleWeightDeserializer.class)
 public class AxleWeight extends Asn1Integer {
 
-	public AxleWeight() {
-		super(0L, 64255L);
-	}
+  public AxleWeight() {
+    super(0L, 64255L);
+  }
 
-	@JsonCreator
-	public AxleWeight(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AxleWeight(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AxleWeightDeserializer extends IntegerDeserializer<AxleWeight> {
-		public AxleWeightDeserializer() {
-			super(AxleWeight.class);
-		}
+  public static class AxleWeightDeserializer extends IntegerDeserializer<AxleWeight> {
+    public AxleWeightDeserializer() {
+      super(AxleWeight.class);
+    }
 
-		@Override
-		protected AxleWeight construct() {
-			return new AxleWeight();
-		}
-	}
+    @Override
+    protected AxleWeight construct() {
+      return new AxleWeight();
+    }
+  }
 }

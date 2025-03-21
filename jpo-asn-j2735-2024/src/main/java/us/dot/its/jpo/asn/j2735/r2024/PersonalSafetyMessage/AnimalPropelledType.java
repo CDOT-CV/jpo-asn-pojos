@@ -33,31 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AnimalPropelledType.AnimalPropelledTypeSerializer.class)
 @JsonDeserialize(using = AnimalPropelledType.AnimalPropelledTypeDeserializer.class)
 public enum AnimalPropelledType implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OTHERTYPES(1, "otherTypes"), ANIMALMOUNTED(2,
-			"animalMounted"), ANIMALDRAWNCARRIAGE(3, "animalDrawnCarriage");
+  UNAVAILABLE(0, "unavailable"),
+  OTHERTYPES(1, "otherTypes"),
+  ANIMALMOUNTED(2, "animalMounted"),
+  ANIMALDRAWNCARRIAGE(3, "animalDrawnCarriage");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AnimalPropelledType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AnimalPropelledType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AnimalPropelledTypeSerializer extends EnumeratedSerializer<AnimalPropelledType> {
-		public AnimalPropelledTypeSerializer() {
-			super(AnimalPropelledType.class);
-		}
-	}
+  public static class AnimalPropelledTypeSerializer
+      extends EnumeratedSerializer<AnimalPropelledType> {
+    public AnimalPropelledTypeSerializer() {
+      super(AnimalPropelledType.class);
+    }
+  }
 
-	public static class AnimalPropelledTypeDeserializer extends EnumeratedDeserializer<AnimalPropelledType> {
-		public AnimalPropelledTypeDeserializer() {
-			super(AnimalPropelledType.class);
-		}
+  public static class AnimalPropelledTypeDeserializer
+      extends EnumeratedDeserializer<AnimalPropelledType> {
+    public AnimalPropelledTypeDeserializer() {
+      super(AnimalPropelledType.class);
+    }
 
-		@Override
-		protected AnimalPropelledType[] listEnumValues() {
-			return AnimalPropelledType.values();
-		}
-	}
+    @Override
+    protected AnimalPropelledType[] listEnumValues() {
+      return AnimalPropelledType.values();
+    }
+  }
 }

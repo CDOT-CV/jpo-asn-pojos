@@ -24,5 +24,4 @@ package us.dot.its.jpo.asn.j2735.r2024.TrafficSignalPhaseAndTiming;
 
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 
-public class TrafficSignalPhaseAndTiming extends Asn1Null {
-}
+public class TrafficSignalPhaseAndTiming extends Asn1Null {}

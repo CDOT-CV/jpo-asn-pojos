@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DrivenLineOffsetSm.DrivenLineOffsetSmDeserializer.class)
 public class DrivenLineOffsetSm extends Asn1Integer {
 
-	public DrivenLineOffsetSm() {
-		super(-2047L, 2047L);
-	}
+  public DrivenLineOffsetSm() {
+    super(-2047L, 2047L);
+  }
 
-	@JsonCreator
-	public DrivenLineOffsetSm(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DrivenLineOffsetSm(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DrivenLineOffsetSmDeserializer extends IntegerDeserializer<DrivenLineOffsetSm> {
-		public DrivenLineOffsetSmDeserializer() {
-			super(DrivenLineOffsetSm.class);
-		}
+  public static class DrivenLineOffsetSmDeserializer
+      extends IntegerDeserializer<DrivenLineOffsetSm> {
+    public DrivenLineOffsetSmDeserializer() {
+      super(DrivenLineOffsetSm.class);
+    }
 
-		@Override
-		protected DrivenLineOffsetSm construct() {
-			return new DrivenLineOffsetSm();
-		}
-	}
+    @Override
+    protected DrivenLineOffsetSm construct() {
+      return new DrivenLineOffsetSm();
+    }
+  }
 }

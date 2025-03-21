@@ -26,137 +26,156 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = IntersectionStatusObject.IntersectionStatusObjectDeserializer.class)
+@JsonDeserialize(
+    using =
+        IntersectionStatusObject
+            .IntersectionStatusObjectDeserializer.class)
 public class IntersectionStatusObject extends Asn1Bitstring {
 
-	public boolean isManualControlIsEnabled() {
-		return get(0);
-	}
+  public boolean isManualControlIsEnabled() {
+    return get(0);
+  }
 
-	public void setManualControlIsEnabled(boolean manualControlIsEnabled) {
-		set(0, manualControlIsEnabled);
-	}
+  public void setManualControlIsEnabled(boolean manualControlIsEnabled) {
+    set(0, manualControlIsEnabled);
+  }
 
-	public boolean isStopTimeIsActivated() {
-		return get(1);
-	}
+  public boolean isStopTimeIsActivated() {
+    return get(1);
+  }
 
-	public void setStopTimeIsActivated(boolean stopTimeIsActivated) {
-		set(1, stopTimeIsActivated);
-	}
+  public void setStopTimeIsActivated(boolean stopTimeIsActivated) {
+    set(1, stopTimeIsActivated);
+  }
 
-	public boolean isFailureFlash() {
-		return get(2);
-	}
+  public boolean isFailureFlash() {
+    return get(2);
+  }
 
-	public void setFailureFlash(boolean failureFlash) {
-		set(2, failureFlash);
-	}
+  public void setFailureFlash(boolean failureFlash) {
+    set(2, failureFlash);
+  }
 
-	public boolean isPreemptIsActive() {
-		return get(3);
-	}
+  public boolean isPreemptIsActive() {
+    return get(3);
+  }
 
-	public void setPreemptIsActive(boolean preemptIsActive) {
-		set(3, preemptIsActive);
-	}
+  public void setPreemptIsActive(boolean preemptIsActive) {
+    set(3, preemptIsActive);
+  }
 
-	public boolean isSignalPriorityIsActive() {
-		return get(4);
-	}
+  public boolean isSignalPriorityIsActive() {
+    return get(4);
+  }
 
-	public void setSignalPriorityIsActive(boolean signalPriorityIsActive) {
-		set(4, signalPriorityIsActive);
-	}
+  public void setSignalPriorityIsActive(boolean signalPriorityIsActive) {
+    set(4, signalPriorityIsActive);
+  }
 
-	public boolean isFixedTimeOperation() {
-		return get(5);
-	}
+  public boolean isFixedTimeOperation() {
+    return get(5);
+  }
 
-	public void setFixedTimeOperation(boolean fixedTimeOperation) {
-		set(5, fixedTimeOperation);
-	}
+  public void setFixedTimeOperation(boolean fixedTimeOperation) {
+    set(5, fixedTimeOperation);
+  }
 
-	public boolean isTrafficDependentOperation() {
-		return get(6);
-	}
+  public boolean isTrafficDependentOperation() {
+    return get(6);
+  }
 
-	public void setTrafficDependentOperation(boolean trafficDependentOperation) {
-		set(6, trafficDependentOperation);
-	}
+  public void setTrafficDependentOperation(boolean trafficDependentOperation) {
+    set(6, trafficDependentOperation);
+  }
 
-	public boolean isStandbyOperation() {
-		return get(7);
-	}
+  public boolean isStandbyOperation() {
+    return get(7);
+  }
 
-	public void setStandbyOperation(boolean standbyOperation) {
-		set(7, standbyOperation);
-	}
+  public void setStandbyOperation(boolean standbyOperation) {
+    set(7, standbyOperation);
+  }
 
-	public boolean isFailureMode() {
-		return get(8);
-	}
+  public boolean isFailureMode() {
+    return get(8);
+  }
 
-	public void setFailureMode(boolean failureMode) {
-		set(8, failureMode);
-	}
+  public void setFailureMode(boolean failureMode) {
+    set(8, failureMode);
+  }
 
-	public boolean isOff() {
-		return get(9);
-	}
+  public boolean isOff() {
+    return get(9);
+  }
 
-	public void setOff(boolean off) {
-		set(9, off);
-	}
+  public void setOff(boolean off) {
+    set(9, off);
+  }
 
-	public boolean isRecentMAPmessageUpdate() {
-		return get(10);
-	}
+  public boolean isRecentMAPmessageUpdate() {
+    return get(10);
+  }
 
-	public void setRecentMAPmessageUpdate(boolean recentMAPmessageUpdate) {
-		set(10, recentMAPmessageUpdate);
-	}
+  public void setRecentMAPmessageUpdate(boolean recentMAPmessageUpdate) {
+    set(10, recentMAPmessageUpdate);
+  }
 
-	public boolean isRecentChangeInMAPassignedLanesIDsUsed() {
-		return get(11);
-	}
+  public boolean isRecentChangeInMAPassignedLanesIDsUsed() {
+    return get(11);
+  }
 
-	public void setRecentChangeInMAPassignedLanesIDsUsed(boolean recentChangeInMAPassignedLanesIDsUsed) {
-		set(11, recentChangeInMAPassignedLanesIDsUsed);
-	}
+  public void setRecentChangeInMAPassignedLanesIDsUsed(
+      boolean recentChangeInMAPassignedLanesIDsUsed) {
+    set(11, recentChangeInMAPassignedLanesIDsUsed);
+  }
 
-	public boolean isNoValidMAPisAvailableAtThisTime() {
-		return get(12);
-	}
+  public boolean isNoValidMAPisAvailableAtThisTime() {
+    return get(12);
+  }
 
-	public void setNoValidMAPisAvailableAtThisTime(boolean noValidMAPisAvailableAtThisTime) {
-		set(12, noValidMAPisAvailableAtThisTime);
-	}
+  public void setNoValidMAPisAvailableAtThisTime(boolean noValidMAPisAvailableAtThisTime) {
+    set(12, noValidMAPisAvailableAtThisTime);
+  }
 
-	public boolean isNoValidSPATisAvailableAtThisTime() {
-		return get(13);
-	}
+  public boolean isNoValidSPATisAvailableAtThisTime() {
+    return get(13);
+  }
 
-	public void setNoValidSPATisAvailableAtThisTime(boolean noValidSPATisAvailableAtThisTime) {
-		set(13, noValidSPATisAvailableAtThisTime);
-	}
+  public void setNoValidSPATisAvailableAtThisTime(boolean noValidSPATisAvailableAtThisTime) {
+    set(13, noValidSPATisAvailableAtThisTime);
+  }
 
-	public IntersectionStatusObject() {
-		super(16, false,
-				new String[]{"manualControlIsEnabled", "stopTimeIsActivated", "failureFlash", "preemptIsActive",
-						"signalPriorityIsActive", "fixedTimeOperation", "trafficDependentOperation", "standbyOperation",
-						"failureMode", "off", "recentMAPmessageUpdate", "recentChangeInMAPassignedLanesIDsUsed",
-						"noValidMAPisAvailableAtThisTime", "noValidSPATisAvailableAtThisTime"});
-	}
+  public IntersectionStatusObject() {
+    super(
+        16,
+        false,
+        new String[] {
+          "manualControlIsEnabled",
+          "stopTimeIsActivated",
+          "failureFlash",
+          "preemptIsActive",
+          "signalPriorityIsActive",
+          "fixedTimeOperation",
+          "trafficDependentOperation",
+          "standbyOperation",
+          "failureMode",
+          "off",
+          "recentMAPmessageUpdate",
+          "recentChangeInMAPassignedLanesIDsUsed",
+          "noValidMAPisAvailableAtThisTime",
+          "noValidSPATisAvailableAtThisTime"
+        });
+  }
 
-	public static class IntersectionStatusObjectDeserializer extends BitStringDeserializer<IntersectionStatusObject> {
-		public IntersectionStatusObjectDeserializer() {
-			super(IntersectionStatusObject.class);
-		}
+  public static class IntersectionStatusObjectDeserializer
+      extends BitStringDeserializer<IntersectionStatusObject> {
+    public IntersectionStatusObjectDeserializer() {
+      super(IntersectionStatusObject.class);
+    }
 
-		@Override
-		protected IntersectionStatusObject construct() {
-			return new IntersectionStatusObject();
-		}
-	}
+    @Override
+    protected IntersectionStatusObject construct() {
+      return new IntersectionStatusObject();
+    }
+  }
 }

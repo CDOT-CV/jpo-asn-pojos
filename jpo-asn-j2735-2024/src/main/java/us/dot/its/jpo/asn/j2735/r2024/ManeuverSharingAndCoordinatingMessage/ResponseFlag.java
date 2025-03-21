@@ -26,5 +26,4 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 @JsonDeserialize(using = ResponseFlagDeserializer.class)
-public class ResponseFlag extends Asn1Boolean {
-}
+public class ResponseFlag extends Asn1Boolean {}

@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = WinterDrivingIndex.WinterDrivingIndexDeserializer.class)
 public class WinterDrivingIndex extends Asn1Integer {
 
-	public WinterDrivingIndex() {
-		super(0L, 65535L);
-	}
+  public WinterDrivingIndex() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public WinterDrivingIndex(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public WinterDrivingIndex(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class WinterDrivingIndexDeserializer extends IntegerDeserializer<WinterDrivingIndex> {
-		public WinterDrivingIndexDeserializer() {
-			super(WinterDrivingIndex.class);
-		}
+  public static class WinterDrivingIndexDeserializer
+      extends IntegerDeserializer<WinterDrivingIndex> {
+    public WinterDrivingIndexDeserializer() {
+      super(WinterDrivingIndex.class);
+    }
 
-		@Override
-		protected WinterDrivingIndex construct() {
-			return new WinterDrivingIndex();
-		}
-	}
+    @Override
+    protected WinterDrivingIndex construct() {
+      return new WinterDrivingIndex();
+    }
+  }
 }

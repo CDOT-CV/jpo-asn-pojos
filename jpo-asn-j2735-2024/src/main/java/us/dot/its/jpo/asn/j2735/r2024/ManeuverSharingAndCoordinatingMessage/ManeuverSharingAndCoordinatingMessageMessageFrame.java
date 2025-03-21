@@ -31,22 +31,21 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
 public class ManeuverSharingAndCoordinatingMessageMessageFrame
-		extends
-			MessageFrame<ManeuverSharingAndCoordinatingMessage> {
+    extends MessageFrame<ManeuverSharingAndCoordinatingMessage> {
 
-	public ManeuverSharingAndCoordinatingMessageMessageFrame() {
-		super(42, "ManeuverSharingAndCoordinatingMessage");
-	}
+  public ManeuverSharingAndCoordinatingMessageMessageFrame() {
+    super(42, "ManeuverSharingAndCoordinatingMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = ManeuverSharingAndCoordinatingMessageMessageFrameValueSerializer.class)
-	public ManeuverSharingAndCoordinatingMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = ManeuverSharingAndCoordinatingMessageMessageFrameValueSerializer.class)
+  public ManeuverSharingAndCoordinatingMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = ManeuverSharingAndCoordinatingMessageMessageFrameValueDeserializer.class)
-	public void setValue(ManeuverSharingAndCoordinatingMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = ManeuverSharingAndCoordinatingMessageMessageFrameValueDeserializer.class)
+  public void setValue(ManeuverSharingAndCoordinatingMessage value) {
+    super.setValue(value);
+  }
 }

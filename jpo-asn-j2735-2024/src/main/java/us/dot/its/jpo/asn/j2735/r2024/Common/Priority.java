@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class Priority extends Asn1OctetString {
 
-	public Priority() {
-		super(1, 1);
-	}
+  public Priority() {
+    super(1, 1);
+  }
 
-	@JsonCreator
-	public Priority(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public Priority(String value) {
+    this();
+    setValue(value);
+  }
 }

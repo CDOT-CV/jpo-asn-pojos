@@ -40,16 +40,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RoadWeatherDownload extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "travelerData")
-	@JsonProperty("travelerData")
-	@JacksonXmlElementWrapper(localName = "travelerData")
-	@JacksonXmlProperty(localName = "TravelerDataFrame")
-	private TravelerDataFrameList travelerData;
-	@Asn1Property(tag = 1, name = "wdmsFleetData", optional = true)
-	@JsonProperty("wdmsFleetData")
-	private WDMSFleetData wdmsFleetData;
+  @Asn1Property(tag = 0, name = "travelerData")
+  @JsonProperty("travelerData")
+  @JacksonXmlElementWrapper(localName = "travelerData")
+  @JacksonXmlProperty(localName = "TravelerDataFrame")
+  private TravelerDataFrameList travelerData;
 
-	public RoadWeatherDownload() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "wdmsFleetData", optional = true)
+  @JsonProperty("wdmsFleetData")
+  private WDMSFleetData wdmsFleetData;
+
+  public RoadWeatherDownload() {
+    super(true);
+  }
 }

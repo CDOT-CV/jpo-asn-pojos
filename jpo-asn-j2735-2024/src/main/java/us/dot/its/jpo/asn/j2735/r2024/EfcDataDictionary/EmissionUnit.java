@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = EmissionUnit.EmissionUnitDeserializer.class)
 public class EmissionUnit extends Asn1Integer {
 
-	public EmissionUnit() {
-		super(0L, 1L);
-	}
+  public EmissionUnit() {
+    super(0L, 1L);
+  }
 
-	@JsonCreator
-	public EmissionUnit(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public EmissionUnit(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class EmissionUnitDeserializer extends IntegerDeserializer<EmissionUnit> {
-		public EmissionUnitDeserializer() {
-			super(EmissionUnit.class);
-		}
+  public static class EmissionUnitDeserializer extends IntegerDeserializer<EmissionUnit> {
+    public EmissionUnitDeserializer() {
+      super(EmissionUnit.class);
+    }
 
-		@Override
-		protected EmissionUnit construct() {
-			return new EmissionUnit();
-		}
-	}
+    @Override
+    protected EmissionUnit construct() {
+      return new EmissionUnit();
+    }
+  }
 }

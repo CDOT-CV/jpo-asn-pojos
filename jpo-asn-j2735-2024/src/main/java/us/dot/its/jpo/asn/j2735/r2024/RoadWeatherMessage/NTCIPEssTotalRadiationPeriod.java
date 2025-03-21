@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPEssTotalRadiationPeriod.NTCIPEssTotalRadiationPeriodDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssTotalRadiationPeriod.NTCIPEssTotalRadiationPeriodDeserializer.class)
 public class NTCIPEssTotalRadiationPeriod extends Asn1Integer {
 
-	public NTCIPEssTotalRadiationPeriod() {
-		super(0L, 86400L);
-	}
+  public NTCIPEssTotalRadiationPeriod() {
+    super(0L, 86400L);
+  }
 
-	@JsonCreator
-	public NTCIPEssTotalRadiationPeriod(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssTotalRadiationPeriod(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssTotalRadiationPeriodDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssTotalRadiationPeriod> {
-		public NTCIPEssTotalRadiationPeriodDeserializer() {
-			super(NTCIPEssTotalRadiationPeriod.class);
-		}
+  public static class NTCIPEssTotalRadiationPeriodDeserializer
+      extends IntegerDeserializer<NTCIPEssTotalRadiationPeriod> {
+    public NTCIPEssTotalRadiationPeriodDeserializer() {
+      super(NTCIPEssTotalRadiationPeriod.class);
+    }
 
-		@Override
-		protected NTCIPEssTotalRadiationPeriod construct() {
-			return new NTCIPEssTotalRadiationPeriod();
-		}
-	}
+    @Override
+    protected NTCIPEssTotalRadiationPeriod construct() {
+      return new NTCIPEssTotalRadiationPeriod();
+    }
+  }
 }

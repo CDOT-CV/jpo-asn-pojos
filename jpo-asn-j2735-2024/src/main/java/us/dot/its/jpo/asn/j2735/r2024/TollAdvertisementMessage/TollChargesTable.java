@@ -45,72 +45,76 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class TollChargesTable extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tollTypeCharge")
-	@JsonProperty("tollTypeCharge")
-	private TollTypeChargeChoice tollTypeCharge;
+  @Asn1Property(tag = 0, name = "tollTypeCharge")
+  @JsonProperty("tollTypeCharge")
+  private TollTypeChargeChoice tollTypeCharge;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class TollTypeChargeChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "pointCharges")
-		@JsonProperty("pointCharges")
-		private ChargesTable pointCharges;
-		@Asn1Property(tag = 1, name = "perLaneCharges")
-		@JsonProperty("perLaneCharges")
-		@JacksonXmlElementWrapper(localName = "perLaneCharges")
-		@JacksonXmlProperty(localName = "LaneChargesTable")
-		private SequenceOfPerLaneCharges perLaneCharges;
-		@Asn1Property(tag = 2, name = "closedNetworkCharges")
-		@JsonProperty("closedNetworkCharges")
-		@JsonSerialize(using = SequenceOfClosedNetworkChargesSerializer.class)
-		@JsonDeserialize(using = SequenceOfClosedNetworkChargesDeserializer.class)
-		private SequenceOfClosedNetworkCharges closedNetworkCharges;
-		@Asn1Property(tag = 3, name = "timeBasedCharges")
-		@JsonProperty("timeBasedCharges")
-		private TimeChargesTable timeBasedCharges;
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class TollTypeChargeChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "pointCharges")
+    @JsonProperty("pointCharges")
+    private ChargesTable pointCharges;
 
-		public TollTypeChargeChoice() {
-			super(true);
-		}
+    @Asn1Property(tag = 1, name = "perLaneCharges")
+    @JsonProperty("perLaneCharges")
+    @JacksonXmlElementWrapper(localName = "perLaneCharges")
+    @JacksonXmlProperty(localName = "LaneChargesTable")
+    private SequenceOfPerLaneCharges perLaneCharges;
 
-		@JsonInclude(Include.NON_NULL)
-		public static class SequenceOfPerLaneCharges extends Asn1SequenceOf<LaneChargesTable> {
-			public SequenceOfPerLaneCharges() {
-				super(LaneChargesTable.class, 1L, 64L);
-			}
-		}
+    @Asn1Property(tag = 2, name = "closedNetworkCharges")
+    @JsonProperty("closedNetworkCharges")
+    @JsonSerialize(using = SequenceOfClosedNetworkChargesSerializer.class)
+    @JsonDeserialize(using = SequenceOfClosedNetworkChargesDeserializer.class)
+    private SequenceOfClosedNetworkCharges closedNetworkCharges;
 
-		@JsonInclude(Include.NON_NULL)
-		public static class SequenceOfClosedNetworkCharges extends Asn1SequenceOf<ClosedNetworkChargesTable> {
-			public SequenceOfClosedNetworkCharges() {
-				super(ClosedNetworkChargesTable.class, 1L, 64L);
-			}
-		}
+    @Asn1Property(tag = 3, name = "timeBasedCharges")
+    @JsonProperty("timeBasedCharges")
+    private TimeChargesTable timeBasedCharges;
 
-		public static class SequenceOfClosedNetworkChargesSerializer
-				extends
-					SequenceOfChoiceSerializer<ClosedNetworkChargesTable, SequenceOfClosedNetworkCharges> {
-			public SequenceOfClosedNetworkChargesSerializer() {
-				super(ClosedNetworkChargesTable.class, SequenceOfClosedNetworkCharges.class);
-			}
-		}
+    public TollTypeChargeChoice() {
+      super(true);
+    }
 
-		public static class SequenceOfClosedNetworkChargesDeserializer
-				extends
-					SequenceOfChoiceDeserializer<ClosedNetworkChargesTable, SequenceOfClosedNetworkCharges> {
-			public SequenceOfClosedNetworkChargesDeserializer() {
-				super(ClosedNetworkChargesTable.class, SequenceOfClosedNetworkCharges.class);
-			}
+    @JsonInclude(Include.NON_NULL)
+    public static class SequenceOfPerLaneCharges extends Asn1SequenceOf<LaneChargesTable> {
+      public SequenceOfPerLaneCharges() {
+        super(LaneChargesTable.class, 1L, 64L);
+      }
+    }
 
-			@Override
-			protected SequenceOfClosedNetworkCharges construct() {
-				return new SequenceOfClosedNetworkCharges();
-			}
-		}
-	}
+    @JsonInclude(Include.NON_NULL)
+    public static class SequenceOfClosedNetworkCharges
+        extends Asn1SequenceOf<ClosedNetworkChargesTable> {
+      public SequenceOfClosedNetworkCharges() {
+        super(ClosedNetworkChargesTable.class, 1L, 64L);
+      }
+    }
 
-	public TollChargesTable() {
-		super(true);
-	}
+    public static class SequenceOfClosedNetworkChargesSerializer
+        extends SequenceOfChoiceSerializer<
+            ClosedNetworkChargesTable, SequenceOfClosedNetworkCharges> {
+      public SequenceOfClosedNetworkChargesSerializer() {
+        super(ClosedNetworkChargesTable.class, SequenceOfClosedNetworkCharges.class);
+      }
+    }
+
+    public static class SequenceOfClosedNetworkChargesDeserializer
+        extends SequenceOfChoiceDeserializer<
+            ClosedNetworkChargesTable, SequenceOfClosedNetworkCharges> {
+      public SequenceOfClosedNetworkChargesDeserializer() {
+        super(ClosedNetworkChargesTable.class, SequenceOfClosedNetworkCharges.class);
+      }
+
+      @Override
+      protected SequenceOfClosedNetworkCharges construct() {
+        return new SequenceOfClosedNetworkCharges();
+      }
+    }
+  }
+
+  public TollChargesTable() {
+    super(true);
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PurseBalance extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "purseValue")
-	@JsonProperty("purseValue")
-	private SignedValue purseValue;
-	@Asn1Property(tag = 1, name = "purseUnit")
-	@JsonProperty("purseUnit")
-	private PayUnit purseUnit;
+  @Asn1Property(tag = 0, name = "purseValue")
+  @JsonProperty("purseValue")
+  private SignedValue purseValue;
 
-	public PurseBalance() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "purseUnit")
+  @JsonProperty("purseUnit")
+  private PayUnit purseUnit;
+
+  public PurseBalance() {
+    super(false);
+  }
 }

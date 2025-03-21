@@ -38,23 +38,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RoadWeatherUpload extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "vehicleReport")
-	@JsonProperty("vehicleReport")
-	@JacksonXmlElementWrapper(localName = "vehicleReport")
-	@JacksonXmlProperty(localName = "VehicleReport")
-	private SequenceOfVehicleReport vehicleReport;
-	@Asn1Property(tag = 1, name = "citizenReport")
-	@JsonProperty("citizenReport")
-	private SnapShot citizenReport;
+  @Asn1Property(tag = 0, name = "vehicleReport")
+  @JsonProperty("vehicleReport")
+  @JacksonXmlElementWrapper(localName = "vehicleReport")
+  @JacksonXmlProperty(localName = "VehicleReport")
+  private SequenceOfVehicleReport vehicleReport;
 
-	public RoadWeatherUpload() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "citizenReport")
+  @JsonProperty("citizenReport")
+  private SnapShot citizenReport;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfVehicleReport extends Asn1SequenceOf<VehicleReport> {
-		public SequenceOfVehicleReport() {
-			super(VehicleReport.class, 1L, 32L);
-		}
-	}
+  public RoadWeatherUpload() {
+    super(true);
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfVehicleReport extends Asn1SequenceOf<VehicleReport> {
+    public SequenceOfVehicleReport() {
+      super(VehicleReport.class, 1L, 32L);
+    }
+  }
 }

@@ -42,23 +42,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SignalRequesterInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "id")
-	@JsonProperty("id")
-	private VehicleID id;
-	@Asn1Property(tag = 1, name = "request")
-	@JsonProperty("request")
-	private RequestID request;
-	@Asn1Property(tag = 2, name = "sequenceNumber")
-	@JsonProperty("sequenceNumber")
-	private MsgCount sequenceNumber;
-	@Asn1Property(tag = 3, name = "role", optional = true)
-	@JsonProperty("role")
-	private BasicVehicleRole role;
-	@Asn1Property(tag = 4, name = "typeData", optional = true)
-	@JsonProperty("typeData")
-	private RequestorType typeData;
+  @Asn1Property(tag = 0, name = "id")
+  @JsonProperty("id")
+  private VehicleID id;
 
-	public SignalRequesterInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "request")
+  @JsonProperty("request")
+  private RequestID request;
+
+  @Asn1Property(tag = 2, name = "sequenceNumber")
+  @JsonProperty("sequenceNumber")
+  private MsgCount sequenceNumber;
+
+  @Asn1Property(tag = 3, name = "role", optional = true)
+  @JsonProperty("role")
+  private BasicVehicleRole role;
+
+  @Asn1Property(tag = 4, name = "typeData", optional = true)
+  @JsonProperty("typeData")
+  private RequestorType typeData;
+
+  public SignalRequesterInfo() {
+    super(true);
+  }
 }

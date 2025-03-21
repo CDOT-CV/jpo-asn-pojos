@@ -28,42 +28,41 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonPropertyOrder({"regionId", "regExtValue"})
-abstract public class RegionalExtension<TValue> extends Asn1Sequence {
+public abstract class RegionalExtension<TValue> extends Asn1Sequence {
 
-	protected RegionId regionId;
-	@JsonIgnore
-	final protected String name;
-	protected TValue regExtValue;
+  protected RegionId regionId;
+  @JsonIgnore protected final String name;
+  protected TValue regExtValue;
 
-	@JsonProperty("regionId")
-	public RegionId getRegionId() {
-		return regionId;
-	}
+  @JsonProperty("regionId")
+  public RegionId getRegionId() {
+    return regionId;
+  }
 
-	@JsonProperty("regionId")
-	public void setRegionId(RegionId regionId) {
-		this.regionId = regionId;
-	}
+  @JsonProperty("regionId")
+  public void setRegionId(RegionId regionId) {
+    this.regionId = regionId;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	@JsonProperty("regExtValue")
-	public TValue getRegExtValue() {
-		return regExtValue;
-	}
+  @JsonProperty("regExtValue")
+  public TValue getRegExtValue() {
+    return regExtValue;
+  }
 
-	@JsonProperty("regExtValue")
-	public void setRegExtValue(TValue regExtValue) {
-		this.regExtValue = regExtValue;
-	}
+  @JsonProperty("regExtValue")
+  public void setRegExtValue(TValue regExtValue) {
+    this.regExtValue = regExtValue;
+  }
 
-	public RegionalExtension(int id, String name) {
-		super(true);
-		var theId = new RegionId();
-		theId.setValue(id);
-		this.regionId = theId;
-		this.name = name;
-	}
+  public RegionalExtension(int id, String name) {
+    super(true);
+    var theId = new RegionId();
+    theId.setValue(id);
+    this.regionId = theId;
+    this.name = name;
+  }
 }

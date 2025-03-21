@@ -38,23 +38,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipPavement extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "surfaceTemp", optional = true)
-	@JsonProperty("surfaceTemp")
-	private NTCIPEssSurfaceTemperature surfaceTemp;
-	@Asn1Property(tag = 1, name = "tempStdDev", optional = true)
-	@JsonProperty("tempStdDev")
-	private SurfaceTempMeasurementStdDev tempStdDev;
-	@Asn1Property(tag = 2, name = "condition", optional = true)
-	@JsonProperty("condition")
-	private NTCIPPavementSensorSurfaceCondition condition;
-	@Asn1Property(tag = 3, name = "moistureDepth", optional = true)
-	@JsonProperty("moistureDepth")
-	private NTCIPEssSurfaceIceOrWaterDepth moistureDepth;
-	@Asn1Property(tag = 4, name = "roadRoughness", optional = true)
-	@JsonProperty("roadRoughness")
-	private RoadRoughness roadRoughness;
+  @Asn1Property(tag = 0, name = "surfaceTemp", optional = true)
+  @JsonProperty("surfaceTemp")
+  private NTCIPEssSurfaceTemperature surfaceTemp;
 
-	public NtcipPavement() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tempStdDev", optional = true)
+  @JsonProperty("tempStdDev")
+  private SurfaceTempMeasurementStdDev tempStdDev;
+
+  @Asn1Property(tag = 2, name = "condition", optional = true)
+  @JsonProperty("condition")
+  private NTCIPPavementSensorSurfaceCondition condition;
+
+  @Asn1Property(tag = 3, name = "moistureDepth", optional = true)
+  @JsonProperty("moistureDepth")
+  private NTCIPEssSurfaceIceOrWaterDepth moistureDepth;
+
+  @Asn1Property(tag = 4, name = "roadRoughness", optional = true)
+  @JsonProperty("roadRoughness")
+  private RoadRoughness roadRoughness;
+
+  public NtcipPavement() {
+    super(true);
+  }
 }

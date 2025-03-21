@@ -26,121 +26,135 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = AllowedManeuvers.AllowedManeuversDeserializer.class)
+@JsonDeserialize(
+    using =
+        AllowedManeuvers.AllowedManeuversDeserializer.class)
 public class AllowedManeuvers extends Asn1Bitstring {
 
-	public boolean isManeuverStraightAllowed() {
-		return get(0);
-	}
+  public boolean isManeuverStraightAllowed() {
+    return get(0);
+  }
 
-	public void setManeuverStraightAllowed(boolean maneuverStraightAllowed) {
-		set(0, maneuverStraightAllowed);
-	}
+  public void setManeuverStraightAllowed(boolean maneuverStraightAllowed) {
+    set(0, maneuverStraightAllowed);
+  }
 
-	public boolean isManeuverLeftAllowed() {
-		return get(1);
-	}
+  public boolean isManeuverLeftAllowed() {
+    return get(1);
+  }
 
-	public void setManeuverLeftAllowed(boolean maneuverLeftAllowed) {
-		set(1, maneuverLeftAllowed);
-	}
+  public void setManeuverLeftAllowed(boolean maneuverLeftAllowed) {
+    set(1, maneuverLeftAllowed);
+  }
 
-	public boolean isManeuverRightAllowed() {
-		return get(2);
-	}
+  public boolean isManeuverRightAllowed() {
+    return get(2);
+  }
 
-	public void setManeuverRightAllowed(boolean maneuverRightAllowed) {
-		set(2, maneuverRightAllowed);
-	}
+  public void setManeuverRightAllowed(boolean maneuverRightAllowed) {
+    set(2, maneuverRightAllowed);
+  }
 
-	public boolean isManeuverUTurnAllowed() {
-		return get(3);
-	}
+  public boolean isManeuverUTurnAllowed() {
+    return get(3);
+  }
 
-	public void setManeuverUTurnAllowed(boolean maneuverUTurnAllowed) {
-		set(3, maneuverUTurnAllowed);
-	}
+  public void setManeuverUTurnAllowed(boolean maneuverUTurnAllowed) {
+    set(3, maneuverUTurnAllowed);
+  }
 
-	public boolean isManeuverLeftTurnOnRedAllowed() {
-		return get(4);
-	}
+  public boolean isManeuverLeftTurnOnRedAllowed() {
+    return get(4);
+  }
 
-	public void setManeuverLeftTurnOnRedAllowed(boolean maneuverLeftTurnOnRedAllowed) {
-		set(4, maneuverLeftTurnOnRedAllowed);
-	}
+  public void setManeuverLeftTurnOnRedAllowed(boolean maneuverLeftTurnOnRedAllowed) {
+    set(4, maneuverLeftTurnOnRedAllowed);
+  }
 
-	public boolean isManeuverRightTurnOnRedAllowed() {
-		return get(5);
-	}
+  public boolean isManeuverRightTurnOnRedAllowed() {
+    return get(5);
+  }
 
-	public void setManeuverRightTurnOnRedAllowed(boolean maneuverRightTurnOnRedAllowed) {
-		set(5, maneuverRightTurnOnRedAllowed);
-	}
+  public void setManeuverRightTurnOnRedAllowed(boolean maneuverRightTurnOnRedAllowed) {
+    set(5, maneuverRightTurnOnRedAllowed);
+  }
 
-	public boolean isManeuverLaneChangeAllowed() {
-		return get(6);
-	}
+  public boolean isManeuverLaneChangeAllowed() {
+    return get(6);
+  }
 
-	public void setManeuverLaneChangeAllowed(boolean maneuverLaneChangeAllowed) {
-		set(6, maneuverLaneChangeAllowed);
-	}
+  public void setManeuverLaneChangeAllowed(boolean maneuverLaneChangeAllowed) {
+    set(6, maneuverLaneChangeAllowed);
+  }
 
-	public boolean isManeuverNoStoppingAllowed() {
-		return get(7);
-	}
+  public boolean isManeuverNoStoppingAllowed() {
+    return get(7);
+  }
 
-	public void setManeuverNoStoppingAllowed(boolean maneuverNoStoppingAllowed) {
-		set(7, maneuverNoStoppingAllowed);
-	}
+  public void setManeuverNoStoppingAllowed(boolean maneuverNoStoppingAllowed) {
+    set(7, maneuverNoStoppingAllowed);
+  }
 
-	public boolean isYieldAllwaysRequired() {
-		return get(8);
-	}
+  public boolean isYieldAllwaysRequired() {
+    return get(8);
+  }
 
-	public void setYieldAllwaysRequired(boolean yieldAllwaysRequired) {
-		set(8, yieldAllwaysRequired);
-	}
+  public void setYieldAllwaysRequired(boolean yieldAllwaysRequired) {
+    set(8, yieldAllwaysRequired);
+  }
 
-	public boolean isGoWithHalt() {
-		return get(9);
-	}
+  public boolean isGoWithHalt() {
+    return get(9);
+  }
 
-	public void setGoWithHalt(boolean goWithHalt) {
-		set(9, goWithHalt);
-	}
+  public void setGoWithHalt(boolean goWithHalt) {
+    set(9, goWithHalt);
+  }
 
-	public boolean isCaution() {
-		return get(10);
-	}
+  public boolean isCaution() {
+    return get(10);
+  }
 
-	public void setCaution(boolean caution) {
-		set(10, caution);
-	}
+  public void setCaution(boolean caution) {
+    set(10, caution);
+  }
 
-	public boolean isReserved1() {
-		return get(11);
-	}
+  public boolean isReserved1() {
+    return get(11);
+  }
 
-	public void setReserved1(boolean reserved1) {
-		set(11, reserved1);
-	}
+  public void setReserved1(boolean reserved1) {
+    set(11, reserved1);
+  }
 
-	public AllowedManeuvers() {
-		super(12, false,
-				new String[]{"maneuverStraightAllowed", "maneuverLeftAllowed", "maneuverRightAllowed",
-						"maneuverUTurnAllowed", "maneuverLeftTurnOnRedAllowed", "maneuverRightTurnOnRedAllowed",
-						"maneuverLaneChangeAllowed", "maneuverNoStoppingAllowed", "yieldAllwaysRequired", "goWithHalt",
-						"caution", "reserved1"});
-	}
+  public AllowedManeuvers() {
+    super(
+        12,
+        false,
+        new String[] {
+          "maneuverStraightAllowed",
+          "maneuverLeftAllowed",
+          "maneuverRightAllowed",
+          "maneuverUTurnAllowed",
+          "maneuverLeftTurnOnRedAllowed",
+          "maneuverRightTurnOnRedAllowed",
+          "maneuverLaneChangeAllowed",
+          "maneuverNoStoppingAllowed",
+          "yieldAllwaysRequired",
+          "goWithHalt",
+          "caution",
+          "reserved1"
+        });
+  }
 
-	public static class AllowedManeuversDeserializer extends BitStringDeserializer<AllowedManeuvers> {
-		public AllowedManeuversDeserializer() {
-			super(AllowedManeuvers.class);
-		}
+  public static class AllowedManeuversDeserializer extends BitStringDeserializer<AllowedManeuvers> {
+    public AllowedManeuversDeserializer() {
+      super(AllowedManeuvers.class);
+    }
 
-		@Override
-		protected AllowedManeuvers construct() {
-			return new AllowedManeuvers();
-		}
-	}
+    @Override
+    protected AllowedManeuvers construct() {
+      return new AllowedManeuvers();
+    }
+  }
 }

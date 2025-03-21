@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TollAdvertisementMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tollChargesTable")
-	@JsonProperty("tollChargesTable")
-	private TollChargesTable tollChargesTable;
-	@Asn1Property(tag = 1, name = "tollAdvInfo", optional = true)
-	@JsonProperty("tollAdvInfo")
-	private TollAdvertisementInfo tollAdvInfo;
+  @Asn1Property(tag = 0, name = "tollChargesTable")
+  @JsonProperty("tollChargesTable")
+  private TollChargesTable tollChargesTable;
 
-	public TollAdvertisementMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tollAdvInfo", optional = true)
+  @JsonProperty("tollAdvInfo")
+  private TollAdvertisementInfo tollAdvInfo;
+
+  public TollAdvertisementMessage() {
+    super(true);
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Duration extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "durationValue")
-	@JsonProperty("durationValue")
-	private Int4Unsigned durationValue;
-	@Asn1Property(tag = 1, name = "timeUnit", defaultValue = "seconds")
-	@JsonProperty("timeUnit")
-	private TimeUnit timeUnit;
+  @Asn1Property(tag = 0, name = "durationValue")
+  @JsonProperty("durationValue")
+  private Int4Unsigned durationValue;
 
-	public Duration() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "timeUnit", defaultValue = "seconds")
+  @JsonProperty("timeUnit")
+  private TimeUnit timeUnit;
+
+  public Duration() {
+    super(false);
+  }
 }

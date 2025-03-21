@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Winds.WindsDeserializer.class)
 public class Winds extends Asn1Integer {
 
-	public Winds() {
-		super(0L, 65535L);
-	}
+  public Winds() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Winds(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Winds(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class WindsDeserializer extends IntegerDeserializer<Winds> {
-		public WindsDeserializer() {
-			super(Winds.class);
-		}
+  public static class WindsDeserializer extends IntegerDeserializer<Winds> {
+    public WindsDeserializer() {
+      super(Winds.class);
+    }
 
-		@Override
-		protected Winds construct() {
-			return new Winds();
-		}
-	}
+    @Override
+    protected Winds construct() {
+      return new Winds();
+    }
+  }
 }

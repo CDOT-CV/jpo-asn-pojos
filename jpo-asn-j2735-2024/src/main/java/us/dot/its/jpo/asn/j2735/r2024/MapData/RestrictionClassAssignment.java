@@ -40,16 +40,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RestrictionClassAssignment extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "id")
-	@JsonProperty("id")
-	private RestrictionClassID id;
-	@Asn1Property(tag = 1, name = "users")
-	@JsonProperty("users")
-	@JsonSerialize(using = RestrictionUserTypeList.RestrictionUserTypeListSerializer.class)
-	@JsonDeserialize(using = RestrictionUserTypeList.RestrictionUserTypeListDeserializer.class)
-	private RestrictionUserTypeList users;
+  @Asn1Property(tag = 0, name = "id")
+  @JsonProperty("id")
+  private RestrictionClassID id;
 
-	public RestrictionClassAssignment() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "users")
+  @JsonProperty("users")
+  @JsonSerialize(using = RestrictionUserTypeList.RestrictionUserTypeListSerializer.class)
+  @JsonDeserialize(using = RestrictionUserTypeList.RestrictionUserTypeListDeserializer.class)
+  private RestrictionUserTypeList users;
+
+  public RestrictionClassAssignment() {
+    super(false);
+  }
 }

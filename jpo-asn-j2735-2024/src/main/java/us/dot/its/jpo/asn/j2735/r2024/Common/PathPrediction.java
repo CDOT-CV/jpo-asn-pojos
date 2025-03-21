@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PathPrediction extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "radiusOfCurve")
-	@JsonProperty("radiusOfCurve")
-	private RadiusOfCurvature radiusOfCurve;
-	@Asn1Property(tag = 1, name = "confidence")
-	@JsonProperty("confidence")
-	private Confidence confidence;
+  @Asn1Property(tag = 0, name = "radiusOfCurve")
+  @JsonProperty("radiusOfCurve")
+  private RadiusOfCurvature radiusOfCurve;
 
-	public PathPrediction() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "confidence")
+  @JsonProperty("confidence")
+  private Confidence confidence;
+
+  public PathPrediction() {
+    super(true);
+  }
 }

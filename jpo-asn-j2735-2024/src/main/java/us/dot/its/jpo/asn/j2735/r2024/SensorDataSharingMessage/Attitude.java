@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Attitude extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pitch")
-	@JsonProperty("pitch")
-	private PitchDetected pitch;
-	@Asn1Property(tag = 1, name = "roll")
-	@JsonProperty("roll")
-	private RollDetected roll;
-	@Asn1Property(tag = 2, name = "yaw")
-	@JsonProperty("yaw")
-	private YawDetected yaw;
+  @Asn1Property(tag = 0, name = "pitch")
+  @JsonProperty("pitch")
+  private PitchDetected pitch;
 
-	public Attitude() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "roll")
+  @JsonProperty("roll")
+  private RollDetected roll;
+
+  @Asn1Property(tag = 2, name = "yaw")
+  @JsonProperty("yaw")
+  private YawDetected yaw;
+
+  public Attitude() {
+    super(false);
+  }
 }

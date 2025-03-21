@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
-public class RoadUserChargingConfigMessageMessageFrame extends MessageFrame<RoadUserChargingConfigMessage> {
+public class RoadUserChargingConfigMessageMessageFrame
+    extends MessageFrame<RoadUserChargingConfigMessage> {
 
-	public RoadUserChargingConfigMessageMessageFrame() {
-		super(48, "RoadUserChargingConfigMessage");
-	}
+  public RoadUserChargingConfigMessageMessageFrame() {
+    super(48, "RoadUserChargingConfigMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = RoadUserChargingConfigMessageMessageFrameValueSerializer.class)
-	public RoadUserChargingConfigMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = RoadUserChargingConfigMessageMessageFrameValueSerializer.class)
+  public RoadUserChargingConfigMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = RoadUserChargingConfigMessageMessageFrameValueDeserializer.class)
-	public void setValue(RoadUserChargingConfigMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = RoadUserChargingConfigMessageMessageFrameValueDeserializer.class)
+  public void setValue(RoadUserChargingConfigMessage value) {
+    super.setValue(value);
+  }
 }

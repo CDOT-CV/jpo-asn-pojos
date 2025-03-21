@@ -36,14 +36,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ConfigBoundary extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "temporalBoundary")
-	@JsonProperty("temporalBoundary")
-	private ConfigTemporalBoundary temporalBoundary;
-	@Asn1Property(tag = 1, name = "geoAndDistBoundary")
-	@JsonProperty("geoAndDistBoundary")
-	private ValidRegion geoAndDistBoundary;
+  @Asn1Property(tag = 0, name = "temporalBoundary")
+  @JsonProperty("temporalBoundary")
+  private ConfigTemporalBoundary temporalBoundary;
 
-	public ConfigBoundary() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "geoAndDistBoundary")
+  @JsonProperty("geoAndDistBoundary")
+  private ValidRegion geoAndDistBoundary;
+
+  public ConfigBoundary() {
+    super(true);
+  }
 }

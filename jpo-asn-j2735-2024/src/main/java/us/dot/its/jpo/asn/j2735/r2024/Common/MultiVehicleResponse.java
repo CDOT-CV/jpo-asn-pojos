@@ -33,31 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = MultiVehicleResponse.MultiVehicleResponseSerializer.class)
 @JsonDeserialize(using = MultiVehicleResponse.MultiVehicleResponseDeserializer.class)
 public enum MultiVehicleResponse implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), SINGLEVEHICLE(1, "singleVehicle"), MULTIVEHICLE(2, "multiVehicle"), RESERVED(3,
-			"reserved");
+  UNAVAILABLE(0, "unavailable"),
+  SINGLEVEHICLE(1, "singleVehicle"),
+  MULTIVEHICLE(2, "multiVehicle"),
+  RESERVED(3, "reserved");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private MultiVehicleResponse(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private MultiVehicleResponse(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class MultiVehicleResponseSerializer extends EnumeratedSerializer<MultiVehicleResponse> {
-		public MultiVehicleResponseSerializer() {
-			super(MultiVehicleResponse.class);
-		}
-	}
+  public static class MultiVehicleResponseSerializer
+      extends EnumeratedSerializer<MultiVehicleResponse> {
+    public MultiVehicleResponseSerializer() {
+      super(MultiVehicleResponse.class);
+    }
+  }
 
-	public static class MultiVehicleResponseDeserializer extends EnumeratedDeserializer<MultiVehicleResponse> {
-		public MultiVehicleResponseDeserializer() {
-			super(MultiVehicleResponse.class);
-		}
+  public static class MultiVehicleResponseDeserializer
+      extends EnumeratedDeserializer<MultiVehicleResponse> {
+    public MultiVehicleResponseDeserializer() {
+      super(MultiVehicleResponse.class);
+    }
 
-		@Override
-		protected MultiVehicleResponse[] listEnumValues() {
-			return MultiVehicleResponse.values();
-		}
-	}
+    @Override
+    protected MultiVehicleResponse[] listEnumValues() {
+      return MultiVehicleResponse.values();
+    }
+  }
 }

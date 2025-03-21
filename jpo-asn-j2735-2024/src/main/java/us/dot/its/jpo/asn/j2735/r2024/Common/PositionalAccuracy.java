@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PositionalAccuracy extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "semiMajor")
-	@JsonProperty("semiMajor")
-	private SemiMajorAxisAccuracy semiMajor;
-	@Asn1Property(tag = 1, name = "semiMinor")
-	@JsonProperty("semiMinor")
-	private SemiMinorAxisAccuracy semiMinor;
-	@Asn1Property(tag = 2, name = "orientation")
-	@JsonProperty("orientation")
-	private SemiMajorAxisOrientation orientation;
+  @Asn1Property(tag = 0, name = "semiMajor")
+  @JsonProperty("semiMajor")
+  private SemiMajorAxisAccuracy semiMajor;
 
-	public PositionalAccuracy() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "semiMinor")
+  @JsonProperty("semiMinor")
+  private SemiMinorAxisAccuracy semiMinor;
+
+  @Asn1Property(tag = 2, name = "orientation")
+  @JsonProperty("orientation")
+  private SemiMajorAxisOrientation orientation;
+
+  public PositionalAccuracy() {
+    super(false);
+  }
 }

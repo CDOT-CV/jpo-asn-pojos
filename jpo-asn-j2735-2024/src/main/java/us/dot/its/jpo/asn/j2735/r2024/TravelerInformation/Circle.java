@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Circle extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "center")
-	@JsonProperty("center")
-	private Position3D center;
-	@Asn1Property(tag = 1, name = "radius")
-	@JsonProperty("radius")
-	private Radius_B12 radius;
-	@Asn1Property(tag = 2, name = "units")
-	@JsonProperty("units")
-	private DistanceUnits units;
+  @Asn1Property(tag = 0, name = "center")
+  @JsonProperty("center")
+  private Position3D center;
 
-	public Circle() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "radius")
+  @JsonProperty("radius")
+  private Radius_B12 radius;
+
+  @Asn1Property(tag = 2, name = "units")
+  @JsonProperty("units")
+  private DistanceUnits units;
+
+  public Circle() {
+    super(false);
+  }
 }

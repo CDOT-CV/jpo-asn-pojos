@@ -45,34 +45,41 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SensorDataSharingMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "msgCnt")
-	@JsonProperty("msgCnt")
-	private MsgCount msgCnt;
-	@Asn1Property(tag = 1, name = "sourceID")
-	@JsonProperty("sourceID")
-	private TemporaryID sourceID;
-	@Asn1Property(tag = 2, name = "equipmentType")
-	@JsonProperty("equipmentType")
-	private EquipmentType equipmentType;
-	@Asn1Property(tag = 3, name = "sDSMTimeStamp")
-	@JsonProperty("sDSMTimeStamp")
-	private DDateTime sDSMTimeStamp;
-	@Asn1Property(tag = 4, name = "refPos")
-	@JsonProperty("refPos")
-	private Position3D refPos;
-	@Asn1Property(tag = 5, name = "refPosXYConf")
-	@JsonProperty("refPosXYConf")
-	private PositionalAccuracy refPosXYConf;
-	@Asn1Property(tag = 6, name = "refPosElConf", optional = true)
-	@JsonProperty("refPosElConf")
-	private ElevationConfidence refPosElConf;
-	@Asn1Property(tag = 7, name = "objects")
-	@JsonProperty("objects")
-	@JacksonXmlElementWrapper(localName = "objects")
-	@JacksonXmlProperty(localName = "DetectedObjectData")
-	private DetectedObjectList objects;
+  @Asn1Property(tag = 0, name = "msgCnt")
+  @JsonProperty("msgCnt")
+  private MsgCount msgCnt;
 
-	public SensorDataSharingMessage() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "sourceID")
+  @JsonProperty("sourceID")
+  private TemporaryID sourceID;
+
+  @Asn1Property(tag = 2, name = "equipmentType")
+  @JsonProperty("equipmentType")
+  private EquipmentType equipmentType;
+
+  @Asn1Property(tag = 3, name = "sDSMTimeStamp")
+  @JsonProperty("sDSMTimeStamp")
+  private DDateTime sDSMTimeStamp;
+
+  @Asn1Property(tag = 4, name = "refPos")
+  @JsonProperty("refPos")
+  private Position3D refPos;
+
+  @Asn1Property(tag = 5, name = "refPosXYConf")
+  @JsonProperty("refPosXYConf")
+  private PositionalAccuracy refPosXYConf;
+
+  @Asn1Property(tag = 6, name = "refPosElConf", optional = true)
+  @JsonProperty("refPosElConf")
+  private ElevationConfidence refPosElConf;
+
+  @Asn1Property(tag = 7, name = "objects")
+  @JsonProperty("objects")
+  @JacksonXmlElementWrapper(localName = "objects")
+  @JacksonXmlProperty(localName = "DetectedObjectData")
+  private DetectedObjectList objects;
+
+  public SensorDataSharingMessage() {
+    super(false);
+  }
 }

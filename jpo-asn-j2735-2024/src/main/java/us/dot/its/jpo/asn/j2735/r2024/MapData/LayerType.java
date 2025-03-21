@@ -33,32 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = LayerType.LayerTypeSerializer.class)
 @JsonDeserialize(using = LayerType.LayerTypeDeserializer.class)
 public enum LayerType implements Asn1Enumerated {
-	NONE(0, "none"), MIXEDCONTENT(1, "mixedContent"), GENERALMAPDATA(2, "generalMapData"), INTERSECTIONDATA(3,
-			"intersectionData"), CURVEDATA(4, "curveData"), ROADWAYSECTIONDATA(5,
-					"roadwaySectionData"), PARKINGAREADATA(6, "parkingAreaData"), SHAREDLANEDATA(7, "sharedLaneData");
+  NONE(0, "none"),
+  MIXEDCONTENT(1, "mixedContent"),
+  GENERALMAPDATA(2, "generalMapData"),
+  INTERSECTIONDATA(3, "intersectionData"),
+  CURVEDATA(4, "curveData"),
+  ROADWAYSECTIONDATA(5, "roadwaySectionData"),
+  PARKINGAREADATA(6, "parkingAreaData"),
+  SHAREDLANEDATA(7, "sharedLaneData");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private LayerType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private LayerType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class LayerTypeSerializer extends EnumeratedSerializer<LayerType> {
-		public LayerTypeSerializer() {
-			super(LayerType.class);
-		}
-	}
+  public static class LayerTypeSerializer extends EnumeratedSerializer<LayerType> {
+    public LayerTypeSerializer() {
+      super(LayerType.class);
+    }
+  }
 
-	public static class LayerTypeDeserializer extends EnumeratedDeserializer<LayerType> {
-		public LayerTypeDeserializer() {
-			super(LayerType.class);
-		}
+  public static class LayerTypeDeserializer extends EnumeratedDeserializer<LayerType> {
+    public LayerTypeDeserializer() {
+      super(LayerType.class);
+    }
 
-		@Override
-		protected LayerType[] listEnumValues() {
-			return LayerType.values();
-		}
-	}
+    @Override
+    protected LayerType[] listEnumValues() {
+      return LayerType.values();
+    }
+  }
 }

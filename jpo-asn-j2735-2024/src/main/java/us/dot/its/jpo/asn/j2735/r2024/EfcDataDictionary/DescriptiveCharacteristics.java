@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DescriptiveCharacteristics.DescriptiveCharacteristicsDeserializer.class)
 public class DescriptiveCharacteristics extends Asn1Integer {
 
-	public DescriptiveCharacteristics() {
-		super(0L, 255L);
-	}
+  public DescriptiveCharacteristics() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public DescriptiveCharacteristics(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DescriptiveCharacteristics(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DescriptiveCharacteristicsDeserializer extends IntegerDeserializer<DescriptiveCharacteristics> {
-		public DescriptiveCharacteristicsDeserializer() {
-			super(DescriptiveCharacteristics.class);
-		}
+  public static class DescriptiveCharacteristicsDeserializer
+      extends IntegerDeserializer<DescriptiveCharacteristics> {
+    public DescriptiveCharacteristicsDeserializer() {
+      super(DescriptiveCharacteristics.class);
+    }
 
-		@Override
-		protected DescriptiveCharacteristics construct() {
-			return new DescriptiveCharacteristics();
-		}
-	}
+    @Override
+    protected DescriptiveCharacteristics construct() {
+      return new DescriptiveCharacteristics();
+    }
+  }
 }

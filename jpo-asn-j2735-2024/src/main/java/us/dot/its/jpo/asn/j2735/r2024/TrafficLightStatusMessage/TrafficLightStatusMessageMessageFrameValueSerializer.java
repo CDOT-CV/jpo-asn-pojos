@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.TrafficLightStatusMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class TrafficLightStatusMessageMessageFrameValueSerializer
-		extends
-			OpenTypeSerializer<TrafficLightStatusMessage> {
+    extends OpenTypeSerializer<TrafficLightStatusMessage> {
 
-	public TrafficLightStatusMessageMessageFrameValueSerializer() {
-		super(TrafficLightStatusMessage.class, "value", "TrafficLightStatusMessage");
-	}
+  public TrafficLightStatusMessageMessageFrameValueSerializer() {
+    super(TrafficLightStatusMessage.class, "value", "TrafficLightStatusMessage");
+  }
 }

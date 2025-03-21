@@ -40,56 +40,59 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 @Setter
 public class AudioLink extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "amChannel", optional = true)
-	@JsonProperty("amChannel")
-	private AmChannelInteger amChannel;
-	@Asn1Property(tag = 1, name = "fmChannel", optional = true)
-	@JsonProperty("fmChannel")
-	private FmChannelInteger fmChannel;
-	@Asn1Property(tag = 2, name = "satelliteChannel", optional = true)
-	@JsonProperty("satelliteChannel")
-	private SatelliteChannelInteger satelliteChannel;
-	@Asn1Property(tag = 3, name = "urlChannel", optional = true)
-	@JsonProperty("urlChannel")
-	private IA5String urlChannel;
+  @Asn1Property(tag = 0, name = "amChannel", optional = true)
+  @JsonProperty("amChannel")
+  private AmChannelInteger amChannel;
 
-	public static class AmChannelInteger extends Asn1Integer {
-		public AmChannelInteger() {
-			super(531L, 1710L);
-		}
+  @Asn1Property(tag = 1, name = "fmChannel", optional = true)
+  @JsonProperty("fmChannel")
+  private FmChannelInteger fmChannel;
 
-		@JsonCreator
-		public AmChannelInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "satelliteChannel", optional = true)
+  @JsonProperty("satelliteChannel")
+  private SatelliteChannelInteger satelliteChannel;
 
-	public static class FmChannelInteger extends Asn1Integer {
-		public FmChannelInteger() {
-			super(65800L, 108009L);
-		}
+  @Asn1Property(tag = 3, name = "urlChannel", optional = true)
+  @JsonProperty("urlChannel")
+  private IA5String urlChannel;
 
-		@JsonCreator
-		public FmChannelInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class AmChannelInteger extends Asn1Integer {
+    public AmChannelInteger() {
+      super(531L, 1710L);
+    }
 
-	public static class SatelliteChannelInteger extends Asn1Integer {
-		public SatelliteChannelInteger() {
-			super(1L, 9999L);
-		}
+    @JsonCreator
+    public AmChannelInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public SatelliteChannelInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class FmChannelInteger extends Asn1Integer {
+    public FmChannelInteger() {
+      super(65800L, 108009L);
+    }
 
-	public AudioLink() {
-		super(true);
-	}
+    @JsonCreator
+    public FmChannelInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class SatelliteChannelInteger extends Asn1Integer {
+    public SatelliteChannelInteger() {
+      super(1L, 9999L);
+    }
+
+    @JsonCreator
+    public SatelliteChannelInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public AudioLink() {
+    super(true);
+  }
 }

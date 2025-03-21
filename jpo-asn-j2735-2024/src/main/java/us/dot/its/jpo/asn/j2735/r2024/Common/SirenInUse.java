@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SirenInUse.SirenInUseSerializer.class)
 @JsonDeserialize(using = SirenInUse.SirenInUseDeserializer.class)
 public enum SirenInUse implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), NOTINUSE(1, "notInUse"), INUSE(2, "inUse"), RESERVED(3, "reserved");
+  UNAVAILABLE(0, "unavailable"),
+  NOTINUSE(1, "notInUse"),
+  INUSE(2, "inUse"),
+  RESERVED(3, "reserved");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SirenInUse(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SirenInUse(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SirenInUseSerializer extends EnumeratedSerializer<SirenInUse> {
-		public SirenInUseSerializer() {
-			super(SirenInUse.class);
-		}
-	}
+  public static class SirenInUseSerializer extends EnumeratedSerializer<SirenInUse> {
+    public SirenInUseSerializer() {
+      super(SirenInUse.class);
+    }
+  }
 
-	public static class SirenInUseDeserializer extends EnumeratedDeserializer<SirenInUse> {
-		public SirenInUseDeserializer() {
-			super(SirenInUse.class);
-		}
+  public static class SirenInUseDeserializer extends EnumeratedDeserializer<SirenInUse> {
+    public SirenInUseDeserializer() {
+      super(SirenInUse.class);
+    }
 
-		@Override
-		protected SirenInUse[] listEnumValues() {
-			return SirenInUse.values();
-		}
-	}
+    @Override
+    protected SirenInUse[] listEnumValues() {
+      return SirenInUse.values();
+    }
+  }
 }

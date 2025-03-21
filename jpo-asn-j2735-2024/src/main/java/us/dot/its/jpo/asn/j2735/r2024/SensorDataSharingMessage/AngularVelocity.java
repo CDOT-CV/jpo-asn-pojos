@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AngularVelocity extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pitchRate")
-	@JsonProperty("pitchRate")
-	private PitchRate pitchRate;
-	@Asn1Property(tag = 1, name = "rollRate")
-	@JsonProperty("rollRate")
-	private RollRate rollRate;
+  @Asn1Property(tag = 0, name = "pitchRate")
+  @JsonProperty("pitchRate")
+  private PitchRate pitchRate;
 
-	public AngularVelocity() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "rollRate")
+  @JsonProperty("rollRate")
+  private RollRate rollRate;
+
+  public AngularVelocity() {
+    super(false);
+  }
 }

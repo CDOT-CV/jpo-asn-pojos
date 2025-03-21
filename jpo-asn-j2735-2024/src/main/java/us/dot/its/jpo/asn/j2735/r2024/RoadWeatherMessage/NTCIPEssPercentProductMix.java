@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssPercentProductMix.NTCIPEssPercentProductMixDeserializer.class)
 public class NTCIPEssPercentProductMix extends Asn1Integer {
 
-	public NTCIPEssPercentProductMix() {
-		super(0L, 100L);
-	}
+  public NTCIPEssPercentProductMix() {
+    super(0L, 100L);
+  }
 
-	@JsonCreator
-	public NTCIPEssPercentProductMix(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPercentProductMix(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssPercentProductMixDeserializer extends IntegerDeserializer<NTCIPEssPercentProductMix> {
-		public NTCIPEssPercentProductMixDeserializer() {
-			super(NTCIPEssPercentProductMix.class);
-		}
+  public static class NTCIPEssPercentProductMixDeserializer
+      extends IntegerDeserializer<NTCIPEssPercentProductMix> {
+    public NTCIPEssPercentProductMixDeserializer() {
+      super(NTCIPEssPercentProductMix.class);
+    }
 
-		@Override
-		protected NTCIPEssPercentProductMix construct() {
-			return new NTCIPEssPercentProductMix();
-		}
-	}
+    @Override
+    protected NTCIPEssPercentProductMix construct() {
+      return new NTCIPEssPercentProductMix();
+    }
+  }
 }

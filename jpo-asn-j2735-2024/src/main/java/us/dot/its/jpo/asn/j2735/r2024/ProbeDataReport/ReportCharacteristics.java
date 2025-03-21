@@ -44,47 +44,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ReportCharacteristics extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp")
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
-	@Asn1Property(tag = 1, name = "position")
-	@JsonProperty("position")
-	private Position3D position;
-	@Asn1Property(tag = 2, name = "posAccuracy")
-	@JsonProperty("posAccuracy")
-	private PositionalAccuracy posAccuracy;
-	@Asn1Property(tag = 3, name = "velocity")
-	@JsonProperty("velocity")
-	private RptVelocity velocity;
-	@Asn1Property(tag = 4, name = "vehicleClass", optional = true)
-	@JsonProperty("vehicleClass")
-	private RptVehicleClass vehicleClass;
-	@Asn1Property(tag = 5, name = "devType", optional = true)
-	@JsonProperty("devType")
-	private RptDevType devType;
-	@Asn1Property(tag = 6, name = "vehicleSize", optional = true)
-	@JsonProperty("vehicleSize")
-	private VehicleSize vehicleSize;
-	@Asn1Property(tag = 7, name = "vehicleMass", optional = true)
-	@JsonProperty("vehicleMass")
-	private VehicleMass vehicleMass;
-	@Asn1Property(tag = 8, name = "vehPassengerCount", optional = true)
-	@JsonProperty("vehPassengerCount")
-	private VehPassengerCountInteger vehPassengerCount;
+  @Asn1Property(tag = 0, name = "timeStamp")
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
 
-	public static class VehPassengerCountInteger extends Asn1Integer {
-		public VehPassengerCountInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 1, name = "position")
+  @JsonProperty("position")
+  private Position3D position;
 
-		@JsonCreator
-		public VehPassengerCountInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "posAccuracy")
+  @JsonProperty("posAccuracy")
+  private PositionalAccuracy posAccuracy;
 
-	public ReportCharacteristics() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "velocity")
+  @JsonProperty("velocity")
+  private RptVelocity velocity;
+
+  @Asn1Property(tag = 4, name = "vehicleClass", optional = true)
+  @JsonProperty("vehicleClass")
+  private RptVehicleClass vehicleClass;
+
+  @Asn1Property(tag = 5, name = "devType", optional = true)
+  @JsonProperty("devType")
+  private RptDevType devType;
+
+  @Asn1Property(tag = 6, name = "vehicleSize", optional = true)
+  @JsonProperty("vehicleSize")
+  private VehicleSize vehicleSize;
+
+  @Asn1Property(tag = 7, name = "vehicleMass", optional = true)
+  @JsonProperty("vehicleMass")
+  private VehicleMass vehicleMass;
+
+  @Asn1Property(tag = 8, name = "vehPassengerCount", optional = true)
+  @JsonProperty("vehPassengerCount")
+  private VehPassengerCountInteger vehPassengerCount;
+
+  public static class VehPassengerCountInteger extends Asn1Integer {
+    public VehPassengerCountInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public VehPassengerCountInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ReportCharacteristics() {
+    super(true);
+  }
 }

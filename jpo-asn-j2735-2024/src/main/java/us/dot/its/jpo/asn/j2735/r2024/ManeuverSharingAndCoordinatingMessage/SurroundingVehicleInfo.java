@@ -39,17 +39,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SurroundingVehicleInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "surroundingVehicleID")
-	@JsonProperty("surroundingVehicleID")
-	private TemporaryID surroundingVehicleID;
-	@Asn1Property(tag = 1, name = "surroundingVehiclePosition")
-	@JsonProperty("surroundingVehiclePosition")
-	private PositionOffsetXYZ surroundingVehiclePosition;
-	@Asn1Property(tag = 2, name = "surroundingVehicleSize")
-	@JsonProperty("surroundingVehicleSize")
-	private VehicleSize surroundingVehicleSize;
+  @Asn1Property(tag = 0, name = "surroundingVehicleID")
+  @JsonProperty("surroundingVehicleID")
+  private TemporaryID surroundingVehicleID;
 
-	public SurroundingVehicleInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "surroundingVehiclePosition")
+  @JsonProperty("surroundingVehiclePosition")
+  private PositionOffsetXYZ surroundingVehiclePosition;
+
+  @Asn1Property(tag = 2, name = "surroundingVehicleSize")
+  @JsonProperty("surroundingVehicleSize")
+  private VehicleSize surroundingVehicleSize;
+
+  public SurroundingVehicleInfo() {
+    super(true);
+  }
 }

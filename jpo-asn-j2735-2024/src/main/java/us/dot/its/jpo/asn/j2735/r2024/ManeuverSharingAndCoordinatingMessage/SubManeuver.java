@@ -40,32 +40,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SubManeuver extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "executantVehID")
-	@JsonProperty("executantVehID")
-	private TemporaryID executantVehID;
-	@Asn1Property(tag = 1, name = "affectedVehIDs")
-	@JsonProperty("affectedVehIDs")
-	private TemporaryIDPointer affectedVehIDs;
-	@Asn1Property(tag = 2, name = "currentStateData")
-	@JsonProperty("currentStateData")
-	private CurrentStateData currentStateData;
-	@Asn1Property(tag = 3, name = "targetRoadResource", optional = true)
-	@JsonProperty("targetRoadResource")
-	private TargetRoadResource targetRoadResource;
-	@Asn1Property(tag = 4, name = "startTime")
-	@JsonProperty("startTime")
-	private DDateTime startTime;
-	@Asn1Property(tag = 5, name = "endTime")
-	@JsonProperty("endTime")
-	private DDateTime endTime;
-	@Asn1Property(tag = 6, name = "minSpeed", optional = true)
-	@JsonProperty("minSpeed")
-	private Speed minSpeed;
-	@Asn1Property(tag = 7, name = "maxSpeed", optional = true)
-	@JsonProperty("maxSpeed")
-	private Speed maxSpeed;
+  @Asn1Property(tag = 0, name = "executantVehID")
+  @JsonProperty("executantVehID")
+  private TemporaryID executantVehID;
 
-	public SubManeuver() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "affectedVehIDs")
+  @JsonProperty("affectedVehIDs")
+  private TemporaryIDPointer affectedVehIDs;
+
+  @Asn1Property(tag = 2, name = "currentStateData")
+  @JsonProperty("currentStateData")
+  private CurrentStateData currentStateData;
+
+  @Asn1Property(tag = 3, name = "targetRoadResource", optional = true)
+  @JsonProperty("targetRoadResource")
+  private TargetRoadResource targetRoadResource;
+
+  @Asn1Property(tag = 4, name = "startTime")
+  @JsonProperty("startTime")
+  private DDateTime startTime;
+
+  @Asn1Property(tag = 5, name = "endTime")
+  @JsonProperty("endTime")
+  private DDateTime endTime;
+
+  @Asn1Property(tag = 6, name = "minSpeed", optional = true)
+  @JsonProperty("minSpeed")
+  private Speed minSpeed;
+
+  @Asn1Property(tag = 7, name = "maxSpeed", optional = true)
+  @JsonProperty("maxSpeed")
+  private Speed maxSpeed;
+
+  public SubManeuver() {
+    super(true);
+  }
 }

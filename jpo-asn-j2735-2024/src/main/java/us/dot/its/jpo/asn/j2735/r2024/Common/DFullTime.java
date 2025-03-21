@@ -37,23 +37,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DFullTime extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "year")
-	@JsonProperty("year")
-	private DYear year;
-	@Asn1Property(tag = 1, name = "month")
-	@JsonProperty("month")
-	private DMonth month;
-	@Asn1Property(tag = 2, name = "day")
-	@JsonProperty("day")
-	private DDay day;
-	@Asn1Property(tag = 3, name = "hour")
-	@JsonProperty("hour")
-	private DHour hour;
-	@Asn1Property(tag = 4, name = "minute")
-	@JsonProperty("minute")
-	private DMinute minute;
+  @Asn1Property(tag = 0, name = "year")
+  @JsonProperty("year")
+  private DYear year;
 
-	public DFullTime() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "month")
+  @JsonProperty("month")
+  private DMonth month;
+
+  @Asn1Property(tag = 2, name = "day")
+  @JsonProperty("day")
+  private DDay day;
+
+  @Asn1Property(tag = 3, name = "hour")
+  @JsonProperty("hour")
+  private DHour hour;
+
+  @Asn1Property(tag = 4, name = "minute")
+  @JsonProperty("minute")
+  private DMinute minute;
+
+  public DFullTime() {
+    super(false);
+  }
 }

@@ -33,32 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RainSensor.RainSensorSerializer.class)
 @JsonDeserialize(using = RainSensor.RainSensorDeserializer.class)
 public enum RainSensor implements Asn1Enumerated {
-	NONE(0, "none"), LIGHTMIST(1, "lightMist"), HEAVYMIST(2, "heavyMist"), LIGHTRAINORDRIZZLE(3,
-			"lightRainOrDrizzle"), RAIN(4, "rain"), MODERATERAIN(5,
-					"moderateRain"), HEAVYRAIN(6, "heavyRain"), HEAVYDOWNPOUR(7, "heavyDownpour");
+  NONE(0, "none"),
+  LIGHTMIST(1, "lightMist"),
+  HEAVYMIST(2, "heavyMist"),
+  LIGHTRAINORDRIZZLE(3, "lightRainOrDrizzle"),
+  RAIN(4, "rain"),
+  MODERATERAIN(5, "moderateRain"),
+  HEAVYRAIN(6, "heavyRain"),
+  HEAVYDOWNPOUR(7, "heavyDownpour");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RainSensor(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RainSensor(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RainSensorSerializer extends EnumeratedSerializer<RainSensor> {
-		public RainSensorSerializer() {
-			super(RainSensor.class);
-		}
-	}
+  public static class RainSensorSerializer extends EnumeratedSerializer<RainSensor> {
+    public RainSensorSerializer() {
+      super(RainSensor.class);
+    }
+  }
 
-	public static class RainSensorDeserializer extends EnumeratedDeserializer<RainSensor> {
-		public RainSensorDeserializer() {
-			super(RainSensor.class);
-		}
+  public static class RainSensorDeserializer extends EnumeratedDeserializer<RainSensor> {
+    public RainSensorDeserializer() {
+      super(RainSensor.class);
+    }
 
-		@Override
-		protected RainSensor[] listEnumValues() {
-			return RainSensor.values();
-		}
-	}
+    @Override
+    protected RainSensor[] listEnumValues() {
+      return RainSensor.values();
+    }
+  }
 }

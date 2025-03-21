@@ -47,60 +47,71 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TollUserData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp")
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
-	@Asn1Property(tag = 1, name = "tspId")
-	@JsonProperty("tspId")
-	private Asn1ObjectIdentifier tspId;
-	@Asn1Property(tag = 2, name = "vehicleId")
-	@JsonProperty("vehicleId")
-	private VehicleId vehicleId;
-	@Asn1Property(tag = 3, name = "vehType", optional = true)
-	@JsonProperty("vehType")
-	private VehicleTypes vehType;
-	@Asn1Property(tag = 4, name = "vehicleDescription", optional = true)
-	@JsonProperty("vehicleDescription")
-	private VehicleDescription vehicleDescription;
-	@Asn1Property(tag = 5, name = "vehAxlesAndWeight", optional = true)
-	@JsonProperty("vehAxlesAndWeight")
-	private VehicleAxlesAndWeightInfo vehAxlesAndWeight;
-	@Asn1Property(tag = 6, name = "numOccupants", optional = true)
-	@JsonProperty("numOccupants")
-	private NumOccupantsInteger numOccupants;
-	@Asn1Property(tag = 7, name = "entryTollPointId", optional = true)
-	@JsonProperty("entryTollPointId")
-	private TollPointID entryTollPointId;
-	@Asn1Property(tag = 8, name = "entryTimeStamp", optional = true)
-	@JsonProperty("entryTimeStamp")
-	private DDateTime entryTimeStamp;
-	@Asn1Property(tag = 9, name = "locAndTimeStamps", optional = true)
-	@JsonProperty("locAndTimeStamps")
-	@JacksonXmlElementWrapper(localName = "locAndTimeStamps")
-	@JacksonXmlProperty(localName = "LocAndTimeStamp")
-	private LocAndTimeStamps locAndTimeStamps;
-	@Asn1Property(tag = 10, name = "lastTollPoints", optional = true)
-	@JsonProperty("lastTollPoints")
-	@JacksonXmlElementWrapper(localName = "lastTollPoints")
-	@JacksonXmlProperty(localName = "LastTollPointInfo")
-	private LastTollPointInfos lastTollPoints;
-	@Asn1Property(tag = 11, name = "charge", optional = true)
-	@JsonProperty("charge")
-	private PaymentFee charge;
+  @Asn1Property(tag = 0, name = "timeStamp")
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
 
-	public static class NumOccupantsInteger extends Asn1Integer {
-		public NumOccupantsInteger() {
-			super(2L, 5L);
-		}
+  @Asn1Property(tag = 1, name = "tspId")
+  @JsonProperty("tspId")
+  private Asn1ObjectIdentifier tspId;
 
-		@JsonCreator
-		public NumOccupantsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "vehicleId")
+  @JsonProperty("vehicleId")
+  private VehicleId vehicleId;
 
-	public TollUserData() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "vehType", optional = true)
+  @JsonProperty("vehType")
+  private VehicleTypes vehType;
+
+  @Asn1Property(tag = 4, name = "vehicleDescription", optional = true)
+  @JsonProperty("vehicleDescription")
+  private VehicleDescription vehicleDescription;
+
+  @Asn1Property(tag = 5, name = "vehAxlesAndWeight", optional = true)
+  @JsonProperty("vehAxlesAndWeight")
+  private VehicleAxlesAndWeightInfo vehAxlesAndWeight;
+
+  @Asn1Property(tag = 6, name = "numOccupants", optional = true)
+  @JsonProperty("numOccupants")
+  private NumOccupantsInteger numOccupants;
+
+  @Asn1Property(tag = 7, name = "entryTollPointId", optional = true)
+  @JsonProperty("entryTollPointId")
+  private TollPointID entryTollPointId;
+
+  @Asn1Property(tag = 8, name = "entryTimeStamp", optional = true)
+  @JsonProperty("entryTimeStamp")
+  private DDateTime entryTimeStamp;
+
+  @Asn1Property(tag = 9, name = "locAndTimeStamps", optional = true)
+  @JsonProperty("locAndTimeStamps")
+  @JacksonXmlElementWrapper(localName = "locAndTimeStamps")
+  @JacksonXmlProperty(localName = "LocAndTimeStamp")
+  private LocAndTimeStamps locAndTimeStamps;
+
+  @Asn1Property(tag = 10, name = "lastTollPoints", optional = true)
+  @JsonProperty("lastTollPoints")
+  @JacksonXmlElementWrapper(localName = "lastTollPoints")
+  @JacksonXmlProperty(localName = "LastTollPointInfo")
+  private LastTollPointInfos lastTollPoints;
+
+  @Asn1Property(tag = 11, name = "charge", optional = true)
+  @JsonProperty("charge")
+  private PaymentFee charge;
+
+  public static class NumOccupantsInteger extends Asn1Integer {
+    public NumOccupantsInteger() {
+      super(2L, 5L);
+    }
+
+    @JsonCreator
+    public NumOccupantsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TollUserData() {
+    super(true);
+  }
 }

@@ -33,30 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ConsecutiveTrafficLight.ConsecutiveTrafficLightSerializer.class)
 @JsonDeserialize(using = ConsecutiveTrafficLight.ConsecutiveTrafficLightDeserializer.class)
 public enum ConsecutiveTrafficLight implements Asn1Enumerated {
-	NONE(0, "none"), FIRST(1, "first"), SECOND(2, "second");
+  NONE(0, "none"),
+  FIRST(1, "first"),
+  SECOND(2, "second");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ConsecutiveTrafficLight(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ConsecutiveTrafficLight(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ConsecutiveTrafficLightSerializer extends EnumeratedSerializer<ConsecutiveTrafficLight> {
-		public ConsecutiveTrafficLightSerializer() {
-			super(ConsecutiveTrafficLight.class);
-		}
-	}
+  public static class ConsecutiveTrafficLightSerializer
+      extends EnumeratedSerializer<ConsecutiveTrafficLight> {
+    public ConsecutiveTrafficLightSerializer() {
+      super(ConsecutiveTrafficLight.class);
+    }
+  }
 
-	public static class ConsecutiveTrafficLightDeserializer extends EnumeratedDeserializer<ConsecutiveTrafficLight> {
-		public ConsecutiveTrafficLightDeserializer() {
-			super(ConsecutiveTrafficLight.class);
-		}
+  public static class ConsecutiveTrafficLightDeserializer
+      extends EnumeratedDeserializer<ConsecutiveTrafficLight> {
+    public ConsecutiveTrafficLightDeserializer() {
+      super(ConsecutiveTrafficLight.class);
+    }
 
-		@Override
-		protected ConsecutiveTrafficLight[] listEnumValues() {
-			return ConsecutiveTrafficLight.values();
-		}
-	}
+    @Override
+    protected ConsecutiveTrafficLight[] listEnumValues() {
+      return ConsecutiveTrafficLight.values();
+    }
+  }
 }

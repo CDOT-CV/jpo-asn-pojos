@@ -39,41 +39,43 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ExitInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "exitNumber")
-	@JsonProperty("exitNumber")
-	private ExitNumberInteger exitNumber;
-	@Asn1Property(tag = 1, name = "exitLetter", optional = true)
-	@JsonProperty("exitLetter")
-	private ExitLetterInteger exitLetter;
-	@Asn1Property(tag = 2, name = "tollPointID", optional = true)
-	@JsonProperty("tollPointID")
-	private TollPointID tollPointID;
+  @Asn1Property(tag = 0, name = "exitNumber")
+  @JsonProperty("exitNumber")
+  private ExitNumberInteger exitNumber;
 
-	public static class ExitNumberInteger extends Asn1Integer {
-		public ExitNumberInteger() {
-			super(1L, 999L);
-		}
+  @Asn1Property(tag = 1, name = "exitLetter", optional = true)
+  @JsonProperty("exitLetter")
+  private ExitLetterInteger exitLetter;
 
-		@JsonCreator
-		public ExitNumberInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "tollPointID", optional = true)
+  @JsonProperty("tollPointID")
+  private TollPointID tollPointID;
 
-	public static class ExitLetterInteger extends Asn1Integer {
-		public ExitLetterInteger() {
-			super(65L, 90L);
-		}
+  public static class ExitNumberInteger extends Asn1Integer {
+    public ExitNumberInteger() {
+      super(1L, 999L);
+    }
 
-		@JsonCreator
-		public ExitLetterInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public ExitNumberInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public ExitInfo() {
-		super(true);
-	}
+  public static class ExitLetterInteger extends Asn1Integer {
+    public ExitLetterInteger() {
+      super(65L, 90L);
+    }
+
+    @JsonCreator
+    public ExitLetterInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ExitInfo() {
+    super(true);
+  }
 }

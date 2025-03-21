@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ObjectID.ObjectIDDeserializer.class)
 public class ObjectID extends Asn1Integer {
 
-	public ObjectID() {
-		super(0L, 65535L);
-	}
+  public ObjectID() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public ObjectID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ObjectID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ObjectIDDeserializer extends IntegerDeserializer<ObjectID> {
-		public ObjectIDDeserializer() {
-			super(ObjectID.class);
-		}
+  public static class ObjectIDDeserializer extends IntegerDeserializer<ObjectID> {
+    public ObjectIDDeserializer() {
+      super(ObjectID.class);
+    }
 
-		@Override
-		protected ObjectID construct() {
-			return new ObjectID();
-		}
-	}
+    @Override
+    protected ObjectID construct() {
+      return new ObjectID();
+    }
+  }
 }

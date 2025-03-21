@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class WaitOnStoplineDeserializer extends BooleanDeserializer<WaitOnStopline> {
 
-	public WaitOnStoplineDeserializer() {
-		super(WaitOnStopline.class);
-	}
+  public WaitOnStoplineDeserializer() {
+    super(WaitOnStopline.class);
+  }
 
-	@Override
-	protected WaitOnStopline construct() {
-		return new WaitOnStopline();
-	}
+  @Override
+  protected WaitOnStopline construct() {
+    return new WaitOnStopline();
+  }
 }

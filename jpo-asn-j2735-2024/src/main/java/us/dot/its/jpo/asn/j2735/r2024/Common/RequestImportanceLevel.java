@@ -33,50 +33,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RequestImportanceLevel.RequestImportanceLevelSerializer.class)
 @JsonDeserialize(using = RequestImportanceLevel.RequestImportanceLevelDeserializer.class)
 public enum RequestImportanceLevel implements Asn1Enumerated {
-	REQUESTIMPORTANCELEVELUNKNOWN(0, "requestImportanceLevelUnKnown"), REQUESTIMPORTANCELEVEL1(1,
-			"requestImportanceLevel1"), REQUESTIMPORTANCELEVEL2(2, "requestImportanceLevel2"), REQUESTIMPORTANCELEVEL3(
-					3, "requestImportanceLevel3"), REQUESTIMPORTANCELEVEL4(4,
-							"requestImportanceLevel4"), REQUESTIMPORTANCELEVEL5(5,
-									"requestImportanceLevel5"), REQUESTIMPORTANCELEVEL6(6,
-											"requestImportanceLevel6"), REQUESTIMPORTANCELEVEL7(7,
-													"requestImportanceLevel7"), REQUESTIMPORTANCELEVEL8(8,
-															"requestImportanceLevel8"), REQUESTIMPORTANCELEVEL9(9,
-																	"requestImportanceLevel9"), REQUESTIMPORTANCELEVEL10(
-																			10,
-																			"requestImportanceLevel10"), REQUESTIMPORTANCELEVEL11(
-																					11,
-																					"requestImportanceLevel11"), REQUESTIMPORTANCELEVEL12(
-																							12,
-																							"requestImportanceLevel12"), REQUESTIMPORTANCELEVEL13(
-																									13,
-																									"requestImportanceLevel13"), REQUESTIMPORTANCELEVEL14(
-																											14,
-																											"requestImportanceLevel14"), REQUESTIMPORTANCERESERVED(
-																													15,
-																													"requestImportanceReserved");
+  REQUESTIMPORTANCELEVELUNKNOWN(0, "requestImportanceLevelUnKnown"),
+  REQUESTIMPORTANCELEVEL1(1, "requestImportanceLevel1"),
+  REQUESTIMPORTANCELEVEL2(2, "requestImportanceLevel2"),
+  REQUESTIMPORTANCELEVEL3(3, "requestImportanceLevel3"),
+  REQUESTIMPORTANCELEVEL4(4, "requestImportanceLevel4"),
+  REQUESTIMPORTANCELEVEL5(5, "requestImportanceLevel5"),
+  REQUESTIMPORTANCELEVEL6(6, "requestImportanceLevel6"),
+  REQUESTIMPORTANCELEVEL7(7, "requestImportanceLevel7"),
+  REQUESTIMPORTANCELEVEL8(8, "requestImportanceLevel8"),
+  REQUESTIMPORTANCELEVEL9(9, "requestImportanceLevel9"),
+  REQUESTIMPORTANCELEVEL10(10, "requestImportanceLevel10"),
+  REQUESTIMPORTANCELEVEL11(11, "requestImportanceLevel11"),
+  REQUESTIMPORTANCELEVEL12(12, "requestImportanceLevel12"),
+  REQUESTIMPORTANCELEVEL13(13, "requestImportanceLevel13"),
+  REQUESTIMPORTANCELEVEL14(14, "requestImportanceLevel14"),
+  REQUESTIMPORTANCERESERVED(15, "requestImportanceReserved");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RequestImportanceLevel(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RequestImportanceLevel(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RequestImportanceLevelSerializer extends EnumeratedSerializer<RequestImportanceLevel> {
-		public RequestImportanceLevelSerializer() {
-			super(RequestImportanceLevel.class);
-		}
-	}
+  public static class RequestImportanceLevelSerializer
+      extends EnumeratedSerializer<RequestImportanceLevel> {
+    public RequestImportanceLevelSerializer() {
+      super(RequestImportanceLevel.class);
+    }
+  }
 
-	public static class RequestImportanceLevelDeserializer extends EnumeratedDeserializer<RequestImportanceLevel> {
-		public RequestImportanceLevelDeserializer() {
-			super(RequestImportanceLevel.class);
-		}
+  public static class RequestImportanceLevelDeserializer
+      extends EnumeratedDeserializer<RequestImportanceLevel> {
+    public RequestImportanceLevelDeserializer() {
+      super(RequestImportanceLevel.class);
+    }
 
-		@Override
-		protected RequestImportanceLevel[] listEnumValues() {
-			return RequestImportanceLevel.values();
-		}
-	}
+    @Override
+    protected RequestImportanceLevel[] listEnumValues() {
+      return RequestImportanceLevel.values();
+    }
+  }
 }

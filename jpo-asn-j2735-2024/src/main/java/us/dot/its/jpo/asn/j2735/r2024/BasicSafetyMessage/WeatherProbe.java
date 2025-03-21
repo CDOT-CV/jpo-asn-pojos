@@ -40,17 +40,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class WeatherProbe extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "airTemp", optional = true)
-	@JsonProperty("airTemp")
-	private AmbientAirTemperature airTemp;
-	@Asn1Property(tag = 1, name = "airPressure", optional = true)
-	@JsonProperty("airPressure")
-	private AmbientAirPressure airPressure;
-	@Asn1Property(tag = 2, name = "rainRates", optional = true)
-	@JsonProperty("rainRates")
-	private WiperSet rainRates;
+  @Asn1Property(tag = 0, name = "airTemp", optional = true)
+  @JsonProperty("airTemp")
+  private AmbientAirTemperature airTemp;
 
-	public WeatherProbe() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "airPressure", optional = true)
+  @JsonProperty("airPressure")
+  private AmbientAirPressure airPressure;
+
+  @Asn1Property(tag = 2, name = "rainRates", optional = true)
+  @JsonProperty("rainRates")
+  private WiperSet rainRates;
+
+  public WeatherProbe() {
+    super(true);
+  }
 }

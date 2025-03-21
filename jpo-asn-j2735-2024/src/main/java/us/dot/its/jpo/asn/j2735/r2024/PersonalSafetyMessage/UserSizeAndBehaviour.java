@@ -26,61 +26,70 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = UserSizeAndBehaviour.UserSizeAndBehaviourDeserializer.class)
+@JsonDeserialize(
+    using =
+        UserSizeAndBehaviour
+            .UserSizeAndBehaviourDeserializer.class)
 public class UserSizeAndBehaviour extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isSmallStature() {
-		return get(1);
-	}
+  public boolean isSmallStature() {
+    return get(1);
+  }
 
-	public void setSmallStature(boolean smallStature) {
-		set(1, smallStature);
-	}
+  public void setSmallStature(boolean smallStature) {
+    set(1, smallStature);
+  }
 
-	public boolean isLargeStature() {
-		return get(2);
-	}
+  public boolean isLargeStature() {
+    return get(2);
+  }
 
-	public void setLargeStature(boolean largeStature) {
-		set(2, largeStature);
-	}
+  public void setLargeStature(boolean largeStature) {
+    set(2, largeStature);
+  }
 
-	public boolean isErraticMoving() {
-		return get(3);
-	}
+  public boolean isErraticMoving() {
+    return get(3);
+  }
 
-	public void setErraticMoving(boolean erraticMoving) {
-		set(3, erraticMoving);
-	}
+  public void setErraticMoving(boolean erraticMoving) {
+    set(3, erraticMoving);
+  }
 
-	public boolean isSlowMoving() {
-		return get(4);
-	}
+  public boolean isSlowMoving() {
+    return get(4);
+  }
 
-	public void setSlowMoving(boolean slowMoving) {
-		set(4, slowMoving);
-	}
+  public void setSlowMoving(boolean slowMoving) {
+    set(4, slowMoving);
+  }
 
-	public UserSizeAndBehaviour() {
-		super(5, false, new String[]{"unavailable", "smallStature", "largeStature", "erraticMoving", "slowMoving"});
-	}
+  public UserSizeAndBehaviour() {
+    super(
+        5,
+        false,
+        new String[] {
+          "unavailable", "smallStature", "largeStature", "erraticMoving", "slowMoving"
+        });
+  }
 
-	public static class UserSizeAndBehaviourDeserializer extends BitStringDeserializer<UserSizeAndBehaviour> {
-		public UserSizeAndBehaviourDeserializer() {
-			super(UserSizeAndBehaviour.class);
-		}
+  public static class UserSizeAndBehaviourDeserializer
+      extends BitStringDeserializer<UserSizeAndBehaviour> {
+    public UserSizeAndBehaviourDeserializer() {
+      super(UserSizeAndBehaviour.class);
+    }
 
-		@Override
-		protected UserSizeAndBehaviour construct() {
-			return new UserSizeAndBehaviour();
-		}
-	}
+    @Override
+    protected UserSizeAndBehaviour construct() {
+      return new UserSizeAndBehaviour();
+    }
+  }
 }

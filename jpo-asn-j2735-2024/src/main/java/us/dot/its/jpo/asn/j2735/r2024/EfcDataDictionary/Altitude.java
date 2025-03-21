@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = Altitude.AltitudeDeserializer.class)
 public class Altitude extends Int2Signed {
 
-	public Altitude() {
-		super();
-	}
+  public Altitude() {
+    super();
+  }
 
-	@JsonCreator
-	public Altitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Altitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AltitudeDeserializer extends IntegerDeserializer<Altitude> {
-		public AltitudeDeserializer() {
-			super(Altitude.class);
-		}
+  public static class AltitudeDeserializer extends IntegerDeserializer<Altitude> {
+    public AltitudeDeserializer() {
+      super(Altitude.class);
+    }
 
-		@Override
-		protected Altitude construct() {
-			return new Altitude();
-		}
-	}
+    @Override
+    protected Altitude construct() {
+      return new Altitude();
+    }
+  }
 }

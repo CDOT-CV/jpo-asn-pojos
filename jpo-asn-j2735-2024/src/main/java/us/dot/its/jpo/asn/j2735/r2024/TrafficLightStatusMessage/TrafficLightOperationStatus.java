@@ -26,88 +26,101 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = TrafficLightOperationStatus.TrafficLightOperationStatusDeserializer.class)
+@JsonDeserialize(
+    using =
+        TrafficLightOperationStatus
+            .TrafficLightOperationStatusDeserializer.class)
 public class TrafficLightOperationStatus extends Asn1Bitstring {
 
-	public boolean isManual() {
-		return get(0);
-	}
+  public boolean isManual() {
+    return get(0);
+  }
 
-	public void setManual(boolean manual) {
-		set(0, manual);
-	}
+  public void setManual(boolean manual) {
+    set(0, manual);
+  }
 
-	public boolean isFlashing() {
-		return get(1);
-	}
+  public boolean isFlashing() {
+    return get(1);
+  }
 
-	public void setFlashing(boolean flashing) {
-		set(1, flashing);
-	}
+  public void setFlashing(boolean flashing) {
+    set(1, flashing);
+  }
 
-	public boolean isOff() {
-		return get(2);
-	}
+  public boolean isOff() {
+    return get(2);
+  }
 
-	public void setOff(boolean off) {
-		set(2, off);
-	}
+  public void setOff(boolean off) {
+    set(2, off);
+  }
 
-	public boolean isActuated() {
-		return get(3);
-	}
+  public boolean isActuated() {
+    return get(3);
+  }
 
-	public void setActuated(boolean actuated) {
-		set(3, actuated);
-	}
+  public void setActuated(boolean actuated) {
+    set(3, actuated);
+  }
 
-	public boolean isTransition() {
-		return get(4);
-	}
+  public boolean isTransition() {
+    return get(4);
+  }
 
-	public void setTransition(boolean transition) {
-		set(4, transition);
-	}
+  public void setTransition(boolean transition) {
+    set(4, transition);
+  }
 
-	public boolean isPriority() {
-		return get(5);
-	}
+  public boolean isPriority() {
+    return get(5);
+  }
 
-	public void setPriority(boolean priority) {
-		set(5, priority);
-	}
+  public void setPriority(boolean priority) {
+    set(5, priority);
+  }
 
-	public boolean isHolding_phase() {
-		return get(6);
-	}
+  public boolean isHolding_phase() {
+    return get(6);
+  }
 
-	public void setHolding_phase(boolean holding_phase) {
-		set(6, holding_phase);
-	}
+  public void setHolding_phase(boolean holding_phase) {
+    set(6, holding_phase);
+  }
 
-	public boolean isReserved() {
-		return get(7);
-	}
+  public boolean isReserved() {
+    return get(7);
+  }
 
-	public void setReserved(boolean reserved) {
-		set(7, reserved);
-	}
+  public void setReserved(boolean reserved) {
+    set(7, reserved);
+  }
 
-	public TrafficLightOperationStatus() {
-		super(8, false, new String[]{"manual", "flashing", "off", "actuated", "transition", "priority", "holding-phase",
-				"reserved"});
-	}
+  public TrafficLightOperationStatus() {
+    super(
+        8,
+        false,
+        new String[] {
+          "manual",
+          "flashing",
+          "off",
+          "actuated",
+          "transition",
+          "priority",
+          "holding-phase",
+          "reserved"
+        });
+  }
 
-	public static class TrafficLightOperationStatusDeserializer
-			extends
-				BitStringDeserializer<TrafficLightOperationStatus> {
-		public TrafficLightOperationStatusDeserializer() {
-			super(TrafficLightOperationStatus.class);
-		}
+  public static class TrafficLightOperationStatusDeserializer
+      extends BitStringDeserializer<TrafficLightOperationStatus> {
+    public TrafficLightOperationStatusDeserializer() {
+      super(TrafficLightOperationStatus.class);
+    }
 
-		@Override
-		protected TrafficLightOperationStatus construct() {
-			return new TrafficLightOperationStatus();
-		}
-	}
+    @Override
+    protected TrafficLightOperationStatus construct() {
+      return new TrafficLightOperationStatus();
+    }
+  }
 }

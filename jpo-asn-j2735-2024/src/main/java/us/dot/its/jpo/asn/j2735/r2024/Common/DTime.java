@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DTime extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "hour")
-	@JsonProperty("hour")
-	private DHour hour;
-	@Asn1Property(tag = 1, name = "minute")
-	@JsonProperty("minute")
-	private DMinute minute;
-	@Asn1Property(tag = 2, name = "second")
-	@JsonProperty("second")
-	private DSecond second;
-	@Asn1Property(tag = 3, name = "offset", optional = true)
-	@JsonProperty("offset")
-	private DOffset offset;
+  @Asn1Property(tag = 0, name = "hour")
+  @JsonProperty("hour")
+  private DHour hour;
 
-	public DTime() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "minute")
+  @JsonProperty("minute")
+  private DMinute minute;
+
+  @Asn1Property(tag = 2, name = "second")
+  @JsonProperty("second")
+  private DSecond second;
+
+  @Asn1Property(tag = 3, name = "offset", optional = true)
+  @JsonProperty("offset")
+  private DOffset offset;
+
+  public DTime() {
+    super(false);
+  }
 }

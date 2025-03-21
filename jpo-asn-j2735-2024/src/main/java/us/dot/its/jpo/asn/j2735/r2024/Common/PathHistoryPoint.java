@@ -37,29 +37,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PathHistoryPoint extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "latOffset")
-	@JsonProperty("latOffset")
-	private OffsetLL_B18 latOffset;
-	@Asn1Property(tag = 1, name = "lonOffset")
-	@JsonProperty("lonOffset")
-	private OffsetLL_B18 lonOffset;
-	@Asn1Property(tag = 2, name = "elevationOffset")
-	@JsonProperty("elevationOffset")
-	private VertOffset_B12 elevationOffset;
-	@Asn1Property(tag = 3, name = "timeOffset")
-	@JsonProperty("timeOffset")
-	private TimeOffset timeOffset;
-	@Asn1Property(tag = 4, name = "speed", optional = true)
-	@JsonProperty("speed")
-	private Speed speed;
-	@Asn1Property(tag = 5, name = "posAccuracy", optional = true)
-	@JsonProperty("posAccuracy")
-	private PositionalAccuracy posAccuracy;
-	@Asn1Property(tag = 6, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private CoarseHeading heading;
+  @Asn1Property(tag = 0, name = "latOffset")
+  @JsonProperty("latOffset")
+  private OffsetLL_B18 latOffset;
 
-	public PathHistoryPoint() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "lonOffset")
+  @JsonProperty("lonOffset")
+  private OffsetLL_B18 lonOffset;
+
+  @Asn1Property(tag = 2, name = "elevationOffset")
+  @JsonProperty("elevationOffset")
+  private VertOffset_B12 elevationOffset;
+
+  @Asn1Property(tag = 3, name = "timeOffset")
+  @JsonProperty("timeOffset")
+  private TimeOffset timeOffset;
+
+  @Asn1Property(tag = 4, name = "speed", optional = true)
+  @JsonProperty("speed")
+  private Speed speed;
+
+  @Asn1Property(tag = 5, name = "posAccuracy", optional = true)
+  @JsonProperty("posAccuracy")
+  private PositionalAccuracy posAccuracy;
+
+  @Asn1Property(tag = 6, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private CoarseHeading heading;
+
+  public PathHistoryPoint() {
+    super(true);
+  }
 }

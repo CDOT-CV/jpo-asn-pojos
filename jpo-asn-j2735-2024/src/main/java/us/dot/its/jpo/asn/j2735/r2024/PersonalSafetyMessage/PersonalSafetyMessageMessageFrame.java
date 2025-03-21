@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class PersonalSafetyMessageMessageFrame extends MessageFrame<PersonalSafetyMessage> {
 
-	public PersonalSafetyMessageMessageFrame() {
-		super(32, "PersonalSafetyMessage");
-	}
+  public PersonalSafetyMessageMessageFrame() {
+    super(32, "PersonalSafetyMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = PersonalSafetyMessageMessageFrameValueSerializer.class)
-	public PersonalSafetyMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = PersonalSafetyMessageMessageFrameValueSerializer.class)
+  public PersonalSafetyMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = PersonalSafetyMessageMessageFrameValueDeserializer.class)
-	public void setValue(PersonalSafetyMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = PersonalSafetyMessageMessageFrameValueDeserializer.class)
+  public void setValue(PersonalSafetyMessage value) {
+    super.setValue(value);
+  }
 }

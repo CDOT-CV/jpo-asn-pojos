@@ -26,5 +26,4 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 @JsonDeserialize(using = IsDollyDeserializer.class)
-public class IsDolly extends Asn1Boolean {
-}
+public class IsDolly extends Asn1Boolean {}

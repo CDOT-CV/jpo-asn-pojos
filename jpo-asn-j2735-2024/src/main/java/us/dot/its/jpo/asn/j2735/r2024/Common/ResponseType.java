@@ -33,32 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ResponseType.ResponseTypeSerializer.class)
 @JsonDeserialize(using = ResponseType.ResponseTypeDeserializer.class)
 public enum ResponseType implements Asn1Enumerated {
-	NOTINUSEORNOTEQUIPPED(0, "notInUseOrNotEquipped"), EMERGENCY(1, "emergency"), NONEMERGENCY(2,
-			"nonEmergency"), PURSUIT(3, "pursuit"), STATIONARY(4,
-					"stationary"), SLOWMOVING(5, "slowMoving"), STOPANDGOMOVEMENT(6, "stopAndGoMovement");
+  NOTINUSEORNOTEQUIPPED(0, "notInUseOrNotEquipped"),
+  EMERGENCY(1, "emergency"),
+  NONEMERGENCY(2, "nonEmergency"),
+  PURSUIT(3, "pursuit"),
+  STATIONARY(4, "stationary"),
+  SLOWMOVING(5, "slowMoving"),
+  STOPANDGOMOVEMENT(6, "stopAndGoMovement");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ResponseType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ResponseType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ResponseTypeSerializer extends EnumeratedSerializer<ResponseType> {
-		public ResponseTypeSerializer() {
-			super(ResponseType.class);
-		}
-	}
+  public static class ResponseTypeSerializer extends EnumeratedSerializer<ResponseType> {
+    public ResponseTypeSerializer() {
+      super(ResponseType.class);
+    }
+  }
 
-	public static class ResponseTypeDeserializer extends EnumeratedDeserializer<ResponseType> {
-		public ResponseTypeDeserializer() {
-			super(ResponseType.class);
-		}
+  public static class ResponseTypeDeserializer extends EnumeratedDeserializer<ResponseType> {
+    public ResponseTypeDeserializer() {
+      super(ResponseType.class);
+    }
 
-		@Override
-		protected ResponseType[] listEnumValues() {
-			return ResponseType.values();
-		}
-	}
+    @Override
+    protected ResponseType[] listEnumValues() {
+      return ResponseType.values();
+    }
+  }
 }

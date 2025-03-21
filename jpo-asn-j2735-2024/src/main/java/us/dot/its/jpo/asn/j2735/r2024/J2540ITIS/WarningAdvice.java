@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = WarningAdvice.WarningAdviceDeserializer.class)
 public class WarningAdvice extends Asn1Integer {
 
-	public WarningAdvice() {
-		super(0L, 65535L);
-	}
+  public WarningAdvice() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public WarningAdvice(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public WarningAdvice(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class WarningAdviceDeserializer extends IntegerDeserializer<WarningAdvice> {
-		public WarningAdviceDeserializer() {
-			super(WarningAdvice.class);
-		}
+  public static class WarningAdviceDeserializer extends IntegerDeserializer<WarningAdvice> {
+    public WarningAdviceDeserializer() {
+      super(WarningAdvice.class);
+    }
 
-		@Override
-		protected WarningAdvice construct() {
-			return new WarningAdvice();
-		}
-	}
+    @Override
+    protected WarningAdvice construct() {
+      return new WarningAdvice();
+    }
+  }
 }

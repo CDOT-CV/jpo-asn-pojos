@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RTCMmessageList extends Asn1SequenceOf<RTCMmessage> {
 
-	public RTCMmessageList() {
-		super(RTCMmessage.class, 1L, 5L);
-	}
+  public RTCMmessageList() {
+    super(RTCMmessage.class, 1L, 5L);
+  }
 }

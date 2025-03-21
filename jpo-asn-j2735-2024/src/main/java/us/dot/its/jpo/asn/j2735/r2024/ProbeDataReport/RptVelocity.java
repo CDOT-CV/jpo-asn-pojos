@@ -39,17 +39,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptVelocity extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "speed")
-	@JsonProperty("speed")
-	private Speed speed;
-	@Asn1Property(tag = 1, name = "speedStdDev", optional = true)
-	@JsonProperty("speedStdDev")
-	private StdDev speedStdDev;
-	@Asn1Property(tag = 2, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private Heading heading;
+  @Asn1Property(tag = 0, name = "speed")
+  @JsonProperty("speed")
+  private Speed speed;
 
-	public RptVelocity() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "speedStdDev", optional = true)
+  @JsonProperty("speedStdDev")
+  private StdDev speedStdDev;
+
+  @Asn1Property(tag = 2, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private Heading heading;
+
+  public RptVelocity() {
+    super(true);
+  }
 }

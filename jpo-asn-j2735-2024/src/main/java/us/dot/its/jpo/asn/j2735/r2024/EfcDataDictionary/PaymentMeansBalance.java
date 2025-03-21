@@ -21,5 +21,5 @@
  *============================================================================*/
 
 package us.dot.its.jpo.asn.j2735.r2024.EfcDataDictionary;
-public class PaymentMeansBalance extends SignedValue {
-}
+
+public class PaymentMeansBalance extends SignedValue {}

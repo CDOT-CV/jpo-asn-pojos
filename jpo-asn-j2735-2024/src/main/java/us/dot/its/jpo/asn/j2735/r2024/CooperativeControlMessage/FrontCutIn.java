@@ -26,5 +26,4 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 @JsonDeserialize(using = FrontCutInDeserializer.class)
-public class FrontCutIn extends Asn1Boolean {
-}
+public class FrontCutIn extends Asn1Boolean {}

@@ -31,24 +31,26 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RSMPolygon extends Asn1SequenceOf<NodePointLLE> {
 
-	public RSMPolygon() {
-		super(NodePointLLE.class, 3L, 63L);
-	}
+  public RSMPolygon() {
+    super(NodePointLLE.class, 3L, 63L);
+  }
 
-	public static class RSMPolygonSerializer extends SequenceOfChoiceSerializer<NodePointLLE, RSMPolygon> {
-		public RSMPolygonSerializer() {
-			super(NodePointLLE.class, RSMPolygon.class);
-		}
-	}
+  public static class RSMPolygonSerializer
+      extends SequenceOfChoiceSerializer<NodePointLLE, RSMPolygon> {
+    public RSMPolygonSerializer() {
+      super(NodePointLLE.class, RSMPolygon.class);
+    }
+  }
 
-	public static class RSMPolygonDeserializer extends SequenceOfChoiceDeserializer<NodePointLLE, RSMPolygon> {
-		public RSMPolygonDeserializer() {
-			super(NodePointLLE.class, RSMPolygon.class);
-		}
+  public static class RSMPolygonDeserializer
+      extends SequenceOfChoiceDeserializer<NodePointLLE, RSMPolygon> {
+    public RSMPolygonDeserializer() {
+      super(NodePointLLE.class, RSMPolygon.class);
+    }
 
-		@Override
-		protected RSMPolygon construct() {
-			return new RSMPolygon();
-		}
-	}
+    @Override
+    protected RSMPolygon construct() {
+      return new RSMPolygon();
+    }
+  }
 }

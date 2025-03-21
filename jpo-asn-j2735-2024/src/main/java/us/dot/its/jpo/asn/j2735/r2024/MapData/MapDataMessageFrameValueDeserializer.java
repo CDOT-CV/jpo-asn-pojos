@@ -26,7 +26,7 @@ import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class MapDataMessageFrameValueDeserializer extends OpenTypeDeserializer<MapData> {
 
-	public MapDataMessageFrameValueDeserializer() {
-		super(MapData.class, "MapData");
-	}
+  public MapDataMessageFrameValueDeserializer() {
+    super(MapData.class, "MapData");
+  }
 }

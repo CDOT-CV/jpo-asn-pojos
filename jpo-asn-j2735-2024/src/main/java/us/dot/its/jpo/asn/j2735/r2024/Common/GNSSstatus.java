@@ -26,86 +26,98 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = GNSSstatus.GNSSstatusDeserializer.class)
+@JsonDeserialize(
+    using = GNSSstatus.GNSSstatusDeserializer.class)
 public class GNSSstatus extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isIsHealthy() {
-		return get(1);
-	}
+  public boolean isIsHealthy() {
+    return get(1);
+  }
 
-	public void setIsHealthy(boolean isHealthy) {
-		set(1, isHealthy);
-	}
+  public void setIsHealthy(boolean isHealthy) {
+    set(1, isHealthy);
+  }
 
-	public boolean isIsMonitored() {
-		return get(2);
-	}
+  public boolean isIsMonitored() {
+    return get(2);
+  }
 
-	public void setIsMonitored(boolean isMonitored) {
-		set(2, isMonitored);
-	}
+  public void setIsMonitored(boolean isMonitored) {
+    set(2, isMonitored);
+  }
 
-	public boolean isBaseStationType() {
-		return get(3);
-	}
+  public boolean isBaseStationType() {
+    return get(3);
+  }
 
-	public void setBaseStationType(boolean baseStationType) {
-		set(3, baseStationType);
-	}
+  public void setBaseStationType(boolean baseStationType) {
+    set(3, baseStationType);
+  }
 
-	public boolean isAPDOPofUnder5() {
-		return get(4);
-	}
+  public boolean isAPDOPofUnder5() {
+    return get(4);
+  }
 
-	public void setAPDOPofUnder5(boolean aPDOPofUnder5) {
-		set(4, aPDOPofUnder5);
-	}
+  public void setAPDOPofUnder5(boolean aPDOPofUnder5) {
+    set(4, aPDOPofUnder5);
+  }
 
-	public boolean isInViewOfUnder5() {
-		return get(5);
-	}
+  public boolean isInViewOfUnder5() {
+    return get(5);
+  }
 
-	public void setInViewOfUnder5(boolean inViewOfUnder5) {
-		set(5, inViewOfUnder5);
-	}
+  public void setInViewOfUnder5(boolean inViewOfUnder5) {
+    set(5, inViewOfUnder5);
+  }
 
-	public boolean isLocalCorrectionsPresent() {
-		return get(6);
-	}
+  public boolean isLocalCorrectionsPresent() {
+    return get(6);
+  }
 
-	public void setLocalCorrectionsPresent(boolean localCorrectionsPresent) {
-		set(6, localCorrectionsPresent);
-	}
+  public void setLocalCorrectionsPresent(boolean localCorrectionsPresent) {
+    set(6, localCorrectionsPresent);
+  }
 
-	public boolean isNetworkCorrectionsPresent() {
-		return get(7);
-	}
+  public boolean isNetworkCorrectionsPresent() {
+    return get(7);
+  }
 
-	public void setNetworkCorrectionsPresent(boolean networkCorrectionsPresent) {
-		set(7, networkCorrectionsPresent);
-	}
+  public void setNetworkCorrectionsPresent(boolean networkCorrectionsPresent) {
+    set(7, networkCorrectionsPresent);
+  }
 
-	public GNSSstatus() {
-		super(8, false, new String[]{"unavailable", "isHealthy", "isMonitored", "baseStationType", "aPDOPofUnder5",
-				"inViewOfUnder5", "localCorrectionsPresent", "networkCorrectionsPresent"});
-	}
+  public GNSSstatus() {
+    super(
+        8,
+        false,
+        new String[] {
+          "unavailable",
+          "isHealthy",
+          "isMonitored",
+          "baseStationType",
+          "aPDOPofUnder5",
+          "inViewOfUnder5",
+          "localCorrectionsPresent",
+          "networkCorrectionsPresent"
+        });
+  }
 
-	public static class GNSSstatusDeserializer extends BitStringDeserializer<GNSSstatus> {
-		public GNSSstatusDeserializer() {
-			super(GNSSstatus.class);
-		}
+  public static class GNSSstatusDeserializer extends BitStringDeserializer<GNSSstatus> {
+    public GNSSstatusDeserializer() {
+      super(GNSSstatus.class);
+    }
 
-		@Override
-		protected GNSSstatus construct() {
-			return new GNSSstatus();
-		}
-	}
+    @Override
+    protected GNSSstatus construct() {
+      return new GNSSstatus();
+    }
+  }
 }

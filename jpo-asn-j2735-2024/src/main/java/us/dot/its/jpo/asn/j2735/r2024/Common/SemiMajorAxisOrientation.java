@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SemiMajorAxisOrientation.SemiMajorAxisOrientationDeserializer.class)
 public class SemiMajorAxisOrientation extends Asn1Integer {
 
-	public SemiMajorAxisOrientation() {
-		super(0L, 65535L);
-	}
+  public SemiMajorAxisOrientation() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public SemiMajorAxisOrientation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SemiMajorAxisOrientation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SemiMajorAxisOrientationDeserializer extends IntegerDeserializer<SemiMajorAxisOrientation> {
-		public SemiMajorAxisOrientationDeserializer() {
-			super(SemiMajorAxisOrientation.class);
-		}
+  public static class SemiMajorAxisOrientationDeserializer
+      extends IntegerDeserializer<SemiMajorAxisOrientation> {
+    public SemiMajorAxisOrientationDeserializer() {
+      super(SemiMajorAxisOrientation.class);
+    }
 
-		@Override
-		protected SemiMajorAxisOrientation construct() {
-			return new SemiMajorAxisOrientation();
-		}
-	}
+    @Override
+    protected SemiMajorAxisOrientation construct() {
+      return new SemiMajorAxisOrientation();
+    }
+  }
 }

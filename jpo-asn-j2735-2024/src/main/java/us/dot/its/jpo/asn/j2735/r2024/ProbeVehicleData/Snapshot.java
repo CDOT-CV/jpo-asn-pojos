@@ -39,17 +39,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Snapshot extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "thePosition")
-	@JsonProperty("thePosition")
-	private FullPositionVector thePosition;
-	@Asn1Property(tag = 1, name = "safetyExt", optional = true)
-	@JsonProperty("safetyExt")
-	private VehicleSafetyExtensions safetyExt;
-	@Asn1Property(tag = 2, name = "dataSet", optional = true)
-	@JsonProperty("dataSet")
-	private VehicleStatus dataSet;
+  @Asn1Property(tag = 0, name = "thePosition")
+  @JsonProperty("thePosition")
+  private FullPositionVector thePosition;
 
-	public Snapshot() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "safetyExt", optional = true)
+  @JsonProperty("safetyExt")
+  private VehicleSafetyExtensions safetyExt;
+
+  @Asn1Property(tag = 2, name = "dataSet", optional = true)
+  @JsonProperty("dataSet")
+  private VehicleStatus dataSet;
+
+  public Snapshot() {
+    super(true);
+  }
 }

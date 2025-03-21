@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DMonth.DMonthDeserializer.class)
 public class DMonth extends Asn1Integer {
 
-	public DMonth() {
-		super(0L, 12L);
-	}
+  public DMonth() {
+    super(0L, 12L);
+  }
 
-	@JsonCreator
-	public DMonth(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DMonth(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DMonthDeserializer extends IntegerDeserializer<DMonth> {
-		public DMonthDeserializer() {
-			super(DMonth.class);
-		}
+  public static class DMonthDeserializer extends IntegerDeserializer<DMonth> {
+    public DMonthDeserializer() {
+      super(DMonth.class);
+    }
 
-		@Override
-		protected DMonth construct() {
-			return new DMonth();
-		}
-	}
+    @Override
+    protected DMonth construct() {
+      return new DMonth();
+    }
+  }
 }

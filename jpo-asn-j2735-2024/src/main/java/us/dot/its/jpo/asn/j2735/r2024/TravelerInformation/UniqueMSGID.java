@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class UniqueMSGID extends Asn1OctetString {
 
-	public UniqueMSGID() {
-		super(9, 9);
-	}
+  public UniqueMSGID() {
+    super(9, 9);
+  }
 
-	@JsonCreator
-	public UniqueMSGID(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public UniqueMSGID(String value) {
+    this();
+    setValue(value);
+  }
 }

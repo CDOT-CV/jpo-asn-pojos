@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipVisibilitySituation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "situation")
-	@JsonProperty("situation")
-	private NTCIPEssVisibilitySituation situation;
+  @Asn1Property(tag = 0, name = "situation")
+  @JsonProperty("situation")
+  private NTCIPEssVisibilitySituation situation;
 
-	public NtcipVisibilitySituation() {
-		super(true);
-	}
+  public NtcipVisibilitySituation() {
+    super(true);
+  }
 }

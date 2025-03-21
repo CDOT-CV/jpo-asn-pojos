@@ -35,17 +35,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class PropelledInformation extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "human")
-	@JsonProperty("human")
-	private HumanPropelledType human;
-	@Asn1Property(tag = 1, name = "animal")
-	@JsonProperty("animal")
-	private AnimalPropelledType animal;
-	@Asn1Property(tag = 2, name = "motor")
-	@JsonProperty("motor")
-	private MotorizedPropelledType motor;
+  @Asn1Property(tag = 0, name = "human")
+  @JsonProperty("human")
+  private HumanPropelledType human;
 
-	public PropelledInformation() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "animal")
+  @JsonProperty("animal")
+  private AnimalPropelledType animal;
+
+  @Asn1Property(tag = 2, name = "motor")
+  @JsonProperty("motor")
+  private MotorizedPropelledType motor;
+
+  public PropelledInformation() {
+    super(true);
+  }
 }

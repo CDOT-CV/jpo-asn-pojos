@@ -39,29 +39,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ReceiptContract extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "sessionContractProvider")
-	@JsonProperty("sessionContractProvider")
-	private Provider sessionContractProvider;
-	@Asn1Property(tag = 1, name = "sessionTypeOfContract")
-	@JsonProperty("sessionTypeOfContract")
-	private SessionTypeOfContractOctetString sessionTypeOfContract;
-	@Asn1Property(tag = 2, name = "sessionContractSerialNumber")
-	@JsonProperty("sessionContractSerialNumber")
-	private Int4Unsigned sessionContractSerialNumber;
+  @Asn1Property(tag = 0, name = "sessionContractProvider")
+  @JsonProperty("sessionContractProvider")
+  private Provider sessionContractProvider;
 
-	public static class SessionTypeOfContractOctetString extends Asn1OctetString {
-		public SessionTypeOfContractOctetString() {
-			super(2, 2);
-		}
+  @Asn1Property(tag = 1, name = "sessionTypeOfContract")
+  @JsonProperty("sessionTypeOfContract")
+  private SessionTypeOfContractOctetString sessionTypeOfContract;
 
-		@JsonCreator
-		public SessionTypeOfContractOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 2, name = "sessionContractSerialNumber")
+  @JsonProperty("sessionContractSerialNumber")
+  private Int4Unsigned sessionContractSerialNumber;
 
-	public ReceiptContract() {
-		super(false);
-	}
+  public static class SessionTypeOfContractOctetString extends Asn1OctetString {
+    public SessionTypeOfContractOctetString() {
+      super(2, 2);
+    }
+
+    @JsonCreator
+    public SessionTypeOfContractOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public ReceiptContract() {
+    super(false);
+  }
 }

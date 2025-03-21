@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadGeometryAndAttributes;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class RoadGeometryAndAttributesMessageFrameValueSerializer
-		extends
-			OpenTypeSerializer<RoadGeometryAndAttributes> {
+    extends OpenTypeSerializer<RoadGeometryAndAttributes> {
 
-	public RoadGeometryAndAttributesMessageFrameValueSerializer() {
-		super(RoadGeometryAndAttributes.class, "value", "RoadGeometryAndAttributes");
-	}
+  public RoadGeometryAndAttributesMessageFrameValueSerializer() {
+    super(RoadGeometryAndAttributes.class, "value", "RoadGeometryAndAttributes");
+  }
 }

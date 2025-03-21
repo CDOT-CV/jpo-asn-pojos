@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class ITIStext extends IA5String {
 
-	public ITIStext() {
-		super(1, 500);
-	}
+  public ITIStext() {
+    super(1, 500);
+  }
 
-	@JsonCreator
-	public ITIStext(String value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ITIStext(String value) {
+    this();
+    this.value = value;
+  }
 }

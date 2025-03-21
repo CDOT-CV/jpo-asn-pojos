@@ -26,72 +26,83 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = PublicSafetyAndRoadWorkerActivity.PublicSafetyAndRoadWorkerActivityDeserializer.class)
+@JsonDeserialize(
+    using =
+        PublicSafetyAndRoadWorkerActivity
+            .PublicSafetyAndRoadWorkerActivityDeserializer.class)
 public class PublicSafetyAndRoadWorkerActivity extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isWorkingOnRoad() {
-		return get(1);
-	}
+  public boolean isWorkingOnRoad() {
+    return get(1);
+  }
 
-	public void setWorkingOnRoad(boolean workingOnRoad) {
-		set(1, workingOnRoad);
-	}
+  public void setWorkingOnRoad(boolean workingOnRoad) {
+    set(1, workingOnRoad);
+  }
 
-	public boolean isSettingUpClosures() {
-		return get(2);
-	}
+  public boolean isSettingUpClosures() {
+    return get(2);
+  }
 
-	public void setSettingUpClosures(boolean settingUpClosures) {
-		set(2, settingUpClosures);
-	}
+  public void setSettingUpClosures(boolean settingUpClosures) {
+    set(2, settingUpClosures);
+  }
 
-	public boolean isRespondingToEvents() {
-		return get(3);
-	}
+  public boolean isRespondingToEvents() {
+    return get(3);
+  }
 
-	public void setRespondingToEvents(boolean respondingToEvents) {
-		set(3, respondingToEvents);
-	}
+  public void setRespondingToEvents(boolean respondingToEvents) {
+    set(3, respondingToEvents);
+  }
 
-	public boolean isDirectingTraffic() {
-		return get(4);
-	}
+  public boolean isDirectingTraffic() {
+    return get(4);
+  }
 
-	public void setDirectingTraffic(boolean directingTraffic) {
-		set(4, directingTraffic);
-	}
+  public void setDirectingTraffic(boolean directingTraffic) {
+    set(4, directingTraffic);
+  }
 
-	public boolean isOtherActivities() {
-		return get(5);
-	}
+  public boolean isOtherActivities() {
+    return get(5);
+  }
 
-	public void setOtherActivities(boolean otherActivities) {
-		set(5, otherActivities);
-	}
+  public void setOtherActivities(boolean otherActivities) {
+    set(5, otherActivities);
+  }
 
-	public PublicSafetyAndRoadWorkerActivity() {
-		super(6, false, new String[]{"unavailable", "workingOnRoad", "settingUpClosures", "respondingToEvents",
-				"directingTraffic", "otherActivities"});
-	}
+  public PublicSafetyAndRoadWorkerActivity() {
+    super(
+        6,
+        false,
+        new String[] {
+          "unavailable",
+          "workingOnRoad",
+          "settingUpClosures",
+          "respondingToEvents",
+          "directingTraffic",
+          "otherActivities"
+        });
+  }
 
-	public static class PublicSafetyAndRoadWorkerActivityDeserializer
-			extends
-				BitStringDeserializer<PublicSafetyAndRoadWorkerActivity> {
-		public PublicSafetyAndRoadWorkerActivityDeserializer() {
-			super(PublicSafetyAndRoadWorkerActivity.class);
-		}
+  public static class PublicSafetyAndRoadWorkerActivityDeserializer
+      extends BitStringDeserializer<PublicSafetyAndRoadWorkerActivity> {
+    public PublicSafetyAndRoadWorkerActivityDeserializer() {
+      super(PublicSafetyAndRoadWorkerActivity.class);
+    }
 
-		@Override
-		protected PublicSafetyAndRoadWorkerActivity construct() {
-			return new PublicSafetyAndRoadWorkerActivity();
-		}
-	}
+    @Override
+    protected PublicSafetyAndRoadWorkerActivity construct() {
+      return new PublicSafetyAndRoadWorkerActivity();
+    }
+  }
 }

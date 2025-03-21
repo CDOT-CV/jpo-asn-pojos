@@ -29,24 +29,25 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = ActualNumberOfPassengers.ActualNumberOfPassengersDeserializer.class)
 public class ActualNumberOfPassengers extends Int1Unsigned {
 
-	public ActualNumberOfPassengers() {
-		super();
-	}
+  public ActualNumberOfPassengers() {
+    super();
+  }
 
-	@JsonCreator
-	public ActualNumberOfPassengers(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ActualNumberOfPassengers(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ActualNumberOfPassengersDeserializer extends IntegerDeserializer<ActualNumberOfPassengers> {
-		public ActualNumberOfPassengersDeserializer() {
-			super(ActualNumberOfPassengers.class);
-		}
+  public static class ActualNumberOfPassengersDeserializer
+      extends IntegerDeserializer<ActualNumberOfPassengers> {
+    public ActualNumberOfPassengersDeserializer() {
+      super(ActualNumberOfPassengers.class);
+    }
 
-		@Override
-		protected ActualNumberOfPassengers construct() {
-			return new ActualNumberOfPassengers();
-		}
-	}
+    @Override
+    protected ActualNumberOfPassengers construct() {
+      return new ActualNumberOfPassengers();
+    }
+  }
 }

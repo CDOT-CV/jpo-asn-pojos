@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPWindSensorGustSpeed.NTCIPWindSensorGustSpeedDeserializer.class)
 public class NTCIPWindSensorGustSpeed extends Asn1Integer {
 
-	public NTCIPWindSensorGustSpeed() {
-		super(0L, 65535L);
-	}
+  public NTCIPWindSensorGustSpeed() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public NTCIPWindSensorGustSpeed(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPWindSensorGustSpeed(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPWindSensorGustSpeedDeserializer extends IntegerDeserializer<NTCIPWindSensorGustSpeed> {
-		public NTCIPWindSensorGustSpeedDeserializer() {
-			super(NTCIPWindSensorGustSpeed.class);
-		}
+  public static class NTCIPWindSensorGustSpeedDeserializer
+      extends IntegerDeserializer<NTCIPWindSensorGustSpeed> {
+    public NTCIPWindSensorGustSpeedDeserializer() {
+      super(NTCIPWindSensorGustSpeed.class);
+    }
 
-		@Override
-		protected NTCIPWindSensorGustSpeed construct() {
-			return new NTCIPWindSensorGustSpeed();
-		}
-	}
+    @Override
+    protected NTCIPWindSensorGustSpeed construct() {
+      return new NTCIPWindSensorGustSpeed();
+    }
+  }
 }

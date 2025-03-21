@@ -33,36 +33,41 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = MovementPhaseState.MovementPhaseStateSerializer.class)
 @JsonDeserialize(using = MovementPhaseState.MovementPhaseStateDeserializer.class)
 public enum MovementPhaseState implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), DARK(1, "dark"), STOP_THEN_PROCEED(2, "stop-Then-Proceed"), STOP_AND_REMAIN(3,
-			"stop-And-Remain"), PRE_MOVEMENT(4, "pre-Movement"), PERMISSIVE_MOVEMENT_ALLOWED(5,
-					"permissive-Movement-Allowed"), PROTECTED_MOVEMENT_ALLOWED(6,
-							"protected-Movement-Allowed"), PERMISSIVE_CLEARANCE(7,
-									"permissive-clearance"), PROTECTED_CLEARANCE(8,
-											"protected-clearance"), CAUTION_CONFLICTING_TRAFFIC(9,
-													"caution-Conflicting-Traffic");
+  UNAVAILABLE(0, "unavailable"),
+  DARK(1, "dark"),
+  STOP_THEN_PROCEED(2, "stop-Then-Proceed"),
+  STOP_AND_REMAIN(3, "stop-And-Remain"),
+  PRE_MOVEMENT(4, "pre-Movement"),
+  PERMISSIVE_MOVEMENT_ALLOWED(5, "permissive-Movement-Allowed"),
+  PROTECTED_MOVEMENT_ALLOWED(6, "protected-Movement-Allowed"),
+  PERMISSIVE_CLEARANCE(7, "permissive-clearance"),
+  PROTECTED_CLEARANCE(8, "protected-clearance"),
+  CAUTION_CONFLICTING_TRAFFIC(9, "caution-Conflicting-Traffic");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private MovementPhaseState(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private MovementPhaseState(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class MovementPhaseStateSerializer extends EnumeratedSerializer<MovementPhaseState> {
-		public MovementPhaseStateSerializer() {
-			super(MovementPhaseState.class);
-		}
-	}
+  public static class MovementPhaseStateSerializer
+      extends EnumeratedSerializer<MovementPhaseState> {
+    public MovementPhaseStateSerializer() {
+      super(MovementPhaseState.class);
+    }
+  }
 
-	public static class MovementPhaseStateDeserializer extends EnumeratedDeserializer<MovementPhaseState> {
-		public MovementPhaseStateDeserializer() {
-			super(MovementPhaseState.class);
-		}
+  public static class MovementPhaseStateDeserializer
+      extends EnumeratedDeserializer<MovementPhaseState> {
+    public MovementPhaseStateDeserializer() {
+      super(MovementPhaseState.class);
+    }
 
-		@Override
-		protected MovementPhaseState[] listEnumValues() {
-			return MovementPhaseState.values();
-		}
-	}
+    @Override
+    protected MovementPhaseState[] listEnumValues() {
+      return MovementPhaseState.values();
+    }
+  }
 }

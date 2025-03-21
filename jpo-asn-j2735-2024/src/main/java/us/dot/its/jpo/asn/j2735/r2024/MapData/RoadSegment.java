@@ -47,45 +47,52 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class RoadSegment extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 1, name = "id")
-	@JsonProperty("id")
-	private RoadSegmentReferenceID id;
-	@Asn1Property(tag = 2, name = "revision")
-	@JsonProperty("revision")
-	private MsgCount revision;
-	@Asn1Property(tag = 3, name = "refPoint")
-	@JsonProperty("refPoint")
-	private Position3D refPoint;
-	@Asn1Property(tag = 4, name = "laneWidth", optional = true)
-	@JsonProperty("laneWidth")
-	private LaneWidth laneWidth;
-	@Asn1Property(tag = 5, name = "speedLimits", optional = true)
-	@JsonProperty("speedLimits")
-	@JacksonXmlElementWrapper(localName = "speedLimits")
-	@JacksonXmlProperty(localName = "RegulatorySpeedLimit")
-	private SpeedLimitList speedLimits;
-	@Asn1Property(tag = 6, name = "roadLaneSet")
-	@JsonProperty("roadLaneSet")
-	@JacksonXmlElementWrapper(localName = "roadLaneSet")
-	@JacksonXmlProperty(localName = "GenericLane")
-	private RoadLaneSetList roadLaneSet;
-	@Asn1Property(tag = 7, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-RoadSegment")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RoadSegment> {
-		public SequenceOfRegional() {
-			super(Reg_RoadSegment.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "id")
+  @JsonProperty("id")
+  private RoadSegmentReferenceID id;
 
-	public RoadSegment() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "revision")
+  @JsonProperty("revision")
+  private MsgCount revision;
+
+  @Asn1Property(tag = 3, name = "refPoint")
+  @JsonProperty("refPoint")
+  private Position3D refPoint;
+
+  @Asn1Property(tag = 4, name = "laneWidth", optional = true)
+  @JsonProperty("laneWidth")
+  private LaneWidth laneWidth;
+
+  @Asn1Property(tag = 5, name = "speedLimits", optional = true)
+  @JsonProperty("speedLimits")
+  @JacksonXmlElementWrapper(localName = "speedLimits")
+  @JacksonXmlProperty(localName = "RegulatorySpeedLimit")
+  private SpeedLimitList speedLimits;
+
+  @Asn1Property(tag = 6, name = "roadLaneSet")
+  @JsonProperty("roadLaneSet")
+  @JacksonXmlElementWrapper(localName = "roadLaneSet")
+  @JacksonXmlProperty(localName = "GenericLane")
+  private RoadLaneSetList roadLaneSet;
+
+  @Asn1Property(tag = 7, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-RoadSegment")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RoadSegment> {
+    public SequenceOfRegional() {
+      super(Reg_RoadSegment.class, 1L, 4L);
+    }
+  }
+
+  public RoadSegment() {
+    super(true);
+  }
 }

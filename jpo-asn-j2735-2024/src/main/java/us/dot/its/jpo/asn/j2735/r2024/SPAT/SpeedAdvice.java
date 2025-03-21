@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SpeedAdvice.SpeedAdviceDeserializer.class)
 public class SpeedAdvice extends Asn1Integer {
 
-	public SpeedAdvice() {
-		super(0L, 500L);
-	}
+  public SpeedAdvice() {
+    super(0L, 500L);
+  }
 
-	@JsonCreator
-	public SpeedAdvice(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SpeedAdvice(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SpeedAdviceDeserializer extends IntegerDeserializer<SpeedAdvice> {
-		public SpeedAdviceDeserializer() {
-			super(SpeedAdvice.class);
-		}
+  public static class SpeedAdviceDeserializer extends IntegerDeserializer<SpeedAdvice> {
+    public SpeedAdviceDeserializer() {
+      super(SpeedAdvice.class);
+    }
 
-		@Override
-		protected SpeedAdvice construct() {
-			return new SpeedAdvice();
-		}
-	}
+    @Override
+    protected SpeedAdvice construct() {
+      return new SpeedAdvice();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RoadwayCrownAngle.RoadwayCrownAngleDeserializer.class)
 public class RoadwayCrownAngle extends Asn1Integer {
 
-	public RoadwayCrownAngle() {
-		super(-128L, 127L);
-	}
+  public RoadwayCrownAngle() {
+    super(-128L, 127L);
+  }
 
-	@JsonCreator
-	public RoadwayCrownAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RoadwayCrownAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RoadwayCrownAngleDeserializer extends IntegerDeserializer<RoadwayCrownAngle> {
-		public RoadwayCrownAngleDeserializer() {
-			super(RoadwayCrownAngle.class);
-		}
+  public static class RoadwayCrownAngleDeserializer extends IntegerDeserializer<RoadwayCrownAngle> {
+    public RoadwayCrownAngleDeserializer() {
+      super(RoadwayCrownAngle.class);
+    }
 
-		@Override
-		protected RoadwayCrownAngle construct() {
-			return new RoadwayCrownAngle();
-		}
-	}
+    @Override
+    protected RoadwayCrownAngle construct() {
+      return new RoadwayCrownAngle();
+    }
+  }
 }

@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.EmergencyVehicleAlert;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class EmergencyVehicleAlertMessageFrameValueSerializer extends OpenTypeSerializer<EmergencyVehicleAlert> {
+public class EmergencyVehicleAlertMessageFrameValueSerializer
+    extends OpenTypeSerializer<EmergencyVehicleAlert> {
 
-	public EmergencyVehicleAlertMessageFrameValueSerializer() {
-		super(EmergencyVehicleAlert.class, "value", "EmergencyVehicleAlert");
-	}
+  public EmergencyVehicleAlertMessageFrameValueSerializer() {
+    super(EmergencyVehicleAlert.class, "value", "EmergencyVehicleAlert");
+  }
 }

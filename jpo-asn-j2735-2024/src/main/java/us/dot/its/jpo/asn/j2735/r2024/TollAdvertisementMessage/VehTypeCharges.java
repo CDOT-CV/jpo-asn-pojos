@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehTypeCharges extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehType")
-	@JsonProperty("vehType")
-	private VehicleTypes vehType;
-	@Asn1Property(tag = 1, name = "charges")
-	@JsonProperty("charges")
-	private PaymentFee charges;
-	@Asn1Property(tag = 2, name = "specialCharges", optional = true)
-	@JsonProperty("specialCharges")
-	private SpecialCharges specialCharges;
+  @Asn1Property(tag = 0, name = "vehType")
+  @JsonProperty("vehType")
+  private VehicleTypes vehType;
 
-	public VehTypeCharges() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "charges")
+  @JsonProperty("charges")
+  private PaymentFee charges;
+
+  @Asn1Property(tag = 2, name = "specialCharges", optional = true)
+  @JsonProperty("specialCharges")
+  private SpecialCharges specialCharges;
+
+  public VehTypeCharges() {
+    super(true);
+  }
 }

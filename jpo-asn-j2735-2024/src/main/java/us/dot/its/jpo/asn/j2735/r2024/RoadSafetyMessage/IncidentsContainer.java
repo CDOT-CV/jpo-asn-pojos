@@ -43,49 +43,48 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class IncidentsContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "responderType", optional = true)
-	@JsonProperty("responderType")
-	@JsonSerialize(using = SequenceOfResponderTypeSerializer.class)
-	@JsonDeserialize(using = SequenceOfResponderTypeDeserializer.class)
-	private SequenceOfResponderType responderType;
-	@Asn1Property(tag = 1, name = "incidentLocation")
-	@JsonProperty("incidentLocation")
-	private RegionInfo incidentLocation;
+  @Asn1Property(tag = 0, name = "responderType", optional = true)
+  @JsonProperty("responderType")
+  @JsonSerialize(using = SequenceOfResponderTypeSerializer.class)
+  @JsonDeserialize(using = SequenceOfResponderTypeDeserializer.class)
+  private SequenceOfResponderType responderType;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfResponderType extends Asn1SequenceOf<ResponderGroupAffected> {
-		public SequenceOfResponderType() {
-			super(ResponderGroupAffected.class, 1L, 5L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "incidentLocation")
+  @JsonProperty("incidentLocation")
+  private RegionInfo incidentLocation;
 
-	public IncidentsContainer() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfResponderType extends Asn1SequenceOf<ResponderGroupAffected> {
+    public SequenceOfResponderType() {
+      super(ResponderGroupAffected.class, 1L, 5L);
+    }
+  }
 
-	public static class SequenceOfResponderTypeSerializer
-			extends
-				SequenceOfEnumeratedSerializer<ResponderGroupAffected, SequenceOfResponderType> {
-		public SequenceOfResponderTypeSerializer() {
-			super(ResponderGroupAffected.class, SequenceOfResponderType.class);
-		}
-	}
+  public IncidentsContainer() {
+    super(true);
+  }
 
-	public static class SequenceOfResponderTypeDeserializer
-			extends
-				SequenceOfEnumeratedDeserializer<ResponderGroupAffected, SequenceOfResponderType> {
-		public SequenceOfResponderTypeDeserializer() {
-			super(SequenceOfResponderType.class, ResponderGroupAffected.class);
-		}
+  public static class SequenceOfResponderTypeSerializer
+      extends SequenceOfEnumeratedSerializer<ResponderGroupAffected, SequenceOfResponderType> {
+    public SequenceOfResponderTypeSerializer() {
+      super(ResponderGroupAffected.class, SequenceOfResponderType.class);
+    }
+  }
 
-		@Override
-		protected ResponderGroupAffected[] listEnumValues() {
-			return ResponderGroupAffected.values();
-		}
+  public static class SequenceOfResponderTypeDeserializer
+      extends SequenceOfEnumeratedDeserializer<ResponderGroupAffected, SequenceOfResponderType> {
+    public SequenceOfResponderTypeDeserializer() {
+      super(SequenceOfResponderType.class, ResponderGroupAffected.class);
+    }
 
-		@Override
-		protected SequenceOfResponderType construct() {
-			return new SequenceOfResponderType();
-		}
-	}
+    @Override
+    protected ResponderGroupAffected[] listEnumValues() {
+      return ResponderGroupAffected.values();
+    }
+
+    @Override
+    protected SequenceOfResponderType construct() {
+      return new SequenceOfResponderType();
+    }
+  }
 }

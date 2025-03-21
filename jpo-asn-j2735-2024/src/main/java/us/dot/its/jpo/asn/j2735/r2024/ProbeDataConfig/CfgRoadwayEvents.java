@@ -40,62 +40,75 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgRoadwayEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "obstacleDetected")
-	@JsonProperty("obstacleDetected")
-	private Asn1Boolean obstacleDetected;
-	@Asn1Property(tag = 1, name = "adverseRoadSurface")
-	@JsonProperty("adverseRoadSurface")
-	private Asn1Boolean adverseRoadSurface;
-	@Asn1Property(tag = 2, name = "trafficSigEncounters", optional = true)
-	@JsonProperty("trafficSigEncounters")
-	private CfgTrafficSigEncounters trafficSigEncounters;
-	@Asn1Property(tag = 3, name = "trfsigLightOut")
-	@JsonProperty("trfsigLightOut")
-	private Asn1Boolean trfsigLightOut;
-	@Asn1Property(tag = 4, name = "trfsigRoadGeoMismatch")
-	@JsonProperty("trfsigRoadGeoMismatch")
-	private Asn1Boolean trfsigRoadGeoMismatch;
-	@Asn1Property(tag = 5, name = "roadSignInfo", optional = true)
-	@JsonProperty("roadSignInfo")
-	private CfgRoadSignInfo roadSignInfo;
-	@Asn1Property(tag = 6, name = "lowLaneMarkReflect", optional = true)
-	@JsonProperty("lowLaneMarkReflect")
-	private LowLaneMarkReflectInteger lowLaneMarkReflect;
-	@Asn1Property(tag = 7, name = "roadsignIncnstncy")
-	@JsonProperty("roadsignIncnstncy")
-	private Asn1Boolean roadsignIncnstncy;
-	@Asn1Property(tag = 8, name = "laneGeoIncnstncy")
-	@JsonProperty("laneGeoIncnstncy")
-	private Asn1Boolean laneGeoIncnstncy;
-	@Asn1Property(tag = 9, name = "incidentDetect")
-	@JsonProperty("incidentDetect")
-	private Asn1Boolean incidentDetect;
-	@Asn1Property(tag = 10, name = "workZoneCharDetect")
-	@JsonProperty("workZoneCharDetect")
-	private Asn1Boolean workZoneCharDetect;
-	@Asn1Property(tag = 11, name = "inclWeatherDetect")
-	@JsonProperty("inclWeatherDetect")
-	private Asn1Boolean inclWeatherDetect;
-	@Asn1Property(tag = 12, name = "railrdCrossActivated")
-	@JsonProperty("railrdCrossActivated")
-	private Asn1Boolean railrdCrossActivated;
-	@Asn1Property(tag = 13, name = "drawBridgeActivated")
-	@JsonProperty("drawBridgeActivated")
-	private Asn1Boolean drawBridgeActivated;
+  @Asn1Property(tag = 0, name = "obstacleDetected")
+  @JsonProperty("obstacleDetected")
+  private Asn1Boolean obstacleDetected;
 
-	public static class LowLaneMarkReflectInteger extends Asn1Integer {
-		public LowLaneMarkReflectInteger() {
-			super(1L, 100L);
-		}
+  @Asn1Property(tag = 1, name = "adverseRoadSurface")
+  @JsonProperty("adverseRoadSurface")
+  private Asn1Boolean adverseRoadSurface;
 
-		@JsonCreator
-		public LowLaneMarkReflectInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "trafficSigEncounters", optional = true)
+  @JsonProperty("trafficSigEncounters")
+  private CfgTrafficSigEncounters trafficSigEncounters;
 
-	public CfgRoadwayEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "trfsigLightOut")
+  @JsonProperty("trfsigLightOut")
+  private Asn1Boolean trfsigLightOut;
+
+  @Asn1Property(tag = 4, name = "trfsigRoadGeoMismatch")
+  @JsonProperty("trfsigRoadGeoMismatch")
+  private Asn1Boolean trfsigRoadGeoMismatch;
+
+  @Asn1Property(tag = 5, name = "roadSignInfo", optional = true)
+  @JsonProperty("roadSignInfo")
+  private CfgRoadSignInfo roadSignInfo;
+
+  @Asn1Property(tag = 6, name = "lowLaneMarkReflect", optional = true)
+  @JsonProperty("lowLaneMarkReflect")
+  private LowLaneMarkReflectInteger lowLaneMarkReflect;
+
+  @Asn1Property(tag = 7, name = "roadsignIncnstncy")
+  @JsonProperty("roadsignIncnstncy")
+  private Asn1Boolean roadsignIncnstncy;
+
+  @Asn1Property(tag = 8, name = "laneGeoIncnstncy")
+  @JsonProperty("laneGeoIncnstncy")
+  private Asn1Boolean laneGeoIncnstncy;
+
+  @Asn1Property(tag = 9, name = "incidentDetect")
+  @JsonProperty("incidentDetect")
+  private Asn1Boolean incidentDetect;
+
+  @Asn1Property(tag = 10, name = "workZoneCharDetect")
+  @JsonProperty("workZoneCharDetect")
+  private Asn1Boolean workZoneCharDetect;
+
+  @Asn1Property(tag = 11, name = "inclWeatherDetect")
+  @JsonProperty("inclWeatherDetect")
+  private Asn1Boolean inclWeatherDetect;
+
+  @Asn1Property(tag = 12, name = "railrdCrossActivated")
+  @JsonProperty("railrdCrossActivated")
+  private Asn1Boolean railrdCrossActivated;
+
+  @Asn1Property(tag = 13, name = "drawBridgeActivated")
+  @JsonProperty("drawBridgeActivated")
+  private Asn1Boolean drawBridgeActivated;
+
+  public static class LowLaneMarkReflectInteger extends Asn1Integer {
+    public LowLaneMarkReflectInteger() {
+      super(1L, 100L);
+    }
+
+    @JsonCreator
+    public LowLaneMarkReflectInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgRoadwayEvents() {
+    super(true);
+  }
 }

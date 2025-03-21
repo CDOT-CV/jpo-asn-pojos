@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class RoadSideAlertMessageFrame extends MessageFrame<RoadSideAlert> {
 
-	public RoadSideAlertMessageFrame() {
-		super(27, "RoadSideAlert");
-	}
+  public RoadSideAlertMessageFrame() {
+    super(27, "RoadSideAlert");
+  }
 
-	@Override
-	@JsonSerialize(using = RoadSideAlertMessageFrameValueSerializer.class)
-	public RoadSideAlert getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = RoadSideAlertMessageFrameValueSerializer.class)
+  public RoadSideAlert getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = RoadSideAlertMessageFrameValueDeserializer.class)
-	public void setValue(RoadSideAlert value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = RoadSideAlertMessageFrameValueDeserializer.class)
+  public void setValue(RoadSideAlert value) {
+    super.setValue(value);
+  }
 }

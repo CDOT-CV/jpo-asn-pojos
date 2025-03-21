@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SignPriority.SignPriorityDeserializer.class)
 public class SignPriority extends Asn1Integer {
 
-	public SignPriority() {
-		super(0L, 7L);
-	}
+  public SignPriority() {
+    super(0L, 7L);
+  }
 
-	@JsonCreator
-	public SignPriority(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SignPriority(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SignPriorityDeserializer extends IntegerDeserializer<SignPriority> {
-		public SignPriorityDeserializer() {
-			super(SignPriority.class);
-		}
+  public static class SignPriorityDeserializer extends IntegerDeserializer<SignPriority> {
+    public SignPriorityDeserializer() {
+      super(SignPriority.class);
+    }
 
-		@Override
-		protected SignPriority construct() {
-			return new SignPriority();
-		}
-	}
+    @Override
+    protected SignPriority construct() {
+      return new SignPriority();
+    }
+  }
 }

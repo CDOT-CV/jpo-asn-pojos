@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class PreemptPriorityList extends Asn1SequenceOf<SignalControlZone> {
 
-	public PreemptPriorityList() {
-		super(SignalControlZone.class, 1L, 32L);
-	}
+  public PreemptPriorityList() {
+    super(SignalControlZone.class, 1L, 32L);
+  }
 }

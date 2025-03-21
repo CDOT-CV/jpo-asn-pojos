@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RadiusOfCurvature.RadiusOfCurvatureDeserializer.class)
 public class RadiusOfCurvature extends Asn1Integer {
 
-	public RadiusOfCurvature() {
-		super(-32767L, 32767L);
-	}
+  public RadiusOfCurvature() {
+    super(-32767L, 32767L);
+  }
 
-	@JsonCreator
-	public RadiusOfCurvature(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RadiusOfCurvature(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RadiusOfCurvatureDeserializer extends IntegerDeserializer<RadiusOfCurvature> {
-		public RadiusOfCurvatureDeserializer() {
-			super(RadiusOfCurvature.class);
-		}
+  public static class RadiusOfCurvatureDeserializer extends IntegerDeserializer<RadiusOfCurvature> {
+    public RadiusOfCurvatureDeserializer() {
+      super(RadiusOfCurvature.class);
+    }
 
-		@Override
-		protected RadiusOfCurvature construct() {
-			return new RadiusOfCurvature();
-		}
-	}
+    @Override
+    protected RadiusOfCurvature construct() {
+      return new RadiusOfCurvature();
+    }
+  }
 }

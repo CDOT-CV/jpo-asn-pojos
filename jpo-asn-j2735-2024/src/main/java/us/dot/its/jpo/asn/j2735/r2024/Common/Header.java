@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Header extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "year", optional = true)
-	@JsonProperty("year")
-	private DYear year;
-	@Asn1Property(tag = 1, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 2, name = "secMark", optional = true)
-	@JsonProperty("secMark")
-	private DSecond secMark;
-	@Asn1Property(tag = 3, name = "msgIssueRevision", optional = true)
-	@JsonProperty("msgIssueRevision")
-	private MsgCount msgIssueRevision;
+  @Asn1Property(tag = 0, name = "year", optional = true)
+  @JsonProperty("year")
+  private DYear year;
 
-	public Header() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
+
+  @Asn1Property(tag = 2, name = "secMark", optional = true)
+  @JsonProperty("secMark")
+  private DSecond secMark;
+
+  @Asn1Property(tag = 3, name = "msgIssueRevision", optional = true)
+  @JsonProperty("msgIssueRevision")
+  private MsgCount msgIssueRevision;
+
+  public Header() {
+    super(true);
+  }
 }

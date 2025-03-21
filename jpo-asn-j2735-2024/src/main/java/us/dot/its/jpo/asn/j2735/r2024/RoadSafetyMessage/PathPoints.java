@@ -31,24 +31,26 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class PathPoints extends Asn1SequenceOf<NodePointLLE> {
 
-	public PathPoints() {
-		super(NodePointLLE.class, 2L, 63L);
-	}
+  public PathPoints() {
+    super(NodePointLLE.class, 2L, 63L);
+  }
 
-	public static class PathPointsSerializer extends SequenceOfChoiceSerializer<NodePointLLE, PathPoints> {
-		public PathPointsSerializer() {
-			super(NodePointLLE.class, PathPoints.class);
-		}
-	}
+  public static class PathPointsSerializer
+      extends SequenceOfChoiceSerializer<NodePointLLE, PathPoints> {
+    public PathPointsSerializer() {
+      super(NodePointLLE.class, PathPoints.class);
+    }
+  }
 
-	public static class PathPointsDeserializer extends SequenceOfChoiceDeserializer<NodePointLLE, PathPoints> {
-		public PathPointsDeserializer() {
-			super(NodePointLLE.class, PathPoints.class);
-		}
+  public static class PathPointsDeserializer
+      extends SequenceOfChoiceDeserializer<NodePointLLE, PathPoints> {
+    public PathPointsDeserializer() {
+      super(NodePointLLE.class, PathPoints.class);
+    }
 
-		@Override
-		protected PathPoints construct() {
-			return new PathPoints();
-		}
-	}
+    @Override
+    protected PathPoints construct() {
+      return new PathPoints();
+    }
+  }
 }

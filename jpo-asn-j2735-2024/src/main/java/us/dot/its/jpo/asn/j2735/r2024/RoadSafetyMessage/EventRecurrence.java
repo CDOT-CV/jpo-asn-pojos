@@ -40,44 +40,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class EventRecurrence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "startTime", optional = true)
-	@JsonProperty("startTime")
-	private DTime startTime;
-	@Asn1Property(tag = 1, name = "endTime", optional = true)
-	@JsonProperty("endTime")
-	private DTime endTime;
-	@Asn1Property(tag = 2, name = "startDate", optional = true)
-	@JsonProperty("startDate")
-	private DDate startDate;
-	@Asn1Property(tag = 3, name = "endDate", optional = true)
-	@JsonProperty("endDate")
-	private DDate endDate;
-	@Asn1Property(tag = 4, name = "monday")
-	@JsonProperty("monday")
-	private Asn1Boolean monday;
-	@Asn1Property(tag = 5, name = "tuesday")
-	@JsonProperty("tuesday")
-	private Asn1Boolean tuesday;
-	@Asn1Property(tag = 6, name = "wednesday")
-	@JsonProperty("wednesday")
-	private Asn1Boolean wednesday;
-	@Asn1Property(tag = 7, name = "thursday")
-	@JsonProperty("thursday")
-	private Asn1Boolean thursday;
-	@Asn1Property(tag = 8, name = "friday")
-	@JsonProperty("friday")
-	private Asn1Boolean friday;
-	@Asn1Property(tag = 9, name = "saturday")
-	@JsonProperty("saturday")
-	private Asn1Boolean saturday;
-	@Asn1Property(tag = 10, name = "sunday")
-	@JsonProperty("sunday")
-	private Asn1Boolean sunday;
-	@Asn1Property(tag = 11, name = "exclusion", optional = true)
-	@JsonProperty("exclusion")
-	private Asn1Boolean exclusion;
+  @Asn1Property(tag = 0, name = "startTime", optional = true)
+  @JsonProperty("startTime")
+  private DTime startTime;
 
-	public EventRecurrence() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "endTime", optional = true)
+  @JsonProperty("endTime")
+  private DTime endTime;
+
+  @Asn1Property(tag = 2, name = "startDate", optional = true)
+  @JsonProperty("startDate")
+  private DDate startDate;
+
+  @Asn1Property(tag = 3, name = "endDate", optional = true)
+  @JsonProperty("endDate")
+  private DDate endDate;
+
+  @Asn1Property(tag = 4, name = "monday")
+  @JsonProperty("monday")
+  private Asn1Boolean monday;
+
+  @Asn1Property(tag = 5, name = "tuesday")
+  @JsonProperty("tuesday")
+  private Asn1Boolean tuesday;
+
+  @Asn1Property(tag = 6, name = "wednesday")
+  @JsonProperty("wednesday")
+  private Asn1Boolean wednesday;
+
+  @Asn1Property(tag = 7, name = "thursday")
+  @JsonProperty("thursday")
+  private Asn1Boolean thursday;
+
+  @Asn1Property(tag = 8, name = "friday")
+  @JsonProperty("friday")
+  private Asn1Boolean friday;
+
+  @Asn1Property(tag = 9, name = "saturday")
+  @JsonProperty("saturday")
+  private Asn1Boolean saturday;
+
+  @Asn1Property(tag = 10, name = "sunday")
+  @JsonProperty("sunday")
+  private Asn1Boolean sunday;
+
+  @Asn1Property(tag = 11, name = "exclusion", optional = true)
+  @JsonProperty("exclusion")
+  private Asn1Boolean exclusion;
+
+  public EventRecurrence() {
+    super(true);
+  }
 }

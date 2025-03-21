@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class AxlesWeightLimits extends Asn1SequenceOf<AxleWeightLimit> {
 
-	public AxlesWeightLimits() {
-		super(AxleWeightLimit.class, 0L, 2147483647L);
-	}
+  public AxlesWeightLimits() {
+    super(AxleWeightLimit.class, 0L, 2147483647L);
+  }
 }

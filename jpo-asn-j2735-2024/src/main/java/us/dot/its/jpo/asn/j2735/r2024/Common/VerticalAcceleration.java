@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = VerticalAcceleration.VerticalAccelerationDeserializer.class)
 public class VerticalAcceleration extends Asn1Integer {
 
-	public VerticalAcceleration() {
-		super(-127L, 127L);
-	}
+  public VerticalAcceleration() {
+    super(-127L, 127L);
+  }
 
-	@JsonCreator
-	public VerticalAcceleration(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VerticalAcceleration(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VerticalAccelerationDeserializer extends IntegerDeserializer<VerticalAcceleration> {
-		public VerticalAccelerationDeserializer() {
-			super(VerticalAcceleration.class);
-		}
+  public static class VerticalAccelerationDeserializer
+      extends IntegerDeserializer<VerticalAcceleration> {
+    public VerticalAccelerationDeserializer() {
+      super(VerticalAcceleration.class);
+    }
 
-		@Override
-		protected VerticalAcceleration construct() {
-			return new VerticalAcceleration();
-		}
-	}
+    @Override
+    protected VerticalAcceleration construct() {
+      return new VerticalAcceleration();
+    }
+  }
 }

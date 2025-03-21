@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Radius.RadiusDeserializer.class)
 public class Radius extends Asn1Integer {
 
-	public Radius() {
-		super(0L, 65535L);
-	}
+  public Radius() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public Radius(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Radius(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RadiusDeserializer extends IntegerDeserializer<Radius> {
-		public RadiusDeserializer() {
-			super(Radius.class);
-		}
+  public static class RadiusDeserializer extends IntegerDeserializer<Radius> {
+    public RadiusDeserializer() {
+      super(Radius.class);
+    }
 
-		@Override
-		protected Radius construct() {
-			return new Radius();
-		}
-	}
+    @Override
+    protected Radius construct() {
+      return new Radius();
+    }
+  }
 }

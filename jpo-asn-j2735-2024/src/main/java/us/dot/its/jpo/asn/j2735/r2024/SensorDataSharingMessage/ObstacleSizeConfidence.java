@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ObstacleSizeConfidence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "widthConfidence")
-	@JsonProperty("widthConfidence")
-	private SizeValueConfidence widthConfidence;
-	@Asn1Property(tag = 1, name = "lengthConfidence")
-	@JsonProperty("lengthConfidence")
-	private SizeValueConfidence lengthConfidence;
-	@Asn1Property(tag = 2, name = "heightConfidence", optional = true)
-	@JsonProperty("heightConfidence")
-	private SizeValueConfidence heightConfidence;
+  @Asn1Property(tag = 0, name = "widthConfidence")
+  @JsonProperty("widthConfidence")
+  private SizeValueConfidence widthConfidence;
 
-	public ObstacleSizeConfidence() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "lengthConfidence")
+  @JsonProperty("lengthConfidence")
+  private SizeValueConfidence lengthConfidence;
+
+  @Asn1Property(tag = 2, name = "heightConfidence", optional = true)
+  @JsonProperty("heightConfidence")
+  private SizeValueConfidence heightConfidence;
+
+  public ObstacleSizeConfidence() {
+    super(false);
+  }
 }

@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RptHysteresisRecord extends Asn1SequenceOf<RptHysteresis> {
 
-	public RptHysteresisRecord() {
-		super(RptHysteresis.class, 1L, 20L);
-	}
+  public RptHysteresisRecord() {
+    super(RptHysteresis.class, 1L, 20L);
+  }
 }

@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage2;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class PersonalSafetyMessage2MessageFrameValueSerializer extends OpenTypeSerializer<PersonalSafetyMessage2> {
+public class PersonalSafetyMessage2MessageFrameValueSerializer
+    extends OpenTypeSerializer<PersonalSafetyMessage2> {
 
-	public PersonalSafetyMessage2MessageFrameValueSerializer() {
-		super(PersonalSafetyMessage2.class, "value", "PersonalSafetyMessage2");
-	}
+  public PersonalSafetyMessage2MessageFrameValueSerializer() {
+    super(PersonalSafetyMessage2.class, "value", "PersonalSafetyMessage2");
+  }
 }

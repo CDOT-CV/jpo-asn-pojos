@@ -37,32 +37,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipPavementTreatment extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "latitude")
-	@JsonProperty("latitude")
-	private NTCIPEssPavementTreatmentLatitude latitude;
-	@Asn1Property(tag = 1, name = "longitude")
-	@JsonProperty("longitude")
-	private NTCIPEssPavementTreatmentLongitude longitude;
-	@Asn1Property(tag = 2, name = "location")
-	@JsonProperty("location")
-	private NTCIPEssPavementTreatmentLocation location;
-	@Asn1Property(tag = 3, name = "productType", optional = true)
-	@JsonProperty("productType")
-	private NTCIPEssPaveTreatProductType productType;
-	@Asn1Property(tag = 4, name = "form", optional = true)
-	@JsonProperty("form")
-	private NTCIPEssPaveTreatProductForm form;
-	@Asn1Property(tag = 5, name = "percentage", optional = true)
-	@JsonProperty("percentage")
-	private NTCIPEssPercentProductMix percentage;
-	@Asn1Property(tag = 6, name = "amount", optional = true)
-	@JsonProperty("amount")
-	private NTCIPEssPaveTreatmentAmount amount;
-	@Asn1Property(tag = 7, name = "width", optional = true)
-	@JsonProperty("width")
-	private NTCIPEssPaveTreatmentWidth width;
+  @Asn1Property(tag = 0, name = "latitude")
+  @JsonProperty("latitude")
+  private NTCIPEssPavementTreatmentLatitude latitude;
 
-	public NtcipPavementTreatment() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "longitude")
+  @JsonProperty("longitude")
+  private NTCIPEssPavementTreatmentLongitude longitude;
+
+  @Asn1Property(tag = 2, name = "location")
+  @JsonProperty("location")
+  private NTCIPEssPavementTreatmentLocation location;
+
+  @Asn1Property(tag = 3, name = "productType", optional = true)
+  @JsonProperty("productType")
+  private NTCIPEssPaveTreatProductType productType;
+
+  @Asn1Property(tag = 4, name = "form", optional = true)
+  @JsonProperty("form")
+  private NTCIPEssPaveTreatProductForm form;
+
+  @Asn1Property(tag = 5, name = "percentage", optional = true)
+  @JsonProperty("percentage")
+  private NTCIPEssPercentProductMix percentage;
+
+  @Asn1Property(tag = 6, name = "amount", optional = true)
+  @JsonProperty("amount")
+  private NTCIPEssPaveTreatmentAmount amount;
+
+  @Asn1Property(tag = 7, name = "width", optional = true)
+  @JsonProperty("width")
+  private NTCIPEssPaveTreatmentWidth width;
+
+  public NtcipPavementTreatment() {
+    super(true);
+  }
 }

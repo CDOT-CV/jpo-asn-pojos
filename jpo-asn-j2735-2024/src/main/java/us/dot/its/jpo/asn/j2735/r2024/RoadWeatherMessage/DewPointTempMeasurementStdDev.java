@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = DewPointTempMeasurementStdDev.DewPointTempMeasurementStdDevDeserializer.class)
+@JsonDeserialize(
+    using = DewPointTempMeasurementStdDev.DewPointTempMeasurementStdDevDeserializer.class)
 public class DewPointTempMeasurementStdDev extends Asn1Integer {
 
-	public DewPointTempMeasurementStdDev() {
-		super(1L, 16L);
-	}
+  public DewPointTempMeasurementStdDev() {
+    super(1L, 16L);
+  }
 
-	@JsonCreator
-	public DewPointTempMeasurementStdDev(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DewPointTempMeasurementStdDev(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DewPointTempMeasurementStdDevDeserializer
-			extends
-				IntegerDeserializer<DewPointTempMeasurementStdDev> {
-		public DewPointTempMeasurementStdDevDeserializer() {
-			super(DewPointTempMeasurementStdDev.class);
-		}
+  public static class DewPointTempMeasurementStdDevDeserializer
+      extends IntegerDeserializer<DewPointTempMeasurementStdDev> {
+    public DewPointTempMeasurementStdDevDeserializer() {
+      super(DewPointTempMeasurementStdDev.class);
+    }
 
-		@Override
-		protected DewPointTempMeasurementStdDev construct() {
-			return new DewPointTempMeasurementStdDev();
-		}
-	}
+    @Override
+    protected DewPointTempMeasurementStdDev construct() {
+      return new DewPointTempMeasurementStdDev();
+    }
+  }
 }

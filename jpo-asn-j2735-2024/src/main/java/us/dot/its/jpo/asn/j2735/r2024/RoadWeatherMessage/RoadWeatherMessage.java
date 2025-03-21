@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class RoadWeatherMessage extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "upload")
-	@JsonProperty("upload")
-	private RoadWeatherUpload upload;
-	@Asn1Property(tag = 1, name = "download")
-	@JsonProperty("download")
-	private RoadWeatherDownload download;
+  @Asn1Property(tag = 0, name = "upload")
+  @JsonProperty("upload")
+  private RoadWeatherUpload upload;
 
-	public RoadWeatherMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "download")
+  @JsonProperty("download")
+  private RoadWeatherDownload download;
+
+  public RoadWeatherMessage() {
+    super(true);
+  }
 }

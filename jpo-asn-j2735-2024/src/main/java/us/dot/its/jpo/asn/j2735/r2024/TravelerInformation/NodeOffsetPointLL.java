@@ -37,32 +37,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class NodeOffsetPointLL extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "node-LL1")
-	@JsonProperty("node-LL1")
-	private Node_LL_24B node_LL1;
-	@Asn1Property(tag = 1, name = "node-LL2")
-	@JsonProperty("node-LL2")
-	private Node_LL_28B node_LL2;
-	@Asn1Property(tag = 2, name = "node-LL3")
-	@JsonProperty("node-LL3")
-	private Node_LL_32B node_LL3;
-	@Asn1Property(tag = 3, name = "node-LL4")
-	@JsonProperty("node-LL4")
-	private Node_LL_36B node_LL4;
-	@Asn1Property(tag = 4, name = "node-LL5")
-	@JsonProperty("node-LL5")
-	private Node_LL_44B node_LL5;
-	@Asn1Property(tag = 5, name = "node-LL6")
-	@JsonProperty("node-LL6")
-	private Node_LL_48B node_LL6;
-	@Asn1Property(tag = 6, name = "node-LatLon")
-	@JsonProperty("node-LatLon")
-	private Node_LLmD_64b node_LatLon;
-	@Asn1Property(tag = 7, name = "regional")
-	@JsonProperty("regional")
-	private Reg_NodeOffsetPointLL regional;
+  @Asn1Property(tag = 0, name = "node-LL1")
+  @JsonProperty("node-LL1")
+  private Node_LL_24B node_LL1;
 
-	public NodeOffsetPointLL() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "node-LL2")
+  @JsonProperty("node-LL2")
+  private Node_LL_28B node_LL2;
+
+  @Asn1Property(tag = 2, name = "node-LL3")
+  @JsonProperty("node-LL3")
+  private Node_LL_32B node_LL3;
+
+  @Asn1Property(tag = 3, name = "node-LL4")
+  @JsonProperty("node-LL4")
+  private Node_LL_36B node_LL4;
+
+  @Asn1Property(tag = 4, name = "node-LL5")
+  @JsonProperty("node-LL5")
+  private Node_LL_44B node_LL5;
+
+  @Asn1Property(tag = 5, name = "node-LL6")
+  @JsonProperty("node-LL6")
+  private Node_LL_48B node_LL6;
+
+  @Asn1Property(tag = 6, name = "node-LatLon")
+  @JsonProperty("node-LatLon")
+  private Node_LLmD_64b node_LatLon;
+
+  @Asn1Property(tag = 7, name = "regional")
+  @JsonProperty("regional")
+  private Reg_NodeOffsetPointLL regional;
+
+  public NodeOffsetPointLL() {
+    super(false);
+  }
 }

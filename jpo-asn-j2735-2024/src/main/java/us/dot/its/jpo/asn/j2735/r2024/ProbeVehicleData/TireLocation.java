@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TireLocation.TireLocationDeserializer.class)
 public class TireLocation extends Asn1Integer {
 
-	public TireLocation() {
-		super(0L, 255L);
-	}
+  public TireLocation() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public TireLocation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TireLocation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TireLocationDeserializer extends IntegerDeserializer<TireLocation> {
-		public TireLocationDeserializer() {
-			super(TireLocation.class);
-		}
+  public static class TireLocationDeserializer extends IntegerDeserializer<TireLocation> {
+    public TireLocationDeserializer() {
+      super(TireLocation.class);
+    }
 
-		@Override
-		protected TireLocation construct() {
-			return new TireLocation();
-		}
-	}
+    @Override
+    protected TireLocation construct() {
+      return new TireLocation();
+    }
+  }
 }

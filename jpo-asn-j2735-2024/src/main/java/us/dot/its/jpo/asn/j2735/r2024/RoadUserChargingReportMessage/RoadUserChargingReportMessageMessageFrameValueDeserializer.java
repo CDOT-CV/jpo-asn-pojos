@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingReportMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class RoadUserChargingReportMessageMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<RoadUserChargingReportMessage> {
+    extends OpenTypeDeserializer<RoadUserChargingReportMessage> {
 
-	public RoadUserChargingReportMessageMessageFrameValueDeserializer() {
-		super(RoadUserChargingReportMessage.class, "RoadUserChargingReportMessage");
-	}
+  public RoadUserChargingReportMessageMessageFrameValueDeserializer() {
+    super(RoadUserChargingReportMessage.class, "RoadUserChargingReportMessage");
+  }
 }

@@ -39,14 +39,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Obstructions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "location")
-	@JsonProperty("location")
-	private Position3D location;
-	@Asn1Property(tag = 1, name = "description", optional = true)
-	@JsonProperty("description")
-	private ITIScodes description;
+  @Asn1Property(tag = 0, name = "location")
+  @JsonProperty("location")
+  private Position3D location;
 
-	public Obstructions() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "description", optional = true)
+  @JsonProperty("description")
+  private ITIScodes description;
+
+  public Obstructions() {
+    super(true);
+  }
 }

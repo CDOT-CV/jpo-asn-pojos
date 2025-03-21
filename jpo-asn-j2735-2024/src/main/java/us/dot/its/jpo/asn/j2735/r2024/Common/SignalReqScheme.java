@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class SignalReqScheme extends Asn1OctetString {
 
-	public SignalReqScheme() {
-		super(1, 1);
-	}
+  public SignalReqScheme() {
+    super(1, 1);
+  }
 
-	@JsonCreator
-	public SignalReqScheme(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public SignalReqScheme(String value) {
+    this();
+    setValue(value);
+  }
 }

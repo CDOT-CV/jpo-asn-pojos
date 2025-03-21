@@ -43,35 +43,40 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class AdvisorySpeed extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private AdvisorySpeedType type;
-	@Asn1Property(tag = 1, name = "speed", optional = true)
-	@JsonProperty("speed")
-	private SpeedAdvice speed;
-	@Asn1Property(tag = 2, name = "confidence", optional = true)
-	@JsonProperty("confidence")
-	private SpeedConfidence confidence;
-	@Asn1Property(tag = 3, name = "distance", optional = true)
-	@JsonProperty("distance")
-	private ZoneLength distance;
-	@Asn1Property(tag = 4, name = "class", optional = true)
-	@JsonProperty("class")
-	private RestrictionClassID class_;
-	@Asn1Property(tag = 5, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-AdvisorySpeed")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private AdvisorySpeedType type;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_AdvisorySpeed> {
-		public SequenceOfRegional() {
-			super(Reg_AdvisorySpeed.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "speed", optional = true)
+  @JsonProperty("speed")
+  private SpeedAdvice speed;
 
-	public AdvisorySpeed() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "confidence", optional = true)
+  @JsonProperty("confidence")
+  private SpeedConfidence confidence;
+
+  @Asn1Property(tag = 3, name = "distance", optional = true)
+  @JsonProperty("distance")
+  private ZoneLength distance;
+
+  @Asn1Property(tag = 4, name = "class", optional = true)
+  @JsonProperty("class")
+  private RestrictionClassID class_;
+
+  @Asn1Property(tag = 5, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-AdvisorySpeed")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_AdvisorySpeed> {
+    public SequenceOfRegional() {
+      super(Reg_AdvisorySpeed.class, 1L, 4L);
+    }
+  }
+
+  public AdvisorySpeed() {
+    super(true);
+  }
 }

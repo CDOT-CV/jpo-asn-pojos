@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MinTimetoChange.MinTimetoChangeDeserializer.class)
 public class MinTimetoChange extends Asn1Integer {
 
-	public MinTimetoChange() {
-		super(0L, 2402L);
-	}
+  public MinTimetoChange() {
+    super(0L, 2402L);
+  }
 
-	@JsonCreator
-	public MinTimetoChange(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MinTimetoChange(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MinTimetoChangeDeserializer extends IntegerDeserializer<MinTimetoChange> {
-		public MinTimetoChangeDeserializer() {
-			super(MinTimetoChange.class);
-		}
+  public static class MinTimetoChangeDeserializer extends IntegerDeserializer<MinTimetoChange> {
+    public MinTimetoChangeDeserializer() {
+      super(MinTimetoChange.class);
+    }
 
-		@Override
-		protected MinTimetoChange construct() {
-			return new MinTimetoChange();
-		}
-	}
+    @Override
+    protected MinTimetoChange construct() {
+      return new MinTimetoChange();
+    }
+  }
 }

@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TimeIntervalConfidence.TimeIntervalConfidenceDeserializer.class)
 public class TimeIntervalConfidence extends Asn1Integer {
 
-	public TimeIntervalConfidence() {
-		super(0L, 15L);
-	}
+  public TimeIntervalConfidence() {
+    super(0L, 15L);
+  }
 
-	@JsonCreator
-	public TimeIntervalConfidence(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TimeIntervalConfidence(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TimeIntervalConfidenceDeserializer extends IntegerDeserializer<TimeIntervalConfidence> {
-		public TimeIntervalConfidenceDeserializer() {
-			super(TimeIntervalConfidence.class);
-		}
+  public static class TimeIntervalConfidenceDeserializer
+      extends IntegerDeserializer<TimeIntervalConfidence> {
+    public TimeIntervalConfidenceDeserializer() {
+      super(TimeIntervalConfidence.class);
+    }
 
-		@Override
-		protected TimeIntervalConfidence construct() {
-			return new TimeIntervalConfidence();
-		}
-	}
+    @Override
+    protected TimeIntervalConfidence construct() {
+      return new TimeIntervalConfidence();
+    }
+  }
 }

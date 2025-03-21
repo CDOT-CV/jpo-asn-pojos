@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RoadSegmentReferenceID extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "region", optional = true)
-	@JsonProperty("region")
-	private RoadRegulatorID region;
-	@Asn1Property(tag = 1, name = "id")
-	@JsonProperty("id")
-	private RoadSegmentID id;
+  @Asn1Property(tag = 0, name = "region", optional = true)
+  @JsonProperty("region")
+  private RoadRegulatorID region;
 
-	public RoadSegmentReferenceID() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "id")
+  @JsonProperty("id")
+  private RoadSegmentID id;
+
+  public RoadSegmentReferenceID() {
+    super(false);
+  }
 }

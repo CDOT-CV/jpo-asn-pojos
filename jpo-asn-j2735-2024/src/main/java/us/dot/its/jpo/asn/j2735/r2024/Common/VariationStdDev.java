@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = VariationStdDev.VariationStdDevDeserializer.class)
 public class VariationStdDev extends Asn1Integer {
 
-	public VariationStdDev() {
-		super(0L, 2500L);
-	}
+  public VariationStdDev() {
+    super(0L, 2500L);
+  }
 
-	@JsonCreator
-	public VariationStdDev(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VariationStdDev(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VariationStdDevDeserializer extends IntegerDeserializer<VariationStdDev> {
-		public VariationStdDevDeserializer() {
-			super(VariationStdDev.class);
-		}
+  public static class VariationStdDevDeserializer extends IntegerDeserializer<VariationStdDev> {
+    public VariationStdDevDeserializer() {
+      super(VariationStdDev.class);
+    }
 
-		@Override
-		protected VariationStdDev construct() {
-			return new VariationStdDev();
-		}
-	}
+    @Override
+    protected VariationStdDev construct() {
+      return new VariationStdDev();
+    }
+  }
 }

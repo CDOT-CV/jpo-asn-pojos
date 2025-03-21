@@ -37,59 +37,75 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleDescription extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleLPNr", optional = true)
-	@JsonProperty("vehicleLPNr")
-	private Lpn vehicleLPNr;
-	@Asn1Property(tag = 1, name = "axles", optional = true)
-	@JsonProperty("axles")
-	private VehicleAxles axles;
-	@Asn1Property(tag = 2, name = "class", optional = true)
-	@JsonProperty("class")
-	private VehicleClass class_;
-	@Asn1Property(tag = 3, name = "dimensions", optional = true)
-	@JsonProperty("dimensions")
-	private VehicleDimensions dimensions;
-	@Asn1Property(tag = 4, name = "specificCharacteristics", optional = true)
-	@JsonProperty("specificCharacteristics")
-	private VehicleSpecificCharacteristics specificCharacteristics;
-	@Asn1Property(tag = 5, name = "ladenWeight", optional = true)
-	@JsonProperty("ladenWeight")
-	private VehicleWeightLaden ladenWeight;
-	@Asn1Property(tag = 6, name = "weightLimits", optional = true)
-	@JsonProperty("weightLimits")
-	private VehicleWeightLimits weightLimits;
-	@Asn1Property(tag = 7, name = "trailerCharacteristics", optional = true)
-	@JsonProperty("trailerCharacteristics")
-	private TrailerCharacteristics trailerCharacteristics;
-	@Asn1Property(tag = 8, name = "vehicleCurrentMaxTrainWeight", optional = true)
-	@JsonProperty("vehicleCurrentMaxTrainWeight")
-	private VehicleCurrentMaxTrainWeight vehicleCurrentMaxTrainWeight;
-	@Asn1Property(tag = 9, name = "actualNumberOfPassengers", optional = true)
-	@JsonProperty("actualNumberOfPassengers")
-	private ActualNumberOfPassengers actualNumberOfPassengers;
-	@Asn1Property(tag = 10, name = "axleWeightLimits", optional = true)
-	@JsonProperty("axleWeightLimits")
-	private AxleWeightLimits axleWeightLimits;
-	@Asn1Property(tag = 11, name = "dieselEmissionValues", optional = true)
-	@JsonProperty("dieselEmissionValues")
-	private DieselEmissionValues dieselEmissionValues;
-	@Asn1Property(tag = 12, name = "driverCharacteristics", optional = true)
-	@JsonProperty("driverCharacteristics")
-	private DriverCharacteristics driverCharacteristics;
-	@Asn1Property(tag = 13, name = "engineDetails", optional = true)
-	@JsonProperty("engineDetails")
-	private EngineDetails engineDetails;
-	@Asn1Property(tag = 14, name = "exhaustEmissionValues", optional = true)
-	@JsonProperty("exhaustEmissionValues")
-	private ExhaustEmissionValues exhaustEmissionValues;
-	@Asn1Property(tag = 15, name = "passengerCapacity", optional = true)
-	@JsonProperty("passengerCapacity")
-	private PassengerCapacity passengerCapacity;
-	@Asn1Property(tag = 16, name = "soundLevel", optional = true)
-	@JsonProperty("soundLevel")
-	private SoundLevel soundLevel;
+  @Asn1Property(tag = 0, name = "vehicleLPNr", optional = true)
+  @JsonProperty("vehicleLPNr")
+  private Lpn vehicleLPNr;
 
-	public VehicleDescription() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "axles", optional = true)
+  @JsonProperty("axles")
+  private VehicleAxles axles;
+
+  @Asn1Property(tag = 2, name = "class", optional = true)
+  @JsonProperty("class")
+  private VehicleClass class_;
+
+  @Asn1Property(tag = 3, name = "dimensions", optional = true)
+  @JsonProperty("dimensions")
+  private VehicleDimensions dimensions;
+
+  @Asn1Property(tag = 4, name = "specificCharacteristics", optional = true)
+  @JsonProperty("specificCharacteristics")
+  private VehicleSpecificCharacteristics specificCharacteristics;
+
+  @Asn1Property(tag = 5, name = "ladenWeight", optional = true)
+  @JsonProperty("ladenWeight")
+  private VehicleWeightLaden ladenWeight;
+
+  @Asn1Property(tag = 6, name = "weightLimits", optional = true)
+  @JsonProperty("weightLimits")
+  private VehicleWeightLimits weightLimits;
+
+  @Asn1Property(tag = 7, name = "trailerCharacteristics", optional = true)
+  @JsonProperty("trailerCharacteristics")
+  private TrailerCharacteristics trailerCharacteristics;
+
+  @Asn1Property(tag = 8, name = "vehicleCurrentMaxTrainWeight", optional = true)
+  @JsonProperty("vehicleCurrentMaxTrainWeight")
+  private VehicleCurrentMaxTrainWeight vehicleCurrentMaxTrainWeight;
+
+  @Asn1Property(tag = 9, name = "actualNumberOfPassengers", optional = true)
+  @JsonProperty("actualNumberOfPassengers")
+  private ActualNumberOfPassengers actualNumberOfPassengers;
+
+  @Asn1Property(tag = 10, name = "axleWeightLimits", optional = true)
+  @JsonProperty("axleWeightLimits")
+  private AxleWeightLimits axleWeightLimits;
+
+  @Asn1Property(tag = 11, name = "dieselEmissionValues", optional = true)
+  @JsonProperty("dieselEmissionValues")
+  private DieselEmissionValues dieselEmissionValues;
+
+  @Asn1Property(tag = 12, name = "driverCharacteristics", optional = true)
+  @JsonProperty("driverCharacteristics")
+  private DriverCharacteristics driverCharacteristics;
+
+  @Asn1Property(tag = 13, name = "engineDetails", optional = true)
+  @JsonProperty("engineDetails")
+  private EngineDetails engineDetails;
+
+  @Asn1Property(tag = 14, name = "exhaustEmissionValues", optional = true)
+  @JsonProperty("exhaustEmissionValues")
+  private ExhaustEmissionValues exhaustEmissionValues;
+
+  @Asn1Property(tag = 15, name = "passengerCapacity", optional = true)
+  @JsonProperty("passengerCapacity")
+  private PassengerCapacity passengerCapacity;
+
+  @Asn1Property(tag = 16, name = "soundLevel", optional = true)
+  @JsonProperty("soundLevel")
+  private SoundLevel soundLevel;
+
+  public VehicleDescription() {
+    super(true);
+  }
 }

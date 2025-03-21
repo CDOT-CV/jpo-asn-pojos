@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Node_LL_36B extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lon")
-	@JsonProperty("lon")
-	private OffsetLL_B18 lon;
-	@Asn1Property(tag = 1, name = "lat")
-	@JsonProperty("lat")
-	private OffsetLL_B18 lat;
+  @Asn1Property(tag = 0, name = "lon")
+  @JsonProperty("lon")
+  private OffsetLL_B18 lon;
 
-	public Node_LL_36B() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "lat")
+  @JsonProperty("lat")
+  private OffsetLL_B18 lat;
+
+  public Node_LL_36B() {
+    super(false);
+  }
 }

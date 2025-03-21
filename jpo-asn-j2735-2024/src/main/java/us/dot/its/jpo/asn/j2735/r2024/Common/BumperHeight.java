@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = BumperHeight.BumperHeightDeserializer.class)
 public class BumperHeight extends Asn1Integer {
 
-	public BumperHeight() {
-		super(0L, 127L);
-	}
+  public BumperHeight() {
+    super(0L, 127L);
+  }
 
-	@JsonCreator
-	public BumperHeight(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public BumperHeight(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class BumperHeightDeserializer extends IntegerDeserializer<BumperHeight> {
-		public BumperHeightDeserializer() {
-			super(BumperHeight.class);
-		}
+  public static class BumperHeightDeserializer extends IntegerDeserializer<BumperHeight> {
+    public BumperHeightDeserializer() {
+      super(BumperHeight.class);
+    }
 
-		@Override
-		protected BumperHeight construct() {
-			return new BumperHeight();
-		}
-	}
+    @Override
+    protected BumperHeight construct() {
+      return new BumperHeight();
+    }
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ObeId extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "manufacturerId")
-	@JsonProperty("manufacturerId")
-	private Int2Unsigned manufacturerId;
-	@Asn1Property(tag = 1, name = "equipmentObuId")
-	@JsonProperty("equipmentObuId")
-	private EquipmentObuId equipmentObuId;
+  @Asn1Property(tag = 0, name = "manufacturerId")
+  @JsonProperty("manufacturerId")
+  private Int2Unsigned manufacturerId;
 
-	public ObeId() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "equipmentObuId")
+  @JsonProperty("equipmentObuId")
+  private EquipmentObuId equipmentObuId;
+
+  public ObeId() {
+    super(false);
+  }
 }

@@ -38,20 +38,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TRRLocationType1 extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tRRLength")
-	@JsonProperty("tRRLength")
-	private TRRLength tRRLength;
-	@Asn1Property(tag = 1, name = "frontSidePosition")
-	@JsonProperty("frontSidePosition")
-	private PositionOffsetXYZ frontSidePosition;
-	@Asn1Property(tag = 2, name = "laneOffset")
-	@JsonProperty("laneOffset")
-	private LaneOffset laneOffset;
-	@Asn1Property(tag = 3, name = "tRRMovement", optional = true)
-	@JsonProperty("tRRMovement")
-	private Speed tRRMovement;
+  @Asn1Property(tag = 0, name = "tRRLength")
+  @JsonProperty("tRRLength")
+  private TRRLength tRRLength;
 
-	public TRRLocationType1() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "frontSidePosition")
+  @JsonProperty("frontSidePosition")
+  private PositionOffsetXYZ frontSidePosition;
+
+  @Asn1Property(tag = 2, name = "laneOffset")
+  @JsonProperty("laneOffset")
+  private LaneOffset laneOffset;
+
+  @Asn1Property(tag = 3, name = "tRRMovement", optional = true)
+  @JsonProperty("tRRMovement")
+  private Speed tRRMovement;
+
+  public TRRLocationType1() {
+    super(true);
+  }
 }

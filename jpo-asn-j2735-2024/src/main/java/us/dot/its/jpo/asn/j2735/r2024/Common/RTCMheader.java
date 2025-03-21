@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RTCMheader extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "status")
-	@JsonProperty("status")
-	private GNSSstatus status;
-	@Asn1Property(tag = 1, name = "offsetSet")
-	@JsonProperty("offsetSet")
-	private AntennaOffsetSet offsetSet;
+  @Asn1Property(tag = 0, name = "status")
+  @JsonProperty("status")
+  private GNSSstatus status;
 
-	public RTCMheader() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "offsetSet")
+  @JsonProperty("offsetSet")
+  private AntennaOffsetSet offsetSet;
+
+  public RTCMheader() {
+    super(false);
+  }
 }

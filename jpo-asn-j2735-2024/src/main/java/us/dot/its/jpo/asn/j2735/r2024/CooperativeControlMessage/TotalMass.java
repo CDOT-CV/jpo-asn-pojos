@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TotalMass.TotalMassDeserializer.class)
 public class TotalMass extends Asn1Integer {
 
-	public TotalMass() {
-		super(0L, 1288L);
-	}
+  public TotalMass() {
+    super(0L, 1288L);
+  }
 
-	@JsonCreator
-	public TotalMass(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TotalMass(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TotalMassDeserializer extends IntegerDeserializer<TotalMass> {
-		public TotalMassDeserializer() {
-			super(TotalMass.class);
-		}
+  public static class TotalMassDeserializer extends IntegerDeserializer<TotalMass> {
+    public TotalMassDeserializer() {
+      super(TotalMass.class);
+    }
 
-		@Override
-		protected TotalMass construct() {
-			return new TotalMass();
-		}
-	}
+    @Override
+    protected TotalMass construct() {
+      return new TotalMass();
+    }
+  }
 }

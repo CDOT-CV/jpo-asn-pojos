@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class RegionUncertainty extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "alongPath")
-	@JsonProperty("alongPath")
-	private Offset3D alongPath;
-	@Asn1Property(tag = 1, name = "inCoordinateFrame")
-	@JsonProperty("inCoordinateFrame")
-	private Offset3D inCoordinateFrame;
+  @Asn1Property(tag = 0, name = "alongPath")
+  @JsonProperty("alongPath")
+  private Offset3D alongPath;
 
-	public RegionUncertainty() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "inCoordinateFrame")
+  @JsonProperty("inCoordinateFrame")
+  private Offset3D inCoordinateFrame;
+
+  public RegionUncertainty() {
+    super(true);
+  }
 }

@@ -40,41 +40,43 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class EfcContextMark extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "contractProvider")
-	@JsonProperty("contractProvider")
-	private Provider contractProvider;
-	@Asn1Property(tag = 1, name = "typeOfContract")
-	@JsonProperty("typeOfContract")
-	private TypeOfContractOctetString typeOfContract;
-	@Asn1Property(tag = 2, name = "contextVersion")
-	@JsonProperty("contextVersion")
-	private ContextVersionInteger contextVersion;
+  @Asn1Property(tag = 0, name = "contractProvider")
+  @JsonProperty("contractProvider")
+  private Provider contractProvider;
 
-	public static class TypeOfContractOctetString extends Asn1OctetString {
-		public TypeOfContractOctetString() {
-			super(2, 2);
-		}
+  @Asn1Property(tag = 1, name = "typeOfContract")
+  @JsonProperty("typeOfContract")
+  private TypeOfContractOctetString typeOfContract;
 
-		@JsonCreator
-		public TypeOfContractOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 2, name = "contextVersion")
+  @JsonProperty("contextVersion")
+  private ContextVersionInteger contextVersion;
 
-	public static class ContextVersionInteger extends Asn1Integer {
-		public ContextVersionInteger() {
-			super(0L, 127L);
-		}
+  public static class TypeOfContractOctetString extends Asn1OctetString {
+    public TypeOfContractOctetString() {
+      super(2, 2);
+    }
 
-		@JsonCreator
-		public ContextVersionInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public TypeOfContractOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
 
-	public EfcContextMark() {
-		super(false);
-	}
+  public static class ContextVersionInteger extends Asn1Integer {
+    public ContextVersionInteger() {
+      super(0L, 127L);
+    }
+
+    @JsonCreator
+    public ContextVersionInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public EfcContextMark() {
+    super(false);
+  }
 }

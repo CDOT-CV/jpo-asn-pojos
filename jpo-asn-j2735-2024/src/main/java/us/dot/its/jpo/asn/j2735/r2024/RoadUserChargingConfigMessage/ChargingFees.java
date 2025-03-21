@@ -42,26 +42,28 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ChargingFees extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargingSchedule", optional = true)
-	@JsonProperty("chargingSchedule")
-	@JacksonXmlElementWrapper(localName = "chargingSchedule")
-	@JacksonXmlProperty(localName = "EventRecurrence")
-	private SequenceOfChargingSchedule chargingSchedule;
-	@Asn1Property(tag = 1, name = "chargesTable")
-	@JsonProperty("chargesTable")
-	private ChargesTable chargesTable;
-	@Asn1Property(tag = 2, name = "chargingUnits")
-	@JsonProperty("chargingUnits")
-	private ChargingUnits chargingUnits;
+  @Asn1Property(tag = 0, name = "chargingSchedule", optional = true)
+  @JsonProperty("chargingSchedule")
+  @JacksonXmlElementWrapper(localName = "chargingSchedule")
+  @JacksonXmlProperty(localName = "EventRecurrence")
+  private SequenceOfChargingSchedule chargingSchedule;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfChargingSchedule extends Asn1SequenceOf<EventRecurrence> {
-		public SequenceOfChargingSchedule() {
-			super(EventRecurrence.class, 1L, 5L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "chargesTable")
+  @JsonProperty("chargesTable")
+  private ChargesTable chargesTable;
 
-	public ChargingFees() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "chargingUnits")
+  @JsonProperty("chargingUnits")
+  private ChargingUnits chargingUnits;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfChargingSchedule extends Asn1SequenceOf<EventRecurrence> {
+    public SequenceOfChargingSchedule() {
+      super(EventRecurrence.class, 1L, 5L);
+    }
+  }
+
+  public ChargingFees() {
+    super(true);
+  }
 }

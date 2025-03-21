@@ -33,30 +33,30 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = CindersType.CindersTypeSerializer.class)
 @JsonDeserialize(using = CindersType.CindersTypeDeserializer.class)
 public enum CindersType implements Asn1Enumerated {
-	PACKED(0, "packed");
+  PACKED(0, "packed");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private CindersType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private CindersType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class CindersTypeSerializer extends EnumeratedSerializer<CindersType> {
-		public CindersTypeSerializer() {
-			super(CindersType.class);
-		}
-	}
+  public static class CindersTypeSerializer extends EnumeratedSerializer<CindersType> {
+    public CindersTypeSerializer() {
+      super(CindersType.class);
+    }
+  }
 
-	public static class CindersTypeDeserializer extends EnumeratedDeserializer<CindersType> {
-		public CindersTypeDeserializer() {
-			super(CindersType.class);
-		}
+  public static class CindersTypeDeserializer extends EnumeratedDeserializer<CindersType> {
+    public CindersTypeDeserializer() {
+      super(CindersType.class);
+    }
 
-		@Override
-		protected CindersType[] listEnumValues() {
-			return CindersType.values();
-		}
-	}
+    @Override
+    protected CindersType[] listEnumValues() {
+      return CindersType.values();
+    }
+  }
 }

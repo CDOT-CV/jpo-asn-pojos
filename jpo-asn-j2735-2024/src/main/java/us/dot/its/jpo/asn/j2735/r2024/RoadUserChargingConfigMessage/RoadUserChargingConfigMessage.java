@@ -40,20 +40,20 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class RoadUserChargingConfigMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "chargerInfoTable")
-	@JsonProperty("chargerInfoTable")
-	@JacksonXmlElementWrapper(localName = "chargerInfoTable")
-	@JacksonXmlProperty(localName = "ChargerInfo")
-	private SequenceOfChargerInfoTable chargerInfoTable;
+  @Asn1Property(tag = 0, name = "chargerInfoTable")
+  @JsonProperty("chargerInfoTable")
+  @JacksonXmlElementWrapper(localName = "chargerInfoTable")
+  @JacksonXmlProperty(localName = "ChargerInfo")
+  private SequenceOfChargerInfoTable chargerInfoTable;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfChargerInfoTable extends Asn1SequenceOf<ChargerInfo> {
-		public SequenceOfChargerInfoTable() {
-			super(ChargerInfo.class, 1L, 999L);
-		}
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfChargerInfoTable extends Asn1SequenceOf<ChargerInfo> {
+    public SequenceOfChargerInfoTable() {
+      super(ChargerInfo.class, 1L, 999L);
+    }
+  }
 
-	public RoadUserChargingConfigMessage() {
-		super(true);
-	}
+  public RoadUserChargingConfigMessage() {
+    super(true);
+  }
 }

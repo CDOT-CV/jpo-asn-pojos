@@ -42,23 +42,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class UserData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp")
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
-	@Asn1Property(tag = 1, name = "svcProvID")
-	@JsonProperty("svcProvID")
-	private Asn1ObjectIdentifier svcProvID;
-	@Asn1Property(tag = 2, name = "vehicleID")
-	@JsonProperty("vehicleID")
-	private VehicleId vehicleID;
-	@Asn1Property(tag = 3, name = "vehicleType")
-	@JsonProperty("vehicleType")
-	private VehicleTypes vehicleType;
-	@Asn1Property(tag = 4, name = "vehicleDescription", optional = true)
-	@JsonProperty("vehicleDescription")
-	private VehicleDescription vehicleDescription;
+  @Asn1Property(tag = 0, name = "timeStamp")
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
 
-	public UserData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "svcProvID")
+  @JsonProperty("svcProvID")
+  private Asn1ObjectIdentifier svcProvID;
+
+  @Asn1Property(tag = 2, name = "vehicleID")
+  @JsonProperty("vehicleID")
+  private VehicleId vehicleID;
+
+  @Asn1Property(tag = 3, name = "vehicleType")
+  @JsonProperty("vehicleType")
+  private VehicleTypes vehicleType;
+
+  @Asn1Property(tag = 4, name = "vehicleDescription", optional = true)
+  @JsonProperty("vehicleDescription")
+  private VehicleDescription vehicleDescription;
+
+  public UserData() {
+    super(true);
+  }
 }

@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgLowSpeedCriteria extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lowSpeedThreshold")
-	@JsonProperty("lowSpeedThreshold")
-	private LowSpeedThresholdInteger lowSpeedThreshold;
-	@Asn1Property(tag = 1, name = "lowSpeedTimeThresh", optional = true)
-	@JsonProperty("lowSpeedTimeThresh")
-	private LowSpeedTimeThreshInteger lowSpeedTimeThresh;
+  @Asn1Property(tag = 0, name = "lowSpeedThreshold")
+  @JsonProperty("lowSpeedThreshold")
+  private LowSpeedThresholdInteger lowSpeedThreshold;
 
-	public static class LowSpeedThresholdInteger extends Asn1Integer {
-		public LowSpeedThresholdInteger() {
-			super(5L, 100L);
-		}
+  @Asn1Property(tag = 1, name = "lowSpeedTimeThresh", optional = true)
+  @JsonProperty("lowSpeedTimeThresh")
+  private LowSpeedTimeThreshInteger lowSpeedTimeThresh;
 
-		@JsonCreator
-		public LowSpeedThresholdInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class LowSpeedThresholdInteger extends Asn1Integer {
+    public LowSpeedThresholdInteger() {
+      super(5L, 100L);
+    }
 
-	public static class LowSpeedTimeThreshInteger extends Asn1Integer {
-		public LowSpeedTimeThreshInteger() {
-			super(1L, 30L);
-		}
+    @JsonCreator
+    public LowSpeedThresholdInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public LowSpeedTimeThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class LowSpeedTimeThreshInteger extends Asn1Integer {
+    public LowSpeedTimeThreshInteger() {
+      super(1L, 30L);
+    }
 
-	public CfgLowSpeedCriteria() {
-		super(true);
-	}
+    @JsonCreator
+    public LowSpeedTimeThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgLowSpeedCriteria() {
+    super(true);
+  }
 }

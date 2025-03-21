@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ConfigId.ConfigIdDeserializer.class)
 public class ConfigId extends Asn1Integer {
 
-	public ConfigId() {
-		super(1L, 255L);
-	}
+  public ConfigId() {
+    super(1L, 255L);
+  }
 
-	@JsonCreator
-	public ConfigId(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ConfigId(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ConfigIdDeserializer extends IntegerDeserializer<ConfigId> {
-		public ConfigIdDeserializer() {
-			super(ConfigId.class);
-		}
+  public static class ConfigIdDeserializer extends IntegerDeserializer<ConfigId> {
+    public ConfigIdDeserializer() {
+      super(ConfigId.class);
+    }
 
-		@Override
-		protected ConfigId construct() {
-			return new ConfigId();
-		}
-	}
+    @Override
+    protected ConfigId construct() {
+      return new ConfigId();
+    }
+  }
 }

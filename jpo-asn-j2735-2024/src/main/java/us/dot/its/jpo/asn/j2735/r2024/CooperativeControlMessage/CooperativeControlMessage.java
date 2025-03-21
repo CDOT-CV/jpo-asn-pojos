@@ -41,23 +41,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class CooperativeControlMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "coreData")
-	@JsonProperty("coreData")
-	private BSMcoreData coreData;
-	@Asn1Property(tag = 1, name = "partII", optional = true)
-	@JsonProperty("partII")
-	@JacksonXmlElementWrapper(localName = "partII")
-	@JacksonXmlProperty(localName = "CCMpartIIExtension")
-	private SequenceOfPartII partII;
+  @Asn1Property(tag = 0, name = "coreData")
+  @JsonProperty("coreData")
+  private BSMcoreData coreData;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfPartII extends Asn1SequenceOf<CCMpartIIExtension> {
-		public SequenceOfPartII() {
-			super(CCMpartIIExtension.class, 1L, 8L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "partII", optional = true)
+  @JsonProperty("partII")
+  @JacksonXmlElementWrapper(localName = "partII")
+  @JacksonXmlProperty(localName = "CCMpartIIExtension")
+  private SequenceOfPartII partII;
 
-	public CooperativeControlMessage() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfPartII extends Asn1SequenceOf<CCMpartIIExtension> {
+    public SequenceOfPartII() {
+      super(CCMpartIIExtension.class, 1L, 8L);
+    }
+  }
+
+  public CooperativeControlMessage() {
+    super(true);
+  }
 }

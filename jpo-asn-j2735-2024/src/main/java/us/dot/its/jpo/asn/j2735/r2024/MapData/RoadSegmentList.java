@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RoadSegmentList extends Asn1SequenceOf<RoadSegment> {
 
-	public RoadSegmentList() {
-		super(RoadSegment.class, 1L, 32L);
-	}
+  public RoadSegmentList() {
+    super(RoadSegment.class, 1L, 32L);
+  }
 }

@@ -38,26 +38,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RequestorType extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "role")
-	@JsonProperty("role")
-	private BasicVehicleRole role;
-	@Asn1Property(tag = 1, name = "subrole", optional = true)
-	@JsonProperty("subrole")
-	private RequestSubRole subrole;
-	@Asn1Property(tag = 2, name = "request", optional = true)
-	@JsonProperty("request")
-	private RequestImportanceLevel request;
-	@Asn1Property(tag = 3, name = "iso3883", optional = true)
-	@JsonProperty("iso3883")
-	private Iso3833VehicleType iso3883;
-	@Asn1Property(tag = 4, name = "hpmsType", optional = true)
-	@JsonProperty("hpmsType")
-	private VehicleType hpmsType;
-	@Asn1Property(tag = 5, name = "regional", optional = true)
-	@JsonProperty("regional")
-	private Reg_RequestorType regional;
+  @Asn1Property(tag = 0, name = "role")
+  @JsonProperty("role")
+  private BasicVehicleRole role;
 
-	public RequestorType() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "subrole", optional = true)
+  @JsonProperty("subrole")
+  private RequestSubRole subrole;
+
+  @Asn1Property(tag = 2, name = "request", optional = true)
+  @JsonProperty("request")
+  private RequestImportanceLevel request;
+
+  @Asn1Property(tag = 3, name = "iso3883", optional = true)
+  @JsonProperty("iso3883")
+  private Iso3833VehicleType iso3883;
+
+  @Asn1Property(tag = 4, name = "hpmsType", optional = true)
+  @JsonProperty("hpmsType")
+  private VehicleType hpmsType;
+
+  @Asn1Property(tag = 5, name = "regional", optional = true)
+  @JsonProperty("regional")
+  private Reg_RequestorType regional;
+
+  public RequestorType() {
+    super(true);
+  }
 }

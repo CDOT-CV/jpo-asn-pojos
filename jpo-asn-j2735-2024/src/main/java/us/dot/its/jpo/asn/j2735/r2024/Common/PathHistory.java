@@ -39,19 +39,21 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PathHistory extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "initialPosition", optional = true)
-	@JsonProperty("initialPosition")
-	private FullPositionVector initialPosition;
-	@Asn1Property(tag = 1, name = "currGNSSstatus", optional = true)
-	@JsonProperty("currGNSSstatus")
-	private GNSSstatus currGNSSstatus;
-	@Asn1Property(tag = 2, name = "crumbData")
-	@JsonProperty("crumbData")
-	@JacksonXmlElementWrapper(localName = "crumbData")
-	@JacksonXmlProperty(localName = "PathHistoryPoint")
-	private PathHistoryPointList crumbData;
+  @Asn1Property(tag = 0, name = "initialPosition", optional = true)
+  @JsonProperty("initialPosition")
+  private FullPositionVector initialPosition;
 
-	public PathHistory() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "currGNSSstatus", optional = true)
+  @JsonProperty("currGNSSstatus")
+  private GNSSstatus currGNSSstatus;
+
+  @Asn1Property(tag = 2, name = "crumbData")
+  @JsonProperty("crumbData")
+  @JacksonXmlElementWrapper(localName = "crumbData")
+  @JacksonXmlProperty(localName = "PathHistoryPoint")
+  private PathHistoryPointList crumbData;
+
+  public PathHistory() {
+    super(true);
+  }
 }

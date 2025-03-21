@@ -26,21 +26,24 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = EquipmentStatus.EquipmentStatusDeserializer.class)
+@JsonDeserialize(
+    using =
+        EquipmentStatus.EquipmentStatusDeserializer
+            .class)
 public class EquipmentStatus extends Asn1Bitstring {
 
-	public EquipmentStatus() {
-		super(16, false, new String[]{});
-	}
+  public EquipmentStatus() {
+    super(16, false, new String[] {});
+  }
 
-	public static class EquipmentStatusDeserializer extends BitStringDeserializer<EquipmentStatus> {
-		public EquipmentStatusDeserializer() {
-			super(EquipmentStatus.class);
-		}
+  public static class EquipmentStatusDeserializer extends BitStringDeserializer<EquipmentStatus> {
+    public EquipmentStatusDeserializer() {
+      super(EquipmentStatus.class);
+    }
 
-		@Override
-		protected EquipmentStatus construct() {
-			return new EquipmentStatus();
-		}
-	}
+    @Override
+    protected EquipmentStatus construct() {
+      return new EquipmentStatus();
+    }
+  }
 }

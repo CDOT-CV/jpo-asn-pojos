@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DieselEmissionValues extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "particulate")
-	@JsonProperty("particulate")
-	private Particulate particulate;
-	@Asn1Property(tag = 1, name = "absorptionCoeff")
-	@JsonProperty("absorptionCoeff")
-	private Int2Unsigned absorptionCoeff;
+  @Asn1Property(tag = 0, name = "particulate")
+  @JsonProperty("particulate")
+  private Particulate particulate;
 
-	public DieselEmissionValues() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "absorptionCoeff")
+  @JsonProperty("absorptionCoeff")
+  private Int2Unsigned absorptionCoeff;
+
+  public DieselEmissionValues() {
+    super(false);
+  }
 }

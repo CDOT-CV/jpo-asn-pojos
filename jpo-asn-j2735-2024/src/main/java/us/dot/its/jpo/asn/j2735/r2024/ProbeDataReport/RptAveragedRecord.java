@@ -40,65 +40,71 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptAveragedRecord extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "avgSpeed", optional = true)
-	@JsonProperty("avgSpeed")
-	private Speed avgSpeed;
-	@Asn1Property(tag = 1, name = "speedStdDev", optional = true)
-	@JsonProperty("speedStdDev")
-	private StdDev speedStdDev;
-	@Asn1Property(tag = 2, name = "avgStopDuration", optional = true)
-	@JsonProperty("avgStopDuration")
-	private AvgStopDurationInteger avgStopDuration;
-	@Asn1Property(tag = 3, name = "avgStopStdDev", optional = true)
-	@JsonProperty("avgStopStdDev")
-	private StdDev avgStopStdDev;
-	@Asn1Property(tag = 4, name = "avgFuelConsumption", optional = true)
-	@JsonProperty("avgFuelConsumption")
-	private AvgFuelConsumptionInteger avgFuelConsumption;
-	@Asn1Property(tag = 5, name = "avgEmissions", optional = true)
-	@JsonProperty("avgEmissions")
-	private RptEmissions avgEmissions;
-	@Asn1Property(tag = 6, name = "avgNumOfOccupants", optional = true)
-	@JsonProperty("avgNumOfOccupants")
-	private AvgNumOfOccupantsInteger avgNumOfOccupants;
+  @Asn1Property(tag = 0, name = "avgSpeed", optional = true)
+  @JsonProperty("avgSpeed")
+  private Speed avgSpeed;
 
-	public static class AvgStopDurationInteger extends Asn1Integer {
-		public AvgStopDurationInteger() {
-			super(1L, 36000L);
-		}
+  @Asn1Property(tag = 1, name = "speedStdDev", optional = true)
+  @JsonProperty("speedStdDev")
+  private StdDev speedStdDev;
 
-		@JsonCreator
-		public AvgStopDurationInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "avgStopDuration", optional = true)
+  @JsonProperty("avgStopDuration")
+  private AvgStopDurationInteger avgStopDuration;
 
-	public static class AvgFuelConsumptionInteger extends Asn1Integer {
-		public AvgFuelConsumptionInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 3, name = "avgStopStdDev", optional = true)
+  @JsonProperty("avgStopStdDev")
+  private StdDev avgStopStdDev;
 
-		@JsonCreator
-		public AvgFuelConsumptionInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "avgFuelConsumption", optional = true)
+  @JsonProperty("avgFuelConsumption")
+  private AvgFuelConsumptionInteger avgFuelConsumption;
 
-	public static class AvgNumOfOccupantsInteger extends Asn1Integer {
-		public AvgNumOfOccupantsInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 5, name = "avgEmissions", optional = true)
+  @JsonProperty("avgEmissions")
+  private RptEmissions avgEmissions;
 
-		@JsonCreator
-		public AvgNumOfOccupantsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 6, name = "avgNumOfOccupants", optional = true)
+  @JsonProperty("avgNumOfOccupants")
+  private AvgNumOfOccupantsInteger avgNumOfOccupants;
 
-	public RptAveragedRecord() {
-		super(true);
-	}
+  public static class AvgStopDurationInteger extends Asn1Integer {
+    public AvgStopDurationInteger() {
+      super(1L, 36000L);
+    }
+
+    @JsonCreator
+    public AvgStopDurationInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class AvgFuelConsumptionInteger extends Asn1Integer {
+    public AvgFuelConsumptionInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public AvgFuelConsumptionInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class AvgNumOfOccupantsInteger extends Asn1Integer {
+    public AvgNumOfOccupantsInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public AvgNumOfOccupantsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public RptAveragedRecord() {
+    super(true);
+  }
 }

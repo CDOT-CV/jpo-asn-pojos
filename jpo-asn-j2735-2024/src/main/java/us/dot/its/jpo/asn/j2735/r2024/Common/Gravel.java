@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Gravel extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private GravelType type;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private GravelType type;
 
-	public Gravel() {
-		super(true);
-	}
+  public Gravel() {
+    super(true);
+  }
 }

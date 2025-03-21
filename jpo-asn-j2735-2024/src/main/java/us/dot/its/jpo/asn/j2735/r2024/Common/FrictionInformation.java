@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class FrictionInformation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "roadSurfaceDescription")
-	@JsonProperty("roadSurfaceDescription")
-	private DescriptionOfRoadSurface roadSurfaceDescription;
-	@Asn1Property(tag = 1, name = "dryOrWet", optional = true)
-	@JsonProperty("dryOrWet")
-	private RoadSurfaceCondition dryOrWet;
-	@Asn1Property(tag = 2, name = "roadRoughness", optional = true)
-	@JsonProperty("roadRoughness")
-	private RoadRoughness roadRoughness;
+  @Asn1Property(tag = 0, name = "roadSurfaceDescription")
+  @JsonProperty("roadSurfaceDescription")
+  private DescriptionOfRoadSurface roadSurfaceDescription;
 
-	public FrictionInformation() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "dryOrWet", optional = true)
+  @JsonProperty("dryOrWet")
+  private RoadSurfaceCondition dryOrWet;
+
+  @Asn1Property(tag = 2, name = "roadRoughness", optional = true)
+  @JsonProperty("roadRoughness")
+  private RoadRoughness roadRoughness;
+
+  public FrictionInformation() {
+    super(true);
+  }
 }

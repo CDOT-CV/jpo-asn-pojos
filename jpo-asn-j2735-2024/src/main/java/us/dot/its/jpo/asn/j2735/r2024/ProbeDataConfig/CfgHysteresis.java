@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgHysteresis extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "hysSamples")
-	@JsonProperty("hysSamples")
-	private HysSamplesInteger hysSamples;
-	@Asn1Property(tag = 1, name = "hysRate")
-	@JsonProperty("hysRate")
-	private HysRateInteger hysRate;
+  @Asn1Property(tag = 0, name = "hysSamples")
+  @JsonProperty("hysSamples")
+  private HysSamplesInteger hysSamples;
 
-	public static class HysSamplesInteger extends Asn1Integer {
-		public HysSamplesInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "hysRate")
+  @JsonProperty("hysRate")
+  private HysRateInteger hysRate;
 
-		@JsonCreator
-		public HysSamplesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class HysSamplesInteger extends Asn1Integer {
+    public HysSamplesInteger() {
+      super(1L, 10L);
+    }
 
-	public static class HysRateInteger extends Asn1Integer {
-		public HysRateInteger() {
-			super(1L, 10L);
-		}
+    @JsonCreator
+    public HysSamplesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public HysRateInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class HysRateInteger extends Asn1Integer {
+    public HysRateInteger() {
+      super(1L, 10L);
+    }
 
-	public CfgHysteresis() {
-		super(true);
-	}
+    @JsonCreator
+    public HysRateInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgHysteresis() {
+    super(true);
+  }
 }

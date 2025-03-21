@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Second.SecondDeserializer.class)
 public class Second extends Asn1Integer {
 
-	public Second() {
-		super(0L, 60L);
-	}
+  public Second() {
+    super(0L, 60L);
+  }
 
-	@JsonCreator
-	public Second(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Second(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SecondDeserializer extends IntegerDeserializer<Second> {
-		public SecondDeserializer() {
-			super(Second.class);
-		}
+  public static class SecondDeserializer extends IntegerDeserializer<Second> {
+    public SecondDeserializer() {
+      super(Second.class);
+    }
 
-		@Override
-		protected Second construct() {
-			return new Second();
-		}
-	}
+    @Override
+    protected Second construct() {
+      return new Second();
+    }
+  }
 }

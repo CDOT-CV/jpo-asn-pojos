@@ -30,7 +30,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class RptVehicleReport extends Asn1SequenceOf<NtcipEssData> {
 
-	public RptVehicleReport() {
-		super(NtcipEssData.class, 1L, 32L);
-	}
+  public RptVehicleReport() {
+    super(NtcipEssData.class, 1L, 32L);
+  }
 }

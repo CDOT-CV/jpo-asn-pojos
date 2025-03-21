@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SoundLevel extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "soundStationary")
-	@JsonProperty("soundStationary")
-	private Int1Unsigned soundStationary;
-	@Asn1Property(tag = 1, name = "soundDriveBy")
-	@JsonProperty("soundDriveBy")
-	private Int1Unsigned soundDriveBy;
+  @Asn1Property(tag = 0, name = "soundStationary")
+  @JsonProperty("soundStationary")
+  private Int1Unsigned soundStationary;
 
-	public SoundLevel() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "soundDriveBy")
+  @JsonProperty("soundDriveBy")
+  private Int1Unsigned soundDriveBy;
+
+  public SoundLevel() {
+    super(false);
+  }
 }

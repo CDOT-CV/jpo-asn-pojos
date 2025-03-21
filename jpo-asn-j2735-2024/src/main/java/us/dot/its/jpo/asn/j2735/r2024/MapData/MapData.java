@@ -43,50 +43,58 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class MapData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "msgIssueRevision")
-	@JsonProperty("msgIssueRevision")
-	private MsgCount msgIssueRevision;
-	@Asn1Property(tag = 2, name = "layerType", optional = true)
-	@JsonProperty("layerType")
-	private LayerType layerType;
-	@Asn1Property(tag = 3, name = "layerID", optional = true)
-	@JsonProperty("layerID")
-	private LayerID layerID;
-	@Asn1Property(tag = 4, name = "intersections", optional = true)
-	@JsonProperty("intersections")
-	@JacksonXmlElementWrapper(localName = "intersections")
-	@JacksonXmlProperty(localName = "IntersectionGeometry")
-	private IntersectionGeometryList intersections;
-	@Asn1Property(tag = 5, name = "roadSegments", optional = true)
-	@JsonProperty("roadSegments")
-	@JacksonXmlElementWrapper(localName = "roadSegments")
-	@JacksonXmlProperty(localName = "RoadSegment")
-	private RoadSegmentList roadSegments;
-	@Asn1Property(tag = 6, name = "dataParameters", optional = true)
-	@JsonProperty("dataParameters")
-	private DataParameters dataParameters;
-	@Asn1Property(tag = 7, name = "restrictionList", optional = true)
-	@JsonProperty("restrictionList")
-	@JacksonXmlElementWrapper(localName = "restrictionList")
-	@JacksonXmlProperty(localName = "RestrictionClassAssignment")
-	private RestrictionClassList restrictionList;
-	@Asn1Property(tag = 8, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-MapData")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_MapData> {
-		public SequenceOfRegional() {
-			super(Reg_MapData.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "msgIssueRevision")
+  @JsonProperty("msgIssueRevision")
+  private MsgCount msgIssueRevision;
 
-	public MapData() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "layerType", optional = true)
+  @JsonProperty("layerType")
+  private LayerType layerType;
+
+  @Asn1Property(tag = 3, name = "layerID", optional = true)
+  @JsonProperty("layerID")
+  private LayerID layerID;
+
+  @Asn1Property(tag = 4, name = "intersections", optional = true)
+  @JsonProperty("intersections")
+  @JacksonXmlElementWrapper(localName = "intersections")
+  @JacksonXmlProperty(localName = "IntersectionGeometry")
+  private IntersectionGeometryList intersections;
+
+  @Asn1Property(tag = 5, name = "roadSegments", optional = true)
+  @JsonProperty("roadSegments")
+  @JacksonXmlElementWrapper(localName = "roadSegments")
+  @JacksonXmlProperty(localName = "RoadSegment")
+  private RoadSegmentList roadSegments;
+
+  @Asn1Property(tag = 6, name = "dataParameters", optional = true)
+  @JsonProperty("dataParameters")
+  private DataParameters dataParameters;
+
+  @Asn1Property(tag = 7, name = "restrictionList", optional = true)
+  @JsonProperty("restrictionList")
+  @JacksonXmlElementWrapper(localName = "restrictionList")
+  @JacksonXmlProperty(localName = "RestrictionClassAssignment")
+  private RestrictionClassList restrictionList;
+
+  @Asn1Property(tag = 8, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-MapData")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_MapData> {
+    public SequenceOfRegional() {
+      super(Reg_MapData.class, 1L, 4L);
+    }
+  }
+
+  public MapData() {
+    super(true);
+  }
 }

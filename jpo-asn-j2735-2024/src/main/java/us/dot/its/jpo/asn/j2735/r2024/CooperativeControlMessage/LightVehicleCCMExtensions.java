@@ -39,26 +39,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LightVehicleCCMExtensions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "longCntrlState")
-	@JsonProperty("longCntrlState")
-	private LongitudinalControlState longCntrlState;
-	@Asn1Property(tag = 1, name = "targetId", optional = true)
-	@JsonProperty("targetId")
-	private TemporaryID targetId;
-	@Asn1Property(tag = 2, name = "accelForecast", optional = true)
-	@JsonProperty("accelForecast")
-	private Acceleration accelForecast;
-	@Asn1Property(tag = 3, name = "accelTimeConst", optional = true)
-	@JsonProperty("accelTimeConst")
-	private AccelTimeConstant accelTimeConst;
-	@Asn1Property(tag = 4, name = "seperationDist", optional = true)
-	@JsonProperty("seperationDist")
-	private SeparationDistance seperationDist;
-	@Asn1Property(tag = 5, name = "frontCutIn", optional = true)
-	@JsonProperty("frontCutIn")
-	private FrontCutIn frontCutIn;
+  @Asn1Property(tag = 0, name = "longCntrlState")
+  @JsonProperty("longCntrlState")
+  private LongitudinalControlState longCntrlState;
 
-	public LightVehicleCCMExtensions() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "targetId", optional = true)
+  @JsonProperty("targetId")
+  private TemporaryID targetId;
+
+  @Asn1Property(tag = 2, name = "accelForecast", optional = true)
+  @JsonProperty("accelForecast")
+  private Acceleration accelForecast;
+
+  @Asn1Property(tag = 3, name = "accelTimeConst", optional = true)
+  @JsonProperty("accelTimeConst")
+  private AccelTimeConstant accelTimeConst;
+
+  @Asn1Property(tag = 4, name = "seperationDist", optional = true)
+  @JsonProperty("seperationDist")
+  private SeparationDistance seperationDist;
+
+  @Asn1Property(tag = 5, name = "frontCutIn", optional = true)
+  @JsonProperty("frontCutIn")
+  private FrontCutIn frontCutIn;
+
+  public LightVehicleCCMExtensions() {
+    super(true);
+  }
 }

@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DriverCharacteristics extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "driverClass")
-	@JsonProperty("driverClass")
-	private Int1Unsigned driverClass;
-	@Asn1Property(tag = 1, name = "tripPurpose")
-	@JsonProperty("tripPurpose")
-	private Int1Unsigned tripPurpose;
+  @Asn1Property(tag = 0, name = "driverClass")
+  @JsonProperty("driverClass")
+  private Int1Unsigned driverClass;
 
-	public DriverCharacteristics() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "tripPurpose")
+  @JsonProperty("tripPurpose")
+  private Int1Unsigned tripPurpose;
+
+  public DriverCharacteristics() {
+    super(false);
+  }
 }

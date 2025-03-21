@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptTrafficSigEncounters extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "intersectionID", optional = true)
-	@JsonProperty("intersectionID")
-	private IntersectionID intersectionID;
-	@Asn1Property(tag = 1, name = "trafficMetrics")
-	@JsonProperty("trafficMetrics")
-	private RptTrafficMetrics trafficMetrics;
+  @Asn1Property(tag = 0, name = "intersectionID", optional = true)
+  @JsonProperty("intersectionID")
+  private IntersectionID intersectionID;
 
-	public RptTrafficSigEncounters() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "trafficMetrics")
+  @JsonProperty("trafficMetrics")
+  private RptTrafficMetrics trafficMetrics;
+
+  public RptTrafficSigEncounters() {
+    super(true);
+  }
 }

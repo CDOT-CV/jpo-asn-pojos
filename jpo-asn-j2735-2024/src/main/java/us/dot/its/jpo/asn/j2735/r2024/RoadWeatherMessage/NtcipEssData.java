@@ -37,41 +37,51 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NtcipEssData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "airTemp", optional = true)
-	@JsonProperty("airTemp")
-	private NtcipAirTemperature airTemp;
-	@Asn1Property(tag = 1, name = "atmosphere", optional = true)
-	@JsonProperty("atmosphere")
-	private NtcipAtmosphericPressure atmosphere;
-	@Asn1Property(tag = 2, name = "wind", optional = true)
-	@JsonProperty("wind")
-	private NtcipWind wind;
-	@Asn1Property(tag = 3, name = "humidity", optional = true)
-	@JsonProperty("humidity")
-	private NtcipRelativeHumidity humidity;
-	@Asn1Property(tag = 4, name = "dewpoint", optional = true)
-	@JsonProperty("dewpoint")
-	private NtcipDewPoint dewpoint;
-	@Asn1Property(tag = 5, name = "pavement", optional = true)
-	@JsonProperty("pavement")
-	private NtcipPavement pavement;
-	@Asn1Property(tag = 6, name = "visibility", optional = true)
-	@JsonProperty("visibility")
-	private NtcipVisibility visibility;
-	@Asn1Property(tag = 7, name = "visSituation", optional = true)
-	@JsonProperty("visSituation")
-	private NtcipVisibilitySituation visSituation;
-	@Asn1Property(tag = 8, name = "cloudSitiation", optional = true)
-	@JsonProperty("cloudSitiation")
-	private NtcipCloudSituation cloudSitiation;
-	@Asn1Property(tag = 9, name = "precipitation", optional = true)
-	@JsonProperty("precipitation")
-	private NtcipPrecipitation precipitation;
-	@Asn1Property(tag = 10, name = "solarRadiation", optional = true)
-	@JsonProperty("solarRadiation")
-	private NtcipSolarRadiation solarRadiation;
+  @Asn1Property(tag = 0, name = "airTemp", optional = true)
+  @JsonProperty("airTemp")
+  private NtcipAirTemperature airTemp;
 
-	public NtcipEssData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "atmosphere", optional = true)
+  @JsonProperty("atmosphere")
+  private NtcipAtmosphericPressure atmosphere;
+
+  @Asn1Property(tag = 2, name = "wind", optional = true)
+  @JsonProperty("wind")
+  private NtcipWind wind;
+
+  @Asn1Property(tag = 3, name = "humidity", optional = true)
+  @JsonProperty("humidity")
+  private NtcipRelativeHumidity humidity;
+
+  @Asn1Property(tag = 4, name = "dewpoint", optional = true)
+  @JsonProperty("dewpoint")
+  private NtcipDewPoint dewpoint;
+
+  @Asn1Property(tag = 5, name = "pavement", optional = true)
+  @JsonProperty("pavement")
+  private NtcipPavement pavement;
+
+  @Asn1Property(tag = 6, name = "visibility", optional = true)
+  @JsonProperty("visibility")
+  private NtcipVisibility visibility;
+
+  @Asn1Property(tag = 7, name = "visSituation", optional = true)
+  @JsonProperty("visSituation")
+  private NtcipVisibilitySituation visSituation;
+
+  @Asn1Property(tag = 8, name = "cloudSitiation", optional = true)
+  @JsonProperty("cloudSitiation")
+  private NtcipCloudSituation cloudSitiation;
+
+  @Asn1Property(tag = 9, name = "precipitation", optional = true)
+  @JsonProperty("precipitation")
+  private NtcipPrecipitation precipitation;
+
+  @Asn1Property(tag = 10, name = "solarRadiation", optional = true)
+  @JsonProperty("solarRadiation")
+  private NtcipSolarRadiation solarRadiation;
+
+  public NtcipEssData() {
+    super(true);
+  }
 }

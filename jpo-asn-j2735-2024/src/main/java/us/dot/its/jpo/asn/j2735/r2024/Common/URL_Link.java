@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class URL_Link extends IA5String {
 
-	public URL_Link() {
-		super(1, 255);
-	}
+  public URL_Link() {
+    super(1, 255);
+  }
 
-	@JsonCreator
-	public URL_Link(String value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public URL_Link(String value) {
+    this();
+    this.value = value;
+  }
 }

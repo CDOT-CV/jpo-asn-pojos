@@ -33,31 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = NMEA_Revision.NMEA_RevisionSerializer.class)
 @JsonDeserialize(using = NMEA_Revision.NMEA_RevisionDeserializer.class)
 public enum NMEA_Revision implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), RESERVED(1, "reserved"), REV1(2, "rev1"), REV2(3, "rev2"), REV3(4, "rev3"), REV4(5,
-			"rev4"), REV5(6, "rev5");
+  UNKNOWN(0, "unknown"),
+  RESERVED(1, "reserved"),
+  REV1(2, "rev1"),
+  REV2(3, "rev2"),
+  REV3(4, "rev3"),
+  REV4(5, "rev4"),
+  REV5(6, "rev5");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NMEA_Revision(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NMEA_Revision(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NMEA_RevisionSerializer extends EnumeratedSerializer<NMEA_Revision> {
-		public NMEA_RevisionSerializer() {
-			super(NMEA_Revision.class);
-		}
-	}
+  public static class NMEA_RevisionSerializer extends EnumeratedSerializer<NMEA_Revision> {
+    public NMEA_RevisionSerializer() {
+      super(NMEA_Revision.class);
+    }
+  }
 
-	public static class NMEA_RevisionDeserializer extends EnumeratedDeserializer<NMEA_Revision> {
-		public NMEA_RevisionDeserializer() {
-			super(NMEA_Revision.class);
-		}
+  public static class NMEA_RevisionDeserializer extends EnumeratedDeserializer<NMEA_Revision> {
+    public NMEA_RevisionDeserializer() {
+      super(NMEA_Revision.class);
+    }
 
-		@Override
-		protected NMEA_Revision[] listEnumValues() {
-			return NMEA_Revision.values();
-		}
-	}
+    @Override
+    protected NMEA_Revision[] listEnumValues() {
+      return NMEA_Revision.values();
+    }
+  }
 }

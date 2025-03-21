@@ -35,14 +35,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ChargingAreaOrSegment extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "area")
-	@JsonProperty("area")
-	private Area area;
-	@Asn1Property(tag = 1, name = "segment")
-	@JsonProperty("segment")
-	private Segment segment;
+  @Asn1Property(tag = 0, name = "area")
+  @JsonProperty("area")
+  private Area area;
 
-	public ChargingAreaOrSegment() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "segment")
+  @JsonProperty("segment")
+  private Segment segment;
+
+  public ChargingAreaOrSegment() {
+    super(true);
+  }
 }

@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.Common;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class VehicleSafetyExtensionsCCMpartIIExtensionValueSerializer
-		extends
-			OpenTypeSerializer<VehicleSafetyExtensions> {
+    extends OpenTypeSerializer<VehicleSafetyExtensions> {
 
-	public VehicleSafetyExtensionsCCMpartIIExtensionValueSerializer() {
-		super(VehicleSafetyExtensions.class, "partII-Value", "VehicleSafetyExtensions");
-	}
+  public VehicleSafetyExtensionsCCMpartIIExtensionValueSerializer() {
+    super(VehicleSafetyExtensions.class, "partII-Value", "VehicleSafetyExtensions");
+  }
 }

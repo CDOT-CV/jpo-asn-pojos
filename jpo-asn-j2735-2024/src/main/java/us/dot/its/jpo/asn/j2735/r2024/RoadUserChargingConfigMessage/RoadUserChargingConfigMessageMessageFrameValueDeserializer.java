@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingConfigMessage;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class RoadUserChargingConfigMessageMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<RoadUserChargingConfigMessage> {
+    extends OpenTypeDeserializer<RoadUserChargingConfigMessage> {
 
-	public RoadUserChargingConfigMessageMessageFrameValueDeserializer() {
-		super(RoadUserChargingConfigMessage.class, "RoadUserChargingConfigMessage");
-	}
+  public RoadUserChargingConfigMessageMessageFrameValueDeserializer() {
+    super(RoadUserChargingConfigMessage.class, "RoadUserChargingConfigMessage");
+  }
 }

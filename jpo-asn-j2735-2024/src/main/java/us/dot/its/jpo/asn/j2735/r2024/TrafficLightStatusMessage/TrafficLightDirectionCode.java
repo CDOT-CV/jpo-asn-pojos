@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TrafficLightDirectionCode.TrafficLightDirectionCodeDeserializer.class)
 public class TrafficLightDirectionCode extends Asn1Integer {
 
-	public TrafficLightDirectionCode() {
-		super(0L, 359L);
-	}
+  public TrafficLightDirectionCode() {
+    super(0L, 359L);
+  }
 
-	@JsonCreator
-	public TrafficLightDirectionCode(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TrafficLightDirectionCode(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TrafficLightDirectionCodeDeserializer extends IntegerDeserializer<TrafficLightDirectionCode> {
-		public TrafficLightDirectionCodeDeserializer() {
-			super(TrafficLightDirectionCode.class);
-		}
+  public static class TrafficLightDirectionCodeDeserializer
+      extends IntegerDeserializer<TrafficLightDirectionCode> {
+    public TrafficLightDirectionCodeDeserializer() {
+      super(TrafficLightDirectionCode.class);
+    }
 
-		@Override
-		protected TrafficLightDirectionCode construct() {
-			return new TrafficLightDirectionCode();
-		}
-	}
+    @Override
+    protected TrafficLightDirectionCode construct() {
+      return new TrafficLightDirectionCode();
+    }
+  }
 }

@@ -42,29 +42,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ConfidenceSet extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "accelConfidence", optional = true)
-	@JsonProperty("accelConfidence")
-	private AccelSteerYawRateConfidence accelConfidence;
-	@Asn1Property(tag = 1, name = "speedConfidence", optional = true)
-	@JsonProperty("speedConfidence")
-	private SpeedandHeadingandThrottleConfidence speedConfidence;
-	@Asn1Property(tag = 2, name = "timeConfidence", optional = true)
-	@JsonProperty("timeConfidence")
-	private TimeConfidence timeConfidence;
-	@Asn1Property(tag = 3, name = "posConfidence", optional = true)
-	@JsonProperty("posConfidence")
-	private PositionConfidenceSet posConfidence;
-	@Asn1Property(tag = 4, name = "steerConfidence", optional = true)
-	@JsonProperty("steerConfidence")
-	private SteeringWheelAngleConfidence steerConfidence;
-	@Asn1Property(tag = 5, name = "headingConfidence", optional = true)
-	@JsonProperty("headingConfidence")
-	private HeadingConfidence headingConfidence;
-	@Asn1Property(tag = 6, name = "throttleConfidence", optional = true)
-	@JsonProperty("throttleConfidence")
-	private ThrottleConfidence throttleConfidence;
+  @Asn1Property(tag = 0, name = "accelConfidence", optional = true)
+  @JsonProperty("accelConfidence")
+  private AccelSteerYawRateConfidence accelConfidence;
 
-	public ConfidenceSet() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "speedConfidence", optional = true)
+  @JsonProperty("speedConfidence")
+  private SpeedandHeadingandThrottleConfidence speedConfidence;
+
+  @Asn1Property(tag = 2, name = "timeConfidence", optional = true)
+  @JsonProperty("timeConfidence")
+  private TimeConfidence timeConfidence;
+
+  @Asn1Property(tag = 3, name = "posConfidence", optional = true)
+  @JsonProperty("posConfidence")
+  private PositionConfidenceSet posConfidence;
+
+  @Asn1Property(tag = 4, name = "steerConfidence", optional = true)
+  @JsonProperty("steerConfidence")
+  private SteeringWheelAngleConfidence steerConfidence;
+
+  @Asn1Property(tag = 5, name = "headingConfidence", optional = true)
+  @JsonProperty("headingConfidence")
+  private HeadingConfidence headingConfidence;
+
+  @Asn1Property(tag = 6, name = "throttleConfidence", optional = true)
+  @JsonProperty("throttleConfidence")
+  private ThrottleConfidence throttleConfidence;
+
+  public ConfidenceSet() {
+    super(true);
+  }
 }

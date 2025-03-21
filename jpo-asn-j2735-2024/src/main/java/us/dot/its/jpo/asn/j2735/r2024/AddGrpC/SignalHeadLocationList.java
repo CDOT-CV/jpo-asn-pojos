@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class SignalHeadLocationList extends Asn1SequenceOf<SignalHeadLocation> {
 
-	public SignalHeadLocationList() {
-		super(SignalHeadLocation.class, 1L, 20L);
-	}
+  public SignalHeadLocationList() {
+    super(SignalHeadLocation.class, 1L, 20L);
+  }
 }

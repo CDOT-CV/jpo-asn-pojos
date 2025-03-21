@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RTCM_Revision.RTCM_RevisionSerializer.class)
 @JsonDeserialize(using = RTCM_Revision.RTCM_RevisionDeserializer.class)
 public enum RTCM_Revision implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), RTCMREV2(1, "rtcmRev2"), RTCMREV3(2, "rtcmRev3"), RESERVED(3, "reserved");
+  UNKNOWN(0, "unknown"),
+  RTCMREV2(1, "rtcmRev2"),
+  RTCMREV3(2, "rtcmRev3"),
+  RESERVED(3, "reserved");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RTCM_Revision(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RTCM_Revision(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RTCM_RevisionSerializer extends EnumeratedSerializer<RTCM_Revision> {
-		public RTCM_RevisionSerializer() {
-			super(RTCM_Revision.class);
-		}
-	}
+  public static class RTCM_RevisionSerializer extends EnumeratedSerializer<RTCM_Revision> {
+    public RTCM_RevisionSerializer() {
+      super(RTCM_Revision.class);
+    }
+  }
 
-	public static class RTCM_RevisionDeserializer extends EnumeratedDeserializer<RTCM_Revision> {
-		public RTCM_RevisionDeserializer() {
-			super(RTCM_Revision.class);
-		}
+  public static class RTCM_RevisionDeserializer extends EnumeratedDeserializer<RTCM_Revision> {
+    public RTCM_RevisionDeserializer() {
+      super(RTCM_Revision.class);
+    }
 
-		@Override
-		protected RTCM_Revision[] listEnumValues() {
-			return RTCM_Revision.values();
-		}
-	}
+    @Override
+    protected RTCM_Revision[] listEnumValues() {
+      return RTCM_Revision.values();
+    }
+  }
 }

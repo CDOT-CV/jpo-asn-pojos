@@ -37,26 +37,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class EmergencyDetails extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "doNotUse")
-	@JsonProperty("doNotUse")
-	private SSPindex doNotUse;
-	@Asn1Property(tag = 1, name = "sirenUse")
-	@JsonProperty("sirenUse")
-	private SirenInUse sirenUse;
-	@Asn1Property(tag = 2, name = "lightsUse")
-	@JsonProperty("lightsUse")
-	private LightbarInUse lightsUse;
-	@Asn1Property(tag = 3, name = "multi")
-	@JsonProperty("multi")
-	private MultiVehicleResponse multi;
-	@Asn1Property(tag = 4, name = "events", optional = true)
-	@JsonProperty("events")
-	private PrivilegedEvents events;
-	@Asn1Property(tag = 5, name = "responseType", optional = true)
-	@JsonProperty("responseType")
-	private ResponseType responseType;
+  @Asn1Property(tag = 0, name = "doNotUse")
+  @JsonProperty("doNotUse")
+  private SSPindex doNotUse;
 
-	public EmergencyDetails() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "sirenUse")
+  @JsonProperty("sirenUse")
+  private SirenInUse sirenUse;
+
+  @Asn1Property(tag = 2, name = "lightsUse")
+  @JsonProperty("lightsUse")
+  private LightbarInUse lightsUse;
+
+  @Asn1Property(tag = 3, name = "multi")
+  @JsonProperty("multi")
+  private MultiVehicleResponse multi;
+
+  @Asn1Property(tag = 4, name = "events", optional = true)
+  @JsonProperty("events")
+  private PrivilegedEvents events;
+
+  @Asn1Property(tag = 5, name = "responseType", optional = true)
+  @JsonProperty("responseType")
+  private ResponseType responseType;
+
+  public EmergencyDetails() {
+    super(true);
+  }
 }

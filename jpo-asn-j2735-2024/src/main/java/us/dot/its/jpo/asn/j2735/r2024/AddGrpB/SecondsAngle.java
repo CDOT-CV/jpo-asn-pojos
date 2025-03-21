@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SecondsAngle.SecondsAngleDeserializer.class)
 public class SecondsAngle extends Asn1Integer {
 
-	public SecondsAngle() {
-		super(0L, 5999L);
-	}
+  public SecondsAngle() {
+    super(0L, 5999L);
+  }
 
-	@JsonCreator
-	public SecondsAngle(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SecondsAngle(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SecondsAngleDeserializer extends IntegerDeserializer<SecondsAngle> {
-		public SecondsAngleDeserializer() {
-			super(SecondsAngle.class);
-		}
+  public static class SecondsAngleDeserializer extends IntegerDeserializer<SecondsAngle> {
+    public SecondsAngleDeserializer() {
+      super(SecondsAngle.class);
+    }
 
-		@Override
-		protected SecondsAngle construct() {
-			return new SecondsAngle();
-		}
-	}
+    @Override
+    protected SecondsAngle construct() {
+      return new SecondsAngle();
+    }
+  }
 }

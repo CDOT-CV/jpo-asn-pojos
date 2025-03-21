@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RptWiperStatus.RptWiperStatusSerializer.class)
 @JsonDeserialize(using = RptWiperStatus.RptWiperStatusDeserializer.class)
 public enum RptWiperStatus implements Asn1Enumerated {
-	OFF(0, "off"), LOW(1, "low"), MEDIUM(2, "medium"), HIGH(3, "high");
+  OFF(0, "off"),
+  LOW(1, "low"),
+  MEDIUM(2, "medium"),
+  HIGH(3, "high");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RptWiperStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RptWiperStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RptWiperStatusSerializer extends EnumeratedSerializer<RptWiperStatus> {
-		public RptWiperStatusSerializer() {
-			super(RptWiperStatus.class);
-		}
-	}
+  public static class RptWiperStatusSerializer extends EnumeratedSerializer<RptWiperStatus> {
+    public RptWiperStatusSerializer() {
+      super(RptWiperStatus.class);
+    }
+  }
 
-	public static class RptWiperStatusDeserializer extends EnumeratedDeserializer<RptWiperStatus> {
-		public RptWiperStatusDeserializer() {
-			super(RptWiperStatus.class);
-		}
+  public static class RptWiperStatusDeserializer extends EnumeratedDeserializer<RptWiperStatus> {
+    public RptWiperStatusDeserializer() {
+      super(RptWiperStatus.class);
+    }
 
-		@Override
-		protected RptWiperStatus[] listEnumValues() {
-			return RptWiperStatus.values();
-		}
-	}
+    @Override
+    protected RptWiperStatus[] listEnumValues() {
+      return RptWiperStatus.values();
+    }
+  }
 }

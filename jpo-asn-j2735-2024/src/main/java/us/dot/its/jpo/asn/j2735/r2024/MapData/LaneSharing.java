@@ -26,105 +26,116 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = LaneSharing.LaneSharingDeserializer.class)
+@JsonDeserialize(
+    using = LaneSharing.LaneSharingDeserializer.class)
 public class LaneSharing extends Asn1Bitstring {
 
-	public boolean isOverlappingLaneDescriptionProvided() {
-		return get(0);
-	}
+  public boolean isOverlappingLaneDescriptionProvided() {
+    return get(0);
+  }
 
-	public void setOverlappingLaneDescriptionProvided(boolean overlappingLaneDescriptionProvided) {
-		set(0, overlappingLaneDescriptionProvided);
-	}
+  public void setOverlappingLaneDescriptionProvided(boolean overlappingLaneDescriptionProvided) {
+    set(0, overlappingLaneDescriptionProvided);
+  }
 
-	public boolean isMultipleLanesTreatedAsOneLane() {
-		return get(1);
-	}
+  public boolean isMultipleLanesTreatedAsOneLane() {
+    return get(1);
+  }
 
-	public void setMultipleLanesTreatedAsOneLane(boolean multipleLanesTreatedAsOneLane) {
-		set(1, multipleLanesTreatedAsOneLane);
-	}
+  public void setMultipleLanesTreatedAsOneLane(boolean multipleLanesTreatedAsOneLane) {
+    set(1, multipleLanesTreatedAsOneLane);
+  }
 
-	public boolean isOtherNonMotorizedTrafficTypes() {
-		return get(2);
-	}
+  public boolean isOtherNonMotorizedTrafficTypes() {
+    return get(2);
+  }
 
-	public void setOtherNonMotorizedTrafficTypes(boolean otherNonMotorizedTrafficTypes) {
-		set(2, otherNonMotorizedTrafficTypes);
-	}
+  public void setOtherNonMotorizedTrafficTypes(boolean otherNonMotorizedTrafficTypes) {
+    set(2, otherNonMotorizedTrafficTypes);
+  }
 
-	public boolean isIndividualMotorizedVehicleTraffic() {
-		return get(3);
-	}
+  public boolean isIndividualMotorizedVehicleTraffic() {
+    return get(3);
+  }
 
-	public void setIndividualMotorizedVehicleTraffic(boolean individualMotorizedVehicleTraffic) {
-		set(3, individualMotorizedVehicleTraffic);
-	}
+  public void setIndividualMotorizedVehicleTraffic(boolean individualMotorizedVehicleTraffic) {
+    set(3, individualMotorizedVehicleTraffic);
+  }
 
-	public boolean isBusVehicleTraffic() {
-		return get(4);
-	}
+  public boolean isBusVehicleTraffic() {
+    return get(4);
+  }
 
-	public void setBusVehicleTraffic(boolean busVehicleTraffic) {
-		set(4, busVehicleTraffic);
-	}
+  public void setBusVehicleTraffic(boolean busVehicleTraffic) {
+    set(4, busVehicleTraffic);
+  }
 
-	public boolean isTaxiVehicleTraffic() {
-		return get(5);
-	}
+  public boolean isTaxiVehicleTraffic() {
+    return get(5);
+  }
 
-	public void setTaxiVehicleTraffic(boolean taxiVehicleTraffic) {
-		set(5, taxiVehicleTraffic);
-	}
+  public void setTaxiVehicleTraffic(boolean taxiVehicleTraffic) {
+    set(5, taxiVehicleTraffic);
+  }
 
-	public boolean isPedestriansTraffic() {
-		return get(6);
-	}
+  public boolean isPedestriansTraffic() {
+    return get(6);
+  }
 
-	public void setPedestriansTraffic(boolean pedestriansTraffic) {
-		set(6, pedestriansTraffic);
-	}
+  public void setPedestriansTraffic(boolean pedestriansTraffic) {
+    set(6, pedestriansTraffic);
+  }
 
-	public boolean isCyclistVehicleTraffic() {
-		return get(7);
-	}
+  public boolean isCyclistVehicleTraffic() {
+    return get(7);
+  }
 
-	public void setCyclistVehicleTraffic(boolean cyclistVehicleTraffic) {
-		set(7, cyclistVehicleTraffic);
-	}
+  public void setCyclistVehicleTraffic(boolean cyclistVehicleTraffic) {
+    set(7, cyclistVehicleTraffic);
+  }
 
-	public boolean isTrackedVehicleTraffic() {
-		return get(8);
-	}
+  public boolean isTrackedVehicleTraffic() {
+    return get(8);
+  }
 
-	public void setTrackedVehicleTraffic(boolean trackedVehicleTraffic) {
-		set(8, trackedVehicleTraffic);
-	}
+  public void setTrackedVehicleTraffic(boolean trackedVehicleTraffic) {
+    set(8, trackedVehicleTraffic);
+  }
 
-	public boolean isReserved() {
-		return get(9);
-	}
+  public boolean isReserved() {
+    return get(9);
+  }
 
-	public void setReserved(boolean reserved) {
-		set(9, reserved);
-	}
+  public void setReserved(boolean reserved) {
+    set(9, reserved);
+  }
 
-	public LaneSharing() {
-		super(10, false,
-				new String[]{"overlappingLaneDescriptionProvided", "multipleLanesTreatedAsOneLane",
-						"otherNonMotorizedTrafficTypes", "individualMotorizedVehicleTraffic", "busVehicleTraffic",
-						"taxiVehicleTraffic", "pedestriansTraffic", "cyclistVehicleTraffic", "trackedVehicleTraffic",
-						"reserved"});
-	}
+  public LaneSharing() {
+    super(
+        10,
+        false,
+        new String[] {
+          "overlappingLaneDescriptionProvided",
+          "multipleLanesTreatedAsOneLane",
+          "otherNonMotorizedTrafficTypes",
+          "individualMotorizedVehicleTraffic",
+          "busVehicleTraffic",
+          "taxiVehicleTraffic",
+          "pedestriansTraffic",
+          "cyclistVehicleTraffic",
+          "trackedVehicleTraffic",
+          "reserved"
+        });
+  }
 
-	public static class LaneSharingDeserializer extends BitStringDeserializer<LaneSharing> {
-		public LaneSharingDeserializer() {
-			super(LaneSharing.class);
-		}
+  public static class LaneSharingDeserializer extends BitStringDeserializer<LaneSharing> {
+    public LaneSharingDeserializer() {
+      super(LaneSharing.class);
+    }
 
-		@Override
-		protected LaneSharing construct() {
-			return new LaneSharing();
-		}
-	}
+    @Override
+    protected LaneSharing construct() {
+      return new LaneSharing();
+    }
+  }
 }

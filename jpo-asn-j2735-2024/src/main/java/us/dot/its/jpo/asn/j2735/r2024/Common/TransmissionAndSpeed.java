@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TransmissionAndSpeed extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "transmisson")
-	@JsonProperty("transmisson")
-	private TransmissionState transmisson;
-	@Asn1Property(tag = 1, name = "speed")
-	@JsonProperty("speed")
-	private Velocity speed;
+  @Asn1Property(tag = 0, name = "transmisson")
+  @JsonProperty("transmisson")
+  private TransmissionState transmisson;
 
-	public TransmissionAndSpeed() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "speed")
+  @JsonProperty("speed")
+  private Velocity speed;
+
+  public TransmissionAndSpeed() {
+    super(false);
+  }
 }

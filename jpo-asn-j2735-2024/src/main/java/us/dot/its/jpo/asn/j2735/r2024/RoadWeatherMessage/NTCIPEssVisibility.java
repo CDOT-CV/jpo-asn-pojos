@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssVisibility.NTCIPEssVisibilityDeserializer.class)
 public class NTCIPEssVisibility extends Asn1Integer {
 
-	public NTCIPEssVisibility() {
-		super(0L, 1000001L);
-	}
+  public NTCIPEssVisibility() {
+    super(0L, 1000001L);
+  }
 
-	@JsonCreator
-	public NTCIPEssVisibility(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssVisibility(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssVisibilityDeserializer extends IntegerDeserializer<NTCIPEssVisibility> {
-		public NTCIPEssVisibilityDeserializer() {
-			super(NTCIPEssVisibility.class);
-		}
+  public static class NTCIPEssVisibilityDeserializer
+      extends IntegerDeserializer<NTCIPEssVisibility> {
+    public NTCIPEssVisibilityDeserializer() {
+      super(NTCIPEssVisibility.class);
+    }
 
-		@Override
-		protected NTCIPEssVisibility construct() {
-			return new NTCIPEssVisibility();
-		}
-	}
+    @Override
+    protected NTCIPEssVisibility construct() {
+      return new NTCIPEssVisibility();
+    }
+  }
 }

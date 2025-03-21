@@ -51,50 +51,60 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class EmergencyVehicleAlert extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "id", optional = true)
-	@JsonProperty("id")
-	private TemporaryID id;
-	@Asn1Property(tag = 2, name = "rsaMsg")
-	@JsonProperty("rsaMsg")
-	private RoadSideAlert rsaMsg;
-	@Asn1Property(tag = 3, name = "responseType", optional = true)
-	@JsonProperty("responseType")
-	private ResponseType responseType;
-	@Asn1Property(tag = 4, name = "details", optional = true)
-	@JsonProperty("details")
-	private EmergencyDetails details;
-	@Asn1Property(tag = 5, name = "mass", optional = true)
-	@JsonProperty("mass")
-	private VehicleMass mass;
-	@Asn1Property(tag = 6, name = "basicType", optional = true)
-	@JsonProperty("basicType")
-	private VehicleType basicType;
-	@Asn1Property(tag = 7, name = "vehicleType", optional = true)
-	@JsonProperty("vehicleType")
-	private VehicleGroupAffected vehicleType;
-	@Asn1Property(tag = 8, name = "responseEquip", optional = true)
-	@JsonProperty("responseEquip")
-	private IncidentResponseEquipment responseEquip;
-	@Asn1Property(tag = 9, name = "responderType", optional = true)
-	@JsonProperty("responderType")
-	private ResponderGroupAffected responderType;
-	@Asn1Property(tag = 10, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-EmergencyVehicleAlert")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_EmergencyVehicleAlert> {
-		public SequenceOfRegional() {
-			super(Reg_EmergencyVehicleAlert.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "id", optional = true)
+  @JsonProperty("id")
+  private TemporaryID id;
 
-	public EmergencyVehicleAlert() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "rsaMsg")
+  @JsonProperty("rsaMsg")
+  private RoadSideAlert rsaMsg;
+
+  @Asn1Property(tag = 3, name = "responseType", optional = true)
+  @JsonProperty("responseType")
+  private ResponseType responseType;
+
+  @Asn1Property(tag = 4, name = "details", optional = true)
+  @JsonProperty("details")
+  private EmergencyDetails details;
+
+  @Asn1Property(tag = 5, name = "mass", optional = true)
+  @JsonProperty("mass")
+  private VehicleMass mass;
+
+  @Asn1Property(tag = 6, name = "basicType", optional = true)
+  @JsonProperty("basicType")
+  private VehicleType basicType;
+
+  @Asn1Property(tag = 7, name = "vehicleType", optional = true)
+  @JsonProperty("vehicleType")
+  private VehicleGroupAffected vehicleType;
+
+  @Asn1Property(tag = 8, name = "responseEquip", optional = true)
+  @JsonProperty("responseEquip")
+  private IncidentResponseEquipment responseEquip;
+
+  @Asn1Property(tag = 9, name = "responderType", optional = true)
+  @JsonProperty("responderType")
+  private ResponderGroupAffected responderType;
+
+  @Asn1Property(tag = 10, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-EmergencyVehicleAlert")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_EmergencyVehicleAlert> {
+    public SequenceOfRegional() {
+      super(Reg_EmergencyVehicleAlert.class, 1L, 4L);
+    }
+  }
+
+  public EmergencyVehicleAlert() {
+    super(true);
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ValidManeuvers.ValidManeuversDeserializer.class)
 public class ValidManeuvers extends Asn1Integer {
 
-	public ValidManeuvers() {
-		super(0L, 65535L);
-	}
+  public ValidManeuvers() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public ValidManeuvers(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ValidManeuvers(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ValidManeuversDeserializer extends IntegerDeserializer<ValidManeuvers> {
-		public ValidManeuversDeserializer() {
-			super(ValidManeuvers.class);
-		}
+  public static class ValidManeuversDeserializer extends IntegerDeserializer<ValidManeuvers> {
+    public ValidManeuversDeserializer() {
+      super(ValidManeuvers.class);
+    }
 
-		@Override
-		protected ValidManeuvers construct() {
-			return new ValidManeuvers();
-		}
-	}
+    @Override
+    protected ValidManeuvers construct() {
+      return new ValidManeuvers();
+    }
+  }
 }

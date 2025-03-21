@@ -33,32 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = PriorityRequestType.PriorityRequestTypeSerializer.class)
 @JsonDeserialize(using = PriorityRequestType.PriorityRequestTypeDeserializer.class)
 public enum PriorityRequestType implements Asn1Enumerated {
-	PRIORITYREQUESTTYPERESERVED(0, "priorityRequestTypeReserved"), PRIORITYREQUEST(1,
-			"priorityRequest"), PRIORITYREQUESTUPDATE(2,
-					"priorityRequestUpdate"), PRIORITYCANCELLATION(3, "priorityCancellation");
+  PRIORITYREQUESTTYPERESERVED(0, "priorityRequestTypeReserved"),
+  PRIORITYREQUEST(1, "priorityRequest"),
+  PRIORITYREQUESTUPDATE(2, "priorityRequestUpdate"),
+  PRIORITYCANCELLATION(3, "priorityCancellation");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private PriorityRequestType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private PriorityRequestType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class PriorityRequestTypeSerializer extends EnumeratedSerializer<PriorityRequestType> {
-		public PriorityRequestTypeSerializer() {
-			super(PriorityRequestType.class);
-		}
-	}
+  public static class PriorityRequestTypeSerializer
+      extends EnumeratedSerializer<PriorityRequestType> {
+    public PriorityRequestTypeSerializer() {
+      super(PriorityRequestType.class);
+    }
+  }
 
-	public static class PriorityRequestTypeDeserializer extends EnumeratedDeserializer<PriorityRequestType> {
-		public PriorityRequestTypeDeserializer() {
-			super(PriorityRequestType.class);
-		}
+  public static class PriorityRequestTypeDeserializer
+      extends EnumeratedDeserializer<PriorityRequestType> {
+    public PriorityRequestTypeDeserializer() {
+      super(PriorityRequestType.class);
+    }
 
-		@Override
-		protected PriorityRequestType[] listEnumValues() {
-			return PriorityRequestType.values();
-		}
-	}
+    @Override
+    protected PriorityRequestType[] listEnumValues() {
+      return PriorityRequestType.values();
+    }
+  }
 }

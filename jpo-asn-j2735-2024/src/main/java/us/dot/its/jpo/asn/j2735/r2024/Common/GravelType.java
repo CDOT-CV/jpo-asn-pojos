@@ -33,30 +33,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = GravelType.GravelTypeSerializer.class)
 @JsonDeserialize(using = GravelType.GravelTypeDeserializer.class)
 public enum GravelType implements Asn1Enumerated {
-	PACKEDOILED(0, "packedOiled"), LOOSE(1, "loose");
+  PACKEDOILED(0, "packedOiled"),
+  LOOSE(1, "loose");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private GravelType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private GravelType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class GravelTypeSerializer extends EnumeratedSerializer<GravelType> {
-		public GravelTypeSerializer() {
-			super(GravelType.class);
-		}
-	}
+  public static class GravelTypeSerializer extends EnumeratedSerializer<GravelType> {
+    public GravelTypeSerializer() {
+      super(GravelType.class);
+    }
+  }
 
-	public static class GravelTypeDeserializer extends EnumeratedDeserializer<GravelType> {
-		public GravelTypeDeserializer() {
-			super(GravelType.class);
-		}
+  public static class GravelTypeDeserializer extends EnumeratedDeserializer<GravelType> {
+    public GravelTypeDeserializer() {
+      super(GravelType.class);
+    }
 
-		@Override
-		protected GravelType[] listEnumValues() {
-			return GravelType.values();
-		}
-	}
+    @Override
+    protected GravelType[] listEnumValues() {
+      return GravelType.values();
+    }
+  }
 }

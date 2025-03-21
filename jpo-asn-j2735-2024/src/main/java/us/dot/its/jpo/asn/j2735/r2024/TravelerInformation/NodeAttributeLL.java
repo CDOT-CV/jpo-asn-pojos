@@ -33,34 +33,41 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = NodeAttributeLL.NodeAttributeLLSerializer.class)
 @JsonDeserialize(using = NodeAttributeLL.NodeAttributeLLDeserializer.class)
 public enum NodeAttributeLL implements Asn1Enumerated {
-	RESERVED(0, "reserved"), STOPLINE(1, "stopLine"), ROUNDEDCAPSTYLEA(2, "roundedCapStyleA"), ROUNDEDCAPSTYLEB(3,
-			"roundedCapStyleB"), MERGEPOINT(4, "mergePoint"), DIVERGEPOINT(5, "divergePoint"), DOWNSTREAMSTOPLINE(6,
-					"downstreamStopLine"), DOWNSTREAMSTARTNODE(7, "downstreamStartNode"), CLOSEDTOTRAFFIC(8,
-							"closedToTraffic"), SAFEISLAND(9, "safeIsland"), CURBPRESENTATSTEPOFF(10,
-									"curbPresentAtStepOff"), HYDRANTPRESENT(11, "hydrantPresent");
+  RESERVED(0, "reserved"),
+  STOPLINE(1, "stopLine"),
+  ROUNDEDCAPSTYLEA(2, "roundedCapStyleA"),
+  ROUNDEDCAPSTYLEB(3, "roundedCapStyleB"),
+  MERGEPOINT(4, "mergePoint"),
+  DIVERGEPOINT(5, "divergePoint"),
+  DOWNSTREAMSTOPLINE(6, "downstreamStopLine"),
+  DOWNSTREAMSTARTNODE(7, "downstreamStartNode"),
+  CLOSEDTOTRAFFIC(8, "closedToTraffic"),
+  SAFEISLAND(9, "safeIsland"),
+  CURBPRESENTATSTEPOFF(10, "curbPresentAtStepOff"),
+  HYDRANTPRESENT(11, "hydrantPresent");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NodeAttributeLL(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NodeAttributeLL(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NodeAttributeLLSerializer extends EnumeratedSerializer<NodeAttributeLL> {
-		public NodeAttributeLLSerializer() {
-			super(NodeAttributeLL.class);
-		}
-	}
+  public static class NodeAttributeLLSerializer extends EnumeratedSerializer<NodeAttributeLL> {
+    public NodeAttributeLLSerializer() {
+      super(NodeAttributeLL.class);
+    }
+  }
 
-	public static class NodeAttributeLLDeserializer extends EnumeratedDeserializer<NodeAttributeLL> {
-		public NodeAttributeLLDeserializer() {
-			super(NodeAttributeLL.class);
-		}
+  public static class NodeAttributeLLDeserializer extends EnumeratedDeserializer<NodeAttributeLL> {
+    public NodeAttributeLLDeserializer() {
+      super(NodeAttributeLL.class);
+    }
 
-		@Override
-		protected NodeAttributeLL[] listEnumValues() {
-			return NodeAttributeLL.values();
-		}
-	}
+    @Override
+    protected NodeAttributeLL[] listEnumValues() {
+      return NodeAttributeLL.values();
+    }
+  }
 }

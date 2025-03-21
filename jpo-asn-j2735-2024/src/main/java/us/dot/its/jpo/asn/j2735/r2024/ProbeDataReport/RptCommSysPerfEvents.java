@@ -39,65 +39,75 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 @JsonInclude(Include.NON_NULL)
 public class RptCommSysPerfEvents extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "j2945-1ChanBusy")
-	@JsonProperty("j2945-1ChanBusy")
-	private Asn1Null j2945_1ChanBusy;
-	@Asn1Property(tag = 1, name = "rfDataRsuInfo")
-	@JsonProperty("rfDataRsuInfo")
-	private RfDataRsuInfoOctetString rfDataRsuInfo;
-	@Asn1Property(tag = 2, name = "numOfRsusObserved")
-	@JsonProperty("numOfRsusObserved")
-	private NumOfRsusObservedInteger numOfRsusObserved;
-	@Asn1Property(tag = 3, name = "rfV2xJamDetect")
-	@JsonProperty("rfV2xJamDetect")
-	private Asn1Null rfV2xJamDetect;
-	@Asn1Property(tag = 4, name = "j2945-1VehDens")
-	@JsonProperty("j2945-1VehDens")
-	private Asn1Null j2945_1VehDens;
-	@Asn1Property(tag = 5, name = "j2945-1CqiBelow")
-	@JsonProperty("j2945-1CqiBelow")
-	private Asn1Null j2945_1CqiBelow;
-	@Asn1Property(tag = 6, name = "j2945-1TrackingError")
-	@JsonProperty("j2945-1TrackingError")
-	private Asn1Null j2945_1TrackingError;
-	@Asn1Property(tag = 7, name = "gnssHdopExceeds")
-	@JsonProperty("gnssHdopExceeds")
-	private Asn1Null gnssHdopExceeds;
-	@Asn1Property(tag = 8, name = "gnssErrElipse")
-	@JsonProperty("gnssErrElipse")
-	private Asn1Null gnssErrElipse;
-	@Asn1Property(tag = 9, name = "gnssSatsBelow")
-	@JsonProperty("gnssSatsBelow")
-	private Asn1Null gnssSatsBelow;
-	@Asn1Property(tag = 10, name = "jammingDetect")
-	@JsonProperty("jammingDetect")
-	private Asn1Null jammingDetect;
+  @Asn1Property(tag = 0, name = "j2945-1ChanBusy")
+  @JsonProperty("j2945-1ChanBusy")
+  private Asn1Null j2945_1ChanBusy;
 
-	public RptCommSysPerfEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "rfDataRsuInfo")
+  @JsonProperty("rfDataRsuInfo")
+  private RfDataRsuInfoOctetString rfDataRsuInfo;
 
-	public static class RfDataRsuInfoOctetString extends Asn1OctetString {
-		public RfDataRsuInfoOctetString() {
-			super(6, 6);
-		}
+  @Asn1Property(tag = 2, name = "numOfRsusObserved")
+  @JsonProperty("numOfRsusObserved")
+  private NumOfRsusObservedInteger numOfRsusObserved;
 
-		@JsonCreator
-		public RfDataRsuInfoOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 3, name = "rfV2xJamDetect")
+  @JsonProperty("rfV2xJamDetect")
+  private Asn1Null rfV2xJamDetect;
 
-	public static class NumOfRsusObservedInteger extends Asn1Integer {
-		public NumOfRsusObservedInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 4, name = "j2945-1VehDens")
+  @JsonProperty("j2945-1VehDens")
+  private Asn1Null j2945_1VehDens;
 
-		@JsonCreator
-		public NumOfRsusObservedInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 5, name = "j2945-1CqiBelow")
+  @JsonProperty("j2945-1CqiBelow")
+  private Asn1Null j2945_1CqiBelow;
+
+  @Asn1Property(tag = 6, name = "j2945-1TrackingError")
+  @JsonProperty("j2945-1TrackingError")
+  private Asn1Null j2945_1TrackingError;
+
+  @Asn1Property(tag = 7, name = "gnssHdopExceeds")
+  @JsonProperty("gnssHdopExceeds")
+  private Asn1Null gnssHdopExceeds;
+
+  @Asn1Property(tag = 8, name = "gnssErrElipse")
+  @JsonProperty("gnssErrElipse")
+  private Asn1Null gnssErrElipse;
+
+  @Asn1Property(tag = 9, name = "gnssSatsBelow")
+  @JsonProperty("gnssSatsBelow")
+  private Asn1Null gnssSatsBelow;
+
+  @Asn1Property(tag = 10, name = "jammingDetect")
+  @JsonProperty("jammingDetect")
+  private Asn1Null jammingDetect;
+
+  public RptCommSysPerfEvents() {
+    super(true);
+  }
+
+  public static class RfDataRsuInfoOctetString extends Asn1OctetString {
+    public RfDataRsuInfoOctetString() {
+      super(6, 6);
+    }
+
+    @JsonCreator
+    public RfDataRsuInfoOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public static class NumOfRsusObservedInteger extends Asn1Integer {
+    public NumOfRsusObservedInteger() {
+      super(1L, 255L);
+    }
+
+    @JsonCreator
+    public NumOfRsusObservedInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 }

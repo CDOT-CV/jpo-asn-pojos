@@ -39,53 +39,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TimeCompact extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "hours")
-	@JsonProperty("hours")
-	private HoursInteger hours;
-	@Asn1Property(tag = 1, name = "mins")
-	@JsonProperty("mins")
-	private MinsInteger mins;
-	@Asn1Property(tag = 2, name = "doubleSecs")
-	@JsonProperty("doubleSecs")
-	private DoubleSecsInteger doubleSecs;
+  @Asn1Property(tag = 0, name = "hours")
+  @JsonProperty("hours")
+  private HoursInteger hours;
 
-	public static class HoursInteger extends Asn1Integer {
-		public HoursInteger() {
-			super(0L, 23L);
-		}
+  @Asn1Property(tag = 1, name = "mins")
+  @JsonProperty("mins")
+  private MinsInteger mins;
 
-		@JsonCreator
-		public HoursInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "doubleSecs")
+  @JsonProperty("doubleSecs")
+  private DoubleSecsInteger doubleSecs;
 
-	public static class MinsInteger extends Asn1Integer {
-		public MinsInteger() {
-			super(0L, 59L);
-		}
+  public static class HoursInteger extends Asn1Integer {
+    public HoursInteger() {
+      super(0L, 23L);
+    }
 
-		@JsonCreator
-		public MinsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public HoursInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class DoubleSecsInteger extends Asn1Integer {
-		public DoubleSecsInteger() {
-			super(0L, 30L);
-		}
+  public static class MinsInteger extends Asn1Integer {
+    public MinsInteger() {
+      super(0L, 59L);
+    }
 
-		@JsonCreator
-		public DoubleSecsInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public MinsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public TimeCompact() {
-		super(false);
-	}
+  public static class DoubleSecsInteger extends Asn1Integer {
+    public DoubleSecsInteger() {
+      super(0L, 30L);
+    }
+
+    @JsonCreator
+    public DoubleSecsInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public TimeCompact() {
+    super(false);
+  }
 }

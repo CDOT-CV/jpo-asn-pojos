@@ -31,33 +31,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class NodeAttributeXYList extends Asn1SequenceOf<NodeAttributeXY> {
 
-	public NodeAttributeXYList() {
-		super(NodeAttributeXY.class, 1L, 8L);
-	}
+  public NodeAttributeXYList() {
+    super(NodeAttributeXY.class, 1L, 8L);
+  }
 
-	public static class NodeAttributeXYListSerializer
-			extends
-				SequenceOfEnumeratedSerializer<NodeAttributeXY, NodeAttributeXYList> {
-		public NodeAttributeXYListSerializer() {
-			super(NodeAttributeXY.class, NodeAttributeXYList.class);
-		}
-	}
+  public static class NodeAttributeXYListSerializer
+      extends SequenceOfEnumeratedSerializer<NodeAttributeXY, NodeAttributeXYList> {
+    public NodeAttributeXYListSerializer() {
+      super(NodeAttributeXY.class, NodeAttributeXYList.class);
+    }
+  }
 
-	public static class NodeAttributeXYListDeserializer
-			extends
-				SequenceOfEnumeratedDeserializer<NodeAttributeXY, NodeAttributeXYList> {
-		public NodeAttributeXYListDeserializer() {
-			super(NodeAttributeXYList.class, NodeAttributeXY.class);
-		}
+  public static class NodeAttributeXYListDeserializer
+      extends SequenceOfEnumeratedDeserializer<NodeAttributeXY, NodeAttributeXYList> {
+    public NodeAttributeXYListDeserializer() {
+      super(NodeAttributeXYList.class, NodeAttributeXY.class);
+    }
 
-		@Override
-		protected NodeAttributeXY[] listEnumValues() {
-			return NodeAttributeXY.values();
-		}
+    @Override
+    protected NodeAttributeXY[] listEnumValues() {
+      return NodeAttributeXY.values();
+    }
 
-		@Override
-		protected NodeAttributeXYList construct() {
-			return new NodeAttributeXYList();
-		}
-	}
+    @Override
+    protected NodeAttributeXYList construct() {
+      return new NodeAttributeXYList();
+    }
+  }
 }

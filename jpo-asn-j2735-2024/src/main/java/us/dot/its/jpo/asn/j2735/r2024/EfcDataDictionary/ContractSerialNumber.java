@@ -29,24 +29,25 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = ContractSerialNumber.ContractSerialNumberDeserializer.class)
 public class ContractSerialNumber extends Int4Unsigned {
 
-	public ContractSerialNumber() {
-		super();
-	}
+  public ContractSerialNumber() {
+    super();
+  }
 
-	@JsonCreator
-	public ContractSerialNumber(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ContractSerialNumber(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ContractSerialNumberDeserializer extends IntegerDeserializer<ContractSerialNumber> {
-		public ContractSerialNumberDeserializer() {
-			super(ContractSerialNumber.class);
-		}
+  public static class ContractSerialNumberDeserializer
+      extends IntegerDeserializer<ContractSerialNumber> {
+    public ContractSerialNumberDeserializer() {
+      super(ContractSerialNumber.class);
+    }
 
-		@Override
-		protected ContractSerialNumber construct() {
-			return new ContractSerialNumber();
-		}
-	}
+    @Override
+    protected ContractSerialNumber construct() {
+      return new ContractSerialNumber();
+    }
+  }
 }

@@ -38,26 +38,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class MovementEvent_addGrpB extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "startTime", optional = true)
-	@JsonProperty("startTime")
-	private TimeRemaining startTime;
-	@Asn1Property(tag = 1, name = "minEndTime")
-	@JsonProperty("minEndTime")
-	private MinTimetoChange minEndTime;
-	@Asn1Property(tag = 2, name = "maxEndTime", optional = true)
-	@JsonProperty("maxEndTime")
-	private MaxTimetoChange maxEndTime;
-	@Asn1Property(tag = 3, name = "likelyTime", optional = true)
-	@JsonProperty("likelyTime")
-	private TimeRemaining likelyTime;
-	@Asn1Property(tag = 4, name = "confidence", optional = true)
-	@JsonProperty("confidence")
-	private TimeIntervalConfidence confidence;
-	@Asn1Property(tag = 5, name = "nextTime", optional = true)
-	@JsonProperty("nextTime")
-	private TimeRemaining nextTime;
+  @Asn1Property(tag = 0, name = "startTime", optional = true)
+  @JsonProperty("startTime")
+  private TimeRemaining startTime;
 
-	public MovementEvent_addGrpB() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "minEndTime")
+  @JsonProperty("minEndTime")
+  private MinTimetoChange minEndTime;
+
+  @Asn1Property(tag = 2, name = "maxEndTime", optional = true)
+  @JsonProperty("maxEndTime")
+  private MaxTimetoChange maxEndTime;
+
+  @Asn1Property(tag = 3, name = "likelyTime", optional = true)
+  @JsonProperty("likelyTime")
+  private TimeRemaining likelyTime;
+
+  @Asn1Property(tag = 4, name = "confidence", optional = true)
+  @JsonProperty("confidence")
+  private TimeIntervalConfidence confidence;
+
+  @Asn1Property(tag = 5, name = "nextTime", optional = true)
+  @JsonProperty("nextTime")
+  private TimeRemaining nextTime;
+
+  public MovementEvent_addGrpB() {
+    super(true);
+  }
 }

@@ -24,5 +24,4 @@ package us.dot.its.jpo.asn.j2735.r2024.EfcDataDictionary;
 
 import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
-public class PaymentSecurityData extends Asn1OctetString {
-}
+public class PaymentSecurityData extends Asn1OctetString {}

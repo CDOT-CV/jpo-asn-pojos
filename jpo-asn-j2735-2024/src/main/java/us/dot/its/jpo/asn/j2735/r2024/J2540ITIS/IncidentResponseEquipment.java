@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = IncidentResponseEquipment.IncidentResponseEquipmentDeserializer.class)
 public class IncidentResponseEquipment extends Asn1Integer {
 
-	public IncidentResponseEquipment() {
-		super(0L, 65535L);
-	}
+  public IncidentResponseEquipment() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public IncidentResponseEquipment(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public IncidentResponseEquipment(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class IncidentResponseEquipmentDeserializer extends IntegerDeserializer<IncidentResponseEquipment> {
-		public IncidentResponseEquipmentDeserializer() {
-			super(IncidentResponseEquipment.class);
-		}
+  public static class IncidentResponseEquipmentDeserializer
+      extends IntegerDeserializer<IncidentResponseEquipment> {
+    public IncidentResponseEquipmentDeserializer() {
+      super(IncidentResponseEquipment.class);
+    }
 
-		@Override
-		protected IncidentResponseEquipment construct() {
-			return new IncidentResponseEquipment();
-		}
-	}
+    @Override
+    protected IncidentResponseEquipment construct() {
+      return new IncidentResponseEquipment();
+    }
+  }
 }

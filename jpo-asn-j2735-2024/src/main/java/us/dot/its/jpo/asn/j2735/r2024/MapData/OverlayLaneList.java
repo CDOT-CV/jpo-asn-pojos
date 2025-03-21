@@ -30,7 +30,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class OverlayLaneList extends Asn1SequenceOf<LaneID> {
 
-	public OverlayLaneList() {
-		super(LaneID.class, 1L, 5L);
-	}
+  public OverlayLaneList() {
+    super(LaneID.class, 1L, 5L);
+  }
 }

@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class CooperativeControlMessageMessageFrame extends MessageFrame<CooperativeControlMessage> {
 
-	public CooperativeControlMessageMessageFrame() {
-		super(40, "CooperativeControlMessage");
-	}
+  public CooperativeControlMessageMessageFrame() {
+    super(40, "CooperativeControlMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = CooperativeControlMessageMessageFrameValueSerializer.class)
-	public CooperativeControlMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = CooperativeControlMessageMessageFrameValueSerializer.class)
+  public CooperativeControlMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = CooperativeControlMessageMessageFrameValueDeserializer.class)
-	public void setValue(CooperativeControlMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = CooperativeControlMessageMessageFrameValueDeserializer.class)
+  public void setValue(CooperativeControlMessage value) {
+    super.setValue(value);
+  }
 }

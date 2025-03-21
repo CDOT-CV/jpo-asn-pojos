@@ -42,29 +42,32 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ItemizedPaymentReport extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp")
-	@JsonProperty("timeStamp")
-	private DDateTime timeStamp;
-	@Asn1Property(tag = 1, name = "timePeriod")
-	@JsonProperty("timePeriod")
-	private TimePeriod timePeriod;
-	@Asn1Property(tag = 2, name = "svcProvID")
-	@JsonProperty("svcProvID")
-	private Asn1ObjectIdentifier svcProvID;
-	@Asn1Property(tag = 3, name = "chargerData")
-	@JsonProperty("chargerData")
-	@JacksonXmlElementWrapper(localName = "chargerData")
-	@JacksonXmlProperty(localName = "ItemizedChargerData")
-	private SequenceOfChargerData chargerData;
+  @Asn1Property(tag = 0, name = "timeStamp")
+  @JsonProperty("timeStamp")
+  private DDateTime timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfChargerData extends Asn1SequenceOf<ItemizedChargerData> {
-		public SequenceOfChargerData() {
-			super(ItemizedChargerData.class, 1L, 999L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "timePeriod")
+  @JsonProperty("timePeriod")
+  private TimePeriod timePeriod;
 
-	public ItemizedPaymentReport() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "svcProvID")
+  @JsonProperty("svcProvID")
+  private Asn1ObjectIdentifier svcProvID;
+
+  @Asn1Property(tag = 3, name = "chargerData")
+  @JsonProperty("chargerData")
+  @JacksonXmlElementWrapper(localName = "chargerData")
+  @JacksonXmlProperty(localName = "ItemizedChargerData")
+  private SequenceOfChargerData chargerData;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfChargerData extends Asn1SequenceOf<ItemizedChargerData> {
+    public SequenceOfChargerData() {
+      super(ItemizedChargerData.class, 1L, 999L);
+    }
+  }
+
+  public ItemizedPaymentReport() {
+    super(true);
+  }
 }

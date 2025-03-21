@@ -41,23 +41,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TrailerHistoryPoint extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pivotAngle")
-	@JsonProperty("pivotAngle")
-	private Angle pivotAngle;
-	@Asn1Property(tag = 1, name = "timeOffset")
-	@JsonProperty("timeOffset")
-	private TimeOffset timeOffset;
-	@Asn1Property(tag = 2, name = "positionOffset")
-	@JsonProperty("positionOffset")
-	private Node_XY_24b positionOffset;
-	@Asn1Property(tag = 3, name = "elevationOffset", optional = true)
-	@JsonProperty("elevationOffset")
-	private VertOffset_B07 elevationOffset;
-	@Asn1Property(tag = 4, name = "heading", optional = true)
-	@JsonProperty("heading")
-	private CoarseHeading heading;
+  @Asn1Property(tag = 0, name = "pivotAngle")
+  @JsonProperty("pivotAngle")
+  private Angle pivotAngle;
 
-	public TrailerHistoryPoint() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "timeOffset")
+  @JsonProperty("timeOffset")
+  private TimeOffset timeOffset;
+
+  @Asn1Property(tag = 2, name = "positionOffset")
+  @JsonProperty("positionOffset")
+  private Node_XY_24b positionOffset;
+
+  @Asn1Property(tag = 3, name = "elevationOffset", optional = true)
+  @JsonProperty("elevationOffset")
+  private VertOffset_B07 elevationOffset;
+
+  @Asn1Property(tag = 4, name = "heading", optional = true)
+  @JsonProperty("heading")
+  private CoarseHeading heading;
+
+  public TrailerHistoryPoint() {
+    super(true);
+  }
 }

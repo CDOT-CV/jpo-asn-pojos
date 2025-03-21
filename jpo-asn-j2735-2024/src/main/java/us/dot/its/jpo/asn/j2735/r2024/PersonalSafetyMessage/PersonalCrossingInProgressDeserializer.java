@@ -24,14 +24,15 @@ package us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
-public class PersonalCrossingInProgressDeserializer extends BooleanDeserializer<PersonalCrossingInProgress> {
+public class PersonalCrossingInProgressDeserializer
+    extends BooleanDeserializer<PersonalCrossingInProgress> {
 
-	public PersonalCrossingInProgressDeserializer() {
-		super(PersonalCrossingInProgress.class);
-	}
+  public PersonalCrossingInProgressDeserializer() {
+    super(PersonalCrossingInProgress.class);
+  }
 
-	@Override
-	protected PersonalCrossingInProgress construct() {
-		return new PersonalCrossingInProgress();
-	}
+  @Override
+  protected PersonalCrossingInProgress construct() {
+    return new PersonalCrossingInProgress();
+  }
 }

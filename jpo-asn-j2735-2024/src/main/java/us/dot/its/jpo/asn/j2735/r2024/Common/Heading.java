@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Heading.HeadingDeserializer.class)
 public class Heading extends Asn1Integer {
 
-	public Heading() {
-		super(0L, 28800L);
-	}
+  public Heading() {
+    super(0L, 28800L);
+  }
 
-	@JsonCreator
-	public Heading(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Heading(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class HeadingDeserializer extends IntegerDeserializer<Heading> {
-		public HeadingDeserializer() {
-			super(Heading.class);
-		}
+  public static class HeadingDeserializer extends IntegerDeserializer<Heading> {
+    public HeadingDeserializer() {
+      super(Heading.class);
+    }
 
-		@Override
-		protected Heading construct() {
-			return new Heading();
-		}
-	}
+    @Override
+    protected Heading construct() {
+      return new Heading();
+    }
+  }
 }

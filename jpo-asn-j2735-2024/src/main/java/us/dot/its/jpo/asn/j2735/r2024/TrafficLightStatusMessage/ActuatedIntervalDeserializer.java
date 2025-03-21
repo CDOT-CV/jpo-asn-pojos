@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class ActuatedIntervalDeserializer extends BooleanDeserializer<ActuatedInterval> {
 
-	public ActuatedIntervalDeserializer() {
-		super(ActuatedInterval.class);
-	}
+  public ActuatedIntervalDeserializer() {
+    super(ActuatedInterval.class);
+  }
 
-	@Override
-	protected ActuatedInterval construct() {
-		return new ActuatedInterval();
-	}
+  @Override
+  protected ActuatedInterval construct() {
+    return new ActuatedInterval();
+  }
 }

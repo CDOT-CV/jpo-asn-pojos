@@ -33,38 +33,53 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = BasicVehicleRole.BasicVehicleRoleSerializer.class)
 @JsonDeserialize(using = BasicVehicleRole.BasicVehicleRoleDeserializer.class)
 public enum BasicVehicleRole implements Asn1Enumerated {
-	BASICVEHICLE(0, "basicVehicle"), PUBLICTRANSPORT(1, "publicTransport"), SPECIALTRANSPORT(2,
-			"specialTransport"), DANGEROUSGOODS(3, "dangerousGoods"), ROADWORK(4, "roadWork"), ROADRESCUE(5,
-					"roadRescue"), EMERGENCY(6, "emergency"), SAFETYCAR(7, "safetyCar"), NONE_UNKNOWN(8,
-							"none-unknown"), TRUCK(9, "truck"), MOTORCYCLE(10, "motorcycle"), ROADSIDESOURCE(11,
-									"roadSideSource"), POLICE(12, "police"), FIRE(13, "fire"), AMBULANCE(14,
-											"ambulance"), DOT(15, "dot"), TRANSIT(16, "transit"), SLOWMOVING(17,
-													"slowMoving"), STOPNGO(18, "stopNgo"), CYCLIST(19,
-															"cyclist"), PEDESTRIAN(20, "pedestrian"), NONMOTORIZED(21,
-																	"nonMotorized"), MILITARY(22, "military");
+  BASICVEHICLE(0, "basicVehicle"),
+  PUBLICTRANSPORT(1, "publicTransport"),
+  SPECIALTRANSPORT(2, "specialTransport"),
+  DANGEROUSGOODS(3, "dangerousGoods"),
+  ROADWORK(4, "roadWork"),
+  ROADRESCUE(5, "roadRescue"),
+  EMERGENCY(6, "emergency"),
+  SAFETYCAR(7, "safetyCar"),
+  NONE_UNKNOWN(8, "none-unknown"),
+  TRUCK(9, "truck"),
+  MOTORCYCLE(10, "motorcycle"),
+  ROADSIDESOURCE(11, "roadSideSource"),
+  POLICE(12, "police"),
+  FIRE(13, "fire"),
+  AMBULANCE(14, "ambulance"),
+  DOT(15, "dot"),
+  TRANSIT(16, "transit"),
+  SLOWMOVING(17, "slowMoving"),
+  STOPNGO(18, "stopNgo"),
+  CYCLIST(19, "cyclist"),
+  PEDESTRIAN(20, "pedestrian"),
+  NONMOTORIZED(21, "nonMotorized"),
+  MILITARY(22, "military");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private BasicVehicleRole(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private BasicVehicleRole(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class BasicVehicleRoleSerializer extends EnumeratedSerializer<BasicVehicleRole> {
-		public BasicVehicleRoleSerializer() {
-			super(BasicVehicleRole.class);
-		}
-	}
+  public static class BasicVehicleRoleSerializer extends EnumeratedSerializer<BasicVehicleRole> {
+    public BasicVehicleRoleSerializer() {
+      super(BasicVehicleRole.class);
+    }
+  }
 
-	public static class BasicVehicleRoleDeserializer extends EnumeratedDeserializer<BasicVehicleRole> {
-		public BasicVehicleRoleDeserializer() {
-			super(BasicVehicleRole.class);
-		}
+  public static class BasicVehicleRoleDeserializer
+      extends EnumeratedDeserializer<BasicVehicleRole> {
+    public BasicVehicleRoleDeserializer() {
+      super(BasicVehicleRole.class);
+    }
 
-		@Override
-		protected BasicVehicleRole[] listEnumValues() {
-			return BasicVehicleRole.values();
-		}
-	}
+    @Override
+    protected BasicVehicleRole[] listEnumValues() {
+      return BasicVehicleRole.values();
+    }
+  }
 }

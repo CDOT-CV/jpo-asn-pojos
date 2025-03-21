@@ -38,20 +38,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LaneAttributes extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "directionalUse")
-	@JsonProperty("directionalUse")
-	private LaneDirection directionalUse;
-	@Asn1Property(tag = 1, name = "sharedWith")
-	@JsonProperty("sharedWith")
-	private LaneSharing sharedWith;
-	@Asn1Property(tag = 2, name = "laneType")
-	@JsonProperty("laneType")
-	private LaneTypeAttributes laneType;
-	@Asn1Property(tag = 3, name = "regional", optional = true)
-	@JsonProperty("regional")
-	private Reg_LaneAttributes regional;
+  @Asn1Property(tag = 0, name = "directionalUse")
+  @JsonProperty("directionalUse")
+  private LaneDirection directionalUse;
 
-	public LaneAttributes() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "sharedWith")
+  @JsonProperty("sharedWith")
+  private LaneSharing sharedWith;
+
+  @Asn1Property(tag = 2, name = "laneType")
+  @JsonProperty("laneType")
+  private LaneTypeAttributes laneType;
+
+  @Asn1Property(tag = 3, name = "regional", optional = true)
+  @JsonProperty("regional")
+  private Reg_LaneAttributes regional;
+
+  public LaneAttributes() {
+    super(false);
+  }
 }

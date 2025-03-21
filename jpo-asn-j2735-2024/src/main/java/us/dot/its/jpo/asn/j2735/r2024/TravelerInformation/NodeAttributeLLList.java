@@ -31,33 +31,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class NodeAttributeLLList extends Asn1SequenceOf<NodeAttributeLL> {
 
-	public NodeAttributeLLList() {
-		super(NodeAttributeLL.class, 1L, 8L);
-	}
+  public NodeAttributeLLList() {
+    super(NodeAttributeLL.class, 1L, 8L);
+  }
 
-	public static class NodeAttributeLLListSerializer
-			extends
-				SequenceOfEnumeratedSerializer<NodeAttributeLL, NodeAttributeLLList> {
-		public NodeAttributeLLListSerializer() {
-			super(NodeAttributeLL.class, NodeAttributeLLList.class);
-		}
-	}
+  public static class NodeAttributeLLListSerializer
+      extends SequenceOfEnumeratedSerializer<NodeAttributeLL, NodeAttributeLLList> {
+    public NodeAttributeLLListSerializer() {
+      super(NodeAttributeLL.class, NodeAttributeLLList.class);
+    }
+  }
 
-	public static class NodeAttributeLLListDeserializer
-			extends
-				SequenceOfEnumeratedDeserializer<NodeAttributeLL, NodeAttributeLLList> {
-		public NodeAttributeLLListDeserializer() {
-			super(NodeAttributeLLList.class, NodeAttributeLL.class);
-		}
+  public static class NodeAttributeLLListDeserializer
+      extends SequenceOfEnumeratedDeserializer<NodeAttributeLL, NodeAttributeLLList> {
+    public NodeAttributeLLListDeserializer() {
+      super(NodeAttributeLLList.class, NodeAttributeLL.class);
+    }
 
-		@Override
-		protected NodeAttributeLL[] listEnumValues() {
-			return NodeAttributeLL.values();
-		}
+    @Override
+    protected NodeAttributeLL[] listEnumValues() {
+      return NodeAttributeLL.values();
+    }
 
-		@Override
-		protected NodeAttributeLLList construct() {
-			return new NodeAttributeLLList();
-		}
-	}
+    @Override
+    protected NodeAttributeLLList construct() {
+      return new NodeAttributeLLList();
+    }
+  }
 }

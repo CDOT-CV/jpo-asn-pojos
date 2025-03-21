@@ -31,18 +31,31 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpC.IntersectionState_addGrpCReg_IntersectionState.class, intId = 3)})
-@JsonDeserialize(using = Reg_IntersectionState.Reg_IntersectionStateDeserializer.class)
-abstract public class Reg_IntersectionState<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.AddGrpC.IntersectionState_addGrpCReg_IntersectionState
+                  .class,
+          intId = 3)
+    })
+@JsonDeserialize(
+    using =
+        Reg_IntersectionState
+            .Reg_IntersectionStateDeserializer.class)
+public abstract class Reg_IntersectionState<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_IntersectionState(int id, String name) {
-		super(id, name);
-	}
+  public Reg_IntersectionState(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_IntersectionStateDeserializer extends ParameterizedTypeDeserializer<Reg_IntersectionState> {
-		public Reg_IntersectionStateDeserializer() {
-			super(Reg_IntersectionState.class);
-		}
-	}
+  public static class Reg_IntersectionStateDeserializer
+      extends ParameterizedTypeDeserializer<Reg_IntersectionState> {
+    public Reg_IntersectionStateDeserializer() {
+      super(Reg_IntersectionState.class);
+    }
+  }
 }

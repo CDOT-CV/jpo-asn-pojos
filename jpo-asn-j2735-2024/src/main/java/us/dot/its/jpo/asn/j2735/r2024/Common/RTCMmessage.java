@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class RTCMmessage extends Asn1OctetString {
 
-	public RTCMmessage() {
-		super(1, 1023);
-	}
+  public RTCMmessage() {
+    super(1, 1023);
+  }
 
-	@JsonCreator
-	public RTCMmessage(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public RTCMmessage(String value) {
+    this();
+    setValue(value);
+  }
 }

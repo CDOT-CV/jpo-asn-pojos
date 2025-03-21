@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SessionClass extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "sessionTariffClass")
-	@JsonProperty("sessionTariffClass")
-	private Int1Unsigned sessionTariffClass;
-	@Asn1Property(tag = 1, name = "sessionClaimedClass")
-	@JsonProperty("sessionClaimedClass")
-	private Int1Unsigned sessionClaimedClass;
+  @Asn1Property(tag = 0, name = "sessionTariffClass")
+  @JsonProperty("sessionTariffClass")
+  private Int1Unsigned sessionTariffClass;
 
-	public SessionClass() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "sessionClaimedClass")
+  @JsonProperty("sessionClaimedClass")
+  private Int1Unsigned sessionClaimedClass;
+
+  public SessionClass() {
+    super(false);
+  }
 }

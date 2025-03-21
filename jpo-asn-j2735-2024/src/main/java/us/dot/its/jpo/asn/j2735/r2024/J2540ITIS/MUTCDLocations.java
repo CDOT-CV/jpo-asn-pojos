@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MUTCDLocations.MUTCDLocationsDeserializer.class)
 public class MUTCDLocations extends Asn1Integer {
 
-	public MUTCDLocations() {
-		super(0L, 65535L);
-	}
+  public MUTCDLocations() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public MUTCDLocations(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MUTCDLocations(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MUTCDLocationsDeserializer extends IntegerDeserializer<MUTCDLocations> {
-		public MUTCDLocationsDeserializer() {
-			super(MUTCDLocations.class);
-		}
+  public static class MUTCDLocationsDeserializer extends IntegerDeserializer<MUTCDLocations> {
+    public MUTCDLocationsDeserializer() {
+      super(MUTCDLocations.class);
+    }
 
-		@Override
-		protected MUTCDLocations construct() {
-			return new MUTCDLocations();
-		}
-	}
+    @Override
+    protected MUTCDLocations construct() {
+      return new MUTCDLocations();
+    }
+  }
 }

@@ -42,70 +42,78 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ComputedLane extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "referenceLaneId")
-	@JsonProperty("referenceLaneId")
-	private LaneID referenceLaneId;
-	@Asn1Property(tag = 1, name = "offsetXaxis")
-	@JsonProperty("offsetXaxis")
-	private OffsetXaxisChoice offsetXaxis;
-	@Asn1Property(tag = 2, name = "offsetYaxis")
-	@JsonProperty("offsetYaxis")
-	private OffsetYaxisChoice offsetYaxis;
-	@Asn1Property(tag = 3, name = "rotateXY", optional = true)
-	@JsonProperty("rotateXY")
-	private Angle rotateXY;
-	@Asn1Property(tag = 4, name = "scaleXaxis", optional = true)
-	@JsonProperty("scaleXaxis")
-	private Scale_B12 scaleXaxis;
-	@Asn1Property(tag = 5, name = "scaleYaxis", optional = true)
-	@JsonProperty("scaleYaxis")
-	private Scale_B12 scaleYaxis;
-	@Asn1Property(tag = 6, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-ComputedLane")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "referenceLaneId")
+  @JsonProperty("referenceLaneId")
+  private LaneID referenceLaneId;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class OffsetXaxisChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "small")
-		@JsonProperty("small")
-		private DrivenLineOffsetSm small;
-		@Asn1Property(tag = 1, name = "large")
-		@JsonProperty("large")
-		private DrivenLineOffsetLg large;
+  @Asn1Property(tag = 1, name = "offsetXaxis")
+  @JsonProperty("offsetXaxis")
+  private OffsetXaxisChoice offsetXaxis;
 
-		public OffsetXaxisChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 2, name = "offsetYaxis")
+  @JsonProperty("offsetYaxis")
+  private OffsetYaxisChoice offsetYaxis;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class OffsetYaxisChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "small")
-		@JsonProperty("small")
-		private DrivenLineOffsetSm small;
-		@Asn1Property(tag = 1, name = "large")
-		@JsonProperty("large")
-		private DrivenLineOffsetLg large;
+  @Asn1Property(tag = 3, name = "rotateXY", optional = true)
+  @JsonProperty("rotateXY")
+  private Angle rotateXY;
 
-		public OffsetYaxisChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 4, name = "scaleXaxis", optional = true)
+  @JsonProperty("scaleXaxis")
+  private Scale_B12 scaleXaxis;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ComputedLane> {
-		public SequenceOfRegional() {
-			super(Reg_ComputedLane.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 5, name = "scaleYaxis", optional = true)
+  @JsonProperty("scaleYaxis")
+  private Scale_B12 scaleYaxis;
 
-	public ComputedLane() {
-		super(true);
-	}
+  @Asn1Property(tag = 6, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-ComputedLane")
+  private SequenceOfRegional regional;
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class OffsetXaxisChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "small")
+    @JsonProperty("small")
+    private DrivenLineOffsetSm small;
+
+    @Asn1Property(tag = 1, name = "large")
+    @JsonProperty("large")
+    private DrivenLineOffsetLg large;
+
+    public OffsetXaxisChoice() {
+      super(false);
+    }
+  }
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class OffsetYaxisChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "small")
+    @JsonProperty("small")
+    private DrivenLineOffsetSm small;
+
+    @Asn1Property(tag = 1, name = "large")
+    @JsonProperty("large")
+    private DrivenLineOffsetLg large;
+
+    public OffsetYaxisChoice() {
+      super(false);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ComputedLane> {
+    public SequenceOfRegional() {
+      super(Reg_ComputedLane.class, 1L, 4L);
+    }
+  }
+
+  public ComputedLane() {
+    super(true);
+  }
 }

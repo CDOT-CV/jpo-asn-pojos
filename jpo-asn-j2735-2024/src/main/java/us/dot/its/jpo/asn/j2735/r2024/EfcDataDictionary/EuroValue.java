@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = EuroValue.EuroValueDeserializer.class)
 public class EuroValue extends Asn1Integer {
 
-	public EuroValue() {
-		super(0L, 15L);
-	}
+  public EuroValue() {
+    super(0L, 15L);
+  }
 
-	@JsonCreator
-	public EuroValue(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public EuroValue(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class EuroValueDeserializer extends IntegerDeserializer<EuroValue> {
-		public EuroValueDeserializer() {
-			super(EuroValue.class);
-		}
+  public static class EuroValueDeserializer extends IntegerDeserializer<EuroValue> {
+    public EuroValueDeserializer() {
+      super(EuroValue.class);
+    }
 
-		@Override
-		protected EuroValue construct() {
-			return new EuroValue();
-		}
-	}
+    @Override
+    protected EuroValue construct() {
+      return new EuroValue();
+    }
+  }
 }

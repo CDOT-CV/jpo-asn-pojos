@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Tolerance.ToleranceDeserializer.class)
 public class Tolerance extends Asn1Integer {
 
-	public Tolerance() {
-		super(0L, 180L);
-	}
+  public Tolerance() {
+    super(0L, 180L);
+  }
 
-	@JsonCreator
-	public Tolerance(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Tolerance(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ToleranceDeserializer extends IntegerDeserializer<Tolerance> {
-		public ToleranceDeserializer() {
-			super(Tolerance.class);
-		}
+  public static class ToleranceDeserializer extends IntegerDeserializer<Tolerance> {
+    public ToleranceDeserializer() {
+      super(Tolerance.class);
+    }
 
-		@Override
-		protected Tolerance construct() {
-			return new Tolerance();
-		}
-	}
+    @Override
+    protected Tolerance construct() {
+      return new Tolerance();
+    }
+  }
 }

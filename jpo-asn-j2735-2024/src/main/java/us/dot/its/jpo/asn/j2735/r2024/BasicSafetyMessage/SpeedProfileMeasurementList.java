@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class SpeedProfileMeasurementList extends Asn1SequenceOf<SpeedProfileMeasurement> {
 
-	public SpeedProfileMeasurementList() {
-		super(SpeedProfileMeasurement.class, 1L, 20L);
-	}
+  public SpeedProfileMeasurementList() {
+    super(SpeedProfileMeasurement.class, 1L, 20L);
+  }
 }

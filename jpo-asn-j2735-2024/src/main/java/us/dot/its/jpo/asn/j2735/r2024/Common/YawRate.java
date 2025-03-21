@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = YawRate.YawRateDeserializer.class)
 public class YawRate extends Asn1Integer {
 
-	public YawRate() {
-		super(-32767L, 32767L);
-	}
+  public YawRate() {
+    super(-32767L, 32767L);
+  }
 
-	@JsonCreator
-	public YawRate(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public YawRate(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class YawRateDeserializer extends IntegerDeserializer<YawRate> {
-		public YawRateDeserializer() {
-			super(YawRate.class);
-		}
+  public static class YawRateDeserializer extends IntegerDeserializer<YawRate> {
+    public YawRateDeserializer() {
+      super(YawRate.class);
+    }
 
-		@Override
-		protected YawRate construct() {
-			return new YawRate();
-		}
-	}
+    @Override
+    protected YawRate construct() {
+      return new YawRate();
+    }
+  }
 }

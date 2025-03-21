@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ApplicableHeading extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "heading")
-	@JsonProperty("heading")
-	private HeadingDeg heading;
-	@Asn1Property(tag = 1, name = "tolerance")
-	@JsonProperty("tolerance")
-	private Tolerance tolerance;
+  @Asn1Property(tag = 0, name = "heading")
+  @JsonProperty("heading")
+  private HeadingDeg heading;
 
-	public ApplicableHeading() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tolerance")
+  @JsonProperty("tolerance")
+  private Tolerance tolerance;
+
+  public ApplicableHeading() {
+    super(true);
+  }
 }

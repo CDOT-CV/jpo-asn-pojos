@@ -39,38 +39,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AckPolicy extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeout")
-	@JsonProperty("timeout")
-	private TimeoutInteger timeout;
-	@Asn1Property(tag = 1, name = "numOfRetries")
-	@JsonProperty("numOfRetries")
-	private NumOfRetriesInteger numOfRetries;
+  @Asn1Property(tag = 0, name = "timeout")
+  @JsonProperty("timeout")
+  private TimeoutInteger timeout;
 
-	public static class TimeoutInteger extends Asn1Integer {
-		public TimeoutInteger() {
-			super(100L, 10000L);
-		}
+  @Asn1Property(tag = 1, name = "numOfRetries")
+  @JsonProperty("numOfRetries")
+  private NumOfRetriesInteger numOfRetries;
 
-		@JsonCreator
-		public TimeoutInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class TimeoutInteger extends Asn1Integer {
+    public TimeoutInteger() {
+      super(100L, 10000L);
+    }
 
-	public static class NumOfRetriesInteger extends Asn1Integer {
-		public NumOfRetriesInteger() {
-			super(1L, 5L);
-		}
+    @JsonCreator
+    public TimeoutInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public NumOfRetriesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class NumOfRetriesInteger extends Asn1Integer {
+    public NumOfRetriesInteger() {
+      super(1L, 5L);
+    }
 
-	public AckPolicy() {
-		super(true);
-	}
+    @JsonCreator
+    public NumOfRetriesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public AckPolicy() {
+    super(true);
+  }
 }

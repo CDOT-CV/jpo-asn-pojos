@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MeasurementTimeOffset.MeasurementTimeOffsetDeserializer.class)
 public class MeasurementTimeOffset extends Asn1Integer {
 
-	public MeasurementTimeOffset() {
-		super(-1500L, 1500L);
-	}
+  public MeasurementTimeOffset() {
+    super(-1500L, 1500L);
+  }
 
-	@JsonCreator
-	public MeasurementTimeOffset(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MeasurementTimeOffset(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MeasurementTimeOffsetDeserializer extends IntegerDeserializer<MeasurementTimeOffset> {
-		public MeasurementTimeOffsetDeserializer() {
-			super(MeasurementTimeOffset.class);
-		}
+  public static class MeasurementTimeOffsetDeserializer
+      extends IntegerDeserializer<MeasurementTimeOffset> {
+    public MeasurementTimeOffsetDeserializer() {
+      super(MeasurementTimeOffset.class);
+    }
 
-		@Override
-		protected MeasurementTimeOffset construct() {
-			return new MeasurementTimeOffset();
-		}
-	}
+    @Override
+    protected MeasurementTimeOffset construct() {
+      return new MeasurementTimeOffset();
+    }
+  }
 }

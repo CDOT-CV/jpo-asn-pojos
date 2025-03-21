@@ -40,134 +40,143 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgCommSysPerfEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "j2945-1ChanBusyThresh", optional = true)
-	@JsonProperty("j2945-1ChanBusyThresh")
-	private J2945_1ChanBusyThreshInteger j2945_1ChanBusyThresh;
-	@Asn1Property(tag = 1, name = "rfDataRsuInfo", optional = true)
-	@JsonProperty("rfDataRsuInfo")
-	private Asn1Boolean rfDataRsuInfo;
-	@Asn1Property(tag = 2, name = "numRsusObservedThresh", optional = true)
-	@JsonProperty("numRsusObservedThresh")
-	private NumRsusObservedThreshInteger numRsusObservedThresh;
-	@Asn1Property(tag = 3, name = "rfV2xJamDetectThresh", optional = true)
-	@JsonProperty("rfV2xJamDetectThresh")
-	private RfV2xJamDetectThreshInteger rfV2xJamDetectThresh;
-	@Asn1Property(tag = 4, name = "j2945-1VehDensThresh", optional = true)
-	@JsonProperty("j2945-1VehDensThresh")
-	private J2945_1VehDensThreshInteger j2945_1VehDensThresh;
-	@Asn1Property(tag = 5, name = "j2945-1CqiBelowThresh", optional = true)
-	@JsonProperty("j2945-1CqiBelowThresh")
-	private J2945_1CqiBelowThreshInteger j2945_1CqiBelowThresh;
-	@Asn1Property(tag = 6, name = "j2945-1TrackErrorThresh", optional = true)
-	@JsonProperty("j2945-1TrackErrorThresh")
-	private J2945_1TrackErrorThreshInteger j2945_1TrackErrorThresh;
-	@Asn1Property(tag = 7, name = "gnssHdopExceedsThresh", optional = true)
-	@JsonProperty("gnssHdopExceedsThresh")
-	private GnssHdopExceedsThreshInteger gnssHdopExceedsThresh;
-	@Asn1Property(tag = 8, name = "gnssSatsBelowThresh", optional = true)
-	@JsonProperty("gnssSatsBelowThresh")
-	private GnssSatsBelowThreshInteger gnssSatsBelowThresh;
-	@Asn1Property(tag = 9, name = "gnssJammingDetect", optional = true)
-	@JsonProperty("gnssJammingDetect")
-	private Asn1Boolean gnssJammingDetect;
+  @Asn1Property(tag = 0, name = "j2945-1ChanBusyThresh", optional = true)
+  @JsonProperty("j2945-1ChanBusyThresh")
+  private J2945_1ChanBusyThreshInteger j2945_1ChanBusyThresh;
 
-	public static class J2945_1ChanBusyThreshInteger extends Asn1Integer {
-		public J2945_1ChanBusyThreshInteger() {
-			super(1L, 100L);
-		}
+  @Asn1Property(tag = 1, name = "rfDataRsuInfo", optional = true)
+  @JsonProperty("rfDataRsuInfo")
+  private Asn1Boolean rfDataRsuInfo;
 
-		@JsonCreator
-		public J2945_1ChanBusyThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "numRsusObservedThresh", optional = true)
+  @JsonProperty("numRsusObservedThresh")
+  private NumRsusObservedThreshInteger numRsusObservedThresh;
 
-	public static class NumRsusObservedThreshInteger extends Asn1Integer {
-		public NumRsusObservedThreshInteger() {
-			super(1L, 254L);
-		}
+  @Asn1Property(tag = 3, name = "rfV2xJamDetectThresh", optional = true)
+  @JsonProperty("rfV2xJamDetectThresh")
+  private RfV2xJamDetectThreshInteger rfV2xJamDetectThresh;
 
-		@JsonCreator
-		public NumRsusObservedThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 4, name = "j2945-1VehDensThresh", optional = true)
+  @JsonProperty("j2945-1VehDensThresh")
+  private J2945_1VehDensThreshInteger j2945_1VehDensThresh;
 
-	public static class RfV2xJamDetectThreshInteger extends Asn1Integer {
-		public RfV2xJamDetectThreshInteger() {
-			super(1L, 140L);
-		}
+  @Asn1Property(tag = 5, name = "j2945-1CqiBelowThresh", optional = true)
+  @JsonProperty("j2945-1CqiBelowThresh")
+  private J2945_1CqiBelowThreshInteger j2945_1CqiBelowThresh;
 
-		@JsonCreator
-		public RfV2xJamDetectThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 6, name = "j2945-1TrackErrorThresh", optional = true)
+  @JsonProperty("j2945-1TrackErrorThresh")
+  private J2945_1TrackErrorThreshInteger j2945_1TrackErrorThresh;
 
-	public static class J2945_1VehDensThreshInteger extends Asn1Integer {
-		public J2945_1VehDensThreshInteger() {
-			super(1L, 255L);
-		}
+  @Asn1Property(tag = 7, name = "gnssHdopExceedsThresh", optional = true)
+  @JsonProperty("gnssHdopExceedsThresh")
+  private GnssHdopExceedsThreshInteger gnssHdopExceedsThresh;
 
-		@JsonCreator
-		public J2945_1VehDensThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 8, name = "gnssSatsBelowThresh", optional = true)
+  @JsonProperty("gnssSatsBelowThresh")
+  private GnssSatsBelowThreshInteger gnssSatsBelowThresh;
 
-	public static class J2945_1CqiBelowThreshInteger extends Asn1Integer {
-		public J2945_1CqiBelowThreshInteger() {
-			super(1L, 100L);
-		}
+  @Asn1Property(tag = 9, name = "gnssJammingDetect", optional = true)
+  @JsonProperty("gnssJammingDetect")
+  private Asn1Boolean gnssJammingDetect;
 
-		@JsonCreator
-		public J2945_1CqiBelowThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class J2945_1ChanBusyThreshInteger extends Asn1Integer {
+    public J2945_1ChanBusyThreshInteger() {
+      super(1L, 100L);
+    }
 
-	public static class J2945_1TrackErrorThreshInteger extends Asn1Integer {
-		public J2945_1TrackErrorThreshInteger() {
-			super(1L, 100L);
-		}
+    @JsonCreator
+    public J2945_1ChanBusyThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public J2945_1TrackErrorThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class NumRsusObservedThreshInteger extends Asn1Integer {
+    public NumRsusObservedThreshInteger() {
+      super(1L, 254L);
+    }
 
-	public static class GnssHdopExceedsThreshInteger extends Asn1Integer {
-		public GnssHdopExceedsThreshInteger() {
-			super(1L, 20L);
-		}
+    @JsonCreator
+    public NumRsusObservedThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public GnssHdopExceedsThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class RfV2xJamDetectThreshInteger extends Asn1Integer {
+    public RfV2xJamDetectThreshInteger() {
+      super(1L, 140L);
+    }
 
-	public static class GnssSatsBelowThreshInteger extends Asn1Integer {
-		public GnssSatsBelowThreshInteger() {
-			super(1L, 20L);
-		}
+    @JsonCreator
+    public RfV2xJamDetectThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		@JsonCreator
-		public GnssSatsBelowThreshInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class J2945_1VehDensThreshInteger extends Asn1Integer {
+    public J2945_1VehDensThreshInteger() {
+      super(1L, 255L);
+    }
 
-	public CfgCommSysPerfEvents() {
-		super(true);
-	}
+    @JsonCreator
+    public J2945_1VehDensThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class J2945_1CqiBelowThreshInteger extends Asn1Integer {
+    public J2945_1CqiBelowThreshInteger() {
+      super(1L, 100L);
+    }
+
+    @JsonCreator
+    public J2945_1CqiBelowThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class J2945_1TrackErrorThreshInteger extends Asn1Integer {
+    public J2945_1TrackErrorThreshInteger() {
+      super(1L, 100L);
+    }
+
+    @JsonCreator
+    public J2945_1TrackErrorThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class GnssHdopExceedsThreshInteger extends Asn1Integer {
+    public GnssHdopExceedsThreshInteger() {
+      super(1L, 20L);
+    }
+
+    @JsonCreator
+    public GnssHdopExceedsThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public static class GnssSatsBelowThreshInteger extends Asn1Integer {
+    public GnssSatsBelowThreshInteger() {
+      super(1L, 20L);
+    }
+
+    @JsonCreator
+    public GnssSatsBelowThreshInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public CfgCommSysPerfEvents() {
+    super(true);
+  }
 }

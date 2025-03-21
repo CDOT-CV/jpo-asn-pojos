@@ -44,75 +44,84 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class ProbeDataManagement extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "sample")
-	@JsonProperty("sample")
-	private Sample sample;
-	@Asn1Property(tag = 2, name = "directions")
-	@JsonProperty("directions")
-	private HeadingSlice directions;
-	@Asn1Property(tag = 3, name = "term")
-	@JsonProperty("term")
-	private TermChoice term;
-	@Asn1Property(tag = 4, name = "snapshot")
-	@JsonProperty("snapshot")
-	private SnapshotChoice snapshot;
-	@Asn1Property(tag = 5, name = "txInterval")
-	@JsonProperty("txInterval")
-	private SecondOfTime txInterval;
-	@Asn1Property(tag = 6, name = "dataElements", optional = true)
-	@JsonProperty("dataElements")
-	@JacksonXmlElementWrapper(localName = "dataElements")
-	@JacksonXmlProperty(localName = "VehicleStatusRequest")
-	private VehicleStatusRequestList dataElements;
-	@Asn1Property(tag = 7, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-ProbeDataManagement")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class TermChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "termtime")
-		@JsonProperty("termtime")
-		private TermTime termtime;
-		@Asn1Property(tag = 1, name = "termDistance")
-		@JsonProperty("termDistance")
-		private TermDistance termDistance;
+  @Asn1Property(tag = 1, name = "sample")
+  @JsonProperty("sample")
+  private Sample sample;
 
-		public TermChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 2, name = "directions")
+  @JsonProperty("directions")
+  private HeadingSlice directions;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class SnapshotChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "snapshotTime")
-		@JsonProperty("snapshotTime")
-		private SnapshotTime snapshotTime;
-		@Asn1Property(tag = 1, name = "snapshotDistance")
-		@JsonProperty("snapshotDistance")
-		private SnapshotDistance snapshotDistance;
+  @Asn1Property(tag = 3, name = "term")
+  @JsonProperty("term")
+  private TermChoice term;
 
-		public SnapshotChoice() {
-			super(false);
-		}
-	}
+  @Asn1Property(tag = 4, name = "snapshot")
+  @JsonProperty("snapshot")
+  private SnapshotChoice snapshot;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ProbeDataManagement> {
-		public SequenceOfRegional() {
-			super(Reg_ProbeDataManagement.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 5, name = "txInterval")
+  @JsonProperty("txInterval")
+  private SecondOfTime txInterval;
 
-	public ProbeDataManagement() {
-		super(true);
-	}
+  @Asn1Property(tag = 6, name = "dataElements", optional = true)
+  @JsonProperty("dataElements")
+  @JacksonXmlElementWrapper(localName = "dataElements")
+  @JacksonXmlProperty(localName = "VehicleStatusRequest")
+  private VehicleStatusRequestList dataElements;
+
+  @Asn1Property(tag = 7, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-ProbeDataManagement")
+  private SequenceOfRegional regional;
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class TermChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "termtime")
+    @JsonProperty("termtime")
+    private TermTime termtime;
+
+    @Asn1Property(tag = 1, name = "termDistance")
+    @JsonProperty("termDistance")
+    private TermDistance termDistance;
+
+    public TermChoice() {
+      super(false);
+    }
+  }
+
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class SnapshotChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "snapshotTime")
+    @JsonProperty("snapshotTime")
+    private SnapshotTime snapshotTime;
+
+    @Asn1Property(tag = 1, name = "snapshotDistance")
+    @JsonProperty("snapshotDistance")
+    private SnapshotDistance snapshotDistance;
+
+    public SnapshotChoice() {
+      super(false);
+    }
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ProbeDataManagement> {
+    public SequenceOfRegional() {
+      super(Reg_ProbeDataManagement.class, 1L, 4L);
+    }
+  }
+
+  public ProbeDataManagement() {
+    super(true);
+  }
 }

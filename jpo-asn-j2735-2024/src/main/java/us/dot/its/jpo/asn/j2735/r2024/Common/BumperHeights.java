@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class BumperHeights extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "front")
-	@JsonProperty("front")
-	private BumperHeight front;
-	@Asn1Property(tag = 1, name = "rear")
-	@JsonProperty("rear")
-	private BumperHeight rear;
+  @Asn1Property(tag = 0, name = "front")
+  @JsonProperty("front")
+  private BumperHeight front;
 
-	public BumperHeights() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "rear")
+  @JsonProperty("rear")
+  private BumperHeight rear;
+
+  public BumperHeights() {
+    super(false);
+  }
 }

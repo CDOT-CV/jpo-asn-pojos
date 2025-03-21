@@ -33,30 +33,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SummerTime.SummerTimeSerializer.class)
 @JsonDeserialize(using = SummerTime.SummerTimeDeserializer.class)
 public enum SummerTime implements Asn1Enumerated {
-	NOTINSUMMERTIME(0, "notInSummerTime"), INSUMMERTIME(1, "inSummerTime");
+  NOTINSUMMERTIME(0, "notInSummerTime"),
+  INSUMMERTIME(1, "inSummerTime");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SummerTime(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SummerTime(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SummerTimeSerializer extends EnumeratedSerializer<SummerTime> {
-		public SummerTimeSerializer() {
-			super(SummerTime.class);
-		}
-	}
+  public static class SummerTimeSerializer extends EnumeratedSerializer<SummerTime> {
+    public SummerTimeSerializer() {
+      super(SummerTime.class);
+    }
+  }
 
-	public static class SummerTimeDeserializer extends EnumeratedDeserializer<SummerTime> {
-		public SummerTimeDeserializer() {
-			super(SummerTime.class);
-		}
+  public static class SummerTimeDeserializer extends EnumeratedDeserializer<SummerTime> {
+    public SummerTimeDeserializer() {
+      super(SummerTime.class);
+    }
 
-		@Override
-		protected SummerTime[] listEnumValues() {
-			return SummerTime.values();
-		}
-	}
+    @Override
+    protected SummerTime[] listEnumValues() {
+      return SummerTime.values();
+    }
+  }
 }

@@ -26,88 +26,101 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = TrafficLightControllerStatus.TrafficLightControllerStatusDeserializer.class)
+@JsonDeserialize(
+    using =
+        TrafficLightControllerStatus
+            .TrafficLightControllerStatusDeserializer.class)
 public class TrafficLightControllerStatus extends Asn1Bitstring {
 
-	public boolean isConflict() {
-		return get(0);
-	}
+  public boolean isConflict() {
+    return get(0);
+  }
 
-	public void setConflict(boolean conflict) {
-		set(0, conflict);
-	}
+  public void setConflict(boolean conflict) {
+    set(0, conflict);
+  }
 
-	public boolean isCenter_comm_error() {
-		return get(1);
-	}
+  public boolean isCenter_comm_error() {
+    return get(1);
+  }
 
-	public void setCenter_comm_error(boolean center_comm_error) {
-		set(1, center_comm_error);
-	}
+  public void setCenter_comm_error(boolean center_comm_error) {
+    set(1, center_comm_error);
+  }
 
-	public boolean isScu_comm_error() {
-		return get(2);
-	}
+  public boolean isScu_comm_error() {
+    return get(2);
+  }
 
-	public void setScu_comm_error(boolean scu_comm_error) {
-		set(2, scu_comm_error);
-	}
+  public void setScu_comm_error(boolean scu_comm_error) {
+    set(2, scu_comm_error);
+  }
 
-	public boolean isReserved1() {
-		return get(3);
-	}
+  public boolean isReserved1() {
+    return get(3);
+  }
 
-	public void setReserved1(boolean reserved1) {
-		set(3, reserved1);
-	}
+  public void setReserved1(boolean reserved1) {
+    set(3, reserved1);
+  }
 
-	public boolean isReserved2() {
-		return get(4);
-	}
+  public boolean isReserved2() {
+    return get(4);
+  }
 
-	public void setReserved2(boolean reserved2) {
-		set(4, reserved2);
-	}
+  public void setReserved2(boolean reserved2) {
+    set(4, reserved2);
+  }
 
-	public boolean isReserved3() {
-		return get(5);
-	}
+  public boolean isReserved3() {
+    return get(5);
+  }
 
-	public void setReserved3(boolean reserved3) {
-		set(5, reserved3);
-	}
+  public void setReserved3(boolean reserved3) {
+    set(5, reserved3);
+  }
 
-	public boolean isReserved4() {
-		return get(6);
-	}
+  public boolean isReserved4() {
+    return get(6);
+  }
 
-	public void setReserved4(boolean reserved4) {
-		set(6, reserved4);
-	}
+  public void setReserved4(boolean reserved4) {
+    set(6, reserved4);
+  }
 
-	public boolean isReserved5() {
-		return get(7);
-	}
+  public boolean isReserved5() {
+    return get(7);
+  }
 
-	public void setReserved5(boolean reserved5) {
-		set(7, reserved5);
-	}
+  public void setReserved5(boolean reserved5) {
+    set(7, reserved5);
+  }
 
-	public TrafficLightControllerStatus() {
-		super(8, false, new String[]{"conflict", "center-comm-error", "scu-comm-error", "reserved1", "reserved2",
-				"reserved3", "reserved4", "reserved5"});
-	}
+  public TrafficLightControllerStatus() {
+    super(
+        8,
+        false,
+        new String[] {
+          "conflict",
+          "center-comm-error",
+          "scu-comm-error",
+          "reserved1",
+          "reserved2",
+          "reserved3",
+          "reserved4",
+          "reserved5"
+        });
+  }
 
-	public static class TrafficLightControllerStatusDeserializer
-			extends
-				BitStringDeserializer<TrafficLightControllerStatus> {
-		public TrafficLightControllerStatusDeserializer() {
-			super(TrafficLightControllerStatus.class);
-		}
+  public static class TrafficLightControllerStatusDeserializer
+      extends BitStringDeserializer<TrafficLightControllerStatus> {
+    public TrafficLightControllerStatusDeserializer() {
+      super(TrafficLightControllerStatus.class);
+    }
 
-		@Override
-		protected TrafficLightControllerStatus construct() {
-			return new TrafficLightControllerStatus();
-		}
-	}
+    @Override
+    protected TrafficLightControllerStatus construct() {
+      return new TrafficLightControllerStatus();
+    }
+  }
 }

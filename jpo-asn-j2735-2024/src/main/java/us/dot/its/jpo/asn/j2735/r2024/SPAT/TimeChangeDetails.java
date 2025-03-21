@@ -37,26 +37,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TimeChangeDetails extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "startTime", optional = true)
-	@JsonProperty("startTime")
-	private TimeMark startTime;
-	@Asn1Property(tag = 1, name = "minEndTime")
-	@JsonProperty("minEndTime")
-	private TimeMark minEndTime;
-	@Asn1Property(tag = 2, name = "maxEndTime", optional = true)
-	@JsonProperty("maxEndTime")
-	private TimeMark maxEndTime;
-	@Asn1Property(tag = 3, name = "likelyTime", optional = true)
-	@JsonProperty("likelyTime")
-	private TimeMark likelyTime;
-	@Asn1Property(tag = 4, name = "confidence", optional = true)
-	@JsonProperty("confidence")
-	private TimeIntervalConfidence confidence;
-	@Asn1Property(tag = 5, name = "nextTime", optional = true)
-	@JsonProperty("nextTime")
-	private TimeMark nextTime;
+  @Asn1Property(tag = 0, name = "startTime", optional = true)
+  @JsonProperty("startTime")
+  private TimeMark startTime;
 
-	public TimeChangeDetails() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "minEndTime")
+  @JsonProperty("minEndTime")
+  private TimeMark minEndTime;
+
+  @Asn1Property(tag = 2, name = "maxEndTime", optional = true)
+  @JsonProperty("maxEndTime")
+  private TimeMark maxEndTime;
+
+  @Asn1Property(tag = 3, name = "likelyTime", optional = true)
+  @JsonProperty("likelyTime")
+  private TimeMark likelyTime;
+
+  @Asn1Property(tag = 4, name = "confidence", optional = true)
+  @JsonProperty("confidence")
+  private TimeIntervalConfidence confidence;
+
+  @Asn1Property(tag = 5, name = "nextTime", optional = true)
+  @JsonProperty("nextTime")
+  private TimeMark nextTime;
+
+  public TimeChangeDetails() {
+    super(false);
+  }
 }

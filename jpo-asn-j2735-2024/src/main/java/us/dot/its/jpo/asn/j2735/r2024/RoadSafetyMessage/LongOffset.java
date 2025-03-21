@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = LongOffset.LongOffsetDeserializer.class)
 public class LongOffset extends Asn1Integer {
 
-	public LongOffset() {
-		super(-16384L, 16383L);
-	}
+  public LongOffset() {
+    super(-16384L, 16383L);
+  }
 
-	@JsonCreator
-	public LongOffset(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LongOffset(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LongOffsetDeserializer extends IntegerDeserializer<LongOffset> {
-		public LongOffsetDeserializer() {
-			super(LongOffset.class);
-		}
+  public static class LongOffsetDeserializer extends IntegerDeserializer<LongOffset> {
+    public LongOffsetDeserializer() {
+      super(LongOffset.class);
+    }
 
-		@Override
-		protected LongOffset construct() {
-			return new LongOffset();
-		}
-	}
+    @Override
+    protected LongOffset construct() {
+      return new LongOffset();
+    }
+  }
 }

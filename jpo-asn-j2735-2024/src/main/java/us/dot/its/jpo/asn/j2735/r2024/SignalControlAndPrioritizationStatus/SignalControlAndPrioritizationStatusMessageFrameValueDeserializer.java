@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationStatus;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class SignalControlAndPrioritizationStatusMessageFrameValueDeserializer
-		extends
-			OpenTypeDeserializer<SignalControlAndPrioritizationStatus> {
+    extends OpenTypeDeserializer<SignalControlAndPrioritizationStatus> {
 
-	public SignalControlAndPrioritizationStatusMessageFrameValueDeserializer() {
-		super(SignalControlAndPrioritizationStatus.class, "SignalControlAndPrioritizationStatus");
-	}
+  public SignalControlAndPrioritizationStatusMessageFrameValueDeserializer() {
+    super(SignalControlAndPrioritizationStatus.class, "SignalControlAndPrioritizationStatus");
+  }
 }

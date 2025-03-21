@@ -33,33 +33,46 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RequestedItem.RequestedItemSerializer.class)
 @JsonDeserialize(using = RequestedItem.RequestedItemDeserializer.class)
 public enum RequestedItem implements Asn1Enumerated {
-	RESERVED(0, "reserved"), ITEMA(1, "itemA"), ITEMB(2, "itemB"), ITEMC(3, "itemC"), ITEMD(4, "itemD"), ITEME(5,
-			"itemE"), ITEMF(6, "itemF"), ITEMG(7, "itemG"), ITEMI(8, "itemI"), ITEMJ(9,
-					"itemJ"), ITEMK(10, "itemK"), ITEML(11, "itemL"), ITEMM(12,
-							"itemM"), ITEMN(13, "itemN"), ITEMO(14, "itemO"), ITEMP(15, "itemP"), ITEMQ(16, "itemQ");
+  RESERVED(0, "reserved"),
+  ITEMA(1, "itemA"),
+  ITEMB(2, "itemB"),
+  ITEMC(3, "itemC"),
+  ITEMD(4, "itemD"),
+  ITEME(5, "itemE"),
+  ITEMF(6, "itemF"),
+  ITEMG(7, "itemG"),
+  ITEMI(8, "itemI"),
+  ITEMJ(9, "itemJ"),
+  ITEMK(10, "itemK"),
+  ITEML(11, "itemL"),
+  ITEMM(12, "itemM"),
+  ITEMN(13, "itemN"),
+  ITEMO(14, "itemO"),
+  ITEMP(15, "itemP"),
+  ITEMQ(16, "itemQ");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RequestedItem(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RequestedItem(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RequestedItemSerializer extends EnumeratedSerializer<RequestedItem> {
-		public RequestedItemSerializer() {
-			super(RequestedItem.class);
-		}
-	}
+  public static class RequestedItemSerializer extends EnumeratedSerializer<RequestedItem> {
+    public RequestedItemSerializer() {
+      super(RequestedItem.class);
+    }
+  }
 
-	public static class RequestedItemDeserializer extends EnumeratedDeserializer<RequestedItem> {
-		public RequestedItemDeserializer() {
-			super(RequestedItem.class);
-		}
+  public static class RequestedItemDeserializer extends EnumeratedDeserializer<RequestedItem> {
+    public RequestedItemDeserializer() {
+      super(RequestedItem.class);
+    }
 
-		@Override
-		protected RequestedItem[] listEnumValues() {
-			return RequestedItem.values();
-		}
-	}
+    @Override
+    protected RequestedItem[] listEnumValues() {
+      return RequestedItem.values();
+    }
+  }
 }

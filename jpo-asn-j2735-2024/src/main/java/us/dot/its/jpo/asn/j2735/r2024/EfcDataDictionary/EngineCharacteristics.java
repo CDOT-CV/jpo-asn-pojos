@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = EngineCharacteristics.EngineCharacteristicsDeserializer.class)
 public class EngineCharacteristics extends Asn1Integer {
 
-	public EngineCharacteristics() {
-		super(0L, 255L);
-	}
+  public EngineCharacteristics() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public EngineCharacteristics(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public EngineCharacteristics(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class EngineCharacteristicsDeserializer extends IntegerDeserializer<EngineCharacteristics> {
-		public EngineCharacteristicsDeserializer() {
-			super(EngineCharacteristics.class);
-		}
+  public static class EngineCharacteristicsDeserializer
+      extends IntegerDeserializer<EngineCharacteristics> {
+    public EngineCharacteristicsDeserializer() {
+      super(EngineCharacteristics.class);
+    }
 
-		@Override
-		protected EngineCharacteristics construct() {
-			return new EngineCharacteristics();
-		}
-	}
+    @Override
+    protected EngineCharacteristics construct() {
+      return new EngineCharacteristics();
+    }
+  }
 }

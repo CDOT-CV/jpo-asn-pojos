@@ -37,23 +37,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TRRLocationType2 extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "safetyGap")
-	@JsonProperty("safetyGap")
-	private TRRLength safetyGap;
-	@Asn1Property(tag = 1, name = "frontSideVehicle", optional = true)
-	@JsonProperty("frontSideVehicle")
-	private SurroundingVehicleInfo frontSideVehicle;
-	@Asn1Property(tag = 2, name = "rearSideVehicle", optional = true)
-	@JsonProperty("rearSideVehicle")
-	private SurroundingVehicleInfo rearSideVehicle;
-	@Asn1Property(tag = 3, name = "tRRLength", optional = true)
-	@JsonProperty("tRRLength")
-	private TRRLength tRRLength;
-	@Asn1Property(tag = 4, name = "laneOffset")
-	@JsonProperty("laneOffset")
-	private LaneOffset laneOffset;
+  @Asn1Property(tag = 0, name = "safetyGap")
+  @JsonProperty("safetyGap")
+  private TRRLength safetyGap;
 
-	public TRRLocationType2() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "frontSideVehicle", optional = true)
+  @JsonProperty("frontSideVehicle")
+  private SurroundingVehicleInfo frontSideVehicle;
+
+  @Asn1Property(tag = 2, name = "rearSideVehicle", optional = true)
+  @JsonProperty("rearSideVehicle")
+  private SurroundingVehicleInfo rearSideVehicle;
+
+  @Asn1Property(tag = 3, name = "tRRLength", optional = true)
+  @JsonProperty("tRRLength")
+  private TRRLength tRRLength;
+
+  @Asn1Property(tag = 4, name = "laneOffset")
+  @JsonProperty("laneOffset")
+  private LaneOffset laneOffset;
+
+  public TRRLocationType2() {
+    super(true);
+  }
 }

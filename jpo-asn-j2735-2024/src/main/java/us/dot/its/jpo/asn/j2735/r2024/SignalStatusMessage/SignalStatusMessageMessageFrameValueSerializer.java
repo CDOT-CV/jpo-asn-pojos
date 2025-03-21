@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class SignalStatusMessageMessageFrameValueSerializer extends OpenTypeSerializer<SignalStatusMessage> {
+public class SignalStatusMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<SignalStatusMessage> {
 
-	public SignalStatusMessageMessageFrameValueSerializer() {
-		super(SignalStatusMessage.class, "value", "SignalStatusMessage");
-	}
+  public SignalStatusMessageMessageFrameValueSerializer() {
+    super(SignalStatusMessage.class, "value", "SignalStatusMessage");
+  }
 }

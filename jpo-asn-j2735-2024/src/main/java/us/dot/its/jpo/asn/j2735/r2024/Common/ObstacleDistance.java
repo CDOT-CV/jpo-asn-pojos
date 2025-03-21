@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ObstacleDistance.ObstacleDistanceDeserializer.class)
 public class ObstacleDistance extends Asn1Integer {
 
-	public ObstacleDistance() {
-		super(0L, 32767L);
-	}
+  public ObstacleDistance() {
+    super(0L, 32767L);
+  }
 
-	@JsonCreator
-	public ObstacleDistance(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ObstacleDistance(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ObstacleDistanceDeserializer extends IntegerDeserializer<ObstacleDistance> {
-		public ObstacleDistanceDeserializer() {
-			super(ObstacleDistance.class);
-		}
+  public static class ObstacleDistanceDeserializer extends IntegerDeserializer<ObstacleDistance> {
+    public ObstacleDistanceDeserializer() {
+      super(ObstacleDistance.class);
+    }
 
-		@Override
-		protected ObstacleDistance construct() {
-			return new ObstacleDistance();
-		}
-	}
+    @Override
+    protected ObstacleDistance construct() {
+      return new ObstacleDistance();
+    }
+  }
 }

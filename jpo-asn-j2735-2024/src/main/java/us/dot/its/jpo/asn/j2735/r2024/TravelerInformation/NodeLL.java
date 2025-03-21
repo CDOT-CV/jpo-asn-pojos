@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class NodeLL extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "delta")
-	@JsonProperty("delta")
-	private NodeOffsetPointLL delta;
-	@Asn1Property(tag = 1, name = "attributes", optional = true)
-	@JsonProperty("attributes")
-	private NodeAttributeSetLL attributes;
+  @Asn1Property(tag = 0, name = "delta")
+  @JsonProperty("delta")
+  private NodeOffsetPointLL delta;
 
-	public NodeLL() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "attributes", optional = true)
+  @JsonProperty("attributes")
+  private NodeAttributeSetLL attributes;
+
+  public NodeLL() {
+    super(true);
+  }
 }

@@ -35,17 +35,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class Point extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "pointIdentifier")
-	@JsonProperty("pointIdentifier")
-	private Int4Unsigned pointIdentifier;
-	@Asn1Property(tag = 1, name = "absolutePointCoordinates")
-	@JsonProperty("absolutePointCoordinates")
-	private AbsolutePosition3d absolutePointCoordinates;
-	@Asn1Property(tag = 2, name = "relativePointCoordinates")
-	@JsonProperty("relativePointCoordinates")
-	private RelativePosition3d relativePointCoordinates;
+  @Asn1Property(tag = 0, name = "pointIdentifier")
+  @JsonProperty("pointIdentifier")
+  private Int4Unsigned pointIdentifier;
 
-	public Point() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "absolutePointCoordinates")
+  @JsonProperty("absolutePointCoordinates")
+  private AbsolutePosition3d absolutePointCoordinates;
+
+  @Asn1Property(tag = 2, name = "relativePointCoordinates")
+  @JsonProperty("relativePointCoordinates")
+  private RelativePosition3d relativePointCoordinates;
+
+  public Point() {
+    super(false);
+  }
 }

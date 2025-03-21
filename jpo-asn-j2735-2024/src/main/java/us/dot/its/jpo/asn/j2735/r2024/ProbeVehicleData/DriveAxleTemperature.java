@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DriveAxleTemperature.DriveAxleTemperatureDeserializer.class)
 public class DriveAxleTemperature extends Asn1Integer {
 
-	public DriveAxleTemperature() {
-		super(-40L, 210L);
-	}
+  public DriveAxleTemperature() {
+    super(-40L, 210L);
+  }
 
-	@JsonCreator
-	public DriveAxleTemperature(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DriveAxleTemperature(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DriveAxleTemperatureDeserializer extends IntegerDeserializer<DriveAxleTemperature> {
-		public DriveAxleTemperatureDeserializer() {
-			super(DriveAxleTemperature.class);
-		}
+  public static class DriveAxleTemperatureDeserializer
+      extends IntegerDeserializer<DriveAxleTemperature> {
+    public DriveAxleTemperatureDeserializer() {
+      super(DriveAxleTemperature.class);
+    }
 
-		@Override
-		protected DriveAxleTemperature construct() {
-			return new DriveAxleTemperature();
-		}
-	}
+    @Override
+    protected DriveAxleTemperature construct() {
+      return new DriveAxleTemperature();
+    }
+  }
 }

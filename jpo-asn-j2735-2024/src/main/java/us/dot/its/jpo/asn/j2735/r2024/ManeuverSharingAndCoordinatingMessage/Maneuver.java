@@ -39,13 +39,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Maneuver extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "subManeuverList")
-	@JsonProperty("subManeuverList")
-	@JacksonXmlElementWrapper(localName = "subManeuverList")
-	@JacksonXmlProperty(localName = "SubManeuver")
-	private SubManeuverList subManeuverList;
+  @Asn1Property(tag = 0, name = "subManeuverList")
+  @JsonProperty("subManeuverList")
+  @JacksonXmlElementWrapper(localName = "subManeuverList")
+  @JacksonXmlProperty(localName = "SubManeuver")
+  private SubManeuverList subManeuverList;
 
-	public Maneuver() {
-		super(true);
-	}
+  public Maneuver() {
+    super(true);
+  }
 }

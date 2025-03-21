@@ -35,32 +35,39 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class LaneTypeAttributes extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "vehicle")
-	@JsonProperty("vehicle")
-	private LaneAttributes_Vehicle vehicle;
-	@Asn1Property(tag = 1, name = "crosswalk")
-	@JsonProperty("crosswalk")
-	private LaneAttributes_Crosswalk crosswalk;
-	@Asn1Property(tag = 2, name = "bikeLane")
-	@JsonProperty("bikeLane")
-	private LaneAttributes_Bike bikeLane;
-	@Asn1Property(tag = 3, name = "sidewalk")
-	@JsonProperty("sidewalk")
-	private LaneAttributes_Sidewalk sidewalk;
-	@Asn1Property(tag = 4, name = "median")
-	@JsonProperty("median")
-	private LaneAttributes_Barrier median;
-	@Asn1Property(tag = 5, name = "striping")
-	@JsonProperty("striping")
-	private LaneAttributes_Striping striping;
-	@Asn1Property(tag = 6, name = "trackedVehicle")
-	@JsonProperty("trackedVehicle")
-	private LaneAttributes_TrackedVehicle trackedVehicle;
-	@Asn1Property(tag = 7, name = "parking")
-	@JsonProperty("parking")
-	private LaneAttributes_Parking parking;
+  @Asn1Property(tag = 0, name = "vehicle")
+  @JsonProperty("vehicle")
+  private LaneAttributes_Vehicle vehicle;
 
-	public LaneTypeAttributes() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "crosswalk")
+  @JsonProperty("crosswalk")
+  private LaneAttributes_Crosswalk crosswalk;
+
+  @Asn1Property(tag = 2, name = "bikeLane")
+  @JsonProperty("bikeLane")
+  private LaneAttributes_Bike bikeLane;
+
+  @Asn1Property(tag = 3, name = "sidewalk")
+  @JsonProperty("sidewalk")
+  private LaneAttributes_Sidewalk sidewalk;
+
+  @Asn1Property(tag = 4, name = "median")
+  @JsonProperty("median")
+  private LaneAttributes_Barrier median;
+
+  @Asn1Property(tag = 5, name = "striping")
+  @JsonProperty("striping")
+  private LaneAttributes_Striping striping;
+
+  @Asn1Property(tag = 6, name = "trackedVehicle")
+  @JsonProperty("trackedVehicle")
+  private LaneAttributes_TrackedVehicle trackedVehicle;
+
+  @Asn1Property(tag = 7, name = "parking")
+  @JsonProperty("parking")
+  private LaneAttributes_Parking parking;
+
+  public LaneTypeAttributes() {
+    super(true);
+  }
 }

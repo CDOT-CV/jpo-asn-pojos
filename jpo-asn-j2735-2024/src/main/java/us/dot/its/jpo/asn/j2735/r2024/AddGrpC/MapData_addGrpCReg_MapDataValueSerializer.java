@@ -26,7 +26,7 @@ import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class MapData_addGrpCReg_MapDataValueSerializer extends OpenTypeSerializer<MapData_addGrpC> {
 
-	public MapData_addGrpCReg_MapDataValueSerializer() {
-		super(MapData_addGrpC.class, "regExtValue", "MapData_addGrpC");
-	}
+  public MapData_addGrpCReg_MapDataValueSerializer() {
+    super(MapData_addGrpC.class, "regExtValue", "MapData_addGrpC");
+  }
 }

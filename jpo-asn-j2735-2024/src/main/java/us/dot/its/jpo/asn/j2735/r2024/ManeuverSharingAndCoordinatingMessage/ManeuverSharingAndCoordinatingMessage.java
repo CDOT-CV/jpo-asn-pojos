@@ -43,43 +43,53 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ManeuverSharingAndCoordinatingMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "mSCMTimestamp")
-	@JsonProperty("mSCMTimestamp")
-	private DDateTime mSCMTimestamp;
-	@Asn1Property(tag = 1, name = "hVPos", optional = true)
-	@JsonProperty("hVPos")
-	private Position3D hVPos;
-	@Asn1Property(tag = 2, name = "hVPosXYConf", optional = true)
-	@JsonProperty("hVPosXYConf")
-	private PositionalAccuracy hVPosXYConf;
-	@Asn1Property(tag = 3, name = "mSCMType")
-	@JsonProperty("mSCMType")
-	private MSCMType mSCMType;
-	@Asn1Property(tag = 4, name = "sourceID")
-	@JsonProperty("sourceID")
-	private TemporaryID sourceID;
-	@Asn1Property(tag = 5, name = "destinationIDs", optional = true)
-	@JsonProperty("destinationIDs")
-	@JacksonXmlElementWrapper(localName = "destinationIDs")
-	@JacksonXmlProperty(localName = "TemporaryID")
-	private TemporaryIDList destinationIDs;
-	@Asn1Property(tag = 6, name = "maneuverID", optional = true)
-	@JsonProperty("maneuverID")
-	private ManeuverID maneuverID;
-	@Asn1Property(tag = 7, name = "maneuver", optional = true)
-	@JsonProperty("maneuver")
-	private Maneuver maneuver;
-	@Asn1Property(tag = 8, name = "responseFlag", optional = true)
-	@JsonProperty("responseFlag")
-	private ResponseFlag responseFlag;
-	@Asn1Property(tag = 9, name = "reasonCode", optional = true)
-	@JsonProperty("reasonCode")
-	private ReasonCode reasonCode;
-	@Asn1Property(tag = 10, name = "maneuverExecutionStatus", optional = true)
-	@JsonProperty("maneuverExecutionStatus")
-	private ManeuverExecutionStatus maneuverExecutionStatus;
+  @Asn1Property(tag = 0, name = "mSCMTimestamp")
+  @JsonProperty("mSCMTimestamp")
+  private DDateTime mSCMTimestamp;
 
-	public ManeuverSharingAndCoordinatingMessage() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "hVPos", optional = true)
+  @JsonProperty("hVPos")
+  private Position3D hVPos;
+
+  @Asn1Property(tag = 2, name = "hVPosXYConf", optional = true)
+  @JsonProperty("hVPosXYConf")
+  private PositionalAccuracy hVPosXYConf;
+
+  @Asn1Property(tag = 3, name = "mSCMType")
+  @JsonProperty("mSCMType")
+  private MSCMType mSCMType;
+
+  @Asn1Property(tag = 4, name = "sourceID")
+  @JsonProperty("sourceID")
+  private TemporaryID sourceID;
+
+  @Asn1Property(tag = 5, name = "destinationIDs", optional = true)
+  @JsonProperty("destinationIDs")
+  @JacksonXmlElementWrapper(localName = "destinationIDs")
+  @JacksonXmlProperty(localName = "TemporaryID")
+  private TemporaryIDList destinationIDs;
+
+  @Asn1Property(tag = 6, name = "maneuverID", optional = true)
+  @JsonProperty("maneuverID")
+  private ManeuverID maneuverID;
+
+  @Asn1Property(tag = 7, name = "maneuver", optional = true)
+  @JsonProperty("maneuver")
+  private Maneuver maneuver;
+
+  @Asn1Property(tag = 8, name = "responseFlag", optional = true)
+  @JsonProperty("responseFlag")
+  private ResponseFlag responseFlag;
+
+  @Asn1Property(tag = 9, name = "reasonCode", optional = true)
+  @JsonProperty("reasonCode")
+  private ReasonCode reasonCode;
+
+  @Asn1Property(tag = 10, name = "maneuverExecutionStatus", optional = true)
+  @JsonProperty("maneuverExecutionStatus")
+  private ManeuverExecutionStatus maneuverExecutionStatus;
+
+  public ManeuverSharingAndCoordinatingMessage() {
+    super(true);
+  }
 }

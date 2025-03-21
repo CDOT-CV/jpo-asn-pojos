@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TrafficConditions.TrafficConditionsDeserializer.class)
 public class TrafficConditions extends Asn1Integer {
 
-	public TrafficConditions() {
-		super(0L, 65535L);
-	}
+  public TrafficConditions() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public TrafficConditions(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TrafficConditions(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TrafficConditionsDeserializer extends IntegerDeserializer<TrafficConditions> {
-		public TrafficConditionsDeserializer() {
-			super(TrafficConditions.class);
-		}
+  public static class TrafficConditionsDeserializer extends IntegerDeserializer<TrafficConditions> {
+    public TrafficConditionsDeserializer() {
+      super(TrafficConditions.class);
+    }
 
-		@Override
-		protected TrafficConditions construct() {
-			return new TrafficConditions();
-		}
-	}
+    @Override
+    protected TrafficConditions construct() {
+      return new TrafficConditions();
+    }
+  }
 }

@@ -38,11 +38,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SignalControlZone extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "zone")
-	@JsonProperty("zone")
-	private Reg_SignalControlZone zone;
+  @Asn1Property(tag = 0, name = "zone")
+  @JsonProperty("zone")
+  private Reg_SignalControlZone zone;
 
-	public SignalControlZone() {
-		super(true);
-	}
+  public SignalControlZone() {
+    super(true);
+  }
 }

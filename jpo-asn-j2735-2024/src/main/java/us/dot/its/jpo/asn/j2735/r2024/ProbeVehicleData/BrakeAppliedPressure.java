@@ -33,34 +33,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = BrakeAppliedPressure.BrakeAppliedPressureSerializer.class)
 @JsonDeserialize(using = BrakeAppliedPressure.BrakeAppliedPressureDeserializer.class)
 public enum BrakeAppliedPressure implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), MINPRESSURE(1, "minPressure"), BKLVL_2(2, "bkLvl-2"), BKLVL_3(3, "bkLvl-3"), BKLVL_4(
-			4, "bkLvl-4"), BKLVL_5(5, "bkLvl-5"), BKLVL_6(6, "bkLvl-6"), BKLVL_7(7, "bkLvl-7"), BKLVL_8(8,
-					"bkLvl-8"), BKLVL_9(9, "bkLvl-9"), BKLVL_10(10, "bkLvl-10"), BKLVL_11(11, "bkLvl-11"), BKLVL_12(12,
-							"bkLvl-12"), BKLVL_13(13,
-									"bkLvl-13"), BKLVL_14(14, "bkLvl-14"), MAXPRESSURE(15, "maxPressure");
+  UNAVAILABLE(0, "unavailable"),
+  MINPRESSURE(1, "minPressure"),
+  BKLVL_2(2, "bkLvl-2"),
+  BKLVL_3(3, "bkLvl-3"),
+  BKLVL_4(4, "bkLvl-4"),
+  BKLVL_5(5, "bkLvl-5"),
+  BKLVL_6(6, "bkLvl-6"),
+  BKLVL_7(7, "bkLvl-7"),
+  BKLVL_8(8, "bkLvl-8"),
+  BKLVL_9(9, "bkLvl-9"),
+  BKLVL_10(10, "bkLvl-10"),
+  BKLVL_11(11, "bkLvl-11"),
+  BKLVL_12(12, "bkLvl-12"),
+  BKLVL_13(13, "bkLvl-13"),
+  BKLVL_14(14, "bkLvl-14"),
+  MAXPRESSURE(15, "maxPressure");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private BrakeAppliedPressure(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private BrakeAppliedPressure(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class BrakeAppliedPressureSerializer extends EnumeratedSerializer<BrakeAppliedPressure> {
-		public BrakeAppliedPressureSerializer() {
-			super(BrakeAppliedPressure.class);
-		}
-	}
+  public static class BrakeAppliedPressureSerializer
+      extends EnumeratedSerializer<BrakeAppliedPressure> {
+    public BrakeAppliedPressureSerializer() {
+      super(BrakeAppliedPressure.class);
+    }
+  }
 
-	public static class BrakeAppliedPressureDeserializer extends EnumeratedDeserializer<BrakeAppliedPressure> {
-		public BrakeAppliedPressureDeserializer() {
-			super(BrakeAppliedPressure.class);
-		}
+  public static class BrakeAppliedPressureDeserializer
+      extends EnumeratedDeserializer<BrakeAppliedPressure> {
+    public BrakeAppliedPressureDeserializer() {
+      super(BrakeAppliedPressure.class);
+    }
 
-		@Override
-		protected BrakeAppliedPressure[] listEnumValues() {
-			return BrakeAppliedPressure.values();
-		}
-	}
+    @Override
+    protected BrakeAppliedPressure[] listEnumValues() {
+      return BrakeAppliedPressure.values();
+    }
+  }
 }

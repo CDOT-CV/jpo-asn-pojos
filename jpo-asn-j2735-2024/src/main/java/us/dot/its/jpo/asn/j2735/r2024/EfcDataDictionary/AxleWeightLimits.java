@@ -37,23 +37,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AxleWeightLimits extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "maxLadenweightOnAxle1")
-	@JsonProperty("maxLadenweightOnAxle1")
-	private Int2Unsigned maxLadenweightOnAxle1;
-	@Asn1Property(tag = 1, name = "maxLadenweightOnAxle2")
-	@JsonProperty("maxLadenweightOnAxle2")
-	private Int2Unsigned maxLadenweightOnAxle2;
-	@Asn1Property(tag = 2, name = "maxLadenweightOnAxle3")
-	@JsonProperty("maxLadenweightOnAxle3")
-	private Int2Unsigned maxLadenweightOnAxle3;
-	@Asn1Property(tag = 3, name = "maxLadenweightOnAxle4")
-	@JsonProperty("maxLadenweightOnAxle4")
-	private Int2Unsigned maxLadenweightOnAxle4;
-	@Asn1Property(tag = 4, name = "maxLadenweightOnAxle5")
-	@JsonProperty("maxLadenweightOnAxle5")
-	private Int2Unsigned maxLadenweightOnAxle5;
+  @Asn1Property(tag = 0, name = "maxLadenweightOnAxle1")
+  @JsonProperty("maxLadenweightOnAxle1")
+  private Int2Unsigned maxLadenweightOnAxle1;
 
-	public AxleWeightLimits() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "maxLadenweightOnAxle2")
+  @JsonProperty("maxLadenweightOnAxle2")
+  private Int2Unsigned maxLadenweightOnAxle2;
+
+  @Asn1Property(tag = 2, name = "maxLadenweightOnAxle3")
+  @JsonProperty("maxLadenweightOnAxle3")
+  private Int2Unsigned maxLadenweightOnAxle3;
+
+  @Asn1Property(tag = 3, name = "maxLadenweightOnAxle4")
+  @JsonProperty("maxLadenweightOnAxle4")
+  private Int2Unsigned maxLadenweightOnAxle4;
+
+  @Asn1Property(tag = 4, name = "maxLadenweightOnAxle5")
+  @JsonProperty("maxLadenweightOnAxle5")
+  private Int2Unsigned maxLadenweightOnAxle5;
+
+  public AxleWeightLimits() {
+    super(false);
+  }
 }

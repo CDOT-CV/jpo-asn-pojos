@@ -33,31 +33,38 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TrafficLightingStatus.TrafficLightingStatusSerializer.class)
 @JsonDeserialize(using = TrafficLightingStatus.TrafficLightingStatusDeserializer.class)
 public enum TrafficLightingStatus implements Asn1Enumerated {
-	OFF(0, "off"), RED_ON(1, "red-on"), YELLOW_ON(2, "yellow-on"), GREEN_ON(3, "green-on"), RED_BLINKING(4,
-			"red-blinking"), YELLOW_BLINKING(5, "yellow-blinking"), GREEN_BLINKING(6, "green-blinking");
+  OFF(0, "off"),
+  RED_ON(1, "red-on"),
+  YELLOW_ON(2, "yellow-on"),
+  GREEN_ON(3, "green-on"),
+  RED_BLINKING(4, "red-blinking"),
+  YELLOW_BLINKING(5, "yellow-blinking"),
+  GREEN_BLINKING(6, "green-blinking");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TrafficLightingStatus(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TrafficLightingStatus(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TrafficLightingStatusSerializer extends EnumeratedSerializer<TrafficLightingStatus> {
-		public TrafficLightingStatusSerializer() {
-			super(TrafficLightingStatus.class);
-		}
-	}
+  public static class TrafficLightingStatusSerializer
+      extends EnumeratedSerializer<TrafficLightingStatus> {
+    public TrafficLightingStatusSerializer() {
+      super(TrafficLightingStatus.class);
+    }
+  }
 
-	public static class TrafficLightingStatusDeserializer extends EnumeratedDeserializer<TrafficLightingStatus> {
-		public TrafficLightingStatusDeserializer() {
-			super(TrafficLightingStatus.class);
-		}
+  public static class TrafficLightingStatusDeserializer
+      extends EnumeratedDeserializer<TrafficLightingStatus> {
+    public TrafficLightingStatusDeserializer() {
+      super(TrafficLightingStatus.class);
+    }
 
-		@Override
-		protected TrafficLightingStatus[] listEnumValues() {
-			return TrafficLightingStatus.values();
-		}
-	}
+    @Override
+    protected TrafficLightingStatus[] listEnumValues() {
+      return TrafficLightingStatus.values();
+    }
+  }
 }

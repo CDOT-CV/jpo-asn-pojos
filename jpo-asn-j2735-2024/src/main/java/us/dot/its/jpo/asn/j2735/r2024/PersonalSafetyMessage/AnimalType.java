@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AnimalType.AnimalTypeSerializer.class)
 @JsonDeserialize(using = AnimalType.AnimalTypeDeserializer.class)
 public enum AnimalType implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), SERVICEUSE(1, "serviceUse"), PET(2, "pet"), FARM(3, "farm");
+  UNAVAILABLE(0, "unavailable"),
+  SERVICEUSE(1, "serviceUse"),
+  PET(2, "pet"),
+  FARM(3, "farm");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AnimalType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AnimalType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AnimalTypeSerializer extends EnumeratedSerializer<AnimalType> {
-		public AnimalTypeSerializer() {
-			super(AnimalType.class);
-		}
-	}
+  public static class AnimalTypeSerializer extends EnumeratedSerializer<AnimalType> {
+    public AnimalTypeSerializer() {
+      super(AnimalType.class);
+    }
+  }
 
-	public static class AnimalTypeDeserializer extends EnumeratedDeserializer<AnimalType> {
-		public AnimalTypeDeserializer() {
-			super(AnimalType.class);
-		}
+  public static class AnimalTypeDeserializer extends EnumeratedDeserializer<AnimalType> {
+    public AnimalTypeDeserializer() {
+      super(AnimalType.class);
+    }
 
-		@Override
-		protected AnimalType[] listEnumValues() {
-			return AnimalType.values();
-		}
-	}
+    @Override
+    protected AnimalType[] listEnumValues() {
+      return AnimalType.values();
+    }
+  }
 }

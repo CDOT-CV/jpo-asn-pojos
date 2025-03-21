@@ -36,14 +36,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class NodePointLLE extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "node-3Dabsolute")
-	@JsonProperty("node-3Dabsolute")
-	private Position3D node_3Dabsolute;
-	@Asn1Property(tag = 1, name = "node-3Doffset")
-	@JsonProperty("node-3Doffset")
-	private Offset3D node_3Doffset;
+  @Asn1Property(tag = 0, name = "node-3Dabsolute")
+  @JsonProperty("node-3Dabsolute")
+  private Position3D node_3Dabsolute;
 
-	public NodePointLLE() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "node-3Doffset")
+  @JsonProperty("node-3Doffset")
+  private Offset3D node_3Doffset;
+
+  public NodePointLLE() {
+    super(true);
+  }
 }

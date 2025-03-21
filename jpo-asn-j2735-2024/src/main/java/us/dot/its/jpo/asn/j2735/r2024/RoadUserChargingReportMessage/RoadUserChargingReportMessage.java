@@ -39,26 +39,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RoadUserChargingReportMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "usageReport")
-	@JsonProperty("usageReport")
-	private UsageReport usageReport;
-	@Asn1Property(tag = 1, name = "serviceProviderData", optional = true)
-	@JsonProperty("serviceProviderData")
-	private ServiceProviderDataOctetString serviceProviderData;
+  @Asn1Property(tag = 0, name = "usageReport")
+  @JsonProperty("usageReport")
+  private UsageReport usageReport;
 
-	public static class ServiceProviderDataOctetString extends Asn1OctetString {
-		public ServiceProviderDataOctetString() {
-			super(1024, 1024);
-		}
+  @Asn1Property(tag = 1, name = "serviceProviderData", optional = true)
+  @JsonProperty("serviceProviderData")
+  private ServiceProviderDataOctetString serviceProviderData;
 
-		@JsonCreator
-		public ServiceProviderDataOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  public static class ServiceProviderDataOctetString extends Asn1OctetString {
+    public ServiceProviderDataOctetString() {
+      super(1024, 1024);
+    }
 
-	public RoadUserChargingReportMessage() {
-		super(true);
-	}
+    @JsonCreator
+    public ServiceProviderDataOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public RoadUserChargingReportMessage() {
+    super(true);
+  }
 }

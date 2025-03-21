@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = EquipmentType.EquipmentTypeSerializer.class)
 @JsonDeserialize(using = EquipmentType.EquipmentTypeDeserializer.class)
 public enum EquipmentType implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), RSU(1, "rsu"), OBU(2, "obu"), VRU(3, "vru");
+  UNKNOWN(0, "unknown"),
+  RSU(1, "rsu"),
+  OBU(2, "obu"),
+  VRU(3, "vru");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private EquipmentType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private EquipmentType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class EquipmentTypeSerializer extends EnumeratedSerializer<EquipmentType> {
-		public EquipmentTypeSerializer() {
-			super(EquipmentType.class);
-		}
-	}
+  public static class EquipmentTypeSerializer extends EnumeratedSerializer<EquipmentType> {
+    public EquipmentTypeSerializer() {
+      super(EquipmentType.class);
+    }
+  }
 
-	public static class EquipmentTypeDeserializer extends EnumeratedDeserializer<EquipmentType> {
-		public EquipmentTypeDeserializer() {
-			super(EquipmentType.class);
-		}
+  public static class EquipmentTypeDeserializer extends EnumeratedDeserializer<EquipmentType> {
+    public EquipmentTypeDeserializer() {
+      super(EquipmentType.class);
+    }
 
-		@Override
-		protected EquipmentType[] listEnumValues() {
-			return EquipmentType.values();
-		}
-	}
+    @Override
+    protected EquipmentType[] listEnumValues() {
+      return EquipmentType.values();
+    }
+  }
 }

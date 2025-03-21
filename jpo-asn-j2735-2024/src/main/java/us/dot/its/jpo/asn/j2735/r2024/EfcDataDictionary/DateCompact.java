@@ -39,53 +39,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DateCompact extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "year")
-	@JsonProperty("year")
-	private YearInteger year;
-	@Asn1Property(tag = 1, name = "month")
-	@JsonProperty("month")
-	private MonthInteger month;
-	@Asn1Property(tag = 2, name = "day")
-	@JsonProperty("day")
-	private DayInteger day;
+  @Asn1Property(tag = 0, name = "year")
+  @JsonProperty("year")
+  private YearInteger year;
 
-	public static class YearInteger extends Asn1Integer {
-		public YearInteger() {
-			super(1990L, 2117L);
-		}
+  @Asn1Property(tag = 1, name = "month")
+  @JsonProperty("month")
+  private MonthInteger month;
 
-		@JsonCreator
-		public YearInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "day")
+  @JsonProperty("day")
+  private DayInteger day;
 
-	public static class MonthInteger extends Asn1Integer {
-		public MonthInteger() {
-			super(1L, 12L);
-		}
+  public static class YearInteger extends Asn1Integer {
+    public YearInteger() {
+      super(1990L, 2117L);
+    }
 
-		@JsonCreator
-		public MonthInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public YearInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class DayInteger extends Asn1Integer {
-		public DayInteger() {
-			super(1L, 31L);
-		}
+  public static class MonthInteger extends Asn1Integer {
+    public MonthInteger() {
+      super(1L, 12L);
+    }
 
-		@JsonCreator
-		public DayInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public MonthInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public DateCompact() {
-		super(false);
-	}
+  public static class DayInteger extends Asn1Integer {
+    public DayInteger() {
+      super(1L, 31L);
+    }
+
+    @JsonCreator
+    public DayInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public DateCompact() {
+    super(false);
+  }
 }

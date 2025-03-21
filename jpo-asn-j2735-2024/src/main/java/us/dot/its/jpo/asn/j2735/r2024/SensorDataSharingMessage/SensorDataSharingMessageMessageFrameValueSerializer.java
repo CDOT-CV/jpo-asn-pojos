@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class SensorDataSharingMessageMessageFrameValueSerializer extends OpenTypeSerializer<SensorDataSharingMessage> {
+public class SensorDataSharingMessageMessageFrameValueSerializer
+    extends OpenTypeSerializer<SensorDataSharingMessage> {
 
-	public SensorDataSharingMessageMessageFrameValueSerializer() {
-		super(SensorDataSharingMessage.class, "value", "SensorDataSharingMessage");
-	}
+  public SensorDataSharingMessageMessageFrameValueSerializer() {
+    super(SensorDataSharingMessage.class, "value", "SensorDataSharingMessage");
+  }
 }

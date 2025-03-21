@@ -33,31 +33,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ThrottleConfidence.ThrottleConfidenceSerializer.class)
 @JsonDeserialize(using = ThrottleConfidence.ThrottleConfidenceDeserializer.class)
 public enum ThrottleConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), PREC10PERCENT(1, "prec10percent"), PREC1PERCENT(2, "prec1percent"), PREC0_5PERCENT(3,
-			"prec0-5percent");
+  UNAVAILABLE(0, "unavailable"),
+  PREC10PERCENT(1, "prec10percent"),
+  PREC1PERCENT(2, "prec1percent"),
+  PREC0_5PERCENT(3, "prec0-5percent");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ThrottleConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ThrottleConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ThrottleConfidenceSerializer extends EnumeratedSerializer<ThrottleConfidence> {
-		public ThrottleConfidenceSerializer() {
-			super(ThrottleConfidence.class);
-		}
-	}
+  public static class ThrottleConfidenceSerializer
+      extends EnumeratedSerializer<ThrottleConfidence> {
+    public ThrottleConfidenceSerializer() {
+      super(ThrottleConfidence.class);
+    }
+  }
 
-	public static class ThrottleConfidenceDeserializer extends EnumeratedDeserializer<ThrottleConfidence> {
-		public ThrottleConfidenceDeserializer() {
-			super(ThrottleConfidence.class);
-		}
+  public static class ThrottleConfidenceDeserializer
+      extends EnumeratedDeserializer<ThrottleConfidence> {
+    public ThrottleConfidenceDeserializer() {
+      super(ThrottleConfidence.class);
+    }
 
-		@Override
-		protected ThrottleConfidence[] listEnumValues() {
-			return ThrottleConfidence.values();
-		}
-	}
+    @Override
+    protected ThrottleConfidence[] listEnumValues() {
+      return ThrottleConfidence.values();
+    }
+  }
 }

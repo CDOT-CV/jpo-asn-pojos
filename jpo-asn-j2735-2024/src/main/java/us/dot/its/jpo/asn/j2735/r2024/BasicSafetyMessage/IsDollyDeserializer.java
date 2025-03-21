@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class IsDollyDeserializer extends BooleanDeserializer<IsDolly> {
 
-	public IsDollyDeserializer() {
-		super(IsDolly.class);
-	}
+  public IsDollyDeserializer() {
+    super(IsDolly.class);
+  }
 
-	@Override
-	protected IsDolly construct() {
-		return new IsDolly();
-	}
+  @Override
+  protected IsDolly construct() {
+    return new IsDolly();
+  }
 }

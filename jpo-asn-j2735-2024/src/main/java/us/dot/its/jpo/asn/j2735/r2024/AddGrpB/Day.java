@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Day.DayDeserializer.class)
 public class Day extends Asn1Integer {
 
-	public Day() {
-		super(0L, 255L);
-	}
+  public Day() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public Day(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Day(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DayDeserializer extends IntegerDeserializer<Day> {
-		public DayDeserializer() {
-			super(Day.class);
-		}
+  public static class DayDeserializer extends IntegerDeserializer<Day> {
+    public DayDeserializer() {
+      super(Day.class);
+    }
 
-		@Override
-		protected Day construct() {
-			return new Day();
-		}
-	}
+    @Override
+    protected Day construct() {
+      return new Day();
+    }
+  }
 }

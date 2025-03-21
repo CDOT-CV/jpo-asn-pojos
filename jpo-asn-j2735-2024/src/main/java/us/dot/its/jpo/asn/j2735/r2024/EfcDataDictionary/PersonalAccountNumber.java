@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class PersonalAccountNumber extends Asn1OctetString {
 
-	public PersonalAccountNumber() {
-		super(10, 10);
-	}
+  public PersonalAccountNumber() {
+    super(10, 10);
+  }
 
-	@JsonCreator
-	public PersonalAccountNumber(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public PersonalAccountNumber(String value) {
+    this();
+    setValue(value);
+  }
 }

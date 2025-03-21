@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SportingEvents.SportingEventsDeserializer.class)
 public class SportingEvents extends Asn1Integer {
 
-	public SportingEvents() {
-		super(0L, 65535L);
-	}
+  public SportingEvents() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public SportingEvents(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SportingEvents(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SportingEventsDeserializer extends IntegerDeserializer<SportingEvents> {
-		public SportingEventsDeserializer() {
-			super(SportingEvents.class);
-		}
+  public static class SportingEventsDeserializer extends IntegerDeserializer<SportingEvents> {
+    public SportingEventsDeserializer() {
+      super(SportingEvents.class);
+    }
 
-		@Override
-		protected SportingEvents construct() {
-			return new SportingEvents();
-		}
-	}
+    @Override
+    protected SportingEvents construct() {
+      return new SportingEvents();
+    }
+  }
 }

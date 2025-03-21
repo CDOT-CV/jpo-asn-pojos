@@ -35,122 +35,159 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class ITISEventType extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "trafficConditions")
-	@JsonProperty("trafficConditions")
-	private TrafficConditions trafficConditions;
-	@Asn1Property(tag = 1, name = "accidentsAndIncidents")
-	@JsonProperty("accidentsAndIncidents")
-	private AccidentsAndIncidents accidentsAndIncidents;
-	@Asn1Property(tag = 2, name = "closures")
-	@JsonProperty("closures")
-	private Closures closures;
-	@Asn1Property(tag = 3, name = "roadwork")
-	@JsonProperty("roadwork")
-	private Roadwork roadwork;
-	@Asn1Property(tag = 4, name = "obstruction")
-	@JsonProperty("obstruction")
-	private Obstruction obstruction;
-	@Asn1Property(tag = 5, name = "delayStatusCancellation")
-	@JsonProperty("delayStatusCancellation")
-	private DelayStatusCancellation delayStatusCancellation;
-	@Asn1Property(tag = 6, name = "unusualDriving")
-	@JsonProperty("unusualDriving")
-	private UnusualDriving unusualDriving;
-	@Asn1Property(tag = 7, name = "mobileSituation")
-	@JsonProperty("mobileSituation")
-	private MobileSituation mobileSituation;
-	@Asn1Property(tag = 8, name = "deviceStatus")
-	@JsonProperty("deviceStatus")
-	private DeviceStatus deviceStatus;
-	@Asn1Property(tag = 9, name = "restrictionClass")
-	@JsonProperty("restrictionClass")
-	private RestrictionClass restrictionClass;
-	@Asn1Property(tag = 10, name = "incidentResponseStatus")
-	@JsonProperty("incidentResponseStatus")
-	private IncidentResponseStatus incidentResponseStatus;
-	@Asn1Property(tag = 11, name = "disasters")
-	@JsonProperty("disasters")
-	private Disasters disasters;
-	@Asn1Property(tag = 12, name = "disturbances")
-	@JsonProperty("disturbances")
-	private Disturbances disturbances;
-	@Asn1Property(tag = 13, name = "sportingEvents")
-	@JsonProperty("sportingEvents")
-	private SportingEvents sportingEvents;
-	@Asn1Property(tag = 14, name = "specialEvents")
-	@JsonProperty("specialEvents")
-	private SpecialEvents specialEvents;
-	@Asn1Property(tag = 15, name = "parkingInformation")
-	@JsonProperty("parkingInformation")
-	private ParkingInformation parkingInformation;
-	@Asn1Property(tag = 16, name = "systemInformation")
-	@JsonProperty("systemInformation")
-	private SystemInformation systemInformation;
-	@Asn1Property(tag = 17, name = "weatherConditions")
-	@JsonProperty("weatherConditions")
-	private WeatherConditions weatherConditions;
-	@Asn1Property(tag = 18, name = "precipitation")
-	@JsonProperty("precipitation")
-	private Precipitation precipitation;
-	@Asn1Property(tag = 19, name = "winds")
-	@JsonProperty("winds")
-	private Winds winds;
-	@Asn1Property(tag = 20, name = "visibilityAndAirQuality")
-	@JsonProperty("visibilityAndAirQuality")
-	private VisibilityAndAirQuality visibilityAndAirQuality;
-	@Asn1Property(tag = 21, name = "temperature")
-	@JsonProperty("temperature")
-	private Temperature temperature;
-	@Asn1Property(tag = 22, name = "pavementConditions")
-	@JsonProperty("pavementConditions")
-	private PavementConditions pavementConditions;
-	@Asn1Property(tag = 23, name = "winterDrivingRestrictions")
-	@JsonProperty("winterDrivingRestrictions")
-	private WinterDrivingRestrictions winterDrivingRestrictions;
-	@Asn1Property(tag = 24, name = "winterDrivingIndex")
-	@JsonProperty("winterDrivingIndex")
-	private WinterDrivingIndex winterDrivingIndex;
-	@Asn1Property(tag = 25, name = "suggestionAdvice")
-	@JsonProperty("suggestionAdvice")
-	private SuggestionAdvice suggestionAdvice;
-	@Asn1Property(tag = 26, name = "warningAdvice")
-	@JsonProperty("warningAdvice")
-	private WarningAdvice warningAdvice;
-	@Asn1Property(tag = 27, name = "adviceInstructionsRecommendations")
-	@JsonProperty("adviceInstructionsRecommendations")
-	private AdviceInstructionsRecommendations adviceInstructionsRecommendations;
-	@Asn1Property(tag = 28, name = "adviceInstructionsMandatory")
-	@JsonProperty("adviceInstructionsMandatory")
-	private AdviceInstructionsMandatory adviceInstructionsMandatory;
-	@Asn1Property(tag = 29, name = "laneRoadway")
-	@JsonProperty("laneRoadway")
-	private LaneRoadway laneRoadway;
-	@Asn1Property(tag = 30, name = "alternateRoute")
-	@JsonProperty("alternateRoute")
-	private AlternateRoute alternateRoute;
-	@Asn1Property(tag = 31, name = "transitMode")
-	@JsonProperty("transitMode")
-	private TransitMode transitMode;
-	@Asn1Property(tag = 32, name = "vehicleGroupAffected")
-	@JsonProperty("vehicleGroupAffected")
-	private VehicleGroupAffected vehicleGroupAffected;
-	@Asn1Property(tag = 33, name = "travelerGroupAffected")
-	@JsonProperty("travelerGroupAffected")
-	private TravelerGroupAffected travelerGroupAffected;
-	@Asn1Property(tag = 34, name = "responderGroupAffected")
-	@JsonProperty("responderGroupAffected")
-	private ResponderGroupAffected responderGroupAffected;
-	@Asn1Property(tag = 35, name = "incidentResponseEquipment")
-	@JsonProperty("incidentResponseEquipment")
-	private IncidentResponseEquipment incidentResponseEquipment;
-	@Asn1Property(tag = 36, name = "transitOperations")
-	@JsonProperty("transitOperations")
-	private TransitOperations transitOperations;
-	@Asn1Property(tag = 37, name = "regulatorySigns")
-	@JsonProperty("regulatorySigns")
-	private RegulatoryAndWarningSigns regulatorySigns;
+  @Asn1Property(tag = 0, name = "trafficConditions")
+  @JsonProperty("trafficConditions")
+  private TrafficConditions trafficConditions;
 
-	public ITISEventType() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "accidentsAndIncidents")
+  @JsonProperty("accidentsAndIncidents")
+  private AccidentsAndIncidents accidentsAndIncidents;
+
+  @Asn1Property(tag = 2, name = "closures")
+  @JsonProperty("closures")
+  private Closures closures;
+
+  @Asn1Property(tag = 3, name = "roadwork")
+  @JsonProperty("roadwork")
+  private Roadwork roadwork;
+
+  @Asn1Property(tag = 4, name = "obstruction")
+  @JsonProperty("obstruction")
+  private Obstruction obstruction;
+
+  @Asn1Property(tag = 5, name = "delayStatusCancellation")
+  @JsonProperty("delayStatusCancellation")
+  private DelayStatusCancellation delayStatusCancellation;
+
+  @Asn1Property(tag = 6, name = "unusualDriving")
+  @JsonProperty("unusualDriving")
+  private UnusualDriving unusualDriving;
+
+  @Asn1Property(tag = 7, name = "mobileSituation")
+  @JsonProperty("mobileSituation")
+  private MobileSituation mobileSituation;
+
+  @Asn1Property(tag = 8, name = "deviceStatus")
+  @JsonProperty("deviceStatus")
+  private DeviceStatus deviceStatus;
+
+  @Asn1Property(tag = 9, name = "restrictionClass")
+  @JsonProperty("restrictionClass")
+  private RestrictionClass restrictionClass;
+
+  @Asn1Property(tag = 10, name = "incidentResponseStatus")
+  @JsonProperty("incidentResponseStatus")
+  private IncidentResponseStatus incidentResponseStatus;
+
+  @Asn1Property(tag = 11, name = "disasters")
+  @JsonProperty("disasters")
+  private Disasters disasters;
+
+  @Asn1Property(tag = 12, name = "disturbances")
+  @JsonProperty("disturbances")
+  private Disturbances disturbances;
+
+  @Asn1Property(tag = 13, name = "sportingEvents")
+  @JsonProperty("sportingEvents")
+  private SportingEvents sportingEvents;
+
+  @Asn1Property(tag = 14, name = "specialEvents")
+  @JsonProperty("specialEvents")
+  private SpecialEvents specialEvents;
+
+  @Asn1Property(tag = 15, name = "parkingInformation")
+  @JsonProperty("parkingInformation")
+  private ParkingInformation parkingInformation;
+
+  @Asn1Property(tag = 16, name = "systemInformation")
+  @JsonProperty("systemInformation")
+  private SystemInformation systemInformation;
+
+  @Asn1Property(tag = 17, name = "weatherConditions")
+  @JsonProperty("weatherConditions")
+  private WeatherConditions weatherConditions;
+
+  @Asn1Property(tag = 18, name = "precipitation")
+  @JsonProperty("precipitation")
+  private Precipitation precipitation;
+
+  @Asn1Property(tag = 19, name = "winds")
+  @JsonProperty("winds")
+  private Winds winds;
+
+  @Asn1Property(tag = 20, name = "visibilityAndAirQuality")
+  @JsonProperty("visibilityAndAirQuality")
+  private VisibilityAndAirQuality visibilityAndAirQuality;
+
+  @Asn1Property(tag = 21, name = "temperature")
+  @JsonProperty("temperature")
+  private Temperature temperature;
+
+  @Asn1Property(tag = 22, name = "pavementConditions")
+  @JsonProperty("pavementConditions")
+  private PavementConditions pavementConditions;
+
+  @Asn1Property(tag = 23, name = "winterDrivingRestrictions")
+  @JsonProperty("winterDrivingRestrictions")
+  private WinterDrivingRestrictions winterDrivingRestrictions;
+
+  @Asn1Property(tag = 24, name = "winterDrivingIndex")
+  @JsonProperty("winterDrivingIndex")
+  private WinterDrivingIndex winterDrivingIndex;
+
+  @Asn1Property(tag = 25, name = "suggestionAdvice")
+  @JsonProperty("suggestionAdvice")
+  private SuggestionAdvice suggestionAdvice;
+
+  @Asn1Property(tag = 26, name = "warningAdvice")
+  @JsonProperty("warningAdvice")
+  private WarningAdvice warningAdvice;
+
+  @Asn1Property(tag = 27, name = "adviceInstructionsRecommendations")
+  @JsonProperty("adviceInstructionsRecommendations")
+  private AdviceInstructionsRecommendations adviceInstructionsRecommendations;
+
+  @Asn1Property(tag = 28, name = "adviceInstructionsMandatory")
+  @JsonProperty("adviceInstructionsMandatory")
+  private AdviceInstructionsMandatory adviceInstructionsMandatory;
+
+  @Asn1Property(tag = 29, name = "laneRoadway")
+  @JsonProperty("laneRoadway")
+  private LaneRoadway laneRoadway;
+
+  @Asn1Property(tag = 30, name = "alternateRoute")
+  @JsonProperty("alternateRoute")
+  private AlternateRoute alternateRoute;
+
+  @Asn1Property(tag = 31, name = "transitMode")
+  @JsonProperty("transitMode")
+  private TransitMode transitMode;
+
+  @Asn1Property(tag = 32, name = "vehicleGroupAffected")
+  @JsonProperty("vehicleGroupAffected")
+  private VehicleGroupAffected vehicleGroupAffected;
+
+  @Asn1Property(tag = 33, name = "travelerGroupAffected")
+  @JsonProperty("travelerGroupAffected")
+  private TravelerGroupAffected travelerGroupAffected;
+
+  @Asn1Property(tag = 34, name = "responderGroupAffected")
+  @JsonProperty("responderGroupAffected")
+  private ResponderGroupAffected responderGroupAffected;
+
+  @Asn1Property(tag = 35, name = "incidentResponseEquipment")
+  @JsonProperty("incidentResponseEquipment")
+  private IncidentResponseEquipment incidentResponseEquipment;
+
+  @Asn1Property(tag = 36, name = "transitOperations")
+  @JsonProperty("transitOperations")
+  private TransitOperations transitOperations;
+
+  @Asn1Property(tag = 37, name = "regulatorySigns")
+  @JsonProperty("regulatorySigns")
+  private RegulatoryAndWarningSigns regulatorySigns;
+
+  public ITISEventType() {
+    super(false);
+  }
 }

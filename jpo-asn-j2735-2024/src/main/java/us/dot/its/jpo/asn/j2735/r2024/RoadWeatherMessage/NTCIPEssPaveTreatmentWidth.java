@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = NTCIPEssPaveTreatmentWidth.NTCIPEssPaveTreatmentWidthDeserializer.class)
 public class NTCIPEssPaveTreatmentWidth extends Asn1Integer {
 
-	public NTCIPEssPaveTreatmentWidth() {
-		super(0L, 255L);
-	}
+  public NTCIPEssPaveTreatmentWidth() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public NTCIPEssPaveTreatmentWidth(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPaveTreatmentWidth(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssPaveTreatmentWidthDeserializer extends IntegerDeserializer<NTCIPEssPaveTreatmentWidth> {
-		public NTCIPEssPaveTreatmentWidthDeserializer() {
-			super(NTCIPEssPaveTreatmentWidth.class);
-		}
+  public static class NTCIPEssPaveTreatmentWidthDeserializer
+      extends IntegerDeserializer<NTCIPEssPaveTreatmentWidth> {
+    public NTCIPEssPaveTreatmentWidthDeserializer() {
+      super(NTCIPEssPaveTreatmentWidth.class);
+    }
 
-		@Override
-		protected NTCIPEssPaveTreatmentWidth construct() {
-			return new NTCIPEssPaveTreatmentWidth();
-		}
-	}
+    @Override
+    protected NTCIPEssPaveTreatmentWidth construct() {
+      return new NTCIPEssPaveTreatmentWidth();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = PartII_Id.PartII_IdDeserializer.class)
 public class PartII_Id extends Asn1Integer {
 
-	public PartII_Id() {
-		super(0L, 63L);
-	}
+  public PartII_Id() {
+    super(0L, 63L);
+  }
 
-	@JsonCreator
-	public PartII_Id(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public PartII_Id(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class PartII_IdDeserializer extends IntegerDeserializer<PartII_Id> {
-		public PartII_IdDeserializer() {
-			super(PartII_Id.class);
-		}
+  public static class PartII_IdDeserializer extends IntegerDeserializer<PartII_Id> {
+    public PartII_IdDeserializer() {
+      super(PartII_Id.class);
+    }
 
-		@Override
-		protected PartII_Id construct() {
-			return new PartII_Id();
-		}
-	}
+    @Override
+    protected PartII_Id construct() {
+      return new PartII_Id();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = LatitudeDMS.LatitudeDMSDeserializer.class)
 public class LatitudeDMS extends Asn1Integer {
 
-	public LatitudeDMS() {
-		super(-32400000L, 32400000L);
-	}
+  public LatitudeDMS() {
+    super(-32400000L, 32400000L);
+  }
 
-	@JsonCreator
-	public LatitudeDMS(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LatitudeDMS(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LatitudeDMSDeserializer extends IntegerDeserializer<LatitudeDMS> {
-		public LatitudeDMSDeserializer() {
-			super(LatitudeDMS.class);
-		}
+  public static class LatitudeDMSDeserializer extends IntegerDeserializer<LatitudeDMS> {
+    public LatitudeDMSDeserializer() {
+      super(LatitudeDMS.class);
+    }
 
-		@Override
-		protected LatitudeDMS construct() {
-			return new LatitudeDMS();
-		}
-	}
+    @Override
+    protected LatitudeDMS construct() {
+      return new LatitudeDMS();
+    }
+  }
 }

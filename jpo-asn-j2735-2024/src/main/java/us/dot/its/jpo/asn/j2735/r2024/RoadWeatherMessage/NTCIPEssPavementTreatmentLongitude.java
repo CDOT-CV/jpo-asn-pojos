@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPEssPavementTreatmentLongitude.NTCIPEssPavementTreatmentLongitudeDeserializer.class)
+@JsonDeserialize(
+    using = NTCIPEssPavementTreatmentLongitude.NTCIPEssPavementTreatmentLongitudeDeserializer.class)
 public class NTCIPEssPavementTreatmentLongitude extends Asn1Integer {
 
-	public NTCIPEssPavementTreatmentLongitude() {
-		super(-180000000L, 180000001L);
-	}
+  public NTCIPEssPavementTreatmentLongitude() {
+    super(-180000000L, 180000001L);
+  }
 
-	@JsonCreator
-	public NTCIPEssPavementTreatmentLongitude(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPavementTreatmentLongitude(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPEssPavementTreatmentLongitudeDeserializer
-			extends
-				IntegerDeserializer<NTCIPEssPavementTreatmentLongitude> {
-		public NTCIPEssPavementTreatmentLongitudeDeserializer() {
-			super(NTCIPEssPavementTreatmentLongitude.class);
-		}
+  public static class NTCIPEssPavementTreatmentLongitudeDeserializer
+      extends IntegerDeserializer<NTCIPEssPavementTreatmentLongitude> {
+    public NTCIPEssPavementTreatmentLongitudeDeserializer() {
+      super(NTCIPEssPavementTreatmentLongitude.class);
+    }
 
-		@Override
-		protected NTCIPEssPavementTreatmentLongitude construct() {
-			return new NTCIPEssPavementTreatmentLongitude();
-		}
-	}
+    @Override
+    protected NTCIPEssPavementTreatmentLongitude construct() {
+      return new NTCIPEssPavementTreatmentLongitude();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AttachmentRadius.AttachmentRadiusDeserializer.class)
 public class AttachmentRadius extends Asn1Integer {
 
-	public AttachmentRadius() {
-		super(0L, 200L);
-	}
+  public AttachmentRadius() {
+    super(0L, 200L);
+  }
 
-	@JsonCreator
-	public AttachmentRadius(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AttachmentRadius(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AttachmentRadiusDeserializer extends IntegerDeserializer<AttachmentRadius> {
-		public AttachmentRadiusDeserializer() {
-			super(AttachmentRadius.class);
-		}
+  public static class AttachmentRadiusDeserializer extends IntegerDeserializer<AttachmentRadius> {
+    public AttachmentRadiusDeserializer() {
+      super(AttachmentRadius.class);
+    }
 
-		@Override
-		protected AttachmentRadius construct() {
-			return new AttachmentRadius();
-		}
-	}
+    @Override
+    protected AttachmentRadius construct() {
+      return new AttachmentRadius();
+    }
+  }
 }

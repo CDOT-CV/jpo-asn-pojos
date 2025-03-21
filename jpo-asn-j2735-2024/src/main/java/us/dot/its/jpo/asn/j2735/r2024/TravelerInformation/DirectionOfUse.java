@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = DirectionOfUse.DirectionOfUseSerializer.class)
 @JsonDeserialize(using = DirectionOfUse.DirectionOfUseDeserializer.class)
 public enum DirectionOfUse implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), FORWARD(1, "forward"), REVERSE(2, "reverse"), BOTH(3, "both");
+  UNAVAILABLE(0, "unavailable"),
+  FORWARD(1, "forward"),
+  REVERSE(2, "reverse"),
+  BOTH(3, "both");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private DirectionOfUse(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private DirectionOfUse(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class DirectionOfUseSerializer extends EnumeratedSerializer<DirectionOfUse> {
-		public DirectionOfUseSerializer() {
-			super(DirectionOfUse.class);
-		}
-	}
+  public static class DirectionOfUseSerializer extends EnumeratedSerializer<DirectionOfUse> {
+    public DirectionOfUseSerializer() {
+      super(DirectionOfUse.class);
+    }
+  }
 
-	public static class DirectionOfUseDeserializer extends EnumeratedDeserializer<DirectionOfUse> {
-		public DirectionOfUseDeserializer() {
-			super(DirectionOfUse.class);
-		}
+  public static class DirectionOfUseDeserializer extends EnumeratedDeserializer<DirectionOfUse> {
+    public DirectionOfUseDeserializer() {
+      super(DirectionOfUse.class);
+    }
 
-		@Override
-		protected DirectionOfUse[] listEnumValues() {
-			return DirectionOfUse.values();
-		}
-	}
+    @Override
+    protected DirectionOfUse[] listEnumValues() {
+      return DirectionOfUse.values();
+    }
+  }
 }

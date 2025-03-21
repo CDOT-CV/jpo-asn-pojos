@@ -39,53 +39,55 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Axles extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "totalAxles")
-	@JsonProperty("totalAxles")
-	private TotalAxlesInteger totalAxles;
-	@Asn1Property(tag = 1, name = "frontAxles", optional = true)
-	@JsonProperty("frontAxles")
-	private FrontAxlesInteger frontAxles;
-	@Asn1Property(tag = 2, name = "rearAxles", optional = true)
-	@JsonProperty("rearAxles")
-	private RearAxlesInteger rearAxles;
+  @Asn1Property(tag = 0, name = "totalAxles")
+  @JsonProperty("totalAxles")
+  private TotalAxlesInteger totalAxles;
 
-	public static class TotalAxlesInteger extends Asn1Integer {
-		public TotalAxlesInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "frontAxles", optional = true)
+  @JsonProperty("frontAxles")
+  private FrontAxlesInteger frontAxles;
 
-		@JsonCreator
-		public TotalAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "rearAxles", optional = true)
+  @JsonProperty("rearAxles")
+  private RearAxlesInteger rearAxles;
 
-	public static class FrontAxlesInteger extends Asn1Integer {
-		public FrontAxlesInteger() {
-			super(0L, 10L);
-		}
+  public static class TotalAxlesInteger extends Asn1Integer {
+    public TotalAxlesInteger() {
+      super(1L, 10L);
+    }
 
-		@JsonCreator
-		public FrontAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public TotalAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class RearAxlesInteger extends Asn1Integer {
-		public RearAxlesInteger() {
-			super(0L, 10L);
-		}
+  public static class FrontAxlesInteger extends Asn1Integer {
+    public FrontAxlesInteger() {
+      super(0L, 10L);
+    }
 
-		@JsonCreator
-		public RearAxlesInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+    @JsonCreator
+    public FrontAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public Axles() {
-		super(true);
-	}
+  public static class RearAxlesInteger extends Asn1Integer {
+    public RearAxlesInteger() {
+      super(0L, 10L);
+    }
+
+    @JsonCreator
+    public RearAxlesInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public Axles() {
+    super(true);
+  }
 }

@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.EmergencyVehicleAlert;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class EmergencyVehicleAlertMessageFrameValueDeserializer extends OpenTypeDeserializer<EmergencyVehicleAlert> {
+public class EmergencyVehicleAlertMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<EmergencyVehicleAlert> {
 
-	public EmergencyVehicleAlertMessageFrameValueDeserializer() {
-		super(EmergencyVehicleAlert.class, "EmergencyVehicleAlert");
-	}
+  public EmergencyVehicleAlertMessageFrameValueDeserializer() {
+    super(EmergencyVehicleAlert.class, "EmergencyVehicleAlert");
+  }
 }

@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class SensorDataSharingMessageMessageFrame extends MessageFrame<SensorDataSharingMessage> {
 
-	public SensorDataSharingMessageMessageFrame() {
-		super(41, "SensorDataSharingMessage");
-	}
+  public SensorDataSharingMessageMessageFrame() {
+    super(41, "SensorDataSharingMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = SensorDataSharingMessageMessageFrameValueSerializer.class)
-	public SensorDataSharingMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = SensorDataSharingMessageMessageFrameValueSerializer.class)
+  public SensorDataSharingMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = SensorDataSharingMessageMessageFrameValueDeserializer.class)
-	public void setValue(SensorDataSharingMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = SensorDataSharingMessageMessageFrameValueDeserializer.class)
+  public void setValue(SensorDataSharingMessage value) {
+    super.setValue(value);
+  }
 }

@@ -41,29 +41,32 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class Position3D extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lat")
-	@JsonProperty("lat")
-	private Latitude lat;
-	@Asn1Property(tag = 1, name = "long")
-	@JsonProperty("long")
-	private Longitude long_;
-	@Asn1Property(tag = 2, name = "elevation", optional = true)
-	@JsonProperty("elevation")
-	private Elevation elevation;
-	@Asn1Property(tag = 3, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-Position3D")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "lat")
+  @JsonProperty("lat")
+  private Latitude lat;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_Position3D> {
-		public SequenceOfRegional() {
-			super(Reg_Position3D.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "long")
+  @JsonProperty("long")
+  private Longitude long_;
 
-	public Position3D() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "elevation", optional = true)
+  @JsonProperty("elevation")
+  private Elevation elevation;
+
+  @Asn1Property(tag = 3, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-Position3D")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_Position3D> {
+    public SequenceOfRegional() {
+      super(Reg_Position3D.class, 1L, 4L);
+    }
+  }
+
+  public Position3D() {
+    super(true);
+  }
 }

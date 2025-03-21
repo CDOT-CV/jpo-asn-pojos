@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = VertOffset_B09.VertOffset_B09Deserializer.class)
 public class VertOffset_B09 extends Asn1Integer {
 
-	public VertOffset_B09() {
-		super(-256L, 255L);
-	}
+  public VertOffset_B09() {
+    super(-256L, 255L);
+  }
 
-	@JsonCreator
-	public VertOffset_B09(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public VertOffset_B09(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class VertOffset_B09Deserializer extends IntegerDeserializer<VertOffset_B09> {
-		public VertOffset_B09Deserializer() {
-			super(VertOffset_B09.class);
-		}
+  public static class VertOffset_B09Deserializer extends IntegerDeserializer<VertOffset_B09> {
+    public VertOffset_B09Deserializer() {
+      super(VertOffset_B09.class);
+    }
 
-		@Override
-		protected VertOffset_B09 construct() {
-			return new VertOffset_B09();
-		}
-	}
+    @Override
+    protected VertOffset_B09 construct() {
+      return new VertOffset_B09();
+    }
+  }
 }

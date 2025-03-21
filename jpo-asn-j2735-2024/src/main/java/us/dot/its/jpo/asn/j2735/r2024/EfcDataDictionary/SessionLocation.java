@@ -40,26 +40,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SessionLocation extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "ascendingKilometrage")
-	@JsonProperty("ascendingKilometrage")
-	private Asn1Boolean ascendingKilometrage;
-	@Asn1Property(tag = 1, name = "laneCodeNumber")
-	@JsonProperty("laneCodeNumber")
-	private LaneCodeNumberInteger laneCodeNumber;
+  @Asn1Property(tag = 0, name = "ascendingKilometrage")
+  @JsonProperty("ascendingKilometrage")
+  private Asn1Boolean ascendingKilometrage;
 
-	public static class LaneCodeNumberInteger extends Asn1Integer {
-		public LaneCodeNumberInteger() {
-			super(0L, 127L);
-		}
+  @Asn1Property(tag = 1, name = "laneCodeNumber")
+  @JsonProperty("laneCodeNumber")
+  private LaneCodeNumberInteger laneCodeNumber;
 
-		@JsonCreator
-		public LaneCodeNumberInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class LaneCodeNumberInteger extends Asn1Integer {
+    public LaneCodeNumberInteger() {
+      super(0L, 127L);
+    }
 
-	public SessionLocation() {
-		super(false);
-	}
+    @JsonCreator
+    public LaneCodeNumberInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public SessionLocation() {
+    super(false);
+  }
 }

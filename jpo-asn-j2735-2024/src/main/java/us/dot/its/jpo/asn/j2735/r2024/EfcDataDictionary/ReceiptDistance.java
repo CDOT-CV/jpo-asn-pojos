@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = ReceiptDistance.ReceiptDistanceDeserializer.class)
 public class ReceiptDistance extends Int3Unsigned {
 
-	public ReceiptDistance() {
-		super();
-	}
+  public ReceiptDistance() {
+    super();
+  }
 
-	@JsonCreator
-	public ReceiptDistance(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ReceiptDistance(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ReceiptDistanceDeserializer extends IntegerDeserializer<ReceiptDistance> {
-		public ReceiptDistanceDeserializer() {
-			super(ReceiptDistance.class);
-		}
+  public static class ReceiptDistanceDeserializer extends IntegerDeserializer<ReceiptDistance> {
+    public ReceiptDistanceDeserializer() {
+      super(ReceiptDistance.class);
+    }
 
-		@Override
-		protected ReceiptDistance construct() {
-			return new ReceiptDistance();
-		}
-	}
+    @Override
+    protected ReceiptDistance construct() {
+      return new ReceiptDistance();
+    }
+  }
 }

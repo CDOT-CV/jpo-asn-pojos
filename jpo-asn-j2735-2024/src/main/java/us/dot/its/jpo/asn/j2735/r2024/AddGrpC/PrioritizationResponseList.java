@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class PrioritizationResponseList extends Asn1SequenceOf<PrioritizationResponse> {
 
-	public PrioritizationResponseList() {
-		super(PrioritizationResponse.class, 0L, 2147483647L);
-	}
+  public PrioritizationResponseList() {
+    super(PrioritizationResponse.class, 0L, 2147483647L);
+  }
 }

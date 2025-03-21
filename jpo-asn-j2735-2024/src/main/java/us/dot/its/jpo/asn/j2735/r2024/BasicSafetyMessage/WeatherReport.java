@@ -43,26 +43,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class WeatherReport extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "isRaining")
-	@JsonProperty("isRaining")
-	private EssPrecipYesNo isRaining;
-	@Asn1Property(tag = 1, name = "rainRate", optional = true)
-	@JsonProperty("rainRate")
-	private EssPrecipRate rainRate;
-	@Asn1Property(tag = 2, name = "precipSituation", optional = true)
-	@JsonProperty("precipSituation")
-	private EssPrecipSituation precipSituation;
-	@Asn1Property(tag = 3, name = "solarRadiation", optional = true)
-	@JsonProperty("solarRadiation")
-	private EssSolarRadiation solarRadiation;
-	@Asn1Property(tag = 4, name = "friction", optional = true)
-	@JsonProperty("friction")
-	private EssMobileFriction friction;
-	@Asn1Property(tag = 5, name = "roadFriction", optional = true)
-	@JsonProperty("roadFriction")
-	private CoefficientOfFriction roadFriction;
+  @Asn1Property(tag = 0, name = "isRaining")
+  @JsonProperty("isRaining")
+  private EssPrecipYesNo isRaining;
 
-	public WeatherReport() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "rainRate", optional = true)
+  @JsonProperty("rainRate")
+  private EssPrecipRate rainRate;
+
+  @Asn1Property(tag = 2, name = "precipSituation", optional = true)
+  @JsonProperty("precipSituation")
+  private EssPrecipSituation precipSituation;
+
+  @Asn1Property(tag = 3, name = "solarRadiation", optional = true)
+  @JsonProperty("solarRadiation")
+  private EssSolarRadiation solarRadiation;
+
+  @Asn1Property(tag = 4, name = "friction", optional = true)
+  @JsonProperty("friction")
+  private EssMobileFriction friction;
+
+  @Asn1Property(tag = 5, name = "roadFriction", optional = true)
+  @JsonProperty("roadFriction")
+  private CoefficientOfFriction roadFriction;
+
+  public WeatherReport() {
+    super(true);
+  }
 }

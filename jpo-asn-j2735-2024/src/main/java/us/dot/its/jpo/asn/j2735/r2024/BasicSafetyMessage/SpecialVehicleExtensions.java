@@ -38,17 +38,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SpecialVehicleExtensions extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleAlerts", optional = true)
-	@JsonProperty("vehicleAlerts")
-	private EmergencyDetails vehicleAlerts;
-	@Asn1Property(tag = 1, name = "description", optional = true)
-	@JsonProperty("description")
-	private EventDescription description;
-	@Asn1Property(tag = 2, name = "doNotUse", optional = true)
-	@JsonProperty("doNotUse")
-	private TrailerData doNotUse;
+  @Asn1Property(tag = 0, name = "vehicleAlerts", optional = true)
+  @JsonProperty("vehicleAlerts")
+  private EmergencyDetails vehicleAlerts;
 
-	public SpecialVehicleExtensions() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "description", optional = true)
+  @JsonProperty("description")
+  private EventDescription description;
+
+  @Asn1Property(tag = 2, name = "doNotUse", optional = true)
+  @JsonProperty("doNotUse")
+  private TrailerData doNotUse;
+
+  public SpecialVehicleExtensions() {
+    super(true);
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AlternateRoute.AlternateRouteDeserializer.class)
 public class AlternateRoute extends Asn1Integer {
 
-	public AlternateRoute() {
-		super(0L, 65535L);
-	}
+  public AlternateRoute() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public AlternateRoute(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AlternateRoute(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AlternateRouteDeserializer extends IntegerDeserializer<AlternateRoute> {
-		public AlternateRouteDeserializer() {
-			super(AlternateRoute.class);
-		}
+  public static class AlternateRouteDeserializer extends IntegerDeserializer<AlternateRoute> {
+    public AlternateRouteDeserializer() {
+      super(AlternateRoute.class);
+    }
 
-		@Override
-		protected AlternateRoute construct() {
-			return new AlternateRoute();
-		}
-	}
+    @Override
+    protected AlternateRoute construct() {
+      return new AlternateRoute();
+    }
+  }
 }

@@ -42,35 +42,40 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class NMEAcorrections extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "timeStamp", optional = true)
-	@JsonProperty("timeStamp")
-	private MinuteOfTheYear timeStamp;
-	@Asn1Property(tag = 1, name = "rev", optional = true)
-	@JsonProperty("rev")
-	private NMEA_Revision rev;
-	@Asn1Property(tag = 2, name = "msg", optional = true)
-	@JsonProperty("msg")
-	private NMEA_MsgType msg;
-	@Asn1Property(tag = 3, name = "wdCount", optional = true)
-	@JsonProperty("wdCount")
-	private ObjectCount wdCount;
-	@Asn1Property(tag = 4, name = "payload")
-	@JsonProperty("payload")
-	private NMEA_Payload payload;
-	@Asn1Property(tag = 5, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-NMEAcorrections")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "timeStamp", optional = true)
+  @JsonProperty("timeStamp")
+  private MinuteOfTheYear timeStamp;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NMEAcorrections> {
-		public SequenceOfRegional() {
-			super(Reg_NMEAcorrections.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "rev", optional = true)
+  @JsonProperty("rev")
+  private NMEA_Revision rev;
 
-	public NMEAcorrections() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "msg", optional = true)
+  @JsonProperty("msg")
+  private NMEA_MsgType msg;
+
+  @Asn1Property(tag = 3, name = "wdCount", optional = true)
+  @JsonProperty("wdCount")
+  private ObjectCount wdCount;
+
+  @Asn1Property(tag = 4, name = "payload")
+  @JsonProperty("payload")
+  private NMEA_Payload payload;
+
+  @Asn1Property(tag = 5, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-NMEAcorrections")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NMEAcorrections> {
+    public SequenceOfRegional() {
+      super(Reg_NMEAcorrections.class, 1L, 4L);
+    }
+  }
+
+  public NMEAcorrections() {
+    super(true);
+  }
 }

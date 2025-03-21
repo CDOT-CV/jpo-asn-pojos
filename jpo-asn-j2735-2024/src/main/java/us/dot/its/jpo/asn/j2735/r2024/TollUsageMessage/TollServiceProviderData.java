@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class TollServiceProviderData extends Asn1OctetString {
 
-	public TollServiceProviderData() {
-		super(1, 1024);
-	}
+  public TollServiceProviderData() {
+    super(1, 1024);
+  }
 
-	@JsonCreator
-	public TollServiceProviderData(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public TollServiceProviderData(String value) {
+    this();
+    setValue(value);
+  }
 }

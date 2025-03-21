@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = EssSolarRadiation.EssSolarRadiationDeserializer.class)
 public class EssSolarRadiation extends Asn1Integer {
 
-	public EssSolarRadiation() {
-		super(0L, 65535L);
-	}
+  public EssSolarRadiation() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public EssSolarRadiation(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public EssSolarRadiation(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class EssSolarRadiationDeserializer extends IntegerDeserializer<EssSolarRadiation> {
-		public EssSolarRadiationDeserializer() {
-			super(EssSolarRadiation.class);
-		}
+  public static class EssSolarRadiationDeserializer extends IntegerDeserializer<EssSolarRadiation> {
+    public EssSolarRadiationDeserializer() {
+      super(EssSolarRadiation.class);
+    }
 
-		@Override
-		protected EssSolarRadiation construct() {
-			return new EssSolarRadiation();
-		}
-	}
+    @Override
+    protected EssSolarRadiation construct() {
+      return new EssSolarRadiation();
+    }
+  }
 }

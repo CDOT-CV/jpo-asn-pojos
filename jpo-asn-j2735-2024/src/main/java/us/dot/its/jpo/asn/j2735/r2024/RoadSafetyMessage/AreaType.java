@@ -37,16 +37,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class AreaType extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "broadRegion")
-	@JsonProperty("broadRegion")
-	private BroadRegion broadRegion;
-	@Asn1Property(tag = 1, name = "paths")
-	@JsonProperty("paths")
-	@JacksonXmlElementWrapper(localName = "paths")
-	@JacksonXmlProperty(localName = "Path")
-	private PathList paths;
+  @Asn1Property(tag = 0, name = "broadRegion")
+  @JsonProperty("broadRegion")
+  private BroadRegion broadRegion;
 
-	public AreaType() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "paths")
+  @JsonProperty("paths")
+  @JacksonXmlElementWrapper(localName = "paths")
+  @JacksonXmlProperty(localName = "Path")
+  private PathList paths;
+
+  public AreaType() {
+    super(true);
+  }
 }

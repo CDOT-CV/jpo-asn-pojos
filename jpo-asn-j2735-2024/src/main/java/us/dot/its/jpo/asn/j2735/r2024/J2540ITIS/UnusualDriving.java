@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = UnusualDriving.UnusualDrivingDeserializer.class)
 public class UnusualDriving extends Asn1Integer {
 
-	public UnusualDriving() {
-		super(0L, 65535L);
-	}
+  public UnusualDriving() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public UnusualDriving(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public UnusualDriving(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class UnusualDrivingDeserializer extends IntegerDeserializer<UnusualDriving> {
-		public UnusualDrivingDeserializer() {
-			super(UnusualDriving.class);
-		}
+  public static class UnusualDrivingDeserializer extends IntegerDeserializer<UnusualDriving> {
+    public UnusualDrivingDeserializer() {
+      super(UnusualDriving.class);
+    }
 
-		@Override
-		protected UnusualDriving construct() {
-			return new UnusualDriving();
-		}
-	}
+    @Override
+    protected UnusualDriving construct() {
+      return new UnusualDriving();
+    }
+  }
 }

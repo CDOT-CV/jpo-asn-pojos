@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DeviceStatus.DeviceStatusDeserializer.class)
 public class DeviceStatus extends Asn1Integer {
 
-	public DeviceStatus() {
-		super(0L, 65535L);
-	}
+  public DeviceStatus() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public DeviceStatus(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DeviceStatus(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DeviceStatusDeserializer extends IntegerDeserializer<DeviceStatus> {
-		public DeviceStatusDeserializer() {
-			super(DeviceStatus.class);
-		}
+  public static class DeviceStatusDeserializer extends IntegerDeserializer<DeviceStatus> {
+    public DeviceStatusDeserializer() {
+      super(DeviceStatus.class);
+    }
 
-		@Override
-		protected DeviceStatus construct() {
-			return new DeviceStatus();
-		}
-	}
+    @Override
+    protected DeviceStatus construct() {
+      return new DeviceStatus();
+    }
+  }
 }

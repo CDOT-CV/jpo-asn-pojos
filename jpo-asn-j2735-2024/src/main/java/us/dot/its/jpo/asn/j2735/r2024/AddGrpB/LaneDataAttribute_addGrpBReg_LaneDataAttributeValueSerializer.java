@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpB;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer
-		extends
-			OpenTypeSerializer<LaneDataAttribute_addGrpB> {
+    extends OpenTypeSerializer<LaneDataAttribute_addGrpB> {
 
-	public LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer() {
-		super(LaneDataAttribute_addGrpB.class, "regExtValue", "LaneDataAttribute_addGrpB");
-	}
+  public LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer() {
+    super(LaneDataAttribute_addGrpB.class, "regExtValue", "LaneDataAttribute_addGrpB");
+  }
 }

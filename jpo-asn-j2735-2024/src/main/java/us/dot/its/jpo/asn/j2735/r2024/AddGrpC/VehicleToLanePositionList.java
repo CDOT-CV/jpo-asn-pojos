@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class VehicleToLanePositionList extends Asn1SequenceOf<VehicleToLanePosition> {
 
-	public VehicleToLanePositionList() {
-		super(VehicleToLanePosition.class, 0L, 2147483647L);
-	}
+  public VehicleToLanePositionList() {
+    super(VehicleToLanePosition.class, 0L, 2147483647L);
+  }
 }

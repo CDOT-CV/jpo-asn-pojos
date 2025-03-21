@@ -40,41 +40,47 @@ import us.dot.its.jpo.asn.runtime.types.UnknownType;
 @Setter
 public class ReceiptServicePart extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "sessionTime")
-	@JsonProperty("sessionTime")
-	private DateAndTime sessionTime;
-	@Asn1Property(tag = 1, name = "sessionServiceProvider")
-	@JsonProperty("sessionServiceProvider")
-	private Provider sessionServiceProvider;
-	@Asn1Property(tag = 2, name = "stationLocation")
-	@JsonProperty("stationLocation")
-	private StationLocationInteger stationLocation;
-	@Asn1Property(tag = 3, name = "sessionLocation")
-	@JsonProperty("sessionLocation")
-	private UnknownType sessionLocation;
-	@Asn1Property(tag = 4, name = "typeOfSession")
-	@JsonProperty("typeOfSession")
-	private StationType typeOfSession;
-	@Asn1Property(tag = 5, name = "sessionResultOperational")
-	@JsonProperty("sessionResultOperational")
-	private ResultOp sessionResultOperational;
-	@Asn1Property(tag = 6, name = "sessionResultFinancial")
-	@JsonProperty("sessionResultFinancial")
-	private ResultFin sessionResultFinancial;
+  @Asn1Property(tag = 0, name = "sessionTime")
+  @JsonProperty("sessionTime")
+  private DateAndTime sessionTime;
 
-	public static class StationLocationInteger extends Asn1Integer {
-		public StationLocationInteger() {
-			super(0L, 1048575L);
-		}
+  @Asn1Property(tag = 1, name = "sessionServiceProvider")
+  @JsonProperty("sessionServiceProvider")
+  private Provider sessionServiceProvider;
 
-		@JsonCreator
-		public StationLocationInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "stationLocation")
+  @JsonProperty("stationLocation")
+  private StationLocationInteger stationLocation;
 
-	public ReceiptServicePart() {
-		super(false);
-	}
+  @Asn1Property(tag = 3, name = "sessionLocation")
+  @JsonProperty("sessionLocation")
+  private UnknownType sessionLocation;
+
+  @Asn1Property(tag = 4, name = "typeOfSession")
+  @JsonProperty("typeOfSession")
+  private StationType typeOfSession;
+
+  @Asn1Property(tag = 5, name = "sessionResultOperational")
+  @JsonProperty("sessionResultOperational")
+  private ResultOp sessionResultOperational;
+
+  @Asn1Property(tag = 6, name = "sessionResultFinancial")
+  @JsonProperty("sessionResultFinancial")
+  private ResultFin sessionResultFinancial;
+
+  public static class StationLocationInteger extends Asn1Integer {
+    public StationLocationInteger() {
+      super(0L, 1048575L);
+    }
+
+    @JsonCreator
+    public StationLocationInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ReceiptServicePart() {
+    super(false);
+  }
 }

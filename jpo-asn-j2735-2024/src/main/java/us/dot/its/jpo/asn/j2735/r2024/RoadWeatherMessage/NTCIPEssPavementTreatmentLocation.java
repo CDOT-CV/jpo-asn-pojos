@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class NTCIPEssPavementTreatmentLocation extends IA5String {
 
-	public NTCIPEssPavementTreatmentLocation() {
-		super(1, 255);
-	}
+  public NTCIPEssPavementTreatmentLocation() {
+    super(1, 255);
+  }
 
-	@JsonCreator
-	public NTCIPEssPavementTreatmentLocation(String value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPEssPavementTreatmentLocation(String value) {
+    this();
+    this.value = value;
+  }
 }

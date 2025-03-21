@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Node_XY_24b extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "x")
-	@JsonProperty("x")
-	private Offset_B12 x;
-	@Asn1Property(tag = 1, name = "y")
-	@JsonProperty("y")
-	private Offset_B12 y;
+  @Asn1Property(tag = 0, name = "x")
+  @JsonProperty("x")
+  private Offset_B12 x;
 
-	public Node_XY_24b() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "y")
+  @JsonProperty("y")
+  private Offset_B12 y;
+
+  public Node_XY_24b() {
+    super(false);
+  }
 }

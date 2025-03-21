@@ -27,29 +27,30 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = NTCIPHumiditySensorRelativeHumidity.NTCIPHumiditySensorRelativeHumidityDeserializer.class)
+@JsonDeserialize(
+    using =
+        NTCIPHumiditySensorRelativeHumidity.NTCIPHumiditySensorRelativeHumidityDeserializer.class)
 public class NTCIPHumiditySensorRelativeHumidity extends Asn1Integer {
 
-	public NTCIPHumiditySensorRelativeHumidity() {
-		super(0L, 101L);
-	}
+  public NTCIPHumiditySensorRelativeHumidity() {
+    super(0L, 101L);
+  }
 
-	@JsonCreator
-	public NTCIPHumiditySensorRelativeHumidity(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public NTCIPHumiditySensorRelativeHumidity(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class NTCIPHumiditySensorRelativeHumidityDeserializer
-			extends
-				IntegerDeserializer<NTCIPHumiditySensorRelativeHumidity> {
-		public NTCIPHumiditySensorRelativeHumidityDeserializer() {
-			super(NTCIPHumiditySensorRelativeHumidity.class);
-		}
+  public static class NTCIPHumiditySensorRelativeHumidityDeserializer
+      extends IntegerDeserializer<NTCIPHumiditySensorRelativeHumidity> {
+    public NTCIPHumiditySensorRelativeHumidityDeserializer() {
+      super(NTCIPHumiditySensorRelativeHumidity.class);
+    }
 
-		@Override
-		protected NTCIPHumiditySensorRelativeHumidity construct() {
-			return new NTCIPHumiditySensorRelativeHumidity();
-		}
-	}
+    @Override
+    protected NTCIPHumiditySensorRelativeHumidity construct() {
+      return new NTCIPHumiditySensorRelativeHumidity();
+    }
+  }
 }

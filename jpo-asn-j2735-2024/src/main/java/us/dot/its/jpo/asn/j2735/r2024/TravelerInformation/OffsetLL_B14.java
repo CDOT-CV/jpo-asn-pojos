@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = OffsetLL_B14.OffsetLL_B14Deserializer.class)
 public class OffsetLL_B14 extends Asn1Integer {
 
-	public OffsetLL_B14() {
-		super(-8192L, 8191L);
-	}
+  public OffsetLL_B14() {
+    super(-8192L, 8191L);
+  }
 
-	@JsonCreator
-	public OffsetLL_B14(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public OffsetLL_B14(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class OffsetLL_B14Deserializer extends IntegerDeserializer<OffsetLL_B14> {
-		public OffsetLL_B14Deserializer() {
-			super(OffsetLL_B14.class);
-		}
+  public static class OffsetLL_B14Deserializer extends IntegerDeserializer<OffsetLL_B14> {
+    public OffsetLL_B14Deserializer() {
+      super(OffsetLL_B14.class);
+    }
 
-		@Override
-		protected OffsetLL_B14 construct() {
-			return new OffsetLL_B14();
-		}
-	}
+    @Override
+    protected OffsetLL_B14 construct() {
+      return new OffsetLL_B14();
+    }
+  }
 }

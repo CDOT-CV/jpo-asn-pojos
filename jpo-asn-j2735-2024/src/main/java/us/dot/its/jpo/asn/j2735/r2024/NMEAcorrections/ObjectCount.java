@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ObjectCount.ObjectCountDeserializer.class)
 public class ObjectCount extends Asn1Integer {
 
-	public ObjectCount() {
-		super(0L, 1023L);
-	}
+  public ObjectCount() {
+    super(0L, 1023L);
+  }
 
-	@JsonCreator
-	public ObjectCount(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ObjectCount(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ObjectCountDeserializer extends IntegerDeserializer<ObjectCount> {
-		public ObjectCountDeserializer() {
-			super(ObjectCount.class);
-		}
+  public static class ObjectCountDeserializer extends IntegerDeserializer<ObjectCount> {
+    public ObjectCountDeserializer() {
+      super(ObjectCount.class);
+    }
 
-		@Override
-		protected ObjectCount construct() {
-			return new ObjectCount();
-		}
-	}
+    @Override
+    protected ObjectCount construct() {
+      return new ObjectCount();
+    }
+  }
 }

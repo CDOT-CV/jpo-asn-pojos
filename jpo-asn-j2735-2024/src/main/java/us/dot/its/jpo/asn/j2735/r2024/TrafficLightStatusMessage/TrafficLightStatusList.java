@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class TrafficLightStatusList extends Asn1SequenceOf<TrafficLightStatus> {
 
-	public TrafficLightStatusList() {
-		super(TrafficLightStatus.class, 1L, 255L);
-	}
+  public TrafficLightStatusList() {
+    super(TrafficLightStatus.class, 1L, 255L);
+  }
 }

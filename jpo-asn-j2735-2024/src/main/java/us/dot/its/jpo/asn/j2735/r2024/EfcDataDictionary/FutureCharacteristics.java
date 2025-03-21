@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = FutureCharacteristics.FutureCharacteristicsDeserializer.class)
 public class FutureCharacteristics extends Asn1Integer {
 
-	public FutureCharacteristics() {
-		super(0L, 255L);
-	}
+  public FutureCharacteristics() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public FutureCharacteristics(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public FutureCharacteristics(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class FutureCharacteristicsDeserializer extends IntegerDeserializer<FutureCharacteristics> {
-		public FutureCharacteristicsDeserializer() {
-			super(FutureCharacteristics.class);
-		}
+  public static class FutureCharacteristicsDeserializer
+      extends IntegerDeserializer<FutureCharacteristics> {
+    public FutureCharacteristicsDeserializer() {
+      super(FutureCharacteristics.class);
+    }
 
-		@Override
-		protected FutureCharacteristics construct() {
-			return new FutureCharacteristics();
-		}
-	}
+    @Override
+    protected FutureCharacteristics construct() {
+      return new FutureCharacteristics();
+    }
+  }
 }

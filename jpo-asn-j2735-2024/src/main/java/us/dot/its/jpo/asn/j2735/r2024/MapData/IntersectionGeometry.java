@@ -48,53 +48,62 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class IntersectionGeometry extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "name", optional = true)
-	@JsonProperty("name")
-	private DescriptiveName name;
-	@Asn1Property(tag = 1, name = "id")
-	@JsonProperty("id")
-	private IntersectionReferenceID id;
-	@Asn1Property(tag = 2, name = "revision")
-	@JsonProperty("revision")
-	private MsgCount revision;
-	@Asn1Property(tag = 3, name = "refPoint")
-	@JsonProperty("refPoint")
-	private Position3D refPoint;
-	@Asn1Property(tag = 4, name = "laneWidth", optional = true)
-	@JsonProperty("laneWidth")
-	private LaneWidth laneWidth;
-	@Asn1Property(tag = 5, name = "speedLimits", optional = true)
-	@JsonProperty("speedLimits")
-	@JacksonXmlElementWrapper(localName = "speedLimits")
-	@JacksonXmlProperty(localName = "RegulatorySpeedLimit")
-	private SpeedLimitList speedLimits;
-	@Asn1Property(tag = 6, name = "laneSet")
-	@JsonProperty("laneSet")
-	@JacksonXmlElementWrapper(localName = "laneSet")
-	@JacksonXmlProperty(localName = "GenericLane")
-	private LaneList laneSet;
-	@Asn1Property(tag = 7, name = "preemptPriorityData", optional = true)
-	@JsonProperty("preemptPriorityData")
-	@JacksonXmlElementWrapper(localName = "preemptPriorityData")
-	@JacksonXmlProperty(localName = "SignalControlZone")
-	private PreemptPriorityList preemptPriorityData;
-	@Asn1Property(tag = 8, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-IntersectionGeometry")
-	private SequenceOfRegional regional;
-	@Asn1Property(tag = 9, name = "roadAuthorityID", optional = true, extension = true)
-	@JsonProperty("roadAuthorityID")
-	private RoadAuthorityID roadAuthorityID;
+  @Asn1Property(tag = 0, name = "name", optional = true)
+  @JsonProperty("name")
+  private DescriptiveName name;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionGeometry> {
-		public SequenceOfRegional() {
-			super(Reg_IntersectionGeometry.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "id")
+  @JsonProperty("id")
+  private IntersectionReferenceID id;
 
-	public IntersectionGeometry() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "revision")
+  @JsonProperty("revision")
+  private MsgCount revision;
+
+  @Asn1Property(tag = 3, name = "refPoint")
+  @JsonProperty("refPoint")
+  private Position3D refPoint;
+
+  @Asn1Property(tag = 4, name = "laneWidth", optional = true)
+  @JsonProperty("laneWidth")
+  private LaneWidth laneWidth;
+
+  @Asn1Property(tag = 5, name = "speedLimits", optional = true)
+  @JsonProperty("speedLimits")
+  @JacksonXmlElementWrapper(localName = "speedLimits")
+  @JacksonXmlProperty(localName = "RegulatorySpeedLimit")
+  private SpeedLimitList speedLimits;
+
+  @Asn1Property(tag = 6, name = "laneSet")
+  @JsonProperty("laneSet")
+  @JacksonXmlElementWrapper(localName = "laneSet")
+  @JacksonXmlProperty(localName = "GenericLane")
+  private LaneList laneSet;
+
+  @Asn1Property(tag = 7, name = "preemptPriorityData", optional = true)
+  @JsonProperty("preemptPriorityData")
+  @JacksonXmlElementWrapper(localName = "preemptPriorityData")
+  @JacksonXmlProperty(localName = "SignalControlZone")
+  private PreemptPriorityList preemptPriorityData;
+
+  @Asn1Property(tag = 8, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-IntersectionGeometry")
+  private SequenceOfRegional regional;
+
+  @Asn1Property(tag = 9, name = "roadAuthorityID", optional = true, extension = true)
+  @JsonProperty("roadAuthorityID")
+  private RoadAuthorityID roadAuthorityID;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionGeometry> {
+    public SequenceOfRegional() {
+      super(Reg_IntersectionGeometry.class, 1L, 4L);
+    }
+  }
+
+  public IntersectionGeometry() {
+    super(true);
+  }
 }

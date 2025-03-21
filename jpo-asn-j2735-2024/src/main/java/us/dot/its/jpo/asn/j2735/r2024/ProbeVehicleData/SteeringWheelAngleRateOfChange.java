@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = SteeringWheelAngleRateOfChange.SteeringWheelAngleRateOfChangeDeserializer.class)
+@JsonDeserialize(
+    using = SteeringWheelAngleRateOfChange.SteeringWheelAngleRateOfChangeDeserializer.class)
 public class SteeringWheelAngleRateOfChange extends Asn1Integer {
 
-	public SteeringWheelAngleRateOfChange() {
-		super(-127L, 127L);
-	}
+  public SteeringWheelAngleRateOfChange() {
+    super(-127L, 127L);
+  }
 
-	@JsonCreator
-	public SteeringWheelAngleRateOfChange(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SteeringWheelAngleRateOfChange(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SteeringWheelAngleRateOfChangeDeserializer
-			extends
-				IntegerDeserializer<SteeringWheelAngleRateOfChange> {
-		public SteeringWheelAngleRateOfChangeDeserializer() {
-			super(SteeringWheelAngleRateOfChange.class);
-		}
+  public static class SteeringWheelAngleRateOfChangeDeserializer
+      extends IntegerDeserializer<SteeringWheelAngleRateOfChange> {
+    public SteeringWheelAngleRateOfChangeDeserializer() {
+      super(SteeringWheelAngleRateOfChange.class);
+    }
 
-		@Override
-		protected SteeringWheelAngleRateOfChange construct() {
-			return new SteeringWheelAngleRateOfChange();
-		}
-	}
+    @Override
+    protected SteeringWheelAngleRateOfChange construct() {
+      return new SteeringWheelAngleRateOfChange();
+    }
+  }
 }

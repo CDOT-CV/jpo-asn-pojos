@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class MovementEventList extends Asn1SequenceOf<MovementEvent> {
 
-	public MovementEventList() {
-		super(MovementEvent.class, 1L, 16L);
-	}
+  public MovementEventList() {
+    super(MovementEvent.class, 1L, 16L);
+  }
 }

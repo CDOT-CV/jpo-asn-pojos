@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.ProbeVehicleData;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
-public class ProbeVehicleDataMessageFrameValueSerializer extends OpenTypeSerializer<ProbeVehicleData> {
+public class ProbeVehicleDataMessageFrameValueSerializer
+    extends OpenTypeSerializer<ProbeVehicleData> {
 
-	public ProbeVehicleDataMessageFrameValueSerializer() {
-		super(ProbeVehicleData.class, "value", "ProbeVehicleData");
-	}
+  public ProbeVehicleDataMessageFrameValueSerializer() {
+    super(ProbeVehicleData.class, "value", "ProbeVehicleData");
+  }
 }

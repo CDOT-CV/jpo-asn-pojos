@@ -30,39 +30,50 @@ import us.dot.its.jpo.asn.runtime.serialization.EnumeratedSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
-@JsonSerialize(using = NTCIPPavementSensorSurfaceCondition.NTCIPPavementSensorSurfaceConditionSerializer.class)
-@JsonDeserialize(using = NTCIPPavementSensorSurfaceCondition.NTCIPPavementSensorSurfaceConditionDeserializer.class)
+@JsonSerialize(
+    using = NTCIPPavementSensorSurfaceCondition.NTCIPPavementSensorSurfaceConditionSerializer.class)
+@JsonDeserialize(
+    using =
+        NTCIPPavementSensorSurfaceCondition.NTCIPPavementSensorSurfaceConditionDeserializer.class)
 public enum NTCIPPavementSensorSurfaceCondition implements Asn1Enumerated {
-	OTHER(1, "other"), ERROR(2, "error"), DRY(3, "dry"), MOIST(4, "moist"), CHEMICALLYMOIST(5, "chemicallyMoist"), WET(
-			6, "wet"), CHEMICALLYWET(7, "chemicallyWet"), STANDINGWATER(8, "standingWater"), FROST(9,
-					"frost"), SLUSH(10, "slush"), SNOW(11, "snow"), ICE(12, "ice"), NOREPORT(13, "noReport");
+  OTHER(1, "other"),
+  ERROR(2, "error"),
+  DRY(3, "dry"),
+  MOIST(4, "moist"),
+  CHEMICALLYMOIST(5, "chemicallyMoist"),
+  WET(6, "wet"),
+  CHEMICALLYWET(7, "chemicallyWet"),
+  STANDINGWATER(8, "standingWater"),
+  FROST(9, "frost"),
+  SLUSH(10, "slush"),
+  SNOW(11, "snow"),
+  ICE(12, "ice"),
+  NOREPORT(13, "noReport");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NTCIPPavementSensorSurfaceCondition(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NTCIPPavementSensorSurfaceCondition(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NTCIPPavementSensorSurfaceConditionSerializer
-			extends
-				EnumeratedSerializer<NTCIPPavementSensorSurfaceCondition> {
-		public NTCIPPavementSensorSurfaceConditionSerializer() {
-			super(NTCIPPavementSensorSurfaceCondition.class);
-		}
-	}
+  public static class NTCIPPavementSensorSurfaceConditionSerializer
+      extends EnumeratedSerializer<NTCIPPavementSensorSurfaceCondition> {
+    public NTCIPPavementSensorSurfaceConditionSerializer() {
+      super(NTCIPPavementSensorSurfaceCondition.class);
+    }
+  }
 
-	public static class NTCIPPavementSensorSurfaceConditionDeserializer
-			extends
-				EnumeratedDeserializer<NTCIPPavementSensorSurfaceCondition> {
-		public NTCIPPavementSensorSurfaceConditionDeserializer() {
-			super(NTCIPPavementSensorSurfaceCondition.class);
-		}
+  public static class NTCIPPavementSensorSurfaceConditionDeserializer
+      extends EnumeratedDeserializer<NTCIPPavementSensorSurfaceCondition> {
+    public NTCIPPavementSensorSurfaceConditionDeserializer() {
+      super(NTCIPPavementSensorSurfaceCondition.class);
+    }
 
-		@Override
-		protected NTCIPPavementSensorSurfaceCondition[] listEnumValues() {
-			return NTCIPPavementSensorSurfaceCondition.values();
-		}
-	}
+    @Override
+    protected NTCIPPavementSensorSurfaceCondition[] listEnumValues() {
+      return NTCIPPavementSensorSurfaceCondition.values();
+    }
+  }
 }

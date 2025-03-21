@@ -37,11 +37,11 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PortlandCement extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "type")
-	@JsonProperty("type")
-	private PortlandCementType type;
+  @Asn1Property(tag = 0, name = "type")
+  @JsonProperty("type")
+  private PortlandCementType type;
 
-	public PortlandCement() {
-		super(true);
-	}
+  public PortlandCement() {
+    super(true);
+  }
 }

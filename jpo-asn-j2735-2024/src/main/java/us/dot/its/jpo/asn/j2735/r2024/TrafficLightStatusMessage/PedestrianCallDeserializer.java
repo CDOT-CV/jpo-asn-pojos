@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class PedestrianCallDeserializer extends BooleanDeserializer<PedestrianCall> {
 
-	public PedestrianCallDeserializer() {
-		super(PedestrianCall.class);
-	}
+  public PedestrianCallDeserializer() {
+    super(PedestrianCall.class);
+  }
 
-	@Override
-	protected PedestrianCall construct() {
-		return new PedestrianCall();
-	}
+  @Override
+  protected PedestrianCall construct() {
+    return new PedestrianCall();
+  }
 }

@@ -31,19 +31,30 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpBReg_Position3D.class, intId = 2),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpCReg_Position3D.class, intId = 3)})
-@JsonDeserialize(using = Reg_Position3D.Reg_Position3DDeserializer.class)
-abstract public class Reg_Position3D<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpBReg_Position3D.class,
+          intId = 2),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpCReg_Position3D.class,
+          intId = 3)
+    })
+@JsonDeserialize(
+    using = Reg_Position3D.Reg_Position3DDeserializer.class)
+public abstract class Reg_Position3D<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_Position3D(int id, String name) {
-		super(id, name);
-	}
+  public Reg_Position3D(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_Position3DDeserializer extends ParameterizedTypeDeserializer<Reg_Position3D> {
-		public Reg_Position3DDeserializer() {
-			super(Reg_Position3D.class);
-		}
-	}
+  public static class Reg_Position3DDeserializer
+      extends ParameterizedTypeDeserializer<Reg_Position3D> {
+    public Reg_Position3DDeserializer() {
+      super(Reg_Position3D.class);
+    }
+  }
 }

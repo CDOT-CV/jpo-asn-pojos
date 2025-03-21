@@ -29,24 +29,24 @@ import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 @JsonDeserialize(using = LocationClassId.LocationClassIdDeserializer.class)
 public class LocationClassId extends Int4Unsigned {
 
-	public LocationClassId() {
-		super();
-	}
+  public LocationClassId() {
+    super();
+  }
 
-	@JsonCreator
-	public LocationClassId(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LocationClassId(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LocationClassIdDeserializer extends IntegerDeserializer<LocationClassId> {
-		public LocationClassIdDeserializer() {
-			super(LocationClassId.class);
-		}
+  public static class LocationClassIdDeserializer extends IntegerDeserializer<LocationClassId> {
+    public LocationClassIdDeserializer() {
+      super(LocationClassId.class);
+    }
 
-		@Override
-		protected LocationClassId construct() {
-			return new LocationClassId();
-		}
-	}
+    @Override
+    protected LocationClassId construct() {
+      return new LocationClassId();
+    }
+  }
 }

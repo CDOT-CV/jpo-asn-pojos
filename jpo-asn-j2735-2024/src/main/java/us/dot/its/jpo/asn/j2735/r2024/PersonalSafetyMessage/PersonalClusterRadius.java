@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = PersonalClusterRadius.PersonalClusterRadiusDeserializer.class)
 public class PersonalClusterRadius extends Asn1Integer {
 
-	public PersonalClusterRadius() {
-		super(0L, 100L);
-	}
+  public PersonalClusterRadius() {
+    super(0L, 100L);
+  }
 
-	@JsonCreator
-	public PersonalClusterRadius(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public PersonalClusterRadius(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class PersonalClusterRadiusDeserializer extends IntegerDeserializer<PersonalClusterRadius> {
-		public PersonalClusterRadiusDeserializer() {
-			super(PersonalClusterRadius.class);
-		}
+  public static class PersonalClusterRadiusDeserializer
+      extends IntegerDeserializer<PersonalClusterRadius> {
+    public PersonalClusterRadiusDeserializer() {
+      super(PersonalClusterRadius.class);
+    }
 
-		@Override
-		protected PersonalClusterRadius construct() {
-			return new PersonalClusterRadius();
-		}
-	}
+    @Override
+    protected PersonalClusterRadius construct() {
+      return new PersonalClusterRadius();
+    }
+  }
 }

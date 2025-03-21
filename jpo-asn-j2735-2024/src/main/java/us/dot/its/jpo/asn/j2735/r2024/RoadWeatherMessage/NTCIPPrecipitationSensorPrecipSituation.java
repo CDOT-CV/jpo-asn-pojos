@@ -30,44 +30,55 @@ import us.dot.its.jpo.asn.runtime.serialization.EnumeratedSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Getter
-@JsonSerialize(using = NTCIPPrecipitationSensorPrecipSituation.NTCIPPrecipitationSensorPrecipSituationSerializer.class)
-@JsonDeserialize(using = NTCIPPrecipitationSensorPrecipSituation.NTCIPPrecipitationSensorPrecipSituationDeserializer.class)
+@JsonSerialize(
+    using =
+        NTCIPPrecipitationSensorPrecipSituation.NTCIPPrecipitationSensorPrecipSituationSerializer
+            .class)
+@JsonDeserialize(
+    using =
+        NTCIPPrecipitationSensorPrecipSituation.NTCIPPrecipitationSensorPrecipSituationDeserializer
+            .class)
 public enum NTCIPPrecipitationSensorPrecipSituation implements Asn1Enumerated {
-	OTHER(1, "other"), UNKNOWN(2, "unknown"), NOPRECIPITATION(3, "noPrecipitation"), UNIDENTIFIEDSLIGHT(4,
-			"unidentifiedSlight"), UNIDENTIFIEDMODERATE(5, "unidentifiedModerate"), UNIDENTIFIEDHEAVY(6,
-					"unidentifiedHeavy"), SNOWSLIGHT(7, "snowSlight"), SNOWMODERATE(8, "snowModerate"), SNOWHEAVY(9,
-							"snowHeavy"), RAINSLIGHT(10, "rainSlight"), RAINMODERATE(11, "rainModerate"), RAINHEAVY(12,
-									"rainHeavy"), FROZENPRECIPITATIONSLIGHT(13,
-											"frozenPrecipitationSlight"), FROZENPRECIPITATIONMODERATE(14,
-													"frozenPrecipitationModerate"), FROZENPRECIPITATIONHEAVY(15,
-															"frozenPrecipitationHeavy");
+  OTHER(1, "other"),
+  UNKNOWN(2, "unknown"),
+  NOPRECIPITATION(3, "noPrecipitation"),
+  UNIDENTIFIEDSLIGHT(4, "unidentifiedSlight"),
+  UNIDENTIFIEDMODERATE(5, "unidentifiedModerate"),
+  UNIDENTIFIEDHEAVY(6, "unidentifiedHeavy"),
+  SNOWSLIGHT(7, "snowSlight"),
+  SNOWMODERATE(8, "snowModerate"),
+  SNOWHEAVY(9, "snowHeavy"),
+  RAINSLIGHT(10, "rainSlight"),
+  RAINMODERATE(11, "rainModerate"),
+  RAINHEAVY(12, "rainHeavy"),
+  FROZENPRECIPITATIONSLIGHT(13, "frozenPrecipitationSlight"),
+  FROZENPRECIPITATIONMODERATE(14, "frozenPrecipitationModerate"),
+  FROZENPRECIPITATIONHEAVY(15, "frozenPrecipitationHeavy");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private NTCIPPrecipitationSensorPrecipSituation(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private NTCIPPrecipitationSensorPrecipSituation(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class NTCIPPrecipitationSensorPrecipSituationSerializer
-			extends
-				EnumeratedSerializer<NTCIPPrecipitationSensorPrecipSituation> {
-		public NTCIPPrecipitationSensorPrecipSituationSerializer() {
-			super(NTCIPPrecipitationSensorPrecipSituation.class);
-		}
-	}
+  public static class NTCIPPrecipitationSensorPrecipSituationSerializer
+      extends EnumeratedSerializer<NTCIPPrecipitationSensorPrecipSituation> {
+    public NTCIPPrecipitationSensorPrecipSituationSerializer() {
+      super(NTCIPPrecipitationSensorPrecipSituation.class);
+    }
+  }
 
-	public static class NTCIPPrecipitationSensorPrecipSituationDeserializer
-			extends
-				EnumeratedDeserializer<NTCIPPrecipitationSensorPrecipSituation> {
-		public NTCIPPrecipitationSensorPrecipSituationDeserializer() {
-			super(NTCIPPrecipitationSensorPrecipSituation.class);
-		}
+  public static class NTCIPPrecipitationSensorPrecipSituationDeserializer
+      extends EnumeratedDeserializer<NTCIPPrecipitationSensorPrecipSituation> {
+    public NTCIPPrecipitationSensorPrecipSituationDeserializer() {
+      super(NTCIPPrecipitationSensorPrecipSituation.class);
+    }
 
-		@Override
-		protected NTCIPPrecipitationSensorPrecipSituation[] listEnumValues() {
-			return NTCIPPrecipitationSensorPrecipSituation.values();
-		}
-	}
+    @Override
+    protected NTCIPPrecipitationSensorPrecipSituation[] listEnumValues() {
+      return NTCIPPrecipitationSensorPrecipSituation.values();
+    }
+  }
 }

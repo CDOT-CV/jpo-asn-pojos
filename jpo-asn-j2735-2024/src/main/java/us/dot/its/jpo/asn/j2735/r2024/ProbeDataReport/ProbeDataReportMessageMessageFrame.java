@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class ProbeDataReportMessageMessageFrame extends MessageFrame<ProbeDataReportMessage> {
 
-	public ProbeDataReportMessageMessageFrame() {
-		super(36, "ProbeDataReportMessage");
-	}
+  public ProbeDataReportMessageMessageFrame() {
+    super(36, "ProbeDataReportMessage");
+  }
 
-	@Override
-	@JsonSerialize(using = ProbeDataReportMessageMessageFrameValueSerializer.class)
-	public ProbeDataReportMessage getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = ProbeDataReportMessageMessageFrameValueSerializer.class)
+  public ProbeDataReportMessage getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = ProbeDataReportMessageMessageFrameValueDeserializer.class)
-	public void setValue(ProbeDataReportMessage value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = ProbeDataReportMessageMessageFrameValueDeserializer.class)
+  public void setValue(ProbeDataReportMessage value) {
+    super.setValue(value);
+  }
 }

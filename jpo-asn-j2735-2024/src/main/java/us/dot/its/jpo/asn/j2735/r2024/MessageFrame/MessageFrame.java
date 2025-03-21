@@ -32,99 +32,255 @@ import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonPropertyOrder({"messageId", "value"})
-@Asn1ParameterizedTypes(idProperty = "messageId", idType = IdType.INTEGER, valueProperty = "value", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessageMessageFrame.class, intId = 20),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.MapData.MapDataMessageFrame.class, intId = 18),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.SPAT.SPATMessageFrame.class, intId = 19),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.CommonSafetyRequest.CommonSafetyRequestMessageFrame.class, intId = 21),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.EmergencyVehicleAlert.EmergencyVehicleAlertMessageFrame.class, intId = 22),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.IntersectionCollision.IntersectionCollisionMessageFrame.class, intId = 23),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.NMEAcorrections.NMEAcorrectionsMessageFrame.class, intId = 24),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.ProbeDataManagement.ProbeDataManagementMessageFrame.class, intId = 25),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.ProbeVehicleData.ProbeVehicleDataMessageFrame.class, intId = 26),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RoadSideAlert.RoadSideAlertMessageFrame.class, intId = 27),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections.RTCMcorrectionsMessageFrame.class, intId = 28),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestMessageMessageFrame.class, intId = 29),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusMessageMessageFrame.class, intId = 30),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.TravelerInformationMessageFrame.class, intId = 31),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.PersonalSafetyMessageMessageFrame.class, intId = 32),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RoadSafetyMessageMessageFrame.class, intId = 33),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RoadWeatherMessage.RoadWeatherMessageMessageFrame.class, intId = 34),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.ProbeDataConfig.ProbeDataConfigMessageMessageFrame.class, intId = 35),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.ProbeDataReport.ProbeDataReportMessageMessageFrame.class, intId = 36),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TollAdvertisementMessage.TollAdvertisementMessageMessageFrame.class, intId = 37),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TollUsageMessage.TollUsageMessageMessageFrame.class, intId = 38),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TollUsageAckMessage.TollUsageAckMessageMessageFrame.class, intId = 39),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage.CooperativeControlMessageMessageFrame.class, intId = 40),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.SensorDataSharingMessageMessageFrame.class, intId = 41),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.ManeuverSharingAndCoordinatingMessage.ManeuverSharingAndCoordinatingMessageMessageFrame.class, intId = 42),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RoadGeometryAndAttributes.RoadGeometryAndAttributesMessageFrame.class, intId = 43),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage2.PersonalSafetyMessage2MessageFrame.class, intId = 44),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TrafficSignalPhaseAndTiming.TrafficSignalPhaseAndTimingMessageFrame.class, intId = 45),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationRequest.SignalControlAndPrioritizationRequestMessageFrame.class, intId = 46),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationStatus.SignalControlAndPrioritizationStatusMessageFrame.class, intId = 47),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingConfigMessage.RoadUserChargingConfigMessageMessageFrame.class, intId = 48),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingReportMessage.RoadUserChargingReportMessageMessageFrame.class, intId = 49),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TrafficLightStatusMessage.TrafficLightStatusMessageMessageFrame.class, intId = 50),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage00.TestMessage00MessageFrame.class, intId = 240),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage01.TestMessage01MessageFrame.class, intId = 241),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage02.TestMessage02MessageFrame.class, intId = 242),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage03.TestMessage03MessageFrame.class, intId = 243),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage04.TestMessage04MessageFrame.class, intId = 244),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage05.TestMessage05MessageFrame.class, intId = 245),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage06.TestMessage06MessageFrame.class, intId = 246),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage07.TestMessage07MessageFrame.class, intId = 247),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage08.TestMessage08MessageFrame.class, intId = 248),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage09.TestMessage09MessageFrame.class, intId = 249),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage10.TestMessage10MessageFrame.class, intId = 250),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage11.TestMessage11MessageFrame.class, intId = 251),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage12.TestMessage12MessageFrame.class, intId = 252),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage13.TestMessage13MessageFrame.class, intId = 253),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage14.TestMessage14MessageFrame.class, intId = 254),
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.TestMessage15.TestMessage15MessageFrame.class, intId = 255)})
-@JsonDeserialize(using = MessageFrame.MessageFrameDeserializer.class)
-abstract public class MessageFrame<TValue> extends Asn1Sequence {
+@Asn1ParameterizedTypes(
+    idProperty = "messageId",
+    idType = IdType.INTEGER,
+    valueProperty = "value",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessageMessageFrame
+                  .class,
+          intId = 20),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.MapData.MapDataMessageFrame.class,
+          intId = 18),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.SPAT.SPATMessageFrame.class,
+          intId = 19),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.CommonSafetyRequest.CommonSafetyRequestMessageFrame
+                  .class,
+          intId = 21),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.EmergencyVehicleAlert.EmergencyVehicleAlertMessageFrame
+                  .class,
+          intId = 22),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.IntersectionCollision.IntersectionCollisionMessageFrame
+                  .class,
+          intId = 23),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.NMEAcorrections.NMEAcorrectionsMessageFrame.class,
+          intId = 24),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.ProbeDataManagement.ProbeDataManagementMessageFrame
+                  .class,
+          intId = 25),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.ProbeVehicleData.ProbeVehicleDataMessageFrame.class,
+          intId = 26),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.RoadSideAlert.RoadSideAlertMessageFrame.class,
+          intId = 27),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections.RTCMcorrectionsMessageFrame.class,
+          intId = 28),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestMessageMessageFrame
+                  .class,
+          intId = 29),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusMessageMessageFrame
+                  .class,
+          intId = 30),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.TravelerInformationMessageFrame
+                  .class,
+          intId = 31),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.PersonalSafetyMessageMessageFrame
+                  .class,
+          intId = 32),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RoadSafetyMessageMessageFrame.class,
+          intId = 33),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.RoadWeatherMessage.RoadWeatherMessageMessageFrame
+                  .class,
+          intId = 34),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.ProbeDataConfig.ProbeDataConfigMessageMessageFrame
+                  .class,
+          intId = 35),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.ProbeDataReport.ProbeDataReportMessageMessageFrame
+                  .class,
+          intId = 36),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.TollAdvertisementMessage
+                  .TollAdvertisementMessageMessageFrame.class,
+          intId = 37),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.TollUsageMessage.TollUsageMessageMessageFrame.class,
+          intId = 38),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.TollUsageAckMessage.TollUsageAckMessageMessageFrame
+                  .class,
+          intId = 39),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.CooperativeControlMessage
+                  .CooperativeControlMessageMessageFrame.class,
+          intId = 40),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage
+                  .SensorDataSharingMessageMessageFrame.class,
+          intId = 41),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.ManeuverSharingAndCoordinatingMessage
+                  .ManeuverSharingAndCoordinatingMessageMessageFrame.class,
+          intId = 42),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.RoadGeometryAndAttributes
+                  .RoadGeometryAndAttributesMessageFrame.class,
+          intId = 43),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage2
+                  .PersonalSafetyMessage2MessageFrame.class,
+          intId = 44),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.TrafficSignalPhaseAndTiming
+                  .TrafficSignalPhaseAndTimingMessageFrame.class,
+          intId = 45),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationRequest
+                  .SignalControlAndPrioritizationRequestMessageFrame.class,
+          intId = 46),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.SignalControlAndPrioritizationStatus
+                  .SignalControlAndPrioritizationStatusMessageFrame.class,
+          intId = 47),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingConfigMessage
+                  .RoadUserChargingConfigMessageMessageFrame.class,
+          intId = 48),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.RoadUserChargingReportMessage
+                  .RoadUserChargingReportMessageMessageFrame.class,
+          intId = 49),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.TrafficLightStatusMessage
+                  .TrafficLightStatusMessageMessageFrame.class,
+          intId = 50),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage00.TestMessage00MessageFrame.class,
+          intId = 240),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage01.TestMessage01MessageFrame.class,
+          intId = 241),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage02.TestMessage02MessageFrame.class,
+          intId = 242),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage03.TestMessage03MessageFrame.class,
+          intId = 243),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage04.TestMessage04MessageFrame.class,
+          intId = 244),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage05.TestMessage05MessageFrame.class,
+          intId = 245),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage06.TestMessage06MessageFrame.class,
+          intId = 246),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage07.TestMessage07MessageFrame.class,
+          intId = 247),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage08.TestMessage08MessageFrame.class,
+          intId = 248),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage09.TestMessage09MessageFrame.class,
+          intId = 249),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage10.TestMessage10MessageFrame.class,
+          intId = 250),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage11.TestMessage11MessageFrame.class,
+          intId = 251),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage12.TestMessage12MessageFrame.class,
+          intId = 252),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage13.TestMessage13MessageFrame.class,
+          intId = 253),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage14.TestMessage14MessageFrame.class,
+          intId = 254),
+      @Asn1ParameterizedTypes.Type(
+          value = us.dot.its.jpo.asn.j2735.r2024.TestMessage15.TestMessage15MessageFrame.class,
+          intId = 255)
+    })
+@JsonDeserialize(
+    using = MessageFrame.MessageFrameDeserializer.class)
+public abstract class MessageFrame<TValue> extends Asn1Sequence {
 
-	protected DSRCmsgID messageId;
-	@JsonIgnore
-	final protected String name;
-	protected TValue value;
+  protected DSRCmsgID messageId;
+  @JsonIgnore protected final String name;
+  protected TValue value;
 
-	@JsonProperty("messageId")
-	public DSRCmsgID getMessageId() {
-		return messageId;
-	}
+  @JsonProperty("messageId")
+  public DSRCmsgID getMessageId() {
+    return messageId;
+  }
 
-	@JsonProperty("messageId")
-	public void setMessageId(DSRCmsgID messageId) {
-		this.messageId = messageId;
-	}
+  @JsonProperty("messageId")
+  public void setMessageId(DSRCmsgID messageId) {
+    this.messageId = messageId;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	@JsonProperty("value")
-	public TValue getValue() {
-		return value;
-	}
+  @JsonProperty("value")
+  public TValue getValue() {
+    return value;
+  }
 
-	@JsonProperty("value")
-	public void setValue(TValue value) {
-		this.value = value;
-	}
+  @JsonProperty("value")
+  public void setValue(TValue value) {
+    this.value = value;
+  }
 
-	public MessageFrame(int id, String name) {
-		super(true);
-		var theId = new DSRCmsgID();
-		theId.setValue(id);
-		this.messageId = theId;
-		this.name = name;
-	}
+  public MessageFrame(int id, String name) {
+    super(true);
+    var theId = new DSRCmsgID();
+    theId.setValue(id);
+    this.messageId = theId;
+    this.name = name;
+  }
 
-	public static class MessageFrameDeserializer extends ParameterizedTypeDeserializer<MessageFrame> {
-		public MessageFrameDeserializer() {
-			super(MessageFrame.class);
-		}
-	}
+  public static class MessageFrameDeserializer extends ParameterizedTypeDeserializer<MessageFrame> {
+    public MessageFrameDeserializer() {
+      super(MessageFrame.class);
+    }
+  }
 }

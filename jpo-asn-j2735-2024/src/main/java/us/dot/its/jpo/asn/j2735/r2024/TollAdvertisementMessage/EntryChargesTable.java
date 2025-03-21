@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class EntryChargesTable extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "exitInfo")
-	@JsonProperty("exitInfo")
-	private ExitInfo exitInfo;
-	@Asn1Property(tag = 1, name = "chargesTable")
-	@JsonProperty("chargesTable")
-	private ChargesTable chargesTable;
+  @Asn1Property(tag = 0, name = "exitInfo")
+  @JsonProperty("exitInfo")
+  private ExitInfo exitInfo;
 
-	public EntryChargesTable() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "chargesTable")
+  @JsonProperty("chargesTable")
+  private ChargesTable chargesTable;
+
+  public EntryChargesTable() {
+    super(true);
+  }
 }

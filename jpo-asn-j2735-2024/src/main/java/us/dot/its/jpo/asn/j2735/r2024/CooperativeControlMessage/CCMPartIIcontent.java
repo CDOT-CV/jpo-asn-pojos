@@ -28,42 +28,41 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 
 @JsonPropertyOrder({"partII-Id", "partII-Value"})
-abstract public class CCMPartIIcontent<TValue> extends Asn1Sequence {
+public abstract class CCMPartIIcontent<TValue> extends Asn1Sequence {
 
-	protected PartII_Id partII_Id;
-	@JsonIgnore
-	final protected String name;
-	protected TValue partII_Value;
+  protected PartII_Id partII_Id;
+  @JsonIgnore protected final String name;
+  protected TValue partII_Value;
 
-	@JsonProperty("partII-Id")
-	public PartII_Id getPartII_Id() {
-		return partII_Id;
-	}
+  @JsonProperty("partII-Id")
+  public PartII_Id getPartII_Id() {
+    return partII_Id;
+  }
 
-	@JsonProperty("partII-Id")
-	public void setPartII_Id(PartII_Id partII_Id) {
-		this.partII_Id = partII_Id;
-	}
+  @JsonProperty("partII-Id")
+  public void setPartII_Id(PartII_Id partII_Id) {
+    this.partII_Id = partII_Id;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	@JsonProperty("partII-Value")
-	public TValue getPartII_Value() {
-		return partII_Value;
-	}
+  @JsonProperty("partII-Value")
+  public TValue getPartII_Value() {
+    return partII_Value;
+  }
 
-	@JsonProperty("partII-Value")
-	public void setPartII_Value(TValue partII_Value) {
-		this.partII_Value = partII_Value;
-	}
+  @JsonProperty("partII-Value")
+  public void setPartII_Value(TValue partII_Value) {
+    this.partII_Value = partII_Value;
+  }
 
-	public CCMPartIIcontent(int id, String name) {
-		super(true);
-		var theId = new PartII_Id();
-		theId.setValue(id);
-		this.partII_Id = theId;
-		this.name = name;
-	}
+  public CCMPartIIcontent(int id, String name) {
+    super(true);
+    var theId = new PartII_Id();
+    theId.setValue(id);
+    this.partII_Id = theId;
+    this.name = name;
+  }
 }

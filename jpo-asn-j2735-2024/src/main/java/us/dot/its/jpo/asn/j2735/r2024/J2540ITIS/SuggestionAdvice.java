@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SuggestionAdvice.SuggestionAdviceDeserializer.class)
 public class SuggestionAdvice extends Asn1Integer {
 
-	public SuggestionAdvice() {
-		super(0L, 65535L);
-	}
+  public SuggestionAdvice() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public SuggestionAdvice(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SuggestionAdvice(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SuggestionAdviceDeserializer extends IntegerDeserializer<SuggestionAdvice> {
-		public SuggestionAdviceDeserializer() {
-			super(SuggestionAdvice.class);
-		}
+  public static class SuggestionAdviceDeserializer extends IntegerDeserializer<SuggestionAdvice> {
+    public SuggestionAdviceDeserializer() {
+      super(SuggestionAdvice.class);
+    }
 
-		@Override
-		protected SuggestionAdvice construct() {
-			return new SuggestionAdvice();
-		}
-	}
+    @Override
+    protected SuggestionAdvice construct() {
+      return new SuggestionAdvice();
+    }
+  }
 }

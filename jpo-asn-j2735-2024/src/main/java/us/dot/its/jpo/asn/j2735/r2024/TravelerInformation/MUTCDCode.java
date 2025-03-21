@@ -33,31 +33,36 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = MUTCDCode.MUTCDCodeSerializer.class)
 @JsonDeserialize(using = MUTCDCode.MUTCDCodeDeserializer.class)
 public enum MUTCDCode implements Asn1Enumerated {
-	NONE(0, "none"), REGULATORY(1, "regulatory"), WARNING(2, "warning"), MAINTENANCE(3,
-			"maintenance"), MOTORISTSERVICE(4, "motoristService"), GUIDE(5, "guide"), REC(6, "rec");
+  NONE(0, "none"),
+  REGULATORY(1, "regulatory"),
+  WARNING(2, "warning"),
+  MAINTENANCE(3, "maintenance"),
+  MOTORISTSERVICE(4, "motoristService"),
+  GUIDE(5, "guide"),
+  REC(6, "rec");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private MUTCDCode(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private MUTCDCode(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class MUTCDCodeSerializer extends EnumeratedSerializer<MUTCDCode> {
-		public MUTCDCodeSerializer() {
-			super(MUTCDCode.class);
-		}
-	}
+  public static class MUTCDCodeSerializer extends EnumeratedSerializer<MUTCDCode> {
+    public MUTCDCodeSerializer() {
+      super(MUTCDCode.class);
+    }
+  }
 
-	public static class MUTCDCodeDeserializer extends EnumeratedDeserializer<MUTCDCode> {
-		public MUTCDCodeDeserializer() {
-			super(MUTCDCode.class);
-		}
+  public static class MUTCDCodeDeserializer extends EnumeratedDeserializer<MUTCDCode> {
+    public MUTCDCodeDeserializer() {
+      super(MUTCDCode.class);
+    }
 
-		@Override
-		protected MUTCDCode[] listEnumValues() {
-			return MUTCDCode.values();
-		}
-	}
+    @Override
+    protected MUTCDCode[] listEnumValues() {
+      return MUTCDCode.values();
+    }
+  }
 }

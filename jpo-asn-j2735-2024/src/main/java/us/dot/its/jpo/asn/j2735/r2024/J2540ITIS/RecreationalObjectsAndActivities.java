@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = RecreationalObjectsAndActivities.RecreationalObjectsAndActivitiesDeserializer.class)
+@JsonDeserialize(
+    using = RecreationalObjectsAndActivities.RecreationalObjectsAndActivitiesDeserializer.class)
 public class RecreationalObjectsAndActivities extends Asn1Integer {
 
-	public RecreationalObjectsAndActivities() {
-		super(0L, 65535L);
-	}
+  public RecreationalObjectsAndActivities() {
+    super(0L, 65535L);
+  }
 
-	@JsonCreator
-	public RecreationalObjectsAndActivities(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RecreationalObjectsAndActivities(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RecreationalObjectsAndActivitiesDeserializer
-			extends
-				IntegerDeserializer<RecreationalObjectsAndActivities> {
-		public RecreationalObjectsAndActivitiesDeserializer() {
-			super(RecreationalObjectsAndActivities.class);
-		}
+  public static class RecreationalObjectsAndActivitiesDeserializer
+      extends IntegerDeserializer<RecreationalObjectsAndActivities> {
+    public RecreationalObjectsAndActivitiesDeserializer() {
+      super(RecreationalObjectsAndActivities.class);
+    }
 
-		@Override
-		protected RecreationalObjectsAndActivities construct() {
-			return new RecreationalObjectsAndActivities();
-		}
-	}
+    @Override
+    protected RecreationalObjectsAndActivities construct() {
+      return new RecreationalObjectsAndActivities();
+    }
+  }
 }

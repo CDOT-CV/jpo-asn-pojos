@@ -40,32 +40,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ConfigDescriptor extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "identifier")
-	@JsonProperty("identifier")
-	private ConfigId identifier;
-	@Asn1Property(tag = 1, name = "vehClass", optional = true)
-	@JsonProperty("vehClass")
-	private CfgVehicleClass vehClass;
-	@Asn1Property(tag = 2, name = "roadAuthorityID", optional = true)
-	@JsonProperty("roadAuthorityID")
-	private RoadAuthorityID roadAuthorityID;
-	@Asn1Property(tag = 3, name = "percentOfResp", optional = true)
-	@JsonProperty("percentOfResp")
-	private PercentOfRespInteger percentOfResp;
+  @Asn1Property(tag = 0, name = "identifier")
+  @JsonProperty("identifier")
+  private ConfigId identifier;
 
-	public static class PercentOfRespInteger extends Asn1Integer {
-		public PercentOfRespInteger() {
-			super(1L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "vehClass", optional = true)
+  @JsonProperty("vehClass")
+  private CfgVehicleClass vehClass;
 
-		@JsonCreator
-		public PercentOfRespInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "roadAuthorityID", optional = true)
+  @JsonProperty("roadAuthorityID")
+  private RoadAuthorityID roadAuthorityID;
 
-	public ConfigDescriptor() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "percentOfResp", optional = true)
+  @JsonProperty("percentOfResp")
+  private PercentOfRespInteger percentOfResp;
+
+  public static class PercentOfRespInteger extends Asn1Integer {
+    public PercentOfRespInteger() {
+      super(1L, 10L);
+    }
+
+    @JsonCreator
+    public PercentOfRespInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ConfigDescriptor() {
+    super(true);
+  }
 }

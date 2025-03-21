@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = MaxAvailableDeceleration.MaxAvailableDecelerationDeserializer.class)
 public class MaxAvailableDeceleration extends Asn1Integer {
 
-	public MaxAvailableDeceleration() {
-		super(-2001L, 0L);
-	}
+  public MaxAvailableDeceleration() {
+    super(-2001L, 0L);
+  }
 
-	@JsonCreator
-	public MaxAvailableDeceleration(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public MaxAvailableDeceleration(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class MaxAvailableDecelerationDeserializer extends IntegerDeserializer<MaxAvailableDeceleration> {
-		public MaxAvailableDecelerationDeserializer() {
-			super(MaxAvailableDeceleration.class);
-		}
+  public static class MaxAvailableDecelerationDeserializer
+      extends IntegerDeserializer<MaxAvailableDeceleration> {
+    public MaxAvailableDecelerationDeserializer() {
+      super(MaxAvailableDeceleration.class);
+    }
 
-		@Override
-		protected MaxAvailableDeceleration construct() {
-			return new MaxAvailableDeceleration();
-		}
-	}
+    @Override
+    protected MaxAvailableDeceleration construct() {
+      return new MaxAvailableDeceleration();
+    }
+  }
 }

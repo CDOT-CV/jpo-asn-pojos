@@ -33,80 +33,69 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TimeConfidence.TimeConfidenceSerializer.class)
 @JsonDeserialize(using = TimeConfidence.TimeConfidenceDeserializer.class)
 public enum TimeConfidence implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), TIME_100_000(1, "time-100-000"), TIME_050_000(2, "time-050-000"), TIME_020_000(3,
-			"time-020-000"), TIME_010_000(4, "time-010-000"), TIME_002_000(5, "time-002-000"), TIME_001_000(6,
-					"time-001-000"), TIME_000_500(7, "time-000-500"), TIME_000_200(8, "time-000-200"), TIME_000_100(9,
-							"time-000-100"), TIME_000_050(10, "time-000-050"), TIME_000_020(11,
-									"time-000-020"), TIME_000_010(12, "time-000-010"), TIME_000_005(13,
-											"time-000-005"), TIME_000_002(14, "time-000-002"), TIME_000_001(15,
-													"time-000-001"), TIME_000_000_5(16,
-															"time-000-000-5"), TIME_000_000_2(17,
-																	"time-000-000-2"), TIME_000_000_1(18,
-																			"time-000-000-1"), TIME_000_000_05(19,
-																					"time-000-000-05"), TIME_000_000_02(
-																							20,
-																							"time-000-000-02"), TIME_000_000_01(
-																									21,
-																									"time-000-000-01"), TIME_000_000_005(
-																											22,
-																											"time-000-000-005"), TIME_000_000_002(
-																													23,
-																													"time-000-000-002"), TIME_000_000_001(
-																															24,
-																															"time-000-000-001"), TIME_000_000_000_5(
-																																	25,
-																																	"time-000-000-000-5"), TIME_000_000_000_2(
-																																			26,
-																																			"time-000-000-000-2"), TIME_000_000_000_1(
-																																					27,
-																																					"time-000-000-000-1"), TIME_000_000_000_05(
-																																							28,
-																																							"time-000-000-000-05"), TIME_000_000_000_02(
-																																									29,
-																																									"time-000-000-000-02"), TIME_000_000_000_01(
-																																											30,
-																																											"time-000-000-000-01"), TIME_000_000_000_005(
-																																													31,
-																																													"time-000-000-000-005"), TIME_000_000_000_002(
-																																															32,
-																																															"time-000-000-000-002"), TIME_000_000_000_001(
-																																																	33,
-																																																	"time-000-000-000-001"), TIME_000_000_000_000_5(
-																																																			34,
-																																																			"time-000-000-000-000-5"), TIME_000_000_000_000_2(
-																																																					35,
-																																																					"time-000-000-000-000-2"), TIME_000_000_000_000_1(
-																																																							36,
-																																																							"time-000-000-000-000-1"), TIME_000_000_000_000_05(
-																																																									37,
-																																																									"time-000-000-000-000-05"), TIME_000_000_000_000_02(
-																																																											38,
-																																																											"time-000-000-000-000-02"), TIME_000_000_000_000_01(
-																																																													39,
-																																																													"time-000-000-000-000-01");
+  UNAVAILABLE(0, "unavailable"),
+  TIME_100_000(1, "time-100-000"),
+  TIME_050_000(2, "time-050-000"),
+  TIME_020_000(3, "time-020-000"),
+  TIME_010_000(4, "time-010-000"),
+  TIME_002_000(5, "time-002-000"),
+  TIME_001_000(6, "time-001-000"),
+  TIME_000_500(7, "time-000-500"),
+  TIME_000_200(8, "time-000-200"),
+  TIME_000_100(9, "time-000-100"),
+  TIME_000_050(10, "time-000-050"),
+  TIME_000_020(11, "time-000-020"),
+  TIME_000_010(12, "time-000-010"),
+  TIME_000_005(13, "time-000-005"),
+  TIME_000_002(14, "time-000-002"),
+  TIME_000_001(15, "time-000-001"),
+  TIME_000_000_5(16, "time-000-000-5"),
+  TIME_000_000_2(17, "time-000-000-2"),
+  TIME_000_000_1(18, "time-000-000-1"),
+  TIME_000_000_05(19, "time-000-000-05"),
+  TIME_000_000_02(20, "time-000-000-02"),
+  TIME_000_000_01(21, "time-000-000-01"),
+  TIME_000_000_005(22, "time-000-000-005"),
+  TIME_000_000_002(23, "time-000-000-002"),
+  TIME_000_000_001(24, "time-000-000-001"),
+  TIME_000_000_000_5(25, "time-000-000-000-5"),
+  TIME_000_000_000_2(26, "time-000-000-000-2"),
+  TIME_000_000_000_1(27, "time-000-000-000-1"),
+  TIME_000_000_000_05(28, "time-000-000-000-05"),
+  TIME_000_000_000_02(29, "time-000-000-000-02"),
+  TIME_000_000_000_01(30, "time-000-000-000-01"),
+  TIME_000_000_000_005(31, "time-000-000-000-005"),
+  TIME_000_000_000_002(32, "time-000-000-000-002"),
+  TIME_000_000_000_001(33, "time-000-000-000-001"),
+  TIME_000_000_000_000_5(34, "time-000-000-000-000-5"),
+  TIME_000_000_000_000_2(35, "time-000-000-000-000-2"),
+  TIME_000_000_000_000_1(36, "time-000-000-000-000-1"),
+  TIME_000_000_000_000_05(37, "time-000-000-000-000-05"),
+  TIME_000_000_000_000_02(38, "time-000-000-000-000-02"),
+  TIME_000_000_000_000_01(39, "time-000-000-000-000-01");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TimeConfidence(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TimeConfidence(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TimeConfidenceSerializer extends EnumeratedSerializer<TimeConfidence> {
-		public TimeConfidenceSerializer() {
-			super(TimeConfidence.class);
-		}
-	}
+  public static class TimeConfidenceSerializer extends EnumeratedSerializer<TimeConfidence> {
+    public TimeConfidenceSerializer() {
+      super(TimeConfidence.class);
+    }
+  }
 
-	public static class TimeConfidenceDeserializer extends EnumeratedDeserializer<TimeConfidence> {
-		public TimeConfidenceDeserializer() {
-			super(TimeConfidence.class);
-		}
+  public static class TimeConfidenceDeserializer extends EnumeratedDeserializer<TimeConfidence> {
+    public TimeConfidenceDeserializer() {
+      super(TimeConfidence.class);
+    }
 
-		@Override
-		protected TimeConfidence[] listEnumValues() {
-			return TimeConfidence.values();
-		}
-	}
+    @Override
+    protected TimeConfidence[] listEnumValues() {
+      return TimeConfidence.values();
+    }
+  }
 }

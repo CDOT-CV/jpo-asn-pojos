@@ -33,43 +33,42 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = RptVehicleClass.RptVehicleClassSerializer.class)
 @JsonDeserialize(using = RptVehicleClass.RptVehicleClassDeserializer.class)
 public enum RptVehicleClass implements Asn1Enumerated {
-	MOTORCYCLES(1, "motorcycles"), PASSENGERCARS(2, "passengerCars"), OTHER2AXLE4TIRESINGLEUNITVEHS(3,
-			"other2axle4tireSingleUnitVehs"), BUSES(4, "buses"), TWOAXLE6TIRESINGLEUNITTRUCKS(5,
-					"twoAxle6TireSingleUnitTrucks"), THREEAXLESINGLEUNITTRUCKS(6,
-							"threeAxleSingleUnitTrucks"), FOURORMOREAXLESINGLEUNITTRUCKS(7,
-									"fourOrMoreAxleSingleUnitTrucks"), FOURORFEWERAXLESINGLETRAILERTRUCKS(8,
-											"fourOrFewerAxleSingleTrailerTrucks"), FIVEAXLESINGLETRAILERTRUCKS(9,
-													"fiveAxleSingleTrailerTrucks"), SIXORMOREAXLESINGLETRAILERTRUCKS(10,
-															"sixOrMoreAxleSingleTrailerTrucks"), FIVEORFEWERAXLEMULTITRAILERTRUCKS(
-																	11,
-																	"fiveOrFewerAxleMultiTrailerTrucks"), SIXAXLEMULTITRAILERTRUCKS(
-																			12,
-																			"sixAxleMultiTrailerTrucks"), SEVENORMOREAXLEMULTITRAILERTRUCKS(
-																					13,
-																					"sevenOrMoreAxleMultiTrailerTrucks");
+  MOTORCYCLES(1, "motorcycles"),
+  PASSENGERCARS(2, "passengerCars"),
+  OTHER2AXLE4TIRESINGLEUNITVEHS(3, "other2axle4tireSingleUnitVehs"),
+  BUSES(4, "buses"),
+  TWOAXLE6TIRESINGLEUNITTRUCKS(5, "twoAxle6TireSingleUnitTrucks"),
+  THREEAXLESINGLEUNITTRUCKS(6, "threeAxleSingleUnitTrucks"),
+  FOURORMOREAXLESINGLEUNITTRUCKS(7, "fourOrMoreAxleSingleUnitTrucks"),
+  FOURORFEWERAXLESINGLETRAILERTRUCKS(8, "fourOrFewerAxleSingleTrailerTrucks"),
+  FIVEAXLESINGLETRAILERTRUCKS(9, "fiveAxleSingleTrailerTrucks"),
+  SIXORMOREAXLESINGLETRAILERTRUCKS(10, "sixOrMoreAxleSingleTrailerTrucks"),
+  FIVEORFEWERAXLEMULTITRAILERTRUCKS(11, "fiveOrFewerAxleMultiTrailerTrucks"),
+  SIXAXLEMULTITRAILERTRUCKS(12, "sixAxleMultiTrailerTrucks"),
+  SEVENORMOREAXLEMULTITRAILERTRUCKS(13, "sevenOrMoreAxleMultiTrailerTrucks");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private RptVehicleClass(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private RptVehicleClass(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class RptVehicleClassSerializer extends EnumeratedSerializer<RptVehicleClass> {
-		public RptVehicleClassSerializer() {
-			super(RptVehicleClass.class);
-		}
-	}
+  public static class RptVehicleClassSerializer extends EnumeratedSerializer<RptVehicleClass> {
+    public RptVehicleClassSerializer() {
+      super(RptVehicleClass.class);
+    }
+  }
 
-	public static class RptVehicleClassDeserializer extends EnumeratedDeserializer<RptVehicleClass> {
-		public RptVehicleClassDeserializer() {
-			super(RptVehicleClass.class);
-		}
+  public static class RptVehicleClassDeserializer extends EnumeratedDeserializer<RptVehicleClass> {
+    public RptVehicleClassDeserializer() {
+      super(RptVehicleClass.class);
+    }
 
-		@Override
-		protected RptVehicleClass[] listEnumValues() {
-			return RptVehicleClass.values();
-		}
-	}
+    @Override
+    protected RptVehicleClass[] listEnumValues() {
+      return RptVehicleClass.values();
+    }
+  }
 }

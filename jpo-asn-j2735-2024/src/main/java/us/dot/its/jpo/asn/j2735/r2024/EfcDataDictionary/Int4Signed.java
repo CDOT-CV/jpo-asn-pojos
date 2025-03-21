@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = Int4Signed.Int4SignedDeserializer.class)
 public class Int4Signed extends Asn1Integer {
 
-	public Int4Signed() {
-		super(-2147483648L, 2147483647L);
-	}
+  public Int4Signed() {
+    super(-2147483648L, 2147483647L);
+  }
 
-	@JsonCreator
-	public Int4Signed(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public Int4Signed(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class Int4SignedDeserializer extends IntegerDeserializer<Int4Signed> {
-		public Int4SignedDeserializer() {
-			super(Int4Signed.class);
-		}
+  public static class Int4SignedDeserializer extends IntegerDeserializer<Int4Signed> {
+    public Int4SignedDeserializer() {
+      super(Int4Signed.class);
+    }
 
-		@Override
-		protected Int4Signed construct() {
-			return new Int4Signed();
-		}
-	}
+    @Override
+    protected Int4Signed construct() {
+      return new Int4Signed();
+    }
+  }
 }

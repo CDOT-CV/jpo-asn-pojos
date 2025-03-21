@@ -29,21 +29,22 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonRootName("CCMpartIIExtension")
 @JsonDeserialize(using = None.class)
-public class LightVehicleCCMExtensionsCCMpartIIExtension extends CCMpartIIExtension<LightVehicleCCMExtensions> {
+public class LightVehicleCCMExtensionsCCMpartIIExtension
+    extends CCMpartIIExtension<LightVehicleCCMExtensions> {
 
-	public LightVehicleCCMExtensionsCCMpartIIExtension() {
-		super(1, "LightVehicleCCMExtensions");
-	}
+  public LightVehicleCCMExtensionsCCMpartIIExtension() {
+    super(1, "LightVehicleCCMExtensions");
+  }
 
-	@Override
-	@JsonSerialize(using = LightVehicleCCMExtensionsCCMpartIIExtensionValueSerializer.class)
-	public LightVehicleCCMExtensions getPartII_Value() {
-		return super.getPartII_Value();
-	}
+  @Override
+  @JsonSerialize(using = LightVehicleCCMExtensionsCCMpartIIExtensionValueSerializer.class)
+  public LightVehicleCCMExtensions getPartII_Value() {
+    return super.getPartII_Value();
+  }
 
-	@Override
-	@JsonDeserialize(using = LightVehicleCCMExtensionsCCMpartIIExtensionValueDeserializer.class)
-	public void setPartII_Value(LightVehicleCCMExtensions value) {
-		super.setPartII_Value(value);
-	}
+  @Override
+  @JsonDeserialize(using = LightVehicleCCMExtensionsCCMpartIIExtensionValueDeserializer.class)
+  public void setPartII_Value(LightVehicleCCMExtensions value) {
+    super.setPartII_Value(value);
+  }
 }

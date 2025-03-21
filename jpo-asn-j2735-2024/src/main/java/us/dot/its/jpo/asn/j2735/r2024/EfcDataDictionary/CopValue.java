@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = CopValue.CopValueDeserializer.class)
 public class CopValue extends Asn1Integer {
 
-	public CopValue() {
-		super(0L, 15L);
-	}
+  public CopValue() {
+    super(0L, 15L);
+  }
 
-	@JsonCreator
-	public CopValue(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public CopValue(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class CopValueDeserializer extends IntegerDeserializer<CopValue> {
-		public CopValueDeserializer() {
-			super(CopValue.class);
-		}
+  public static class CopValueDeserializer extends IntegerDeserializer<CopValue> {
+    public CopValueDeserializer() {
+      super(CopValue.class);
+    }
 
-		@Override
-		protected CopValue construct() {
-			return new CopValue();
-		}
-	}
+    @Override
+    protected CopValue construct() {
+      return new CopValue();
+    }
+  }
 }

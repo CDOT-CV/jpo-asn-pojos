@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = ZoneLength.ZoneLengthDeserializer.class)
 public class ZoneLength extends Asn1Integer {
 
-	public ZoneLength() {
-		super(0L, 10000L);
-	}
+  public ZoneLength() {
+    super(0L, 10000L);
+  }
 
-	@JsonCreator
-	public ZoneLength(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public ZoneLength(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class ZoneLengthDeserializer extends IntegerDeserializer<ZoneLength> {
-		public ZoneLengthDeserializer() {
-			super(ZoneLength.class);
-		}
+  public static class ZoneLengthDeserializer extends IntegerDeserializer<ZoneLength> {
+    public ZoneLengthDeserializer() {
+      super(ZoneLength.class);
+    }
 
-		@Override
-		protected ZoneLength construct() {
-			return new ZoneLength();
-		}
-	}
+    @Override
+    protected ZoneLength construct() {
+      return new ZoneLength();
+    }
+  }
 }

@@ -40,26 +40,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AxlesCharges extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "axlesLimit")
-	@JsonProperty("axlesLimit")
-	private AxlesLimitInteger axlesLimit;
-	@Asn1Property(tag = 1, name = "axlesCharge")
-	@JsonProperty("axlesCharge")
-	private PaymentFee axlesCharge;
+  @Asn1Property(tag = 0, name = "axlesLimit")
+  @JsonProperty("axlesLimit")
+  private AxlesLimitInteger axlesLimit;
 
-	public static class AxlesLimitInteger extends Asn1Integer {
-		public AxlesLimitInteger() {
-			super(2L, 10L);
-		}
+  @Asn1Property(tag = 1, name = "axlesCharge")
+  @JsonProperty("axlesCharge")
+  private PaymentFee axlesCharge;
 
-		@JsonCreator
-		public AxlesLimitInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class AxlesLimitInteger extends Asn1Integer {
+    public AxlesLimitInteger() {
+      super(2L, 10L);
+    }
 
-	public AxlesCharges() {
-		super(true);
-	}
+    @JsonCreator
+    public AxlesLimitInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public AxlesCharges() {
+    super(true);
+  }
 }

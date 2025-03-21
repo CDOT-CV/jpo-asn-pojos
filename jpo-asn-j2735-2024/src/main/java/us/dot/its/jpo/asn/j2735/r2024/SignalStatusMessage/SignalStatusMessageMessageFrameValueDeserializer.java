@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class SignalStatusMessageMessageFrameValueDeserializer extends OpenTypeDeserializer<SignalStatusMessage> {
+public class SignalStatusMessageMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<SignalStatusMessage> {
 
-	public SignalStatusMessageMessageFrameValueDeserializer() {
-		super(SignalStatusMessage.class, "SignalStatusMessage");
-	}
+  public SignalStatusMessageMessageFrameValueDeserializer() {
+    super(SignalStatusMessage.class, "SignalStatusMessage");
+  }
 }

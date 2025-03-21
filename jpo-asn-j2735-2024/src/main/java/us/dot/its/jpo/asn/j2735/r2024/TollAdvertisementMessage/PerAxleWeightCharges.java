@@ -45,78 +45,82 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PerAxleWeightCharges extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "totalWeightLimit")
-	@JsonProperty("totalWeightLimit")
-	private TotalWeightLimitInteger totalWeightLimit;
-	@Asn1Property(tag = 1, name = "maxLadenWeightOnAxle")
-	@JsonProperty("maxLadenWeightOnAxle")
-	private MaxLadenWeightOnAxleInteger maxLadenWeightOnAxle;
-	@Asn1Property(tag = 2, name = "weightLimitUnits")
-	@JsonProperty("weightLimitUnits")
-	private EnumeratedWeightLimitUnits weightLimitUnits;
-	@Asn1Property(tag = 3, name = "axleWeightCharge")
-	@JsonProperty("axleWeightCharge")
-	private PaymentFee axleWeightCharge;
+  @Asn1Property(tag = 0, name = "totalWeightLimit")
+  @JsonProperty("totalWeightLimit")
+  private TotalWeightLimitInteger totalWeightLimit;
 
-	public static class TotalWeightLimitInteger extends Asn1Integer {
-		public TotalWeightLimitInteger() {
-			super(0L, 16777215L);
-		}
+  @Asn1Property(tag = 1, name = "maxLadenWeightOnAxle")
+  @JsonProperty("maxLadenWeightOnAxle")
+  private MaxLadenWeightOnAxleInteger maxLadenWeightOnAxle;
 
-		@JsonCreator
-		public TotalWeightLimitInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "weightLimitUnits")
+  @JsonProperty("weightLimitUnits")
+  private EnumeratedWeightLimitUnits weightLimitUnits;
 
-	public static class MaxLadenWeightOnAxleInteger extends Asn1Integer {
-		public MaxLadenWeightOnAxleInteger() {
-			super(0L, 65535L);
-		}
+  @Asn1Property(tag = 3, name = "axleWeightCharge")
+  @JsonProperty("axleWeightCharge")
+  private PaymentFee axleWeightCharge;
 
-		@JsonCreator
-		public MaxLadenWeightOnAxleInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class TotalWeightLimitInteger extends Asn1Integer {
+    public TotalWeightLimitInteger() {
+      super(0L, 16777215L);
+    }
 
-	@Getter
-	@JsonSerialize(using = EnumeratedWeightLimitUnitsSerializer.class)
-	@JsonDeserialize(using = EnumeratedWeightLimitUnitsDeserializer.class)
-	public enum EnumeratedWeightLimitUnits implements Asn1Enumerated {
-		POUNDS(0, "pounds"), KILOGRAMS(1, "kilograms");
+    @JsonCreator
+    public TotalWeightLimitInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-		private final int index;
-		private final String name;
+  public static class MaxLadenWeightOnAxleInteger extends Asn1Integer {
+    public MaxLadenWeightOnAxleInteger() {
+      super(0L, 65535L);
+    }
 
-		private EnumeratedWeightLimitUnits(int index, String name) {
-			this.index = index;
-			this.name = name;
-		}
-	}
+    @JsonCreator
+    public MaxLadenWeightOnAxleInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
 
-	public static class EnumeratedWeightLimitUnitsSerializer extends EnumeratedSerializer<EnumeratedWeightLimitUnits> {
-		public EnumeratedWeightLimitUnitsSerializer() {
-			super(EnumeratedWeightLimitUnits.class);
-		}
-	}
+  @Getter
+  @JsonSerialize(using = EnumeratedWeightLimitUnitsSerializer.class)
+  @JsonDeserialize(using = EnumeratedWeightLimitUnitsDeserializer.class)
+  public enum EnumeratedWeightLimitUnits implements Asn1Enumerated {
+    POUNDS(0, "pounds"),
+    KILOGRAMS(1, "kilograms");
 
-	public static class EnumeratedWeightLimitUnitsDeserializer
-			extends
-				EnumeratedDeserializer<EnumeratedWeightLimitUnits> {
-		public EnumeratedWeightLimitUnitsDeserializer() {
-			super(EnumeratedWeightLimitUnits.class);
-		}
+    private final int index;
+    private final String name;
 
-		@Override
-		protected EnumeratedWeightLimitUnits[] listEnumValues() {
-			return EnumeratedWeightLimitUnits.values();
-		}
-	}
+    private EnumeratedWeightLimitUnits(int index, String name) {
+      this.index = index;
+      this.name = name;
+    }
+  }
 
-	public PerAxleWeightCharges() {
-		super(true);
-	}
+  public static class EnumeratedWeightLimitUnitsSerializer
+      extends EnumeratedSerializer<EnumeratedWeightLimitUnits> {
+    public EnumeratedWeightLimitUnitsSerializer() {
+      super(EnumeratedWeightLimitUnits.class);
+    }
+  }
+
+  public static class EnumeratedWeightLimitUnitsDeserializer
+      extends EnumeratedDeserializer<EnumeratedWeightLimitUnits> {
+    public EnumeratedWeightLimitUnitsDeserializer() {
+      super(EnumeratedWeightLimitUnits.class);
+    }
+
+    @Override
+    protected EnumeratedWeightLimitUnits[] listEnumValues() {
+      return EnumeratedWeightLimitUnits.values();
+    }
+  }
+
+  public PerAxleWeightCharges() {
+    super(true);
+  }
 }

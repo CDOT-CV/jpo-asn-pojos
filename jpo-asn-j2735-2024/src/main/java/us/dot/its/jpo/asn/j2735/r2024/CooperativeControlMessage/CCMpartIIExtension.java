@@ -30,20 +30,38 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "partII-Id", idType = IdType.INTEGER, valueProperty = "partII-Value", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSafetyExtensionsCCMpartIIExtension.class, intId = 0),
-		@Asn1ParameterizedTypes.Type(value = LightVehicleCCMExtensionsCCMpartIIExtension.class, intId = 1),
-		@Asn1ParameterizedTypes.Type(value = HeavyTruckCCMExtensionsCCMpartIIExtension.class, intId = 2)})
-@JsonDeserialize(using = CCMpartIIExtension.CCMpartIIExtensionDeserializer.class)
-abstract public class CCMpartIIExtension<TValue> extends CCMPartIIcontent<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "partII-Id",
+    idType = IdType.INTEGER,
+    valueProperty = "partII-Value",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSafetyExtensionsCCMpartIIExtension.class,
+          intId = 0),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              LightVehicleCCMExtensionsCCMpartIIExtension.class,
+          intId = 1),
+      @Asn1ParameterizedTypes.Type(
+          value =
+              HeavyTruckCCMExtensionsCCMpartIIExtension.class,
+          intId = 2)
+    })
+@JsonDeserialize(
+    using =
+        CCMpartIIExtension
+            .CCMpartIIExtensionDeserializer.class)
+public abstract class CCMpartIIExtension<TValue> extends CCMPartIIcontent<TValue> {
 
-	public CCMpartIIExtension(int id, String name) {
-		super(id, name);
-	}
+  public CCMpartIIExtension(int id, String name) {
+    super(id, name);
+  }
 
-	public static class CCMpartIIExtensionDeserializer extends ParameterizedTypeDeserializer<CCMpartIIExtension> {
-		public CCMpartIIExtensionDeserializer() {
-			super(CCMpartIIExtension.class);
-		}
-	}
+  public static class CCMpartIIExtensionDeserializer
+      extends ParameterizedTypeDeserializer<CCMpartIIExtension> {
+    public CCMpartIIExtensionDeserializer() {
+      super(CCMpartIIExtension.class);
+    }
+  }
 }

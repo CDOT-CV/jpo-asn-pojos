@@ -39,26 +39,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Particulate extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "unitType")
-	@JsonProperty("unitType")
-	private EmissionUnit unitType;
-	@Asn1Property(tag = 1, name = "value")
-	@JsonProperty("value")
-	private ValueInteger value;
+  @Asn1Property(tag = 0, name = "unitType")
+  @JsonProperty("unitType")
+  private EmissionUnit unitType;
 
-	public static class ValueInteger extends Asn1Integer {
-		public ValueInteger() {
-			super(0L, 32767L);
-		}
+  @Asn1Property(tag = 1, name = "value")
+  @JsonProperty("value")
+  private ValueInteger value;
 
-		@JsonCreator
-		public ValueInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class ValueInteger extends Asn1Integer {
+    public ValueInteger() {
+      super(0L, 32767L);
+    }
 
-	public Particulate() {
-		super(false);
-	}
+    @JsonCreator
+    public ValueInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public Particulate() {
+    super(false);
+  }
 }

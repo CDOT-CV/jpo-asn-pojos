@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Distance extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "distanceValue")
-	@JsonProperty("distanceValue")
-	private Int4Unsigned distanceValue;
-	@Asn1Property(tag = 1, name = "distanceUnit", defaultValue = "kilometres")
-	@JsonProperty("distanceUnit")
-	private DistanceUnit distanceUnit;
+  @Asn1Property(tag = 0, name = "distanceValue")
+  @JsonProperty("distanceValue")
+  private Int4Unsigned distanceValue;
 
-	public Distance() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "distanceUnit", defaultValue = "kilometres")
+  @JsonProperty("distanceUnit")
+  private DistanceUnit distanceUnit;
+
+  public Distance() {
+    super(false);
+  }
 }

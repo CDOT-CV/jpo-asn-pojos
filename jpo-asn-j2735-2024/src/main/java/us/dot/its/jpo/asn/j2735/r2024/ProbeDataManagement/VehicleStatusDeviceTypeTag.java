@@ -33,41 +33,60 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = VehicleStatusDeviceTypeTag.VehicleStatusDeviceTypeTagSerializer.class)
 @JsonDeserialize(using = VehicleStatusDeviceTypeTag.VehicleStatusDeviceTypeTagDeserializer.class)
 public enum VehicleStatusDeviceTypeTag implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), LIGHTS(1, "lights"), WIPERS(2, "wipers"), BRAKES(3, "brakes"), STAB(4, "stab"), TRAC(5,
-			"trac"), ABS(6, "abs"), SUNS(7, "sunS"), RAINS(8, "rainS"), AIRTEMP(9, "airTemp"), STEERING(10,
-					"steering"), VERTACCELTHRES(11, "vertAccelThres"), VERTACCEL(12, "vertAccel"), HOZACCELLONG(13,
-							"hozAccelLong"), HOZACCELLAT(14, "hozAccelLat"), HOZACCELCON(15, "hozAccelCon"), ACCEL4WAY(
-									16, "accel4way"), CONFIDENCESET(17, "confidenceSet"), OBDIST(18,
-											"obDist"), OBDIRECT(19, "obDirect"), YAW(20, "yaw"), YAWRATECON(21,
-													"yawRateCon"), DATETIME(22, "dateTime"), FULLPOS(23,
-															"fullPos"), POSITION2D(24, "position2D"), POSITION3D(25,
-																	"position3D"), VEHICLE(26, "vehicle"), SPEEDHEADC(
-																			27, "speedHeadC"), SPEEDC(28, "speedC");
+  UNKNOWN(0, "unknown"),
+  LIGHTS(1, "lights"),
+  WIPERS(2, "wipers"),
+  BRAKES(3, "brakes"),
+  STAB(4, "stab"),
+  TRAC(5, "trac"),
+  ABS(6, "abs"),
+  SUNS(7, "sunS"),
+  RAINS(8, "rainS"),
+  AIRTEMP(9, "airTemp"),
+  STEERING(10, "steering"),
+  VERTACCELTHRES(11, "vertAccelThres"),
+  VERTACCEL(12, "vertAccel"),
+  HOZACCELLONG(13, "hozAccelLong"),
+  HOZACCELLAT(14, "hozAccelLat"),
+  HOZACCELCON(15, "hozAccelCon"),
+  ACCEL4WAY(16, "accel4way"),
+  CONFIDENCESET(17, "confidenceSet"),
+  OBDIST(18, "obDist"),
+  OBDIRECT(19, "obDirect"),
+  YAW(20, "yaw"),
+  YAWRATECON(21, "yawRateCon"),
+  DATETIME(22, "dateTime"),
+  FULLPOS(23, "fullPos"),
+  POSITION2D(24, "position2D"),
+  POSITION3D(25, "position3D"),
+  VEHICLE(26, "vehicle"),
+  SPEEDHEADC(27, "speedHeadC"),
+  SPEEDC(28, "speedC");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private VehicleStatusDeviceTypeTag(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private VehicleStatusDeviceTypeTag(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class VehicleStatusDeviceTypeTagSerializer extends EnumeratedSerializer<VehicleStatusDeviceTypeTag> {
-		public VehicleStatusDeviceTypeTagSerializer() {
-			super(VehicleStatusDeviceTypeTag.class);
-		}
-	}
+  public static class VehicleStatusDeviceTypeTagSerializer
+      extends EnumeratedSerializer<VehicleStatusDeviceTypeTag> {
+    public VehicleStatusDeviceTypeTagSerializer() {
+      super(VehicleStatusDeviceTypeTag.class);
+    }
+  }
 
-	public static class VehicleStatusDeviceTypeTagDeserializer
-			extends
-				EnumeratedDeserializer<VehicleStatusDeviceTypeTag> {
-		public VehicleStatusDeviceTypeTagDeserializer() {
-			super(VehicleStatusDeviceTypeTag.class);
-		}
+  public static class VehicleStatusDeviceTypeTagDeserializer
+      extends EnumeratedDeserializer<VehicleStatusDeviceTypeTag> {
+    public VehicleStatusDeviceTypeTagDeserializer() {
+      super(VehicleStatusDeviceTypeTag.class);
+    }
 
-		@Override
-		protected VehicleStatusDeviceTypeTag[] listEnumValues() {
-			return VehicleStatusDeviceTypeTag.values();
-		}
-	}
+    @Override
+    protected VehicleStatusDeviceTypeTag[] listEnumValues() {
+      return VehicleStatusDeviceTypeTag.values();
+    }
+  }
 }

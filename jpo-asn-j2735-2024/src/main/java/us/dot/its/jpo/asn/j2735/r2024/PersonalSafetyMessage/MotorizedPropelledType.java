@@ -33,31 +33,37 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = MotorizedPropelledType.MotorizedPropelledTypeSerializer.class)
 @JsonDeserialize(using = MotorizedPropelledType.MotorizedPropelledTypeDeserializer.class)
 public enum MotorizedPropelledType implements Asn1Enumerated {
-	UNAVAILABLE(0, "unavailable"), OTHERTYPES(1, "otherTypes"), WHEELCHAIR(2, "wheelChair"), BICYCLE(3,
-			"bicycle"), SCOOTER(4, "scooter"), SELFBALANCINGDEVICE(5, "selfBalancingDevice");
+  UNAVAILABLE(0, "unavailable"),
+  OTHERTYPES(1, "otherTypes"),
+  WHEELCHAIR(2, "wheelChair"),
+  BICYCLE(3, "bicycle"),
+  SCOOTER(4, "scooter"),
+  SELFBALANCINGDEVICE(5, "selfBalancingDevice");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private MotorizedPropelledType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private MotorizedPropelledType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class MotorizedPropelledTypeSerializer extends EnumeratedSerializer<MotorizedPropelledType> {
-		public MotorizedPropelledTypeSerializer() {
-			super(MotorizedPropelledType.class);
-		}
-	}
+  public static class MotorizedPropelledTypeSerializer
+      extends EnumeratedSerializer<MotorizedPropelledType> {
+    public MotorizedPropelledTypeSerializer() {
+      super(MotorizedPropelledType.class);
+    }
+  }
 
-	public static class MotorizedPropelledTypeDeserializer extends EnumeratedDeserializer<MotorizedPropelledType> {
-		public MotorizedPropelledTypeDeserializer() {
-			super(MotorizedPropelledType.class);
-		}
+  public static class MotorizedPropelledTypeDeserializer
+      extends EnumeratedDeserializer<MotorizedPropelledType> {
+    public MotorizedPropelledTypeDeserializer() {
+      super(MotorizedPropelledType.class);
+    }
 
-		@Override
-		protected MotorizedPropelledType[] listEnumValues() {
-			return MotorizedPropelledType.values();
-		}
-	}
+    @Override
+    protected MotorizedPropelledType[] listEnumValues() {
+      return MotorizedPropelledType.values();
+    }
+  }
 }

@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class LaneClosedDeserializer extends BooleanDeserializer<LaneClosed> {
 
-	public LaneClosedDeserializer() {
-		super(LaneClosed.class);
-	}
+  public LaneClosedDeserializer() {
+    super(LaneClosed.class);
+  }
 
-	@Override
-	protected LaneClosed construct() {
-		return new LaneClosed();
-	}
+  @Override
+  protected LaneClosed construct() {
+    return new LaneClosed();
+  }
 }

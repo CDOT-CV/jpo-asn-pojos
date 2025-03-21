@@ -31,7 +31,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LaneDataAttribute_addGrpB extends Asn1Sequence {
 
-	public LaneDataAttribute_addGrpB() {
-		super(true);
-	}
+  public LaneDataAttribute_addGrpB() {
+    super(true);
+  }
 }

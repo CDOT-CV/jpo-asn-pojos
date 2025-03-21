@@ -31,22 +31,21 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
 public class SignalControlAndPrioritizationRequestMessageFrame
-		extends
-			MessageFrame<SignalControlAndPrioritizationRequest> {
+    extends MessageFrame<SignalControlAndPrioritizationRequest> {
 
-	public SignalControlAndPrioritizationRequestMessageFrame() {
-		super(46, "SignalControlAndPrioritizationRequest");
-	}
+  public SignalControlAndPrioritizationRequestMessageFrame() {
+    super(46, "SignalControlAndPrioritizationRequest");
+  }
 
-	@Override
-	@JsonSerialize(using = SignalControlAndPrioritizationRequestMessageFrameValueSerializer.class)
-	public SignalControlAndPrioritizationRequest getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = SignalControlAndPrioritizationRequestMessageFrameValueSerializer.class)
+  public SignalControlAndPrioritizationRequest getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = SignalControlAndPrioritizationRequestMessageFrameValueDeserializer.class)
-	public void setValue(SignalControlAndPrioritizationRequest value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = SignalControlAndPrioritizationRequestMessageFrameValueDeserializer.class)
+  public void setValue(SignalControlAndPrioritizationRequest value) {
+    super.setValue(value);
+  }
 }

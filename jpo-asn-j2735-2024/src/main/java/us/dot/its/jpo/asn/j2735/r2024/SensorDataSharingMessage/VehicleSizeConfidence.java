@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class VehicleSizeConfidence extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "vehicleWidthConfidence")
-	@JsonProperty("vehicleWidthConfidence")
-	private SizeValueConfidence vehicleWidthConfidence;
-	@Asn1Property(tag = 1, name = "vehicleLengthConfidence")
-	@JsonProperty("vehicleLengthConfidence")
-	private SizeValueConfidence vehicleLengthConfidence;
-	@Asn1Property(tag = 2, name = "vehicleHeightConfidence", optional = true)
-	@JsonProperty("vehicleHeightConfidence")
-	private SizeValueConfidence vehicleHeightConfidence;
+  @Asn1Property(tag = 0, name = "vehicleWidthConfidence")
+  @JsonProperty("vehicleWidthConfidence")
+  private SizeValueConfidence vehicleWidthConfidence;
 
-	public VehicleSizeConfidence() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "vehicleLengthConfidence")
+  @JsonProperty("vehicleLengthConfidence")
+  private SizeValueConfidence vehicleLengthConfidence;
+
+  @Asn1Property(tag = 2, name = "vehicleHeightConfidence", optional = true)
+  @JsonProperty("vehicleHeightConfidence")
+  private SizeValueConfidence vehicleHeightConfidence;
+
+  public VehicleSizeConfidence() {
+    super(false);
+  }
 }

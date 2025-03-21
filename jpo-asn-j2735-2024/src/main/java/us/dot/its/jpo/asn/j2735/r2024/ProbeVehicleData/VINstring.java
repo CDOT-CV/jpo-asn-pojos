@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class VINstring extends Asn1OctetString {
 
-	public VINstring() {
-		super(1, 17);
-	}
+  public VINstring() {
+    super(1, 17);
+  }
 
-	@JsonCreator
-	public VINstring(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public VINstring(String value) {
+    this();
+    setValue(value);
+  }
 }

@@ -31,18 +31,31 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LaneDataAttribute_addGrpBReg_LaneDataAttribute.class, intId = 2)})
-@JsonDeserialize(using = Reg_LaneDataAttribute.Reg_LaneDataAttributeDeserializer.class)
-abstract public class Reg_LaneDataAttribute<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LaneDataAttribute_addGrpBReg_LaneDataAttribute
+                  .class,
+          intId = 2)
+    })
+@JsonDeserialize(
+    using =
+        Reg_LaneDataAttribute
+            .Reg_LaneDataAttributeDeserializer.class)
+public abstract class Reg_LaneDataAttribute<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_LaneDataAttribute(int id, String name) {
-		super(id, name);
-	}
+  public Reg_LaneDataAttribute(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_LaneDataAttributeDeserializer extends ParameterizedTypeDeserializer<Reg_LaneDataAttribute> {
-		public Reg_LaneDataAttributeDeserializer() {
-			super(Reg_LaneDataAttribute.class);
-		}
-	}
+  public static class Reg_LaneDataAttributeDeserializer
+      extends ParameterizedTypeDeserializer<Reg_LaneDataAttribute> {
+    public Reg_LaneDataAttributeDeserializer() {
+      super(Reg_LaneDataAttribute.class);
+    }
+  }
 }

@@ -40,26 +40,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RegionInfo extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "referencePoint")
-	@JsonProperty("referencePoint")
-	private Position3D referencePoint;
-	@Asn1Property(tag = 1, name = "locationUncertainty", optional = true)
-	@JsonProperty("locationUncertainty")
-	private RegionUncertainty locationUncertainty;
-	@Asn1Property(tag = 2, name = "referencePointType", optional = true)
-	@JsonProperty("referencePointType")
-	private ReferencePointType referencePointType;
-	@Asn1Property(tag = 3, name = "descriptiveName", optional = true)
-	@JsonProperty("descriptiveName")
-	private DescriptiveName descriptiveName;
-	@Asn1Property(tag = 4, name = "scale", optional = true)
-	@JsonProperty("scale")
-	private Zoom scale;
-	@Asn1Property(tag = 5, name = "approachRegion", optional = true)
-	@JsonProperty("approachRegion")
-	private AreaType approachRegion;
+  @Asn1Property(tag = 0, name = "referencePoint")
+  @JsonProperty("referencePoint")
+  private Position3D referencePoint;
 
-	public RegionInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "locationUncertainty", optional = true)
+  @JsonProperty("locationUncertainty")
+  private RegionUncertainty locationUncertainty;
+
+  @Asn1Property(tag = 2, name = "referencePointType", optional = true)
+  @JsonProperty("referencePointType")
+  private ReferencePointType referencePointType;
+
+  @Asn1Property(tag = 3, name = "descriptiveName", optional = true)
+  @JsonProperty("descriptiveName")
+  private DescriptiveName descriptiveName;
+
+  @Asn1Property(tag = 4, name = "scale", optional = true)
+  @JsonProperty("scale")
+  private Zoom scale;
+
+  @Asn1Property(tag = 5, name = "approachRegion", optional = true)
+  @JsonProperty("approachRegion")
+  private AreaType approachRegion;
+
+  public RegionInfo() {
+    super(true);
+  }
 }

@@ -33,30 +33,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = SnowType.SnowTypeSerializer.class)
 @JsonDeserialize(using = SnowType.SnowTypeDeserializer.class)
 public enum SnowType implements Asn1Enumerated {
-	PACKED(0, "packed"), LOOSE(1, "loose");
+  PACKED(0, "packed"),
+  LOOSE(1, "loose");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private SnowType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private SnowType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class SnowTypeSerializer extends EnumeratedSerializer<SnowType> {
-		public SnowTypeSerializer() {
-			super(SnowType.class);
-		}
-	}
+  public static class SnowTypeSerializer extends EnumeratedSerializer<SnowType> {
+    public SnowTypeSerializer() {
+      super(SnowType.class);
+    }
+  }
 
-	public static class SnowTypeDeserializer extends EnumeratedDeserializer<SnowType> {
-		public SnowTypeDeserializer() {
-			super(SnowType.class);
-		}
+  public static class SnowTypeDeserializer extends EnumeratedDeserializer<SnowType> {
+    public SnowTypeDeserializer() {
+      super(SnowType.class);
+    }
 
-		@Override
-		protected SnowType[] listEnumValues() {
-			return SnowType.values();
-		}
-	}
+    @Override
+    protected SnowType[] listEnumValues() {
+      return SnowType.values();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = WiperRate.WiperRateDeserializer.class)
 public class WiperRate extends Asn1Integer {
 
-	public WiperRate() {
-		super(0L, 127L);
-	}
+  public WiperRate() {
+    super(0L, 127L);
+  }
 
-	@JsonCreator
-	public WiperRate(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public WiperRate(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class WiperRateDeserializer extends IntegerDeserializer<WiperRate> {
-		public WiperRateDeserializer() {
-			super(WiperRate.class);
-		}
+  public static class WiperRateDeserializer extends IntegerDeserializer<WiperRate> {
+    public WiperRateDeserializer() {
+      super(WiperRate.class);
+    }
 
-		@Override
-		protected WiperRate construct() {
-			return new WiperRate();
-		}
-	}
+    @Override
+    protected WiperRate construct() {
+      return new WiperRate();
+    }
+  }
 }

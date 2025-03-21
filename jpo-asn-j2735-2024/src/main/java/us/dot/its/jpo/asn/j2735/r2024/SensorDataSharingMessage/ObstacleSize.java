@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ObstacleSize extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "width")
-	@JsonProperty("width")
-	private SizeValue width;
-	@Asn1Property(tag = 1, name = "length")
-	@JsonProperty("length")
-	private SizeValue length;
-	@Asn1Property(tag = 2, name = "height", optional = true)
-	@JsonProperty("height")
-	private SizeValue height;
+  @Asn1Property(tag = 0, name = "width")
+  @JsonProperty("width")
+  private SizeValue width;
 
-	public ObstacleSize() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "length")
+  @JsonProperty("length")
+  private SizeValue length;
+
+  @Asn1Property(tag = 2, name = "height", optional = true)
+  @JsonProperty("height")
+  private SizeValue height;
+
+  public ObstacleSize() {
+    super(false);
+  }
 }

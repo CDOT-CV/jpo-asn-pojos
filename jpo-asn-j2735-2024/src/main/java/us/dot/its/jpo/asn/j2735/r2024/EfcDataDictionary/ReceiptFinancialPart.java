@@ -37,20 +37,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ReceiptFinancialPart extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "personalAccountNumber")
-	@JsonProperty("personalAccountNumber")
-	private PersonalAccountNumber personalAccountNumber;
-	@Asn1Property(tag = 1, name = "sessionPaymentFee")
-	@JsonProperty("sessionPaymentFee")
-	private PaymentFee sessionPaymentFee;
-	@Asn1Property(tag = 2, name = "sessionCurrentBalance")
-	@JsonProperty("sessionCurrentBalance")
-	private PurseBalance sessionCurrentBalance;
-	@Asn1Property(tag = 3, name = "receiptFinancialSerialNumber")
-	@JsonProperty("receiptFinancialSerialNumber")
-	private Int4Unsigned receiptFinancialSerialNumber;
+  @Asn1Property(tag = 0, name = "personalAccountNumber")
+  @JsonProperty("personalAccountNumber")
+  private PersonalAccountNumber personalAccountNumber;
 
-	public ReceiptFinancialPart() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "sessionPaymentFee")
+  @JsonProperty("sessionPaymentFee")
+  private PaymentFee sessionPaymentFee;
+
+  @Asn1Property(tag = 2, name = "sessionCurrentBalance")
+  @JsonProperty("sessionCurrentBalance")
+  private PurseBalance sessionCurrentBalance;
+
+  @Asn1Property(tag = 3, name = "receiptFinancialSerialNumber")
+  @JsonProperty("receiptFinancialSerialNumber")
+  private Int4Unsigned receiptFinancialSerialNumber;
+
+  public ReceiptFinancialPart() {
+    super(false);
+  }
 }

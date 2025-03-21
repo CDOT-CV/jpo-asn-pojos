@@ -41,38 +41,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DetectedVehicleData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "lights", optional = true)
-	@JsonProperty("lights")
-	private ExteriorLights lights;
-	@Asn1Property(tag = 1, name = "vehAttitude", optional = true)
-	@JsonProperty("vehAttitude")
-	private Attitude vehAttitude;
-	@Asn1Property(tag = 2, name = "vehAttitudeConfidence", optional = true)
-	@JsonProperty("vehAttitudeConfidence")
-	private AttitudeConfidence vehAttitudeConfidence;
-	@Asn1Property(tag = 3, name = "vehAngVel", optional = true)
-	@JsonProperty("vehAngVel")
-	private AngularVelocity vehAngVel;
-	@Asn1Property(tag = 4, name = "vehAngVelConfidence", optional = true)
-	@JsonProperty("vehAngVelConfidence")
-	private AngularVelocityConfidence vehAngVelConfidence;
-	@Asn1Property(tag = 5, name = "size", optional = true)
-	@JsonProperty("size")
-	private VehicleSize size;
-	@Asn1Property(tag = 6, name = "height", optional = true)
-	@JsonProperty("height")
-	private VehicleHeight height;
-	@Asn1Property(tag = 7, name = "vehicleSizeConfidence", optional = true)
-	@JsonProperty("vehicleSizeConfidence")
-	private VehicleSizeConfidence vehicleSizeConfidence;
-	@Asn1Property(tag = 8, name = "vehicleClass", optional = true)
-	@JsonProperty("vehicleClass")
-	private BasicVehicleClass vehicleClass;
-	@Asn1Property(tag = 9, name = "classConf", optional = true)
-	@JsonProperty("classConf")
-	private ClassificationConfidence classConf;
+  @Asn1Property(tag = 0, name = "lights", optional = true)
+  @JsonProperty("lights")
+  private ExteriorLights lights;
 
-	public DetectedVehicleData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "vehAttitude", optional = true)
+  @JsonProperty("vehAttitude")
+  private Attitude vehAttitude;
+
+  @Asn1Property(tag = 2, name = "vehAttitudeConfidence", optional = true)
+  @JsonProperty("vehAttitudeConfidence")
+  private AttitudeConfidence vehAttitudeConfidence;
+
+  @Asn1Property(tag = 3, name = "vehAngVel", optional = true)
+  @JsonProperty("vehAngVel")
+  private AngularVelocity vehAngVel;
+
+  @Asn1Property(tag = 4, name = "vehAngVelConfidence", optional = true)
+  @JsonProperty("vehAngVelConfidence")
+  private AngularVelocityConfidence vehAngVelConfidence;
+
+  @Asn1Property(tag = 5, name = "size", optional = true)
+  @JsonProperty("size")
+  private VehicleSize size;
+
+  @Asn1Property(tag = 6, name = "height", optional = true)
+  @JsonProperty("height")
+  private VehicleHeight height;
+
+  @Asn1Property(tag = 7, name = "vehicleSizeConfidence", optional = true)
+  @JsonProperty("vehicleSizeConfidence")
+  private VehicleSizeConfidence vehicleSizeConfidence;
+
+  @Asn1Property(tag = 8, name = "vehicleClass", optional = true)
+  @JsonProperty("vehicleClass")
+  private BasicVehicleClass vehicleClass;
+
+  @Asn1Property(tag = 9, name = "classConf", optional = true)
+  @JsonProperty("classConf")
+  private ClassificationConfidence classConf;
+
+  public DetectedVehicleData() {
+    super(true);
+  }
 }

@@ -41,23 +41,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Connection extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "connectingLane")
-	@JsonProperty("connectingLane")
-	private ConnectingLane connectingLane;
-	@Asn1Property(tag = 1, name = "remoteIntersection", optional = true)
-	@JsonProperty("remoteIntersection")
-	private IntersectionReferenceID remoteIntersection;
-	@Asn1Property(tag = 2, name = "signalGroup", optional = true)
-	@JsonProperty("signalGroup")
-	private SignalGroupID signalGroup;
-	@Asn1Property(tag = 3, name = "userClass", optional = true)
-	@JsonProperty("userClass")
-	private RestrictionClassID userClass;
-	@Asn1Property(tag = 4, name = "connectionID", optional = true)
-	@JsonProperty("connectionID")
-	private LaneConnectionID connectionID;
+  @Asn1Property(tag = 0, name = "connectingLane")
+  @JsonProperty("connectingLane")
+  private ConnectingLane connectingLane;
 
-	public Connection() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "remoteIntersection", optional = true)
+  @JsonProperty("remoteIntersection")
+  private IntersectionReferenceID remoteIntersection;
+
+  @Asn1Property(tag = 2, name = "signalGroup", optional = true)
+  @JsonProperty("signalGroup")
+  private SignalGroupID signalGroup;
+
+  @Asn1Property(tag = 3, name = "userClass", optional = true)
+  @JsonProperty("userClass")
+  private RestrictionClassID userClass;
+
+  @Asn1Property(tag = 4, name = "connectionID", optional = true)
+  @JsonProperty("connectionID")
+  private LaneConnectionID connectionID;
+
+  public Connection() {
+    super(false);
+  }
 }

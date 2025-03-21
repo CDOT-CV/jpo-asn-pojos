@@ -26,7 +26,7 @@ import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class RoadSideAlertMessageFrameValueSerializer extends OpenTypeSerializer<RoadSideAlert> {
 
-	public RoadSideAlertMessageFrameValueSerializer() {
-		super(RoadSideAlert.class, "value", "RoadSideAlert");
-	}
+  public RoadSideAlertMessageFrameValueSerializer() {
+    super(RoadSideAlert.class, "value", "RoadSideAlert");
+  }
 }

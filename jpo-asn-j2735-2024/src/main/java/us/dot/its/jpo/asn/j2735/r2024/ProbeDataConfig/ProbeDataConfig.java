@@ -39,32 +39,35 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class ProbeDataConfig extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "descriptor")
-	@JsonProperty("descriptor")
-	private ConfigDescriptor descriptor;
-	@Asn1Property(tag = 1, name = "triggers")
-	@JsonProperty("triggers")
-	private ConfigTriggers triggers;
-	@Asn1Property(tag = 2, name = "maxAgeOfData")
-	@JsonProperty("maxAgeOfData")
-	private MaxAgeOfDataInteger maxAgeOfData;
-	@Asn1Property(tag = 3, name = "boundary", optional = true)
-	@JsonProperty("boundary")
-	private ConfigBoundary boundary;
+  @Asn1Property(tag = 0, name = "descriptor")
+  @JsonProperty("descriptor")
+  private ConfigDescriptor descriptor;
 
-	public static class MaxAgeOfDataInteger extends Asn1Integer {
-		public MaxAgeOfDataInteger() {
-			super(1L, 90L);
-		}
+  @Asn1Property(tag = 1, name = "triggers")
+  @JsonProperty("triggers")
+  private ConfigTriggers triggers;
 
-		@JsonCreator
-		public MaxAgeOfDataInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "maxAgeOfData")
+  @JsonProperty("maxAgeOfData")
+  private MaxAgeOfDataInteger maxAgeOfData;
 
-	public ProbeDataConfig() {
-		super(true);
-	}
+  @Asn1Property(tag = 3, name = "boundary", optional = true)
+  @JsonProperty("boundary")
+  private ConfigBoundary boundary;
+
+  public static class MaxAgeOfDataInteger extends Asn1Integer {
+    public MaxAgeOfDataInteger() {
+      super(1L, 90L);
+    }
+
+    @JsonCreator
+    public MaxAgeOfDataInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public ProbeDataConfig() {
+    super(true);
+  }
 }

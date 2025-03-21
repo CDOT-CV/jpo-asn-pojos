@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TargetRoadResource extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "tRRType")
-	@JsonProperty("tRRType")
-	private TRRType tRRType;
-	@Asn1Property(tag = 1, name = "tRRLocation")
-	@JsonProperty("tRRLocation")
-	private TRRLocation tRRLocation;
+  @Asn1Property(tag = 0, name = "tRRType")
+  @JsonProperty("tRRType")
+  private TRRType tRRType;
 
-	public TargetRoadResource() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tRRLocation")
+  @JsonProperty("tRRLocation")
+  private TRRLocation tRRLocation;
+
+  public TargetRoadResource() {
+    super(true);
+  }
 }

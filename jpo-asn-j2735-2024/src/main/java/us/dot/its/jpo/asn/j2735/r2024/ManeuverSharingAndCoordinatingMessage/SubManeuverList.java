@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class SubManeuverList extends Asn1SequenceOf<SubManeuver> {
 
-	public SubManeuverList() {
-		super(SubManeuver.class, 1L, 32L);
-	}
+  public SubManeuverList() {
+    super(SubManeuver.class, 1L, 32L);
+  }
 }

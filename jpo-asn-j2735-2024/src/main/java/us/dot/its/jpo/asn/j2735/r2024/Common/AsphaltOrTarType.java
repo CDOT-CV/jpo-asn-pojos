@@ -33,30 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = AsphaltOrTarType.AsphaltOrTarTypeSerializer.class)
 @JsonDeserialize(using = AsphaltOrTarType.AsphaltOrTarTypeDeserializer.class)
 public enum AsphaltOrTarType implements Asn1Enumerated {
-	NEWSHARP(0, "newSharp"), TRAVELED(1, "traveled"), TRAFFICPOLISHED(2, "trafficPolished"), EXCESSTAR(3, "excessTar");
+  NEWSHARP(0, "newSharp"),
+  TRAVELED(1, "traveled"),
+  TRAFFICPOLISHED(2, "trafficPolished"),
+  EXCESSTAR(3, "excessTar");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private AsphaltOrTarType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private AsphaltOrTarType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class AsphaltOrTarTypeSerializer extends EnumeratedSerializer<AsphaltOrTarType> {
-		public AsphaltOrTarTypeSerializer() {
-			super(AsphaltOrTarType.class);
-		}
-	}
+  public static class AsphaltOrTarTypeSerializer extends EnumeratedSerializer<AsphaltOrTarType> {
+    public AsphaltOrTarTypeSerializer() {
+      super(AsphaltOrTarType.class);
+    }
+  }
 
-	public static class AsphaltOrTarTypeDeserializer extends EnumeratedDeserializer<AsphaltOrTarType> {
-		public AsphaltOrTarTypeDeserializer() {
-			super(AsphaltOrTarType.class);
-		}
+  public static class AsphaltOrTarTypeDeserializer
+      extends EnumeratedDeserializer<AsphaltOrTarType> {
+    public AsphaltOrTarTypeDeserializer() {
+      super(AsphaltOrTarType.class);
+    }
 
-		@Override
-		protected AsphaltOrTarType[] listEnumValues() {
-			return AsphaltOrTarType.values();
-		}
-	}
+    @Override
+    protected AsphaltOrTarType[] listEnumValues() {
+      return AsphaltOrTarType.values();
+    }
+  }
 }

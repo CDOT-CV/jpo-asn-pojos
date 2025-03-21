@@ -38,23 +38,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class SituationalContainer extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "obstructions", optional = true)
-	@JsonProperty("obstructions")
-	private Obstructions obstructions;
-	@Asn1Property(tag = 1, name = "visibility", optional = true)
-	@JsonProperty("visibility")
-	private NTCIPEssVisibility visibility;
-	@Asn1Property(tag = 2, name = "peoplePresent", optional = true)
-	@JsonProperty("peoplePresent")
-	private Activity peoplePresent;
-	@Asn1Property(tag = 3, name = "anomalousTraffic", optional = true)
-	@JsonProperty("anomalousTraffic")
-	private Activity anomalousTraffic;
-	@Asn1Property(tag = 4, name = "applicableRegion")
-	@JsonProperty("applicableRegion")
-	private RegionInfo applicableRegion;
+  @Asn1Property(tag = 0, name = "obstructions", optional = true)
+  @JsonProperty("obstructions")
+  private Obstructions obstructions;
 
-	public SituationalContainer() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "visibility", optional = true)
+  @JsonProperty("visibility")
+  private NTCIPEssVisibility visibility;
+
+  @Asn1Property(tag = 2, name = "peoplePresent", optional = true)
+  @JsonProperty("peoplePresent")
+  private Activity peoplePresent;
+
+  @Asn1Property(tag = 3, name = "anomalousTraffic", optional = true)
+  @JsonProperty("anomalousTraffic")
+  private Activity anomalousTraffic;
+
+  @Asn1Property(tag = 4, name = "applicableRegion")
+  @JsonProperty("applicableRegion")
+  private RegionInfo applicableRegion;
+
+  public SituationalContainer() {
+    super(true);
+  }
 }

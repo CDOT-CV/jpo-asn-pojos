@@ -39,13 +39,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class IntersectionState_addGrpC extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "activePrioritizations", optional = true)
-	@JsonProperty("activePrioritizations")
-	@JacksonXmlElementWrapper(localName = "activePrioritizations")
-	@JacksonXmlProperty(localName = "PrioritizationResponse")
-	private PrioritizationResponseList activePrioritizations;
+  @Asn1Property(tag = 0, name = "activePrioritizations", optional = true)
+  @JsonProperty("activePrioritizations")
+  @JacksonXmlElementWrapper(localName = "activePrioritizations")
+  @JacksonXmlProperty(localName = "PrioritizationResponse")
+  private PrioritizationResponseList activePrioritizations;
 
-	public IntersectionState_addGrpC() {
-		super(true);
-	}
+  public IntersectionState_addGrpC() {
+    super(true);
+  }
 }

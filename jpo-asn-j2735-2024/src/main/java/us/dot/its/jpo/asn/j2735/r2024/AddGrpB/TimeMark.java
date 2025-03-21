@@ -37,38 +37,47 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TimeMark extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "year")
-	@JsonProperty("year")
-	private Year year;
-	@Asn1Property(tag = 1, name = "month")
-	@JsonProperty("month")
-	private Month month;
-	@Asn1Property(tag = 2, name = "day")
-	@JsonProperty("day")
-	private Day day;
-	@Asn1Property(tag = 3, name = "summerTime")
-	@JsonProperty("summerTime")
-	private SummerTime summerTime;
-	@Asn1Property(tag = 4, name = "holiday")
-	@JsonProperty("holiday")
-	private Holiday holiday;
-	@Asn1Property(tag = 5, name = "dayofWeek")
-	@JsonProperty("dayofWeek")
-	private DayOfWeek dayofWeek;
-	@Asn1Property(tag = 6, name = "hour")
-	@JsonProperty("hour")
-	private Hour hour;
-	@Asn1Property(tag = 7, name = "minute")
-	@JsonProperty("minute")
-	private Minute minute;
-	@Asn1Property(tag = 8, name = "second")
-	@JsonProperty("second")
-	private Second second;
-	@Asn1Property(tag = 9, name = "tenthSecond")
-	@JsonProperty("tenthSecond")
-	private TenthSecond tenthSecond;
+  @Asn1Property(tag = 0, name = "year")
+  @JsonProperty("year")
+  private Year year;
 
-	public TimeMark() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "month")
+  @JsonProperty("month")
+  private Month month;
+
+  @Asn1Property(tag = 2, name = "day")
+  @JsonProperty("day")
+  private Day day;
+
+  @Asn1Property(tag = 3, name = "summerTime")
+  @JsonProperty("summerTime")
+  private SummerTime summerTime;
+
+  @Asn1Property(tag = 4, name = "holiday")
+  @JsonProperty("holiday")
+  private Holiday holiday;
+
+  @Asn1Property(tag = 5, name = "dayofWeek")
+  @JsonProperty("dayofWeek")
+  private DayOfWeek dayofWeek;
+
+  @Asn1Property(tag = 6, name = "hour")
+  @JsonProperty("hour")
+  private Hour hour;
+
+  @Asn1Property(tag = 7, name = "minute")
+  @JsonProperty("minute")
+  private Minute minute;
+
+  @Asn1Property(tag = 8, name = "second")
+  @JsonProperty("second")
+  private Second second;
+
+  @Asn1Property(tag = 9, name = "tenthSecond")
+  @JsonProperty("tenthSecond")
+  private TenthSecond tenthSecond;
+
+  public TimeMark() {
+    super(false);
+  }
 }

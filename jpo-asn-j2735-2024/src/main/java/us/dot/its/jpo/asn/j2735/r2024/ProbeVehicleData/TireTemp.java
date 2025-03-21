@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = TireTemp.TireTempDeserializer.class)
 public class TireTemp extends Asn1Integer {
 
-	public TireTemp() {
-		super(-8736L, 55519L);
-	}
+  public TireTemp() {
+    super(-8736L, 55519L);
+  }
 
-	@JsonCreator
-	public TireTemp(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TireTemp(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TireTempDeserializer extends IntegerDeserializer<TireTemp> {
-		public TireTempDeserializer() {
-			super(TireTemp.class);
-		}
+  public static class TireTempDeserializer extends IntegerDeserializer<TireTemp> {
+    public TireTempDeserializer() {
+      super(TireTemp.class);
+    }
 
-		@Override
-		protected TireTemp construct() {
-			return new TireTemp();
-		}
-	}
+    @Override
+    protected TireTemp construct() {
+      return new TireTemp();
+    }
+  }
 }

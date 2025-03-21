@@ -33,30 +33,33 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = ObjectType.ObjectTypeSerializer.class)
 @JsonDeserialize(using = ObjectType.ObjectTypeDeserializer.class)
 public enum ObjectType implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), VEHICLE(1, "vehicle"), VRU(2, "vru"), ANIMAL(3, "animal");
+  UNKNOWN(0, "unknown"),
+  VEHICLE(1, "vehicle"),
+  VRU(2, "vru"),
+  ANIMAL(3, "animal");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private ObjectType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private ObjectType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ObjectTypeSerializer extends EnumeratedSerializer<ObjectType> {
-		public ObjectTypeSerializer() {
-			super(ObjectType.class);
-		}
-	}
+  public static class ObjectTypeSerializer extends EnumeratedSerializer<ObjectType> {
+    public ObjectTypeSerializer() {
+      super(ObjectType.class);
+    }
+  }
 
-	public static class ObjectTypeDeserializer extends EnumeratedDeserializer<ObjectType> {
-		public ObjectTypeDeserializer() {
-			super(ObjectType.class);
-		}
+  public static class ObjectTypeDeserializer extends EnumeratedDeserializer<ObjectType> {
+    public ObjectTypeDeserializer() {
+      super(ObjectType.class);
+    }
 
-		@Override
-		protected ObjectType[] listEnumValues() {
-			return ObjectType.values();
-		}
-	}
+    @Override
+    protected ObjectType[] listEnumValues() {
+      return ObjectType.values();
+    }
+  }
 }

@@ -39,30 +39,32 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class OffsetSystem extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "scale", optional = true)
-	@JsonProperty("scale")
-	private Zoom scale;
-	@Asn1Property(tag = 1, name = "offset")
-	@JsonProperty("offset")
-	private OffsetChoice offset;
+  @Asn1Property(tag = 0, name = "scale", optional = true)
+  @JsonProperty("scale")
+  private Zoom scale;
 
-	@Getter
-	@Setter
-	@JsonInclude(Include.NON_NULL)
-	public static class OffsetChoice extends Asn1Choice {
-		@Asn1Property(tag = 0, name = "xy")
-		@JsonProperty("xy")
-		private NodeListXY xy;
-		@Asn1Property(tag = 1, name = "ll")
-		@JsonProperty("ll")
-		private NodeListLL ll;
+  @Asn1Property(tag = 1, name = "offset")
+  @JsonProperty("offset")
+  private OffsetChoice offset;
 
-		public OffsetChoice() {
-			super(false);
-		}
-	}
+  @Getter
+  @Setter
+  @JsonInclude(Include.NON_NULL)
+  public static class OffsetChoice extends Asn1Choice {
+    @Asn1Property(tag = 0, name = "xy")
+    @JsonProperty("xy")
+    private NodeListXY xy;
 
-	public OffsetSystem() {
-		super(false);
-	}
+    @Asn1Property(tag = 1, name = "ll")
+    @JsonProperty("ll")
+    private NodeListLL ll;
+
+    public OffsetChoice() {
+      super(false);
+    }
+  }
+
+  public OffsetSystem() {
+    super(false);
+  }
 }

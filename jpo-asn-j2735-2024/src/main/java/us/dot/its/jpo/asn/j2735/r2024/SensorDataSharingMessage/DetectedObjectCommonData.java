@@ -46,62 +46,79 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class DetectedObjectCommonData extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "objType")
-	@JsonProperty("objType")
-	private ObjectType objType;
-	@Asn1Property(tag = 1, name = "objTypeCfd")
-	@JsonProperty("objTypeCfd")
-	private ClassificationConfidence objTypeCfd;
-	@Asn1Property(tag = 2, name = "objectID")
-	@JsonProperty("objectID")
-	private ObjectID objectID;
-	@Asn1Property(tag = 3, name = "measurementTime")
-	@JsonProperty("measurementTime")
-	private MeasurementTimeOffset measurementTime;
-	@Asn1Property(tag = 4, name = "timeConfidence")
-	@JsonProperty("timeConfidence")
-	private TimeConfidence timeConfidence;
-	@Asn1Property(tag = 5, name = "pos")
-	@JsonProperty("pos")
-	private PositionOffsetXYZ pos;
-	@Asn1Property(tag = 6, name = "posConfidence")
-	@JsonProperty("posConfidence")
-	private PositionConfidenceSet posConfidence;
-	@Asn1Property(tag = 7, name = "speed")
-	@JsonProperty("speed")
-	private Speed speed;
-	@Asn1Property(tag = 8, name = "speedConfidence")
-	@JsonProperty("speedConfidence")
-	private SpeedConfidence speedConfidence;
-	@Asn1Property(tag = 9, name = "speedZ", optional = true)
-	@JsonProperty("speedZ")
-	private Speed speedZ;
-	@Asn1Property(tag = 10, name = "speedConfidenceZ", optional = true)
-	@JsonProperty("speedConfidenceZ")
-	private SpeedConfidence speedConfidenceZ;
-	@Asn1Property(tag = 11, name = "heading")
-	@JsonProperty("heading")
-	private Heading heading;
-	@Asn1Property(tag = 12, name = "headingConf")
-	@JsonProperty("headingConf")
-	private HeadingConfidence headingConf;
-	@Asn1Property(tag = 13, name = "accel4way", optional = true)
-	@JsonProperty("accel4way")
-	private AccelerationSet4Way accel4way;
-	@Asn1Property(tag = 14, name = "accCfdX", optional = true)
-	@JsonProperty("accCfdX")
-	private AccelerationConfidence accCfdX;
-	@Asn1Property(tag = 15, name = "accCfdY", optional = true)
-	@JsonProperty("accCfdY")
-	private AccelerationConfidence accCfdY;
-	@Asn1Property(tag = 16, name = "accCfdZ", optional = true)
-	@JsonProperty("accCfdZ")
-	private AccelerationConfidence accCfdZ;
-	@Asn1Property(tag = 17, name = "accCfdYaw", optional = true)
-	@JsonProperty("accCfdYaw")
-	private YawRateConfidence accCfdYaw;
+  @Asn1Property(tag = 0, name = "objType")
+  @JsonProperty("objType")
+  private ObjectType objType;
 
-	public DetectedObjectCommonData() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "objTypeCfd")
+  @JsonProperty("objTypeCfd")
+  private ClassificationConfidence objTypeCfd;
+
+  @Asn1Property(tag = 2, name = "objectID")
+  @JsonProperty("objectID")
+  private ObjectID objectID;
+
+  @Asn1Property(tag = 3, name = "measurementTime")
+  @JsonProperty("measurementTime")
+  private MeasurementTimeOffset measurementTime;
+
+  @Asn1Property(tag = 4, name = "timeConfidence")
+  @JsonProperty("timeConfidence")
+  private TimeConfidence timeConfidence;
+
+  @Asn1Property(tag = 5, name = "pos")
+  @JsonProperty("pos")
+  private PositionOffsetXYZ pos;
+
+  @Asn1Property(tag = 6, name = "posConfidence")
+  @JsonProperty("posConfidence")
+  private PositionConfidenceSet posConfidence;
+
+  @Asn1Property(tag = 7, name = "speed")
+  @JsonProperty("speed")
+  private Speed speed;
+
+  @Asn1Property(tag = 8, name = "speedConfidence")
+  @JsonProperty("speedConfidence")
+  private SpeedConfidence speedConfidence;
+
+  @Asn1Property(tag = 9, name = "speedZ", optional = true)
+  @JsonProperty("speedZ")
+  private Speed speedZ;
+
+  @Asn1Property(tag = 10, name = "speedConfidenceZ", optional = true)
+  @JsonProperty("speedConfidenceZ")
+  private SpeedConfidence speedConfidenceZ;
+
+  @Asn1Property(tag = 11, name = "heading")
+  @JsonProperty("heading")
+  private Heading heading;
+
+  @Asn1Property(tag = 12, name = "headingConf")
+  @JsonProperty("headingConf")
+  private HeadingConfidence headingConf;
+
+  @Asn1Property(tag = 13, name = "accel4way", optional = true)
+  @JsonProperty("accel4way")
+  private AccelerationSet4Way accel4way;
+
+  @Asn1Property(tag = 14, name = "accCfdX", optional = true)
+  @JsonProperty("accCfdX")
+  private AccelerationConfidence accCfdX;
+
+  @Asn1Property(tag = 15, name = "accCfdY", optional = true)
+  @JsonProperty("accCfdY")
+  private AccelerationConfidence accCfdY;
+
+  @Asn1Property(tag = 16, name = "accCfdZ", optional = true)
+  @JsonProperty("accCfdZ")
+  private AccelerationConfidence accCfdZ;
+
+  @Asn1Property(tag = 17, name = "accCfdYaw", optional = true)
+  @JsonProperty("accCfdYaw")
+  private YawRateConfidence accCfdYaw;
+
+  public DetectedObjectCommonData() {
+    super(true);
+  }
 }

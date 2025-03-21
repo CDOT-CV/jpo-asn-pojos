@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class NMEAcorrectionsMessageFrame extends MessageFrame<NMEAcorrections> {
 
-	public NMEAcorrectionsMessageFrame() {
-		super(24, "NMEAcorrections");
-	}
+  public NMEAcorrectionsMessageFrame() {
+    super(24, "NMEAcorrections");
+  }
 
-	@Override
-	@JsonSerialize(using = NMEAcorrectionsMessageFrameValueSerializer.class)
-	public NMEAcorrections getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = NMEAcorrectionsMessageFrameValueSerializer.class)
+  public NMEAcorrections getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = NMEAcorrectionsMessageFrameValueDeserializer.class)
-	public void setValue(NMEAcorrections value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = NMEAcorrectionsMessageFrameValueDeserializer.class)
+  public void setValue(NMEAcorrections value) {
+    super.setValue(value);
+  }
 }

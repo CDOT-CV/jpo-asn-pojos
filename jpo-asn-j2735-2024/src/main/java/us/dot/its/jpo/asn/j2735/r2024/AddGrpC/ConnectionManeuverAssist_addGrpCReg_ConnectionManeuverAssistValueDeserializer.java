@@ -25,10 +25,9 @@ package us.dot.its.jpo.asn.j2735.r2024.AddGrpC;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
 public class ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer
-		extends
-			OpenTypeDeserializer<ConnectionManeuverAssist_addGrpC> {
+    extends OpenTypeDeserializer<ConnectionManeuverAssist_addGrpC> {
 
-	public ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer() {
-		super(ConnectionManeuverAssist_addGrpC.class, "ConnectionManeuverAssist_addGrpC");
-	}
+  public ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer() {
+    super(ConnectionManeuverAssist_addGrpC.class, "ConnectionManeuverAssist_addGrpC");
+  }
 }

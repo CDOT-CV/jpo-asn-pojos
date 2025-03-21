@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RestrictionClassID.RestrictionClassIDDeserializer.class)
 public class RestrictionClassID extends Asn1Integer {
 
-	public RestrictionClassID() {
-		super(0L, 255L);
-	}
+  public RestrictionClassID() {
+    super(0L, 255L);
+  }
 
-	@JsonCreator
-	public RestrictionClassID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RestrictionClassID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RestrictionClassIDDeserializer extends IntegerDeserializer<RestrictionClassID> {
-		public RestrictionClassIDDeserializer() {
-			super(RestrictionClassID.class);
-		}
+  public static class RestrictionClassIDDeserializer
+      extends IntegerDeserializer<RestrictionClassID> {
+    public RestrictionClassIDDeserializer() {
+      super(RestrictionClassID.class);
+    }
 
-		@Override
-		protected RestrictionClassID construct() {
-			return new RestrictionClassID();
-		}
-	}
+    @Override
+    protected RestrictionClassID construct() {
+      return new RestrictionClassID();
+    }
+  }
 }

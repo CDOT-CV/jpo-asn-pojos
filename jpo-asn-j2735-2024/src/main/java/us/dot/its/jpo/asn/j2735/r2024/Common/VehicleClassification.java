@@ -44,44 +44,52 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class VehicleClassification extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "keyType", optional = true)
-	@JsonProperty("keyType")
-	private BasicVehicleClass keyType;
-	@Asn1Property(tag = 1, name = "role", optional = true)
-	@JsonProperty("role")
-	private BasicVehicleRole role;
-	@Asn1Property(tag = 2, name = "iso3883", optional = true)
-	@JsonProperty("iso3883")
-	private Iso3833VehicleType iso3883;
-	@Asn1Property(tag = 3, name = "hpmsType", optional = true)
-	@JsonProperty("hpmsType")
-	private VehicleType hpmsType;
-	@Asn1Property(tag = 4, name = "vehicleType", optional = true)
-	@JsonProperty("vehicleType")
-	private VehicleGroupAffected vehicleType;
-	@Asn1Property(tag = 5, name = "responseEquip", optional = true)
-	@JsonProperty("responseEquip")
-	private IncidentResponseEquipment responseEquip;
-	@Asn1Property(tag = 6, name = "responderType", optional = true)
-	@JsonProperty("responderType")
-	private ResponderGroupAffected responderType;
-	@Asn1Property(tag = 7, name = "fuelType", optional = true)
-	@JsonProperty("fuelType")
-	private FuelType fuelType;
-	@Asn1Property(tag = 8, name = "regional", optional = true)
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-VehicleClassification")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "keyType", optional = true)
+  @JsonProperty("keyType")
+  private BasicVehicleClass keyType;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_VehicleClassification> {
-		public SequenceOfRegional() {
-			super(Reg_VehicleClassification.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "role", optional = true)
+  @JsonProperty("role")
+  private BasicVehicleRole role;
 
-	public VehicleClassification() {
-		super(true);
-	}
+  @Asn1Property(tag = 2, name = "iso3883", optional = true)
+  @JsonProperty("iso3883")
+  private Iso3833VehicleType iso3883;
+
+  @Asn1Property(tag = 3, name = "hpmsType", optional = true)
+  @JsonProperty("hpmsType")
+  private VehicleType hpmsType;
+
+  @Asn1Property(tag = 4, name = "vehicleType", optional = true)
+  @JsonProperty("vehicleType")
+  private VehicleGroupAffected vehicleType;
+
+  @Asn1Property(tag = 5, name = "responseEquip", optional = true)
+  @JsonProperty("responseEquip")
+  private IncidentResponseEquipment responseEquip;
+
+  @Asn1Property(tag = 6, name = "responderType", optional = true)
+  @JsonProperty("responderType")
+  private ResponderGroupAffected responderType;
+
+  @Asn1Property(tag = 7, name = "fuelType", optional = true)
+  @JsonProperty("fuelType")
+  private FuelType fuelType;
+
+  @Asn1Property(tag = 8, name = "regional", optional = true)
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-VehicleClassification")
+  private SequenceOfRegional regional;
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_VehicleClassification> {
+    public SequenceOfRegional() {
+      super(Reg_VehicleClassification.class, 1L, 4L);
+    }
+  }
+
+  public VehicleClassification() {
+    super(true);
+  }
 }

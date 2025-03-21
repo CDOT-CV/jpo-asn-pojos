@@ -27,13 +27,13 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class CodeWord extends Asn1OctetString {
 
-	public CodeWord() {
-		super(1, 16);
-	}
+  public CodeWord() {
+    super(1, 16);
+  }
 
-	@JsonCreator
-	public CodeWord(String value) {
-		this();
-		setValue(value);
-	}
+  @JsonCreator
+  public CodeWord(String value) {
+    this();
+    setValue(value);
+  }
 }

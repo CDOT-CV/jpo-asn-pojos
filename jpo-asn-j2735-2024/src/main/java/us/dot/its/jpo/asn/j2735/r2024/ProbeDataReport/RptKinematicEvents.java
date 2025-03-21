@@ -39,16 +39,17 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptKinematicEvents extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "events")
-	@JsonProperty("events")
-	private RptEvents events;
-	@Asn1Property(tag = 1, name = "hysteresis", optional = true)
-	@JsonProperty("hysteresis")
-	@JacksonXmlElementWrapper(localName = "hysteresis")
-	@JacksonXmlProperty(localName = "RptHysteresis")
-	private RptHysteresisRecord hysteresis;
+  @Asn1Property(tag = 0, name = "events")
+  @JsonProperty("events")
+  private RptEvents events;
 
-	public RptKinematicEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "hysteresis", optional = true)
+  @JsonProperty("hysteresis")
+  @JacksonXmlElementWrapper(localName = "hysteresis")
+  @JacksonXmlProperty(localName = "RptHysteresis")
+  private RptHysteresisRecord hysteresis;
+
+  public RptKinematicEvents() {
+    super(true);
+  }
 }

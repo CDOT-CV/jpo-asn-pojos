@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class VehTypeChargesTable extends Asn1SequenceOf<VehTypeCharges> {
 
-	public VehTypeChargesTable() {
-		super(VehTypeCharges.class, 1L, 13L);
-	}
+  public VehTypeChargesTable() {
+    super(VehTypeCharges.class, 1L, 13L);
+  }
 }

@@ -32,19 +32,19 @@ import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 @JsonDeserialize(using = None.class)
 public class CommonSafetyRequestMessageFrame extends MessageFrame<CommonSafetyRequest> {
 
-	public CommonSafetyRequestMessageFrame() {
-		super(21, "CommonSafetyRequest");
-	}
+  public CommonSafetyRequestMessageFrame() {
+    super(21, "CommonSafetyRequest");
+  }
 
-	@Override
-	@JsonSerialize(using = CommonSafetyRequestMessageFrameValueSerializer.class)
-	public CommonSafetyRequest getValue() {
-		return super.getValue();
-	}
+  @Override
+  @JsonSerialize(using = CommonSafetyRequestMessageFrameValueSerializer.class)
+  public CommonSafetyRequest getValue() {
+    return super.getValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = CommonSafetyRequestMessageFrameValueDeserializer.class)
-	public void setValue(CommonSafetyRequest value) {
-		super.setValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = CommonSafetyRequestMessageFrameValueDeserializer.class)
+  public void setValue(CommonSafetyRequest value) {
+    super.setValue(value);
+  }
 }

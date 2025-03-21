@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = RollRate.RollRateDeserializer.class)
 public class RollRate extends Asn1Integer {
 
-	public RollRate() {
-		super(-32767L, 32767L);
-	}
+  public RollRate() {
+    super(-32767L, 32767L);
+  }
 
-	@JsonCreator
-	public RollRate(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public RollRate(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class RollRateDeserializer extends IntegerDeserializer<RollRate> {
-		public RollRateDeserializer() {
-			super(RollRate.class);
-		}
+  public static class RollRateDeserializer extends IntegerDeserializer<RollRate> {
+    public RollRateDeserializer() {
+      super(RollRate.class);
+    }
 
-		@Override
-		protected RollRate construct() {
-			return new RollRate();
-		}
-	}
+    @Override
+    protected RollRate construct() {
+      return new RollRate();
+    }
+  }
 }

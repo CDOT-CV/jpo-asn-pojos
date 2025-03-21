@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = PitchDetected.PitchDetectedDeserializer.class)
 public class PitchDetected extends Asn1Integer {
 
-	public PitchDetected() {
-		super(-7200L, 7200L);
-	}
+  public PitchDetected() {
+    super(-7200L, 7200L);
+  }
 
-	@JsonCreator
-	public PitchDetected(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public PitchDetected(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class PitchDetectedDeserializer extends IntegerDeserializer<PitchDetected> {
-		public PitchDetectedDeserializer() {
-			super(PitchDetected.class);
-		}
+  public static class PitchDetectedDeserializer extends IntegerDeserializer<PitchDetected> {
+    public PitchDetectedDeserializer() {
+      super(PitchDetected.class);
+    }
 
-		@Override
-		protected PitchDetected construct() {
-			return new PitchDetected();
-		}
-	}
+    @Override
+    protected PitchDetected construct() {
+      return new PitchDetected();
+    }
+  }
 }

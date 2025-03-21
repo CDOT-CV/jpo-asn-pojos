@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DeltaTime.DeltaTimeDeserializer.class)
 public class DeltaTime extends Asn1Integer {
 
-	public DeltaTime() {
-		super(-122L, 121L);
-	}
+  public DeltaTime() {
+    super(-122L, 121L);
+  }
 
-	@JsonCreator
-	public DeltaTime(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DeltaTime(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DeltaTimeDeserializer extends IntegerDeserializer<DeltaTime> {
-		public DeltaTimeDeserializer() {
-			super(DeltaTime.class);
-		}
+  public static class DeltaTimeDeserializer extends IntegerDeserializer<DeltaTime> {
+    public DeltaTimeDeserializer() {
+      super(DeltaTime.class);
+    }
 
-		@Override
-		protected DeltaTime construct() {
-			return new DeltaTime();
-		}
-	}
+    @Override
+    protected DeltaTime construct() {
+      return new DeltaTime();
+    }
+  }
 }

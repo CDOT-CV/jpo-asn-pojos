@@ -39,29 +39,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class PaymentMeans extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "personalAccountNumber")
-	@JsonProperty("personalAccountNumber")
-	private PersonalAccountNumber personalAccountNumber;
-	@Asn1Property(tag = 1, name = "paymentMeansExpiryDate")
-	@JsonProperty("paymentMeansExpiryDate")
-	private DateCompact paymentMeansExpiryDate;
-	@Asn1Property(tag = 2, name = "pamentMeansUsageControl")
-	@JsonProperty("pamentMeansUsageControl")
-	private PamentMeansUsageControlOctetString pamentMeansUsageControl;
+  @Asn1Property(tag = 0, name = "personalAccountNumber")
+  @JsonProperty("personalAccountNumber")
+  private PersonalAccountNumber personalAccountNumber;
 
-	public static class PamentMeansUsageControlOctetString extends Asn1OctetString {
-		public PamentMeansUsageControlOctetString() {
-			super(2, 2);
-		}
+  @Asn1Property(tag = 1, name = "paymentMeansExpiryDate")
+  @JsonProperty("paymentMeansExpiryDate")
+  private DateCompact paymentMeansExpiryDate;
 
-		@JsonCreator
-		public PamentMeansUsageControlOctetString(String value) {
-			this();
-			setValue(value);
-		}
-	}
+  @Asn1Property(tag = 2, name = "pamentMeansUsageControl")
+  @JsonProperty("pamentMeansUsageControl")
+  private PamentMeansUsageControlOctetString pamentMeansUsageControl;
 
-	public PaymentMeans() {
-		super(false);
-	}
+  public static class PamentMeansUsageControlOctetString extends Asn1OctetString {
+    public PamentMeansUsageControlOctetString() {
+      super(2, 2);
+    }
+
+    @JsonCreator
+    public PamentMeansUsageControlOctetString(String value) {
+      this();
+      setValue(value);
+    }
+  }
+
+  public PaymentMeans() {
+    super(false);
+  }
 }

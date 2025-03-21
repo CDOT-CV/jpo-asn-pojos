@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class VehicleStatusRequestList extends Asn1SequenceOf<VehicleStatusRequest> {
 
-	public VehicleStatusRequestList() {
-		super(VehicleStatusRequest.class, 1L, 32L);
-	}
+  public VehicleStatusRequestList() {
+    super(VehicleStatusRequest.class, 1L, 32L);
+  }
 }

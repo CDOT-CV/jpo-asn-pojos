@@ -36,20 +36,23 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class CfgEmerAndTransitInfo extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "emerVehLightBar")
-	@JsonProperty("emerVehLightBar")
-	private Asn1Boolean emerVehLightBar;
-	@Asn1Property(tag = 1, name = "reqTspEvp")
-	@JsonProperty("reqTspEvp")
-	private Asn1Boolean reqTspEvp;
-	@Asn1Property(tag = 2, name = "transitVehPassCnt")
-	@JsonProperty("transitVehPassCnt")
-	private Asn1Boolean transitVehPassCnt;
-	@Asn1Property(tag = 3, name = "transitVehDoor")
-	@JsonProperty("transitVehDoor")
-	private Asn1Boolean transitVehDoor;
+  @Asn1Property(tag = 0, name = "emerVehLightBar")
+  @JsonProperty("emerVehLightBar")
+  private Asn1Boolean emerVehLightBar;
 
-	public CfgEmerAndTransitInfo() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "reqTspEvp")
+  @JsonProperty("reqTspEvp")
+  private Asn1Boolean reqTspEvp;
+
+  @Asn1Property(tag = 2, name = "transitVehPassCnt")
+  @JsonProperty("transitVehPassCnt")
+  private Asn1Boolean transitVehPassCnt;
+
+  @Asn1Property(tag = 3, name = "transitVehDoor")
+  @JsonProperty("transitVehDoor")
+  private Asn1Boolean transitVehDoor;
+
+  public CfgEmerAndTransitInfo() {
+    super(true);
+  }
 }

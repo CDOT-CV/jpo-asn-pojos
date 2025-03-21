@@ -29,7 +29,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class ProbeDataConfigMessage extends Asn1SequenceOf<ProbeDataConfig> {
 
-	public ProbeDataConfigMessage() {
-		super(ProbeDataConfig.class, 1L, 255L);
-	}
+  public ProbeDataConfigMessage() {
+    super(ProbeDataConfig.class, 1L, 255L);
+  }
 }

@@ -26,69 +26,76 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = TransitVehicleStatus.TransitVehicleStatusDeserializer.class)
+@JsonDeserialize(
+    using =
+        TransitVehicleStatus
+            .TransitVehicleStatusDeserializer.class)
 public class TransitVehicleStatus extends Asn1Bitstring {
 
-	public boolean isLoading() {
-		return get(0);
-	}
+  public boolean isLoading() {
+    return get(0);
+  }
 
-	public void setLoading(boolean loading) {
-		set(0, loading);
-	}
+  public void setLoading(boolean loading) {
+    set(0, loading);
+  }
 
-	public boolean isAnADAuse() {
-		return get(1);
-	}
+  public boolean isAnADAuse() {
+    return get(1);
+  }
 
-	public void setAnADAuse(boolean anADAuse) {
-		set(1, anADAuse);
-	}
+  public void setAnADAuse(boolean anADAuse) {
+    set(1, anADAuse);
+  }
 
-	public boolean isABikeLoad() {
-		return get(2);
-	}
+  public boolean isABikeLoad() {
+    return get(2);
+  }
 
-	public void setABikeLoad(boolean aBikeLoad) {
-		set(2, aBikeLoad);
-	}
+  public void setABikeLoad(boolean aBikeLoad) {
+    set(2, aBikeLoad);
+  }
 
-	public boolean isDoorOpen() {
-		return get(3);
-	}
+  public boolean isDoorOpen() {
+    return get(3);
+  }
 
-	public void setDoorOpen(boolean doorOpen) {
-		set(3, doorOpen);
-	}
+  public void setDoorOpen(boolean doorOpen) {
+    set(3, doorOpen);
+  }
 
-	public boolean isCharging() {
-		return get(4);
-	}
+  public boolean isCharging() {
+    return get(4);
+  }
 
-	public void setCharging(boolean charging) {
-		set(4, charging);
-	}
+  public void setCharging(boolean charging) {
+    set(4, charging);
+  }
 
-	public boolean isAtStopLine() {
-		return get(5);
-	}
+  public boolean isAtStopLine() {
+    return get(5);
+  }
 
-	public void setAtStopLine(boolean atStopLine) {
-		set(5, atStopLine);
-	}
+  public void setAtStopLine(boolean atStopLine) {
+    set(5, atStopLine);
+  }
 
-	public TransitVehicleStatus() {
-		super(8, false, new String[]{"loading", "anADAuse", "aBikeLoad", "doorOpen", "charging", "atStopLine"});
-	}
+  public TransitVehicleStatus() {
+    super(
+        8,
+        false,
+        new String[] {"loading", "anADAuse", "aBikeLoad", "doorOpen", "charging", "atStopLine"});
+  }
 
-	public static class TransitVehicleStatusDeserializer extends BitStringDeserializer<TransitVehicleStatus> {
-		public TransitVehicleStatusDeserializer() {
-			super(TransitVehicleStatus.class);
-		}
+  public static class TransitVehicleStatusDeserializer
+      extends BitStringDeserializer<TransitVehicleStatus> {
+    public TransitVehicleStatusDeserializer() {
+      super(TransitVehicleStatus.class);
+    }
 
-		@Override
-		protected TransitVehicleStatus construct() {
-			return new TransitVehicleStatus();
-		}
-	}
+    @Override
+    protected TransitVehicleStatus construct() {
+      return new TransitVehicleStatus();
+    }
+  }
 }

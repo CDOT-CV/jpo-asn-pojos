@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = EssMobileFriction.EssMobileFrictionDeserializer.class)
 public class EssMobileFriction extends Asn1Integer {
 
-	public EssMobileFriction() {
-		super(0L, 101L);
-	}
+  public EssMobileFriction() {
+    super(0L, 101L);
+  }
 
-	@JsonCreator
-	public EssMobileFriction(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public EssMobileFriction(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class EssMobileFrictionDeserializer extends IntegerDeserializer<EssMobileFriction> {
-		public EssMobileFrictionDeserializer() {
-			super(EssMobileFriction.class);
-		}
+  public static class EssMobileFrictionDeserializer extends IntegerDeserializer<EssMobileFriction> {
+    public EssMobileFrictionDeserializer() {
+      super(EssMobileFriction.class);
+    }
 
-		@Override
-		protected EssMobileFriction construct() {
-			return new EssMobileFriction();
-		}
-	}
+    @Override
+    protected EssMobileFriction construct() {
+      return new EssMobileFriction();
+    }
+  }
 }

@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DHour.DHourDeserializer.class)
 public class DHour extends Asn1Integer {
 
-	public DHour() {
-		super(0L, 31L);
-	}
+  public DHour() {
+    super(0L, 31L);
+  }
 
-	@JsonCreator
-	public DHour(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DHour(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DHourDeserializer extends IntegerDeserializer<DHour> {
-		public DHourDeserializer() {
-			super(DHour.class);
-		}
+  public static class DHourDeserializer extends IntegerDeserializer<DHour> {
+    public DHourDeserializer() {
+      super(DHour.class);
+    }
 
-		@Override
-		protected DHour construct() {
-			return new DHour();
-		}
-	}
+    @Override
+    protected DHour construct() {
+      return new DHour();
+    }
+  }
 }

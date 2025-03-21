@@ -41,29 +41,31 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RptLocOfStops extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "locationOfStop")
-	@JsonProperty("locationOfStop")
-	private Position3D locationOfStop;
-	@Asn1Property(tag = 1, name = "locAccOfStop")
-	@JsonProperty("locAccOfStop")
-	private PositionalAccuracy locAccOfStop;
-	@Asn1Property(tag = 2, name = "durationOfStop")
-	@JsonProperty("durationOfStop")
-	private DurationOfStopInteger durationOfStop;
+  @Asn1Property(tag = 0, name = "locationOfStop")
+  @JsonProperty("locationOfStop")
+  private Position3D locationOfStop;
 
-	public static class DurationOfStopInteger extends Asn1Integer {
-		public DurationOfStopInteger() {
-			super(1L, 36000L);
-		}
+  @Asn1Property(tag = 1, name = "locAccOfStop")
+  @JsonProperty("locAccOfStop")
+  private PositionalAccuracy locAccOfStop;
 
-		@JsonCreator
-		public DurationOfStopInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  @Asn1Property(tag = 2, name = "durationOfStop")
+  @JsonProperty("durationOfStop")
+  private DurationOfStopInteger durationOfStop;
 
-	public RptLocOfStops() {
-		super(true);
-	}
+  public static class DurationOfStopInteger extends Asn1Integer {
+    public DurationOfStopInteger() {
+      super(1L, 36000L);
+    }
+
+    @JsonCreator
+    public DurationOfStopInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public RptLocOfStops() {
+    super(true);
+  }
 }

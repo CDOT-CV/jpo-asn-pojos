@@ -41,28 +41,29 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class Path extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "pathWidth")
-	@JsonProperty("pathWidth")
-	private PathWidthInteger pathWidth;
-	@Asn1Property(tag = 1, name = "pathPoints")
-	@JsonProperty("pathPoints")
-	@JsonSerialize(using = PathPoints.PathPointsSerializer.class)
-	@JsonDeserialize(using = PathPoints.PathPointsDeserializer.class)
-	private PathPoints pathPoints;
+  @Asn1Property(tag = 0, name = "pathWidth")
+  @JsonProperty("pathWidth")
+  private PathWidthInteger pathWidth;
 
-	public static class PathWidthInteger extends Asn1Integer {
-		public PathWidthInteger() {
-			super(0L, 1000L);
-		}
+  @Asn1Property(tag = 1, name = "pathPoints")
+  @JsonProperty("pathPoints")
+  @JsonSerialize(using = PathPoints.PathPointsSerializer.class)
+  @JsonDeserialize(using = PathPoints.PathPointsDeserializer.class)
+  private PathPoints pathPoints;
 
-		@JsonCreator
-		public PathWidthInteger(long value) {
-			this();
-			this.value = value;
-		}
-	}
+  public static class PathWidthInteger extends Asn1Integer {
+    public PathWidthInteger() {
+      super(0L, 1000L);
+    }
 
-	public Path() {
-		super(true);
-	}
+    @JsonCreator
+    public PathWidthInteger(long value) {
+      this();
+      this.value = value;
+    }
+  }
+
+  public Path() {
+    super(true);
+  }
 }

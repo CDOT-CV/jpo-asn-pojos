@@ -26,69 +26,76 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-@JsonDeserialize(using = PersonalAssistive.PersonalAssistiveDeserializer.class)
+@JsonDeserialize(
+    using =
+        PersonalAssistive
+            .PersonalAssistiveDeserializer.class)
 public class PersonalAssistive extends Asn1Bitstring {
 
-	public boolean isUnavailable() {
-		return get(0);
-	}
+  public boolean isUnavailable() {
+    return get(0);
+  }
 
-	public void setUnavailable(boolean unavailable) {
-		set(0, unavailable);
-	}
+  public void setUnavailable(boolean unavailable) {
+    set(0, unavailable);
+  }
 
-	public boolean isOtherType() {
-		return get(1);
-	}
+  public boolean isOtherType() {
+    return get(1);
+  }
 
-	public void setOtherType(boolean otherType) {
-		set(1, otherType);
-	}
+  public void setOtherType(boolean otherType) {
+    set(1, otherType);
+  }
 
-	public boolean isVision() {
-		return get(2);
-	}
+  public boolean isVision() {
+    return get(2);
+  }
 
-	public void setVision(boolean vision) {
-		set(2, vision);
-	}
+  public void setVision(boolean vision) {
+    set(2, vision);
+  }
 
-	public boolean isHearing() {
-		return get(3);
-	}
+  public boolean isHearing() {
+    return get(3);
+  }
 
-	public void setHearing(boolean hearing) {
-		set(3, hearing);
-	}
+  public void setHearing(boolean hearing) {
+    set(3, hearing);
+  }
 
-	public boolean isMovement() {
-		return get(4);
-	}
+  public boolean isMovement() {
+    return get(4);
+  }
 
-	public void setMovement(boolean movement) {
-		set(4, movement);
-	}
+  public void setMovement(boolean movement) {
+    set(4, movement);
+  }
 
-	public boolean isCognition() {
-		return get(5);
-	}
+  public boolean isCognition() {
+    return get(5);
+  }
 
-	public void setCognition(boolean cognition) {
-		set(5, cognition);
-	}
+  public void setCognition(boolean cognition) {
+    set(5, cognition);
+  }
 
-	public PersonalAssistive() {
-		super(6, false, new String[]{"unavailable", "otherType", "vision", "hearing", "movement", "cognition"});
-	}
+  public PersonalAssistive() {
+    super(
+        6,
+        false,
+        new String[] {"unavailable", "otherType", "vision", "hearing", "movement", "cognition"});
+  }
 
-	public static class PersonalAssistiveDeserializer extends BitStringDeserializer<PersonalAssistive> {
-		public PersonalAssistiveDeserializer() {
-			super(PersonalAssistive.class);
-		}
+  public static class PersonalAssistiveDeserializer
+      extends BitStringDeserializer<PersonalAssistive> {
+    public PersonalAssistiveDeserializer() {
+      super(PersonalAssistive.class);
+    }
 
-		@Override
-		protected PersonalAssistive construct() {
-			return new PersonalAssistive();
-		}
-	}
+    @Override
+    protected PersonalAssistive construct() {
+      return new PersonalAssistive();
+    }
+  }
 }

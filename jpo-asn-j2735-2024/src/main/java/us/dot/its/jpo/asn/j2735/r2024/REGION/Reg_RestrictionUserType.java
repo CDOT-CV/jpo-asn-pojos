@@ -31,20 +31,31 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
 
 @JsonInclude(Include.NON_NULL)
-@Asn1ParameterizedTypes(idProperty = "regionId", idType = IdType.INTEGER, valueProperty = "regExtValue", value = {
-		@Asn1ParameterizedTypes.Type(value = us.dot.its.jpo.asn.j2735.r2024.AddGrpC.RestrictionUserType_addGrpCReg_RestrictionUserType.class, intId = 3)})
-@JsonDeserialize(using = Reg_RestrictionUserType.Reg_RestrictionUserTypeDeserializer.class)
-abstract public class Reg_RestrictionUserType<TValue> extends RegionalExtension<TValue> {
+@Asn1ParameterizedTypes(
+    idProperty = "regionId",
+    idType = IdType.INTEGER,
+    valueProperty = "regExtValue",
+    value = {
+      @Asn1ParameterizedTypes.Type(
+          value =
+              us.dot.its.jpo.asn.j2735.r2024.AddGrpC
+                  .RestrictionUserType_addGrpCReg_RestrictionUserType.class,
+          intId = 3)
+    })
+@JsonDeserialize(
+    using =
+        Reg_RestrictionUserType
+            .Reg_RestrictionUserTypeDeserializer.class)
+public abstract class Reg_RestrictionUserType<TValue> extends RegionalExtension<TValue> {
 
-	public Reg_RestrictionUserType(int id, String name) {
-		super(id, name);
-	}
+  public Reg_RestrictionUserType(int id, String name) {
+    super(id, name);
+  }
 
-	public static class Reg_RestrictionUserTypeDeserializer
-			extends
-				ParameterizedTypeDeserializer<Reg_RestrictionUserType> {
-		public Reg_RestrictionUserTypeDeserializer() {
-			super(Reg_RestrictionUserType.class);
-		}
-	}
+  public static class Reg_RestrictionUserTypeDeserializer
+      extends ParameterizedTypeDeserializer<Reg_RestrictionUserType> {
+    public Reg_RestrictionUserTypeDeserializer() {
+      super(Reg_RestrictionUserType.class);
+    }
+  }
 }

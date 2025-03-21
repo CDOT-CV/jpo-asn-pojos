@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = YawDetected.YawDetectedDeserializer.class)
 public class YawDetected extends Asn1Integer {
 
-	public YawDetected() {
-		super(-14400L, 14400L);
-	}
+  public YawDetected() {
+    super(-14400L, 14400L);
+  }
 
-	@JsonCreator
-	public YawDetected(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public YawDetected(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class YawDetectedDeserializer extends IntegerDeserializer<YawDetected> {
-		public YawDetectedDeserializer() {
-			super(YawDetected.class);
-		}
+  public static class YawDetectedDeserializer extends IntegerDeserializer<YawDetected> {
+    public YawDetectedDeserializer() {
+      super(YawDetected.class);
+    }
 
-		@Override
-		protected YawDetected construct() {
-			return new YawDetected();
-		}
-	}
+    @Override
+    protected YawDetected construct() {
+      return new YawDetected();
+    }
+  }
 }

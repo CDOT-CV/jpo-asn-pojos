@@ -36,23 +36,27 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 @JsonInclude(Include.NON_NULL)
 public class RptEvents extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "absActive")
-	@JsonProperty("absActive")
-	private Asn1Boolean absActive;
-	@Asn1Property(tag = 1, name = "tractionCtlLoss")
-	@JsonProperty("tractionCtlLoss")
-	private Asn1Boolean tractionCtlLoss;
-	@Asn1Property(tag = 2, name = "stabilityCtlActive")
-	@JsonProperty("stabilityCtlActive")
-	private Asn1Boolean stabilityCtlActive;
-	@Asn1Property(tag = 3, name = "hardBraking")
-	@JsonProperty("hardBraking")
-	private Asn1Boolean hardBraking;
-	@Asn1Property(tag = 4, name = "swerve")
-	@JsonProperty("swerve")
-	private Asn1Boolean swerve;
+  @Asn1Property(tag = 0, name = "absActive")
+  @JsonProperty("absActive")
+  private Asn1Boolean absActive;
 
-	public RptEvents() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "tractionCtlLoss")
+  @JsonProperty("tractionCtlLoss")
+  private Asn1Boolean tractionCtlLoss;
+
+  @Asn1Property(tag = 2, name = "stabilityCtlActive")
+  @JsonProperty("stabilityCtlActive")
+  private Asn1Boolean stabilityCtlActive;
+
+  @Asn1Property(tag = 3, name = "hardBraking")
+  @JsonProperty("hardBraking")
+  private Asn1Boolean hardBraking;
+
+  @Asn1Property(tag = 4, name = "swerve")
+  @JsonProperty("swerve")
+  private Asn1Boolean swerve;
+
+  public RptEvents() {
+    super(true);
+  }
 }

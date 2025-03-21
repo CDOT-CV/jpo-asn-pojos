@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = DYear.DYearDeserializer.class)
 public class DYear extends Asn1Integer {
 
-	public DYear() {
-		super(0L, 4095L);
-	}
+  public DYear() {
+    super(0L, 4095L);
+  }
 
-	@JsonCreator
-	public DYear(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public DYear(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class DYearDeserializer extends IntegerDeserializer<DYear> {
-		public DYearDeserializer() {
-			super(DYear.class);
-		}
+  public static class DYearDeserializer extends IntegerDeserializer<DYear> {
+    public DYearDeserializer() {
+      super(DYear.class);
+    }
 
-		@Override
-		protected DYear construct() {
-			return new DYear();
-		}
-	}
+    @Override
+    protected DYear construct() {
+      return new DYear();
+    }
+  }
 }

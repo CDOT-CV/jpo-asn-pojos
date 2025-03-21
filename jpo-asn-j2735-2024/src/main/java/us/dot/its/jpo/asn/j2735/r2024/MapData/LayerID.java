@@ -30,24 +30,24 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = LayerID.LayerIDDeserializer.class)
 public class LayerID extends Asn1Integer {
 
-	public LayerID() {
-		super(0L, 100L);
-	}
+  public LayerID() {
+    super(0L, 100L);
+  }
 
-	@JsonCreator
-	public LayerID(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public LayerID(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class LayerIDDeserializer extends IntegerDeserializer<LayerID> {
-		public LayerIDDeserializer() {
-			super(LayerID.class);
-		}
+  public static class LayerIDDeserializer extends IntegerDeserializer<LayerID> {
+    public LayerIDDeserializer() {
+      super(LayerID.class);
+    }
 
-		@Override
-		protected LayerID construct() {
-			return new LayerID();
-		}
-	}
+    @Override
+    protected LayerID construct() {
+      return new LayerID();
+    }
+  }
 }

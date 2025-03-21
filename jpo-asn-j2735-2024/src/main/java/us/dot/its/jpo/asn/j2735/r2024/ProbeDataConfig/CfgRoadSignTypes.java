@@ -38,50 +38,63 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class CfgRoadSignTypes extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "whiteOnGreen", optional = true)
-	@JsonProperty("whiteOnGreen")
-	private Asn1Boolean whiteOnGreen;
-	@Asn1Property(tag = 1, name = "blackOnYellow", optional = true)
-	@JsonProperty("blackOnYellow")
-	private Asn1Boolean blackOnYellow;
-	@Asn1Property(tag = 2, name = "blackOnOrange", optional = true)
-	@JsonProperty("blackOnOrange")
-	private Asn1Boolean blackOnOrange;
-	@Asn1Property(tag = 3, name = "whiteOnRed", optional = true)
-	@JsonProperty("whiteOnRed")
-	private Asn1Boolean whiteOnRed;
-	@Asn1Property(tag = 4, name = "blackOnWhite", optional = true)
-	@JsonProperty("blackOnWhite")
-	private Asn1Boolean blackOnWhite;
-	@Asn1Property(tag = 5, name = "octagon", optional = true)
-	@JsonProperty("octagon")
-	private Asn1Boolean octagon;
-	@Asn1Property(tag = 6, name = "eqlatTriangle", optional = true)
-	@JsonProperty("eqlatTriangle")
-	private Asn1Boolean eqlatTriangle;
-	@Asn1Property(tag = 7, name = "circle", optional = true)
-	@JsonProperty("circle")
-	private Asn1Boolean circle;
-	@Asn1Property(tag = 8, name = "pennant", optional = true)
-	@JsonProperty("pennant")
-	private Asn1Boolean pennant;
-	@Asn1Property(tag = 9, name = "pentagon", optional = true)
-	@JsonProperty("pentagon")
-	private Asn1Boolean pentagon;
-	@Asn1Property(tag = 10, name = "crossbuck", optional = true)
-	@JsonProperty("crossbuck")
-	private Asn1Boolean crossbuck;
-	@Asn1Property(tag = 11, name = "diamond", optional = true)
-	@JsonProperty("diamond")
-	private Asn1Boolean diamond;
-	@Asn1Property(tag = 12, name = "trapezoid", optional = true)
-	@JsonProperty("trapezoid")
-	private Asn1Boolean trapezoid;
-	@Asn1Property(tag = 13, name = "other", optional = true)
-	@JsonProperty("other")
-	private Asn1Boolean other;
+  @Asn1Property(tag = 0, name = "whiteOnGreen", optional = true)
+  @JsonProperty("whiteOnGreen")
+  private Asn1Boolean whiteOnGreen;
 
-	public CfgRoadSignTypes() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "blackOnYellow", optional = true)
+  @JsonProperty("blackOnYellow")
+  private Asn1Boolean blackOnYellow;
+
+  @Asn1Property(tag = 2, name = "blackOnOrange", optional = true)
+  @JsonProperty("blackOnOrange")
+  private Asn1Boolean blackOnOrange;
+
+  @Asn1Property(tag = 3, name = "whiteOnRed", optional = true)
+  @JsonProperty("whiteOnRed")
+  private Asn1Boolean whiteOnRed;
+
+  @Asn1Property(tag = 4, name = "blackOnWhite", optional = true)
+  @JsonProperty("blackOnWhite")
+  private Asn1Boolean blackOnWhite;
+
+  @Asn1Property(tag = 5, name = "octagon", optional = true)
+  @JsonProperty("octagon")
+  private Asn1Boolean octagon;
+
+  @Asn1Property(tag = 6, name = "eqlatTriangle", optional = true)
+  @JsonProperty("eqlatTriangle")
+  private Asn1Boolean eqlatTriangle;
+
+  @Asn1Property(tag = 7, name = "circle", optional = true)
+  @JsonProperty("circle")
+  private Asn1Boolean circle;
+
+  @Asn1Property(tag = 8, name = "pennant", optional = true)
+  @JsonProperty("pennant")
+  private Asn1Boolean pennant;
+
+  @Asn1Property(tag = 9, name = "pentagon", optional = true)
+  @JsonProperty("pentagon")
+  private Asn1Boolean pentagon;
+
+  @Asn1Property(tag = 10, name = "crossbuck", optional = true)
+  @JsonProperty("crossbuck")
+  private Asn1Boolean crossbuck;
+
+  @Asn1Property(tag = 11, name = "diamond", optional = true)
+  @JsonProperty("diamond")
+  private Asn1Boolean diamond;
+
+  @Asn1Property(tag = 12, name = "trapezoid", optional = true)
+  @JsonProperty("trapezoid")
+  private Asn1Boolean trapezoid;
+
+  @Asn1Property(tag = 13, name = "other", optional = true)
+  @JsonProperty("other")
+  private Asn1Boolean other;
+
+  public CfgRoadSignTypes() {
+    super(true);
+  }
 }

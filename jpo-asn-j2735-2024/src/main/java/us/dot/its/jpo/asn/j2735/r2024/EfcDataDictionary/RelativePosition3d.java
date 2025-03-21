@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class RelativePosition3d extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "longitude")
-	@JsonProperty("longitude")
-	private Int2Signed longitude;
-	@Asn1Property(tag = 1, name = "latitude")
-	@JsonProperty("latitude")
-	private Int2Signed latitude;
-	@Asn1Property(tag = 2, name = "altitude", optional = true)
-	@JsonProperty("altitude")
-	private Int2Signed altitude;
+  @Asn1Property(tag = 0, name = "longitude")
+  @JsonProperty("longitude")
+  private Int2Signed longitude;
 
-	public RelativePosition3d() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "latitude")
+  @JsonProperty("latitude")
+  private Int2Signed latitude;
+
+  @Asn1Property(tag = 2, name = "altitude", optional = true)
+  @JsonProperty("altitude")
+  private Int2Signed altitude;
+
+  public RelativePosition3d() {
+    super(false);
+  }
 }

@@ -42,44 +42,43 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @Setter
 public class RoadSafetyMessage extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "commonContainer")
-	@JsonProperty("commonContainer")
-	private CommonContainer commonContainer;
-	@Asn1Property(tag = 1, name = "content")
-	@JsonProperty("content")
-	@JsonSerialize(using = SequenceOfContentSerializer.class)
-	@JsonDeserialize(using = SequenceOfContentDeserializer.class)
-	private SequenceOfContent content;
+  @Asn1Property(tag = 0, name = "commonContainer")
+  @JsonProperty("commonContainer")
+  private CommonContainer commonContainer;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfContent extends Asn1SequenceOf<ContentContainer> {
-		public SequenceOfContent() {
-			super(ContentContainer.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 1, name = "content")
+  @JsonProperty("content")
+  @JsonSerialize(using = SequenceOfContentSerializer.class)
+  @JsonDeserialize(using = SequenceOfContentDeserializer.class)
+  private SequenceOfContent content;
 
-	public RoadSafetyMessage() {
-		super(true);
-	}
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfContent extends Asn1SequenceOf<ContentContainer> {
+    public SequenceOfContent() {
+      super(ContentContainer.class, 1L, 4L);
+    }
+  }
 
-	public static class SequenceOfContentSerializer
-			extends
-				SequenceOfChoiceSerializer<ContentContainer, SequenceOfContent> {
-		public SequenceOfContentSerializer() {
-			super(ContentContainer.class, SequenceOfContent.class);
-		}
-	}
+  public RoadSafetyMessage() {
+    super(true);
+  }
 
-	public static class SequenceOfContentDeserializer
-			extends
-				SequenceOfChoiceDeserializer<ContentContainer, SequenceOfContent> {
-		public SequenceOfContentDeserializer() {
-			super(ContentContainer.class, SequenceOfContent.class);
-		}
+  public static class SequenceOfContentSerializer
+      extends SequenceOfChoiceSerializer<ContentContainer, SequenceOfContent> {
+    public SequenceOfContentSerializer() {
+      super(ContentContainer.class, SequenceOfContent.class);
+    }
+  }
 
-		@Override
-		protected SequenceOfContent construct() {
-			return new SequenceOfContent();
-		}
-	}
+  public static class SequenceOfContentDeserializer
+      extends SequenceOfChoiceDeserializer<ContentContainer, SequenceOfContent> {
+    public SequenceOfContentDeserializer() {
+      super(ContentContainer.class, SequenceOfContent.class);
+    }
+
+    @Override
+    protected SequenceOfContent construct() {
+      return new SequenceOfContent();
+    }
+  }
 }

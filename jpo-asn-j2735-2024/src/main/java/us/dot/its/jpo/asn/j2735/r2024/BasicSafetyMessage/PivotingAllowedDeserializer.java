@@ -26,12 +26,12 @@ import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 
 public class PivotingAllowedDeserializer extends BooleanDeserializer<PivotingAllowed> {
 
-	public PivotingAllowedDeserializer() {
-		super(PivotingAllowed.class);
-	}
+  public PivotingAllowedDeserializer() {
+    super(PivotingAllowed.class);
+  }
 
-	@Override
-	protected PivotingAllowed construct() {
-		return new PivotingAllowed();
-	}
+  @Override
+  protected PivotingAllowed construct() {
+    return new PivotingAllowed();
+  }
 }

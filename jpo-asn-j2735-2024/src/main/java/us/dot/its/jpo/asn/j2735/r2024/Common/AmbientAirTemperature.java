@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = AmbientAirTemperature.AmbientAirTemperatureDeserializer.class)
 public class AmbientAirTemperature extends Asn1Integer {
 
-	public AmbientAirTemperature() {
-		super(0L, 191L);
-	}
+  public AmbientAirTemperature() {
+    super(0L, 191L);
+  }
 
-	@JsonCreator
-	public AmbientAirTemperature(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public AmbientAirTemperature(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class AmbientAirTemperatureDeserializer extends IntegerDeserializer<AmbientAirTemperature> {
-		public AmbientAirTemperatureDeserializer() {
-			super(AmbientAirTemperature.class);
-		}
+  public static class AmbientAirTemperatureDeserializer
+      extends IntegerDeserializer<AmbientAirTemperature> {
+    public AmbientAirTemperatureDeserializer() {
+      super(AmbientAirTemperature.class);
+    }
 
-		@Override
-		protected AmbientAirTemperature construct() {
-			return new AmbientAirTemperature();
-		}
-	}
+    @Override
+    protected AmbientAirTemperature construct() {
+      return new AmbientAirTemperature();
+    }
+  }
 }

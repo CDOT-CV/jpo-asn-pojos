@@ -39,40 +39,46 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 @JsonInclude(Include.NON_NULL)
 public class LaneDataAttribute extends Asn1Choice {
 
-	@Asn1Property(tag = 0, name = "pathEndPointAngle")
-	@JsonProperty("pathEndPointAngle")
-	private DeltaAngle pathEndPointAngle;
-	@Asn1Property(tag = 1, name = "laneCrownPointCenter")
-	@JsonProperty("laneCrownPointCenter")
-	private RoadwayCrownAngle laneCrownPointCenter;
-	@Asn1Property(tag = 2, name = "laneCrownPointLeft")
-	@JsonProperty("laneCrownPointLeft")
-	private RoadwayCrownAngle laneCrownPointLeft;
-	@Asn1Property(tag = 3, name = "laneCrownPointRight")
-	@JsonProperty("laneCrownPointRight")
-	private RoadwayCrownAngle laneCrownPointRight;
-	@Asn1Property(tag = 4, name = "laneAngle")
-	@JsonProperty("laneAngle")
-	private MergeDivergeNodeAngle laneAngle;
-	@Asn1Property(tag = 5, name = "speedLimits")
-	@JsonProperty("speedLimits")
-	@JacksonXmlElementWrapper(localName = "speedLimits")
-	@JacksonXmlProperty(localName = "RegulatorySpeedLimit")
-	private SpeedLimitList speedLimits;
-	@Asn1Property(tag = 6, name = "regional")
-	@JsonProperty("regional")
-	@JacksonXmlElementWrapper(localName = "regional")
-	@JacksonXmlProperty(localName = "Reg-LaneDataAttribute")
-	private SequenceOfRegional regional;
+  @Asn1Property(tag = 0, name = "pathEndPointAngle")
+  @JsonProperty("pathEndPointAngle")
+  private DeltaAngle pathEndPointAngle;
 
-	public LaneDataAttribute() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "laneCrownPointCenter")
+  @JsonProperty("laneCrownPointCenter")
+  private RoadwayCrownAngle laneCrownPointCenter;
 
-	@JsonInclude(Include.NON_NULL)
-	public static class SequenceOfRegional extends Asn1SequenceOf<Reg_LaneDataAttribute> {
-		public SequenceOfRegional() {
-			super(Reg_LaneDataAttribute.class, 1L, 4L);
-		}
-	}
+  @Asn1Property(tag = 2, name = "laneCrownPointLeft")
+  @JsonProperty("laneCrownPointLeft")
+  private RoadwayCrownAngle laneCrownPointLeft;
+
+  @Asn1Property(tag = 3, name = "laneCrownPointRight")
+  @JsonProperty("laneCrownPointRight")
+  private RoadwayCrownAngle laneCrownPointRight;
+
+  @Asn1Property(tag = 4, name = "laneAngle")
+  @JsonProperty("laneAngle")
+  private MergeDivergeNodeAngle laneAngle;
+
+  @Asn1Property(tag = 5, name = "speedLimits")
+  @JsonProperty("speedLimits")
+  @JacksonXmlElementWrapper(localName = "speedLimits")
+  @JacksonXmlProperty(localName = "RegulatorySpeedLimit")
+  private SpeedLimitList speedLimits;
+
+  @Asn1Property(tag = 6, name = "regional")
+  @JsonProperty("regional")
+  @JacksonXmlElementWrapper(localName = "regional")
+  @JacksonXmlProperty(localName = "Reg-LaneDataAttribute")
+  private SequenceOfRegional regional;
+
+  public LaneDataAttribute() {
+    super(true);
+  }
+
+  @JsonInclude(Include.NON_NULL)
+  public static class SequenceOfRegional extends Asn1SequenceOf<Reg_LaneDataAttribute> {
+    public SequenceOfRegional() {
+      super(Reg_LaneDataAttribute.class, 1L, 4L);
+    }
+  }
 }

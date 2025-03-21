@@ -27,29 +27,29 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.serialization.IntegerDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 
-@JsonDeserialize(using = TemperatureMeasurementStdDev.TemperatureMeasurementStdDevDeserializer.class)
+@JsonDeserialize(
+    using = TemperatureMeasurementStdDev.TemperatureMeasurementStdDevDeserializer.class)
 public class TemperatureMeasurementStdDev extends Asn1Integer {
 
-	public TemperatureMeasurementStdDev() {
-		super(1L, 16L);
-	}
+  public TemperatureMeasurementStdDev() {
+    super(1L, 16L);
+  }
 
-	@JsonCreator
-	public TemperatureMeasurementStdDev(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public TemperatureMeasurementStdDev(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class TemperatureMeasurementStdDevDeserializer
-			extends
-				IntegerDeserializer<TemperatureMeasurementStdDev> {
-		public TemperatureMeasurementStdDevDeserializer() {
-			super(TemperatureMeasurementStdDev.class);
-		}
+  public static class TemperatureMeasurementStdDevDeserializer
+      extends IntegerDeserializer<TemperatureMeasurementStdDev> {
+    public TemperatureMeasurementStdDevDeserializer() {
+      super(TemperatureMeasurementStdDev.class);
+    }
 
-		@Override
-		protected TemperatureMeasurementStdDev construct() {
-			return new TemperatureMeasurementStdDev();
-		}
-	}
+    @Override
+    protected TemperatureMeasurementStdDev construct() {
+      return new TemperatureMeasurementStdDev();
+    }
+  }
 }

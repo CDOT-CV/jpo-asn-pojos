@@ -37,17 +37,19 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class LongitudeDMS2 extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "d")
-	@JsonProperty("d")
-	private DegreesLong d;
-	@Asn1Property(tag = 1, name = "m")
-	@JsonProperty("m")
-	private MinutesAngle m;
-	@Asn1Property(tag = 2, name = "s")
-	@JsonProperty("s")
-	private SecondsAngle s;
+  @Asn1Property(tag = 0, name = "d")
+  @JsonProperty("d")
+  private DegreesLong d;
 
-	public LongitudeDMS2() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "m")
+  @JsonProperty("m")
+  private MinutesAngle m;
+
+  @Asn1Property(tag = 2, name = "s")
+  @JsonProperty("s")
+  private SecondsAngle s;
+
+  public LongitudeDMS2() {
+    super(false);
+  }
 }

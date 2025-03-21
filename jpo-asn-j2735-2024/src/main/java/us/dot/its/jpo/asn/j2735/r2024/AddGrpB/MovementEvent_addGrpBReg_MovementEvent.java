@@ -30,21 +30,22 @@ import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent;
 
 @JsonRootName("Reg_MovementEvent")
 @JsonDeserialize(using = None.class)
-public class MovementEvent_addGrpBReg_MovementEvent extends Reg_MovementEvent<MovementEvent_addGrpB> {
+public class MovementEvent_addGrpBReg_MovementEvent
+    extends Reg_MovementEvent<MovementEvent_addGrpB> {
 
-	public MovementEvent_addGrpBReg_MovementEvent() {
-		super(2, "MovementEvent_addGrpB");
-	}
+  public MovementEvent_addGrpBReg_MovementEvent() {
+    super(2, "MovementEvent_addGrpB");
+  }
 
-	@Override
-	@JsonSerialize(using = MovementEvent_addGrpBReg_MovementEventValueSerializer.class)
-	public MovementEvent_addGrpB getRegExtValue() {
-		return super.getRegExtValue();
-	}
+  @Override
+  @JsonSerialize(using = MovementEvent_addGrpBReg_MovementEventValueSerializer.class)
+  public MovementEvent_addGrpB getRegExtValue() {
+    return super.getRegExtValue();
+  }
 
-	@Override
-	@JsonDeserialize(using = MovementEvent_addGrpBReg_MovementEventValueDeserializer.class)
-	public void setRegExtValue(MovementEvent_addGrpB value) {
-		super.setRegExtValue(value);
-	}
+  @Override
+  @JsonDeserialize(using = MovementEvent_addGrpBReg_MovementEventValueDeserializer.class)
+  public void setRegExtValue(MovementEvent_addGrpB value) {
+    super.setRegExtValue(value);
+  }
 }

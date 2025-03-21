@@ -30,24 +30,25 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 @JsonDeserialize(using = SeparationDistance.SeparationDistanceDeserializer.class)
 public class SeparationDistance extends Asn1Integer {
 
-	public SeparationDistance() {
-		super(0L, 2001L);
-	}
+  public SeparationDistance() {
+    super(0L, 2001L);
+  }
 
-	@JsonCreator
-	public SeparationDistance(long value) {
-		this();
-		this.value = value;
-	}
+  @JsonCreator
+  public SeparationDistance(long value) {
+    this();
+    this.value = value;
+  }
 
-	public static class SeparationDistanceDeserializer extends IntegerDeserializer<SeparationDistance> {
-		public SeparationDistanceDeserializer() {
-			super(SeparationDistance.class);
-		}
+  public static class SeparationDistanceDeserializer
+      extends IntegerDeserializer<SeparationDistance> {
+    public SeparationDistanceDeserializer() {
+      super(SeparationDistance.class);
+    }
 
-		@Override
-		protected SeparationDistance construct() {
-			return new SeparationDistance();
-		}
-	}
+    @Override
+    protected SeparationDistance construct() {
+      return new SeparationDistance();
+    }
+  }
 }

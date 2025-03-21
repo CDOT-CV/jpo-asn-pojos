@@ -37,14 +37,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class AxleWeightLimit extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "axleNumber")
-	@JsonProperty("axleNumber")
-	private Int1Unsigned axleNumber;
-	@Asn1Property(tag = 1, name = "maxLadenWeightOnAxle")
-	@JsonProperty("maxLadenWeightOnAxle")
-	private Int2Unsigned maxLadenWeightOnAxle;
+  @Asn1Property(tag = 0, name = "axleNumber")
+  @JsonProperty("axleNumber")
+  private Int1Unsigned axleNumber;
 
-	public AxleWeightLimit() {
-		super(false);
-	}
+  @Asn1Property(tag = 1, name = "maxLadenWeightOnAxle")
+  @JsonProperty("maxLadenWeightOnAxle")
+  private Int2Unsigned maxLadenWeightOnAxle;
+
+  public AxleWeightLimit() {
+    super(false);
+  }
 }

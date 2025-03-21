@@ -33,31 +33,34 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = TravelerInfoType.TravelerInfoTypeSerializer.class)
 @JsonDeserialize(using = TravelerInfoType.TravelerInfoTypeDeserializer.class)
 public enum TravelerInfoType implements Asn1Enumerated {
-	UNKNOWN(0, "unknown"), ADVISORY(1, "advisory"), ROADSIGNAGE(2, "roadSignage"), COMMERCIALSIGNAGE(3,
-			"commercialSignage");
+  UNKNOWN(0, "unknown"),
+  ADVISORY(1, "advisory"),
+  ROADSIGNAGE(2, "roadSignage"),
+  COMMERCIALSIGNAGE(3, "commercialSignage");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private TravelerInfoType(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private TravelerInfoType(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class TravelerInfoTypeSerializer extends EnumeratedSerializer<TravelerInfoType> {
-		public TravelerInfoTypeSerializer() {
-			super(TravelerInfoType.class);
-		}
-	}
+  public static class TravelerInfoTypeSerializer extends EnumeratedSerializer<TravelerInfoType> {
+    public TravelerInfoTypeSerializer() {
+      super(TravelerInfoType.class);
+    }
+  }
 
-	public static class TravelerInfoTypeDeserializer extends EnumeratedDeserializer<TravelerInfoType> {
-		public TravelerInfoTypeDeserializer() {
-			super(TravelerInfoType.class);
-		}
+  public static class TravelerInfoTypeDeserializer
+      extends EnumeratedDeserializer<TravelerInfoType> {
+    public TravelerInfoTypeDeserializer() {
+      super(TravelerInfoType.class);
+    }
 
-		@Override
-		protected TravelerInfoType[] listEnumValues() {
-			return TravelerInfoType.values();
-		}
-	}
+    @Override
+    protected TravelerInfoType[] listEnumValues() {
+      return TravelerInfoType.values();
+    }
+  }
 }

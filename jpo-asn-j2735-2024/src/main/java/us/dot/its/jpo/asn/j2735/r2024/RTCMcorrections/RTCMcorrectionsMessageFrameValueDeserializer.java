@@ -24,9 +24,10 @@ package us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections;
 
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 
-public class RTCMcorrectionsMessageFrameValueDeserializer extends OpenTypeDeserializer<RTCMcorrections> {
+public class RTCMcorrectionsMessageFrameValueDeserializer
+    extends OpenTypeDeserializer<RTCMcorrections> {
 
-	public RTCMcorrectionsMessageFrameValueDeserializer() {
-		super(RTCMcorrections.class, "RTCMcorrections");
-	}
+  public RTCMcorrectionsMessageFrameValueDeserializer() {
+    super(RTCMcorrections.class, "RTCMcorrections");
+  }
 }

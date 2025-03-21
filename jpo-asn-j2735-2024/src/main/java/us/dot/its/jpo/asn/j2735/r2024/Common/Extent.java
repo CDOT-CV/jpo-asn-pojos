@@ -33,40 +33,45 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 @JsonSerialize(using = Extent.ExtentSerializer.class)
 @JsonDeserialize(using = Extent.ExtentDeserializer.class)
 public enum Extent implements Asn1Enumerated {
-	USEINSTANTLYONLY(0, "useInstantlyOnly"), USEFOR3METERS(1, "useFor3meters"), USEFOR10METERS(2,
-			"useFor10meters"), USEFOR50METERS(3, "useFor50meters"), USEFOR100METERS(4,
-					"useFor100meters"), USEFOR500METERS(5, "useFor500meters"), USEFOR1000METERS(6,
-							"useFor1000meters"), USEFOR5000METERS(7, "useFor5000meters"), USEFOR10000METERS(8,
-									"useFor10000meters"), USEFOR50000METERS(9, "useFor50000meters"), USEFOR100000METERS(
-											10, "useFor100000meters"), USEFOR500000METERS(11,
-													"useFor500000meters"), USEFOR1000000METERS(12,
-															"useFor1000000meters"), USEFOR5000000METERS(13,
-																	"useFor5000000meters"), USEFOR10000000METERS(14,
-																			"useFor10000000meters"), FOREVER(15,
-																					"forever");
+  USEINSTANTLYONLY(0, "useInstantlyOnly"),
+  USEFOR3METERS(1, "useFor3meters"),
+  USEFOR10METERS(2, "useFor10meters"),
+  USEFOR50METERS(3, "useFor50meters"),
+  USEFOR100METERS(4, "useFor100meters"),
+  USEFOR500METERS(5, "useFor500meters"),
+  USEFOR1000METERS(6, "useFor1000meters"),
+  USEFOR5000METERS(7, "useFor5000meters"),
+  USEFOR10000METERS(8, "useFor10000meters"),
+  USEFOR50000METERS(9, "useFor50000meters"),
+  USEFOR100000METERS(10, "useFor100000meters"),
+  USEFOR500000METERS(11, "useFor500000meters"),
+  USEFOR1000000METERS(12, "useFor1000000meters"),
+  USEFOR5000000METERS(13, "useFor5000000meters"),
+  USEFOR10000000METERS(14, "useFor10000000meters"),
+  FOREVER(15, "forever");
 
-	private final int index;
-	private final String name;
+  private final int index;
+  private final String name;
 
-	private Extent(int index, String name) {
-		this.index = index;
-		this.name = name;
-	}
+  private Extent(int index, String name) {
+    this.index = index;
+    this.name = name;
+  }
 
-	public static class ExtentSerializer extends EnumeratedSerializer<Extent> {
-		public ExtentSerializer() {
-			super(Extent.class);
-		}
-	}
+  public static class ExtentSerializer extends EnumeratedSerializer<Extent> {
+    public ExtentSerializer() {
+      super(Extent.class);
+    }
+  }
 
-	public static class ExtentDeserializer extends EnumeratedDeserializer<Extent> {
-		public ExtentDeserializer() {
-			super(Extent.class);
-		}
+  public static class ExtentDeserializer extends EnumeratedDeserializer<Extent> {
+    public ExtentDeserializer() {
+      super(Extent.class);
+    }
 
-		@Override
-		protected Extent[] listEnumValues() {
-			return Extent.values();
-		}
-	}
+    @Override
+    protected Extent[] listEnumValues() {
+      return Extent.values();
+    }
+  }
 }

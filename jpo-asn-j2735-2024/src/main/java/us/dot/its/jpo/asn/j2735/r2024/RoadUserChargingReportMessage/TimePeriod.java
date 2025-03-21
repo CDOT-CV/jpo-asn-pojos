@@ -38,14 +38,15 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @Setter
 public class TimePeriod extends Asn1Sequence {
 
-	@Asn1Property(tag = 0, name = "startTime")
-	@JsonProperty("startTime")
-	private DDateTime startTime;
-	@Asn1Property(tag = 1, name = "endTime")
-	@JsonProperty("endTime")
-	private DDateTime endTime;
+  @Asn1Property(tag = 0, name = "startTime")
+  @JsonProperty("startTime")
+  private DDateTime startTime;
 
-	public TimePeriod() {
-		super(true);
-	}
+  @Asn1Property(tag = 1, name = "endTime")
+  @JsonProperty("endTime")
+  private DDateTime endTime;
+
+  public TimePeriod() {
+    super(true);
+  }
 }

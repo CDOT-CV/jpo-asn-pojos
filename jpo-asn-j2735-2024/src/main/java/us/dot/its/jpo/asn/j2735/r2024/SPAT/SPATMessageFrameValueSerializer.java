@@ -26,7 +26,7 @@ import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 public class SPATMessageFrameValueSerializer extends OpenTypeSerializer<SPAT> {
 
-	public SPATMessageFrameValueSerializer() {
-		super(SPAT.class, "value", "SPAT");
-	}
+  public SPATMessageFrameValueSerializer() {
+    super(SPAT.class, "value", "SPAT");
+  }
 }
