@@ -1,0 +1,54 @@
+{
+  "lat": -794803681,
+  "long": 1654012986,
+  "elevation": 58720,
+  "regional": [
+    {
+      "regionId": 3,
+      "regExtValue": {
+        "Position3D_addGrpC": {
+          "altitude": {
+            "value": 115778,
+            "confidence": "outOfRange"
+          }
+        }
+      }
+    },
+    {
+      "regionId": 2,
+      "regExtValue": {
+        "Position3D_addGrpB": {
+          "latitude": {
+            "d": 0,
+            "m": 29,
+            "s": 1007
+          },
+          "longitude": {
+            "d": 153,
+            "m": 15,
+            "s": 3180
+          },
+          "elevation": 14369
+        }
+      }
+    },
+    {
+      "regionId": 2,
+      "regExtValue": {
+        "Position3D_addGrpB": {
+          "latitude": {
+            "d": -87,
+            "m": 34,
+            "s": 383
+          },
+          "longitude": {
+            "d": -85,
+            "m": 0,
+            "s": 369
+          },
+          "elevation": -7142
+        }
+      }
+    }
+  ]
+}

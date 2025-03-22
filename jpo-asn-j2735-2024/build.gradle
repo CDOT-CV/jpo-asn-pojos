@@ -68,9 +68,6 @@ jacocoTestReport {
                     // Exclude modules with few types of interest
                     '**/EfcDataDictionary/**',
                     '**/J2540ITIS/**',
-                    '**/AddGrpB/**',
-                    '**/AddGrpC/**',
-                    '**/REGION/**',
 
                     // Exclude null messages types
                     '**/PersonalSafetyMessage2/**',

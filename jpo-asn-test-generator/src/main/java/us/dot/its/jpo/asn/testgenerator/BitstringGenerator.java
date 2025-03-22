@@ -5,8 +5,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 public class BitstringGenerator extends RandomGenerator<Asn1Bitstring> {
 
-  public BitstringGenerator(String pdu, int limit) {
-    super(pdu, limit);
+  public BitstringGenerator(String pdu, int limit, boolean regional) {
+    super(pdu, limit, regional);
   }
 
   @Override

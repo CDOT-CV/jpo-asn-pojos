@@ -16,8 +16,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
 public class ChoiceGenerator extends RandomGenerator<Asn1Choice>{
 
-  public ChoiceGenerator(String pdu, int sequenceOfLimit) {
-    super(pdu, sequenceOfLimit);
+  public ChoiceGenerator(String pdu, int sequenceOfLimit, boolean regional) {
+    super(pdu, sequenceOfLimit, regional);
   }
 
   @Override
@@ -25,16 +25,19 @@ public class ChoiceGenerator extends RandomGenerator<Asn1Choice>{
     List<Asn1Field> fields = AsnFieldUtil.fields(instance);
 
     // Exclude choices named "regional"
-    List<Asn1Field> filteredFields = fields.stream().filter(
-        field -> !field.name().equals("regional")
-    ).toList();
+    List<Asn1Field> filteredFields = fields;
+    if (!regional) {
+      filteredFields = fields.stream().filter(
+          field -> !field.name().equals("regional")
+      ).toList();
+    }
 
     // Choose a random one
     final int numChoices = filteredFields.size();
     Random r = new Random();
     final int choiceIndex = r.nextInt(numChoices);
     Asn1Field choice = filteredFields.get(choiceIndex);
-    RandomGenerator<?> fieldGen = getGeneratorForType(choice.type(), sequenceOfLimit);
+    RandomGenerator<?> fieldGen = getGeneratorForType(choice.type(), sequenceOfLimit, regional);
 
     // Populate the choice
     if (fieldGen != null) {

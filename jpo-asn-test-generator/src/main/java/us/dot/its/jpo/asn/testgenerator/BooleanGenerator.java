@@ -5,8 +5,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 public class BooleanGenerator extends RandomGenerator<Asn1Boolean>{
 
-  public BooleanGenerator(String pdu, int sequenceOfLimit) {
-    super(pdu, sequenceOfLimit);
+  public BooleanGenerator(String pdu, int sequenceOfLimit, boolean regional) {
+    super(pdu, sequenceOfLimit, regional);
   }
 
   @Override

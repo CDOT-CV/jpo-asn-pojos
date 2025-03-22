@@ -5,8 +5,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1RelativeOID;
 
 public class RelativeOIDGenerator extends RandomGenerator<Asn1RelativeOID> {
 
-  public RelativeOIDGenerator(String pdu, int sequenceOfLimit) {
-    super(pdu, sequenceOfLimit);
+  public RelativeOIDGenerator(String pdu, int sequenceOfLimit, boolean regional) {
+    super(pdu, sequenceOfLimit, regional);
   }
 
   @Override

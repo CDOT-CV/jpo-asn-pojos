@@ -1,6 +1,5 @@
 package us.dot.its.jpo.asn.testgenerator;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,8 +8,6 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
-import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
 @Command(name = "testgen-cli", version = "testgen 1.0", mixinStandardHelpOptions = true,
   sortOptions = false, sortSynopsis = false)
@@ -37,6 +34,11 @@ public class TestGenCli implements Runnable {
       description="Output file path for the JER file.")
   File jerOutputFile;
 
+  @Option(names = {"-r", "--regional"}, defaultValue="false",
+    description = "Include fields named 'regional' and other regional extensions."
+        + " Omitted by default if this flag is not present.")
+  boolean regional;
+
 
   public static void main(String[] args) {
     int exitCode = new CommandLine(new TestGenCli()).execute(args);
@@ -50,6 +52,7 @@ public class TestGenCli implements Runnable {
     System.out.println("Module: " + module);
     System.out.println("PDU: " + pdu);
     System.out.println("SEQUENCE-OF limit: " + sequenceOfLimit);
+    System.out.println("Include regional extensions: " + regional);
     final String fullPdu = String.format("us.dot.its.jpo.asn.j2735.r2024.%s.%s", module, pdu);
     System.out.printf("Fully qualified class name = %s%n", fullPdu);
 
@@ -59,13 +62,13 @@ public class TestGenCli implements Runnable {
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);
     }
-    RandomGenerator<?> seqGen = RandomGenerator.getGeneratorForType(clazz, sequenceOfLimit);
-    if (seqGen == null) {
+    RandomGenerator<?> gen = RandomGenerator.getGeneratorForType(clazz, sequenceOfLimit, regional);
+    if (gen == null) {
       throw new RuntimeException(String.format("Generator for type %s not found", fullPdu));
     }
-    var seq = seqGen.createRandom();
+    var seq = gen.createRandom();
     try {
-      var xml = seqGen.toXml(seq);
+      var xml = gen.toXml(seq);
       if (xerOutputFile != null) {
           FileUtils.writeStringToFile(xerOutputFile, xml, StandardCharsets.UTF_8);
           System.out.printf("Saved XER to file %s%n", xerOutputFile.getAbsolutePath());
@@ -73,7 +76,7 @@ public class TestGenCli implements Runnable {
         System.out.println("XER:");
         System.out.println(xml);
       }
-      var json = seqGen.toJson(seq);
+      var json = gen.toJson(seq);
       if (jerOutputFile != null) {
         FileUtils.writeStringToFile(jerOutputFile, json, StandardCharsets.UTF_8);
         System.out.printf("Saved JER to file %s%n", jerOutputFile.getAbsolutePath());

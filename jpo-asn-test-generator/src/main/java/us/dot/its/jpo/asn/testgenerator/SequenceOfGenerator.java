@@ -6,8 +6,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
 public class SequenceOfGenerator extends RandomGenerator<Asn1SequenceOf<?>> {
 
-  public SequenceOfGenerator(String pdu, int limit) {
-    super(pdu, limit);
+  public SequenceOfGenerator(String pdu, int limit, boolean regional) {
+    super(pdu, limit, regional);
   }
 
   @SuppressWarnings({"unchecked"})
@@ -19,7 +19,7 @@ public class SequenceOfGenerator extends RandomGenerator<Asn1SequenceOf<?>> {
     Random r = new Random();
     final long numItems = r.nextLong(effectiveUpper - lower) + lower;
     Class<?> itemClass = instance.getItemClass();
-    var itemGen = getGeneratorForType((Class<Asn1Type>)itemClass, sequenceOfLimit);
+    var itemGen = getGeneratorForType((Class<Asn1Type>)itemClass, sequenceOfLimit, regional);
     if (itemGen != null) {
       for (int i = 0; i < numItems; i++) {
         instance.add(itemGen.createRandom());

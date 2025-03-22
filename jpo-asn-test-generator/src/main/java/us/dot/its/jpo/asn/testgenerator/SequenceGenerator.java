@@ -19,8 +19,8 @@ import org.apache.commons.lang3.reflect.FieldUtils;
 
 public class SequenceGenerator extends RandomGenerator<Asn1Sequence> {
 
-  public SequenceGenerator(String pdu, int limit) {
-    super(pdu, limit);
+  public SequenceGenerator(String pdu, int limit, boolean regional) {
+    super(pdu, limit, regional);
   }
 
   @Override
@@ -30,7 +30,7 @@ public class SequenceGenerator extends RandomGenerator<Asn1Sequence> {
     for (Asn1Field field : fields) {
 
       // Ignore fields named "regional"
-      if (field.name().equals("regional")) {
+      if (!regional && field.name().equals("regional")) {
         fieldsWithValues.add(field);
         continue;
       }
@@ -42,7 +42,7 @@ public class SequenceGenerator extends RandomGenerator<Asn1Sequence> {
         continue;
       }
 
-      RandomGenerator<?> fieldGen = getGeneratorForType(field.type(), sequenceOfLimit);
+      RandomGenerator<?> fieldGen = getGeneratorForType(field.type(), sequenceOfLimit, regional);
       if (fieldGen != null) {
         Asn1Type value = fieldGen.createRandom();
         if (value != null) {

@@ -3,8 +3,10 @@ package us.dot.its.jpo.asn.testgenerator;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
@@ -12,13 +14,14 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.Type;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
+@Slf4j
 public class ParameterizedTypeGenerator extends RandomGenerator<Asn1Sequence> {
 
   Asn1ParameterizedTypes typeAnnot;
 
   public ParameterizedTypeGenerator(String pdu, int sequenceOfLimit, Asn1ParameterizedTypes
-      typeAnnot) {
-    super(pdu, sequenceOfLimit);
+      typeAnnot, boolean regional) {
+    super(pdu, sequenceOfLimit, regional);
     this.typeAnnot = typeAnnot;
   }
 
@@ -34,13 +37,29 @@ public class ParameterizedTypeGenerator extends RandomGenerator<Asn1Sequence> {
       idMap.put(type.intId(), type);
     }
 
+    if (idMap.isEmpty()) {
+      log.warn("There are no implementations of this type. "
+          + "pdu: {}, valuePropName: {}", pdu, valuePropName);
+      return null;
+    }
+
+    List<Integer> idList = idMap.keySet().stream().toList();
+
+    log.debug("pdu: {}, valuePropName: {}, idMap: {}",
+        pdu, valuePropName, idMap);
+
+
+
     // Choose a random id from the set
-    final int numIds = idMap.size();
+    final int numIds = idList.size();
     Random r = new Random();
-    final int randId = r.nextInt(numIds);
+    final int randIdIndex = r.nextInt(numIds);
+    final int randId = idList.get(randIdIndex);
+    log.debug("rand id = {}", randId);
     Asn1ParameterizedTypes.Type type = idMap.get(randId);
+    log.debug("random type chosen = {}", type);
     Class<?> instanceClass = type.value();
-    var gen = new SequenceGenerator(instanceClass.getName(), sequenceOfLimit);
+    var gen = new SequenceGenerator(instanceClass.getName(), sequenceOfLimit, regional);
     var item = gen.createRandom();
     // Populate the value property
     PropertyDescriptor prop = null;
@@ -50,7 +69,7 @@ public class ParameterizedTypeGenerator extends RandomGenerator<Asn1Sequence> {
       throw new RuntimeException(e);
     }
     Class<?> valuePropType = prop.getPropertyType();
-    var valueGen = getGeneratorForType((Class<Asn1Type>)valuePropType, sequenceOfLimit);
+    var valueGen = getGeneratorForType((Class<Asn1Type>)valuePropType, sequenceOfLimit, regional);
     if (valueGen != null) {
       var value = valueGen.createRandom();
       try {

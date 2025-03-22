@@ -5,8 +5,8 @@ import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class IA5StringGenerator extends RandomGenerator<IA5String> {
 
-  public IA5StringGenerator(String pdu, int sequenceOfLimit) {
-    super(pdu, sequenceOfLimit);
+  public IA5StringGenerator(String pdu, int sequenceOfLimit, boolean regional) {
+    super(pdu, sequenceOfLimit, regional);
   }
 
 

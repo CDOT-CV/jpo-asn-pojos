@@ -5,8 +5,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1ObjectIdentifier;
 
 public class ObjectIdentifierGenerator extends RandomGenerator<Asn1ObjectIdentifier>{
 
-  public ObjectIdentifierGenerator(String pdu, int sequenceOfLimit) {
-    super(pdu, sequenceOfLimit);
+  public ObjectIdentifierGenerator(String pdu, int sequenceOfLimit, boolean regional) {
+    super(pdu, sequenceOfLimit, regional);
   }
 
   @Override

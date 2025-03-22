@@ -30,6 +30,9 @@ dependencies {
     implementation 'info.picocli:picocli:4.7.6'
     implementation 'usdot.jpo.asn:jpo-asn-runtime'
     implementation 'usdot.jpo.asn:jpo-asn-j2735-2024'
+
+    implementation 'org.slf4j:slf4j-api:2.0.5'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
