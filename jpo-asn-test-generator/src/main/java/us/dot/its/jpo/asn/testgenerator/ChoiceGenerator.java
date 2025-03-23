@@ -16,8 +16,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
 public class ChoiceGenerator extends RandomGenerator<Asn1Choice>{
 
-  public ChoiceGenerator(String pdu, int sequenceOfLimit, boolean regional) {
-    super(pdu, sequenceOfLimit, regional);
+  public ChoiceGenerator(GeneratorOptions options) {
+    super(options);
   }
 
   @Override
@@ -37,7 +37,7 @@ public class ChoiceGenerator extends RandomGenerator<Asn1Choice>{
     Random r = new Random();
     final int choiceIndex = r.nextInt(numChoices);
     Asn1Field choice = filteredFields.get(choiceIndex);
-    RandomGenerator<?> fieldGen = getGeneratorForType(choice.type(), sequenceOfLimit, regional);
+    RandomGenerator<?> fieldGen = getGeneratorForType(choice.type(), options());
 
     // Populate the choice
     if (fieldGen != null) {

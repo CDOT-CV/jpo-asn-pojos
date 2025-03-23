@@ -1,0 +1,67 @@
+{
+  "name": "DFNEYYAVHQMQDLBEPJEIUCFFMABYMGJREOWGLQP",
+  "id": {
+    "region": 34910,
+    "id": 46235
+  },
+  "revision": 93,
+  "status": "4401",
+  "moy": 209875,
+  "timeStamp": 43716,
+  "states": [
+    {
+      "movementName": "MKQEDRDTWLWUKFDSTRLWAWICPANDXXCAOGIOSPKHJTYPJDYWYDBMWHHR",
+      "signalGroup": 1,
+      "state-time-speed": [
+        {
+          "eventState": "stop-Then-Proceed"
+        },
+        {
+          "eventState": "protected-clearance"
+        }
+      ]
+    },
+    {
+      "movementName": "RQBICWBAXBQRPXLJMWKCOCXXDHNPJANPOFBLPEQW",
+      "signalGroup": 149,
+      "state-time-speed": [
+        {
+          "eventState": "stop-Then-Proceed"
+        }
+      ]
+    }
+  ],
+  "regional": [
+    {
+      "regionId": 3,
+      "regExtValue": {
+        "IntersectionState_addGrpC": {
+          "activePrioritizations": [
+            {
+              "stationID": 4084252316,
+              "priorState": "granted",
+              "signalGroup": 201
+            }
+          ]
+        }
+      }
+    },
+    {
+      "regionId": 3,
+      "regExtValue": {
+        "IntersectionState_addGrpC": {
+          "activePrioritizations": [
+            {
+              "stationID": 1165609077,
+              "priorState": "maxPresence",
+              "signalGroup": 24
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "roadAuthorityID": {
+    "fullRdAuthID": "1.0.7153.1"
+  }
+}

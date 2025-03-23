@@ -8,8 +8,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 public class EnumeratedGenerator extends RandomGenerator<Asn1Enumerated> {
 
-  public EnumeratedGenerator(String pdu, int limit, boolean regional) {
-    super(pdu, limit, regional);
+  public EnumeratedGenerator(GeneratorOptions options) {
+    super(options);
   }
 
   @Override

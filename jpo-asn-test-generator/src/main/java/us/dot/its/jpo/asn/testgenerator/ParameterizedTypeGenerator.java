@@ -19,9 +19,8 @@ public class ParameterizedTypeGenerator extends RandomGenerator<Asn1Sequence> {
 
   Asn1ParameterizedTypes typeAnnot;
 
-  public ParameterizedTypeGenerator(String pdu, int sequenceOfLimit, Asn1ParameterizedTypes
-      typeAnnot, boolean regional) {
-    super(pdu, sequenceOfLimit, regional);
+  public ParameterizedTypeGenerator(GeneratorOptions options, Asn1ParameterizedTypes typeAnnot) {
+    super(options);
     this.typeAnnot = typeAnnot;
   }
 
@@ -59,7 +58,7 @@ public class ParameterizedTypeGenerator extends RandomGenerator<Asn1Sequence> {
     Asn1ParameterizedTypes.Type type = idMap.get(randId);
     log.debug("random type chosen = {}", type);
     Class<?> instanceClass = type.value();
-    var gen = new SequenceGenerator(instanceClass.getName(), sequenceOfLimit, regional);
+    var gen = new SequenceGenerator(options().withPdu(instanceClass.getName()));
     var item = gen.createRandom();
     // Populate the value property
     PropertyDescriptor prop = null;
@@ -69,7 +68,7 @@ public class ParameterizedTypeGenerator extends RandomGenerator<Asn1Sequence> {
       throw new RuntimeException(e);
     }
     Class<?> valuePropType = prop.getPropertyType();
-    var valueGen = getGeneratorForType((Class<Asn1Type>)valuePropType, sequenceOfLimit, regional);
+    var valueGen = getGeneratorForType((Class<Asn1Type>)valuePropType, options());
     if (valueGen != null) {
       var value = valueGen.createRandom();
       try {

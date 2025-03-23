@@ -3,6 +3,7 @@ package us.dot.its.jpo.asn.testgenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Set;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.serialization.SerializationUtil;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
@@ -23,52 +24,60 @@ public abstract class RandomGenerator<T extends Asn1Type> {
   protected final String pdu;
   protected final int sequenceOfLimit;
   protected final boolean regional;
+  protected final Set<Class<?>> excludePdus;
 
-  public RandomGenerator(String pdu, int sequenceOfLimit, boolean regional) {
-    this.pdu = pdu;
-    this.sequenceOfLimit = sequenceOfLimit;
-    this.regional = regional;
+  public GeneratorOptions options() {
+    return new GeneratorOptions(pdu, sequenceOfLimit, regional, excludePdus);
+  }
+
+  public RandomGenerator(GeneratorOptions options) {
+    this.pdu = options.pdu();
+    this.sequenceOfLimit = options.limit();
+    this.regional = options.regional();
+    this.excludePdus = options.excludePdus();
   }
 
   protected abstract void populateRandom(T instance);
 
   protected static <T extends Asn1Type> RandomGenerator<?> getGeneratorForType(final Class<T> type,
-      final int limit, final boolean regional) {
+      GeneratorOptions opts) {
     final String name = type.getName();
+
+    final var options = opts.withPdu(name);
 
     try {
       Class<?> clazz = Class.forName(name);
       final Asn1ParameterizedTypes typeAnnot = clazz.getAnnotation(Asn1ParameterizedTypes.class);
       if (typeAnnot != null) {
         // this is an abstract class with a parameterized type annotation
-        return new ParameterizedTypeGenerator(name, limit, typeAnnot, regional);
+        return new ParameterizedTypeGenerator(options, typeAnnot);
       }
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);
     }
 
     if (Asn1Integer.class.isAssignableFrom(type)) {
-      return new IntegerGenerator(name, limit, regional);
+      return new IntegerGenerator(options);
     } else if (Asn1Sequence.class.isAssignableFrom(type)) {
-      return new SequenceGenerator(name, limit, regional);
+      return new SequenceGenerator(options);
     } else if (Asn1Bitstring.class.isAssignableFrom(type)) {
-      return new BitstringGenerator(name, limit, regional);
+      return new BitstringGenerator(options);
     } else if (Asn1Enumerated.class.isAssignableFrom(type)) {
-      return new EnumeratedGenerator(name, limit, regional);
+      return new EnumeratedGenerator(options);
     } else if (Asn1SequenceOf.class.isAssignableFrom(type)) {
-      return new SequenceOfGenerator(name, limit, regional);
+      return new SequenceOfGenerator(options);
     } else if (Asn1Choice.class.isAssignableFrom(type)) {
-      return new ChoiceGenerator(name, limit, regional);
+      return new ChoiceGenerator(options);
     } else if (IA5String.class.isAssignableFrom(type)) {
-      return new IA5StringGenerator(name, limit, regional);
+      return new IA5StringGenerator(options);
     } else if (Asn1ObjectIdentifier.class.isAssignableFrom(type)) {
-      return new ObjectIdentifierGenerator(name, limit, regional);
+      return new ObjectIdentifierGenerator(options);
     } else if (Asn1RelativeOID.class.isAssignableFrom(type)) {
-      return new RelativeOIDGenerator(name, limit, regional);
+      return new RelativeOIDGenerator(options);
     } else if (Asn1OctetString.class.isAssignableFrom(type)) {
-      return new OctetStringGenerator(name, limit, regional);
+      return new OctetStringGenerator(options);
     } else if (Asn1Boolean.class.isAssignableFrom(type)) {
-      return new BooleanGenerator(name, limit, regional);
+      return new BooleanGenerator(options);
     } else {
       System.err.printf("No RandomGenerator found for type %s%n", type.getName());
       return null;

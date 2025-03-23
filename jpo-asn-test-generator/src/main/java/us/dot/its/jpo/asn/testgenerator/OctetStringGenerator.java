@@ -5,8 +5,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class OctetStringGenerator extends RandomGenerator<Asn1OctetString> {
 
-  public OctetStringGenerator(String pdu, int limit, boolean regional) {
-    super(pdu, limit, regional);
+  public OctetStringGenerator(GeneratorOptions options) {
+    super(options);
   }
 
   @Override

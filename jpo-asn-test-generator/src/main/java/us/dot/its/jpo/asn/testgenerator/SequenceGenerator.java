@@ -19,8 +19,8 @@ import org.apache.commons.lang3.reflect.FieldUtils;
 
 public class SequenceGenerator extends RandomGenerator<Asn1Sequence> {
 
-  public SequenceGenerator(String pdu, int limit, boolean regional) {
-    super(pdu, limit, regional);
+  public SequenceGenerator(GeneratorOptions options) {
+    super(options);
   }
 
   @Override
@@ -36,13 +36,13 @@ public class SequenceGenerator extends RandomGenerator<Asn1Sequence> {
       }
 
       // Ignore certain open types containing regional/open types to produce valid messages
-      // ignore for MapData
-      if (field.type().equals(PreemptPriorityList.class)) {
+      // eg PreemptPriorityList for MapData
+      if (excludePdus.contains(field.type())) {
         fieldsWithValues.add(field);
         continue;
       }
 
-      RandomGenerator<?> fieldGen = getGeneratorForType(field.type(), sequenceOfLimit, regional);
+      RandomGenerator<?> fieldGen = getGeneratorForType(field.type(), options());
       if (fieldGen != null) {
         Asn1Type value = fieldGen.createRandom();
         if (value != null) {
