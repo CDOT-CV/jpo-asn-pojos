@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BRANCH=j2735-2024
+BRANCH=j2735-2024-type-refactor-everything
 
 echo "Checkout files from $BRANCH"
 
