@@ -1,0 +1,16 @@
+{
+    "frictionInfo": {
+        "roadSurfaceDescription": {
+            "rock": {
+                "type": "crushed"
+            }
+        },
+        "dryOrWet": "dry",
+        "roadRoughness": {
+            "meanVerticalVariation": 254,
+            "verticalVariationStdDev": -127,
+            "meanHorizontalVariation": -129,
+            "horizontalVariationStdDev": 32767
+        }
+    }
+}

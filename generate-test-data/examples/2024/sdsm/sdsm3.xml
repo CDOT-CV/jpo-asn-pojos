@@ -1,0 +1,127 @@
+<SensorDataSharingMessage>
+    <msgCnt>128</msgCnt>
+    <sourceID>
+        2E FF B2 B3 9C 1F 48 00 63 FE 3E D7 FF 00 01 00 
+        FE 00 71 01 89 00 BD BB 6C CF F8 FF 00 A4 9A DF 
+        C5 00 96 A2 66 6D FE F5 FE B1 79 2D 5A 92 1B D1 
+        F9 01 79 FA CA 01 EE 5B 65 39 00 B4 94 53 08 27 
+        DC 1C 01 15 25 CD 85 FE 60 7D A3 51 0C CD 71 00 
+        FE FA FE 17 FE 00 25 C8 59 01 71 FE 6E 3D 6C FF 
+        D2 71 3B 5F 24 CD 01 7C 7D 60 FE 11 43 B6 69 FE 
+        FF CB 62 E3 1A 53 83 05 9E 4B D4 F8 6B 92 9A DD 
+        7B 01 5D 67 7F CE 2D 44 8F C9 0D EC 57 06 42 D8 
+        FE 2C 66 57 BF A5 FE E9 00 22 FE 2F 09 FA FE F5 
+        2C 9F CF 87 DF 1B 06 0D 2B 01 4D FE FD 00 01 4B 
+        FF C0 77 3A 5E A9 E5 00 FE 01 F1 2F 0B 6B 5F FF 
+        D0 01 F4 16 4C C9 83 01 17 22 3C 00 CF D7 00 C3 
+        B9 A0 B8 01 00 8B 5A 00 FE 34 FF 01 01 84 9B 4F 
+        FF A8 73 5C 1B 37 00 B8 FF 3C FF 01 66 E9 28 4A 
+        A6 2F 43 B2 D3 01 50 A0 FF 83 98 75 48 FF 32 AD 
+        DB 47 21 B9 3A 6B B7 34 01 00 5B 1E BA E4 DB A8 
+        39 FB 01 1D FF 00 C4 21 55 93 01 99 FF 37 00 0F 
+        74 FE FE F6 20 5C 0F 4F 2A 00 89 00 9D 00 B6 C3 
+        1F 7D 14 4C 00 27 D1 6C EA A5 29 1E FE 3B F0 58 
+        60 54 FF 00 FE FE 1B 16 FA 5A 85 02 C1 FE 2D F5 
+        4F E4 FF 01 59 FF 42 6E 97 CB 9F 6F 01 72 FE 7A 
+        60 39 D7 B4 00 0D 7A B3 AF 6E 5E FE CE FE C1 5D 
+        EF 01 DE 00 B5 08 DE 99 E7 FE 16 31 01 00 B3 FE 
+        13 E9 CC FC 38 C5 24 C4 FE FF DD 00 21 FF FF FE 
+        FF 92 FF 86 11 00 5E 2A 01 FF F1 00 B5 47 71 FE 
+        92 88 ED 01 00 51 54 EF 42 AE BC 28 2A E3 FE 78 
+        E8 00 60 AA 0B 65 23 41 BE CE 97 87 39 CB 72 15 
+        01 CF 69 95 1E 01 7C 58 72 C3 04 CC 01 06 E7 B3 
+        00 D8 89 FB 58 3B D1 70 78 C0 25 96 53 7A 99 C7 
+        D8 B4 FF 2F FE E4 FE 01 FE 40 6B A1 FF E6 FF 3A 
+        FE 4E D7 AC 36 92 FF FF 01 F4 27 C0 09 8D 55 92 
+        16 83 9B FF 32 57 9A 04 FC 1F 84 8A 01 B7 FE D1 
+        A1 5D B7 33 AB FE 15 1F FF 1C D4 FC 00 68 00 63 
+        B6 81 1D FE FE 32 84 67 2B FF E0 2A FE 26 79 C5 
+        73 D9 38 FF 98 1B E3 F6 B4 B2 43 5D 48 15 E0 01 
+        03 19 00 52 89 C0 5C F2 AB E2 E2 71 15 28 D6 D2 
+        FF FF 53 B0 79 0F 5F 61 3F FF A2 5A 00 9C 17 FE 
+        ED DD 00 FF 01 44 9F B5 00 94 00 00 DC DE D4 48 
+        55 00 99 01 67 5C 5B 87 FE C6 26 01 C4 06 86 20 
+        9E 8C 0F 0E 09 FF 67 AD C0 35 10 4A FE FF B8 6F 
+        FE FE BC D5 DA BE B4 EF EE 00 2F FE B8 01 00 65 
+        E9 D0 01 32 F9 F9 D7 69 D8 FE F4 82 3E 00 F6 CC 
+        3D FE 5B BC 5E FE FE DA 33 01 A7 46 CC 0E FE 33 
+        8A 01 84 23 01 4F 3E 84 09 8E DC E4 7B 00 00 E5 
+        16 C0 00 FE 82 31 80 80 41 63 47 05 75 FF F6 FE 
+        FE 00 D5 A9 01 9F 0A D3 FD DD 06 E7 AF DC 00 DF 
+        95 9B 6C 51 87 FE 29 B3 FE B0 01 B3 86 1E 45 11 
+        DB FA A9 7B 74 A2 49 FE FC 76 0A E2 1D 00 D3 FE 
+        66 48 A3 1D 54 3B 5B B0 C0 F2 00 01 4E 4E FE 3E 
+        7F 25 FE 99 4D 12 F0 88 58 75 66 D1 00 FF FF 8B 
+        72 3A F0 93 2E FF 00 01 FF 0A E8 75 AA 53 C0 6D 
+        FF 00 01 E4 BC 01 C7 00 8A 00 3D 86 AD 33 01 10 
+        E3 F7 FE 77 2C 5F 7F C9 00 C4 D5 0F 47 C9 82 89 
+        FD E6 BE 6D 59 18 2F 55 01 19 33 FE FF FF A8 B5 
+        13 40 FE 01 86 54 A3 23 B7 00 8D 00 FE 15 81 5B 
+        98 DB FF 9B 99 AC B2 94 AE 00 67 8D D8 9C 01 9E 
+        CE 76 1F FF BB 65 FE 86 EF 8C 54 85 FE 7A 91 A9 
+        35 53 80 99 64 7D FF 6C 0D 6C FB B8 23 7A F5 89 
+        48 CD 12 5C 4A 4C 09 66 16 B1 15 92 4E FF C3 FF 
+        BD 00 8B 01 00 07 BC 00 51 00 B8 35 0A A2 59 FE 
+        E7 05 01 C4 00 4F 00 41 AF 01 14 9D FE FF FE 95 
+        AE 75 95 F1 BE 27 01 01 52 8F 2D 11 55 29 69 71 
+        21 B7 AA FF 9B 0C 82 FF F8 0C F4 00 86 00 E8 A9 
+        8E 50 3D 46 57 03 A3 34 FF FF 14 01 00 63 10 A3 
+        FF CC FF FE 1D A5 9B 7D 00 FF D6 00 09 91 FE C9 
+        01 4B 01 EE 12 FF 00 1C 4A 28 00 00 69 00 94 01 
+        00 01 D8 AF FF FB FF 69 32 6D CA F7 CC FF FE 7D 
+        7C EB 6A 38 98 C5 01 01 CD FF F2 F8 68 52 13 41 
+        17 3F 11 4D EE B1 20 35 62 0B 84 14 75 A1 28 01 
+        BF D9 FF 83 FE F6 27 FE FE 15 04 7E FF FE 01 9B 
+        FF FE 01 7C E2 98 D3 00 00 FE 2E B7 01 FE FF EF 
+        7C 23 80 3C B2 9D 1F CE FE 22 5F 65 F6 56 32 2E 
+        B0 FE FF 1D 0F 3F 37 91 BC E0 01 01 D3 CE 22 09 
+        01 B8 8A 16 01 A2 0B 5C CF 7C B7 01 57 3E FE 89 
+        11 D6 CA 74 FE D1 32 1F 9A 63 5F C0 5A D8 F5 A3 
+        54 4B 81 B3 56 B3 42 FF DD 80 16 27 4A AA 36 07 
+        00 3D FF FF 3C DF 3E 1C 67 5E BA 34 6E FF AE DA 
+        22 10 9F FE FE 44 BE FF 52 E4 2F D9 0A 01 78 FF 
+        00 CA 0C 00 1C E9 C0 E9 85 C7 B7 93 F0 D1 01 E7 
+        92 99 5B CA 42 0D DF 50 DC 8D C9 C9 FE FE 02 B1 
+        95 5E 21 D5 5E 8B 7E 42 31 E3 54 78 5E 54 C6 CB 
+        FE 2A 6D 62 FE FB FE FA 73 03 01 FE FF DA 85 DF 
+        1C 60 03 93 01 77 73 6F 6B 2A FF AF FF 71 3F E0 
+        01 01 01 B4 7D FF FE 00 63 BD C4 B0 17 FF CD 01 
+        30 01 FE FF 00 68 7C 00 18 A8 8C 01 95 1D DC 0C 
+        A9 C0 00 FE FE FE 61 FF 01 01 3E 0A 44 FE D1 FE 
+        00 53 42 EA A3 ED CA 57 12 DE 83 14 03 12 26 5A 
+        4C C2 DD DF FE 4C 8D FF 8B 78 44 64 4A 45 1F 01 
+        00 FE 0F D4 06 7D 45 70 27 DF A8 5C FE B6 FF FB 
+        B5 0F FA 58 00 FF D1 FE 17 58 2E 4A B1 FE 00 C3 
+        C6 D5 10 24 B8 9A 81 FF 3E 71 BB FF 44 3C BC 4C 
+        B9 DB 01 EB 4B 87 47 01 C0 D1 DB 5E 0D 01 49 1B 
+        65 FF 78 73 E3 01 91 FE D8 0E C2 BC F9 56 FF 36 
+        57 00 3D DF E7 56 95 DC BF B8 4E 2F 99 A7 AF 26 
+        01 FE FC 68 01 4F FF 9C CB A6 2E D8 58 88 B0 01 
+        E1 87 55 DF 69 01 B9 8D
+    </sourceID>
+    <equipmentType><rsu/></equipmentType>
+    <sDSMTimeStamp>
+        <year>128</year>
+        <month>127</month>
+        <day>32767</day>
+        <hour>0</hour>
+        <minute>-16385</minute>
+        <second>65537</second>
+        <offset>254</offset>
+    </sDSMTimeStamp>
+    <refPos>
+        <lat>127</lat>
+        <long>32768</long>
+        <elevation>-16385</elevation>
+        <regional>
+        </regional>
+    </refPos>
+    <refPosXYConf>
+        <semiMajor>65535</semiMajor>
+        <semiMinor>-1</semiMinor>
+        <orientation>-16385</orientation>
+    </refPosXYConf>
+    <refPosElConf><elev-010-00/></refPosElConf>
+    <objects>
+    </objects>
+</SensorDataSharingMessage>

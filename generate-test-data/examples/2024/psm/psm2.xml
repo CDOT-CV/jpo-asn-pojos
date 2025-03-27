@@ -1,0 +1,65 @@
+<PersonalSafetyMessage>
+    <basicType><aPUBLICSAFETYWORKER/></basicType>
+    <secMark>-16383</secMark>
+    <msgCnt>1</msgCnt>
+    <id>
+        42 60 00 01 A2 8E 4C 00 FE FF 1E 59 1D 07 E9 FE 
+        00 35 23 23 01 7D 00 A0 01 01 11 05 6F FF 48 00 
+        B2 01 1C FE E9 FE 8D 7A 36 16 18 BA EE F4 E1 00 
+        2A FE 01 BD FA FF 64 5A 2C 05 CE 55 FF 10 E7 CA 
+        64 01 10 8D FE FF 00 1A 4D FE FE E3 C4 00 61 84 
+        2E 42 A5 FF 88 A6 1E FE B9 00 57 01 50 91 FF FE 
+        3C F6 8B 9D 55 37 CC 93 E5 00 1F FE 77 E1 7A 67 
+        CC 7A E5 E8 55 46 AC 54 74 E9 00 0F D1 C7
+    </id>
+    <position>
+        <lat>-65536</lat>
+        <long>32769</long>
+        <elevation>16383</elevation>
+    </position>
+    <accuracy>
+        <semiMajor>1</semiMajor>
+        <semiMinor>65536</semiMinor>
+        <orientation>-32767</orientation>
+    </accuracy>
+    <speed>-1</speed>
+    <heading>65537</heading>
+    <accelSet>
+        <long>16385</long>
+        <lat>-32769</lat>
+        <vert>-1</vert>
+        <yaw>-127</yaw>
+    </accelSet>
+    <pathPrediction>
+        <radiusOfCurve>-32769</radiusOfCurve>
+        <confidence>-257</confidence>
+    </pathPrediction>
+    <propulsion>
+        <motor><otherTypes/></motor>
+    </propulsion>
+    <useState>
+        1001010001011011011101010110011011011011001111011000000011010110
+        111110001000001000011011000000000010100001011010
+    </useState>
+    <crossRequest><true/></crossRequest>
+    <crossState><false/></crossState>
+    <clusterSize><unavailable/></clusterSize>
+    <clusterRadius>65534</clusterRadius>
+    <eventResponderType><hazmatResponder/></eventResponderType>
+    <activitySubType>
+        1110000100011111010000011111000100110011000111001110011110011001
+        11111000001001000001101101001111100111101001111011101010000111
+    </activitySubType>
+    <assistType>
+        11101010
+    </assistType>
+    <sizing>
+        1110110001000010101001001110000001011100100010111111010111100000
+        11110001111011000100001010010000001011110011010011000100010010
+    </sizing>
+    <attachment><pet/></attachment>
+    <attachmentRadius>65536</attachmentRadius>
+    <animalType><unavailable/></animalType>
+    <regional>
+    </regional>
+</PersonalSafetyMessage>

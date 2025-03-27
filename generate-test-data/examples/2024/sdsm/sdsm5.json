@@ -1,0 +1,144 @@
+{
+    "msgCnt": 111,
+    "sourceID": "4F435445",
+    "equipmentType": "rsu",
+    "sDSMTimeStamp": {
+        "year": 2960,
+        "month": 7,
+        "day": 21,
+        "hour": 7,
+        "minute": 2,
+        "second": 17968,
+        "offset": 283
+    },
+    "refPos": {
+        "lat": -108154546,
+        "long": 343184848,
+        "elevation": 30138
+    },
+    "refPosXYConf": {
+        "semiMajor": 3,
+        "semiMinor": 7,
+        "orientation": 51205
+    },
+    "refPosElConf": "elev-000-10",
+    "objects": [
+        {
+            "detObjCommon": {
+                "objType": "vru",
+                "objTypeCfd": 80,
+                "objectID": 41312,
+                "measurementTime": 1473,
+                "timeConfidence": "time-000-100",
+                "pos": {
+                    "offsetX": -16286,
+                    "offsetY": -32584,
+                    "offsetZ": -24195
+                },
+                "posConfidence": {
+                    "pos": "a5m",
+                    "elevation": "elev-200-00"
+                },
+                "speed": 7215,
+                "speedConfidence": "prec0-05ms",
+                "speedZ": 4899,
+                "speedConfidenceZ": "prec1ms",
+                "heading": 21454,
+                "headingConf": "prec0-1deg",
+                "accel4way": {
+                    "long": -401,
+                    "lat": -1363,
+                    "vert": -10,
+                    "yaw": 7004
+                },
+                "accCfdX": "accl-000-05",
+                "accCfdY": "accl-000-05",
+                "accCfdZ": "accl-005-00",
+                "accCfdYaw": "degSec-000-01"
+            },
+            "detObjOptData": {
+                "detObst": {
+                    "obstSize": {
+                        "width": 31,
+                        "length": 413,
+                        "height": 477
+                    },
+                    "obstSizeConfidence": {
+                        "widthConfidence": "size-000-01",
+                        "lengthConfidence": "size-100-00",
+                        "heightConfidence": "size-000-10"
+                    }
+                }
+            }
+        },
+        {
+            "detObjCommon": {
+                "objType": "unknown",
+                "objTypeCfd": 19,
+                "objectID": 62110,
+                "measurementTime": -1194,
+                "timeConfidence": "time-000-010",
+                "pos": {
+                    "offsetX": -11096,
+                    "offsetY": 9794,
+                    "offsetZ": -19603
+                },
+                "posConfidence": {
+                    "pos": "a2cm",
+                    "elevation": "elev-000-10"
+                },
+                "speed": 5484,
+                "speedConfidence": "prec0-1ms",
+                "speedZ": 2887,
+                "speedConfidenceZ": "prec0-1ms",
+                "heading": 6128,
+                "headingConf": "prec05deg",
+                "accel4way": {
+                    "long": 560,
+                    "lat": -1363,
+                    "vert": 37,
+                    "yaw": 7342
+                },
+                "accCfdX": "accl-001-00",
+                "accCfdY": "accl-010-00",
+                "accCfdZ": "accl-000-05",
+                "accCfdYaw": "degSec-010-00"
+            },
+            "detObjOptData": {
+                "detVeh": {
+                    "lights": "0800",
+                    "vehAttitude": {
+                        "pitch": -5486,
+                        "roll": -762,
+                        "yaw": -3456
+                    },
+                    "vehAttitudeConfidence": {
+                        "pitchConfidence": "prec0-01deg",
+                        "rollConfidence": "prec0-0125deg",
+                        "yawConfidence": "prec0-1deg"
+                    },
+                    "vehAngVel": {
+                        "pitchRate": -29433,
+                        "rollRate": -32627
+                    },
+                    "vehAngVelConfidence": {
+                        "pitchRateConfidence": "degSec-001-00",
+                        "rollRateConfidence": "degSec-001-00"
+                    },
+                    "size": {
+                        "width": 485,
+                        "length": 1007
+                    },
+                    "height": 94,
+                    "vehicleSizeConfidence": {
+                        "vehicleWidthConfidence": "size-100-00",
+                        "vehicleLengthConfidence": "size-000-50",
+                        "vehicleHeightConfidence": "size-000-20"
+                    },
+                    "vehicleClass": 226,
+                    "classConf": 90
+                }
+            }
+        }
+    ]
+}

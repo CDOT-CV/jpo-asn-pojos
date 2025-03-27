@@ -1,0 +1,16 @@
+<TravelerDataFrameNewPartIIIContent>
+    <frictionInfo>
+        <roadSurfaceDescription>
+            <rock>
+                <type><crushed/></type>
+            </rock>
+        </roadSurfaceDescription>
+        <dryOrWet><dry/></dryOrWet>
+        <roadRoughness>
+            <meanVerticalVariation>254</meanVerticalVariation>
+            <verticalVariationStdDev>-127</verticalVariationStdDev>
+            <meanHorizontalVariation>-129</meanHorizontalVariation>
+            <horizontalVariationStdDev>32767</horizontalVariationStdDev>
+        </roadRoughness>
+    </frictionInfo>
+</TravelerDataFrameNewPartIIIContent>

@@ -1,0 +1,26 @@
+<SensorDataSharingMessage>
+    <msgCnt>-257</msgCnt>
+    <sourceID></sourceID>
+    <equipmentType><vru/></equipmentType>
+    <sDSMTimeStamp>
+        <year>-16385</year>
+        <month>65536</month>
+        <day>32767</day>
+        <minute>-65534</minute>
+        <second>255</second>
+        <offset>65536</offset>
+    </sDSMTimeStamp>
+    <refPos>
+        <lat>-256</lat>
+        <long>-126</long>
+        <elevation>129</elevation>
+    </refPos>
+    <refPosXYConf>
+        <semiMajor>16383</semiMajor>
+        <semiMinor>-65535</semiMinor>
+        <orientation>-128</orientation>
+    </refPosXYConf>
+    <refPosElConf><elev-000-50/></refPosElConf>
+    <objects>
+    </objects>
+</SensorDataSharingMessage>
