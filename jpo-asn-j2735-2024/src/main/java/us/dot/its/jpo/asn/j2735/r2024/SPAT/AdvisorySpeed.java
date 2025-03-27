@@ -78,9 +78,6 @@ public class AdvisorySpeed extends Asn1Sequence {
     }
   }
 
-  public AdvisorySpeed() {
-  }
-
   @Override
   public boolean hasExtensionMarker() {
     return true;

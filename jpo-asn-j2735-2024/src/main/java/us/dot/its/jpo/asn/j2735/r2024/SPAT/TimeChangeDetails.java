@@ -62,9 +62,4 @@ public class TimeChangeDetails extends Asn1Sequence {
   @Asn1Property(tag = 5, name = "nextTime", optional = true)
   @JsonProperty("nextTime")
   private TimeMark nextTime;
-
-  public TimeChangeDetails() {
-  }
-
-
 }

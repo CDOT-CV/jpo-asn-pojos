@@ -46,9 +46,4 @@ public class Node_LLmD_64b extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "lat")
   @JsonProperty("lat")
   private Latitude lat;
-
-  public Node_LLmD_64b() {
-  }
-
-
 }

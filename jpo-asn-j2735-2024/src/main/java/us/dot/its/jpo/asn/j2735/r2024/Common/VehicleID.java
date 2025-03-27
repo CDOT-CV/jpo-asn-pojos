@@ -44,9 +44,4 @@ public class VehicleID extends Asn1Choice {
   @Asn1Property(tag = 1, name = "stationID")
   @JsonProperty("stationID")
   private StationID stationID;
-
-  public VehicleID() {
-  }
-
-
 }

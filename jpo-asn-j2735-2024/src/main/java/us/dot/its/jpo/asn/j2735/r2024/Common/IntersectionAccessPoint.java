@@ -49,9 +49,6 @@ public class IntersectionAccessPoint extends Asn1Choice {
   @JsonProperty("connection")
   private LaneConnectionID connection;
 
-  public IntersectionAccessPoint() {
-  }
-
   @Override
   public boolean hasExtensionMarker() {
     return true;

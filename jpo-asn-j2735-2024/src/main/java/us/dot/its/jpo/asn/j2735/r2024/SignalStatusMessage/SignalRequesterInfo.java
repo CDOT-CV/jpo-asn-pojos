@@ -64,9 +64,6 @@ public class SignalRequesterInfo extends Asn1Sequence {
   @JsonProperty("typeData")
   private RequestorType typeData;
 
-  public SignalRequesterInfo() {
-  }
-
   @Override
   public boolean hasExtensionMarker() {
     return true;

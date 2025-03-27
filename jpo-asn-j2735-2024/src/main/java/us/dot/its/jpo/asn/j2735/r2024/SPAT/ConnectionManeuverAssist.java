@@ -77,9 +77,6 @@ public class ConnectionManeuverAssist extends Asn1Sequence {
     }
   }
 
-  public ConnectionManeuverAssist() {
-  }
-
   @Override
   public boolean hasExtensionMarker() {
     return true;

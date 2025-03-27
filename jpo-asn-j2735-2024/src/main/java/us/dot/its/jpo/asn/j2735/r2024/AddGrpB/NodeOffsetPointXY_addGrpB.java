@@ -45,9 +45,6 @@ public class NodeOffsetPointXY_addGrpB extends Asn1Choice {
   @JsonProperty("posB")
   private Node_LLdms_80b posB;
 
-  public NodeOffsetPointXY_addGrpB() {
-  }
-
   @Override
   public boolean hasExtensionMarker() {
     return true;
