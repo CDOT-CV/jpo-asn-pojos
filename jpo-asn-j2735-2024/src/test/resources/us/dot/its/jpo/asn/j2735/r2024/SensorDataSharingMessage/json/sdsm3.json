@@ -1,0 +1,209 @@
+{
+    "msgCnt": 42,
+    "sourceID": "4F435445",
+    "equipmentType": "unknown",
+    "sDSMTimeStamp": {
+        "year": 1507,
+        "month": 5,
+        "day": 28,
+        "hour": 7,
+        "minute": 40,
+        "second": 1000,
+        "offset": 212
+    },
+    "refPos": {
+        "lat": -444448659,
+        "long": -1308205759,
+        "elevation": -333
+    },
+    "refPosXYConf": {
+        "semiMajor": 125,
+        "semiMinor": 242,
+        "orientation": 37412
+    },
+    "refPosElConf": "elev-000-50",
+    "objects": [
+        {
+            "detObjCommon": {
+                "objType": "vru",
+                "objTypeCfd": 86,
+                "objectID": 39228,
+                "measurementTime": -681,
+                "timeConfidence": "time-000-100",
+                "pos": {
+                    "offsetX": -11095,
+                    "offsetY": 132,
+                    "offsetZ": -24980
+                },
+                "posConfidence": {
+                    "pos": "a50cm",
+                    "elevation": "elev-010-00"
+                },
+                "speed": 4836,
+                "speedConfidence": "prec0-05ms",
+                "speedZ": 5343,
+                "speedConfidenceZ": "prec5ms",
+                "heading": 7342,
+                "headingConf": "prec01deg",
+                "accel4way": {
+                    "long": -1322,
+                    "lat": 895,
+                    "vert": 82,
+                    "yaw": -9306
+                },
+                "accCfdX": "accl-000-05",
+                "accCfdY": "accl-000-10",
+                "accCfdZ": "accl-000-10",
+                "accCfdYaw": "degSec-010-00"
+            },
+            "detObjOptData": {
+                "detVeh": {
+                    "lights": "0100",
+                    "vehAttitude": {
+                        "pitch": -5764,
+                        "roll": 2036,
+                        "yaw": 10086
+                    },
+                    "vehAttitudeConfidence": {
+                        "pitchConfidence": "prec10deg",
+                        "rollConfidence": "prec01deg",
+                        "yawConfidence": "prec0-1deg"
+                    },
+                    "vehAngVel": {
+                        "pitchRate": 5660,
+                        "rollRate": -13951
+                    },
+                    "vehAngVelConfidence": {
+                        "pitchRateConfidence": "unavailable",
+                        "rollRateConfidence": "degSec-005-00"
+                    },
+                    "size": {
+                        "width": 61,
+                        "length": 614
+                    },
+                    "height": 27,
+                    "vehicleSizeConfidence": {
+                        "vehicleWidthConfidence": "size-002-00",
+                        "vehicleLengthConfidence": "size-100-00",
+                        "vehicleHeightConfidence": "size-000-10"
+                    },
+                    "vehicleClass": 174,
+                    "classConf": 75
+                }
+            }
+        },
+        {
+            "detObjCommon": {
+                "objType": "vru",
+                "objTypeCfd": 51,
+                "objectID": 51547,
+                "measurementTime": 1098,
+                "timeConfidence": "time-000-005",
+                "pos": {
+                    "offsetX": -22539,
+                    "offsetY": 15248,
+                    "offsetZ": 20479
+                },
+                "posConfidence": {
+                    "pos": "a50cm",
+                    "elevation": "elev-500-00"
+                },
+                "speed": 3396,
+                "speedConfidence": "prec0-05ms",
+                "speedZ": 266,
+                "speedConfidenceZ": "prec0-01ms",
+                "heading": 17694,
+                "headingConf": "prec0-01deg",
+                "accel4way": {
+                    "long": -120,
+                    "lat": 738,
+                    "vert": 50,
+                    "yaw": 271
+                },
+                "accCfdX": "accl-100-00",
+                "accCfdY": "accl-010-00",
+                "accCfdZ": "accl-100-00",
+                "accCfdYaw": "degSec-100-00"
+            },
+            "detObjOptData": {
+                "detVeh": {
+                    "lights": "0800",
+                    "vehAttitude": {
+                        "pitch": -5712,
+                        "roll": -3923,
+                        "yaw": 5624
+                    },
+                    "vehAttitudeConfidence": {
+                        "pitchConfidence": "prec01deg",
+                        "rollConfidence": "prec0-1deg",
+                        "yawConfidence": "unavailable"
+                    },
+                    "vehAngVel": {
+                        "pitchRate": -28804,
+                        "rollRate": 27355
+                    },
+                    "vehAngVelConfidence": {
+                        "pitchRateConfidence": "degSec-000-10",
+                        "rollRateConfidence": "degSec-000-05"
+                    },
+                    "size": {
+                        "width": 7,
+                        "length": 3554
+                    },
+                    "height": 110,
+                    "vehicleSizeConfidence": {
+                        "vehicleWidthConfidence": "size-002-00",
+                        "vehicleLengthConfidence": "unavailable",
+                        "vehicleHeightConfidence": "size-000-20"
+                    },
+                    "vehicleClass": 116,
+                    "classConf": 78
+                }
+            }
+        },
+        {
+            "detObjCommon": {
+                "objType": "animal",
+                "objTypeCfd": 80,
+                "objectID": 65160,
+                "measurementTime": -943,
+                "timeConfidence": "time-000-100",
+                "pos": {
+                    "offsetX": 841,
+                    "offsetY": -27265,
+                    "offsetZ": 21326
+                },
+                "posConfidence": {
+                    "pos": "a500m",
+                    "elevation": "elev-000-50"
+                },
+                "speed": 6507,
+                "speedConfidence": "unavailable",
+                "speedZ": 1371,
+                "speedConfidenceZ": "prec0-05ms",
+                "heading": 17561,
+                "headingConf": "prec05deg",
+                "accel4way": {
+                    "long": 923,
+                    "lat": 544,
+                    "vert": -88,
+                    "yaw": 6884
+                },
+                "accCfdX": "accl-000-10",
+                "accCfdY": "accl-000-01",
+                "accCfdZ": "unavailable",
+                "accCfdYaw": "degSec-010-00"
+            },
+            "detObjOptData": {
+                "detVRU": {
+                    "basicType": "aPEDESTRIAN",
+                    "propulsion": {
+                        "animal": "animalMounted"
+                    },
+                    "attachment": "bicycleTrailer",
+                    "radius": 200
+                }
+            }
+        }
+    ]
+}

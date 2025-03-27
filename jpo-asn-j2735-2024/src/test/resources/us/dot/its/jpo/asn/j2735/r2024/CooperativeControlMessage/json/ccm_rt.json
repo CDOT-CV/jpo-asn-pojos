@@ -1,0 +1,103 @@
+{
+    "coreData": {
+        "msgCnt": 36,
+        "id": "E57B854E",
+        "secMark": 25936,
+        "lat": 222366453,
+        "long": -337624764,
+        "elev": 60410,
+        "accuracy": {
+            "semiMajor": 86,
+            "semiMinor": 166,
+            "orientation": 17096
+        },
+        "transmission": "unavailable",
+        "speed": 1560,
+        "heading": 2648,
+        "angle": -125,
+        "accelSet": {
+            "long": 1205,
+            "lat": 239,
+            "vert": 70,
+            "yaw": -4962
+        },
+        "brakes": {
+            "wheelBrakes": "28",
+            "traction": "on",
+            "abs": "on",
+            "scs": "unavailable",
+            "brakeBoost": "off",
+            "auxBrakes": "reserved"
+        },
+        "size": {
+            "width": 329,
+            "length": 1516
+        }
+    },
+    "partII": [
+        {
+            "partII-Id": 2,
+            "partII-Value": {
+                "HeavyTruckCCMExtensions": {
+                    "longCntrlState": "caccMultiple",
+                    "targetId": "52299C50",
+                    "roadGrade": 48,
+                    "brakePedalPos": 139,
+                    "accelPedalPos": 48,
+                    "desiredSpeed": 2811,
+                    "desiredAccel": 1619,
+                    "desiredTorque": 119,
+                    "desiredTmRetarderTorque": 17,
+                    "desiredEngRetarderTorque": 420,
+                    "axesMvmt": {
+                        "yaw": 28318,
+                        "pitch": -4643,
+                        "roll": 1787,
+                        "yawRate": 14069,
+                        "pitchRate": -892,
+                        "rollRate": -550
+                    },
+                    "separationDist": 204,
+                    "totalMass": 1032,
+                    "maxAvailAccel": 563,
+                    "maxAvailDecel": -311,
+                    "ccmFaultMode": "28",
+                    "maneuverID": 84,
+                    "frontCutIn": true
+                }
+            }
+        },
+        {
+            "partII-Id": 2,
+            "partII-Value": {
+                "HeavyTruckCCMExtensions": {
+                    "longCntrlState": "unavailable",
+                    "targetId": "07DACAAA",
+                    "roadGrade": 68,
+                    "brakePedalPos": 106,
+                    "accelPedalPos": 35,
+                    "desiredSpeed": 5653,
+                    "desiredAccel": 1158,
+                    "desiredTorque": 569,
+                    "desiredTmRetarderTorque": 377,
+                    "desiredEngRetarderTorque": 112,
+                    "axesMvmt": {
+                        "yaw": 25243,
+                        "pitch": 3303,
+                        "roll": -2118,
+                        "yawRate": -6511,
+                        "pitchRate": 241,
+                        "rollRate": -42
+                    },
+                    "separationDist": 1514,
+                    "totalMass": 1160,
+                    "maxAvailAccel": 629,
+                    "maxAvailDecel": -121,
+                    "ccmFaultMode": "A0",
+                    "maneuverID": 110,
+                    "frontCutIn": true
+                }
+            }
+        }
+    ]
+}

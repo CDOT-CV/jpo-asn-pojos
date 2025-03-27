@@ -50,5 +50,10 @@ public class SPATTest extends BaseSerializeTest<SPAT> {
         return getResources("/us/dot/its/jpo/asn/j2735/r2024/SPAT/json");
     }
 
-
+    protected static Stream<Arguments> getResources(String directory) {
+        List<String> resources = listAllResourcesInDirectory(directory);
+        var streamBuilder = Stream.<Arguments>builder();
+        resources.forEach(resource -> streamBuilder.add(Arguments.of(resource)));
+        return streamBuilder.build();
+    }
 }

@@ -5,9 +5,12 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
@@ -45,6 +48,8 @@ public abstract class EnumeratedDeserializer<T extends Enum<?> & Asn1Enumerated>
       }
     }
 
-    return null;
+    throw MismatchedInputException.from(jsonParser, getValueType(),
+        String.format("Invalid enum value: %s. Must be one of: %s", name,
+            Stream.of(listEnumValues()).map(Asn1Enumerated::getName).collect(Collectors.joining(", "))));
   }
 }

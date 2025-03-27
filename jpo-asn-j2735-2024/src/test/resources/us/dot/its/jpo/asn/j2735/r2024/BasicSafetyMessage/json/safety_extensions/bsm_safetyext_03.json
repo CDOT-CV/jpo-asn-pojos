@@ -1,0 +1,104 @@
+{
+    "coreData": {
+        "msgCnt": 102,
+        "id": "4F435445",
+        "secMark": 60691,
+        "lat": -511602968,
+        "long": -1366711889,
+        "elev": 16350,
+        "accuracy": {
+            "semiMajor": 213,
+            "semiMinor": 57,
+            "orientation": 38655
+        },
+        "transmission": "reserved3",
+        "speed": 5944,
+        "heading": 16183,
+        "angle": -37,
+        "accelSet": {
+            "long": 888,
+            "lat": 526,
+            "vert": -117,
+            "yaw": -22300
+        },
+        "brakes": {
+            "wheelBrakes": "80",
+            "traction": "off",
+            "abs": "engaged",
+            "scs": "unavailable",
+            "brakeBoost": "off",
+            "auxBrakes": "on"
+        },
+        "size": {
+            "width": 737,
+            "length": 260
+        }
+    },
+    "partII": [
+        {
+            "partII-Id": 0,
+            "partII-Value": {
+                "VehicleSafetyExtensions": {
+                    "events": "8000",
+                    "pathHistory": {
+                        "initialPosition": {
+                            "utcTime": {
+                                "year": 692,
+                                "month": 1,
+                                "day": 23,
+                                "hour": 6,
+                                "minute": 36,
+                                "second": 35368,
+                                "offset": -649
+                            },
+                            "long": 1274449858,
+                            "lat": 664024937,
+                            "elevation": 54204,
+                            "heading": 20319,
+                            "speed": {
+                                "transmisson": "forwardGears",
+                                "speed": 7540
+                            },
+                            "posAccuracy": {
+                                "semiMajor": 77,
+                                "semiMinor": 24,
+                                "orientation": 32580
+                            },
+                            "timeConfidence": "time-050-000",
+                            "posConfidence": {
+                                "pos": "unavailable",
+                                "elevation": "elev-000-10"
+                            },
+                            "speedConfidence": {
+                                "heading": "prec10deg",
+                                "speed": "unavailable",
+                                "throttle": "unavailable"
+                            }
+                        },
+                        "currGNSSstatus": "20",
+                        "crumbData": [
+                            {
+                                "latOffset": 82145,
+                                "lonOffset": -30597,
+                                "elevationOffset": -88,
+                                "timeOffset": 31875,
+                                "speed": 2154,
+                                "posAccuracy": {
+                                    "semiMajor": 201,
+                                    "semiMinor": 159,
+                                    "orientation": 48410
+                                },
+                                "heading": 92
+                            }
+                        ]
+                    },
+                    "pathPrediction": {
+                        "radiusOfCurve": -32035,
+                        "confidence": 118
+                    },
+                    "lights": "0800"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,200 @@
+{
+    "coreData": {
+        "msgCnt": 110,
+        "id": "4F435445",
+        "secMark": 21483,
+        "lat": -491601474,
+        "long": -985885883,
+        "elev": 36364,
+        "accuracy": {
+            "semiMajor": 238,
+            "semiMinor": 4,
+            "orientation": 60660
+        },
+        "transmission": "forwardGears",
+        "speed": 993,
+        "heading": 4989,
+        "angle": -57,
+        "accelSet": {
+            "long": 1321,
+            "lat": -1012,
+            "vert": 104,
+            "yaw": 7460
+        },
+        "brakes": {
+            "wheelBrakes": "80",
+            "traction": "off",
+            "abs": "off",
+            "scs": "engaged",
+            "brakeBoost": "off",
+            "auxBrakes": "on"
+        },
+        "size": {
+            "width": 714,
+            "length": 2501
+        }
+    },
+    "partII": [
+        {
+            "partII-Id": 2,
+            "partII-Value": {
+                "SupplementalVehicleExtensions": {
+                    "classification": 236,
+                    "classDetails": {
+                        "keyType": 75,
+                        "role": "police",
+                        "iso3883": 43,
+                        "hpmsType": "axleCnt3",
+                        "vehicleType": "delivery-vehicles",
+                        "responseEquip": "white-lining-vehicle",
+                        "responderType": "federal-law-enforcement-units",
+                        "fuelType": 6
+                    },
+                    "vehicleData": {
+                        "height": 99,
+                        "bumpers": {
+                            "front": 56,
+                            "rear": 75
+                        },
+                        "mass": 91,
+                        "doNotUse": 32122,
+                        "trailerPresent": true,
+                        "pivotPoint": {
+                            "pivotOffset": -965,
+                            "pivotAngle": 6300,
+                            "pivots": true
+                        },
+                        "axles": {
+                            "totalAxles": -8297857,
+                            "frontAxles": 120863421,
+                            "rearAxles": -15483220
+                        },
+                        "leanAngle": -74
+                    },
+                    "doNotUse1": {
+                        "isRaining": "error",
+                        "rainRate": 47263,
+                        "precipSituation": "frozenPrecipitationSlight",
+                        "solarRadiation": 63546,
+                        "friction": 87,
+                        "roadFriction": 32
+                    },
+                    "doNotUse2": {
+                        "airTemp": 55,
+                        "airPressure": 115,
+                        "rainRates": {
+                            "statusFront": "high",
+                            "rateFront": 63,
+                            "statusRear": "automaticPresent",
+                            "rateRear": 38
+                        }
+                    },
+                    "doNotUse3": {
+                        "obDist": 25685,
+                        "obDirect": 10379,
+                        "locationDetails": "on-ramps",
+                        "dateTime": {
+                            "year": 1639,
+                            "month": 3,
+                            "day": 11,
+                            "hour": 3,
+                            "minute": 49,
+                            "second": 6148,
+                            "offset": -513
+                        },
+                        "vertEvent": "80"
+                    },
+                    "doNotUse4": {
+                        "speedReports": [
+                            28,
+                            9,
+                            30,
+                            7,
+                            22
+                        ]
+                    },
+                    "doNotUse5": {
+                        "rtcmHeader": {
+                            "status": "08",
+                            "offsetSet": {
+                                "antOffsetX": -84,
+                                "antOffsetY": 32,
+                                "antOffsetZ": 347
+                            }
+                        },
+                        "msgs": [
+                            "4F43",
+                            "4F435445"
+                        ]
+                    },
+                    "fhwaVehicleClass": "motorcycles",
+                    "trailers": [
+                        {
+                            "width": 640,
+                            "length": 1234,
+                            "height": 46,
+                            "weight": 7846,
+                            "frontPivot": {
+                                "pivotOffset": -353,
+                                "pivotAngle": 14149,
+                                "pivots": true
+                            },
+                            "rearPivot": {
+                                "pivotOffset": 751,
+                                "pivotAngle": 6997,
+                                "pivots": true
+                            },
+                            "bumpers": {
+                                "front": 57,
+                                "rear": 70
+                            },
+                            "axles": {
+                                "totalAxles": -11341843,
+                                "frontAxles": 124492457,
+                                "rearAxles": 113397696
+                            }
+                        },
+                        {
+                            "width": 128,
+                            "length": 3190,
+                            "height": 4,
+                            "weight": 61004,
+                            "frontPivot": {
+                                "pivotOffset": 941,
+                                "pivotAngle": 23081,
+                                "pivots": true
+                            },
+                            "rearPivot": {
+                                "pivotOffset": -876,
+                                "pivotAngle": 5846,
+                                "pivots": true
+                            },
+                            "bumpers": {
+                                "front": 98,
+                                "rear": 123
+                            },
+                            "axles": {
+                                "totalAxles": 95239805,
+                                "frontAxles": -109538827,
+                                "rearAxles": 48459333
+                            }
+                        }
+                    ],
+                    "schoolBus": {
+                        "flashingAmberLights": true,
+                        "flashingRedLights": true,
+                        "studentsCrossingFront": true,
+                        "studentsCrossingBehind": true,
+                        "studentsLoading": true,
+                        "studentsUnloading": true,
+                        "wheelchairLiftInUse": true,
+                        "emergencyExitOpen": true,
+                        "emergencyRequestMedical": true,
+                        "emergencyRequestFire": true,
+                        "emergencyRequestPolice": true
+                    }
+                }
+            }
+        }
+    ]
+}

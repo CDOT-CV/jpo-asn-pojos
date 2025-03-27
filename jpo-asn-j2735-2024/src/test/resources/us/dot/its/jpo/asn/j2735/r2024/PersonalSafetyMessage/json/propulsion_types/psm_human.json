@@ -1,0 +1,122 @@
+{
+    "basicType": "aPUBLICSAFETYWORKER",
+    "secMark": 64691,
+    "msgCnt": 37,
+    "id": "4F435445",
+    "position": {
+        "lat": -770648241,
+        "long": 1163780874,
+        "elevation": 19470
+    },
+    "accuracy": {
+        "semiMajor": 87,
+        "semiMinor": 88,
+        "orientation": 30058
+    },
+    "speed": 3794,
+    "heading": 16492,
+    "accelSet": {
+        "long": -40,
+        "lat": -863,
+        "vert": 76,
+        "yaw": 11689
+    },
+    "pathHistory": {
+        "initialPosition": {
+            "utcTime": {
+                "year": 3800,
+                "month": 1,
+                "day": 5,
+                "hour": 29,
+                "minute": 38,
+                "second": 35191,
+                "offset": 692
+            },
+            "long": -1094603184,
+            "lat": 659204707,
+            "elevation": 40826,
+            "heading": 557,
+            "speed": {
+                "transmisson": "unavailable",
+                "speed": 946
+            },
+            "posAccuracy": {
+                "semiMajor": 104,
+                "semiMinor": 39,
+                "orientation": 12797
+            },
+            "timeConfidence": "time-000-000-000-001",
+            "posConfidence": {
+                "pos": "a500m",
+                "elevation": "elev-020-00"
+            },
+            "speedConfidence": {
+                "heading": "prec01deg",
+                "speed": "prec5ms",
+                "throttle": "prec10percent"
+            }
+        },
+        "currGNSSstatus": "80",
+        "crumbData": [
+            {
+                "latOffset": -89807,
+                "lonOffset": -99772,
+                "elevationOffset": -1899,
+                "timeOffset": 14635,
+                "speed": 5616,
+                "posAccuracy": {
+                    "semiMajor": 14,
+                    "semiMinor": 234,
+                    "orientation": 28968
+                },
+                "heading": 179
+            },
+            {
+                "latOffset": -115029,
+                "lonOffset": -17021,
+                "elevationOffset": 1933,
+                "timeOffset": 51750,
+                "speed": 8065,
+                "posAccuracy": {
+                    "semiMajor": 58,
+                    "semiMinor": 156,
+                    "orientation": 20946
+                },
+                "heading": 58
+            },
+            {
+                "latOffset": -62888,
+                "lonOffset": -74033,
+                "elevationOffset": -309,
+                "timeOffset": 38127,
+                "speed": 2742,
+                "posAccuracy": {
+                    "semiMajor": 119,
+                    "semiMinor": 37,
+                    "orientation": 62506
+                },
+                "heading": 228
+            }
+        ]
+    },
+    "pathPrediction": {
+        "radiusOfCurve": 15583,
+        "confidence": 192
+    },
+    "propulsion": {
+        "human": "onFoot"
+    },
+    "useState": "0800",
+    "crossRequest": true,
+    "crossState": true,
+    "clusterSize": "small",
+    "clusterRadius": 47,
+    "eventResponderType": "lawEnforcement",
+    "activityType": "08",
+    "activitySubType": "80",
+    "assistType": "08",
+    "sizing": "08",
+    "attachment": "stroller",
+    "attachmentRadius": 183,
+    "animalType": "unavailable"
+}

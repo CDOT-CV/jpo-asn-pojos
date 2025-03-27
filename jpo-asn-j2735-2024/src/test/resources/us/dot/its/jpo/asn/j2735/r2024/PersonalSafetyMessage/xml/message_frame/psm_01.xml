@@ -1,0 +1,131 @@
+<MessageFrame>
+    <messageId>32</messageId>
+    <value>
+        <PersonalSafetyMessage>
+            <basicType>
+                <aPEDESTRIAN />
+            </basicType>
+            <secMark>49141</secMark>
+            <msgCnt>63</msgCnt>
+            <id>4F435445</id>
+            <position>
+                <lat>-283524444</lat>
+                <long>-929410239</long>
+                <elevation>45115</elevation>
+            </position>
+            <accuracy>
+                <semiMajor>242</semiMajor>
+                <semiMinor>196</semiMinor>
+                <orientation>33804</orientation>
+            </accuracy>
+            <speed>2351</speed>
+            <heading>26230</heading>
+            <accelSet>
+                <long>574</long>
+                <lat>-779</lat>
+                <vert>-41</vert>
+                <yaw>17248</yaw>
+            </accelSet>
+            <pathHistory>
+                <initialPosition>
+                    <utcTime>
+                        <year>1609</year>
+                        <month>4</month>
+                        <day>9</day>
+                        <hour>1</hour>
+                        <minute>8</minute>
+                        <second>25326</second>
+                        <offset>682</offset>
+                    </utcTime>
+                    <long>874152033</long>
+                    <lat>408613166</lat>
+                    <elevation>44900</elevation>
+                    <heading>12214</heading>
+                    <speed>
+                        <transmisson>
+                            <forwardGears />
+                        </transmisson>
+                        <speed>6379</speed>
+                    </speed>
+                    <posAccuracy>
+                        <semiMajor>148</semiMajor>
+                        <semiMinor>209</semiMinor>
+                        <orientation>45356</orientation>
+                    </posAccuracy>
+                    <timeConfidence>
+                        <time-000-005 />
+                    </timeConfidence>
+                    <posConfidence>
+                        <pos>
+                            <a50m />
+                        </pos>
+                        <elevation>
+                            <elev-050-00 />
+                        </elevation>
+                    </posConfidence>
+                    <speedConfidence>
+                        <heading>
+                            <prec10deg />
+                        </heading>
+                        <speed>
+                            <prec0-1ms />
+                        </speed>
+                        <throttle>
+                            <unavailable />
+                        </throttle>
+                    </speedConfidence>
+                </initialPosition>
+                <currGNSSstatus>00001000</currGNSSstatus>
+                <crumbData>
+                    <PathHistoryPoint>
+                        <latOffset>127415</latOffset>
+                        <lonOffset>129534</lonOffset>
+                        <elevationOffset>-347</elevationOffset>
+                        <timeOffset>24559</timeOffset>
+                        <speed>5297</speed>
+                        <posAccuracy>
+                            <semiMajor>163</semiMajor>
+                            <semiMinor>141</semiMinor>
+                            <orientation>44545</orientation>
+                        </posAccuracy>
+                        <heading>194</heading>
+                    </PathHistoryPoint>
+                </crumbData>
+            </pathHistory>
+            <pathPrediction>
+                <radiusOfCurve>20378</radiusOfCurve>
+                <confidence>131</confidence>
+            </pathPrediction>
+            <propulsion>
+                <animal>
+                    <animalMounted />
+                </animal>
+            </propulsion>
+            <useState>000010000</useState>
+            <crossRequest>
+                <true />
+            </crossRequest>
+            <crossState>
+                <true />
+            </crossState>
+            <clusterSize>
+                <small />
+            </clusterSize>
+            <clusterRadius>37</clusterRadius>
+            <eventResponderType>
+                <hazmatResponder />
+            </eventResponderType>
+            <activityType>100000</activityType>
+            <activitySubType>0100000</activitySubType>
+            <assistType>000010</assistType>
+            <sizing>00100</sizing>
+            <attachment>
+                <cart />
+            </attachment>
+            <attachmentRadius>102</attachmentRadius>
+            <animalType>
+                <serviceUse />
+            </animalType>
+        </PersonalSafetyMessage>
+    </value>
+</MessageFrame>

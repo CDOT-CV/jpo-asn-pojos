@@ -1,0 +1,544 @@
+{
+    "coreData": {
+        "msgCnt": 95,
+        "id": "4F435445",
+        "secMark": 19189,
+        "lat": 444167730,
+        "long": -470004215,
+        "elev": 34474,
+        "accuracy": {
+            "semiMajor": 181,
+            "semiMinor": 121,
+            "orientation": 9078
+        },
+        "transmission": "reverseGears",
+        "speed": 7393,
+        "heading": 3419,
+        "angle": -107,
+        "accelSet": {
+            "long": 1346,
+            "lat": 694,
+            "vert": 27,
+            "yaw": -6735
+        },
+        "brakes": {
+            "wheelBrakes": "08",
+            "traction": "engaged",
+            "abs": "off",
+            "scs": "off",
+            "brakeBoost": "on",
+            "auxBrakes": "unavailable"
+        },
+        "size": {
+            "width": 867,
+            "length": 1617
+        }
+    },
+    "partII": [
+        {
+            "partII-Id": 0,
+            "partII-Value": {
+                "VehicleSafetyExtensions": {
+                    "events": "0080",
+                    "pathHistory": {
+                        "initialPosition": {
+                            "utcTime": {
+                                "year": 2250,
+                                "month": 3,
+                                "day": 28,
+                                "hour": 2,
+                                "minute": 5,
+                                "second": 56416,
+                                "offset": 384
+                            },
+                            "long": -286581969,
+                            "lat": 333663355,
+                            "elevation": 20862,
+                            "heading": 10858,
+                            "speed": {
+                                "transmisson": "reserved1",
+                                "speed": 4255
+                            },
+                            "posAccuracy": {
+                                "semiMajor": 13,
+                                "semiMinor": 246,
+                                "orientation": 58041
+                            },
+                            "timeConfidence": "time-000-000-000-02",
+                            "posConfidence": {
+                                "pos": "a50cm",
+                                "elevation": "elev-200-00"
+                            },
+                            "speedConfidence": {
+                                "heading": "unavailable",
+                                "speed": "prec10ms",
+                                "throttle": "prec0-5percent"
+                            }
+                        },
+                        "currGNSSstatus": "10",
+                        "crumbData": [
+                            {
+                                "latOffset": 104582,
+                                "lonOffset": -18218,
+                                "elevationOffset": -1065,
+                                "timeOffset": 55570,
+                                "speed": 2455,
+                                "posAccuracy": {
+                                    "semiMajor": 32,
+                                    "semiMinor": 168,
+                                    "orientation": 17272
+                                },
+                                "heading": 64
+                            },
+                            {
+                                "latOffset": 29858,
+                                "lonOffset": -49088,
+                                "elevationOffset": -146,
+                                "timeOffset": 7247,
+                                "speed": 5038,
+                                "posAccuracy": {
+                                    "semiMajor": 16,
+                                    "semiMinor": 255,
+                                    "orientation": 28025
+                                },
+                                "heading": 181
+                            }
+                        ]
+                    },
+                    "pathPrediction": {
+                        "radiusOfCurve": 2395,
+                        "confidence": 84
+                    },
+                    "lights": "4000"
+                }
+            }
+        },
+        {
+            "partII-Id": 1,
+            "partII-Value": {
+                "SpecialVehicleExtensions": {
+                    "vehicleAlerts": {
+                        "doNotUse": 20,
+                        "sirenUse": "unavailable",
+                        "lightsUse": "inUse",
+                        "multi": "unavailable",
+                        "events": {
+                            "doNotUse": 4,
+                            "event": "8000"
+                        },
+                        "responseType": "notInUseOrNotEquipped"
+                    },
+                    "description": {
+                        "typeEvent": 21973,
+                        "description": [
+                            17593,
+                            51615,
+                            36503
+                        ],
+                        "priority": "4F",
+                        "heading": "8000",
+                        "extent": "useInstantlyOnly"
+                    },
+                    "doNotUse": {
+                        "doNotUse": 17,
+                        "connection": {
+                            "pivotOffset": -365,
+                            "pivotAngle": 26006,
+                            "pivots": true
+                        },
+                        "units": [
+                            {
+                                "isDolly": true,
+                                "width": 57,
+                                "length": 2933,
+                                "height": 38,
+                                "mass": 83,
+                                "bumperHeights": {
+                                    "front": 49,
+                                    "rear": 114
+                                },
+                                "centerOfGravity": 57,
+                                "frontPivot": {
+                                    "pivotOffset": -483,
+                                    "pivotAngle": 2524,
+                                    "pivots": true
+                                },
+                                "rearPivot": {
+                                    "pivotOffset": -566,
+                                    "pivotAngle": 27041,
+                                    "pivots": true
+                                },
+                                "rearWheelOffset": 367,
+                                "positionOffset": {
+                                    "x": 596,
+                                    "y": 1129
+                                },
+                                "elevationOffset": -3,
+                                "crumbData": [
+                                    {
+                                        "pivotAngle": 19685,
+                                        "timeOffset": 27979,
+                                        "positionOffset": {
+                                            "x": -928,
+                                            "y": 590
+                                        },
+                                        "elevationOffset": 62,
+                                        "heading": 157
+                                    }
+                                ]
+                            },
+                            {
+                                "isDolly": true,
+                                "width": 424,
+                                "length": 487,
+                                "height": 20,
+                                "mass": 130,
+                                "bumperHeights": {
+                                    "front": 106,
+                                    "rear": 39
+                                },
+                                "centerOfGravity": 120,
+                                "frontPivot": {
+                                    "pivotOffset": 743,
+                                    "pivotAngle": 22659,
+                                    "pivots": true
+                                },
+                                "rearPivot": {
+                                    "pivotOffset": -77,
+                                    "pivotAngle": 9159,
+                                    "pivots": true
+                                },
+                                "rearWheelOffset": -1116,
+                                "positionOffset": {
+                                    "x": 1738,
+                                    "y": 1831
+                                },
+                                "elevationOffset": 28,
+                                "crumbData": [
+                                    {
+                                        "pivotAngle": 19144,
+                                        "timeOffset": 47207,
+                                        "positionOffset": {
+                                            "x": -1922,
+                                            "y": 91
+                                        },
+                                        "elevationOffset": -6,
+                                        "heading": 85
+                                    }
+                                ]
+                            },
+                            {
+                                "isDolly": true,
+                                "width": 712,
+                                "length": 3966,
+                                "height": 3,
+                                "mass": 116,
+                                "bumperHeights": {
+                                    "front": 98,
+                                    "rear": 39
+                                },
+                                "centerOfGravity": 46,
+                                "frontPivot": {
+                                    "pivotOffset": -359,
+                                    "pivotAngle": 5812,
+                                    "pivots": true
+                                },
+                                "rearPivot": {
+                                    "pivotOffset": -226,
+                                    "pivotAngle": 15829,
+                                    "pivots": true
+                                },
+                                "rearWheelOffset": 1775,
+                                "positionOffset": {
+                                    "x": -2047,
+                                    "y": 293
+                                },
+                                "elevationOffset": 36,
+                                "crumbData": [
+                                    {
+                                        "pivotAngle": 347,
+                                        "timeOffset": 50310,
+                                        "positionOffset": {
+                                            "x": -1883,
+                                            "y": 1908
+                                        },
+                                        "elevationOffset": -5,
+                                        "heading": 77
+                                    },
+                                    {
+                                        "pivotAngle": 580,
+                                        "timeOffset": 18510,
+                                        "positionOffset": {
+                                            "x": 348,
+                                            "y": -106
+                                        },
+                                        "elevationOffset": -16,
+                                        "heading": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "isDolly": true,
+                                "width": 970,
+                                "length": 3403,
+                                "height": 41,
+                                "mass": 31,
+                                "bumperHeights": {
+                                    "front": 51,
+                                    "rear": 121
+                                },
+                                "centerOfGravity": 111,
+                                "frontPivot": {
+                                    "pivotOffset": -148,
+                                    "pivotAngle": 12128,
+                                    "pivots": true
+                                },
+                                "rearPivot": {
+                                    "pivotOffset": 504,
+                                    "pivotAngle": 17855,
+                                    "pivots": true
+                                },
+                                "rearWheelOffset": -1956,
+                                "positionOffset": {
+                                    "x": 765,
+                                    "y": 1900
+                                },
+                                "elevationOffset": 2,
+                                "crumbData": [
+                                    {
+                                        "pivotAngle": 985,
+                                        "timeOffset": 62724,
+                                        "positionOffset": {
+                                            "x": -326,
+                                            "y": 759
+                                        },
+                                        "elevationOffset": -14,
+                                        "heading": 54
+                                    },
+                                    {
+                                        "pivotAngle": 27045,
+                                        "timeOffset": 52001,
+                                        "positionOffset": {
+                                            "x": -1205,
+                                            "y": 1262
+                                        },
+                                        "elevationOffset": 10,
+                                        "heading": 137
+                                    },
+                                    {
+                                        "pivotAngle": 5803,
+                                        "timeOffset": 54493,
+                                        "positionOffset": {
+                                            "x": 1723,
+                                            "y": 811
+                                        },
+                                        "elevationOffset": -38,
+                                        "heading": 95
+                                    },
+                                    {
+                                        "pivotAngle": 21867,
+                                        "timeOffset": 6396,
+                                        "positionOffset": {
+                                            "x": -311,
+                                            "y": -933
+                                        },
+                                        "elevationOffset": -45,
+                                        "heading": 202
+                                    }
+                                ]
+                            },
+                            {
+                                "isDolly": true,
+                                "width": 137,
+                                "length": 3731,
+                                "height": 53,
+                                "mass": 198,
+                                "bumperHeights": {
+                                    "front": 106,
+                                    "rear": 90
+                                },
+                                "centerOfGravity": 87,
+                                "frontPivot": {
+                                    "pivotOffset": -238,
+                                    "pivotAngle": 27476,
+                                    "pivots": true
+                                },
+                                "rearPivot": {
+                                    "pivotOffset": 344,
+                                    "pivotAngle": 26588,
+                                    "pivots": true
+                                },
+                                "rearWheelOffset": 1300,
+                                "positionOffset": {
+                                    "x": 1005,
+                                    "y": -7
+                                },
+                                "elevationOffset": -30,
+                                "crumbData": [
+                                    {
+                                        "pivotAngle": 7866,
+                                        "timeOffset": 21029,
+                                        "positionOffset": {
+                                            "x": 451,
+                                            "y": 1037
+                                        },
+                                        "elevationOffset": 8,
+                                        "heading": 49
+                                    },
+                                    {
+                                        "pivotAngle": 3323,
+                                        "timeOffset": 29761,
+                                        "positionOffset": {
+                                            "x": -1211,
+                                            "y": 527
+                                        },
+                                        "elevationOffset": -59,
+                                        "heading": 184
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "partII-Id": 2,
+            "partII-Value": {
+                "SupplementalVehicleExtensions": {
+                    "classification": 78,
+                    "classDetails": {
+                        "keyType": 117,
+                        "role": "pedestrian",
+                        "iso3883": 82,
+                        "hpmsType": "axleCnt7MultiTrailer",
+                        "vehicleType": "vehicles-with-odd-numbered-license-plates",
+                        "responseEquip": "boat-no-pump",
+                        "responderType": "transportation-response-units",
+                        "fuelType": 1
+                    },
+                    "vehicleData": {
+                        "height": 116,
+                        "bumpers": {
+                            "front": 18,
+                            "rear": 76
+                        },
+                        "mass": 13,
+                        "doNotUse": 51879,
+                        "trailerPresent": true,
+                        "pivotPoint": {
+                            "pivotOffset": -726,
+                            "pivotAngle": 6355,
+                            "pivots": true
+                        },
+                        "axles": {
+                            "totalAxles": -59102659,
+                            "frontAxles": 82548063,
+                            "rearAxles": 83191672
+                        },
+                        "leanAngle": 40
+                    },
+                    "doNotUse1": {
+                        "isRaining": "noPrecip",
+                        "rainRate": 20588,
+                        "precipSituation": "unidentifiedHeavy",
+                        "solarRadiation": 37642,
+                        "friction": 17,
+                        "roadFriction": 26
+                    },
+                    "doNotUse2": {
+                        "airTemp": 153,
+                        "airPressure": 105,
+                        "rainRates": {
+                            "statusFront": "intermittent",
+                            "rateFront": 58,
+                            "statusRear": "unavailable",
+                            "rateRear": 30
+                        }
+                    },
+                    "doNotUse3": {
+                        "obDist": 6378,
+                        "obDirect": 9485,
+                        "locationDetails": "north",
+                        "dateTime": {
+                            "year": 1149,
+                            "month": 10,
+                            "day": 12,
+                            "hour": 22,
+                            "minute": 22,
+                            "second": 57042,
+                            "offset": -819
+                        },
+                        "vertEvent": "20"
+                    },
+                    "doNotUse4": {
+                        "speedReports": [
+                            16,
+                            31,
+                            8,
+                            23,
+                            25
+                        ]
+                    },
+                    "doNotUse5": {
+                        "rtcmHeader": {
+                            "status": "40",
+                            "offsetSet": {
+                                "antOffsetX": 1736,
+                                "antOffsetY": 170,
+                                "antOffsetZ": -321
+                            }
+                        },
+                        "msgs": [
+                            "4F4354",
+                            "4F43",
+                            "4F43",
+                            "4F4354"
+                        ]
+                    },
+                    "fhwaVehicleClass": "sixOrMoreAxleSingleTrailerTrucks",
+                    "trailers": [
+                        {
+                            "width": 186,
+                            "length": 2021,
+                            "height": 45,
+                            "weight": 31553,
+                            "frontPivot": {
+                                "pivotOffset": 671,
+                                "pivotAngle": 68,
+                                "pivots": true
+                            },
+                            "rearPivot": {
+                                "pivotOffset": -310,
+                                "pivotAngle": 4626,
+                                "pivots": true
+                            },
+                            "bumpers": {
+                                "front": 103,
+                                "rear": 25
+                            },
+                            "axles": {
+                                "totalAxles": 88766786,
+                                "frontAxles": -27398972,
+                                "rearAxles": 113972590
+                            }
+                        }
+                    ],
+                    "schoolBus": {
+                        "flashingAmberLights": true,
+                        "flashingRedLights": true,
+                        "studentsCrossingFront": true,
+                        "studentsCrossingBehind": true,
+                        "studentsLoading": true,
+                        "studentsUnloading": true,
+                        "wheelchairLiftInUse": true,
+                        "emergencyExitOpen": true,
+                        "emergencyRequestMedical": true,
+                        "emergencyRequestFire": true,
+                        "emergencyRequestPolice": true
+                    }
+                }
+            }
+        }
+    ]
+}

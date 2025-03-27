@@ -1,0 +1,1308 @@
+{
+    "timeStamp": 325384,
+    "msgIssueRevision": 108,
+    "layerType": "roadwaySectionData",
+    "layerID": 30,
+    "intersections": [
+        {
+            "name": "IA",
+            "id": {
+                "region": 42751,
+                "id": 12316
+            },
+            "revision": 13,
+            "refPoint": {
+                "lat": -445910333,
+                "long": 491834784,
+                "elevation": 60613
+            },
+            "laneWidth": 601,
+            "speedLimits": [
+                {
+                    "type": "vehiclesWithTrailersNightMaxSpeed",
+                    "speed": 2100
+                },
+                {
+                    "type": "truckNightMaxSpeed",
+                    "speed": 2661
+                },
+                {
+                    "type": "vehicleNightMaxSpeed",
+                    "speed": 5660
+                },
+                {
+                    "type": "truckNightMaxSpeed",
+                    "speed": 7970
+                }
+            ],
+            "laneSet": [
+                {
+                    "laneID": 64,
+                    "name": "IA5St",
+                    "ingressApproach": 3,
+                    "egressApproach": 1,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0040",
+                        "laneType": {
+                            "striping": "8000"
+                        }
+                    },
+                    "maneuvers": "2000",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 216,
+                            "offsetXaxis": {
+                                "large": -23146
+                            },
+                            "offsetYaxis": {
+                                "small": 227
+                            },
+                            "rotateXY": 4029,
+                            "scaleXaxis": 1639,
+                            "scaleYaxis": -368
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 137,
+                                "maneuver": "1000"
+                            },
+                            "remoteIntersection": {
+                                "region": 29356,
+                                "id": 6414
+                            },
+                            "signalGroup": 82,
+                            "userClass": 98,
+                            "connectionID": 246
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 81,
+                                "maneuver": "0080"
+                            },
+                            "remoteIntersection": {
+                                "region": 39440,
+                                "id": 23980
+                            },
+                            "signalGroup": 100,
+                            "userClass": 193,
+                            "connectionID": 68
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 153,
+                                "maneuver": "0100"
+                            },
+                            "remoteIntersection": {
+                                "region": 35154,
+                                "id": 22344
+                            },
+                            "signalGroup": 216,
+                            "userClass": 157,
+                            "connectionID": 201
+                        }
+                    ],
+                    "overlays": [
+                        213
+                    ]
+                },
+                {
+                    "laneID": 90,
+                    "name": "I",
+                    "ingressApproach": 12,
+                    "egressApproach": 8,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "8000",
+                        "laneType": {
+                            "median": "8000"
+                        }
+                    },
+                    "maneuvers": "4000",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY3": {
+                                        "x": -708,
+                                        "y": -1528
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": 4729,
+                                        "y": -2492
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY4": {
+                                        "x": -3310,
+                                        "y": 1787
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 189,
+                                "maneuver": "0020"
+                            },
+                            "remoteIntersection": {
+                                "region": 25920,
+                                "id": 19704
+                            },
+                            "signalGroup": 200,
+                            "userClass": 72,
+                            "connectionID": 142
+                        }
+                    ],
+                    "overlays": [
+                        93,
+                        216,
+                        202,
+                        36,
+                        229
+                    ]
+                },
+                {
+                    "laneID": 196,
+                    "name": "IA5S",
+                    "ingressApproach": 5,
+                    "egressApproach": 13,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0100",
+                        "laneType": {
+                            "striping": "8000"
+                        }
+                    },
+                    "maneuvers": "2000",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 0,
+                            "offsetXaxis": {
+                                "small": -748
+                            },
+                            "offsetYaxis": {
+                                "small": -1571
+                            },
+                            "rotateXY": 3701,
+                            "scaleXaxis": 1236,
+                            "scaleYaxis": 1871
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 115,
+                                "maneuver": "0200"
+                            },
+                            "remoteIntersection": {
+                                "region": 1362,
+                                "id": 32667
+                            },
+                            "signalGroup": 214,
+                            "userClass": 93,
+                            "connectionID": 201
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 221,
+                                "maneuver": "0020"
+                            },
+                            "remoteIntersection": {
+                                "region": 14324,
+                                "id": 47049
+                            },
+                            "signalGroup": 151,
+                            "userClass": 22,
+                            "connectionID": 19
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 64,
+                                "maneuver": "0040"
+                            },
+                            "remoteIntersection": {
+                                "region": 52550,
+                                "id": 58369
+                            },
+                            "signalGroup": 218,
+                            "userClass": 72,
+                            "connectionID": 194
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 88,
+                                "maneuver": "1000"
+                            },
+                            "remoteIntersection": {
+                                "region": 29976,
+                                "id": 21795
+                            },
+                            "signalGroup": 145,
+                            "userClass": 131,
+                            "connectionID": 177
+                        }
+                    ],
+                    "overlays": [
+                        197,
+                        232,
+                        241,
+                        140,
+                        116
+                    ]
+                },
+                {
+                    "laneID": 242,
+                    "name": "IA",
+                    "ingressApproach": 13,
+                    "egressApproach": 6,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0100",
+                        "laneType": {
+                            "bikeLane": "1000"
+                        }
+                    },
+                    "maneuvers": "1000",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY2": {
+                                        "x": 618,
+                                        "y": 753
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-LatLon": {
+                                        "lon": -329143929,
+                                        "lat": 241704754
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY1": {
+                                        "x": 55,
+                                        "y": 500
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY4": {
+                                        "x": 781,
+                                        "y": 2997
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY6": {
+                                        "x": -23814,
+                                        "y": -21037
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 246,
+                                "maneuver": "0100"
+                            },
+                            "remoteIntersection": {
+                                "region": 60039,
+                                "id": 2964
+                            },
+                            "signalGroup": 213,
+                            "userClass": 43,
+                            "connectionID": 216
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 111,
+                                "maneuver": "0010"
+                            },
+                            "remoteIntersection": {
+                                "region": 37070,
+                                "id": 35586
+                            },
+                            "signalGroup": 118,
+                            "userClass": 7,
+                            "connectionID": 18
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 216,
+                                "maneuver": "0800"
+                            },
+                            "remoteIntersection": {
+                                "region": 5532,
+                                "id": 53708
+                            },
+                            "signalGroup": 159,
+                            "userClass": 212,
+                            "connectionID": 184
+                        }
+                    ],
+                    "overlays": [
+                        240,
+                        25,
+                        130,
+                        145,
+                        134
+                    ]
+                },
+                {
+                    "laneID": 172,
+                    "name": "I",
+                    "ingressApproach": 13,
+                    "egressApproach": 14,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "8000",
+                        "laneType": {
+                            "bikeLane": "0200"
+                        }
+                    },
+                    "maneuvers": "1000",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 41,
+                            "offsetXaxis": {
+                                "large": -7023
+                            },
+                            "offsetYaxis": {
+                                "large": -15000
+                            },
+                            "rotateXY": 1681,
+                            "scaleXaxis": 1314,
+                            "scaleYaxis": 1967
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 242,
+                                "maneuver": "0010"
+                            },
+                            "remoteIntersection": {
+                                "region": 14258,
+                                "id": 40532
+                            },
+                            "signalGroup": 94,
+                            "userClass": 153,
+                            "connectionID": 136
+                        }
+                    ],
+                    "overlays": [
+                        180,
+                        218,
+                        201
+                    ]
+                }
+            ],
+            "roadAuthorityID": {
+                "relRdAuthID": "17794.63498.55061.53072"
+            }
+        },
+        {
+            "name": "IA",
+            "id": {
+                "region": 11254,
+                "id": 21808
+            },
+            "revision": 104,
+            "refPoint": {
+                "lat": 330682078,
+                "long": -940002797,
+                "elevation": -3100
+            },
+            "laneWidth": 22777,
+            "speedLimits": [
+                {
+                    "type": "maxSpeedInSchoolZone",
+                    "speed": 2387
+                }
+            ],
+            "laneSet": [
+                {
+                    "laneID": 120,
+                    "name": "IA",
+                    "ingressApproach": 4,
+                    "egressApproach": 15,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0080",
+                        "laneType": {
+                            "trackedVehicle": "8000"
+                        }
+                    },
+                    "maneuvers": "0100",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 17,
+                            "offsetXaxis": {
+                                "large": -30607
+                            },
+                            "offsetYaxis": {
+                                "large": -8867
+                            },
+                            "rotateXY": 20215,
+                            "scaleXaxis": -1431,
+                            "scaleYaxis": 365
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 36,
+                                "maneuver": "0400"
+                            },
+                            "remoteIntersection": {
+                                "region": 54657,
+                                "id": 30068
+                            },
+                            "signalGroup": 66,
+                            "userClass": 220,
+                            "connectionID": 234
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 60,
+                                "maneuver": "0800"
+                            },
+                            "remoteIntersection": {
+                                "region": 58967,
+                                "id": 27381
+                            },
+                            "signalGroup": 127,
+                            "userClass": 93,
+                            "connectionID": 96
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 70,
+                                "maneuver": "0020"
+                            },
+                            "remoteIntersection": {
+                                "region": 42537,
+                                "id": 35277
+                            },
+                            "signalGroup": 191,
+                            "userClass": 71,
+                            "connectionID": 190
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 189,
+                                "maneuver": "0400"
+                            },
+                            "remoteIntersection": {
+                                "region": 44166,
+                                "id": 55825
+                            },
+                            "signalGroup": 121,
+                            "userClass": 223,
+                            "connectionID": 23
+                        }
+                    ],
+                    "overlays": [
+                        14,
+                        255,
+                        3,
+                        89
+                    ]
+                },
+                {
+                    "laneID": 105,
+                    "name": "IA5St",
+                    "ingressApproach": 1,
+                    "egressApproach": 8,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0400",
+                        "laneType": {
+                            "sidewalk": "4000"
+                        }
+                    },
+                    "maneuvers": "0040",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY6": {
+                                        "x": 17357,
+                                        "y": -14382
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-LatLon": {
+                                        "lon": -1349552777,
+                                        "lat": 1252162
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 91,
+                                "maneuver": "0020"
+                            },
+                            "remoteIntersection": {
+                                "region": 6091,
+                                "id": 2603
+                            },
+                            "signalGroup": 139,
+                            "userClass": 45,
+                            "connectionID": 192
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 95,
+                                "maneuver": "8000"
+                            },
+                            "remoteIntersection": {
+                                "region": 15182,
+                                "id": 9694
+                            },
+                            "signalGroup": 47,
+                            "userClass": 52,
+                            "connectionID": 137
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 141,
+                                "maneuver": "0010"
+                            },
+                            "remoteIntersection": {
+                                "region": 51177,
+                                "id": 25570
+                            },
+                            "signalGroup": 74,
+                            "userClass": 83,
+                            "connectionID": 134
+                        }
+                    ],
+                    "overlays": [
+                        95,
+                        9,
+                        128
+                    ]
+                },
+                {
+                    "laneID": 241,
+                    "name": "IA5St",
+                    "ingressApproach": 13,
+                    "egressApproach": 8,
+                    "laneAttributes": {
+                        "directionalUse": "40",
+                        "sharedWith": "2000",
+                        "laneType": {
+                            "median": "1000"
+                        }
+                    },
+                    "maneuvers": "0100",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY4": {
+                                        "x": 2325,
+                                        "y": 467
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY6": {
+                                        "x": 25537,
+                                        "y": -14654
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY4": {
+                                        "x": -4029,
+                                        "y": 202
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-LatLon": {
+                                        "lon": -898259329,
+                                        "lat": 446700025
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY1": {
+                                        "x": -396,
+                                        "y": -72
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 227,
+                                "maneuver": "8000"
+                            },
+                            "remoteIntersection": {
+                                "region": 32172,
+                                "id": 21515
+                            },
+                            "signalGroup": 105,
+                            "userClass": 80,
+                            "connectionID": 213
+                        }
+                    ],
+                    "overlays": [
+                        41,
+                        195,
+                        15,
+                        74,
+                        15
+                    ]
+                },
+                {
+                    "laneID": 246,
+                    "name": "IA5",
+                    "ingressApproach": 12,
+                    "egressApproach": 14,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "8000",
+                        "laneType": {
+                            "sidewalk": "2000"
+                        }
+                    },
+                    "maneuvers": "0020",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY4": {
+                                        "x": -2088,
+                                        "y": 2402
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": 4325,
+                                        "y": 2010
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY3": {
+                                        "x": 533,
+                                        "y": 1844
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": -4201,
+                                        "y": 6469
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": 6514,
+                                        "y": -5562
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY4": {
+                                        "x": -1095,
+                                        "y": 1138
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 196,
+                                "maneuver": "4000"
+                            },
+                            "remoteIntersection": {
+                                "region": 38482,
+                                "id": 45778
+                            },
+                            "signalGroup": 125,
+                            "userClass": 178,
+                            "connectionID": 5
+                        }
+                    ],
+                    "overlays": [
+                        2,
+                        136,
+                        48,
+                        87,
+                        147
+                    ]
+                }
+            ],
+            "roadAuthorityID": {
+                "relRdAuthID": "22083"
+            }
+        },
+        {
+            "name": "I",
+            "id": {
+                "region": 36233,
+                "id": 26713
+            },
+            "revision": 26,
+            "refPoint": {
+                "lat": -51611949,
+                "long": -1342338183,
+                "elevation": 10419
+            },
+            "laneWidth": 2443,
+            "speedLimits": [
+                {
+                    "type": "vehiclesWithTrailersNightMaxSpeed",
+                    "speed": 2573
+                },
+                {
+                    "type": "truckNightMaxSpeed",
+                    "speed": 3047
+                },
+                {
+                    "type": "maxSpeedInSchoolZoneWhenChildrenArePresent",
+                    "speed": 5171
+                },
+                {
+                    "type": "vehicleMinSpeed",
+                    "speed": 4223
+                }
+            ],
+            "laneSet": [
+                {
+                    "laneID": 231,
+                    "name": "IA5St",
+                    "ingressApproach": 12,
+                    "egressApproach": 1,
+                    "laneAttributes": {
+                        "directionalUse": "40",
+                        "sharedWith": "8000",
+                        "laneType": {
+                            "bikeLane": "0400"
+                        }
+                    },
+                    "maneuvers": "0040",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 78,
+                            "offsetXaxis": {
+                                "small": -435
+                            },
+                            "offsetYaxis": {
+                                "small": 1572
+                            },
+                            "rotateXY": 26464,
+                            "scaleXaxis": -1013,
+                            "scaleYaxis": 312
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 28,
+                                "maneuver": "0080"
+                            },
+                            "remoteIntersection": {
+                                "region": 57990,
+                                "id": 32178
+                            },
+                            "signalGroup": 156,
+                            "userClass": 66,
+                            "connectionID": 63
+                        }
+                    ],
+                    "overlays": [
+                        240,
+                        66,
+                        160,
+                        196,
+                        174
+                    ]
+                },
+                {
+                    "laneID": 106,
+                    "name": "IA5",
+                    "ingressApproach": 6,
+                    "egressApproach": 3,
+                    "laneAttributes": {
+                        "directionalUse": "40",
+                        "sharedWith": "2000",
+                        "laneType": {
+                            "median": "2000"
+                        }
+                    },
+                    "maneuvers": "2000",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY3": {
+                                        "x": 1852,
+                                        "y": 1391
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY1": {
+                                        "x": -76,
+                                        "y": 475
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-LatLon": {
+                                        "lon": -1426252727,
+                                        "lat": -641968840
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY1": {
+                                        "x": 101,
+                                        "y": -400
+                                    }
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": -6709,
+                                        "y": 3765
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 73,
+                                "maneuver": "0400"
+                            },
+                            "remoteIntersection": {
+                                "region": 58169,
+                                "id": 59263
+                            },
+                            "signalGroup": 13,
+                            "userClass": 35,
+                            "connectionID": 31
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 115,
+                                "maneuver": "2000"
+                            },
+                            "remoteIntersection": {
+                                "region": 54474,
+                                "id": 24667
+                            },
+                            "signalGroup": 238,
+                            "userClass": 149,
+                            "connectionID": 236
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 127,
+                                "maneuver": "0200"
+                            },
+                            "remoteIntersection": {
+                                "region": 16789,
+                                "id": 6365
+                            },
+                            "signalGroup": 96,
+                            "userClass": 147,
+                            "connectionID": 159
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 174,
+                                "maneuver": "0010"
+                            },
+                            "remoteIntersection": {
+                                "region": 63764,
+                                "id": 12429
+                            },
+                            "signalGroup": 1,
+                            "userClass": 25,
+                            "connectionID": 84
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 117,
+                                "maneuver": "0040"
+                            },
+                            "remoteIntersection": {
+                                "region": 33625,
+                                "id": 10559
+                            },
+                            "signalGroup": 93,
+                            "userClass": 82,
+                            "connectionID": 158
+                        }
+                    ],
+                    "overlays": [
+                        68,
+                        159,
+                        255,
+                        12,
+                        141
+                    ]
+                },
+                {
+                    "laneID": 254,
+                    "name": "IA5",
+                    "ingressApproach": 11,
+                    "egressApproach": 0,
+                    "laneAttributes": {
+                        "directionalUse": "40",
+                        "sharedWith": "8000",
+                        "laneType": {
+                            "median": "0080"
+                        }
+                    },
+                    "maneuvers": "0020",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 58,
+                            "offsetXaxis": {
+                                "large": -17001
+                            },
+                            "offsetYaxis": {
+                                "small": 895
+                            },
+                            "rotateXY": 6680,
+                            "scaleXaxis": 365,
+                            "scaleYaxis": 148
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 99,
+                                "maneuver": "0100"
+                            },
+                            "remoteIntersection": {
+                                "region": 37048,
+                                "id": 510
+                            },
+                            "signalGroup": 125,
+                            "userClass": 92,
+                            "connectionID": 64
+                        }
+                    ],
+                    "overlays": [
+                        119,
+                        49,
+                        253,
+                        246
+                    ]
+                },
+                {
+                    "laneID": 114,
+                    "name": "IA",
+                    "ingressApproach": 4,
+                    "egressApproach": 8,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0400",
+                        "laneType": {
+                            "median": "0800"
+                        }
+                    },
+                    "maneuvers": "0020",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 94,
+                            "offsetXaxis": {
+                                "small": 1844
+                            },
+                            "offsetYaxis": {
+                                "large": -31232
+                            },
+                            "rotateXY": 22908,
+                            "scaleXaxis": 41,
+                            "scaleYaxis": -1284
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 254,
+                                "maneuver": "0010"
+                            },
+                            "remoteIntersection": {
+                                "region": 4795,
+                                "id": 33574
+                            },
+                            "signalGroup": 160,
+                            "userClass": 186,
+                            "connectionID": 48
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 25,
+                                "maneuver": "0100"
+                            },
+                            "remoteIntersection": {
+                                "region": 1346,
+                                "id": 60042
+                            },
+                            "signalGroup": 112,
+                            "userClass": 178,
+                            "connectionID": 34
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 150,
+                                "maneuver": "0800"
+                            },
+                            "remoteIntersection": {
+                                "region": 63646,
+                                "id": 17377
+                            },
+                            "signalGroup": 155,
+                            "userClass": 62,
+                            "connectionID": 73
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 1,
+                                "maneuver": "0800"
+                            },
+                            "remoteIntersection": {
+                                "region": 7551,
+                                "id": 62789
+                            },
+                            "signalGroup": 59,
+                            "userClass": 61,
+                            "connectionID": 52
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 176,
+                                "maneuver": "0800"
+                            },
+                            "remoteIntersection": {
+                                "region": 15207,
+                                "id": 28694
+                            },
+                            "signalGroup": 255,
+                            "userClass": 130,
+                            "connectionID": 136
+                        }
+                    ],
+                    "overlays": [
+                        49,
+                        225
+                    ]
+                }
+            ],
+            "roadAuthorityID": {
+                "fullRdAuthID": "2.0.375"
+            }
+        }
+    ],
+    "roadSegments": [
+        {
+            "name": "IA5",
+            "id": {
+                "region": 34067,
+                "id": 61307
+            },
+            "revision": 42,
+            "refPoint": {
+                "lat": -644351389,
+                "long": 504484487,
+                "elevation": 24743
+            },
+            "laneWidth": 11915,
+            "speedLimits": [
+                {
+                    "type": "truckMaxSpeed",
+                    "speed": 2054
+                },
+                {
+                    "type": "truckMinSpeed",
+                    "speed": 1058
+                },
+                {
+                    "type": "maxSpeedInSchoolZone",
+                    "speed": 7402
+                },
+                {
+                    "type": "vehicleNightMaxSpeed",
+                    "speed": 2712
+                },
+                {
+                    "type": "vehiclesWithTrailersNightMaxSpeed",
+                    "speed": 1127
+                }
+            ],
+            "roadLaneSet": [
+                {
+                    "laneID": 229,
+                    "name": "IA",
+                    "ingressApproach": 12,
+                    "egressApproach": 14,
+                    "laneAttributes": {
+                        "directionalUse": "80",
+                        "sharedWith": "0800",
+                        "laneType": {
+                            "bikeLane": "1000"
+                        }
+                    },
+                    "maneuvers": "1000",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 112,
+                            "offsetXaxis": {
+                                "small": -854
+                            },
+                            "offsetYaxis": {
+                                "small": 1738
+                            },
+                            "rotateXY": 2764,
+                            "scaleXaxis": 1502,
+                            "scaleYaxis": -1645
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 180,
+                                "maneuver": "1000"
+                            },
+                            "remoteIntersection": {
+                                "region": 14304,
+                                "id": 11602
+                            },
+                            "signalGroup": 227,
+                            "userClass": 49,
+                            "connectionID": 24
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 21,
+                                "maneuver": "0010"
+                            },
+                            "remoteIntersection": {
+                                "region": 25234,
+                                "id": 45679
+                            },
+                            "signalGroup": 199,
+                            "userClass": 226,
+                            "connectionID": 169
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 125,
+                                "maneuver": "1000"
+                            },
+                            "remoteIntersection": {
+                                "region": 57240,
+                                "id": 46104
+                            },
+                            "signalGroup": 113,
+                            "userClass": 182,
+                            "connectionID": 42
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 43,
+                                "maneuver": "0200"
+                            },
+                            "remoteIntersection": {
+                                "region": 17090,
+                                "id": 54747
+                            },
+                            "signalGroup": 48,
+                            "userClass": 157,
+                            "connectionID": 172
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 21,
+                                "maneuver": "0400"
+                            },
+                            "remoteIntersection": {
+                                "region": 32798,
+                                "id": 15077
+                            },
+                            "signalGroup": 212,
+                            "userClass": 5,
+                            "connectionID": 79
+                        }
+                    ],
+                    "overlays": [
+                        99,
+                        200,
+                        219
+                    ]
+                }
+            ]
+        }
+    ],
+    "dataParameters": {
+        "processMethod": "I",
+        "processAgency": "IA5S",
+        "lastCheckedDate": "IA",
+        "geoidUsed": "IA5"
+    },
+    "restrictionList": [
+        {
+            "id": 145,
+            "users": [
+                {
+                    "basicType": "none"
+                }
+            ]
+        }
+    ]
+}
