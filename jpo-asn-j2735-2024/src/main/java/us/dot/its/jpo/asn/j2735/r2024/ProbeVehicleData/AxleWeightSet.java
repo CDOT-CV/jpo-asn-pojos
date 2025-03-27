@@ -47,6 +47,8 @@ public class AxleWeightSet extends Asn1Sequence {
   @JsonProperty("weight")
   private AxleWeight weight;
 
+  public AxleWeightSet() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

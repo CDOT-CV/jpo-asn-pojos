@@ -60,6 +60,8 @@ public class SituationalContainer extends Asn1Sequence {
   @JsonProperty("applicableRegion")
   private RegionInfo applicableRegion;
 
+  public SituationalContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

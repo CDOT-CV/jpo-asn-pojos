@@ -65,6 +65,8 @@ public class TollUsageAckMessage extends Asn1Sequence {
     }
   }
 
+  public TollUsageAckMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

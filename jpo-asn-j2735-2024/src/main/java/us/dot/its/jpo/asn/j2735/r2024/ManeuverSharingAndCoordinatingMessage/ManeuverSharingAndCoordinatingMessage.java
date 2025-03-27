@@ -91,6 +91,8 @@ public class ManeuverSharingAndCoordinatingMessage extends Asn1Sequence {
   @JsonProperty("maneuverExecutionStatus")
   private ManeuverExecutionStatus maneuverExecutionStatus;
 
+  public ManeuverSharingAndCoordinatingMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

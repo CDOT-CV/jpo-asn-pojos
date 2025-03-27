@@ -188,4 +188,6 @@ public class ITISEventType extends Asn1Choice {
   @Asn1Property(tag = 37, name = "regulatorySigns")
   @JsonProperty("regulatorySigns")
   private RegulatoryAndWarningSigns regulatorySigns;
+
+  public ITISEventType() {}
 }

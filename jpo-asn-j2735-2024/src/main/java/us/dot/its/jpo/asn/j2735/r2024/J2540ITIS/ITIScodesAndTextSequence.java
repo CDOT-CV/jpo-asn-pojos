@@ -56,5 +56,9 @@ public class ITIScodesAndTextSequence extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "text")
     @JsonProperty("text")
     private ITIStext text;
+
+    public ItemChoice() {}
   }
+
+  public ITIScodesAndTextSequence() {}
 }

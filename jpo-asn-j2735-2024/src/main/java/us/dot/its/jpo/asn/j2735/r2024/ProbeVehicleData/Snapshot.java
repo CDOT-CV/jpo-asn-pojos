@@ -53,6 +53,8 @@ public class Snapshot extends Asn1Sequence {
   @JsonProperty("dataSet")
   private VehicleStatus dataSet;
 
+  public Snapshot() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

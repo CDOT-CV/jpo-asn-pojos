@@ -55,6 +55,8 @@ public class RoadUserChargingConfigMessage extends Asn1Sequence {
     }
   }
 
+  public RoadUserChargingConfigMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

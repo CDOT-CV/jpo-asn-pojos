@@ -43,6 +43,8 @@ public class Grass extends Asn1Sequence {
   @JsonProperty("type")
   private GrassType type;
 
+  public Grass() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

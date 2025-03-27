@@ -51,6 +51,8 @@ public class Position3D_addGrpB extends Asn1Sequence {
   @JsonProperty("elevation")
   private Elevation elevation;
 
+  public Position3D_addGrpB() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

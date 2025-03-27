@@ -65,6 +65,8 @@ public class Segment extends Asn1Sequence {
     }
   }
 
+  public Segment() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

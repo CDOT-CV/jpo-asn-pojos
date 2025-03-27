@@ -46,4 +46,6 @@ public class AngularVelocityConfidence extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "rollRateConfidence", optional = true)
   @JsonProperty("rollRateConfidence")
   private RollRateConfidence rollRateConfidence;
+
+  public AngularVelocityConfidence() {}
 }

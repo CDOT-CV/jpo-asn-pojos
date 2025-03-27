@@ -65,6 +65,8 @@ public class LightVehicleCCMExtensions extends Asn1Sequence {
   @JsonProperty("frontCutIn")
   private FrontCutIn frontCutIn;
 
+  public LightVehicleCCMExtensions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

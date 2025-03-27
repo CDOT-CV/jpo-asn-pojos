@@ -73,6 +73,8 @@ public class CfgLowSpeedCriteria extends Asn1Sequence {
     }
   }
 
+  public CfgLowSpeedCriteria() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -56,6 +56,8 @@ public class TrailerData extends Asn1Sequence {
   @JacksonXmlProperty(localName = "TrailerUnitDescription")
   private TrailerUnitDescriptionList units;
 
+  public TrailerData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

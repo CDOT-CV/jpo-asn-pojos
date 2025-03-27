@@ -122,6 +122,8 @@ public class TravelerDataFrame extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "roadSignID")
     @JsonProperty("roadSignID")
     private RoadSignID roadSignID;
+
+    public MsgIdChoice() {}
   }
 
   @JsonInclude(Include.NON_NULL)
@@ -165,7 +167,11 @@ public class TravelerDataFrame extends Asn1Sequence {
     @JsonDeserialize(using = ExitServiceDeserializer.class)
     @JsonSerialize(using = ExitServiceSerializer.class)
     private ExitService exitService;
+
+    public ContentChoice() {}
   }
+
+  public TravelerDataFrame() {}
 
   @Override
   public boolean hasExtensionMarker() {

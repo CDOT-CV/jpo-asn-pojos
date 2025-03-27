@@ -47,6 +47,8 @@ public class NodeLL extends Asn1Sequence {
   @JsonProperty("attributes")
   private NodeAttributeSetLL attributes;
 
+  public NodeLL() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

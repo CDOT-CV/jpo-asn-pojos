@@ -94,6 +94,8 @@ public class RoadSegment extends Asn1Sequence {
     }
   }
 
+  public RoadSegment() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

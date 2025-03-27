@@ -88,6 +88,8 @@ public class SignalStatusPackage extends Asn1Sequence {
     }
   }
 
+  public SignalStatusPackage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

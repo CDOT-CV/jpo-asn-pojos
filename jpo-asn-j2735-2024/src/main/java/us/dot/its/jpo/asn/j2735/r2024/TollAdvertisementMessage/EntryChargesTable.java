@@ -47,6 +47,8 @@ public class EntryChargesTable extends Asn1Sequence {
   @JsonProperty("chargesTable")
   private ChargesTable chargesTable;
 
+  public EntryChargesTable() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

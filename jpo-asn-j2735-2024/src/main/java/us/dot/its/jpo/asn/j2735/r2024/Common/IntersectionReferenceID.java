@@ -46,4 +46,6 @@ public class IntersectionReferenceID extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "id")
   @JsonProperty("id")
   private IntersectionID id;
+
+  public IntersectionReferenceID() {}
 }

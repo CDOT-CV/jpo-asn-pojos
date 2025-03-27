@@ -63,6 +63,8 @@ public class LaneClosureContainer extends Asn1Sequence {
     }
   }
 
+  public LaneClosureContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

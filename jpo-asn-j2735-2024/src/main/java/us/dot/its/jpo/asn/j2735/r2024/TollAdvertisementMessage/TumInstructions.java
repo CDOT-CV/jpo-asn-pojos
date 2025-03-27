@@ -73,6 +73,8 @@ public class TumInstructions extends Asn1Sequence {
     }
   }
 
+  public TumInstructions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

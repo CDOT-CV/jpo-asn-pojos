@@ -70,6 +70,8 @@ public class ConfigDescriptor extends Asn1Sequence {
     }
   }
 
+  public ConfigDescriptor() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

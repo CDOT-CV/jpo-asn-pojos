@@ -77,6 +77,8 @@ public class CfgRoadSignInfo extends Asn1Sequence {
     }
   }
 
+  public CfgRoadSignInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

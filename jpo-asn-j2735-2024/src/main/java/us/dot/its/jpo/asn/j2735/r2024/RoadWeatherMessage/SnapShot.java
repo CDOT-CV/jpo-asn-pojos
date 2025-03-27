@@ -58,6 +58,8 @@ public class SnapShot extends Asn1Sequence {
   @JsonProperty("weatherData")
   private NtcipEssData weatherData;
 
+  public SnapShot() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -92,6 +92,8 @@ public class NodeAttributeSetLL extends Asn1Sequence {
     }
   }
 
+  public NodeAttributeSetLL() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

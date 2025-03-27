@@ -91,6 +91,8 @@ public class VehicleClassification extends Asn1Sequence {
     }
   }
 
+  public VehicleClassification() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

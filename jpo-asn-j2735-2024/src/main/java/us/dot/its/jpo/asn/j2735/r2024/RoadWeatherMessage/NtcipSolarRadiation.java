@@ -47,6 +47,8 @@ public class NtcipSolarRadiation extends Asn1Sequence {
   @JsonProperty("measurementPeriod")
   private NTCIPEssTotalRadiationPeriod measurementPeriod;
 
+  public NtcipSolarRadiation() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

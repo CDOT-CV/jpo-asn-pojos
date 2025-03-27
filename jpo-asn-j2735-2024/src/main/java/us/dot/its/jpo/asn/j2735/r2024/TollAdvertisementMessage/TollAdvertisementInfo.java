@@ -121,6 +121,8 @@ public class TollAdvertisementInfo extends Asn1Sequence {
     }
   }
 
+  public TollAdvertisementInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

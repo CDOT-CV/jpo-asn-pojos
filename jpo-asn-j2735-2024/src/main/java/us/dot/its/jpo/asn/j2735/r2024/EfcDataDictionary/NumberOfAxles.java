@@ -72,4 +72,6 @@ public class NumberOfAxles extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public NumberOfAxles() {}
 }

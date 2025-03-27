@@ -49,6 +49,8 @@ public class NodeListXY extends Asn1Choice {
   @JsonProperty("computed")
   private ComputedLane computed;
 
+  public NodeListXY() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

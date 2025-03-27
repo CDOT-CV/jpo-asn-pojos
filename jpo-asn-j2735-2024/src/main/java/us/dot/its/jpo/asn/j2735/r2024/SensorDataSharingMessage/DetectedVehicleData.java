@@ -83,6 +83,8 @@ public class DetectedVehicleData extends Asn1Sequence {
   @JsonProperty("classConf")
   private ClassificationConfidence classConf;
 
+  public DetectedVehicleData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

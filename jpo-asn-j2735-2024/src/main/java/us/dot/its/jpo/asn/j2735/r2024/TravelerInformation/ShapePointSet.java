@@ -58,6 +58,8 @@ public class ShapePointSet extends Asn1Sequence {
   @JsonProperty("nodeList")
   private NodeListXY nodeList;
 
+  public ShapePointSet() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

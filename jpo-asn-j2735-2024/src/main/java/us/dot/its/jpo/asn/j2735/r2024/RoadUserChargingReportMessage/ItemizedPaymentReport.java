@@ -69,6 +69,8 @@ public class ItemizedPaymentReport extends Asn1Sequence {
     }
   }
 
+  public ItemizedPaymentReport() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

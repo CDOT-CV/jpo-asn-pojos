@@ -72,4 +72,6 @@ public class Sample extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public Sample() {}
 }

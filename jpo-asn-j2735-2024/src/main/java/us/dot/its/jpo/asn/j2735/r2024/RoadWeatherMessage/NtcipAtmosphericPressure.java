@@ -47,6 +47,8 @@ public class NtcipAtmosphericPressure extends Asn1Sequence {
   @JsonProperty("measurementStdDev")
   private AtmosPressureMeasurementStdDev measurementStdDev;
 
+  public NtcipAtmosphericPressure() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

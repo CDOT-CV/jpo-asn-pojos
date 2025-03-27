@@ -65,6 +65,8 @@ public class ChargingFees extends Asn1Sequence {
     }
   }
 
+  public ChargingFees() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

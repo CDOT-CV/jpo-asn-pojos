@@ -88,4 +88,6 @@ public class TimeCompact extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public TimeCompact() {}
 }

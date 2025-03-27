@@ -74,6 +74,8 @@ public class BasicSafetyMessage extends Asn1Sequence {
     }
   }
 
+  public BasicSafetyMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

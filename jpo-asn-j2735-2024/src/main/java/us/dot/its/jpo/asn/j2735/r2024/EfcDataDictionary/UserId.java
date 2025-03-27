@@ -58,4 +58,6 @@ public class UserId extends Asn1Sequence {
   @Asn1Property(tag = 4, name = "iccId", optional = true)
   @JsonProperty("iccId")
   private EquipmentIccId iccId;
+
+  public UserId() {}
 }

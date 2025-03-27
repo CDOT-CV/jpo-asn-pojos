@@ -47,6 +47,8 @@ public class SignedValue extends Asn1Choice {
   @JsonProperty("negative")
   private NegativeInteger negative;
 
+  public SignedValue() {}
+
   public static class PositiveInteger extends Asn1Integer {
     public PositiveInteger() {
       super(0L, 8388607L);

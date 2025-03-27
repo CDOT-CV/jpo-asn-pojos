@@ -104,6 +104,8 @@ public class OperatorDefined extends Asn1Sequence {
   @JsonProperty("opDefCharge16")
   private PaymentFee opDefCharge16;
 
+  public OperatorDefined() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

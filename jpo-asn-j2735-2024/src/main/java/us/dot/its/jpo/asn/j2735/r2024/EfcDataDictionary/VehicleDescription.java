@@ -107,6 +107,8 @@ public class VehicleDescription extends Asn1Sequence {
   @JsonProperty("soundLevel")
   private SoundLevel soundLevel;
 
+  public VehicleDescription() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

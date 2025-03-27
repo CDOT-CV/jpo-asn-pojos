@@ -64,6 +64,8 @@ public class LocAndTimeStamp extends Asn1Sequence {
   @JsonProperty("currentLane")
   private LaneID currentLane;
 
+  public LocAndTimeStamp() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

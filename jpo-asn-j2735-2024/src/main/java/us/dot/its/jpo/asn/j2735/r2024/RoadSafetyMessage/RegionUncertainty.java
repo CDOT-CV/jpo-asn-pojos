@@ -45,6 +45,8 @@ public class RegionUncertainty extends Asn1Choice {
   @JsonProperty("inCoordinateFrame")
   private Offset3D inCoordinateFrame;
 
+  public RegionUncertainty() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

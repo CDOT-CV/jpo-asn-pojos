@@ -46,4 +46,6 @@ public class DetectedObstacleData extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "obstSizeConfidence")
   @JsonProperty("obstSizeConfidence")
   private ObstacleSizeConfidence obstSizeConfidence;
+
+  public DetectedObstacleData() {}
 }

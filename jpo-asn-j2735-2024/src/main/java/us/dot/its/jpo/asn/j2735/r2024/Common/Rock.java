@@ -43,6 +43,8 @@ public class Rock extends Asn1Sequence {
   @JsonProperty("type")
   private RockType type;
 
+  public Rock() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

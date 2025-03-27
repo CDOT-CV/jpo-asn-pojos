@@ -209,6 +209,8 @@ public class RptSummaryRecord extends Asn1Sequence {
     }
   }
 
+  public RptSummaryRecord() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

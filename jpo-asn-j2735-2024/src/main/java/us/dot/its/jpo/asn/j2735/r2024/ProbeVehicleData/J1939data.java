@@ -86,6 +86,8 @@ public class J1939data extends Asn1Sequence {
   @JsonProperty("steeringAxleLubePressure")
   private SteeringAxleLubePressure steeringAxleLubePressure;
 
+  public J1939data() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

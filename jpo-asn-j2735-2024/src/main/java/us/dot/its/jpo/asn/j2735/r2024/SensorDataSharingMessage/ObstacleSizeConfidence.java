@@ -50,4 +50,6 @@ public class ObstacleSizeConfidence extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "heightConfidence", optional = true)
   @JsonProperty("heightConfidence")
   private SizeValueConfidence heightConfidence;
+
+  public ObstacleSizeConfidence() {}
 }

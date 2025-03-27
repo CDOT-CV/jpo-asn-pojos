@@ -96,6 +96,8 @@ public class MapData extends Asn1Sequence {
     }
   }
 
+  public MapData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

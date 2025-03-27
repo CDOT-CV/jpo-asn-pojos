@@ -50,4 +50,6 @@ public class VehicleWeightLimits extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "vehicleWeightUnladen")
   @JsonProperty("vehicleWeightUnladen")
   private Int2Unsigned vehicleWeightUnladen;
+
+  public VehicleWeightLimits() {}
 }

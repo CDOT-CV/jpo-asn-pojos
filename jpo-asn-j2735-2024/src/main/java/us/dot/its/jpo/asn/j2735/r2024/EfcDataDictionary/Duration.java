@@ -46,4 +46,6 @@ public class Duration extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "timeUnit", defaultValue = "seconds")
   @JsonProperty("timeUnit")
   private TimeUnit timeUnit;
+
+  public Duration() {}
 }

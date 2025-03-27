@@ -45,6 +45,8 @@ public class NodeListLL extends Asn1Choice {
   @JacksonXmlProperty(localName = "NodeLL")
   private NodeSetLL nodes;
 
+  public NodeListLL() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -45,4 +45,6 @@ public class TrafficLightID extends Asn1Choice {
   @Asn1Property(tag = 1, name = "oid")
   @JsonProperty("oid")
   private Asn1ObjectIdentifier oid;
+
+  public TrafficLightID() {}
 }

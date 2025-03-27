@@ -46,4 +46,6 @@ public class DateAndTime extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "timeCompact")
   @JsonProperty("timeCompact")
   private TimeCompact timeCompact;
+
+  public DateAndTime() {}
 }

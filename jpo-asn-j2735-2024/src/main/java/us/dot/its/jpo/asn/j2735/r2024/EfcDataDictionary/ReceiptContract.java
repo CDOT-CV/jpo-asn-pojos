@@ -64,4 +64,6 @@ public class ReceiptContract extends Asn1Sequence {
       setValue(value);
     }
   }
+
+  public ReceiptContract() {}
 }

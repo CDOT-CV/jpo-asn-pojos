@@ -80,6 +80,8 @@ public class DetectedChargeObject extends Asn1Sequence {
   @JsonProperty("chargeObjDetectionMode")
   private DetectionMode chargeObjDetectionMode;
 
+  public DetectedChargeObject() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

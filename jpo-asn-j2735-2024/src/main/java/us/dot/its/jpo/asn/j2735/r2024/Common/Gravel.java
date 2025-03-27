@@ -43,6 +43,8 @@ public class Gravel extends Asn1Sequence {
   @JsonProperty("type")
   private GravelType type;
 
+  public Gravel() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -60,6 +60,8 @@ public class CfgAveragedTriggers extends Asn1Sequence {
   @JsonProperty("avgNumOfOccupants")
   private Asn1Boolean avgNumOfOccupants;
 
+  public CfgAveragedTriggers() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -90,6 +90,8 @@ public class CfgEventRecurrence extends Asn1Sequence {
   @JsonProperty("exclusion")
   private Asn1Boolean exclusion;
 
+  public CfgEventRecurrence() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

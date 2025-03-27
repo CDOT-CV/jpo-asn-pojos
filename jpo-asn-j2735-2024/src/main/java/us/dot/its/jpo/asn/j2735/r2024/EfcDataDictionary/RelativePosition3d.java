@@ -50,4 +50,6 @@ public class RelativePosition3d extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "altitude", optional = true)
   @JsonProperty("altitude")
   private Int2Signed altitude;
+
+  public RelativePosition3d() {}
 }

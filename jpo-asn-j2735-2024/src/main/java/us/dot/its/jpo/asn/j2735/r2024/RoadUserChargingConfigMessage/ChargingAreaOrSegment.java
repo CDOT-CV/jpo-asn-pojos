@@ -45,6 +45,8 @@ public class ChargingAreaOrSegment extends Asn1Choice {
   @JsonProperty("segment")
   private Segment segment;
 
+  public ChargingAreaOrSegment() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -46,4 +46,6 @@ public class DetectedObjectData extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "detObjOptData", optional = true)
   @JsonProperty("detObjOptData")
   private DetectedObjectOptionalData detObjOptData;
+
+  public DetectedObjectData() {}
 }

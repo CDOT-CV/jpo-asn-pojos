@@ -55,6 +55,8 @@ public class VehicleSafetyExtensions extends Asn1Sequence {
   @JsonProperty("lights")
   private ExteriorLights lights;
 
+  public VehicleSafetyExtensions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

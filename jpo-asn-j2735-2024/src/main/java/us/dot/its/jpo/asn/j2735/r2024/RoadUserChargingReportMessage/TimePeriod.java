@@ -48,6 +48,8 @@ public class TimePeriod extends Asn1Sequence {
   @JsonProperty("endTime")
   private DDateTime endTime;
 
+  public TimePeriod() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

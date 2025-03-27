@@ -73,6 +73,8 @@ public class AckPolicy extends Asn1Sequence {
     }
   }
 
+  public AckPolicy() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

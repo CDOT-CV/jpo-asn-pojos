@@ -106,6 +106,8 @@ public class TotalWeightCharges extends Asn1Sequence {
     }
   }
 
+  public TotalWeightCharges() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

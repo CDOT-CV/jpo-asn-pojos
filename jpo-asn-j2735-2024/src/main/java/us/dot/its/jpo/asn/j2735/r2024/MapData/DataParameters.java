@@ -56,6 +56,8 @@ public class DataParameters extends Asn1Sequence {
   @JsonProperty("geoidUsed")
   private IA5String geoidUsed;
 
+  public DataParameters() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

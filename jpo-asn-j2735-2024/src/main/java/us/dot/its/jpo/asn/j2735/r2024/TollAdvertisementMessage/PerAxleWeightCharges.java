@@ -122,6 +122,8 @@ public class PerAxleWeightCharges extends Asn1Sequence {
     }
   }
 
+  public PerAxleWeightCharges() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

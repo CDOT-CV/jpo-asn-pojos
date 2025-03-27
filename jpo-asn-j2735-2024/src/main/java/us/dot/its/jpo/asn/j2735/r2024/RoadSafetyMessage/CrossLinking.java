@@ -81,6 +81,8 @@ public class CrossLinking extends Asn1Sequence {
     }
   }
 
+  public CrossLinking() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

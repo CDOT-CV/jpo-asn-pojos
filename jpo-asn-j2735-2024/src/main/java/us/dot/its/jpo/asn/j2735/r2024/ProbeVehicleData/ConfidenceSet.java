@@ -72,6 +72,8 @@ public class ConfidenceSet extends Asn1Sequence {
   @JsonProperty("throttleConfidence")
   private ThrottleConfidence throttleConfidence;
 
+  public ConfidenceSet() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

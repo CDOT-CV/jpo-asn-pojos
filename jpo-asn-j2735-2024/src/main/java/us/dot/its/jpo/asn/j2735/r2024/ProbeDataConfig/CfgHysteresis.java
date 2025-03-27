@@ -73,6 +73,8 @@ public class CfgHysteresis extends Asn1Sequence {
     }
   }
 
+  public CfgHysteresis() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

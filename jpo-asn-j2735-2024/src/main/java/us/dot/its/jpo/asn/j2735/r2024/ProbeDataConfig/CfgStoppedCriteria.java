@@ -73,6 +73,8 @@ public class CfgStoppedCriteria extends Asn1Sequence {
     }
   }
 
+  public CfgStoppedCriteria() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -53,6 +53,8 @@ public class PivotPointDescription extends Asn1Sequence {
   @JsonProperty("pivots")
   private PivotingAllowed pivots;
 
+  public PivotPointDescription() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

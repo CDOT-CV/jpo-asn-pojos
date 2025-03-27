@@ -48,6 +48,8 @@ public class SubRegionChargingInfo extends Asn1Sequence {
   @JsonProperty("chargingFees")
   private ChargingFees chargingFees;
 
+  public SubRegionChargingInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

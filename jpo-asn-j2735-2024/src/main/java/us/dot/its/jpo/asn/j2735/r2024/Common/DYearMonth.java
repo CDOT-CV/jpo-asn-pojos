@@ -46,4 +46,6 @@ public class DYearMonth extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "month")
   @JsonProperty("month")
   private DMonth month;
+
+  public DYearMonth() {}
 }

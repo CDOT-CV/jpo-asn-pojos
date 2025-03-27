@@ -53,6 +53,8 @@ public class SurroundingVehicleInfo extends Asn1Sequence {
   @JsonProperty("surroundingVehicleSize")
   private VehicleSize surroundingVehicleSize;
 
+  public SurroundingVehicleInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

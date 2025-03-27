@@ -102,6 +102,8 @@ public class TollPointMap extends Asn1Sequence {
     }
   }
 
+  public TollPointMap() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

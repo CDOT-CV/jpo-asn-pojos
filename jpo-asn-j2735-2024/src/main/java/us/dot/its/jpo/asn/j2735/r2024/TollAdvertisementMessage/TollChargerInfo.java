@@ -53,6 +53,8 @@ public class TollChargerInfo extends Asn1Sequence {
   @JsonProperty("descriptiveName")
   private DescriptiveName descriptiveName;
 
+  public TollChargerInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

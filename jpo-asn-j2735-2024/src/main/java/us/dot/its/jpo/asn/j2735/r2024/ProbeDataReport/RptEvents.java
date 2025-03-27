@@ -58,6 +58,8 @@ public class RptEvents extends Asn1Choice {
   @JsonProperty("swerve")
   private Asn1Boolean swerve;
 
+  public RptEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

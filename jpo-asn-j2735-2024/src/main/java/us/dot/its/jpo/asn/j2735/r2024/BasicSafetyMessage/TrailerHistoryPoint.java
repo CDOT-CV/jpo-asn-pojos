@@ -63,6 +63,8 @@ public class TrailerHistoryPoint extends Asn1Sequence {
   @JsonProperty("heading")
   private CoarseHeading heading;
 
+  public TrailerHistoryPoint() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

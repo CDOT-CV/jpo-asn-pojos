@@ -46,4 +46,6 @@ public class EnvironmentalCharacteristics extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "copValue")
   @JsonProperty("copValue")
   private CopValue copValue;
+
+  public EnvironmentalCharacteristics() {}
 }

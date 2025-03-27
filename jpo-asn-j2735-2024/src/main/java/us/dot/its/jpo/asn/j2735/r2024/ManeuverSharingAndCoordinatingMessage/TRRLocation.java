@@ -53,6 +53,8 @@ public class TRRLocation extends Asn1Choice {
   @JacksonXmlProperty(localName = "PositionOffsetXYZ")
   private TRRLocationType3 tRRLocationType3;
 
+  public TRRLocation() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

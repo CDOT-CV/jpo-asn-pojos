@@ -89,6 +89,8 @@ public class EventDescription extends Asn1Sequence {
     }
   }
 
+  public EventDescription() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

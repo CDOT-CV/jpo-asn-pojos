@@ -54,4 +54,6 @@ public class WiperSet extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "rateRear", optional = true)
   @JsonProperty("rateRear")
   private WiperRate rateRear;
+
+  public WiperSet() {}
 }

@@ -61,6 +61,8 @@ public class RoadUserChargingReportMessage extends Asn1Sequence {
     }
   }
 
+  public RoadUserChargingReportMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

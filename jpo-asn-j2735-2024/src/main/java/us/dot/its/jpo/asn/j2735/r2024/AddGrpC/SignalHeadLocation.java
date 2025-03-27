@@ -49,6 +49,8 @@ public class SignalHeadLocation extends Asn1Sequence {
   @JsonProperty("signalGroupID")
   private SignalGroupID signalGroupID;
 
+  public SignalHeadLocation() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -67,6 +67,8 @@ public class RptLocOfStops extends Asn1Sequence {
     }
   }
 
+  public RptLocOfStops() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

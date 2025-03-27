@@ -106,6 +106,8 @@ public class EmergencyVehicleAlert extends Asn1Sequence {
     }
   }
 
+  public EmergencyVehicleAlert() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

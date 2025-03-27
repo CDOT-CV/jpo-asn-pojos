@@ -80,6 +80,8 @@ public class TravelerInformation extends Asn1Sequence {
     }
   }
 
+  public TravelerInformation() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

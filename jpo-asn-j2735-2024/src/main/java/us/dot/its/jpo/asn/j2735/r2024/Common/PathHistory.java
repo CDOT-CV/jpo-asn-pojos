@@ -55,6 +55,8 @@ public class PathHistory extends Asn1Sequence {
   @JacksonXmlProperty(localName = "PathHistoryPoint")
   private PathHistoryPointList crumbData;
 
+  public PathHistory() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

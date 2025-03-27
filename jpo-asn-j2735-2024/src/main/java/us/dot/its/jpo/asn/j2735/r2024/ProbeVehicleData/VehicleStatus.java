@@ -138,6 +138,8 @@ public class VehicleStatus extends Asn1Sequence {
   @JsonProperty("gnssStatus")
   private GNSSstatus gnssStatus;
 
+  public VehicleStatus() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

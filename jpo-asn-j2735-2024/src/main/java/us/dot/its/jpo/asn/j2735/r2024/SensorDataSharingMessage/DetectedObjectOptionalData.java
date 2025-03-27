@@ -48,4 +48,6 @@ public class DetectedObjectOptionalData extends Asn1Choice {
   @Asn1Property(tag = 2, name = "detObst")
   @JsonProperty("detObst")
   private DetectedObstacleData detObst;
+
+  public DetectedObjectOptionalData() {}
 }

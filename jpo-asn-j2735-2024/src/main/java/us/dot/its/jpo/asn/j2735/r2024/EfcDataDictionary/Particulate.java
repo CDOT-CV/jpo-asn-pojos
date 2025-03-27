@@ -60,4 +60,6 @@ public class Particulate extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public Particulate() {}
 }

@@ -66,6 +66,8 @@ public class RptTrafficMetrics extends Asn1Choice {
   @JsonProperty("trfsigSpatTimingError")
   private Asn1Null trfsigSpatTimingError;
 
+  public RptTrafficMetrics() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

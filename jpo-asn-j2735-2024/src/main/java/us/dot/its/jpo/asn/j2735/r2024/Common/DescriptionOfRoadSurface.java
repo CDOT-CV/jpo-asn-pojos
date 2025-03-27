@@ -69,6 +69,8 @@ public class DescriptionOfRoadSurface extends Asn1Choice {
   @JsonProperty("snow")
   private Snow snow;
 
+  public DescriptionOfRoadSurface() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

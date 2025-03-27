@@ -68,6 +68,8 @@ public class ObstacleDetection extends Asn1Sequence {
   @JsonProperty("vertEvent")
   private VerticalAccelerationThreshold vertEvent;
 
+  public ObstacleDetection() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

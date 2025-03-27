@@ -46,4 +46,6 @@ public class DriverCharacteristics extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "tripPurpose")
   @JsonProperty("tripPurpose")
   private Int1Unsigned tripPurpose;
+
+  public DriverCharacteristics() {}
 }

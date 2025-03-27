@@ -90,6 +90,8 @@ public class NodeAttributeSetXY extends Asn1Sequence {
     }
   }
 
+  public NodeAttributeSetXY() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

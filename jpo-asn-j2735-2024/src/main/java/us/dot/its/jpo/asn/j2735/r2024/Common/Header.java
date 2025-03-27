@@ -55,6 +55,8 @@ public class Header extends Asn1Sequence {
   @JsonProperty("msgIssueRevision")
   private MsgCount msgIssueRevision;
 
+  public Header() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -77,6 +77,8 @@ public class ExitInfo extends Asn1Sequence {
     }
   }
 
+  public ExitInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

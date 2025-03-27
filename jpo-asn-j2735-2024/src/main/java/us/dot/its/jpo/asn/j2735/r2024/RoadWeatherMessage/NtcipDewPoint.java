@@ -51,6 +51,8 @@ public class NtcipDewPoint extends Asn1Sequence {
   @JsonProperty("measurementStdDev")
   private DewPointTempMeasurementStdDev measurementStdDev;
 
+  public NtcipDewPoint() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

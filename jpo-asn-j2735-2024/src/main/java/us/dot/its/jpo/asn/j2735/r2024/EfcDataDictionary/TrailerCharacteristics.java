@@ -50,4 +50,6 @@ public class TrailerCharacteristics extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "trailerWeightUnladen")
   @JsonProperty("trailerWeightUnladen")
   private Int2Unsigned trailerWeightUnladen;
+
+  public TrailerCharacteristics() {}
 }

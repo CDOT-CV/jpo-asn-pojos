@@ -94,6 +94,8 @@ public class ProbeDataManagement extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "termDistance")
     @JsonProperty("termDistance")
     private TermDistance termDistance;
+
+    public TermChoice() {}
   }
 
   @ToString(callSuper = true)
@@ -108,6 +110,8 @@ public class ProbeDataManagement extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "snapshotDistance")
     @JsonProperty("snapshotDistance")
     private SnapshotDistance snapshotDistance;
+
+    public SnapshotChoice() {}
   }
 
   @JsonInclude(Include.NON_NULL)
@@ -116,6 +120,8 @@ public class ProbeDataManagement extends Asn1Sequence {
       super(Reg_ProbeDataManagement.class, 1L, 4L);
     }
   }
+
+  public ProbeDataManagement() {}
 
   @Override
   public boolean hasExtensionMarker() {

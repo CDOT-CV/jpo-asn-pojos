@@ -48,6 +48,8 @@ public class RptTrafficSigEncounters extends Asn1Sequence {
   @JsonProperty("trafficMetrics")
   private RptTrafficMetrics trafficMetrics;
 
+  public RptTrafficSigEncounters() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -166,6 +166,8 @@ public class PersonalSafetyMessage extends Asn1Sequence {
     }
   }
 
+  public PersonalSafetyMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

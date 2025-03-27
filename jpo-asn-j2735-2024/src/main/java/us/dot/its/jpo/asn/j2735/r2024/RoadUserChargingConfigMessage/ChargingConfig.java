@@ -113,6 +113,8 @@ public class ChargingConfig extends Asn1Sequence {
     }
   }
 
+  public ChargingConfig() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

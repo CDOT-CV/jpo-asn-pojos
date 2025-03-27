@@ -82,6 +82,8 @@ public class TrafficLightStatusMessage extends Asn1Sequence {
   @JacksonXmlProperty(localName = "TrafficLightStatus")
   private TrafficLightStatusList trafficLightStatus;
 
+  public TrafficLightStatusMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

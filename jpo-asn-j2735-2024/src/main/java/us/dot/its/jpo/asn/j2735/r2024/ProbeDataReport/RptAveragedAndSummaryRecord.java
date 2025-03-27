@@ -70,6 +70,8 @@ public class RptAveragedAndSummaryRecord extends Asn1Sequence {
   @JsonProperty("record")
   private RptAvgAndSummaryRecordData record_;
 
+  public RptAveragedAndSummaryRecord() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

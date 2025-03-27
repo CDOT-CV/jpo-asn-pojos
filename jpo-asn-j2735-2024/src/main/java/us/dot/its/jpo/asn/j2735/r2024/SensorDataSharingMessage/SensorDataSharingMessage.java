@@ -80,4 +80,6 @@ public class SensorDataSharingMessage extends Asn1Sequence {
   @JacksonXmlElementWrapper(localName = "objects")
   @JacksonXmlProperty(localName = "DetectedObjectData")
   private DetectedObjectList objects;
+
+  public SensorDataSharingMessage() {}
 }

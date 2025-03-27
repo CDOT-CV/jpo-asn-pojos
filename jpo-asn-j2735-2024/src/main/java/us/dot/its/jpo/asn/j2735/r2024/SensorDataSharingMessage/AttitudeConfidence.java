@@ -51,4 +51,6 @@ public class AttitudeConfidence extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "yawConfidence")
   @JsonProperty("yawConfidence")
   private HeadingConfidence yawConfidence;
+
+  public AttitudeConfidence() {}
 }

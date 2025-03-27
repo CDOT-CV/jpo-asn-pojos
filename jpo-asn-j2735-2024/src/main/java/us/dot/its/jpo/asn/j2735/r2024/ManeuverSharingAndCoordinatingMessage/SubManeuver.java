@@ -74,6 +74,8 @@ public class SubManeuver extends Asn1Sequence {
   @JsonProperty("maxSpeed")
   private Speed maxSpeed;
 
+  public SubManeuver() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

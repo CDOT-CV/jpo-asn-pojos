@@ -46,4 +46,6 @@ public class RTCMheader extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "offsetSet")
   @JsonProperty("offsetSet")
   private AntennaOffsetSet offsetSet;
+
+  public RTCMheader() {}
 }

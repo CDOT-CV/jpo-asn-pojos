@@ -81,4 +81,6 @@ public class ReceiptServicePart extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public ReceiptServicePart() {}
 }

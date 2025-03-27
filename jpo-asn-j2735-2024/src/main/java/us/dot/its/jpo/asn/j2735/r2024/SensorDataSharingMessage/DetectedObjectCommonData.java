@@ -120,6 +120,8 @@ public class DetectedObjectCommonData extends Asn1Sequence {
   @JsonProperty("accCfdYaw")
   private YawRateConfidence accCfdYaw;
 
+  public DetectedObjectCommonData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

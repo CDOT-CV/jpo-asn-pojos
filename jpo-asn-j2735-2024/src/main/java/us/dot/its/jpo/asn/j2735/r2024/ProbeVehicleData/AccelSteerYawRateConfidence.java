@@ -50,4 +50,6 @@ public class AccelSteerYawRateConfidence extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "steeringWheelAngle")
   @JsonProperty("steeringWheelAngle")
   private SteeringWheelAngleConfidence steeringWheelAngle;
+
+  public AccelSteerYawRateConfidence() {}
 }

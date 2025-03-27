@@ -51,4 +51,6 @@ public class Circle extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "units")
   @JsonProperty("units")
   private DistanceUnits units;
+
+  public Circle() {}
 }

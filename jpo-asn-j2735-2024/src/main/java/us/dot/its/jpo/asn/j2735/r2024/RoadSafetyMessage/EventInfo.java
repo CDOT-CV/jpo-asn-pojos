@@ -105,6 +105,8 @@ public class EventInfo extends Asn1Sequence {
     }
   }
 
+  public EventInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

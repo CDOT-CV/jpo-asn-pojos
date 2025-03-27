@@ -69,4 +69,6 @@ public class NodeOffsetPointXY extends Asn1Choice {
   @Asn1Property(tag = 7, name = "regional")
   @JsonProperty("regional")
   private Reg_NodeOffsetPointXY regional;
+
+  public NodeOffsetPointXY() {}
 }

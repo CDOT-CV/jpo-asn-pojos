@@ -71,6 +71,8 @@ public class NtcipPavementTreatment extends Asn1Sequence {
   @JsonProperty("width")
   private NTCIPEssPaveTreatmentWidth width;
 
+  public NtcipPavementTreatment() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -75,6 +75,8 @@ public class GeometricProjection extends Asn1Sequence {
     }
   }
 
+  public GeometricProjection() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

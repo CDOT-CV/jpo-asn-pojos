@@ -58,4 +58,6 @@ public class DetectedVRUData extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "radius", optional = true)
   @JsonProperty("radius")
   private AttachmentRadius radius;
+
+  public DetectedVRUData() {}
 }

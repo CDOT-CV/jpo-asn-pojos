@@ -47,6 +47,8 @@ public class IntersectionState_addGrpC extends Asn1Sequence {
   @JacksonXmlProperty(localName = "PrioritizationResponse")
   private PrioritizationResponseList activePrioritizations;
 
+  public IntersectionState_addGrpC() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -100,6 +100,8 @@ public class GenericLane extends Asn1Sequence {
     }
   }
 
+  public GenericLane() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

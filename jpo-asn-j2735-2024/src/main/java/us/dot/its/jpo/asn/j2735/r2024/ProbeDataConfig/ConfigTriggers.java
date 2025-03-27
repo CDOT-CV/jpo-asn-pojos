@@ -45,6 +45,8 @@ public class ConfigTriggers extends Asn1Choice {
   @JsonProperty("avgAndSumTriggers")
   private CfgAveragedAndSummaryTriggers avgAndSumTriggers;
 
+  public ConfigTriggers() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -72,6 +72,8 @@ public class SPAT extends Asn1Sequence {
     }
   }
 
+  public SPAT() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

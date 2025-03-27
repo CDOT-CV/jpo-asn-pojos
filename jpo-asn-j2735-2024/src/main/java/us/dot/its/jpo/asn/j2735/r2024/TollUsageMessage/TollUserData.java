@@ -113,6 +113,8 @@ public class TollUserData extends Asn1Sequence {
     }
   }
 
+  public TollUserData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

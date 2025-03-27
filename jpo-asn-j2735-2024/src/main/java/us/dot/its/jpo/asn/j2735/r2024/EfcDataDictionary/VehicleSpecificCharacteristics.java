@@ -54,4 +54,6 @@ public class VehicleSpecificCharacteristics extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "futureCharacteristics")
   @JsonProperty("futureCharacteristics")
   private FutureCharacteristics futureCharacteristics;
+
+  public VehicleSpecificCharacteristics() {}
 }

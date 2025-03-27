@@ -178,6 +178,8 @@ public class CfgCommSysPerfEvents extends Asn1Sequence {
     }
   }
 
+  public CfgCommSysPerfEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -46,4 +46,6 @@ public class BumperHeights extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "rear")
   @JsonProperty("rear")
   private BumperHeight rear;
+
+  public BumperHeights() {}
 }

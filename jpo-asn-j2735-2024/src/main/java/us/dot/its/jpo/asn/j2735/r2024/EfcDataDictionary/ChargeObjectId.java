@@ -46,4 +46,6 @@ public class ChargeObjectId extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "chargeObjectDesignation")
   @JsonProperty("chargeObjectDesignation")
   private Int4Unsigned chargeObjectDesignation;
+
+  public ChargeObjectId() {}
 }

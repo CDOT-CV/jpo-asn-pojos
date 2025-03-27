@@ -44,6 +44,8 @@ public class VisualLink extends Asn1Sequence {
   @JsonProperty("urlLink")
   private IA5String urlLink;
 
+  public VisualLink() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

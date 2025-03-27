@@ -63,6 +63,8 @@ public class NtcipWind extends Asn1Sequence {
   @JsonProperty("gustDirection")
   private NTCIPWindSensorGustDirection gustDirection;
 
+  public NtcipWind() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

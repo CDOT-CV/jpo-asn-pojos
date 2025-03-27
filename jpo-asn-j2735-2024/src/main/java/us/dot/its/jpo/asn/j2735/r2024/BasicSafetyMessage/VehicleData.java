@@ -91,6 +91,8 @@ public class VehicleData extends Asn1Sequence {
     }
   }
 
+  public VehicleData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -47,6 +47,8 @@ public class ApplicableHeading extends Asn1Sequence {
   @JsonProperty("tolerance")
   private Tolerance tolerance;
 
+  public ApplicableHeading() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

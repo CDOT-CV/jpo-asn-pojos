@@ -46,4 +46,6 @@ public class PassengerCapacity extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "numberOfStandingPlaces")
   @JsonProperty("numberOfStandingPlaces")
   private Int1Unsigned numberOfStandingPlaces;
+
+  public PassengerCapacity() {}
 }

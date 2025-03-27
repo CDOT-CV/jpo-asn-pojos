@@ -46,4 +46,6 @@ public class Provider extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "providerIdentifier")
   @JsonProperty("providerIdentifier")
   private IssuerIdentifier providerIdentifier;
+
+  public Provider() {}
 }

@@ -54,4 +54,6 @@ public class ReceiptFinancialPart extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "receiptFinancialSerialNumber")
   @JsonProperty("receiptFinancialSerialNumber")
   private Int4Unsigned receiptFinancialSerialNumber;
+
+  public ReceiptFinancialPart() {}
 }

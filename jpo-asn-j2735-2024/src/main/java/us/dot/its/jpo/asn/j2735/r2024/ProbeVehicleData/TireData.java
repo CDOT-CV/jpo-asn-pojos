@@ -67,6 +67,8 @@ public class TireData extends Asn1Sequence {
   @JsonProperty("detection")
   private TirePressureThresholdDetection detection;
 
+  public TireData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

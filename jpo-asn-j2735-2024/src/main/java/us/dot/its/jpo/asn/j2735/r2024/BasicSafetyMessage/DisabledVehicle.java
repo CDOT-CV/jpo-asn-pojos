@@ -49,6 +49,8 @@ public class DisabledVehicle extends Asn1Sequence {
   @JsonProperty("locationDetails")
   private GenericLocations locationDetails;
 
+  public DisabledVehicle() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

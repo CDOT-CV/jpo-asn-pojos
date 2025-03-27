@@ -73,6 +73,8 @@ public class LaneDataAttribute extends Asn1Choice {
   @JacksonXmlProperty(localName = "Reg-LaneDataAttribute")
   private SequenceOfRegional regional;
 
+  public LaneDataAttribute() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

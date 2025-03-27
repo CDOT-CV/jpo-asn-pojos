@@ -46,4 +46,6 @@ public class SessionClass extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "sessionClaimedClass")
   @JsonProperty("sessionClaimedClass")
   private Int1Unsigned sessionClaimedClass;
+
+  public SessionClass() {}
 }

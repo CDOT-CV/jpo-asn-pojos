@@ -185,6 +185,8 @@ public class RptEmissions extends Asn1Sequence {
     }
   }
 
+  public RptEmissions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

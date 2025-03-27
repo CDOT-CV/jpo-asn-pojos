@@ -87,7 +87,11 @@ public class VehicleIdent extends Asn1Sequence {
     @Asn1Property(tag = 2, name = "rEquip")
     @JsonProperty("rEquip")
     private IncidentResponseEquipment rEquip;
+
+    public VehicleClassChoice() {}
   }
+
+  public VehicleIdent() {}
 
   @Override
   public boolean hasExtensionMarker() {

@@ -61,6 +61,8 @@ public class RoadSafetyMessage extends Asn1Sequence {
     }
   }
 
+  public RoadSafetyMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -60,4 +60,6 @@ public class ContractValidity extends Asn1Sequence {
       setValue(value);
     }
   }
+
+  public ContractValidity() {}
 }

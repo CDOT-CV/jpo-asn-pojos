@@ -58,11 +58,15 @@ public class PrimaryRegionChargingInfo extends Asn1Sequence {
     @JsonProperty("state")
     private PrimaryRegionState state;
 
+    public ChargingPrimaryRegionChoice() {}
+
     @Override
     public boolean hasExtensionMarker() {
       return true;
     }
   }
+
+  public PrimaryRegionChargingInfo() {}
 
   @Override
   public boolean hasExtensionMarker() {

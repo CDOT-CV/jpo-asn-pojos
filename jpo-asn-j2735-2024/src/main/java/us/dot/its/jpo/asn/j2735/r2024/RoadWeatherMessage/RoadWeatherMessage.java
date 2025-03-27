@@ -45,6 +45,8 @@ public class RoadWeatherMessage extends Asn1Choice {
   @JsonProperty("download")
   private RoadWeatherDownload download;
 
+  public RoadWeatherMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

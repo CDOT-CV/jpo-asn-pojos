@@ -52,6 +52,8 @@ public class VehTypeCharges extends Asn1Sequence {
   @JsonProperty("specialCharges")
   private SpecialCharges specialCharges;
 
+  public VehTypeCharges() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

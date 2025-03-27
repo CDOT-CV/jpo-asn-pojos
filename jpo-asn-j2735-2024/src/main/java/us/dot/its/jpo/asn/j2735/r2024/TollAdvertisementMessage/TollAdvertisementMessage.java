@@ -47,6 +47,8 @@ public class TollAdvertisementMessage extends Asn1Sequence {
   @JsonProperty("tollAdvInfo")
   private TollAdvertisementInfo tollAdvInfo;
 
+  public TollAdvertisementMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

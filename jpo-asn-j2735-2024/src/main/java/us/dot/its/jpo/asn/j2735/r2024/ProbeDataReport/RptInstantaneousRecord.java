@@ -62,6 +62,8 @@ public class RptInstantaneousRecord extends Asn1Sequence {
   @JsonProperty("record")
   private RptInstantaneousRecordData record_;
 
+  public RptInstantaneousRecord() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

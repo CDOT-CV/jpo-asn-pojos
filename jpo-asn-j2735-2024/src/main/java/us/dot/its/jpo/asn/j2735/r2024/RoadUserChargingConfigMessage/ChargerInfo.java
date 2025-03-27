@@ -58,6 +58,8 @@ public class ChargerInfo extends Asn1Sequence {
   @JsonProperty("chargingConfig")
   private ChargingConfig chargingConfig;
 
+  public ChargerInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

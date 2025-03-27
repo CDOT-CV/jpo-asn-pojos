@@ -127,6 +127,8 @@ public class ConfigInfo extends Asn1Sequence {
     }
   }
 
+  public ConfigInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

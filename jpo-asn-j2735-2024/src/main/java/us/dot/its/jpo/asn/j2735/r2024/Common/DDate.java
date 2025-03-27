@@ -50,4 +50,6 @@ public class DDate extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "day")
   @JsonProperty("day")
   private DDay day;
+
+  public DDate() {}
 }

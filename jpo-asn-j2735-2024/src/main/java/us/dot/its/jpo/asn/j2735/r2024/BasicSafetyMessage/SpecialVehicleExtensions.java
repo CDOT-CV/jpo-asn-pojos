@@ -52,6 +52,8 @@ public class SpecialVehicleExtensions extends Asn1Sequence {
   @JsonProperty("doNotUse")
   private TrailerData doNotUse;
 
+  public SpecialVehicleExtensions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

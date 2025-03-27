@@ -50,4 +50,6 @@ public class ObstacleSize extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "height", optional = true)
   @JsonProperty("height")
   private SizeValue height;
+
+  public ObstacleSize() {}
 }

@@ -54,4 +54,6 @@ public class DTime extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "offset", optional = true)
   @JsonProperty("offset")
   private DOffset offset;
+
+  public DTime() {}
 }

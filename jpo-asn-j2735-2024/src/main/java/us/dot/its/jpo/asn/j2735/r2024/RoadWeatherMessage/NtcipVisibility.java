@@ -43,6 +43,8 @@ public class NtcipVisibility extends Asn1Sequence {
   @JsonProperty("visibility")
   private NTCIPEssVisibility visibility;
 
+  public NtcipVisibility() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

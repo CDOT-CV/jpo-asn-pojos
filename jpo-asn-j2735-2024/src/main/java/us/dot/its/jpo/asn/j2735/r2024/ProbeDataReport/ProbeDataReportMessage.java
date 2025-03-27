@@ -65,6 +65,8 @@ public class ProbeDataReportMessage extends Asn1Sequence {
   @JsonProperty("avgAndSumRec")
   private RptAveragedAndSummaryRecord avgAndSumRec;
 
+  public ProbeDataReportMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

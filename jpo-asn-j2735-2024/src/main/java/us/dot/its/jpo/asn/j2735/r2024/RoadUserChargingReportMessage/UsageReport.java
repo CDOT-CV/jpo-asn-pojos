@@ -45,6 +45,8 @@ public class UsageReport extends Asn1Choice {
   @JsonProperty("itemizedPaymentReport")
   private ItemizedPaymentReport itemizedPaymentReport;
 
+  public UsageReport() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

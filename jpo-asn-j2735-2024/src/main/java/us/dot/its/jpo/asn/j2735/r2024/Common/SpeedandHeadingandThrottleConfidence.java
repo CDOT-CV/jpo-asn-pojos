@@ -50,4 +50,6 @@ public class SpeedandHeadingandThrottleConfidence extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "throttle")
   @JsonProperty("throttle")
   private ThrottleConfidence throttle;
+
+  public SpeedandHeadingandThrottleConfidence() {}
 }

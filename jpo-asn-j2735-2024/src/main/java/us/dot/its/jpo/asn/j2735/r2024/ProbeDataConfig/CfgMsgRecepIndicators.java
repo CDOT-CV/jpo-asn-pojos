@@ -60,6 +60,8 @@ public class CfgMsgRecepIndicators extends Asn1Sequence {
     }
   }
 
+  public CfgMsgRecepIndicators() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

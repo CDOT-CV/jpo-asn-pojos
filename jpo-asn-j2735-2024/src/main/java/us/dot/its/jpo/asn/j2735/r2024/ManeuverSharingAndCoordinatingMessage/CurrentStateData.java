@@ -68,6 +68,8 @@ public class CurrentStateData extends Asn1Sequence {
   @JsonProperty("size")
   private VehicleSize size;
 
+  public CurrentStateData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

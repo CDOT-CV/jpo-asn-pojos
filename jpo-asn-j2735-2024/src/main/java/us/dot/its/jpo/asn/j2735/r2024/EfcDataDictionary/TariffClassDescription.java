@@ -58,4 +58,6 @@ public class TariffClassDescription extends Asn1Sequence {
   @Asn1Property(tag = 4, name = "userClassId", optional = true)
   @JsonProperty("userClassId")
   private UserClassId userClassId;
+
+  public TariffClassDescription() {}
 }

@@ -61,6 +61,8 @@ public class CurveContainer extends Asn1Sequence {
   @JsonProperty("curveRegion")
   private RegionInfo curveRegion;
 
+  public CurveContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

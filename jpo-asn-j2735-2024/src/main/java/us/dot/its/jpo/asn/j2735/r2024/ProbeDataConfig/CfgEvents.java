@@ -74,6 +74,8 @@ public class CfgEvents extends Asn1Sequence {
     }
   }
 
+  public CfgEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

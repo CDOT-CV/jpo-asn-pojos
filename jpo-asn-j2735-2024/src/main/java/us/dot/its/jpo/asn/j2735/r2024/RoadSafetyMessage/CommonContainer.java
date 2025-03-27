@@ -63,6 +63,8 @@ public class CommonContainer extends Asn1Sequence {
     }
   }
 
+  public CommonContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

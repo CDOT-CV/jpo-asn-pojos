@@ -114,6 +114,8 @@ public class HeavyTruckCCMExtensions extends Asn1Sequence {
   @JsonProperty("frontCutIn")
   private FrontCutIn frontCutIn;
 
+  public HeavyTruckCCMExtensions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

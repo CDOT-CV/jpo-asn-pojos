@@ -89,6 +89,8 @@ public class RptIntervalEvents extends Asn1Sequence {
     }
   }
 
+  public RptIntervalEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

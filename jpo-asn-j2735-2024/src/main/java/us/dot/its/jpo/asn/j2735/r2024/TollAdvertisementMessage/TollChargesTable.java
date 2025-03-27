@@ -76,6 +76,8 @@ public class TollChargesTable extends Asn1Sequence {
     @JsonProperty("timeBasedCharges")
     private TimeChargesTable timeBasedCharges;
 
+    public TollTypeChargeChoice() {}
+
     @Override
     public boolean hasExtensionMarker() {
       return true;
@@ -117,6 +119,8 @@ public class TollChargesTable extends Asn1Sequence {
       }
     }
   }
+
+  public TollChargesTable() {}
 
   @Override
   public boolean hasExtensionMarker() {

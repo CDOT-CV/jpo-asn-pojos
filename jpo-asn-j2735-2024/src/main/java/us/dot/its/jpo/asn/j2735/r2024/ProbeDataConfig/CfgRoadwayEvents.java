@@ -110,6 +110,8 @@ public class CfgRoadwayEvents extends Asn1Sequence {
     }
   }
 
+  public CfgRoadwayEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -72,4 +72,6 @@ public class ExhaustEmissionValues extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public ExhaustEmissionValues() {}
 }

@@ -45,6 +45,8 @@ public class RoadAuthorityID extends Asn1Choice {
   @JsonProperty("relRdAuthID")
   private RelativeRoadAuthorityID relRdAuthID;
 
+  public RoadAuthorityID() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

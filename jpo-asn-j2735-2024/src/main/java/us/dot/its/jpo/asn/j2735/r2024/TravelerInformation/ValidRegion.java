@@ -70,5 +70,9 @@ public class ValidRegion extends Asn1Sequence {
     @Asn1Property(tag = 2, name = "regionPointSet")
     @JsonProperty("regionPointSet")
     private RegionPointSet regionPointSet;
+
+    public AreaChoice() {}
   }
+
+  public ValidRegion() {}
 }

@@ -77,4 +77,6 @@ public class EfcContextMark extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public EfcContextMark() {}
 }

@@ -75,6 +75,8 @@ public class VehicleId extends Asn1Sequence {
     }
   }
 
+  public VehicleId() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

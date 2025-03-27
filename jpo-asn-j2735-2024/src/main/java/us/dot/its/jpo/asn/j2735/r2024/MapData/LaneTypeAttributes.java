@@ -69,6 +69,8 @@ public class LaneTypeAttributes extends Asn1Choice {
   @JsonProperty("parking")
   private LaneAttributes_Parking parking;
 
+  public LaneTypeAttributes() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

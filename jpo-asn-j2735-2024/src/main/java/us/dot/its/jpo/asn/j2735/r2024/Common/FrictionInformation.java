@@ -51,6 +51,8 @@ public class FrictionInformation extends Asn1Sequence {
   @JsonProperty("roadRoughness")
   private RoadRoughness roadRoughness;
 
+  public FrictionInformation() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

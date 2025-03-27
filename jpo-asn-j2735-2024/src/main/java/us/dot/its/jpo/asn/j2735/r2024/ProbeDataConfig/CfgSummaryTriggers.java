@@ -88,6 +88,8 @@ public class CfgSummaryTriggers extends Asn1Sequence {
   @JsonProperty("totalMsgsReceived")
   private CfgMsgRecepIndicators totalMsgsReceived;
 
+  public CfgSummaryTriggers() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

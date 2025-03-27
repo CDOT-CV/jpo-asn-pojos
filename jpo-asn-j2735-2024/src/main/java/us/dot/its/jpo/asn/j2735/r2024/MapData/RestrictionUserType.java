@@ -51,6 +51,8 @@ public class RestrictionUserType extends Asn1Choice {
   @JacksonXmlProperty(localName = "Reg-RestrictionUserType")
   private SequenceOfRegional regional;
 
+  public RestrictionUserType() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

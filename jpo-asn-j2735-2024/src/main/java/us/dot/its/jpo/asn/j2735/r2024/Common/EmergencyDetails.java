@@ -63,6 +63,8 @@ public class EmergencyDetails extends Asn1Sequence {
   @JsonProperty("responseType")
   private ResponseType responseType;
 
+  public EmergencyDetails() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

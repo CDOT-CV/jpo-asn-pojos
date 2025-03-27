@@ -53,6 +53,8 @@ public class RptInstantaneousRecordData extends Asn1Choice {
   @JsonProperty("commSysPerfEvents")
   private RptCommSysPerfEvents commSysPerfEvents;
 
+  public RptInstantaneousRecordData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

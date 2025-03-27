@@ -52,6 +52,8 @@ public class RptDevType extends Asn1Sequence {
   @JsonProperty("mcoCapable")
   private Asn1Boolean mcoCapable;
 
+  public RptDevType() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

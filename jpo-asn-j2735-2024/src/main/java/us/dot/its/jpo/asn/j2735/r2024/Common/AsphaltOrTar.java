@@ -43,6 +43,8 @@ public class AsphaltOrTar extends Asn1Sequence {
   @JsonProperty("type")
   private AsphaltOrTarType type;
 
+  public AsphaltOrTar() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -50,6 +50,8 @@ public class RoadWeatherUpload extends Asn1Choice {
   @JsonProperty("citizenReport")
   private SnapShot citizenReport;
 
+  public RoadWeatherUpload() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

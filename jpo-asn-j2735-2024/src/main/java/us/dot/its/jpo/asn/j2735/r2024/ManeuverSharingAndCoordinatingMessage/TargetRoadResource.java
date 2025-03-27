@@ -47,6 +47,8 @@ public class TargetRoadResource extends Asn1Sequence {
   @JsonProperty("tRRLocation")
   private TRRLocation tRRLocation;
 
+  public TargetRoadResource() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

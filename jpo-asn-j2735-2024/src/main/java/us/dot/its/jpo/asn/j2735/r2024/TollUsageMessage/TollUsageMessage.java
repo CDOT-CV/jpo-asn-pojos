@@ -66,6 +66,8 @@ public class TollUsageMessage extends Asn1Sequence {
   @JsonProperty("encryptedTumData")
   private EncryptedTumData encryptedTumData;
 
+  public TollUsageMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

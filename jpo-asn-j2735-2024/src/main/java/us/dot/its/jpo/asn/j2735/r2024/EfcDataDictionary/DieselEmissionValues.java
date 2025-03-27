@@ -46,4 +46,6 @@ public class DieselEmissionValues extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "absorptionCoeff")
   @JsonProperty("absorptionCoeff")
   private Int2Unsigned absorptionCoeff;
+
+  public DieselEmissionValues() {}
 }

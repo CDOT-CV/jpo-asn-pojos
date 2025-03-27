@@ -53,6 +53,8 @@ public class RptVelocity extends Asn1Sequence {
   @JsonProperty("heading")
   private Heading heading;
 
+  public RptVelocity() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

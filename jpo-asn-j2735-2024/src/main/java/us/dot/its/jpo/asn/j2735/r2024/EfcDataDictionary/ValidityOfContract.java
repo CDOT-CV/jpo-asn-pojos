@@ -60,4 +60,6 @@ public class ValidityOfContract extends Asn1Sequence {
       setValue(value);
     }
   }
+
+  public ValidityOfContract() {}
 }

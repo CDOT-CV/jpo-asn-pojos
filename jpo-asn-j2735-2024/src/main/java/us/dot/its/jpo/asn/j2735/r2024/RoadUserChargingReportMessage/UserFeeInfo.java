@@ -48,6 +48,8 @@ public class UserFeeInfo extends Asn1Sequence {
   @JsonProperty("timePeriod")
   private TimePeriod timePeriod;
 
+  public UserFeeInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -105,6 +105,8 @@ public class GeographicalPath extends Asn1Sequence {
     @JsonProperty("oldRegion")
     private ValidRegion oldRegion;
 
+    public DescriptionChoice() {}
+
     @Override
     public boolean hasExtensionMarker() {
       return true;
@@ -117,6 +119,8 @@ public class GeographicalPath extends Asn1Sequence {
       super(Reg_GeographicalPath.class, 1L, 4L);
     }
   }
+
+  public GeographicalPath() {}
 
   @Override
   public boolean hasExtensionMarker() {

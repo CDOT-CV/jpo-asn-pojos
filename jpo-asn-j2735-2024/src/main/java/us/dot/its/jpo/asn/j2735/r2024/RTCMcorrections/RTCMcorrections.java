@@ -87,6 +87,8 @@ public class RTCMcorrections extends Asn1Sequence {
     }
   }
 
+  public RTCMcorrections() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

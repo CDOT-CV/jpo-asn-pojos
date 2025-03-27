@@ -54,6 +54,8 @@ public class PrioritizationResponse extends Asn1Sequence {
   @JsonProperty("signalGroup")
   private SignalGroupID signalGroup;
 
+  public PrioritizationResponse() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

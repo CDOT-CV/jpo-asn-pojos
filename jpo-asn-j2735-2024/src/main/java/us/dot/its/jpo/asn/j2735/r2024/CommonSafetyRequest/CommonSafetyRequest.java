@@ -79,6 +79,8 @@ public class CommonSafetyRequest extends Asn1Sequence {
     }
   }
 
+  public CommonSafetyRequest() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

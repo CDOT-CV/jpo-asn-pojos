@@ -69,6 +69,8 @@ public class WeatherReport extends Asn1Sequence {
   @JsonProperty("roadFriction")
   private CoefficientOfFriction roadFriction;
 
+  public WeatherReport() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

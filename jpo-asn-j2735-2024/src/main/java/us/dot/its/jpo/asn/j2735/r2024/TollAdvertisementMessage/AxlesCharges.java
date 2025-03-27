@@ -62,6 +62,8 @@ public class AxlesCharges extends Asn1Sequence {
     }
   }
 
+  public AxlesCharges() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

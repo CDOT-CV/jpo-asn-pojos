@@ -79,6 +79,8 @@ public class FullPositionVector extends Asn1Sequence {
   @JsonProperty("speedConfidence")
   private SpeedandHeadingandThrottleConfidence speedConfidence;
 
+  public FullPositionVector() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -46,4 +46,6 @@ public class VehicleSize extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "length")
   @JsonProperty("length")
   private VehicleLength length;
+
+  public VehicleSize() {}
 }

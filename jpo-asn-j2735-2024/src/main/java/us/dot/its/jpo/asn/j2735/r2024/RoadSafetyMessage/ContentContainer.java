@@ -61,6 +61,8 @@ public class ContentContainer extends Asn1Choice {
   @JsonProperty("situationalContainer")
   private SituationalContainer situationalContainer;
 
+  public ContentContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

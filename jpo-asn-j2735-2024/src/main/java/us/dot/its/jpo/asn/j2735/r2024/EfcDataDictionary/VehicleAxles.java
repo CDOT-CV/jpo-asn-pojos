@@ -46,4 +46,6 @@ public class VehicleAxles extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "vehicleAxlesNumber")
   @JsonProperty("vehicleAxlesNumber")
   private VehicleAxlesNumber vehicleAxlesNumber;
+
+  public VehicleAxles() {}
 }

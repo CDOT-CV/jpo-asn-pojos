@@ -64,6 +64,8 @@ public class CfgIntervalEvents extends Asn1Sequence {
   @JsonProperty("numOfOccupants")
   private Asn1Boolean numOfOccupants;
 
+  public CfgIntervalEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

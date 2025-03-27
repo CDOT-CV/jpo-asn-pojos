@@ -58,4 +58,6 @@ public class DFullTime extends Asn1Sequence {
   @Asn1Property(tag = 4, name = "minute")
   @JsonProperty("minute")
   private DMinute minute;
+
+  public DFullTime() {}
 }

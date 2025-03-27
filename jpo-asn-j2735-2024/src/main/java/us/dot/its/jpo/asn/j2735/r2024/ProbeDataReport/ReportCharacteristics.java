@@ -94,6 +94,8 @@ public class ReportCharacteristics extends Asn1Sequence {
     }
   }
 
+  public ReportCharacteristics() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -49,6 +49,8 @@ public class EventIdentifier extends Asn1Sequence {
   @JsonProperty("uniqueID")
   private TemporaryID uniqueID;
 
+  public EventIdentifier() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

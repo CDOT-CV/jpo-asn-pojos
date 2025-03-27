@@ -46,4 +46,6 @@ public class PaymentFee extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "paymentFeeUnit")
   @JsonProperty("paymentFeeUnit")
   private PayUnit paymentFeeUnit;
+
+  public PaymentFee() {}
 }

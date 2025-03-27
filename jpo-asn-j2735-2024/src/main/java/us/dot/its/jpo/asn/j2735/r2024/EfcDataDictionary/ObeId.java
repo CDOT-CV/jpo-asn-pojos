@@ -46,4 +46,6 @@ public class ObeId extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "equipmentObuId")
   @JsonProperty("equipmentObuId")
   private EquipmentObuId equipmentObuId;
+
+  public ObeId() {}
 }

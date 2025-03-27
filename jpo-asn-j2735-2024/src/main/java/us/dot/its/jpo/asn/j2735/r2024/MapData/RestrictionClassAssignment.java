@@ -51,4 +51,6 @@ public class RestrictionClassAssignment extends Asn1Sequence {
   @JsonSerialize(using = RestrictionUserTypeList.RestrictionUserTypeListSerializer.class)
   @JsonDeserialize(using = RestrictionUserTypeList.RestrictionUserTypeListDeserializer.class)
   private RestrictionUserTypeList users;
+
+  public RestrictionClassAssignment() {}
 }

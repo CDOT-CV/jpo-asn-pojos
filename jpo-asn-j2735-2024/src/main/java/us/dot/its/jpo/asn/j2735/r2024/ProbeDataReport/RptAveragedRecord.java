@@ -106,6 +106,8 @@ public class RptAveragedRecord extends Asn1Sequence {
     }
   }
 
+  public RptAveragedRecord() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

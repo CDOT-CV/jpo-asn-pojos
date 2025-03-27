@@ -45,6 +45,8 @@ public class ChargingUnits extends Asn1Choice {
   @JsonProperty("parked")
   private Parked parked;
 
+  public ChargingUnits() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

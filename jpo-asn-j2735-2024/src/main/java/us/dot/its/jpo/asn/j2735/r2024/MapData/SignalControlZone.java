@@ -44,6 +44,8 @@ public class SignalControlZone extends Asn1Sequence {
   @JsonProperty("zone")
   private Reg_SignalControlZone zone;
 
+  public SignalControlZone() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

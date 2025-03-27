@@ -72,6 +72,8 @@ public class TrailerUnitDescJ2945Slash1B extends Asn1Sequence {
   @JsonProperty("axles")
   private Axles axles;
 
+  public TrailerUnitDescJ2945Slash1B() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

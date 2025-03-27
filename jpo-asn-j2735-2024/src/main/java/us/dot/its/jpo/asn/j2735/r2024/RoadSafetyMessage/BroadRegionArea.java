@@ -50,6 +50,8 @@ public class BroadRegionArea extends Asn1Choice {
   @JsonProperty("circle")
   private Circle circle;
 
+  public BroadRegionArea() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

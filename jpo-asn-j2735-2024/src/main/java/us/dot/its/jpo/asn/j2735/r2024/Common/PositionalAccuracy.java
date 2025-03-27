@@ -50,4 +50,6 @@ public class PositionalAccuracy extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "orientation")
   @JsonProperty("orientation")
   private SemiMajorAxisOrientation orientation;
+
+  public PositionalAccuracy() {}
 }

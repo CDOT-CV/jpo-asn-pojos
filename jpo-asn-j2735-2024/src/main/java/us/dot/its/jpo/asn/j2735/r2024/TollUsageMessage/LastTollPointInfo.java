@@ -49,6 +49,8 @@ public class LastTollPointInfo extends Asn1Sequence {
   @JsonProperty("timeStamp")
   private DDateTime timeStamp;
 
+  public LastTollPointInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

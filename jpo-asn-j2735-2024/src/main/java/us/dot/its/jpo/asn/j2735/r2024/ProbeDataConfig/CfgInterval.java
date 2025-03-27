@@ -47,6 +47,8 @@ public class CfgInterval extends Asn1Choice {
   @JsonProperty("distanceInterval")
   private DistanceIntervalInteger distanceInterval;
 
+  public CfgInterval() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

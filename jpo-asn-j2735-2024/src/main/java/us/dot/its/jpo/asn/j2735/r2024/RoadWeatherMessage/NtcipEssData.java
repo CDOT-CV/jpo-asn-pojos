@@ -83,6 +83,8 @@ public class NtcipEssData extends Asn1Sequence {
   @JsonProperty("solarRadiation")
   private NtcipSolarRadiation solarRadiation;
 
+  public NtcipEssData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

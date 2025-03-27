@@ -74,6 +74,8 @@ public class SignalRequestPackage extends Asn1Sequence {
     }
   }
 
+  public SignalRequestPackage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

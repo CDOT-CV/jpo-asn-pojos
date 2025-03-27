@@ -54,4 +54,6 @@ public class AccelerationSet4Way extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "yaw")
   @JsonProperty("yaw")
   private YawRate yaw;
+
+  public AccelerationSet4Way() {}
 }

@@ -78,6 +78,8 @@ public class MovementState extends Asn1Sequence {
     }
   }
 
+  public MovementState() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

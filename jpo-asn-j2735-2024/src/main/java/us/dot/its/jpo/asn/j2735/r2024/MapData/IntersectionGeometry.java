@@ -105,6 +105,8 @@ public class IntersectionGeometry extends Asn1Sequence {
     }
   }
 
+  public IntersectionGeometry() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

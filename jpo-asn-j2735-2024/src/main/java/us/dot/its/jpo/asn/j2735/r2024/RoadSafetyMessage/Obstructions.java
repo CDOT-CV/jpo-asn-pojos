@@ -49,6 +49,8 @@ public class Obstructions extends Asn1Sequence {
   @JsonProperty("description")
   private ITIScodes description;
 
+  public Obstructions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

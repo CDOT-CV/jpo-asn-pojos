@@ -58,6 +58,8 @@ public class AreaOrSegmentChargingInfo extends Asn1Sequence {
     }
   }
 
+  public AreaOrSegmentChargingInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

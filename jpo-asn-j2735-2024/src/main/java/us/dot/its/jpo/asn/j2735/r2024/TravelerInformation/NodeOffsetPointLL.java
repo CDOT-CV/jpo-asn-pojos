@@ -70,4 +70,6 @@ public class NodeOffsetPointLL extends Asn1Choice {
   @Asn1Property(tag = 7, name = "regional")
   @JsonProperty("regional")
   private Reg_NodeOffsetPointLL regional;
+
+  public NodeOffsetPointLL() {}
 }

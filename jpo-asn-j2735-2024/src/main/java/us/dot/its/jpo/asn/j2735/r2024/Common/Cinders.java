@@ -43,6 +43,8 @@ public class Cinders extends Asn1Sequence {
   @JsonProperty("type")
   private CindersType type;
 
+  public Cinders() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

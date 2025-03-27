@@ -46,4 +46,6 @@ public class DMonthDay extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "day")
   @JsonProperty("day")
   private DDay day;
+
+  public DMonthDay() {}
 }

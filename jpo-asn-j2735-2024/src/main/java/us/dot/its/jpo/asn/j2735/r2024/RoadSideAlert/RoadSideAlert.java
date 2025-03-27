@@ -109,6 +109,8 @@ public class RoadSideAlert extends Asn1Sequence {
     }
   }
 
+  public RoadSideAlert() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

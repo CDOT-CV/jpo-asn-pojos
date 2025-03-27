@@ -56,4 +56,6 @@ public class RoadSignID extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "crc", optional = true)
   @JsonProperty("crc")
   private MsgCRC crc;
+
+  public RoadSignID() {}
 }

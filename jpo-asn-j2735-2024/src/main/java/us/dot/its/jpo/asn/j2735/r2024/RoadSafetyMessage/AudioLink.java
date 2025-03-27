@@ -94,6 +94,8 @@ public class AudioLink extends Asn1Sequence {
     }
   }
 
+  public AudioLink() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

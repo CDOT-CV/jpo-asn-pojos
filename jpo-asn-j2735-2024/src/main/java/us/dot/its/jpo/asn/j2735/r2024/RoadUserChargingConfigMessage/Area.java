@@ -53,6 +53,8 @@ public class Area extends Asn1Sequence {
   @JsonProperty("chargingFees")
   private ChargingFees chargingFees;
 
+  public Area() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

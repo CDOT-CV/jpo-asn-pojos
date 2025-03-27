@@ -48,4 +48,6 @@ public class Point extends Asn1Choice {
   @Asn1Property(tag = 2, name = "relativePointCoordinates")
   @JsonProperty("relativePointCoordinates")
   private RelativePosition3d relativePointCoordinates;
+
+  public Point() {}
 }

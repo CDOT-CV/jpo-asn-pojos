@@ -102,6 +102,8 @@ public class CfgVehicleEvents extends Asn1Sequence {
     }
   }
 
+  public CfgVehicleEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

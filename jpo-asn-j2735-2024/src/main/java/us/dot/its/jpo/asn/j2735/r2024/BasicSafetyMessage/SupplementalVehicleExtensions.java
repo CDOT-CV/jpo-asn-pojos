@@ -111,6 +111,8 @@ public class SupplementalVehicleExtensions extends Asn1Sequence {
     }
   }
 
+  public SupplementalVehicleExtensions() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

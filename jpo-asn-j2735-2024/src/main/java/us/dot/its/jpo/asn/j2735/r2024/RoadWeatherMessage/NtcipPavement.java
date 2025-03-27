@@ -60,6 +60,8 @@ public class NtcipPavement extends Asn1Sequence {
   @JsonProperty("roadRoughness")
   private RoadRoughness roadRoughness;
 
+  public NtcipPavement() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

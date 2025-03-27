@@ -52,6 +52,8 @@ public class ConfigTemporalBoundary extends Asn1Sequence {
   @JsonProperty("recurring")
   private CfgEventRecurrence recurring;
 
+  public ConfigTemporalBoundary() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

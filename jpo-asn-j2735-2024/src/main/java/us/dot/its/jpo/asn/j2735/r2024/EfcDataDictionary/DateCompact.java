@@ -88,4 +88,6 @@ public class DateCompact extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public DateCompact() {}
 }

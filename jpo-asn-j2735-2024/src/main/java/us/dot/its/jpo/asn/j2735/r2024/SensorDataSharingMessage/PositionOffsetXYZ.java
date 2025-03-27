@@ -50,4 +50,6 @@ public class PositionOffsetXYZ extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "offsetZ", optional = true)
   @JsonProperty("offsetZ")
   private ObjectDistance offsetZ;
+
+  public PositionOffsetXYZ() {}
 }

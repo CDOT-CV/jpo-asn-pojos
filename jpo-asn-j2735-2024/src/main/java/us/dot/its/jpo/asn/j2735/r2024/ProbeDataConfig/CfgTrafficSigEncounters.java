@@ -123,6 +123,8 @@ public class CfgTrafficSigEncounters extends Asn1Sequence {
     }
   }
 
+  public CfgTrafficSigEncounters() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

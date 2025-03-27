@@ -67,6 +67,8 @@ public class TumAckHash extends Asn1Sequence {
     }
   }
 
+  public TumAckHash() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

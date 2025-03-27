@@ -142,6 +142,8 @@ public class VehicleAxlesAndWeightInfo extends Asn1Sequence {
     }
   }
 
+  public VehicleAxlesAndWeightInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

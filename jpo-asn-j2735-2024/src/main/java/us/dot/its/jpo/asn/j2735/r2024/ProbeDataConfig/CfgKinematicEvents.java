@@ -47,6 +47,8 @@ public class CfgKinematicEvents extends Asn1Sequence {
   @JsonProperty("hysteresis")
   private CfgHysteresis hysteresis;
 
+  public CfgKinematicEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

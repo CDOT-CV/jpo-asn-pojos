@@ -105,6 +105,8 @@ public class DynamicInfoContainer extends Asn1Sequence {
     }
   }
 
+  public DynamicInfoContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

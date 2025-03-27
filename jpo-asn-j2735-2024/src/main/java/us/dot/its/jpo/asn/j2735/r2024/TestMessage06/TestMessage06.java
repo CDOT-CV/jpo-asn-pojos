@@ -49,6 +49,8 @@ public class TestMessage06 extends Asn1Sequence {
   @JsonProperty("regional")
   private Reg_TestMessage06 regional;
 
+  public TestMessage06() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

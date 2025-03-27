@@ -65,6 +65,8 @@ public class Path extends Asn1Sequence {
     }
   }
 
+  public Path() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

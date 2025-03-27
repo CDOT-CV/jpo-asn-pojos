@@ -55,6 +55,8 @@ public class RoadRoughness extends Asn1Sequence {
   @JsonProperty("horizontalVariationStdDev")
   private VariationStdDev horizontalVariationStdDev;
 
+  public RoadRoughness() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

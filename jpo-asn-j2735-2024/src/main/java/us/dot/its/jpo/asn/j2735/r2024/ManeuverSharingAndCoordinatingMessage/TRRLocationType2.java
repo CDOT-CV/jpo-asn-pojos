@@ -59,6 +59,8 @@ public class TRRLocationType2 extends Asn1Sequence {
   @JsonProperty("laneOffset")
   private LaneOffset laneOffset;
 
+  public TRRLocationType2() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

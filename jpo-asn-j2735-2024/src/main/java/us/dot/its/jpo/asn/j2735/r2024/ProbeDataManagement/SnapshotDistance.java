@@ -55,4 +55,6 @@ public class SnapshotDistance extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "speed2")
   @JsonProperty("speed2")
   private GrossSpeed speed2;
+
+  public SnapshotDistance() {}
 }

@@ -47,6 +47,8 @@ public class FeeReport extends Asn1Sequence {
   @JsonProperty("fees")
   private UserFeeInfo fees;
 
+  public FeeReport() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -70,6 +70,8 @@ public class MovementEvent extends Asn1Sequence {
     }
   }
 
+  public MovementEvent() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

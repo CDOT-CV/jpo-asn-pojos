@@ -42,6 +42,8 @@ public class TravelerDataFrameNewPartIIIContent extends Asn1Choice {
   @JsonProperty("frictionInfo")
   private FrictionInformation frictionInfo;
 
+  public TravelerDataFrameNewPartIIIContent() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

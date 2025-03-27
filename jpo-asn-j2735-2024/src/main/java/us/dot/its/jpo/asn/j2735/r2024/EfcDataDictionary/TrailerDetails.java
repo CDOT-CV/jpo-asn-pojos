@@ -60,4 +60,6 @@ public class TrailerDetails extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public TrailerDetails() {}
 }

@@ -50,4 +50,6 @@ public class VehicleSizeConfidence extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "vehicleHeightConfidence", optional = true)
   @JsonProperty("vehicleHeightConfidence")
   private SizeValueConfidence vehicleHeightConfidence;
+
+  public VehicleSizeConfidence() {}
 }

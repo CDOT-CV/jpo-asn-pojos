@@ -67,6 +67,8 @@ public class PathHistoryPoint extends Asn1Sequence {
   @JsonProperty("heading")
   private CoarseHeading heading;
 
+  public PathHistoryPoint() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

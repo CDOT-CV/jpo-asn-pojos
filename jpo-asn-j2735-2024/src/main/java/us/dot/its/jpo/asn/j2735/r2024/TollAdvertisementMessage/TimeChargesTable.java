@@ -61,6 +61,8 @@ public class TimeChargesTable extends Asn1Sequence {
     }
   }
 
+  public TimeChargesTable() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

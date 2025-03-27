@@ -63,4 +63,6 @@ public class AxesMovement extends Asn1Sequence {
   @Asn1Property(tag = 5, name = "rollRate", optional = true)
   @JsonProperty("rollRate")
   private RollRate rollRate;
+
+  public AxesMovement() {}
 }

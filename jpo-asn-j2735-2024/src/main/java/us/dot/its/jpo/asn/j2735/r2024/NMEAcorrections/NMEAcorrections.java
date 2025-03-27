@@ -77,6 +77,8 @@ public class NMEAcorrections extends Asn1Sequence {
     }
   }
 
+  public NMEAcorrections() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

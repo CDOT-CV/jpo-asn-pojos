@@ -45,6 +45,8 @@ public class WeightCharges extends Asn1Choice {
   @JsonProperty("perAxleWeightCharges")
   private PerAxleWeightCharges perAxleWeightCharges;
 
+  public WeightCharges() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

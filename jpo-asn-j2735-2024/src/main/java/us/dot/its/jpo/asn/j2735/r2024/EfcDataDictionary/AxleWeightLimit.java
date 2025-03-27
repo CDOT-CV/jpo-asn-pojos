@@ -46,4 +46,6 @@ public class AxleWeightLimit extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "maxLadenWeightOnAxle")
   @JsonProperty("maxLadenWeightOnAxle")
   private Int2Unsigned maxLadenWeightOnAxle;
+
+  public AxleWeightLimit() {}
 }

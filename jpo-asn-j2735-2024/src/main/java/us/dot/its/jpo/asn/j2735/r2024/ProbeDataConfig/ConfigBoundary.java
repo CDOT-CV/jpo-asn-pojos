@@ -46,6 +46,8 @@ public class ConfigBoundary extends Asn1Choice {
   @JsonProperty("geoAndDistBoundary")
   private ValidRegion geoAndDistBoundary;
 
+  public ConfigBoundary() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

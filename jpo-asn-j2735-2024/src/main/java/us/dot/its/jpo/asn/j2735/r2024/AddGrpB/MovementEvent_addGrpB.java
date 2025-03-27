@@ -64,6 +64,8 @@ public class MovementEvent_addGrpB extends Asn1Sequence {
   @JsonProperty("nextTime")
   private TimeRemaining nextTime;
 
+  public MovementEvent_addGrpB() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

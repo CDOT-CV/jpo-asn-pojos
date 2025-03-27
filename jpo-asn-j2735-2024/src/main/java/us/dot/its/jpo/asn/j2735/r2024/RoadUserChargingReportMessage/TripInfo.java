@@ -78,6 +78,8 @@ public class TripInfo extends Asn1Sequence {
     }
   }
 
+  public TripInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

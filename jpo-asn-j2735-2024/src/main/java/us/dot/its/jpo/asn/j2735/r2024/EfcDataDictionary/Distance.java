@@ -46,4 +46,6 @@ public class Distance extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "distanceUnit", defaultValue = "kilometres")
   @JsonProperty("distanceUnit")
   private DistanceUnit distanceUnit;
+
+  public Distance() {}
 }

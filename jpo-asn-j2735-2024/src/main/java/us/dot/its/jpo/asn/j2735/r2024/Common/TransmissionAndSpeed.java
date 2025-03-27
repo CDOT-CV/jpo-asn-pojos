@@ -46,4 +46,6 @@ public class TransmissionAndSpeed extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "speed")
   @JsonProperty("speed")
   private Velocity speed;
+
+  public TransmissionAndSpeed() {}
 }

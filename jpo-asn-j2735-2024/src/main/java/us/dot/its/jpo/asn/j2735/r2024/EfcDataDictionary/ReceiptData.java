@@ -129,4 +129,6 @@ public class ReceiptData extends Asn1Sequence {
       setValue(value);
     }
   }
+
+  public ReceiptData() {}
 }

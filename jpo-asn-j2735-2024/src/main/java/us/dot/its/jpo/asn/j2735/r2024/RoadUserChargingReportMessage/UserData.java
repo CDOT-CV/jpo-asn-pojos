@@ -64,6 +64,8 @@ public class UserData extends Asn1Sequence {
   @JsonProperty("vehicleDescription")
   private VehicleDescription vehicleDescription;
 
+  public UserData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

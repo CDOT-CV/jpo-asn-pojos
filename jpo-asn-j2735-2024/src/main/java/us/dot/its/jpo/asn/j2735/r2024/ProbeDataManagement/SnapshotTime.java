@@ -55,4 +55,6 @@ public class SnapshotTime extends Asn1Sequence {
   @Asn1Property(tag = 3, name = "time2")
   @JsonProperty("time2")
   private SecondOfTime time2;
+
+  public SnapshotTime() {}
 }

@@ -61,4 +61,6 @@ public class SessionLocation extends Asn1Sequence {
       this.value = value;
     }
   }
+
+  public SessionLocation() {}
 }

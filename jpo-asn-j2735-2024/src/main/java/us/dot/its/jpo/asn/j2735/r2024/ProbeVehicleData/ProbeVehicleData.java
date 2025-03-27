@@ -92,6 +92,8 @@ public class ProbeVehicleData extends Asn1Sequence {
     }
   }
 
+  public ProbeVehicleData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

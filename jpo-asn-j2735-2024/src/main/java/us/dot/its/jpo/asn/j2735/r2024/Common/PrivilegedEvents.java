@@ -47,6 +47,8 @@ public class PrivilegedEvents extends Asn1Sequence {
   @JsonProperty("event")
   private PrivilegedEventFlags event;
 
+  public PrivilegedEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

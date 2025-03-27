@@ -48,6 +48,8 @@ public class PrimaryRegionState extends Asn1Sequence {
   @JsonProperty("chargingFees")
   private ChargingFees chargingFees;
 
+  public PrimaryRegionState() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

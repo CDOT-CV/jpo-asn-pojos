@@ -135,4 +135,6 @@ public class Lpn extends Asn1Sequence {
       setValue(value);
     }
   }
+
+  public Lpn() {}
 }

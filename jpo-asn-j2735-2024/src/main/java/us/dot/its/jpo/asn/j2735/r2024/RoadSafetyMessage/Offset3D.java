@@ -51,6 +51,8 @@ public class Offset3D extends Asn1Sequence {
   @JsonProperty("elev-offset")
   private ElevOffset elev_offset;
 
+  public Offset3D() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

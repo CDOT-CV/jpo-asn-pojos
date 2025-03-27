@@ -100,6 +100,8 @@ public class IntersectionCollision extends Asn1Sequence {
     }
   }
 
+  public IntersectionCollision() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

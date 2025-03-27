@@ -62,4 +62,6 @@ public class Connection extends Asn1Sequence {
   @Asn1Property(tag = 4, name = "connectionID", optional = true)
   @JsonProperty("connectionID")
   private LaneConnectionID connectionID;
+
+  public Connection() {}
 }

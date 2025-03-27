@@ -50,4 +50,6 @@ public class VehicleDimensions extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "vehicleWidthOverall")
   @JsonProperty("vehicleWidthOverall")
   private Int1Unsigned vehicleWidthOverall;
+
+  public VehicleDimensions() {}
 }

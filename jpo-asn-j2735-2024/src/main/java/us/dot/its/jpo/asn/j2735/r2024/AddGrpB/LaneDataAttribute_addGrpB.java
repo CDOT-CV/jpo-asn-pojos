@@ -33,6 +33,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 @ToString(callSuper = true)
 public class LaneDataAttribute_addGrpB extends Asn1Sequence {
 
+  public LaneDataAttribute_addGrpB() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

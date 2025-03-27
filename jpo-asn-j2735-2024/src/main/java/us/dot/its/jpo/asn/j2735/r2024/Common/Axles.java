@@ -89,6 +89,8 @@ public class Axles extends Asn1Sequence {
     }
   }
 
+  public Axles() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -76,6 +76,8 @@ public class ItemizedChargerData extends Asn1Sequence {
     }
   }
 
+  public ItemizedChargerData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

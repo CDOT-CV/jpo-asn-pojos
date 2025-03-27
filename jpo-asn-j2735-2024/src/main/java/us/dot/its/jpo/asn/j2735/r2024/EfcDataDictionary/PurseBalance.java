@@ -46,4 +46,6 @@ public class PurseBalance extends Asn1Sequence {
   @Asn1Property(tag = 1, name = "purseUnit")
   @JsonProperty("purseUnit")
   private PayUnit purseUnit;
+
+  public PurseBalance() {}
 }

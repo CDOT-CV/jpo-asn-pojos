@@ -43,6 +43,8 @@ public class Snow extends Asn1Sequence {
   @JsonProperty("type")
   private SnowType type;
 
+  public Snow() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

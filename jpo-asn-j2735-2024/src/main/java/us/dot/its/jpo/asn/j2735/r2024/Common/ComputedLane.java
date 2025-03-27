@@ -86,6 +86,8 @@ public class ComputedLane extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "large")
     @JsonProperty("large")
     private DrivenLineOffsetLg large;
+
+    public OffsetXaxisChoice() {}
   }
 
   @ToString(callSuper = true)
@@ -100,6 +102,8 @@ public class ComputedLane extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "large")
     @JsonProperty("large")
     private DrivenLineOffsetLg large;
+
+    public OffsetYaxisChoice() {}
   }
 
   @JsonInclude(Include.NON_NULL)
@@ -108,6 +112,8 @@ public class ComputedLane extends Asn1Sequence {
       super(Reg_ComputedLane.class, 1L, 4L);
     }
   }
+
+  public ComputedLane() {}
 
   @Override
   public boolean hasExtensionMarker() {

@@ -62,6 +62,8 @@ public class IncidentsContainer extends Asn1Sequence {
     }
   }
 
+  public IncidentsContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

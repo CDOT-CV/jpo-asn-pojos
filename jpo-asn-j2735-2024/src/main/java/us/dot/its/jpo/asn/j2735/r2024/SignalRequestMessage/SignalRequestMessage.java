@@ -81,6 +81,8 @@ public class SignalRequestMessage extends Asn1Sequence {
     }
   }
 
+  public SignalRequestMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

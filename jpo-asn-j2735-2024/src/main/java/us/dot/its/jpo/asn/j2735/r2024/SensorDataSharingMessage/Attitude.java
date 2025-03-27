@@ -50,4 +50,6 @@ public class Attitude extends Asn1Sequence {
   @Asn1Property(tag = 2, name = "yaw")
   @JsonProperty("yaw")
   private YawDetected yaw;
+
+  public Attitude() {}
 }

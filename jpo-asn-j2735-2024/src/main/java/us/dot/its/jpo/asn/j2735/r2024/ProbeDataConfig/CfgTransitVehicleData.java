@@ -52,6 +52,8 @@ public class CfgTransitVehicleData extends Asn1Sequence {
   @JsonProperty("trnstVehSchAdh")
   private Asn1Boolean trnstVehSchAdh;
 
+  public CfgTransitVehicleData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

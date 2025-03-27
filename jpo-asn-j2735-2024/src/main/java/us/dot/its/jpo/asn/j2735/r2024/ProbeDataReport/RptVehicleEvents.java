@@ -98,6 +98,8 @@ public class RptVehicleEvents extends Asn1Choice {
   @JsonProperty("driverAlertsAndWarnings")
   private RptDriverAlertsAndWarnings driverAlertsAndWarnings;
 
+  public RptVehicleEvents() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

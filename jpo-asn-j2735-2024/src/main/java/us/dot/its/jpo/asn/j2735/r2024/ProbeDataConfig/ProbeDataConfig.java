@@ -69,6 +69,8 @@ public class ProbeDataConfig extends Asn1Sequence {
     }
   }
 
+  public ProbeDataConfig() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

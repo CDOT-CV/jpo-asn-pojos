@@ -60,6 +60,8 @@ public class CooperativeControlMessage extends Asn1Sequence {
     }
   }
 
+  public CooperativeControlMessage() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

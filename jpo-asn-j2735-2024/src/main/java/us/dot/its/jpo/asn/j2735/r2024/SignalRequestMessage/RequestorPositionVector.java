@@ -54,6 +54,8 @@ public class RequestorPositionVector extends Asn1Sequence {
   @JsonProperty("speed")
   private TransmissionAndSpeed speed;
 
+  public RequestorPositionVector() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

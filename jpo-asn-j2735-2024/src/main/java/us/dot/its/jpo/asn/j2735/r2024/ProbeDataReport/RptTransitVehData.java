@@ -89,6 +89,8 @@ public class RptTransitVehData extends Asn1Sequence {
     }
   }
 
+  public RptTransitVehData() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

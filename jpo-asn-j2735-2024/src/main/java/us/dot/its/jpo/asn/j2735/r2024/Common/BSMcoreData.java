@@ -94,4 +94,6 @@ public class BSMcoreData extends Asn1Sequence {
   @Asn1Property(tag = 13, name = "size")
   @JsonProperty("size")
   private VehicleSize size;
+
+  public BSMcoreData() {}
 }

@@ -57,5 +57,9 @@ public class WorkZoneSequence extends Asn1Sequence {
     @Asn1Property(tag = 1, name = "text")
     @JsonProperty("text")
     private ITIStextPhrase text;
+
+    public ItemChoice() {}
   }
+
+  public WorkZoneSequence() {}
 }

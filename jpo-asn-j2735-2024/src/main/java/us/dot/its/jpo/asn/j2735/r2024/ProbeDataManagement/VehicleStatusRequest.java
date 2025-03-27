@@ -98,6 +98,8 @@ public class VehicleStatusRequest extends Asn1Sequence {
     }
   }
 
+  public VehicleStatusRequest() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

@@ -52,6 +52,8 @@ public class LaneInfo extends Asn1Sequence {
   @JsonProperty("laneCloseOffset")
   private ObstacleDistance laneCloseOffset;
 
+  public LaneInfo() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

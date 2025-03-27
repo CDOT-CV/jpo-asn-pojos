@@ -43,6 +43,8 @@ public class Ice extends Asn1Sequence {
   @JsonProperty("type")
   private IceType type;
 
+  public Ice() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

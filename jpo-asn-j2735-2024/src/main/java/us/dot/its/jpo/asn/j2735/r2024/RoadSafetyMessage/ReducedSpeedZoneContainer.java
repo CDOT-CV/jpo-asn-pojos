@@ -48,6 +48,8 @@ public class ReducedSpeedZoneContainer extends Asn1Sequence {
   @JsonProperty("rszRegion")
   private RegionInfo rszRegion;
 
+  public ReducedSpeedZoneContainer() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;

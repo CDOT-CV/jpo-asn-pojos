@@ -83,6 +83,8 @@ public class TrafficLightStatus extends Asn1Sequence {
   @JsonProperty("reserved")
   private ReservedBit reserved;
 
+  public TrafficLightStatus() {}
+
   @Override
   public boolean hasExtensionMarker() {
     return true;
