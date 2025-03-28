@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_IntersectionState;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_IntersectionState")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,19 @@ public class IntersectionState_addGrpCReg_IntersectionState
   @JsonDeserialize(using = IntersectionState_addGrpCReg_IntersectionStateValueDeserializer.class)
   public void setRegExtValue(IntersectionState_addGrpC value) {
     super.setRegExtValue(value);
+  }
+
+  public static class IntersectionState_addGrpCReg_IntersectionStateValueSerializer
+      extends OpenTypeSerializer<IntersectionState_addGrpC> {
+    public IntersectionState_addGrpCReg_IntersectionStateValueSerializer() {
+      super(IntersectionState_addGrpC.class, "regExtValue", "IntersectionState_addGrpC");
+    }
+  }
+
+  public static class IntersectionState_addGrpCReg_IntersectionStateValueDeserializer
+      extends OpenTypeDeserializer<IntersectionState_addGrpC> {
+    public IntersectionState_addGrpCReg_IntersectionStateValueDeserializer() {
+      super(IntersectionState_addGrpC.class, "IntersectionState_addGrpC");
+    }
   }
 }

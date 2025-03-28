@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class TollUsageAckMessageMessageFrame extends MessageFrame<TollUsageAckMe
   @JsonDeserialize(using = TollUsageAckMessageMessageFrameValueDeserializer.class)
   public void setValue(TollUsageAckMessage value) {
     super.setValue(value);
+  }
+
+  public static class TollUsageAckMessageMessageFrameValueSerializer
+      extends OpenTypeSerializer<TollUsageAckMessage> {
+    public TollUsageAckMessageMessageFrameValueSerializer() {
+      super(TollUsageAckMessage.class, "value", "TollUsageAckMessage");
+    }
+  }
+
+  public static class TollUsageAckMessageMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<TollUsageAckMessage> {
+    public TollUsageAckMessageMessageFrameValueDeserializer() {
+      super(TollUsageAckMessage.class, "TollUsageAckMessage");
+    }
   }
 }

@@ -26,6 +26,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("BSMpartIIExtension")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class SpecialVehicleExtensionsBSMpartIIExtension
   @JsonDeserialize(using = SpecialVehicleExtensionsBSMpartIIExtensionValueDeserializer.class)
   public void setPartII_Value(SpecialVehicleExtensions value) {
     super.setPartII_Value(value);
+  }
+
+  public static class SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer
+      extends OpenTypeSerializer<SpecialVehicleExtensions> {
+    public SpecialVehicleExtensionsBSMpartIIExtensionValueSerializer() {
+      super(SpecialVehicleExtensions.class, "partII-Value", "SpecialVehicleExtensions");
+    }
+  }
+
+  public static class SpecialVehicleExtensionsBSMpartIIExtensionValueDeserializer
+      extends OpenTypeDeserializer<SpecialVehicleExtensions> {
+    public SpecialVehicleExtensionsBSMpartIIExtensionValueDeserializer() {
+      super(SpecialVehicleExtensions.class, "SpecialVehicleExtensions");
+    }
   }
 }

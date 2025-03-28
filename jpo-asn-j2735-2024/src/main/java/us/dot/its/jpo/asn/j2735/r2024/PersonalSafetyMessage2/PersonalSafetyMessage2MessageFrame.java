@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class PersonalSafetyMessage2MessageFrame extends MessageFrame<PersonalSaf
   @JsonDeserialize(using = PersonalSafetyMessage2MessageFrameValueDeserializer.class)
   public void setValue(PersonalSafetyMessage2 value) {
     super.setValue(value);
+  }
+
+  public static class PersonalSafetyMessage2MessageFrameValueSerializer
+      extends OpenTypeSerializer<PersonalSafetyMessage2> {
+    public PersonalSafetyMessage2MessageFrameValueSerializer() {
+      super(PersonalSafetyMessage2.class, "value", "PersonalSafetyMessage2");
+    }
+  }
+
+  public static class PersonalSafetyMessage2MessageFrameValueDeserializer
+      extends OpenTypeDeserializer<PersonalSafetyMessage2> {
+    public PersonalSafetyMessage2MessageFrameValueDeserializer() {
+      super(PersonalSafetyMessage2.class, "PersonalSafetyMessage2");
+    }
   }
 }

@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RestrictionUserType;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_RestrictionUserType")
 @JsonDeserialize(using = None.class)
@@ -48,5 +50,19 @@ public class RestrictionUserType_addGrpCReg_RestrictionUserType
       using = RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer.class)
   public void setRegExtValue(RestrictionUserType_addGrpC value) {
     super.setRegExtValue(value);
+  }
+
+  public static class RestrictionUserType_addGrpCReg_RestrictionUserTypeValueSerializer
+      extends OpenTypeSerializer<RestrictionUserType_addGrpC> {
+    public RestrictionUserType_addGrpCReg_RestrictionUserTypeValueSerializer() {
+      super(RestrictionUserType_addGrpC.class, "regExtValue", "RestrictionUserType_addGrpC");
+    }
+  }
+
+  public static class RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer
+      extends OpenTypeDeserializer<RestrictionUserType_addGrpC> {
+    public RestrictionUserType_addGrpCReg_RestrictionUserTypeValueDeserializer() {
+      super(RestrictionUserType_addGrpC.class, "RestrictionUserType_addGrpC");
+    }
   }
 }

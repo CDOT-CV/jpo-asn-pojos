@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class IntersectionCollisionMessageFrame extends MessageFrame<Intersection
   @JsonDeserialize(using = IntersectionCollisionMessageFrameValueDeserializer.class)
   public void setValue(IntersectionCollision value) {
     super.setValue(value);
+  }
+
+  public static class IntersectionCollisionMessageFrameValueSerializer
+      extends OpenTypeSerializer<IntersectionCollision> {
+    public IntersectionCollisionMessageFrameValueSerializer() {
+      super(IntersectionCollision.class, "value", "IntersectionCollision");
+    }
+  }
+
+  public static class IntersectionCollisionMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<IntersectionCollision> {
+    public IntersectionCollisionMessageFrameValueDeserializer() {
+      super(IntersectionCollision.class, "IntersectionCollision");
+    }
   }
 }

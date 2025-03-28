@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_ConnectionManeuverAssist")
 @JsonDeserialize(using = None.class)
@@ -49,5 +51,22 @@ public class ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist
       using = ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer.class)
   public void setRegExtValue(ConnectionManeuverAssist_addGrpC value) {
     super.setRegExtValue(value);
+  }
+
+  public static class ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueSerializer
+      extends OpenTypeSerializer<ConnectionManeuverAssist_addGrpC> {
+    public ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueSerializer() {
+      super(
+          ConnectionManeuverAssist_addGrpC.class,
+          "regExtValue",
+          "ConnectionManeuverAssist_addGrpC");
+    }
+  }
+
+  public static class ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer
+      extends OpenTypeDeserializer<ConnectionManeuverAssist_addGrpC> {
+    public ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssistValueDeserializer() {
+      super(ConnectionManeuverAssist_addGrpC.class, "ConnectionManeuverAssist_addGrpC");
+    }
   }
 }

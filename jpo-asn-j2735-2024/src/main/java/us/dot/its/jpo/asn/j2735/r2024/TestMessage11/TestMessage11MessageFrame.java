@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class TestMessage11MessageFrame extends MessageFrame<TestMessage11> {
   @JsonDeserialize(using = TestMessage11MessageFrameValueDeserializer.class)
   public void setValue(TestMessage11 value) {
     super.setValue(value);
+  }
+
+  public static class TestMessage11MessageFrameValueSerializer
+      extends OpenTypeSerializer<TestMessage11> {
+    public TestMessage11MessageFrameValueSerializer() {
+      super(TestMessage11.class, "value", "TestMessage11");
+    }
+  }
+
+  public static class TestMessage11MessageFrameValueDeserializer
+      extends OpenTypeDeserializer<TestMessage11> {
+    public TestMessage11MessageFrameValueDeserializer() {
+      super(TestMessage11.class, "TestMessage11");
+    }
   }
 }

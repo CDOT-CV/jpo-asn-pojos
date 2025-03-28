@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_Position3D")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class Position3D_addGrpCReg_Position3D extends Reg_Position3D<Position3D_
   @JsonDeserialize(using = Position3D_addGrpCReg_Position3DValueDeserializer.class)
   public void setRegExtValue(Position3D_addGrpC value) {
     super.setRegExtValue(value);
+  }
+
+  public static class Position3D_addGrpCReg_Position3DValueSerializer
+      extends OpenTypeSerializer<Position3D_addGrpC> {
+    public Position3D_addGrpCReg_Position3DValueSerializer() {
+      super(Position3D_addGrpC.class, "regExtValue", "Position3D_addGrpC");
+    }
+  }
+
+  public static class Position3D_addGrpCReg_Position3DValueDeserializer
+      extends OpenTypeDeserializer<Position3D_addGrpC> {
+    public Position3D_addGrpCReg_Position3DValueDeserializer() {
+      super(Position3D_addGrpC.class, "Position3D_addGrpC");
+    }
   }
 }

@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,22 @@ public class SignalControlAndPrioritizationRequestMessageFrame
   @JsonDeserialize(using = SignalControlAndPrioritizationRequestMessageFrameValueDeserializer.class)
   public void setValue(SignalControlAndPrioritizationRequest value) {
     super.setValue(value);
+  }
+
+  public static class SignalControlAndPrioritizationRequestMessageFrameValueSerializer
+      extends OpenTypeSerializer<SignalControlAndPrioritizationRequest> {
+    public SignalControlAndPrioritizationRequestMessageFrameValueSerializer() {
+      super(
+          SignalControlAndPrioritizationRequest.class,
+          "value",
+          "SignalControlAndPrioritizationRequest");
+    }
+  }
+
+  public static class SignalControlAndPrioritizationRequestMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<SignalControlAndPrioritizationRequest> {
+    public SignalControlAndPrioritizationRequestMessageFrameValueDeserializer() {
+      super(SignalControlAndPrioritizationRequest.class, "SignalControlAndPrioritizationRequest");
+    }
   }
 }

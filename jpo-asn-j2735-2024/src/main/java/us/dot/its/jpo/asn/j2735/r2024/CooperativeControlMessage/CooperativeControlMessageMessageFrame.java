@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class CooperativeControlMessageMessageFrame extends MessageFrame<Cooperat
   @JsonDeserialize(using = CooperativeControlMessageMessageFrameValueDeserializer.class)
   public void setValue(CooperativeControlMessage value) {
     super.setValue(value);
+  }
+
+  public static class CooperativeControlMessageMessageFrameValueSerializer
+      extends OpenTypeSerializer<CooperativeControlMessage> {
+    public CooperativeControlMessageMessageFrameValueSerializer() {
+      super(CooperativeControlMessage.class, "value", "CooperativeControlMessage");
+    }
+  }
+
+  public static class CooperativeControlMessageMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<CooperativeControlMessage> {
+    public CooperativeControlMessageMessageFrameValueDeserializer() {
+      super(CooperativeControlMessage.class, "CooperativeControlMessage");
+    }
   }
 }

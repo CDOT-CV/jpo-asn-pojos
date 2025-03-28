@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BSMpartIIExtension;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("BSMpartIIExtension")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,19 @@ public class VehicleSafetyExtensionsBSMpartIIExtension
   @JsonDeserialize(using = VehicleSafetyExtensionsBSMpartIIExtensionValueDeserializer.class)
   public void setPartII_Value(VehicleSafetyExtensions value) {
     super.setPartII_Value(value);
+  }
+
+  public static class VehicleSafetyExtensionsBSMpartIIExtensionValueSerializer
+      extends OpenTypeSerializer<VehicleSafetyExtensions> {
+    public VehicleSafetyExtensionsBSMpartIIExtensionValueSerializer() {
+      super(VehicleSafetyExtensions.class, "partII-Value", "VehicleSafetyExtensions");
+    }
+  }
+
+  public static class VehicleSafetyExtensionsBSMpartIIExtensionValueDeserializer
+      extends OpenTypeDeserializer<VehicleSafetyExtensions> {
+    public VehicleSafetyExtensionsBSMpartIIExtensionValueDeserializer() {
+      super(VehicleSafetyExtensions.class, "VehicleSafetyExtensions");
+    }
   }
 }

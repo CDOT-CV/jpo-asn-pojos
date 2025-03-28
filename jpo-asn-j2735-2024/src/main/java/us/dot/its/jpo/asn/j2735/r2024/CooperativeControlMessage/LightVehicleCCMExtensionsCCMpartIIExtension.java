@@ -26,6 +26,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("CCMpartIIExtension")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class LightVehicleCCMExtensionsCCMpartIIExtension
   @JsonDeserialize(using = LightVehicleCCMExtensionsCCMpartIIExtensionValueDeserializer.class)
   public void setPartII_Value(LightVehicleCCMExtensions value) {
     super.setPartII_Value(value);
+  }
+
+  public static class LightVehicleCCMExtensionsCCMpartIIExtensionValueSerializer
+      extends OpenTypeSerializer<LightVehicleCCMExtensions> {
+    public LightVehicleCCMExtensionsCCMpartIIExtensionValueSerializer() {
+      super(LightVehicleCCMExtensions.class, "partII-Value", "LightVehicleCCMExtensions");
+    }
+  }
+
+  public static class LightVehicleCCMExtensionsCCMpartIIExtensionValueDeserializer
+      extends OpenTypeDeserializer<LightVehicleCCMExtensions> {
+    public LightVehicleCCMExtensionsCCMpartIIExtensionValueDeserializer() {
+      super(LightVehicleCCMExtensions.class, "LightVehicleCCMExtensions");
+    }
   }
 }

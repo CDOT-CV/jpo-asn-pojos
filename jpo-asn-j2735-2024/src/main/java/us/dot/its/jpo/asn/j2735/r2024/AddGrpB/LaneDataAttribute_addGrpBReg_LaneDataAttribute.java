@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_LaneDataAttribute;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_LaneDataAttribute")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,19 @@ public class LaneDataAttribute_addGrpBReg_LaneDataAttribute
   @JsonDeserialize(using = LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer.class)
   public void setRegExtValue(LaneDataAttribute_addGrpB value) {
     super.setRegExtValue(value);
+  }
+
+  public static class LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer
+      extends OpenTypeSerializer<LaneDataAttribute_addGrpB> {
+    public LaneDataAttribute_addGrpBReg_LaneDataAttributeValueSerializer() {
+      super(LaneDataAttribute_addGrpB.class, "regExtValue", "LaneDataAttribute_addGrpB");
+    }
+  }
+
+  public static class LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer
+      extends OpenTypeDeserializer<LaneDataAttribute_addGrpB> {
+    public LaneDataAttribute_addGrpBReg_LaneDataAttributeValueDeserializer() {
+      super(LaneDataAttribute_addGrpB.class, "LaneDataAttribute_addGrpB");
+    }
   }
 }

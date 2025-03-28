@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_NodeOffsetPointXY;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_NodeOffsetPointXY")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,19 @@ public class NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY
   @JsonDeserialize(using = NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer.class)
   public void setRegExtValue(NodeOffsetPointXY_addGrpB value) {
     super.setRegExtValue(value);
+  }
+
+  public static class NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueSerializer
+      extends OpenTypeSerializer<NodeOffsetPointXY_addGrpB> {
+    public NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueSerializer() {
+      super(NodeOffsetPointXY_addGrpB.class, "regExtValue", "NodeOffsetPointXY_addGrpB");
+    }
+  }
+
+  public static class NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer
+      extends OpenTypeDeserializer<NodeOffsetPointXY_addGrpB> {
+    public NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXYValueDeserializer() {
+      super(NodeOffsetPointXY_addGrpB.class, "NodeOffsetPointXY_addGrpB");
+    }
   }
 }

@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class RoadWeatherMessageMessageFrame extends MessageFrame<RoadWeatherMess
   @JsonDeserialize(using = RoadWeatherMessageMessageFrameValueDeserializer.class)
   public void setValue(RoadWeatherMessage value) {
     super.setValue(value);
+  }
+
+  public static class RoadWeatherMessageMessageFrameValueSerializer
+      extends OpenTypeSerializer<RoadWeatherMessage> {
+    public RoadWeatherMessageMessageFrameValueSerializer() {
+      super(RoadWeatherMessage.class, "value", "RoadWeatherMessage");
+    }
+  }
+
+  public static class RoadWeatherMessageMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<RoadWeatherMessage> {
+    public RoadWeatherMessageMessageFrameValueDeserializer() {
+      super(RoadWeatherMessage.class, "RoadWeatherMessage");
+    }
   }
 }

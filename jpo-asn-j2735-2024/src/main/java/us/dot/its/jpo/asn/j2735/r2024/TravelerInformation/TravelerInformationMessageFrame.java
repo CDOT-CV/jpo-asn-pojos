@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class TravelerInformationMessageFrame extends MessageFrame<TravelerInform
   @JsonDeserialize(using = TravelerInformationMessageFrameValueDeserializer.class)
   public void setValue(TravelerInformation value) {
     super.setValue(value);
+  }
+
+  public static class TravelerInformationMessageFrameValueSerializer
+      extends OpenTypeSerializer<TravelerInformation> {
+    public TravelerInformationMessageFrameValueSerializer() {
+      super(TravelerInformation.class, "value", "TravelerInformation");
+    }
+  }
+
+  public static class TravelerInformationMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<TravelerInformation> {
+    public TravelerInformationMessageFrameValueDeserializer() {
+      super(TravelerInformation.class, "TravelerInformation");
+    }
   }
 }

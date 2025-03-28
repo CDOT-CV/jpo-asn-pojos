@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,19 @@ public class RoadUserChargingConfigMessageMessageFrame
   @JsonDeserialize(using = RoadUserChargingConfigMessageMessageFrameValueDeserializer.class)
   public void setValue(RoadUserChargingConfigMessage value) {
     super.setValue(value);
+  }
+
+  public static class RoadUserChargingConfigMessageMessageFrameValueSerializer
+      extends OpenTypeSerializer<RoadUserChargingConfigMessage> {
+    public RoadUserChargingConfigMessageMessageFrameValueSerializer() {
+      super(RoadUserChargingConfigMessage.class, "value", "RoadUserChargingConfigMessage");
+    }
+  }
+
+  public static class RoadUserChargingConfigMessageMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<RoadUserChargingConfigMessage> {
+    public RoadUserChargingConfigMessageMessageFrameValueDeserializer() {
+      super(RoadUserChargingConfigMessage.class, "RoadUserChargingConfigMessage");
+    }
   }
 }

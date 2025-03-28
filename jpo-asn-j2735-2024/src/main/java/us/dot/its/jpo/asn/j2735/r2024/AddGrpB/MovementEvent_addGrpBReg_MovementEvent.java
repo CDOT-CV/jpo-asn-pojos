@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_MovementEvent")
 @JsonDeserialize(using = None.class)
@@ -47,5 +49,19 @@ public class MovementEvent_addGrpBReg_MovementEvent
   @JsonDeserialize(using = MovementEvent_addGrpBReg_MovementEventValueDeserializer.class)
   public void setRegExtValue(MovementEvent_addGrpB value) {
     super.setRegExtValue(value);
+  }
+
+  public static class MovementEvent_addGrpBReg_MovementEventValueSerializer
+      extends OpenTypeSerializer<MovementEvent_addGrpB> {
+    public MovementEvent_addGrpBReg_MovementEventValueSerializer() {
+      super(MovementEvent_addGrpB.class, "regExtValue", "MovementEvent_addGrpB");
+    }
+  }
+
+  public static class MovementEvent_addGrpBReg_MovementEventValueDeserializer
+      extends OpenTypeDeserializer<MovementEvent_addGrpB> {
+    public MovementEvent_addGrpBReg_MovementEventValueDeserializer() {
+      super(MovementEvent_addGrpB.class, "MovementEvent_addGrpB");
+    }
   }
 }

@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class CommonSafetyRequestMessageFrame extends MessageFrame<CommonSafetyRe
   @JsonDeserialize(using = CommonSafetyRequestMessageFrameValueDeserializer.class)
   public void setValue(CommonSafetyRequest value) {
     super.setValue(value);
+  }
+
+  public static class CommonSafetyRequestMessageFrameValueSerializer
+      extends OpenTypeSerializer<CommonSafetyRequest> {
+    public CommonSafetyRequestMessageFrameValueSerializer() {
+      super(CommonSafetyRequest.class, "value", "CommonSafetyRequest");
+    }
+  }
+
+  public static class CommonSafetyRequestMessageFrameValueDeserializer
+      extends OpenTypeDeserializer<CommonSafetyRequest> {
+    public CommonSafetyRequestMessageFrameValueDeserializer() {
+      super(CommonSafetyRequest.class, "CommonSafetyRequest");
+    }
   }
 }

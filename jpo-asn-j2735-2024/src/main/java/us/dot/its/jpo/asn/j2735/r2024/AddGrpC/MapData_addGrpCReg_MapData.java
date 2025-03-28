@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MapData;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("Reg_MapData")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,19 @@ public class MapData_addGrpCReg_MapData extends Reg_MapData<MapData_addGrpC> {
   @JsonDeserialize(using = MapData_addGrpCReg_MapDataValueDeserializer.class)
   public void setRegExtValue(MapData_addGrpC value) {
     super.setRegExtValue(value);
+  }
+
+  public static class MapData_addGrpCReg_MapDataValueSerializer
+      extends OpenTypeSerializer<MapData_addGrpC> {
+    public MapData_addGrpCReg_MapDataValueSerializer() {
+      super(MapData_addGrpC.class, "regExtValue", "MapData_addGrpC");
+    }
+  }
+
+  public static class MapData_addGrpCReg_MapDataValueDeserializer
+      extends OpenTypeDeserializer<MapData_addGrpC> {
+    public MapData_addGrpCReg_MapDataValueDeserializer() {
+      super(MapData_addGrpC.class, "MapData_addGrpC");
+    }
   }
 }

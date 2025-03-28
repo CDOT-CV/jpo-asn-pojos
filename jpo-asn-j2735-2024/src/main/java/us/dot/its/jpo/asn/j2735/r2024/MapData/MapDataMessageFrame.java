@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
+import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
 
 @JsonRootName("MessageFrame")
 @JsonDeserialize(using = None.class)
@@ -46,5 +48,17 @@ public class MapDataMessageFrame extends MessageFrame<MapData> {
   @JsonDeserialize(using = MapDataMessageFrameValueDeserializer.class)
   public void setValue(MapData value) {
     super.setValue(value);
+  }
+
+  public static class MapDataMessageFrameValueSerializer extends OpenTypeSerializer<MapData> {
+    public MapDataMessageFrameValueSerializer() {
+      super(MapData.class, "value", "MapData");
+    }
+  }
+
+  public static class MapDataMessageFrameValueDeserializer extends OpenTypeDeserializer<MapData> {
+    public MapDataMessageFrameValueDeserializer() {
+      super(MapData.class, "MapData");
+    }
   }
 }
