@@ -23,7 +23,20 @@
 package us.dot.its.jpo.asn.j2735.r2024.ManeuverSharingAndCoordinatingMessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = ResponseFlagDeserializer.class)
-public class ResponseFlag extends Asn1Boolean {}
+@JsonDeserialize(using = ResponseFlag.ResponseFlagDeserializer.class)
+public class ResponseFlag extends Asn1Boolean {
+
+  public static class ResponseFlagDeserializer extends BooleanDeserializer<ResponseFlag> {
+    public ResponseFlagDeserializer() {
+      super(ResponseFlag.class);
+    }
+
+    @Override
+    protected ResponseFlag construct() {
+      return new ResponseFlag();
+    }
+  }
+}

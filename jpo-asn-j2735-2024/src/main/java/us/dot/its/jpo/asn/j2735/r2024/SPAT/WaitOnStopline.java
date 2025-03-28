@@ -23,7 +23,20 @@
 package us.dot.its.jpo.asn.j2735.r2024.SPAT;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = WaitOnStoplineDeserializer.class)
-public class WaitOnStopline extends Asn1Boolean {}
+@JsonDeserialize(using = WaitOnStopline.WaitOnStoplineDeserializer.class)
+public class WaitOnStopline extends Asn1Boolean {
+
+  public static class WaitOnStoplineDeserializer extends BooleanDeserializer<WaitOnStopline> {
+    public WaitOnStoplineDeserializer() {
+      super(WaitOnStopline.class);
+    }
+
+    @Override
+    protected WaitOnStopline construct() {
+      return new WaitOnStopline();
+    }
+  }
+}

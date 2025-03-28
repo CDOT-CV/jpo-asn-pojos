@@ -23,7 +23,20 @@
 package us.dot.its.jpo.asn.j2735.r2024.TrafficLightStatusMessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = ReservedBitDeserializer.class)
-public class ReservedBit extends Asn1Boolean {}
+@JsonDeserialize(using = ReservedBit.ReservedBitDeserializer.class)
+public class ReservedBit extends Asn1Boolean {
+
+  public static class ReservedBitDeserializer extends BooleanDeserializer<ReservedBit> {
+    public ReservedBitDeserializer() {
+      super(ReservedBit.class);
+    }
+
+    @Override
+    protected ReservedBit construct() {
+      return new ReservedBit();
+    }
+  }
+}

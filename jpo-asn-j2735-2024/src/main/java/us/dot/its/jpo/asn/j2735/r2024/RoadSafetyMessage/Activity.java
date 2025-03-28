@@ -23,7 +23,20 @@
 package us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = ActivityDeserializer.class)
-public class Activity extends Asn1Boolean {}
+@JsonDeserialize(using = Activity.ActivityDeserializer.class)
+public class Activity extends Asn1Boolean {
+
+  public static class ActivityDeserializer extends BooleanDeserializer<Activity> {
+    public ActivityDeserializer() {
+      super(Activity.class);
+    }
+
+    @Override
+    protected Activity construct() {
+      return new Activity();
+    }
+  }
+}

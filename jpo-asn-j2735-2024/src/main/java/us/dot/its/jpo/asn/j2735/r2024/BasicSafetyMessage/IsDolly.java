@@ -23,7 +23,20 @@
 package us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = IsDollyDeserializer.class)
-public class IsDolly extends Asn1Boolean {}
+@JsonDeserialize(using = IsDolly.IsDollyDeserializer.class)
+public class IsDolly extends Asn1Boolean {
+
+  public static class IsDollyDeserializer extends BooleanDeserializer<IsDolly> {
+    public IsDollyDeserializer() {
+      super(IsDolly.class);
+    }
+
+    @Override
+    protected IsDolly construct() {
+      return new IsDolly();
+    }
+  }
+}

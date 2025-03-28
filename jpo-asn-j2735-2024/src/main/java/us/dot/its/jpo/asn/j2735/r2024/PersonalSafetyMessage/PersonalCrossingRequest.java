@@ -23,7 +23,21 @@
 package us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = PersonalCrossingRequestDeserializer.class)
-public class PersonalCrossingRequest extends Asn1Boolean {}
+@JsonDeserialize(using = PersonalCrossingRequest.PersonalCrossingRequestDeserializer.class)
+public class PersonalCrossingRequest extends Asn1Boolean {
+
+  public static class PersonalCrossingRequestDeserializer
+      extends BooleanDeserializer<PersonalCrossingRequest> {
+    public PersonalCrossingRequestDeserializer() {
+      super(PersonalCrossingRequest.class);
+    }
+
+    @Override
+    protected PersonalCrossingRequest construct() {
+      return new PersonalCrossingRequest();
+    }
+  }
+}

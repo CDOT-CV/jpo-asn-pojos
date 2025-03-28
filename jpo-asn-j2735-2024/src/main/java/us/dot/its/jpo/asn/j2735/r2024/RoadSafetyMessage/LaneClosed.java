@@ -23,7 +23,20 @@
 package us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import us.dot.its.jpo.asn.runtime.serialization.BooleanDeserializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
-@JsonDeserialize(using = LaneClosedDeserializer.class)
-public class LaneClosed extends Asn1Boolean {}
+@JsonDeserialize(using = LaneClosed.LaneClosedDeserializer.class)
+public class LaneClosed extends Asn1Boolean {
+
+  public static class LaneClosedDeserializer extends BooleanDeserializer<LaneClosed> {
+    public LaneClosedDeserializer() {
+      super(LaneClosed.class);
+    }
+
+    @Override
+    protected LaneClosed construct() {
+      return new LaneClosed();
+    }
+  }
+}
