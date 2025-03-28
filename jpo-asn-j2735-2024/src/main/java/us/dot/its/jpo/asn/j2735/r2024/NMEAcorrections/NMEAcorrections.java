@@ -71,6 +71,7 @@ public class NMEAcorrections extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NMEAcorrections> {
     public SequenceOfRegional() {
       super(Reg_NMEAcorrections.class, 1L, 4L);

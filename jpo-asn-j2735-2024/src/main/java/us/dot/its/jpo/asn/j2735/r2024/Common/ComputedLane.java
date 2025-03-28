@@ -107,6 +107,7 @@ public class ComputedLane extends Asn1Sequence {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ComputedLane> {
     public SequenceOfRegional() {
       super(Reg_ComputedLane.class, 1L, 4L);

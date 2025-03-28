@@ -59,6 +59,7 @@ public class RestrictionUserType extends Asn1Choice {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RestrictionUserType> {
     public SequenceOfRegional() {
       super(Reg_RestrictionUserType.class, 1L, 4L);

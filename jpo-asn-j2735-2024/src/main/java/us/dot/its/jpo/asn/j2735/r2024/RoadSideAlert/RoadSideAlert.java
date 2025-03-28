@@ -103,6 +103,7 @@ public class RoadSideAlert extends Asn1Sequence {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RoadSideAlert> {
     public SequenceOfRegional() {
       super(Reg_RoadSideAlert.class, 1L, 4L);

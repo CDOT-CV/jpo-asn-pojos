@@ -62,6 +62,7 @@ public class Position3D extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_Position3D> {
     public SequenceOfRegional() {
       super(Reg_Position3D.class, 1L, 4L);

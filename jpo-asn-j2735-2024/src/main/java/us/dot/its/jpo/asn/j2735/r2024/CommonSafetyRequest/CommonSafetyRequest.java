@@ -73,6 +73,7 @@ public class CommonSafetyRequest extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_CommonSafetyRequest> {
     public SequenceOfRegional() {
       super(Reg_CommonSafetyRequest.class, 1L, 4L);

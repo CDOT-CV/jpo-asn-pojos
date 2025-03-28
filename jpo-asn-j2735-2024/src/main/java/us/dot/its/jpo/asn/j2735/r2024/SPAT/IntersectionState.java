@@ -102,6 +102,7 @@ public class IntersectionState extends Asn1Sequence {
   private RoadAuthorityID roadAuthorityID;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionState> {
     public SequenceOfRegional() {
       super(Reg_IntersectionState.class, 1L, 4L);

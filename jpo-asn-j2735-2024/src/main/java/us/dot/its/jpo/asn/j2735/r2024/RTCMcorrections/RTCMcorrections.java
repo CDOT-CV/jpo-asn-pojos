@@ -81,6 +81,7 @@ public class RTCMcorrections extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RTCMcorrections> {
     public SequenceOfRegional() {
       super(Reg_RTCMcorrections.class, 1L, 4L);

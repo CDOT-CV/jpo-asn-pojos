@@ -61,6 +61,7 @@ public class BasicSafetyMessage extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfPartII extends Asn1SequenceOf<BSMpartIIExtension> {
     public SequenceOfPartII() {
       super(BSMpartIIExtension.class, 1L, 8L);
@@ -68,6 +69,7 @@ public class BasicSafetyMessage extends Asn1Sequence {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_BasicSafetyMessage> {
     public SequenceOfRegional() {
       super(Reg_BasicSafetyMessage.class, 1L, 4L);

@@ -99,6 +99,7 @@ public class IntersectionGeometry extends Asn1Sequence {
   private RoadAuthorityID roadAuthorityID;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionGeometry> {
     public SequenceOfRegional() {
       super(Reg_IntersectionGeometry.class, 1L, 4L);

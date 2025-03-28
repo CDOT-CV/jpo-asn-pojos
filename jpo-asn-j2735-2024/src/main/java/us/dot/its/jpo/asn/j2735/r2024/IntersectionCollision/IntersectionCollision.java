@@ -94,6 +94,7 @@ public class IntersectionCollision extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_IntersectionCollision> {
     public SequenceOfRegional() {
       super(Reg_IntersectionCollision.class, 1L, 4L);

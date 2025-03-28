@@ -90,6 +90,7 @@ public class MapData extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_MapData> {
     public SequenceOfRegional() {
       super(Reg_MapData.class, 1L, 4L);

@@ -12,6 +12,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 @Slf4j
@@ -42,6 +43,12 @@ public abstract class EnumeratedDeserializer<T extends Enum<?> & Asn1Enumerated>
       // Behaves normally: The enum name is the text
       name = jsonParser.getText();
     }
+
+    // Return null if the text actually is null or empty
+    if (StringUtils.isBlank(name)) {
+      return null;
+    }
+
     for (T enumValue : listEnumValues()) {
       if (Objects.equals(enumValue.getName(), name)) {
         return enumValue;

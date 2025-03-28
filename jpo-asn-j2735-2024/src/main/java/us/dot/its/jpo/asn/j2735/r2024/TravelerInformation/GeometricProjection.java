@@ -69,6 +69,7 @@ public class GeometricProjection extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GeometricProjection> {
     public SequenceOfRegional() {
       super(Reg_GeometricProjection.class, 1L, 4L);

@@ -81,6 +81,7 @@ public class LaneDataAttribute extends Asn1Choice {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_LaneDataAttribute> {
     public SequenceOfRegional() {
       super(Reg_LaneDataAttribute.class, 1L, 4L);

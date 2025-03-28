@@ -114,6 +114,7 @@ public class GeographicalPath extends Asn1Sequence {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_GeographicalPath> {
     public SequenceOfRegional() {
       super(Reg_GeographicalPath.class, 1L, 4L);

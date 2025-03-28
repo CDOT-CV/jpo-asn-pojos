@@ -88,6 +88,7 @@ public class RoadSegment extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_RoadSegment> {
     public SequenceOfRegional() {
       super(Reg_RoadSegment.class, 1L, 4L);

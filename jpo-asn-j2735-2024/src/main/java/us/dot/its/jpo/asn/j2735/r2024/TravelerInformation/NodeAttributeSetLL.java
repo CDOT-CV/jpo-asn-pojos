@@ -86,6 +86,7 @@ public class NodeAttributeSetLL extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_NodeAttributeSetLL> {
     public SequenceOfRegional() {
       super(Reg_NodeAttributeSetLL.class, 1L, 4L);

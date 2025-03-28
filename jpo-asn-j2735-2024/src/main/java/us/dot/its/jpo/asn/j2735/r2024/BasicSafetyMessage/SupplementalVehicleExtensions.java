@@ -105,6 +105,7 @@ public class SupplementalVehicleExtensions extends Asn1Sequence {
   private SchoolBusJ2945Slash1C schoolBus;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SupplementalVehicleExtensions> {
     public SequenceOfRegional() {
       super(Reg_SupplementalVehicleExtensions.class, 1L, 4L);

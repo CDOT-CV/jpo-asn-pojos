@@ -75,6 +75,7 @@ public class SignalRequestMessage extends Asn1Sequence {
   private SequenceOfRegional regional;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_SignalRequestMessage> {
     public SequenceOfRegional() {
       super(Reg_SignalRequestMessage.class, 1L, 4L);

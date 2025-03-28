@@ -4,6 +4,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
@@ -52,6 +53,18 @@ public class EnumeratedTest extends BaseSerializeTest<FruitEnum> {
     log.debug("got expected exception: {}", mie.getMessage());
   }
 
+  @Test
+  public void emptyXml() throws IOException {
+    FruitEnum fe = fromXml(EMPTY_XML);
+    assertThat(fe, nullValue());
+  }
+
+  @Test
+  public void nullJson() throws IOException {
+    FruitEnum fe = fromJson(NULL_JSON);
+    assertThat(fe, nullValue());
+  }
+
   // Note the deserializer can't read an enum as unwrapped xml
   public static final String XML = "<FruitEnum><apple/></FruitEnum>";
 
@@ -64,5 +77,9 @@ public class EnumeratedTest extends BaseSerializeTest<FruitEnum> {
   public static final String INVALID_JSON = """
       "apricot"
       """;
+
+  public static final String EMPTY_XML = "<FruitEnum></FruitEnum>";
+
+  public static final String NULL_JSON = "null";
 
 }

@@ -86,6 +86,7 @@ public class ProbeVehicleData extends Asn1Sequence {
   }
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfRegional extends Asn1SequenceOf<Reg_ProbeVehicleData> {
     public SequenceOfRegional() {
       super(Reg_ProbeVehicleData.class, 1L, 4L);

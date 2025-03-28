@@ -54,6 +54,7 @@ public class CooperativeControlMessage extends Asn1Sequence {
   private SequenceOfPartII partII;
 
   @JsonInclude(Include.NON_NULL)
+  @java.lang.SuppressWarnings("rawtypes")
   public static class SequenceOfPartII extends Asn1SequenceOf<CCMpartIIExtension> {
     public SequenceOfPartII() {
       super(CCMpartIIExtension.class, 1L, 8L);
