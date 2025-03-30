@@ -13,7 +13,7 @@ public class IA5StringGenerator extends RandomGenerator<IA5String> {
   @Override
   protected void populateRandom(IA5String instance) {
     final int lower = instance.getMinLength();
-    final int upper = instance.getMaxLength();
+    final int upper = Math.min(instance.getMaxLength(), 255); // Prevent excessively large if unbounded
     Random r = new Random();
     int strLength = (upper == lower) ? lower : r.nextInt(upper - lower) + lower;
     StringBuilder sb = new StringBuilder();

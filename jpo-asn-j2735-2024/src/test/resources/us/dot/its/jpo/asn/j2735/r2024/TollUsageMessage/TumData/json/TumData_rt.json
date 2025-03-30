@@ -1,0 +1,210 @@
+{
+    "tollUserData": {
+        "timeStamp": {
+            "year": 154,
+            "month": 2,
+            "day": 28,
+            "hour": 17,
+            "minute": 43,
+            "second": 17327,
+            "offset": 580
+        },
+        "tspId": "1.0.18866.1",
+        "vehicleId": {
+            "vehicleIdentity": "7AB9C6D00C85DDD847BB56F4EF68F7AF",
+            "userId": {
+                "pan": "AF8B6CDE0A7798023809",
+                "contractSerialNumber": 757601370,
+                "licencePlateNumber": {
+                    "countryCode": "F200",
+                    "alphabetIndicator": "latinArabicAlphabet",
+                    "licencePlateNumber": "7DB581E3FFF7B6396B381F2B6D12860396E1E1D7EB83103DB81935A0E7D6CE3A45304FAE397D040AA862937AFF8FB1B90C593159BFED8FD1C0DD303F4D671DFE423A206BDF5DC35346CBB05E6F91DC7536104452C4B22C2147AC7F856CA4F3D9CFB7591F8242504A59BD123473F016E0F0F9B544B62E9453185D6A1226EA115E612018F1B24AE8D6AAB921CD2F3C392E0B5E1BFA64351E1CC556898FD3145177BFB6746F615FBF8B0360B655A9A87438D87D824ED81FBCC88CEB6FA3C22EE21775A6C2F65D1B69D752696775E4A0D7EB205D244FBDA07EAA6419365F9715B88004B463BB57B120DC2F37F536308F48842B60"
+                },
+                "obeId": {
+                    "manufacturerId": 15738,
+                    "equipmentObuId": "E2959E0EA303D5B4376DFDF9781E706BCE5602BD75A6072E37194A996C"
+                },
+                "iccId": "981BE926325248D1977C30674667924FB3941D653D0B35F9300387366F1C2329BF"
+            }
+        },
+        "vehType": "motorcycles",
+        "vehicleDescription": {
+            "vehicleLPNr": {
+                "countryCode": "37C0",
+                "alphabetIndicator": "reservedForUse14",
+                "licencePlateNumber": "E5CF8119C4C2E706B70A2652204B2E4917213464F87B12C8353B12614FC272E16342371D80A6DC159AFB9D37B1A4DC1D2ADA224CA78543D77165A964721421110892DBDD5BDA7E374BDA712D8091C53DEB7ED5A19BB213A5FDCDBDD7EAAF2B752D02150A8938F8F3B1BF368948FDEF882A10F26FC96E7AD0EB3F64B19B09E9E6FEC8D4CB44D7081CC63C46EA40E18F1B6DCF642F8E9C26EF0C0694D5E66C98E61FE5FA5D6C9F1355F5B6106FA0821E27A9A03B534E85F602ADF081C080A498001D3D1FA7B9BA9C94E12A2BFF62AD6CE709FEF007E4E60F2308F2F6"
+            },
+            "axles": {
+                "vehicleFirstAxleHeight": 86,
+                "vehicleAxlesNumber": {
+                    "tyreConfiguration": 1,
+                    "numberOfAxles": {
+                        "trailerAxles": 2,
+                        "tractorAxles": 5
+                    }
+                }
+            },
+            "class": 81,
+            "dimensions": {
+                "vehicleLengthOverall": 131,
+                "vehicleHeigthOverall": 229,
+                "vehicleWidthOverall": 209
+            },
+            "specificCharacteristics": {
+                "environmentalCharacteristics": {
+                    "euroValue": 4,
+                    "copValue": 0
+                },
+                "engineCharacteristics": 86,
+                "descriptiveCharacteristics": 47,
+                "futureCharacteristics": 82
+            },
+            "ladenWeight": 41788,
+            "weightLimits": {
+                "vehicleMaxLadenWeight": 64619,
+                "vehicleTrainMaximumWeight": 20128,
+                "vehicleWeightUnladen": 40026
+            },
+            "trailerCharacteristics": {
+                "trailerDetails": {
+                    "trailerType": 20,
+                    "trailerAxles": 2
+                },
+                "trailerMaxLadenWeight": 9739,
+                "trailerWeightUnladen": 14882
+            },
+            "vehicleCurrentMaxTrainWeight": 17916,
+            "actualNumberOfPassengers": 120,
+            "axleWeightLimits": {
+                "maxLadenweightOnAxle1": 58823,
+                "maxLadenweightOnAxle2": 42586,
+                "maxLadenweightOnAxle3": 12733,
+                "maxLadenweightOnAxle4": 27137,
+                "maxLadenweightOnAxle5": 8842
+            },
+            "dieselEmissionValues": {
+                "particulate": {
+                    "unitType": 0,
+                    "value": 13763
+                },
+                "absorptionCoeff": 56369
+            },
+            "driverCharacteristics": {
+                "driverClass": 167,
+                "tripPurpose": 68
+            },
+            "engineDetails": {
+                "engineCapacity": 17411,
+                "enginePower": 29792
+            },
+            "exhaustEmissionValues": {
+                "unitType": 0,
+                "emissionCo": 17848,
+                "emissionHc": 59160,
+                "emissionNox": 54436,
+                "emissionHcNox": 27090
+            },
+            "passengerCapacity": {
+                "numberOfSeats": 120,
+                "numberOfStandingPlaces": 103
+            },
+            "soundLevel": {
+                "soundStationary": 211,
+                "soundDriveBy": 41
+            }
+        },
+        "vehAxlesAndWeight": {
+            "vehNumAxles": 7,
+            "vehWeightPerAxle": [
+                22842,
+                38228,
+                60452
+            ],
+            "vehTotalWeight": 3216099,
+            "vehWeightUnits": "kilograms"
+        },
+        "numOccupants": 3,
+        "entryTollPointId": 830,
+        "entryTimeStamp": {
+            "year": 3039,
+            "month": 9,
+            "day": 23,
+            "hour": 0,
+            "minute": 13,
+            "second": 36726,
+            "offset": 654
+        },
+        "locAndTimeStamps": [
+            {
+                "latitude": 114089112,
+                "longitude": -2871818,
+                "elevation": 16346,
+                "timeStamp": {
+                    "year": 2523,
+                    "month": 0,
+                    "day": 4,
+                    "hour": 19,
+                    "minute": 51,
+                    "second": 32292,
+                    "offset": 724
+                },
+                "currentLane": 129
+            }
+        ],
+        "lastTollPoints": [
+            {
+                "tollChargerInfo": {
+                    "tollChargerId": "1.0.26058.1",
+                    "tollPointId": 1510,
+                    "descriptiveName": "YFFUCTEWSFPMYXENQORMFQVPCBXJJWDSC"
+                },
+                "timeStamp": {
+                    "year": 2462,
+                    "month": 11,
+                    "day": 15,
+                    "hour": 18,
+                    "minute": 29,
+                    "second": 50465,
+                    "offset": 298
+                }
+            },
+            {
+                "tollChargerInfo": {
+                    "tollChargerId": "1.0.9117.1",
+                    "tollPointId": 673,
+                    "descriptiveName": "CASLYIQJQGEYVEHCBOLCDDKTWYQYNBULYAVGM"
+                },
+                "timeStamp": {
+                    "year": 1903,
+                    "month": 3,
+                    "day": 14,
+                    "hour": 21,
+                    "minute": 14,
+                    "second": 60727,
+                    "offset": -726
+                }
+            },
+            {
+                "tollChargerInfo": {
+                    "tollChargerId": "1.0.5644.1",
+                    "tollPointId": 588,
+                    "descriptiveName": "GTVPEONBTPROPQMBS"
+                },
+                "timeStamp": {
+                    "year": 678,
+                    "month": 8,
+                    "day": 26,
+                    "hour": 21,
+                    "minute": 8,
+                    "second": 31171,
+                    "offset": 651
+                }
+            }
+        ],
+        "charge": {
+            "paymentFeeAmount": 59933,
+            "paymentFeeUnit": "F140"
+        }
+    },
+    "tollServiceProviderData": "89E0AE21E13EC53F71EC07402FED96AAAC3603D45B3CC81945672265D2EDB301"
+}

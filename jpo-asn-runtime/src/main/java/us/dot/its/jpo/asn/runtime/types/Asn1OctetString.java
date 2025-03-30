@@ -33,7 +33,7 @@ public class Asn1OctetString implements Asn1Type {
         try {
             validate(value);
             HexFormat hexFormat = HexFormat.of();
-            this.octets = hexFormat.parseHex(value);
+            this.octets = hexFormat.parseHex(value.trim());
         } catch (Exception e) {
             throw new IllegalArgumentException(
                     String.format("Hex String '%s' is not valid", value), e);
@@ -68,7 +68,10 @@ public class Asn1OctetString implements Asn1Type {
             throw new Exception("hex string is null");
         }
         // Size of hex format string can be 2 * byte size
-        boolean validLength = aValue.length() >= 2 * minLength && aValue.length() <= 2 * maxLength;
+        int trimmedLength = aValue.trim().length();
+        long minLength2 = 2L * minLength;
+        long maxLength2 = 2L * maxLength; // prevent 2*Integer.MAX_VALUE is negative
+        boolean validLength = (trimmedLength >= minLength2) && (trimmedLength <= maxLength2);
         if (!validLength) {
             throw new Exception(String.format("Hex string length out of bounds, %s, number of bytes must be between" +
                 " %d and %d", aValue, minLength, maxLength));

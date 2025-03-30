@@ -12,7 +12,7 @@ public class OctetStringGenerator extends RandomGenerator<Asn1OctetString> {
   @Override
   protected void populateRandom(Asn1OctetString instance) {
     final int lower = instance.getMinLength();
-    final int upper = instance.getMaxLength();
+    final int upper = Math.min(instance.getMaxLength(), 255); // Prevent excessively large if unbounded
     Random r = new Random();
     int len;
     if (lower == upper) {
