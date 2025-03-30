@@ -1,6 +1,7 @@
 //
 // **MANUAL EDIT**
-// Added RootSequenceOfSerializer annotation
+// Added RootSequenceOfSerializer annotation needed because this message type
+// is a SEQUENCE-OF, not a SEQUENCE like all others.
 //
 /*==============================================================================
  *
