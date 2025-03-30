@@ -15,7 +15,7 @@ public class IA5StringGenerator extends RandomGenerator<IA5String> {
     final int lower = instance.getMinLength();
     final int upper = instance.getMaxLength();
     Random r = new Random();
-    int strLength = r.nextInt(upper - lower) + lower;
+    int strLength = (upper == lower) ? lower : r.nextInt(upper - lower) + lower;
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < strLength; i++) {
       final int letter = r.nextInt('Z' - 'A') + 'A';
