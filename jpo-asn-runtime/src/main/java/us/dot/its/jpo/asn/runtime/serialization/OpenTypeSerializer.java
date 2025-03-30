@@ -3,6 +3,7 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
 import java.io.IOException;
@@ -56,7 +57,7 @@ public abstract class OpenTypeSerializer<T extends Asn1Type> extends StdSerializ
 
     protected OpenTypeSerializer(Class<T> t, String wrapper, String wrapped) {
         super(t);
-        this.wrapper = new QName(wrapper);
+        this.wrapper = wrapper != null ? new QName(wrapper) : null;
         this.wrapped = new QName(wrapped);
     }
 
@@ -65,9 +66,15 @@ public abstract class OpenTypeSerializer<T extends Asn1Type> extends StdSerializ
         if (serializerProvider instanceof XmlSerializerProvider) {
             // Wrapped XER
             var xmlGen = (ToXmlGenerator)jsonGenerator;
-            xmlGen.startWrappedValue(wrapper, wrapped);
-            xmlGen.writeObject(t);
-            xmlGen.finishWrappedValue(wrapper, wrapped);
+            if (wrapper != null) {
+                xmlGen.startWrappedValue(wrapper, wrapped);
+                xmlGen.writeObject(t);
+                xmlGen.finishWrappedValue(wrapper, wrapped);
+            } else {
+                var mapper = (XmlMapper)xmlGen.getCodec();
+                String itemXml = mapper.writeValueAsString(t);
+                xmlGen.writeRaw(itemXml);
+            }
         } else {
             // Wrapped JER
             jsonGenerator.writeStartObject();

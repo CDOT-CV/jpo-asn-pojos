@@ -26,6 +26,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.JsonDeserializer.None;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;
@@ -53,7 +55,7 @@ public class ProbeDataConfigMessageMessageFrame extends MessageFrame<ProbeDataCo
   public static class ProbeDataConfigMessageMessageFrameValueSerializer
       extends OpenTypeSerializer<ProbeDataConfigMessage> {
     public ProbeDataConfigMessageMessageFrameValueSerializer() {
-      super(ProbeDataConfigMessage.class, "value", "ProbeDataConfigMessage");
+      super(ProbeDataConfigMessage.class, null, "ProbeDataConfigMessage");
     }
   }
 

@@ -31,10 +31,12 @@ public class RootSequenceOfSerializer
       // annotations can't be used at the class level.
       var xmlGen = (ToXmlGenerator)jsonGenerator;
       var mapper = (XmlMapper)xmlGen.getCodec();
+      xmlGen.writeStartArray();
       for (Asn1Type item : sequenceOf) {
         String itemXml = mapper.writeValueAsString(item);
         xmlGen.writeRaw(itemXml);
       }
+      xmlGen.writeEndArray();
     } else {
       // JER
       jsonGenerator.writeStartArray();
