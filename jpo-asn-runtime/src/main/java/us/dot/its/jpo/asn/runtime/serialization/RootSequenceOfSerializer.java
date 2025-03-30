@@ -1,7 +1,6 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -13,19 +12,16 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
 @Slf4j
-public class RootSequenceOfSerializer<S extends Asn1Type, T extends Asn1SequenceOf<S>>
-    extends StdSerializer<T> {
-  protected final Class<S> itemClass;
-  protected final Class<T> sequenceOfClass;
+public class RootSequenceOfSerializer
+    extends StdSerializer<Asn1SequenceOf<Asn1Type>> {
 
-  protected RootSequenceOfSerializer(Class<S> itemClass, Class<T> sequenceOfClass) {
-    super(sequenceOfClass);
-    this.itemClass = itemClass;
-    this.sequenceOfClass = sequenceOfClass;
+
+  protected RootSequenceOfSerializer() {
+    super(Asn1SequenceOf.class, true);
   }
 
   @Override
-  public void serialize(T sequenceOf, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
+  public void serialize(Asn1SequenceOf<Asn1Type> sequenceOf, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
       throws IOException {
     if (serializerProvider instanceof XmlSerializerProvider) {
       // XER
@@ -35,17 +31,18 @@ public class RootSequenceOfSerializer<S extends Asn1Type, T extends Asn1Sequence
       // annotations can't be used at the class level.
       var xmlGen = (ToXmlGenerator)jsonGenerator;
       var mapper = (XmlMapper)xmlGen.getCodec();
-      for (var item : sequenceOf) {
+      for (Asn1Type item : sequenceOf) {
         String itemXml = mapper.writeValueAsString(item);
         xmlGen.writeRaw(itemXml);
       }
     } else {
       // JER
       jsonGenerator.writeStartArray();
-      for (var item : sequenceOf) {
+      for (Asn1Type item : sequenceOf) {
         jsonGenerator.writeObject(item);
       }
       jsonGenerator.writeEndArray();
     }
   }
+
 }

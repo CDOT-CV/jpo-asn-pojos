@@ -2,9 +2,11 @@ package us.dot.its.jpo.asn.runtime.types;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collection;
+import us.dot.its.jpo.asn.runtime.serialization.RootSequenceOfSerializer;
 
 
 /**

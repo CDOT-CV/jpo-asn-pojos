@@ -1,6 +1,6 @@
 //
 // **MANUAL EDIT**
-//
+// Added RootSequenceOfSerializer annotation
 //
 /*==============================================================================
  *
@@ -29,11 +29,10 @@ package us.dot.its.jpo.asn.j2735.r2024.ProbeDataConfig;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import us.dot.its.jpo.asn.j2735.r2024.ProbeDataConfig.ProbeDataConfigMessage.ProbeDataConfigMessageSerializer;
 import us.dot.its.jpo.asn.runtime.serialization.RootSequenceOfSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
-@JsonSerialize(using = ProbeDataConfigMessageSerializer.class)
+@JsonSerialize(using = RootSequenceOfSerializer.class)  // ADDED
 @JsonInclude(Include.NON_NULL)
 public class ProbeDataConfigMessage extends Asn1SequenceOf<ProbeDataConfig> {
 
@@ -41,11 +40,4 @@ public class ProbeDataConfigMessage extends Asn1SequenceOf<ProbeDataConfig> {
     super(ProbeDataConfig.class, 1L, 255L);
   }
 
-  public static class ProbeDataConfigMessageSerializer extends
-      RootSequenceOfSerializer<ProbeDataConfig, ProbeDataConfigMessage> {
-
-    protected ProbeDataConfigMessageSerializer() {
-      super(ProbeDataConfig.class, ProbeDataConfigMessage.class);
-    }
-  }
 }
