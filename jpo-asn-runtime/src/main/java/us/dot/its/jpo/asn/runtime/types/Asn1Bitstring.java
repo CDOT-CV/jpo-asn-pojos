@@ -14,12 +14,26 @@ import us.dot.its.jpo.asn.runtime.serialization.BitstringSerializer;
 public abstract class Asn1Bitstring implements Asn1Type {
 
     final BitSet bits;
+
+    // Lower bound
     final int size;
+
+    final int upperBound;
+
     final boolean hasExtensionMarker;
     final String[] names;
 
     public Asn1Bitstring(int size, boolean hasExtensionMarker, String[] names) {
         this.size = size;
+        this.upperBound = size;
+        this.hasExtensionMarker = hasExtensionMarker;
+        this.bits = new BitSet(size);
+        this.names = names;
+    }
+
+    public Asn1Bitstring(int lowerBound, int upperBound, boolean hasExtensionMarker, String[] names) {
+        this.size = lowerBound;
+        this.upperBound = upperBound;
         this.hasExtensionMarker = hasExtensionMarker;
         this.bits = new BitSet(size);
         this.names = names;
