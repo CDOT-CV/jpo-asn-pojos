@@ -1,0 +1,546 @@
+{
+    "tollChargesTable": {
+        "tollTypeCharge": {
+            "timeBasedCharges": {
+                "maxTime": 1249,
+                "chargesTable": {
+                    "weightBased": [
+                        {
+                            "perAxleWeightCharges": {
+                                "totalWeightLimit": 11477020,
+                                "maxLadenWeightOnAxle": 14738,
+                                "weightLimitUnits": "kilograms",
+                                "axleWeightCharge": {
+                                    "paymentFeeAmount": 51226,
+                                    "paymentFeeUnit": "2547"
+                                }
+                            }
+                        },
+                        {
+                            "totalWeightCharges": {
+                                "weightLimit": 13632348,
+                                "weightLimitUnits": "kilograms",
+                                "weightCharge": {
+                                    "paymentFeeAmount": 47191,
+                                    "paymentFeeUnit": "868C"
+                                }
+                            }
+                        },
+                        {
+                            "perAxleWeightCharges": {
+                                "totalWeightLimit": 7373101,
+                                "maxLadenWeightOnAxle": 21924,
+                                "weightLimitUnits": "kilograms",
+                                "axleWeightCharge": {
+                                    "paymentFeeAmount": 64976,
+                                    "paymentFeeUnit": "A8DD"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "tollAdvInfo": {
+        "tamSequenceNum": 12,
+        "totalTams": 9,
+        "tamNum": 4,
+        "tollChargerInfo": {
+            "tollChargerId": "1.0.776.1",
+            "tollPointId": 754,
+            "descriptiveName": "FSESCPBBUYMOYSGUXIWLMHSLIRJJGEYYYJ"
+        },
+        "timestamp": {
+            "year": 3039,
+            "month": 9,
+            "day": 27,
+            "hour": 22,
+            "minute": 13,
+            "second": 35516,
+            "offset": 629
+        },
+        "tumInstructions": {
+            "maxNumOfLocTimeStamps": 3,
+            "locTimeStampRate": 8
+        },
+        "tollPointMap": {
+            "revisionNum": 2,
+            "referencePoint": {
+                "lat": 158571441,
+                "long": 253729832,
+                "elevation": 41628
+            },
+            "speedLimit": {
+                "type": "vehicleMaxSpeed",
+                "speed": 4218
+            },
+            "laneWidth": 31072,
+            "approachLanesMap": [
+                {
+                    "laneID": 162,
+                    "name": "AMRLMJMSPFUPXXRBUJ",
+                    "ingressApproach": 13,
+                    "egressApproach": 2,
+                    "laneAttributes": {
+                        "directionalUse": "C0",
+                        "sharedWith": "7DC0",
+                        "laneType": {
+                            "trackedVehicle": "5627"
+                        }
+                    },
+                    "maneuvers": "47A0",
+                    "nodeList": {
+                        "computed": {
+                            "referenceLaneId": 237,
+                            "offsetXaxis": {
+                                "small": 1890
+                            },
+                            "offsetYaxis": {
+                                "small": 1917
+                            },
+                            "rotateXY": 13348,
+                            "scaleXaxis": -862,
+                            "scaleYaxis": -655
+                        }
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 119,
+                                "maneuver": "5CE0"
+                            },
+                            "remoteIntersection": {
+                                "region": 7141,
+                                "id": 3092
+                            },
+                            "signalGroup": 21,
+                            "userClass": 131,
+                            "connectionID": 242
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 31,
+                                "maneuver": "15F0"
+                            },
+                            "remoteIntersection": {
+                                "region": 56294,
+                                "id": 63050
+                            },
+                            "signalGroup": 192,
+                            "userClass": 120,
+                            "connectionID": 112
+                        }
+                    ],
+                    "overlays": [
+                        147,
+                        60,
+                        50,
+                        213
+                    ]
+                }
+            ],
+            "tollZoneLanesMap": [
+                {
+                    "laneID": 86,
+                    "name": "OPVKVTQGAGSSMXDPPMQJSCTQMXMMDWUODFDWQWQYUMINGJXDR",
+                    "ingressApproach": 3,
+                    "egressApproach": 13,
+                    "laneAttributes": {
+                        "directionalUse": "C0",
+                        "sharedWith": "B9C0",
+                        "laneType": {
+                            "sidewalk": "38E6"
+                        }
+                    },
+                    "maneuvers": "CC10",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY1": {
+                                        "x": 209,
+                                        "y": 143
+                                    }
+                                },
+                                "attributes": {
+                                    "localNode": [
+                                        "hydrantPresent",
+                                        "roundedCapStyleA",
+                                        "mergePoint",
+                                        "hydrantPresent"
+                                    ],
+                                    "disabled": [
+                                        "mergingLaneRight",
+                                        "doNotBlock"
+                                    ],
+                                    "enabled": [
+                                        "adjacentParkingOnLeft"
+                                    ],
+                                    "data": [
+                                        {
+                                            "pathEndPointAngle": -145
+                                        }
+                                    ],
+                                    "dWidth": -111,
+                                    "dElevation": 91
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": 1751,
+                                        "y": 5413
+                                    }
+                                },
+                                "attributes": {
+                                    "localNode": [
+                                        "downstreamStartNode",
+                                        "reserved",
+                                        "closedToTraffic",
+                                        "roundedCapStyleB"
+                                    ],
+                                    "disabled": [
+                                        "adjacentBikeLaneOnRight",
+                                        "doNotBlock"
+                                    ],
+                                    "enabled": [
+                                        "turnOutPointOnRight"
+                                    ],
+                                    "data": [
+                                        {
+                                            "laneCrownPointLeft": -20
+                                        },
+                                        {
+                                            "laneCrownPointRight": -15
+                                        },
+                                        {
+                                            "pathEndPointAngle": -59
+                                        },
+                                        {
+                                            "laneCrownPointRight": 20
+                                        }
+                                    ],
+                                    "dWidth": -399,
+                                    "dElevation": -239
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 44,
+                                "maneuver": "CA90"
+                            },
+                            "remoteIntersection": {
+                                "region": 48696,
+                                "id": 43201
+                            },
+                            "signalGroup": 116,
+                            "userClass": 32,
+                            "connectionID": 45
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 172,
+                                "maneuver": "A000"
+                            },
+                            "remoteIntersection": {
+                                "region": 42707,
+                                "id": 25620
+                            },
+                            "signalGroup": 141,
+                            "userClass": 80,
+                            "connectionID": 147
+                        }
+                    ],
+                    "overlays": [
+                        253,
+                        150,
+                        82,
+                        28
+                    ]
+                },
+                {
+                    "laneID": 134,
+                    "name": "FRGBOSHGDYYBIUMASWBDENXWWU",
+                    "ingressApproach": 5,
+                    "egressApproach": 1,
+                    "laneAttributes": {
+                        "directionalUse": "00",
+                        "sharedWith": "3B80",
+                        "laneType": {
+                            "crosswalk": "DE37"
+                        }
+                    },
+                    "maneuvers": "23E0",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY2": {
+                                        "x": 928,
+                                        "y": 812
+                                    }
+                                },
+                                "attributes": {
+                                    "localNode": [
+                                        "downstreamStopLine",
+                                        "downstreamStartNode",
+                                        "downstreamStopLine"
+                                    ],
+                                    "disabled": [
+                                        "bikeBoxInFront"
+                                    ],
+                                    "enabled": [
+                                        "rumbleStripPresent",
+                                        "parallelParking"
+                                    ],
+                                    "data": [
+                                        {
+                                            "laneCrownPointRight": -2
+                                        },
+                                        {
+                                            "laneAngle": 125
+                                        }
+                                    ],
+                                    "dWidth": -205,
+                                    "dElevation": -124
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY5": {
+                                        "x": 1122,
+                                        "y": -4725
+                                    }
+                                },
+                                "attributes": {
+                                    "localNode": [
+                                        "downstreamStopLine",
+                                        "closedToTraffic",
+                                        "roundedCapStyleB",
+                                        "closedToTraffic"
+                                    ],
+                                    "disabled": [
+                                        "taperToLeft",
+                                        "taperToRight",
+                                        "lowCurbsPresent",
+                                        "turnOutPointOnLeft"
+                                    ],
+                                    "enabled": [
+                                        "transitStopOnLeft",
+                                        "taperToCenterLine",
+                                        "whiteLine",
+                                        "loadingzoneOnLeft"
+                                    ],
+                                    "data": [
+                                        {
+                                            "laneCrownPointRight": -97
+                                        },
+                                        {
+                                            "laneCrownPointRight": 20
+                                        },
+                                        {
+                                            "laneCrownPointLeft": -6
+                                        }
+                                    ],
+                                    "dWidth": 425,
+                                    "dElevation": -343
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 225,
+                                "maneuver": "83E0"
+                            },
+                            "remoteIntersection": {
+                                "region": 38177,
+                                "id": 8766
+                            },
+                            "signalGroup": 193,
+                            "userClass": 195,
+                            "connectionID": 245
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 95,
+                                "maneuver": "AC60"
+                            },
+                            "remoteIntersection": {
+                                "region": 65012,
+                                "id": 27923
+                            },
+                            "signalGroup": 2,
+                            "userClass": 233,
+                            "connectionID": 19
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 186,
+                                "maneuver": "5EA0"
+                            },
+                            "remoteIntersection": {
+                                "region": 24377,
+                                "id": 9009
+                            },
+                            "signalGroup": 230,
+                            "userClass": 187,
+                            "connectionID": 202
+                        }
+                    ],
+                    "overlays": [
+                        59
+                    ]
+                },
+                {
+                    "laneID": 21,
+                    "name": "EUWROQ",
+                    "ingressApproach": 9,
+                    "egressApproach": 2,
+                    "laneAttributes": {
+                        "directionalUse": "40",
+                        "sharedWith": "1B80",
+                        "laneType": {
+                            "crosswalk": "06B8"
+                        }
+                    },
+                    "maneuvers": "7390",
+                    "nodeList": {
+                        "nodes": [
+                            {
+                                "delta": {
+                                    "node-XY2": {
+                                        "x": 91,
+                                        "y": 414
+                                    }
+                                },
+                                "attributes": {
+                                    "localNode": [
+                                        "divergePoint"
+                                    ],
+                                    "disabled": [
+                                        "doNotBlock",
+                                        "unEvenPavementPresent",
+                                        "whiteLine"
+                                    ],
+                                    "enabled": [
+                                        "freeParking",
+                                        "midBlockCurbPresent",
+                                        "adaptiveTimingPresent"
+                                    ],
+                                    "data": [
+                                        {
+                                            "laneCrownPointRight": 27
+                                        },
+                                        {
+                                            "pathEndPointAngle": 105
+                                        },
+                                        {
+                                            "laneCrownPointCenter": -45
+                                        },
+                                        {
+                                            "laneCrownPointLeft": 19
+                                        }
+                                    ],
+                                    "dWidth": -466,
+                                    "dElevation": -496
+                                }
+                            },
+                            {
+                                "delta": {
+                                    "node-XY1": {
+                                        "x": -329,
+                                        "y": -230
+                                    }
+                                },
+                                "attributes": {
+                                    "localNode": [
+                                        "mergePoint",
+                                        "mergePoint"
+                                    ],
+                                    "disabled": [
+                                        "safeIsland",
+                                        "reserved",
+                                        "mergingLaneRight"
+                                    ],
+                                    "enabled": [
+                                        "rfSignalRequestPresent",
+                                        "rumbleStripPresent"
+                                    ],
+                                    "data": [
+                                        {
+                                            "laneCrownPointLeft": 20
+                                        },
+                                        {
+                                            "laneCrownPointCenter": 32
+                                        },
+                                        {
+                                            "laneCrownPointRight": -8
+                                        }
+                                    ],
+                                    "dWidth": -351,
+                                    "dElevation": 159
+                                }
+                            }
+                        ]
+                    },
+                    "connectsTo": [
+                        {
+                            "connectingLane": {
+                                "lane": 235,
+                                "maneuver": "7DD0"
+                            },
+                            "remoteIntersection": {
+                                "region": 36856,
+                                "id": 13358
+                            },
+                            "signalGroup": 74,
+                            "userClass": 210,
+                            "connectionID": 123
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 243,
+                                "maneuver": "A520"
+                            },
+                            "remoteIntersection": {
+                                "region": 3776,
+                                "id": 9603
+                            },
+                            "signalGroup": 29,
+                            "userClass": 245,
+                            "connectionID": 95
+                        },
+                        {
+                            "connectingLane": {
+                                "lane": 108,
+                                "maneuver": "9880"
+                            },
+                            "remoteIntersection": {
+                                "region": 43529,
+                                "id": 14589
+                            },
+                            "signalGroup": 62,
+                            "userClass": 156,
+                            "connectionID": 252
+                        }
+                    ],
+                    "overlays": [
+                        137
+                    ]
+                }
+            ]
+        },
+        "tumPublicKey": "7845209AC020C6DC452C793395A79F1B36EF93FA9427E86257A0F69F12AF4A5E",
+        "ackPolicy": {
+            "timeout": 9109,
+            "numOfRetries": 4
+        },
+        "lastTollPtDataReq": false
+    }
+}
