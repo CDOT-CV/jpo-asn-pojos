@@ -88,7 +88,7 @@ public class BasicSafetyMessageTest extends BaseSerializeTest<BasicSafetyMessage
     BasicSafetyMessage bsm = fromJson(json);
     assertThat(bsm, notNullValue());
     String roundTripJson = toJson(bsm);
-    log.info("roundTripJson: {}", roundTripJson);
+    log.debug("roundTripJson: {}", roundTripJson);
     assertThat(roundTripJson, jsonEquals(json));
   }
 
@@ -99,7 +99,7 @@ public class BasicSafetyMessageTest extends BaseSerializeTest<BasicSafetyMessage
     BasicSafetyMessage bsm = fromJson(json);
     assertThat(bsm, notNullValue());
     String roundTripJson = toJson(bsm);
-    log.info("roundTripJson: {}", roundTripJson);
+    log.debug("roundTripJson: {}", roundTripJson);
     assertThat(roundTripJson, jsonEquals(json));
   }
 
@@ -110,7 +110,7 @@ public class BasicSafetyMessageTest extends BaseSerializeTest<BasicSafetyMessage
     BasicSafetyMessage bsm = fromJson(json);
     assertThat(bsm, notNullValue());
     String roundTripJson = toJson(bsm);
-    log.info("roundTripJson: {}", roundTripJson);
+    log.debug("roundTripJson: {}", roundTripJson);
     assertThat(roundTripJson, jsonEquals(json));
   }
 
@@ -121,7 +121,7 @@ public class BasicSafetyMessageTest extends BaseSerializeTest<BasicSafetyMessage
     BasicSafetyMessage bsm = fromJson(json);
     assertThat(bsm, notNullValue());
     String roundTripJson = toJson(bsm);
-    log.info("roundTripJson: {}", roundTripJson);
+    log.debug("roundTripJson: {}", roundTripJson);
     assertThat(roundTripJson, jsonEquals(json));
   }
 

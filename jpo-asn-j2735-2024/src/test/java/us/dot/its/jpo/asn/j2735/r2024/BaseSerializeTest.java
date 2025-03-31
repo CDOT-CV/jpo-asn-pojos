@@ -28,25 +28,25 @@ public abstract class BaseSerializeTest<T> {
 
   protected String toXml(T object) throws JsonProcessingException {
     String str = xmlMapper.writeValueAsString(object);
-    log.info(str);
+    log.debug(str);
     return str;
   }
 
   protected String toJson(T object) throws JsonProcessingException {
     String str = jsonMapper.writeValueAsString(object);
-    log.info(str);
+    log.debug(str);
     return str;
   }
 
   protected T fromXml(String xml) throws IOException {
     T object = xmlMapper.readValue(xml, clazz);
-    log.info(object.toString());
+    log.debug(object.toString());
     return object;
   }
 
   protected T fromJson(String json) throws IOException {
     T object = jsonMapper.readValue(json, clazz);
-    log.info(object.toString());
+    log.debug(object.toString());
     return object;
   }
 
@@ -70,7 +70,7 @@ public abstract class BaseSerializeTest<T> {
       if (files != null) {
         for (String fileName : files) {
           String resourcePath = String.format("%s/%s", directory, fileName);
-          log.info(resourcePath);
+          log.debug(resourcePath);
           resources.add(resourcePath);
         }
       }
