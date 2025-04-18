@@ -4,8 +4,9 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
+
+import java.io.IOException;
 
 /**
  * Serializer for ASN.1 Bitstring types to XER, JER, or a custom format with human-readable named values.
@@ -69,7 +70,7 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
             // Variable-size format
             jsonGenerator.writeStartObject();
             jsonGenerator.writeStringField("value", asn1Bitstring.hexString());
-            jsonGenerator.writeNumberField("length", asn1Bitstring.actualSize());
+            jsonGenerator.writeNumberField("length", asn1Bitstring.getActualSize());
             jsonGenerator.writeEndObject();
         } else {
             // Fixed size format

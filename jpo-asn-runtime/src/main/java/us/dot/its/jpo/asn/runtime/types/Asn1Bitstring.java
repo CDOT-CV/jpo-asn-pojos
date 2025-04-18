@@ -68,16 +68,20 @@ public abstract class Asn1Bitstring implements Asn1Type {
         return upperBound;
     }
 
+    public int getActualSize() {
+        return actualSize;
+    }
+
+    public void setActualSize(int actualSize) {
+        this.actualSize = actualSize;
+    }
+
     public boolean noNamedValues() {
         return names.length == 0;
     }
 
     public boolean variableSize() {
         return size != upperBound || hasExtensionMarker;
-    }
-
-    public int actualSize() {
-        return variableSize() ? actualSize : size;
     }
 
     /**
@@ -99,8 +103,8 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
         // Update actual size
         if (variableSize()) {
-            if (actualSize < bitIndex + 1) {
-                actualSize = bitIndex + 1;
+            if (getActualSize() < bitIndex + 1) {
+                setActualSize(bitIndex + 1);
             }
         }
     }
@@ -125,7 +129,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
         // Write extension bits if the number of named bits is larger than the "size" and
         // those bits are set
-        final int resolvedSize = noNamedValues() ? actualSize : sizeWithExtensions();
+        final int resolvedSize = noNamedValues() ? getActualSize() : sizeWithExtensions();
 
         char[] chars = new char[resolvedSize];
         for (int i = 0; i < resolvedSize; i++) {
@@ -148,7 +152,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     public String hexString() {
-        final int resolvedSize = variableSize() ? (noNamedValues() ? actualSize : sizeWithExtensions()) : size;
+        final int resolvedSize = variableSize() ? (noNamedValues() ? getActualSize() : sizeWithExtensions()) : size;
         HexFormat hex = HexFormat.of().withUpperCase();
         int expectedNumBytes = (resolvedSize + 7) / 8;
         byte[] bytes = reverseBits(bits.toByteArray());
@@ -178,7 +182,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
                 char c = chars[i];
                 set(i, c == '1');
             }
-            actualSize = chars.length;
+            setActualSize(chars.length);
             return;
         }
 
@@ -220,7 +224,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
         if (variableSize()) {
             // A length is specified, use it
             // Length not specified, use the number of bits in the hex
-            actualSize = Objects.requireNonNullElseGet(length, () -> bytes.length * 8);
+            setActualSize(Objects.requireNonNullElseGet(length, () -> bytes.length * 8));
         }
     }
 
@@ -255,6 +259,4 @@ public abstract class Asn1Bitstring implements Asn1Type {
     public String toString() {
         return binaryString();
     }
-
-
 }
