@@ -21,17 +21,11 @@ import static us.dot.its.jpo.asn.runtime.utils.BitUtils.reverseBits;
 public abstract class Asn1Bitstring implements Asn1Type {
 
     final BitSet bits;
-
-    // Lower bound
-    final int size;
-
+    final int lowerBound;
     final int upperBound;
-
     private int actualSize = 0;
-
     final boolean hasExtensionMarker;
     final String[] names;
-
 
     /**
      * Constructs an Asn1Bitstring object with the specified parameters.
@@ -42,10 +36,10 @@ public abstract class Asn1Bitstring implements Asn1Type {
      * @param names              An array of names associated with the bits in the bit string.
      */
     public Asn1Bitstring(int lowerBound, int upperBound, boolean hasExtensionMarker, String[] names) {
-        this.size = lowerBound;
+        this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         this.hasExtensionMarker = hasExtensionMarker;
-        this.bits = new BitSet(size);
+        this.bits = new BitSet(this.lowerBound);
         this.names = names;
     }
 
@@ -61,7 +55,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     public int size() {
-        return size;
+        return lowerBound;
     }
 
     public int upperBound() {
@@ -84,7 +78,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     public boolean hasVariableSize() {
-        return size != upperBound || hasExtensionMarker;
+        return lowerBound != upperBound || hasExtensionMarker;
     }
 
     /**
@@ -101,6 +95,12 @@ public abstract class Asn1Bitstring implements Asn1Type {
         return bits.get(bitIndex);
     }
 
+    /**
+     * Sets the value of a specific bit in the bitstring to the provided value.
+     *
+     * @param bitIndex the index of the bit to be set
+     * @param value the new value for the bit at the specified index
+     */
     public void set(int bitIndex, boolean value) {
         bits.set(bitIndex, value);
 
@@ -112,6 +112,10 @@ public abstract class Asn1Bitstring implements Asn1Type {
         }
     }
 
+    private void set(int bitIndex, char value) {
+        set(bitIndex, value == '1');
+    }
+
     /**
      * Set the corresponding bit from the bitstring based on the name value.
      *
@@ -119,7 +123,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
      * @param value The value for the bit to be set.
      */
     public void set(String name, boolean value) {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < lowerBound; i++) {
             if (name(i).equals(name)) {
                 set(i, value);
                 return;
@@ -129,7 +133,6 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     public String binaryString() {
-
         // Write extension bits if the number of named bits is larger than the "size" and
         // those bits are set
         final int resolvedSize = hasNamedValues() ? sizeWithExtensions() : getActualSize();
@@ -142,23 +145,23 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     private int getNumExtensions() {
-        return names.length - size;
+        return names.length - lowerBound;
     }
 
     // Get the effective bitstring size including extension bits with defined names that are set
     private int sizeWithExtensions() {
         int maxSetExtensionIndex = -1;
         for (int extNum = 0; extNum < getNumExtensions(); extNum++) {
-            final int extIndex = size + extNum;
+            final int extIndex = lowerBound + extNum;
             if (get(extIndex)) {
                 maxSetExtensionIndex = extIndex;
             }
         }
-        return (maxSetExtensionIndex > -1) ? maxSetExtensionIndex + 1 : size;
+        return (maxSetExtensionIndex > -1) ? maxSetExtensionIndex + 1 : lowerBound;
     }
 
     public String hexString() {
-        final int resolvedSize = hasVariableSize() ? getActualSize() : size;
+        final int resolvedSize = hasVariableSize() ? getActualSize() : lowerBound;
         HexFormat hex = HexFormat.of().withUpperCase();
         int expectedNumBytes = (resolvedSize + 7) / 8;
         byte[] bytes = reverseBits(bits.toByteArray());
@@ -177,8 +180,8 @@ public abstract class Asn1Bitstring implements Asn1Type {
             return;
         }
         char[] chars = str.trim().toCharArray();
-        if (chars.length < size) {
-            throw new IllegalArgumentException("String too short: " + str + " (expected " + size + " bits) but got (" + chars.length + " bits)");
+        if (chars.length < lowerBound) {
+            throw new IllegalArgumentException("String too short: " + str + " (expected " + lowerBound + " bits) but got (" + chars.length + " bits)");
         }
 
         // Read all bits in the string if there are no named bits, or if the size is variable or
@@ -186,26 +189,26 @@ public abstract class Asn1Bitstring implements Asn1Type {
         if (!hasNamedValues() || hasVariableSize()) {
             for (int i = 0; i < chars.length; i++) {
                 char c = chars[i];
-                set(i, c == '1');
+                set(i, c);
             }
             setActualSize(chars.length);
             return;
         }
 
         // Otherwise only read named bits and extensions
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < lowerBound; i++) {
             char c = chars[i];
-            set(i, c == '1');
+            set(i, c);
         }
 
         // Read extension bits if the number of named bits is larger than the "size" and the binary
         // string is long enough to contain extensions
-        final int numExtensionsInString = chars.length - size; // Number of extensions present in string
+        final int numExtensionsInString = chars.length - lowerBound; // Number of extensions present in string
         if (getNumExtensions() > 0 && numExtensionsInString >= getNumExtensions()) {
              for (int extNum = 0; extNum < numExtensionsInString; extNum++) {
-                 final int extIndex = size + extNum;
+                 final int extIndex = lowerBound + extNum;
                  char c = chars[extIndex];
-                 set(extIndex, c == '1');
+                 set(extIndex, c);
              }
         }
     }
