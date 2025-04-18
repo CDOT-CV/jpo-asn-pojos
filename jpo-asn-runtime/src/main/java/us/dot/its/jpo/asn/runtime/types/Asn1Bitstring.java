@@ -1,13 +1,13 @@
 package us.dot.its.jpo.asn.runtime.types;
 
-import static us.dot.its.jpo.asn.runtime.utils.BitUtils.reverseBits;
-
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import us.dot.its.jpo.asn.runtime.serialization.BitstringSerializer;
 
 import java.util.BitSet;
 import java.util.HexFormat;
+import java.util.Objects;
 
-import us.dot.its.jpo.asn.runtime.serialization.BitstringSerializer;
+import static us.dot.its.jpo.asn.runtime.utils.BitUtils.reverseBits;
 
 /**
  * Base class for ASN.1 BIT STRING types.
@@ -218,13 +218,9 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
         // If the size is not fixed, or an extensible marker is present, set the actual size
         if (variableSize()) {
-            if (length != null) {
-                // A length is specified, use it
-                actualSize = length;
-            } else {
-                // Length not specified, use the number of bits in the hex
-                actualSize = bytes.length * 8;
-            }
+            // A length is specified, use it
+            // Length not specified, use the number of bits in the hex
+            actualSize = Objects.requireNonNullElseGet(length, () -> bytes.length * 8);
         }
     }
 
