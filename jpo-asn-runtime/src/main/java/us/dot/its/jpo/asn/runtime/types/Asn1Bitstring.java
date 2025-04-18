@@ -69,18 +69,21 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     public int getActualSize() {
+        if (hasNamedValues()) {
+            return sizeWithExtensions();
+        }
         return actualSize;
+    }
+
+    private boolean hasNamedValues() {
+        return names.length != 0;
     }
 
     public void setActualSize(int actualSize) {
         this.actualSize = actualSize;
     }
 
-    public boolean noNamedValues() {
-        return names.length == 0;
-    }
-
-    public boolean variableSize() {
+    public boolean hasVariableSize() {
         return size != upperBound || hasExtensionMarker;
     }
 
@@ -102,7 +105,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
         bits.set(bitIndex, value);
 
         // Update actual size
-        if (variableSize()) {
+        if (hasVariableSize()) {
             if (getActualSize() < bitIndex + 1) {
                 setActualSize(bitIndex + 1);
             }
@@ -129,7 +132,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
         // Write extension bits if the number of named bits is larger than the "size" and
         // those bits are set
-        final int resolvedSize = noNamedValues() ? getActualSize() : sizeWithExtensions();
+        final int resolvedSize = hasNamedValues() ? sizeWithExtensions() : getActualSize();
 
         char[] chars = new char[resolvedSize];
         for (int i = 0; i < resolvedSize; i++) {
@@ -138,11 +141,14 @@ public abstract class Asn1Bitstring implements Asn1Type {
         return new String(chars);
     }
 
+    private int getNumExtensions() {
+        return names.length - size;
+    }
+
     // Get the effective bitstring size including extension bits with defined names that are set
     private int sizeWithExtensions() {
-        final int numExtensions = names.length - size;  // Number of extensions defined
         int maxSetExtensionIndex = -1;
-        for (int extNum = 0; extNum < numExtensions; extNum++) {
+        for (int extNum = 0; extNum < getNumExtensions(); extNum++) {
             final int extIndex = size + extNum;
             if (get(extIndex)) {
                 maxSetExtensionIndex = extIndex;
@@ -152,7 +158,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
     }
 
     public String hexString() {
-        final int resolvedSize = variableSize() ? (noNamedValues() ? getActualSize() : sizeWithExtensions()) : size;
+        final int resolvedSize = hasVariableSize() ? getActualSize() : size;
         HexFormat hex = HexFormat.of().withUpperCase();
         int expectedNumBytes = (resolvedSize + 7) / 8;
         byte[] bytes = reverseBits(bits.toByteArray());
@@ -177,7 +183,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
         // Read all bits in the string if there are no named bits, or if the size is variable or
         // extensible
-        if (noNamedValues() || variableSize()) {
+        if (!hasNamedValues() || hasVariableSize()) {
             for (int i = 0; i < chars.length; i++) {
                 char c = chars[i];
                 set(i, c == '1');
@@ -194,9 +200,8 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
         // Read extension bits if the number of named bits is larger than the "size" and the binary
         // string is long enough to contain extensions
-        final int numExtensions = names.length - size;  // Number of extensions defined
         final int numExtensionsInString = chars.length - size; // Number of extensions present in string
-        if (numExtensions > 0 && numExtensionsInString >= numExtensions) {
+        if (getNumExtensions() > 0 && numExtensionsInString >= getNumExtensions()) {
              for (int extNum = 0; extNum < numExtensionsInString; extNum++) {
                  final int extIndex = size + extNum;
                  char c = chars[extIndex];
@@ -221,7 +226,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
         bits.or(newBits);
 
         // If the size is not fixed, or an extensible marker is present, set the actual size
-        if (variableSize()) {
+        if (hasVariableSize()) {
             // A length is specified, use it
             // Length not specified, use the number of bits in the hex
             setActualSize(Objects.requireNonNullElseGet(length, () -> bytes.length * 8));
