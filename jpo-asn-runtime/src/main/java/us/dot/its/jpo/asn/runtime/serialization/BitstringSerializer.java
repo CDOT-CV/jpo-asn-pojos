@@ -40,7 +40,7 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
     private void serializeJsonMap(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) throws IOException {
         // ODE JSON dialect serializes bitstrings as verbose maps
         jsonGenerator.writeStartObject();
-        for (int i = 0; i < asn1Bitstring.size(); i++) {
+        for (int i = 0; i < asn1Bitstring.getLowerBound(); i++) {
             String name = asn1Bitstring.name(i);
             boolean isSet = asn1Bitstring.get(i);
             jsonGenerator.writeBooleanField(name, isSet);

@@ -1,14 +1,13 @@
 package us.dot.its.jpo.asn.j2735.r2024.ManeuverSharingAndCoordinatingMessage;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.provider.Arguments;
+import us.dot.its.jpo.asn.j2735.r2024.BaseBitstringTest;
 
 import java.util.stream.Stream;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-import us.dot.its.jpo.asn.j2735.r2024.BaseBitstringTest;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class TemporaryIDPointerTest extends BaseBitstringTest<TemporaryIDPointer> {
 
@@ -24,7 +23,7 @@ public class TemporaryIDPointerTest extends BaseBitstringTest<TemporaryIDPointer
   public void testBinarySize1() {
     var tip = new TemporaryIDPointer();
     tip.fromBinaryString("1");
-    assertThat(tip.size(), equalTo(1));
+    assertThat(tip.getLowerBound(), equalTo(1));
     assertThat(tip.get(0), equalTo(true));
   }
 

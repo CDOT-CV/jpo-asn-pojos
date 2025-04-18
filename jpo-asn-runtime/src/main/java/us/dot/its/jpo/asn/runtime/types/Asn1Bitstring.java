@@ -1,6 +1,8 @@
 package us.dot.its.jpo.asn.runtime.types;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Getter;
+import lombok.Setter;
 import us.dot.its.jpo.asn.runtime.serialization.BitstringSerializer;
 
 import java.util.BitSet;
@@ -18,6 +20,8 @@ import static us.dot.its.jpo.asn.runtime.utils.BitUtils.reverseBits;
  * - Extension markers for accommodating future extensions
  */
 @JsonSerialize(using = BitstringSerializer.class)
+@Getter
+@Setter
 public abstract class Asn1Bitstring implements Asn1Type {
 
     final BitSet bits;
@@ -35,7 +39,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
      * @param hasExtensionMarker Indicates whether the bit string supports an extension marker.
      * @param names              An array of names associated with the bits in the bit string.
      */
-    public Asn1Bitstring(int lowerBound, int upperBound, boolean hasExtensionMarker, String[] names) {
+    protected Asn1Bitstring(int lowerBound, int upperBound, boolean hasExtensionMarker, String[] names) {
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         this.hasExtensionMarker = hasExtensionMarker;
@@ -50,16 +54,8 @@ public abstract class Asn1Bitstring implements Asn1Type {
      * @param hasExtensionMarker Indicates whether the bit string supports an extension marker.
      * @param names              An array of names associated with the bits in the bit string.
      */
-    public Asn1Bitstring(int size, boolean hasExtensionMarker, String[] names) {
+    protected Asn1Bitstring(int size, boolean hasExtensionMarker, String[] names) {
         this(size, size, hasExtensionMarker, names);
-    }
-
-    public int size() {
-        return lowerBound;
-    }
-
-    public int upperBound() {
-        return upperBound;
     }
 
     public int getActualSize() {
@@ -71,10 +67,6 @@ public abstract class Asn1Bitstring implements Asn1Type {
 
     private boolean hasNamedValues() {
         return names.length != 0;
-    }
-
-    public void setActualSize(int actualSize) {
-        this.actualSize = actualSize;
     }
 
     public boolean hasVariableSize() {
@@ -242,8 +234,8 @@ public abstract class Asn1Bitstring implements Asn1Type {
      * @param index The index value of the bitstring being requested.
      */
     public String name(int index) {
-        if (index < 0 || index >= size()) {
-            throw new IllegalArgumentException(String.format("Index %s out of range %s-%s", index, 0, size()));
+        if (index < 0 || index >= getLowerBound()) {
+            throw new IllegalArgumentException(String.format("Index %s out of range %s-%s", index, 0, getLowerBound()));
         }
         return names[index];
     }
