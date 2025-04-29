@@ -34,6 +34,6 @@ public class NTCIPEssPavementTreatmentLocation extends IA5String {
   @JsonCreator
   public NTCIPEssPavementTreatmentLocation(String value) {
     this();
-    this.setValue(value);
+    this.value = value;
   }
 }
