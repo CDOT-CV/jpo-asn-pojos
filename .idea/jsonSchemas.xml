@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="No JSON schema">
+          <value>
+            <SchemaInfo>
+              <option name="ignoredFile" value="true" />
+              <option name="name" value="No JSON schema" />
+              <option name="relativePathToSchema" value="" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="file://$PROJECT_DIR$/jpo-asn-j2735-2024/src/test/resources/us/dot/its/jpo/asn/j2735/r2024/SPAT/json/spat.json" />
+                  </Item>
+                </list>
+              </option>
+              <option name="isIgnoredFile" value="true" />
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="TimeChangeDetails.schema">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="TimeChangeDetails.schema" />
+              <option name="relativePathToSchema" value="jpo-asn-jsonschema-generator/jsonschema-generator/examples/TimeChangeDetails.schema.json" />
+              <option name="schemaVersion" value="JSON Schema 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="jpo-asn-jsonschema-generator/jsonschema-generator/examples/TimeChangeDetails.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>
