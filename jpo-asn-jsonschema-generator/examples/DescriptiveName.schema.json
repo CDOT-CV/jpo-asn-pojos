@@ -1,0 +1,8 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "string",
+  "minLength" : 1,
+  "maxLength" : 63,
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DescriptiveName",
+  "description" : "ASN.1 IA5String Type"
+}

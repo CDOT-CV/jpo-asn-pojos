@@ -1,0 +1,977 @@
+{
+  "timeStamp": 246691,
+  "name": "IBIKCKDEYTURNOVICROTVFUGSHMRXHONFVLEUMCRRYOHPQ",
+  "intersections": [
+    {
+      "name": "LCYSVRKAKXHONTXFYXGYV",
+      "id": {
+        "region": 46571,
+        "id": 7793
+      },
+      "revision": 111,
+      "status": "E7B6",
+      "moy": 290594,
+      "timeStamp": 33894,
+      "enabledLanes": [
+        229,
+        246
+      ],
+      "states": [
+        {
+          "movementName": "GPOLGDULBVDYRSRBKXCCIAGXWYFPKWUKLYIHGRQOR",
+          "signalGroup": 157,
+          "state-time-speed": [
+            {
+              "eventState": "permissive-Movement-Allowed",
+              "timing": {
+                "startTime": 34649,
+                "minEndTime": 21310,
+                "maxEndTime": 28505,
+                "likelyTime": 6859,
+                "confidence": 9,
+                "nextTime": 6093
+              },
+              "speeds": [
+                {
+                  "type": "transit",
+                  "speed": 52,
+                  "confidence": "prec100ms",
+                  "distance": 3405,
+                  "class": 78
+                },
+                {
+                  "type": "transit",
+                  "speed": 259,
+                  "confidence": "prec0-1ms",
+                  "distance": 8986,
+                  "class": 99
+                },
+                {
+                  "type": "none",
+                  "speed": 70,
+                  "confidence": "prec5ms",
+                  "distance": 5280,
+                  "class": 54
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 186,
+                  "confidence": "prec100ms",
+                  "distance": 1032,
+                  "class": 110
+                }
+              ]
+            },
+            {
+              "eventState": "caution-Conflicting-Traffic",
+              "timing": {
+                "startTime": 21471,
+                "minEndTime": 5482,
+                "maxEndTime": 9485,
+                "likelyTime": 9337,
+                "confidence": 2,
+                "nextTime": 33138
+              },
+              "speeds": [
+                {
+                  "type": "transit",
+                  "speed": 86,
+                  "confidence": "prec0-1ms",
+                  "distance": 7034,
+                  "class": 142
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 107,
+              "queueLength": 221,
+              "availableStorageLength": 9712,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            }
+          ]
+        }
+      ],
+      "maneuverAssistList": [
+        {
+          "connectionID": 208,
+          "queueLength": 1130,
+          "availableStorageLength": 6350,
+          "waitOnStop": true,
+          "pedBicycleDetect": true
+        },
+        {
+          "connectionID": 6,
+          "queueLength": 1788,
+          "availableStorageLength": 8779,
+          "waitOnStop": true,
+          "pedBicycleDetect": false
+        },
+        {
+          "connectionID": 55,
+          "queueLength": 5659,
+          "availableStorageLength": 3837,
+          "waitOnStop": false,
+          "pedBicycleDetect": true
+        },
+        {
+          "connectionID": 182,
+          "queueLength": 8328,
+          "availableStorageLength": 7616,
+          "waitOnStop": true,
+          "pedBicycleDetect": true
+        }
+      ],
+      "roadAuthorityID": {
+        "relRdAuthID": "5816"
+      }
+    },
+    {
+      "name": "YARHTVFKFHHPBJRM",
+      "id": {
+        "region": 7074,
+        "id": 51139
+      },
+      "revision": 97,
+      "status": "15E0",
+      "moy": 115833,
+      "timeStamp": 41566,
+      "enabledLanes": [
+        58
+      ],
+      "states": [
+        {
+          "movementName": "NMVUDXKSNQJHSKTSDX",
+          "signalGroup": 45,
+          "state-time-speed": [
+            {
+              "eventState": "unavailable",
+              "timing": {
+                "startTime": 36059,
+                "minEndTime": 30303,
+                "maxEndTime": 7533,
+                "likelyTime": 8153,
+                "confidence": 2,
+                "nextTime": 22699
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 321,
+                  "confidence": "prec5ms",
+                  "distance": 3400,
+                  "class": 75
+                }
+              ]
+            },
+            {
+              "eventState": "protected-Movement-Allowed",
+              "timing": {
+                "startTime": 27261,
+                "minEndTime": 5686,
+                "maxEndTime": 27083,
+                "likelyTime": 10979,
+                "confidence": 13,
+                "nextTime": 25105
+              },
+              "speeds": [
+                {
+                  "type": "ecoDrive",
+                  "speed": 367,
+                  "confidence": "prec100ms",
+                  "distance": 8480,
+                  "class": 244
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 98,
+              "queueLength": 6485,
+              "availableStorageLength": 2528,
+              "waitOnStop": true,
+              "pedBicycleDetect": false
+            },
+            {
+              "connectionID": 107,
+              "queueLength": 4663,
+              "availableStorageLength": 7436,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            },
+            {
+              "connectionID": 8,
+              "queueLength": 262,
+              "availableStorageLength": 9063,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            },
+            {
+              "connectionID": 158,
+              "queueLength": 8169,
+              "availableStorageLength": 4505,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            }
+          ]
+        },
+        {
+          "movementName": "HGTIQYRUVSWNK",
+          "signalGroup": 241,
+          "state-time-speed": [
+            {
+              "eventState": "stop-Then-Proceed",
+              "timing": {
+                "startTime": 32071,
+                "minEndTime": 35828,
+                "maxEndTime": 34429,
+                "likelyTime": 26831,
+                "confidence": 0,
+                "nextTime": 7519
+              },
+              "speeds": [
+                {
+                  "type": "transit",
+                  "speed": 407,
+                  "confidence": "prec0-05ms",
+                  "distance": 6381,
+                  "class": 6
+                }
+              ]
+            },
+            {
+              "eventState": "caution-Conflicting-Traffic",
+              "timing": {
+                "startTime": 35961,
+                "minEndTime": 19882,
+                "maxEndTime": 11890,
+                "likelyTime": 24391,
+                "confidence": 10,
+                "nextTime": 24922
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 241,
+                  "confidence": "prec5ms",
+                  "distance": 1359,
+                  "class": 129
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 52,
+              "queueLength": 4225,
+              "availableStorageLength": 2273,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            }
+          ]
+        }
+      ],
+      "maneuverAssistList": [
+        {
+          "connectionID": 0,
+          "queueLength": 342,
+          "availableStorageLength": 6256,
+          "waitOnStop": false,
+          "pedBicycleDetect": true
+        },
+        {
+          "connectionID": 240,
+          "queueLength": 6581,
+          "availableStorageLength": 1745,
+          "waitOnStop": false,
+          "pedBicycleDetect": true
+        },
+        {
+          "connectionID": 82,
+          "queueLength": 6265,
+          "availableStorageLength": 4810,
+          "waitOnStop": false,
+          "pedBicycleDetect": false
+        },
+        {
+          "connectionID": 44,
+          "queueLength": 2505,
+          "availableStorageLength": 6041,
+          "waitOnStop": false,
+          "pedBicycleDetect": false
+        }
+      ],
+      "roadAuthorityID": {
+        "fullRdAuthID": "1.0.19480.1"
+      }
+    },
+    {
+      "name": "HQAYOHQDCVVVVCESOXIYGRBARYRAHPHKXSWXEGEORLODIQS",
+      "id": {
+        "region": 28568,
+        "id": 26605
+      },
+      "revision": 45,
+      "status": "9976",
+      "moy": 127456,
+      "timeStamp": 45062,
+      "enabledLanes": [
+        138,
+        19
+      ],
+      "states": [
+        {
+          "movementName": "WIOSGLFMWCQAQRDHAIFICYJ",
+          "signalGroup": 173,
+          "state-time-speed": [
+            {
+              "eventState": "stop-And-Remain",
+              "timing": {
+                "startTime": 24210,
+                "minEndTime": 24719,
+                "maxEndTime": 27301,
+                "likelyTime": 35043,
+                "confidence": 2,
+                "nextTime": 28938
+              },
+              "speeds": [
+                {
+                  "type": "transit",
+                  "speed": 196,
+                  "confidence": "prec0-05ms",
+                  "distance": 9670,
+                  "class": 249
+                },
+                {
+                  "type": "none",
+                  "speed": 241,
+                  "confidence": "prec5ms",
+                  "distance": 667,
+                  "class": 97
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 317,
+                  "confidence": "unavailable",
+                  "distance": 619,
+                  "class": 173
+                }
+              ]
+            },
+            {
+              "eventState": "protected-Movement-Allowed",
+              "timing": {
+                "startTime": 17567,
+                "minEndTime": 34321,
+                "maxEndTime": 5561,
+                "likelyTime": 9955,
+                "confidence": 11,
+                "nextTime": 5122
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 316,
+                  "confidence": "prec1ms",
+                  "distance": 8123,
+                  "class": 150
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 186,
+                  "confidence": "unavailable",
+                  "distance": 6695,
+                  "class": 89
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 41,
+                  "confidence": "prec5ms",
+                  "distance": 6581,
+                  "class": 141
+                }
+              ]
+            },
+            {
+              "eventState": "pre-Movement",
+              "timing": {
+                "startTime": 14711,
+                "minEndTime": 19305,
+                "maxEndTime": 16786,
+                "likelyTime": 20620,
+                "confidence": 14,
+                "nextTime": 26869
+              },
+              "speeds": [
+                {
+                  "type": "ecoDrive",
+                  "speed": 404,
+                  "confidence": "prec0-01ms",
+                  "distance": 2083,
+                  "class": 213
+                },
+                {
+                  "type": "ecoDrive",
+                  "speed": 352,
+                  "confidence": "prec1ms",
+                  "distance": 5729,
+                  "class": 108
+                },
+                {
+                  "type": "transit",
+                  "speed": 78,
+                  "confidence": "prec5ms",
+                  "distance": 1168,
+                  "class": 156
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 194,
+                  "confidence": "prec100ms",
+                  "distance": 434,
+                  "class": 229
+                }
+              ]
+            },
+            {
+              "eventState": "stop-And-Remain",
+              "timing": {
+                "startTime": 9846,
+                "minEndTime": 28635,
+                "maxEndTime": 22174,
+                "likelyTime": 1668,
+                "confidence": 11,
+                "nextTime": 25076
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 286,
+                  "confidence": "unavailable",
+                  "distance": 1009,
+                  "class": 183
+                },
+                {
+                  "type": "ecoDrive",
+                  "speed": 164,
+                  "confidence": "prec0-1ms",
+                  "distance": 5581,
+                  "class": 32
+                },
+                {
+                  "type": "transit",
+                  "speed": 497,
+                  "confidence": "prec0-01ms",
+                  "distance": 2944,
+                  "class": 6
+                },
+                {
+                  "type": "none",
+                  "speed": 313,
+                  "confidence": "prec0-05ms",
+                  "distance": 1810,
+                  "class": 6
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 108,
+              "queueLength": 3909,
+              "availableStorageLength": 8718,
+              "waitOnStop": true,
+              "pedBicycleDetect": true
+            },
+            {
+              "connectionID": 226,
+              "queueLength": 4501,
+              "availableStorageLength": 2011,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            },
+            {
+              "connectionID": 160,
+              "queueLength": 6295,
+              "availableStorageLength": 3627,
+              "waitOnStop": false,
+              "pedBicycleDetect": false
+            },
+            {
+              "connectionID": 46,
+              "queueLength": 1328,
+              "availableStorageLength": 578,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            }
+          ]
+        }
+      ],
+      "maneuverAssistList": [
+        {
+          "connectionID": 26,
+          "queueLength": 7880,
+          "availableStorageLength": 2878,
+          "waitOnStop": true,
+          "pedBicycleDetect": true
+        },
+        {
+          "connectionID": 202,
+          "queueLength": 9912,
+          "availableStorageLength": 5037,
+          "waitOnStop": false,
+          "pedBicycleDetect": true
+        }
+      ],
+      "roadAuthorityID": {
+        "fullRdAuthID": "1.0.1211.1"
+      }
+    },
+    {
+      "name": "BRYXAMCLVEYNUYCFNWCNU",
+      "id": {
+        "region": 17698,
+        "id": 10003
+      },
+      "revision": 107,
+      "status": "78AD",
+      "moy": 454031,
+      "timeStamp": 35887,
+      "enabledLanes": [
+        116,
+        110,
+        90
+      ],
+      "states": [
+        {
+          "movementName": "SJNXMJVWO",
+          "signalGroup": 4,
+          "state-time-speed": [
+            {
+              "eventState": "protected-Movement-Allowed",
+              "timing": {
+                "startTime": 17735,
+                "minEndTime": 19533,
+                "maxEndTime": 29424,
+                "likelyTime": 34192,
+                "confidence": 10,
+                "nextTime": 31942
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 455,
+                  "confidence": "prec1ms",
+                  "distance": 3357,
+                  "class": 28
+                },
+                {
+                  "type": "none",
+                  "speed": 396,
+                  "confidence": "unavailable",
+                  "distance": 1854,
+                  "class": 222
+                },
+                {
+                  "type": "ecoDrive",
+                  "speed": 261,
+                  "confidence": "prec100ms",
+                  "distance": 2935,
+                  "class": 165
+                }
+              ]
+            },
+            {
+              "eventState": "protected-clearance",
+              "timing": {
+                "startTime": 22717,
+                "minEndTime": 29088,
+                "maxEndTime": 32933,
+                "likelyTime": 22125,
+                "confidence": 11,
+                "nextTime": 17675
+              },
+              "speeds": [
+                {
+                  "type": "none",
+                  "speed": 250,
+                  "confidence": "prec5ms",
+                  "distance": 6113,
+                  "class": 58
+                },
+                {
+                  "type": "transit",
+                  "speed": 7,
+                  "confidence": "prec0-05ms",
+                  "distance": 708,
+                  "class": 221
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 287,
+                  "confidence": "prec0-1ms",
+                  "distance": 3177,
+                  "class": 155
+                }
+              ]
+            },
+            {
+              "eventState": "dark",
+              "timing": {
+                "startTime": 18811,
+                "minEndTime": 25738,
+                "maxEndTime": 10079,
+                "likelyTime": 32959,
+                "confidence": 6,
+                "nextTime": 14650
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 176,
+                  "confidence": "prec0-1ms",
+                  "distance": 3088,
+                  "class": 105
+                }
+              ]
+            },
+            {
+              "eventState": "stop-Then-Proceed",
+              "timing": {
+                "startTime": 8247,
+                "minEndTime": 10236,
+                "maxEndTime": 33829,
+                "likelyTime": 29672,
+                "confidence": 6,
+                "nextTime": 30253
+              },
+              "speeds": [
+                {
+                  "type": "none",
+                  "speed": 180,
+                  "confidence": "unavailable",
+                  "distance": 9626,
+                  "class": 126
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 238,
+                  "confidence": "prec100ms",
+                  "distance": 7309,
+                  "class": 59
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 71,
+              "queueLength": 8208,
+              "availableStorageLength": 4055,
+              "waitOnStop": false,
+              "pedBicycleDetect": true
+            },
+            {
+              "connectionID": 74,
+              "queueLength": 8230,
+              "availableStorageLength": 8740,
+              "waitOnStop": true,
+              "pedBicycleDetect": true
+            }
+          ]
+        },
+        {
+          "movementName": "IQXMGQEKHMNHXMEWTWIPFMNBW",
+          "signalGroup": 234,
+          "state-time-speed": [
+            {
+              "eventState": "stop-And-Remain",
+              "timing": {
+                "startTime": 16275,
+                "minEndTime": 7700,
+                "maxEndTime": 9097,
+                "likelyTime": 11612,
+                "confidence": 5,
+                "nextTime": 2877
+              },
+              "speeds": [
+                {
+                  "type": "transit",
+                  "speed": 438,
+                  "confidence": "prec100ms",
+                  "distance": 3647,
+                  "class": 208
+                },
+                {
+                  "type": "transit",
+                  "speed": 133,
+                  "confidence": "unavailable",
+                  "distance": 5114,
+                  "class": 177
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 88,
+                  "confidence": "prec1ms",
+                  "distance": 5826,
+                  "class": 211
+                },
+                {
+                  "type": "transit",
+                  "speed": 339,
+                  "confidence": "prec0-1ms",
+                  "distance": 8346,
+                  "class": 203
+                }
+              ]
+            },
+            {
+              "eventState": "dark",
+              "timing": {
+                "startTime": 6725,
+                "minEndTime": 19080,
+                "maxEndTime": 4830,
+                "likelyTime": 9927,
+                "confidence": 12,
+                "nextTime": 9362
+              },
+              "speeds": [
+                {
+                  "type": "transit",
+                  "speed": 247,
+                  "confidence": "prec0-01ms",
+                  "distance": 419,
+                  "class": 193
+                },
+                {
+                  "type": "ecoDrive",
+                  "speed": 124,
+                  "confidence": "prec5ms",
+                  "distance": 5401,
+                  "class": 134
+                }
+              ]
+            },
+            {
+              "eventState": "caution-Conflicting-Traffic",
+              "timing": {
+                "startTime": 35721,
+                "minEndTime": 4902,
+                "maxEndTime": 5658,
+                "likelyTime": 28182,
+                "confidence": 13,
+                "nextTime": 10582
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 266,
+                  "confidence": "prec0-01ms",
+                  "distance": 4178,
+                  "class": 70
+                },
+                {
+                  "type": "none",
+                  "speed": 146,
+                  "confidence": "prec0-1ms",
+                  "distance": 7757,
+                  "class": 239
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 144,
+              "queueLength": 2664,
+              "availableStorageLength": 8787,
+              "waitOnStop": false,
+              "pedBicycleDetect": false
+            },
+            {
+              "connectionID": 115,
+              "queueLength": 9186,
+              "availableStorageLength": 3824,
+              "waitOnStop": false,
+              "pedBicycleDetect": false
+            }
+          ]
+        },
+        {
+          "movementName": "UWGSUXIJCVYQCHKSKBFPLJWWKHPPLVJMFPWEWQC",
+          "signalGroup": 87,
+          "state-time-speed": [
+            {
+              "eventState": "dark",
+              "timing": {
+                "startTime": 9987,
+                "minEndTime": 23567,
+                "maxEndTime": 29881,
+                "likelyTime": 30775,
+                "confidence": 11,
+                "nextTime": 29493
+              },
+              "speeds": [
+                {
+                  "type": "ecoDrive",
+                  "speed": 56,
+                  "confidence": "prec5ms",
+                  "distance": 936,
+                  "class": 248
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 238,
+                  "confidence": "prec0-05ms",
+                  "distance": 253,
+                  "class": 244
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 172,
+                  "confidence": "prec0-05ms",
+                  "distance": 5662,
+                  "class": 82
+                }
+              ]
+            },
+            {
+              "eventState": "unavailable",
+              "timing": {
+                "startTime": 31937,
+                "minEndTime": 26515,
+                "maxEndTime": 33485,
+                "likelyTime": 30977,
+                "confidence": 3,
+                "nextTime": 19271
+              },
+              "speeds": [
+                {
+                  "type": "ecoDrive",
+                  "speed": 185,
+                  "confidence": "prec5ms",
+                  "distance": 2673,
+                  "class": 240
+                },
+                {
+                  "type": "transit",
+                  "speed": 252,
+                  "confidence": "prec5ms",
+                  "distance": 6763,
+                  "class": 138
+                },
+                {
+                  "type": "greenwave",
+                  "speed": 189,
+                  "confidence": "prec1ms",
+                  "distance": 4239,
+                  "class": 44
+                },
+                {
+                  "type": "transit",
+                  "speed": 254,
+                  "confidence": "prec10ms",
+                  "distance": 9980,
+                  "class": 123
+                }
+              ]
+            },
+            {
+              "eventState": "protected-Movement-Allowed",
+              "timing": {
+                "startTime": 15540,
+                "minEndTime": 26329,
+                "maxEndTime": 28895,
+                "likelyTime": 21877,
+                "confidence": 2,
+                "nextTime": 22445
+              },
+              "speeds": [
+                {
+                  "type": "greenwave",
+                  "speed": 110,
+                  "confidence": "prec0-1ms",
+                  "distance": 3850,
+                  "class": 235
+                },
+                {
+                  "type": "transit",
+                  "speed": 293,
+                  "confidence": "prec1ms",
+                  "distance": 641,
+                  "class": 148
+                },
+                {
+                  "type": "none",
+                  "speed": 19,
+                  "confidence": "prec1ms",
+                  "distance": 6512,
+                  "class": 11
+                },
+                {
+                  "type": "none",
+                  "speed": 144,
+                  "confidence": "prec1ms",
+                  "distance": 1849,
+                  "class": 65
+                }
+              ]
+            }
+          ],
+          "maneuverAssistList": [
+            {
+              "connectionID": 10,
+              "queueLength": 4800,
+              "availableStorageLength": 4291,
+              "waitOnStop": true,
+              "pedBicycleDetect": false
+            },
+            {
+              "connectionID": 175,
+              "queueLength": 2515,
+              "availableStorageLength": 9050,
+              "waitOnStop": true,
+              "pedBicycleDetect": true
+            },
+            {
+              "connectionID": 122,
+              "queueLength": 9533,
+              "availableStorageLength": 6334,
+              "waitOnStop": false,
+              "pedBicycleDetect": false
+            },
+            {
+              "connectionID": 85,
+              "queueLength": 282,
+              "availableStorageLength": 7542,
+              "waitOnStop": false,
+              "pedBicycleDetect": false
+            }
+          ]
+        }
+      ],
+      "maneuverAssistList": [
+        {
+          "connectionID": 49,
+          "queueLength": 9396,
+          "availableStorageLength": 8295,
+          "waitOnStop": true,
+          "pedBicycleDetect": true
+        },
+        {
+          "connectionID": 240,
+          "queueLength": 7357,
+          "availableStorageLength": 5852,
+          "waitOnStop": false,
+          "pedBicycleDetect": true
+        }
+      ],
+      "roadAuthorityID": {
+        "relRdAuthID": "21875"
+      }
+    }
+  ]
+}

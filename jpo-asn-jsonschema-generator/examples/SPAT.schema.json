@@ -1,0 +1,482 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "AdvisorySpeed" : {
+      "type" : "object",
+      "properties" : {
+        "class" : {
+          "$ref" : "#/definitions/RestrictionClassID"
+        },
+        "confidence" : {
+          "$ref" : "#/definitions/SpeedConfidence"
+        },
+        "distance" : {
+          "$ref" : "#/definitions/ZoneLength"
+        },
+        "regional" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reg_AdvisorySpeed"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeed$SequenceOfRegional"
+        },
+        "speed" : {
+          "$ref" : "#/definitions/SpeedAdvice"
+        },
+        "type" : {
+          "$ref" : "#/definitions/AdvisorySpeedType"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeed",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "AdvisorySpeedType" : {
+      "type" : "string",
+      "enum" : [ "none", "greenwave", "ecoDrive", "transit" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeedType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "ConnectionManeuverAssist" : {
+      "type" : "object",
+      "properties" : {
+        "availableStorageLength" : {
+          "$ref" : "#/definitions/ZoneLength"
+        },
+        "connectionID" : {
+          "$ref" : "#/definitions/LaneConnectionID"
+        },
+        "pedBicycleDetect" : {
+          "$ref" : "#/definitions/PedestrianBicycleDetect"
+        },
+        "queueLength" : {
+          "$ref" : "#/definitions/ZoneLength"
+        },
+        "regional" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reg_ConnectionManeuverAssist"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist$SequenceOfRegional"
+        },
+        "waitOnStop" : {
+          "$ref" : "#/definitions/WaitOnStopline"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DSecond" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DSecond",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DescriptiveName" : {
+      "type" : "string",
+      "minLength" : 1,
+      "maxLength" : 63,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DescriptiveName",
+      "description" : "ASN.1 IA5String Type"
+    },
+    "FullRoadAuthorityID" : {
+      "type" : "string",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.FullRoadAuthorityID",
+      "description" : "ASN.1 OBJECT IDENTIFIER Type"
+    },
+    "IntersectionID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionID",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "IntersectionReferenceID" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "$ref" : "#/definitions/IntersectionID"
+        },
+        "region" : {
+          "$ref" : "#/definitions/RoadRegulatorID"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionReferenceID",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "IntersectionState" : {
+      "type" : "object",
+      "properties" : {
+        "enabledLanes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LaneID"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.EnabledLaneList"
+        },
+        "id" : {
+          "$ref" : "#/definitions/IntersectionReferenceID"
+        },
+        "maneuverAssistList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConnectionManeuverAssist"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList"
+        },
+        "moy" : {
+          "$ref" : "#/definitions/MinuteOfTheYear"
+        },
+        "name" : {
+          "$ref" : "#/definitions/DescriptiveName"
+        },
+        "regional" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reg_IntersectionState"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionState$SequenceOfRegional"
+        },
+        "revision" : {
+          "$ref" : "#/definitions/MsgCount"
+        },
+        "roadAuthorityID" : {
+          "$ref" : "#/definitions/RoadAuthorityID"
+        },
+        "states" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/MovementState"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementList"
+        },
+        "status" : {
+          "$ref" : "#/definitions/IntersectionStatusObject"
+        },
+        "timeStamp" : {
+          "$ref" : "#/definitions/DSecond"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionState",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "IntersectionStatusObject" : {
+      "type" : "string",
+      "pattern" : "^[0-9a-fA-F]{4,4}$",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStatusObject",
+      "description" : "ASN.1 BIT STRING Type"
+    },
+    "LaneConnectionID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.LaneConnectionID",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "LaneID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.LaneID",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "MinuteOfTheYear" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 527040,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MinuteOfTheYear",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "MovementEvent" : {
+      "type" : "object",
+      "properties" : {
+        "eventState" : {
+          "$ref" : "#/definitions/MovementPhaseState"
+        },
+        "regional" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reg_MovementEvent"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEvent$SequenceOfRegional"
+        },
+        "speeds" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AdvisorySpeed"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeedList"
+        },
+        "timing" : {
+          "$ref" : "#/definitions/TimeChangeDetails"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEvent",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "MovementPhaseState" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "dark", "stop-Then-Proceed", "stop-And-Remain", "pre-Movement", "permissive-Movement-Allowed", "protected-Movement-Allowed", "permissive-clearance", "protected-clearance", "caution-Conflicting-Traffic" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementPhaseState",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "MovementState" : {
+      "type" : "object",
+      "properties" : {
+        "maneuverAssistList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConnectionManeuverAssist"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList"
+        },
+        "movementName" : {
+          "$ref" : "#/definitions/DescriptiveName"
+        },
+        "regional" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reg_MovementState"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState$SequenceOfRegional"
+        },
+        "signalGroup" : {
+          "$ref" : "#/definitions/SignalGroupID"
+        },
+        "state-time-speed" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/MovementEvent"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEventList"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "MsgCount" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 127,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MsgCount",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "PedestrianBicycleDetect" : {
+      "type" : "boolean",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.PedestrianBicycleDetect",
+      "description" : "ASN.1 BOOLEAN Type"
+    },
+    "Reg_AdvisorySpeed" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_AdvisorySpeed",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Reg_ConnectionManeuverAssist" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Reg_IntersectionState" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_IntersectionState",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Reg_MovementEvent" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Reg_MovementState" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementState",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Reg_SPAT" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SPAT",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RegionId" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "RelativeRoadAuthorityID" : {
+      "type" : "string",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RelativeRoadAuthorityID",
+      "description" : "ASN.1 RELATIVE-OID Type"
+    },
+    "RestrictionClassID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RestrictionClassID",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "RoadAuthorityID" : {
+      "type" : "object",
+      "properties" : {
+        "fullRdAuthID" : {
+          "$ref" : "#/definitions/FullRoadAuthorityID"
+        },
+        "relRdAuthID" : {
+          "$ref" : "#/definitions/RelativeRoadAuthorityID"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadAuthorityID"
+    },
+    "RoadRegulatorID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadRegulatorID",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SignalGroupID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SignalGroupID",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SpeedAdvice" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 500,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SpeedAdvice",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SpeedConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "prec100ms", "prec10ms", "prec5ms", "prec1ms", "prec0-1ms", "prec0-05ms", "prec0-01ms" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SpeedConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "TimeChangeDetails" : {
+      "type" : "object",
+      "properties" : {
+        "confidence" : {
+          "$ref" : "#/definitions/TimeIntervalConfidence"
+        },
+        "likelyTime" : {
+          "$ref" : "#/definitions/TimeMark"
+        },
+        "maxEndTime" : {
+          "$ref" : "#/definitions/TimeMark"
+        },
+        "minEndTime" : {
+          "$ref" : "#/definitions/TimeMark"
+        },
+        "nextTime" : {
+          "$ref" : "#/definitions/TimeMark"
+        },
+        "startTime" : {
+          "$ref" : "#/definitions/TimeMark"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.TimeChangeDetails",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "TimeIntervalConfidence" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 15,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.TimeIntervalConfidence",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "TimeMark" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 36111,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.TimeMark",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "WaitOnStopline" : {
+      "type" : "boolean",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.WaitOnStopline",
+      "description" : "ASN.1 BOOLEAN Type"
+    },
+    "ZoneLength" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 10000,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ZoneLength",
+      "description" : "ASN.1 INTEGER Type"
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "intersections" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/IntersectionState"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStateList"
+    },
+    "name" : {
+      "$ref" : "#/definitions/DescriptiveName"
+    },
+    "regional" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Reg_SPAT"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT$SequenceOfRegional"
+    },
+    "timeStamp" : {
+      "$ref" : "#/definitions/MinuteOfTheYear"
+    }
+  },
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT",
+  "description" : "ASN.1 SEQUENCE Type"
+}
