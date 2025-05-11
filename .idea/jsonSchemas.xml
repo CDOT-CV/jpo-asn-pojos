@@ -38,6 +38,23 @@
             </SchemaInfo>
           </value>
         </entry>
+        <entry key="TimeChangeDetails.schema 2">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="TimeChangeDetails.schema 2" />
+              <option name="relativePathToSchema" value="jpo-asn-jsonschema-generator/examples/TimeChangeDetails.schema.json" />
+              <option name="schemaVersion" value="JSON Schema 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="jpo-asn-jsonschema-generator/examples/TimeChangeDetails.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
       </map>
     </state>
   </component>
