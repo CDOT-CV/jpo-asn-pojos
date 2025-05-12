@@ -1,0 +1,23 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "definitions" : {
+    "DSRCmsgID" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 32767,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.MessageFrame.DSRCmsgID",
+      "description" : "ASN.1 INTEGER Type"
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "messageId" : {
+      "$ref" : "#/definitions/DSRCmsgID"
+    },
+    "value" : {
+      "title" : "java.lang.Object"
+    }
+  },
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.MessageFrame.MessageFrame",
+  "description" : "ASN.1 SEQUENCE Type"
+}
