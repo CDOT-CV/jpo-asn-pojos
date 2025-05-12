@@ -2,6 +2,7 @@ package us.dot.its.jpo.asn.jsonschema.generator;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import us.dot.its.jpo.asn.runtime.types.IA5String;
 
 public class Utils {
 
@@ -18,6 +19,10 @@ public class Utils {
 
   @SuppressWarnings({"unchecked"})
   public static <T> T construct(Class<T> clazz) {
+    if (clazz.getName().endsWith("IA5String")) {
+      // Raw IA5String doesn't have parameterless constructor
+      return (T)new IA5String("");
+    }
     try {
       Constructor<?> cons = clazz.getDeclaredConstructor();
       return (T) cons.newInstance();

@@ -20,4 +20,5 @@ java -jar schemagen-cli.jar -m <module> -p <pdu> -o <output-fiile>
 - Handle parameterized open types (by reading `@Asn1ParameterizedTypes` annotations)
 - Use "optional" property of `@Asn1Property` annotations to populate "required".
 - Handle variable-length bit strings.
+- Use 'oneOf' to enforce choice types have one value.
 - Add unit tests.
