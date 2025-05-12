@@ -2,7 +2,6 @@ package us.dot.its.jpo.asn.jsonschema.generator;
 
 import static us.dot.its.jpo.asn.jsonschema.generator.Utils.getClassFromName;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -75,18 +74,5 @@ public class JsonSchemaGeneratorCli implements Runnable {
     return String.format("us.dot.its.jpo.asn.j2735.r2024.%s.%s", module, pdu);
   }
 
-  static String fullyQualified(final String modulePdu) {
-    return String.format("us.dot.its.jpo.asn.j2735.r2024.%s", modulePdu);
-  }
 
-//  @SuppressWarnings({"rawtypes"})
-//  static Class getClass(final String fullyQualifiedName) {
-//    Class clazz;
-//    try {
-//      clazz = Class.forName(fullyQualifiedName);
-//    } catch (ClassNotFoundException e) {
-//      throw new RuntimeException(e);
-//    }
-//    return clazz;
-//  }
 }
