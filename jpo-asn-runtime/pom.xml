@@ -6,7 +6,7 @@
 
   <groupId>usdot.jpo.asn</groupId>
   <artifactId>jpo-asn-runtime</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
 
   <name>jpo-asn-runtime</name>
   <description>Runtime library and base classes for ASN.1 POJOs</description>

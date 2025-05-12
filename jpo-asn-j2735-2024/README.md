@@ -65,8 +65,9 @@ The J2735/2024 standard includes the following message types.
 
 
   
+## Code Generation
 
-
+The POJOs in this subproject were generated from the downloaded ASN.1 files using using ASN1JVM, which is a new ASN.1 compiler targeting Java developed by [Neaera Consulting](https://www.neaeraconsulting.com/)
 
 ## Design notes
 

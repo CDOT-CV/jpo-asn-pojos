@@ -6,7 +6,7 @@
 
   <groupId>usdot.jpo.asn</groupId>
   <artifactId>jpo-asn-j2735-2024</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
 
   <name>jpo-asn-j2735-2024</name>
   <description>J2735/2024 POJO library</description>
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>usdot.jpo.asn</groupId>
       <artifactId>jpo-asn-runtime</artifactId>
-      <version>1.0</version>
+      <version>1.0.0</version>
     </dependency>
 
     <!-- Test dependencies -->
