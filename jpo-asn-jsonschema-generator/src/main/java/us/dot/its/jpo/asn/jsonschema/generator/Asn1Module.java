@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.victools.jsonschema.generator.CustomDefinition;
 import com.github.victools.jsonschema.generator.CustomPropertyDefinition;
+import com.github.victools.jsonschema.generator.FieldScope;
 import com.github.victools.jsonschema.generator.MemberScope;
 import com.github.victools.jsonschema.generator.Module;
 import com.github.victools.jsonschema.generator.SchemaGenerationContext;
@@ -17,6 +18,8 @@ import com.github.victools.jsonschema.generator.SchemaGeneratorGeneralConfigPart
 import com.github.victools.jsonschema.generator.TypeScope;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
+import java.lang.reflect.Field;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 import us.dot.its.jpo.asn.runtime.types.Asn1CharacterString;
@@ -27,6 +30,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1RelativeOID;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 import us.dot.its.jpo.asn.runtime.types.IA5String;
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
+import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 
 public class Asn1Module implements Module {
@@ -40,6 +44,7 @@ public class Asn1Module implements Module {
 
   private void applyToConfigPart(SchemaGeneratorConfigPart<?> configPart) {
     configPart.withCustomDefinitionProvider(this::provideCustomSchemaDefinitionForMember);
+    // configPart.withIgnoreCheck(this::shouldIgnoreMember);
   }
 
   private void applyToTypesInGeneral(SchemaGeneratorGeneralConfigPart configPart) {
@@ -48,8 +53,64 @@ public class Asn1Module implements Module {
     configPart.withCustomDefinitionProvider(this::provideCustomSchemaDefinitionForType);
   }
 
+  private boolean shouldIgnoreMember(MemberScope<?, ?> scope) {
+    if (scope instanceof FieldScope) {
+      FieldScope fieldScope = (FieldScope) scope;
+      Asn1Property annotation = fieldScope.getAnnotation(Asn1Property.class);
+      return annotation == null;
+    }
+    return true;
+  }
+
+  private List<String> getRequiredProperties(Class<?> clazz) {
+    List<String> required = new ArrayList<>();
+    
+    // Get all fields including those from superclasses
+    for (Field field : clazz.getDeclaredFields()) {
+      Asn1Property annotation = field.getAnnotation(Asn1Property.class);
+      if (annotation != null && !annotation.optional()) {
+        // Use the name from the annotation if present, otherwise use the field name
+        String propertyName = annotation.name().isEmpty() ? field.getName() : annotation.name();
+        required.add(propertyName);
+      }
+    }
+    
+    // Check superclass if it's an Asn1 type
+    Class<?> superClass = clazz.getSuperclass();
+    while (superClass != null && !superClass.equals(Object.class)) {
+      for (Field field : superClass.getDeclaredFields()) {
+        Asn1Property annotation = field.getAnnotation(Asn1Property.class);
+        if (annotation != null && !annotation.optional()) {
+          String propertyName = annotation.name().isEmpty() ? field.getName() : annotation.name();
+          required.add(propertyName);
+        }
+      }
+      superClass = superClass.getSuperclass();
+    }
+    
+    return required;
+  }
+
   private CustomPropertyDefinition provideCustomSchemaDefinitionForMember(MemberScope<?, ?> scope,
       SchemaGenerationContext context) {
+    // if (scope instanceof FieldScope) {
+    //   FieldScope fieldScope = (FieldScope) scope;
+    //   Asn1Property annotation = fieldScope.getAnnotation(Asn1Property.class);
+      
+    //   if (annotation != null) {
+    //     // Create a custom property definition
+    //     ObjectNode propertySchema = context.getGeneratorConfig().createObjectNode();
+        
+    //     // Add the property name from the annotation if present
+    //     String propertyName = annotation.name().isEmpty() ? fieldScope.getName() : annotation.name();
+    //     propertySchema.put("propertyName", propertyName);
+        
+    //     // Add required flag
+    //     propertySchema.put("required", !annotation.optional());
+        
+    //     return new CustomPropertyDefinition(propertySchema);
+    //   }
+    // }
     ResolvedType declaringType = scope.getDeclaringType();
     String declaredName = scope.getDeclaredName();
     ResolvedType declaredType = scope.getDeclaredType();
@@ -63,8 +124,8 @@ public class Asn1Module implements Module {
   private CustomDefinition provideCustomSchemaDefinitionForType(ResolvedType resolvedType,
       SchemaGenerationContext context) {
 
+    // Then check for specific ASN.1 types
     if (resolvedType.isInstanceOf(Asn1Integer.class)) {
-      // Custom schema for Asn1Integer types
       return provideIntegerDefinition(resolvedType, context);
     } else if (resolvedType.isInstanceOf(Asn1CharacterString.class)) {
       return provideCharacterStringDefinition(resolvedType, context);
@@ -79,9 +140,13 @@ public class Asn1Module implements Module {
       return provideObjectIdentifierDefinition(resolvedType, context);
     } else if (resolvedType.isInstanceOf(Asn1Null.class)) {
       return provideNullDefinition(resolvedType, context);
-    }
+    } 
+    // else if (resolvedType.isInstanceOf(Asn1Sequence.class)) {
+    //   // Only handle as sequence if it's not a parameterized type
+    //   return provideSequenceDefinition(resolvedType, context);
+    // }
 
-    // Check for parameterized types
+    // First check for parameterized types since they take precedence
     String typeName = resolvedType.getTypeName();
     Class<?> clazz = getClassFromName(typeName);
     if (clazz != null) {
@@ -91,8 +156,31 @@ public class Asn1Module implements Module {
       }
     }
 
-    // Use default
+    // Use default for anything else
     return null;
+  }
+
+  private CustomDefinition provideSequenceDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
+    // Create a base schema
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    node.put("type", "object");
+    
+    // Add title and description
+    node.put("title", resolvedType.getBriefDescription());
+    node.put("description", "ASN.1 SEQUENCE Type");
+    
+    // Get the class
+    Class<?> clazz = resolvedType.getErasedType();
+    
+    // Get required properties
+    List<String> required = getRequiredProperties(clazz);
+    if (!required.isEmpty()) {
+      ArrayNode requiredNode = node.putArray("required");
+      required.forEach(requiredNode::add);
+    }
+    
+    // Let the default schema generation handle the properties
+    return new CustomDefinition(node, true);
   }
 
   private CustomDefinition provideNullDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
@@ -137,12 +225,40 @@ public class Asn1Module implements Module {
     ObjectNode valueProp = properties.putObject(typeAnnot.valueProperty());
     valueProp.put("type", "object");
 
-    // Add required properties
-    ArrayNode required = node.putArray("required");
-    required.add(typeAnnot.idProperty());
-    required.add(typeAnnot.valueProperty());
-
-    return new CustomDefinition(node);
+    // If this is also a sequence type, add sequence-specific properties
+    if (resolvedType.isInstanceOf(Asn1Sequence.class)) {
+      // Add title and description
+      node.put("title", resolvedType.getBriefDescription());
+      node.put("description", "ASN.1 SEQUENCE Type with Parameterized Values");
+      
+      // Get the class
+      Class<?> clazz = resolvedType.getErasedType();
+      
+      // Get required properties
+      List<String> required = getRequiredProperties(clazz);
+      if (!required.isEmpty()) {
+        ArrayNode requiredNode = node.putArray("required");
+        // Add both sequence required properties and parameterized type required properties
+        required.forEach(requiredNode::add);
+        requiredNode.add(typeAnnot.idProperty());
+        requiredNode.add(typeAnnot.valueProperty());
+      } else {
+        // If no sequence properties are required, still add parameterized type required properties
+        ArrayNode requiredNode = node.putArray("required");
+        requiredNode.add(typeAnnot.idProperty());
+        requiredNode.add(typeAnnot.valueProperty());
+      }
+      
+      // Let schema generation handle additional sequence properties
+      return new CustomDefinition(node, true);
+    } else {
+      // For non-sequence types, just add parameterized type required properties
+      ArrayNode required = node.putArray("required");
+      required.add(typeAnnot.idProperty());
+      required.add(typeAnnot.valueProperty());
+      
+      return new CustomDefinition(node);
+    }
   }
 
   private CustomDefinition provideIntegerDefinition(ResolvedType resolvedType,
