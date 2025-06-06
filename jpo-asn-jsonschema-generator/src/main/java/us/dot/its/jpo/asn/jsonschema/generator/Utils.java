@@ -8,13 +8,33 @@ public class Utils {
 
   @SuppressWarnings({"rawtypes"})
   public static Class getClassFromName(final String fullyQualifiedName) {
-    Class clazz;
-    try {
-      clazz = Class.forName(fullyQualifiedName);
-    } catch (ClassNotFoundException e) {
-      throw new RuntimeException(e);
+    // Handle primitive types
+    switch (fullyQualifiedName) {
+      case "boolean":
+        return boolean.class;
+      case "byte":
+        return byte.class;
+      case "char":
+        return char.class;
+      case "double":
+        return double.class;
+      case "float":
+        return float.class;
+      case "int":
+        return int.class;
+      case "long":
+        return long.class;
+      case "short":
+        return short.class;
+      case "void":
+        return void.class;
+      default:
+        try {
+          return Class.forName(fullyQualifiedName);
+        } catch (ClassNotFoundException e) {
+          throw new RuntimeException(e);
+        }
     }
-    return clazz;
   }
 
   @SuppressWarnings({"unchecked"})

@@ -26,6 +26,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1ObjectIdentifier;
 import us.dot.its.jpo.asn.runtime.types.Asn1RelativeOID;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
 import us.dot.its.jpo.asn.runtime.types.IA5String;
+import us.dot.its.jpo.asn.runtime.types.Asn1Null;
+import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 
 public class Asn1Module implements Module {
 
@@ -75,12 +77,72 @@ public class Asn1Module implements Module {
     } else if (resolvedType.isInstanceOf(Asn1ObjectIdentifier.class)
         || resolvedType.isInstanceOf(Asn1RelativeOID.class)) {
       return provideObjectIdentifierDefinition(resolvedType, context);
+    } else if (resolvedType.isInstanceOf(Asn1Null.class)) {
+      return provideNullDefinition(resolvedType, context);
     }
 
-
+    // Check for parameterized types
+    String typeName = resolvedType.getTypeName();
+    Class<?> clazz = getClassFromName(typeName);
+    if (clazz != null) {
+      Asn1ParameterizedTypes typeAnnot = clazz.getAnnotation(Asn1ParameterizedTypes.class);
+      if (typeAnnot != null) {
+        return provideParameterizedTypeDefinition(resolvedType, typeAnnot, context);
+      }
+    }
 
     // Use default
     return null;
+  }
+
+  private CustomDefinition provideNullDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
+    ObjectNode node = context.getGeneratorConfig().createObjectNode()
+        .put("type", "object")
+        .put("description", "ASN.1 NULL Type - represents an empty value");
+    
+    // Add an empty properties object since it's still a valid JSON object
+    node.putObject("properties");
+    
+    return new CustomDefinition(node);
+  }
+
+  private CustomDefinition provideParameterizedTypeDefinition(ResolvedType resolvedType,
+      Asn1ParameterizedTypes typeAnnot, SchemaGenerationContext context) {
+    
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    node.put("type", "object");
+
+    // Add properties object
+    ObjectNode properties = node.putObject("properties");
+
+    // Add the ID property
+    ObjectNode idProp = properties.putObject(typeAnnot.idProperty());
+    if (typeAnnot.idType() == Asn1ParameterizedTypes.IdType.INTEGER) {
+      idProp.put("type", "integer");
+      // Add enum of valid integer IDs
+      ArrayNode enumValues = idProp.putArray("enum");
+      for (Asn1ParameterizedTypes.Type type : typeAnnot.value()) {
+        enumValues.add(type.intId());
+      }
+    } else {
+      idProp.put("type", "string");
+      // Add enum of valid string IDs
+      ArrayNode enumValues = idProp.putArray("enum");
+      for (Asn1ParameterizedTypes.Type type : typeAnnot.value()) {
+        enumValues.add(type.stringId());
+      }
+    }
+
+    // Add the value property
+    ObjectNode valueProp = properties.putObject(typeAnnot.valueProperty());
+    valueProp.put("type", "object");
+
+    // Add required properties
+    ArrayNode required = node.putArray("required");
+    required.add(typeAnnot.idProperty());
+    required.add(typeAnnot.valueProperty());
+
+    return new CustomDefinition(node);
   }
 
   private CustomDefinition provideIntegerDefinition(ResolvedType resolvedType,
@@ -192,6 +254,4 @@ public class Asn1Module implements Module {
     }
     return null;
   }
-
-
 }
