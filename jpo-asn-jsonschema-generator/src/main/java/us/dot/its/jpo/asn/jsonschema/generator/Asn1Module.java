@@ -6,6 +6,7 @@ import static us.dot.its.jpo.asn.jsonschema.generator.Utils.getClassFromName;
 import com.fasterxml.classmate.ResolvedType;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.github.victools.jsonschema.generator.CustomDefinition;
 import com.github.victools.jsonschema.generator.CustomPropertyDefinition;
 import com.github.victools.jsonschema.generator.FieldScope;
@@ -310,10 +311,54 @@ public class Asn1Module implements Module {
     final int maxBytes = (maxBits + 7) / 8;
     final int maxChars = maxBytes * 2;
 
-    ObjectNode node = context.getGeneratorConfig().createObjectNode()
-        .put("type", "string")
-        .put("pattern", // Hex string
-            String.format("^[0-9a-fA-F]{%s,%s}$", minChars, maxChars));
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    ArrayNode anyOf = node.putArray("anyOf");
+
+    // String format
+    ObjectNode stringFormat = context.getGeneratorConfig().createObjectNode();
+    stringFormat.put("type", "string");
+    if (example.hasExtensionMarker()) {
+        stringFormat.put("pattern", String.format("^[0-9a-fA-F]{%s,}$", minChars));
+    } else {
+        stringFormat.put("pattern", String.format("^[0-9a-fA-F]{%s}$", minChars));
+    }
+    anyOf.add(stringFormat);
+
+    // Object format
+    ObjectNode objectFormat = context.getGeneratorConfig().createObjectNode();
+    objectFormat.put("type", "object");
+    
+    ObjectNode properties = objectFormat.putObject("properties");
+    
+    // Value field
+    ObjectNode valueNode = properties.putObject("value");
+    valueNode.put("type", "string");
+    if (example.hasExtensionMarker()) {
+        valueNode.put("pattern", String.format("^[0-9a-fA-F]{%s,}$", minChars));
+    } else {
+        valueNode.put("pattern", String.format("^[0-9a-fA-F]{%s}$", minChars));
+    }
+    
+    // Length field
+    ObjectNode lengthNode = properties.putObject("length");
+    lengthNode.put("type", "integer");
+    lengthNode.put("minimum", minBits);
+    if (!example.hasExtensionMarker()) {
+        lengthNode.put("maximum", maxBits);
+    }
+    
+    // Both fields are required
+    ArrayNode required = objectFormat.putArray("required");
+    required.add("value");
+    required.add("length");
+    
+    anyOf.add(objectFormat);
+
+    // Add description
+    node.put("description", String.format("BIT STRING - hex encoded, %s%d bits%s",
+        example.hasExtensionMarker() ? "minimum " : "",
+        minBits,
+        example.hasExtensionMarker() ? "" : ""));
 
     return new CustomDefinition(node);
   }
