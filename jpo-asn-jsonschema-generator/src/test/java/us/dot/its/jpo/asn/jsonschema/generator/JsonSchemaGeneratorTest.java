@@ -30,7 +30,7 @@ public class JsonSchemaGeneratorTest {
                     Class<?> pduClass = Class.forName(fullClassName);
                     return Arguments.of(name, pduClass);
                 } catch (ClassNotFoundException e) {
-                    // Skip if class not found - some PDUs might have different package/class naming
+                    // Skip if class not found
                     return null;
                 }
             })
@@ -61,8 +61,8 @@ public class JsonSchemaGeneratorTest {
             schemaNode.get("type").asText(),
             equalTo("object"));
             
-        assertThat("Schema should have properties", 
-            schemaNode.has("properties"),
+        assertThat("Schema should have properties or oneOf", 
+            schemaNode.has("properties") || schemaNode.has("oneOf"),
             is(true));
     }
 

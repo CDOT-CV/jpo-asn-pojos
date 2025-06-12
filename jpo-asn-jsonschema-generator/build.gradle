@@ -36,6 +36,7 @@ dependencies {
     implementation "com.github.victools:jsonschema-generator:${jsonSchemaGeneratorVersion}"
     implementation "com.github.victools:jsonschema-module-jackson:${jsonSchemaGeneratorVersion}"
     implementation 'commons-io:commons-io:2.18.0'
+    implementation 'com.jayway.jsonpath:json-path:2.9.0'
 
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'

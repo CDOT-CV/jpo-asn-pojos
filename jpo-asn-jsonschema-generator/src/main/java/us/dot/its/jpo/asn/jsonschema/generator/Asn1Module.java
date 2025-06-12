@@ -7,6 +7,8 @@ import com.fasterxml.classmate.ResolvedType;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.victools.jsonschema.generator.CustomDefinition;
 import com.github.victools.jsonschema.generator.CustomPropertyDefinition;
 import com.github.victools.jsonschema.generator.FieldScope;
@@ -24,17 +26,25 @@ import java.lang.reflect.Field;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 import us.dot.its.jpo.asn.runtime.types.Asn1CharacterString;
+import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
 import us.dot.its.jpo.asn.runtime.types.Asn1ObjectIdentifier;
 import us.dot.its.jpo.asn.runtime.types.Asn1RelativeOID;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
+import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.IA5String;
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
+import us.dot.its.jpo.asn.j2735.r2024.Common.NodeListXY;
+import us.dot.its.jpo.asn.j2735.r2024.MapData.RestrictionAppliesTo;
+import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ComputedLane;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
+import us.dot.its.jpo.asn.jsonschema.generator.JsonSchemaGenerator;
+import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class Asn1Module implements Module {
+  private final ObjectMapper objectMapper = new ObjectMapper();
 
   @Override
   public void applyToConfigBuilder(SchemaGeneratorConfigBuilder schemaGeneratorConfigBuilder) {
@@ -45,22 +55,12 @@ public class Asn1Module implements Module {
 
   private void applyToConfigPart(SchemaGeneratorConfigPart<?> configPart) {
     configPart.withCustomDefinitionProvider(this::provideCustomSchemaDefinitionForMember);
-    // configPart.withIgnoreCheck(this::shouldIgnoreMember);
   }
 
   private void applyToTypesInGeneral(SchemaGeneratorGeneralConfigPart configPart) {
     configPart.withTitleResolver(this::resolveTitle);
     configPart.withDescriptionResolver(this::resolveDescription);
     configPart.withCustomDefinitionProvider(this::provideCustomSchemaDefinitionForType);
-  }
-
-  private boolean shouldIgnoreMember(MemberScope<?, ?> scope) {
-    if (scope instanceof FieldScope) {
-      FieldScope fieldScope = (FieldScope) scope;
-      Asn1Property annotation = fieldScope.getAnnotation(Asn1Property.class);
-      return annotation == null;
-    }
-    return true;
   }
 
   private List<String> getRequiredProperties(Class<?> clazz) {
@@ -94,24 +94,6 @@ public class Asn1Module implements Module {
 
   private CustomPropertyDefinition provideCustomSchemaDefinitionForMember(MemberScope<?, ?> scope,
       SchemaGenerationContext context) {
-    // if (scope instanceof FieldScope) {
-    //   FieldScope fieldScope = (FieldScope) scope;
-    //   Asn1Property annotation = fieldScope.getAnnotation(Asn1Property.class);
-      
-    //   if (annotation != null) {
-    //     // Create a custom property definition
-    //     ObjectNode propertySchema = context.getGeneratorConfig().createObjectNode();
-        
-    //     // Add the property name from the annotation if present
-    //     String propertyName = annotation.name().isEmpty() ? fieldScope.getName() : annotation.name();
-    //     propertySchema.put("propertyName", propertyName);
-        
-    //     // Add required flag
-    //     propertySchema.put("required", !annotation.optional());
-        
-    //     return new CustomPropertyDefinition(propertySchema);
-    //   }
-    // }
     ResolvedType declaringType = scope.getDeclaringType();
     String declaredName = scope.getDeclaredName();
     ResolvedType declaredType = scope.getDeclaredType();
@@ -123,7 +105,7 @@ public class Asn1Module implements Module {
   }
 
   private CustomDefinition provideCustomSchemaDefinitionForType(ResolvedType resolvedType,
-      SchemaGenerationContext context) {
+      SchemaGenerationContext context) {    
 
     // Then check for specific ASN.1 types
     if (resolvedType.isInstanceOf(Asn1Integer.class)) {
@@ -132,6 +114,8 @@ public class Asn1Module implements Module {
       return provideCharacterStringDefinition(resolvedType, context);
     } else if (resolvedType.isInstanceOf(Asn1Bitstring.class)) {
       return provideBitstringDefinition(resolvedType, context);
+    } else if (resolvedType.isInstanceOf(Asn1OctetString.class)) {
+      return provideOctetStringDefinition(resolvedType, context);
     } else if (resolvedType.isInstanceOf(Asn1Enumerated.class)) {
       return provideEnumeratedDefinition(resolvedType, context);
     } else if (resolvedType.isInstanceOf(Asn1Boolean.class)) {
@@ -141,11 +125,7 @@ public class Asn1Module implements Module {
       return provideObjectIdentifierDefinition(resolvedType, context);
     } else if (resolvedType.isInstanceOf(Asn1Null.class)) {
       return provideNullDefinition(resolvedType, context);
-    } 
-    // else if (resolvedType.isInstanceOf(Asn1Sequence.class)) {
-    //   // Only handle as sequence if it's not a parameterized type
-    //   return provideSequenceDefinition(resolvedType, context);
-    // }
+    }
 
     // First check for parameterized types since they take precedence
     String typeName = resolvedType.getTypeName();
@@ -157,33 +137,15 @@ public class Asn1Module implements Module {
       }
     }
 
+    if (resolvedType.isInstanceOf(Asn1Choice.class)) {
+      return provideChoiceDefinition(resolvedType, context);
+    }
+
     // Use default for anything else
     return null;
   }
 
-  private CustomDefinition provideSequenceDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
-    // Create a base schema
-    ObjectNode node = context.getGeneratorConfig().createObjectNode();
-    node.put("type", "object");
-    
-    // Add title and description
-    node.put("title", resolvedType.getBriefDescription());
-    node.put("description", "ASN.1 SEQUENCE Type");
-    
-    // Get the class
-    Class<?> clazz = resolvedType.getErasedType();
-    
-    // Get required properties
-    List<String> required = getRequiredProperties(clazz);
-    if (!required.isEmpty()) {
-      ArrayNode requiredNode = node.putArray("required");
-      required.forEach(requiredNode::add);
-    }
-    
-    // Let the default schema generation handle the properties
-    return new CustomDefinition(node, true);
-  }
-
+  // Used for message types that extend Asn1Null (e.g. RoadGeometryAndAttributes)
   private CustomDefinition provideNullDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
     ObjectNode node = context.getGeneratorConfig().createObjectNode()
         .put("type", "object")
@@ -363,6 +325,21 @@ public class Asn1Module implements Module {
     return new CustomDefinition(node);
   }
 
+  private CustomDefinition provideOctetStringDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
+    String typeName = resolvedType.getTypeName();
+    Class<?> clazz = getClassFromName(typeName);
+
+    us.dot.its.jpo.asn.runtime.types.Asn1OctetString example = (us.dot.its.jpo.asn.runtime.types.Asn1OctetString) construct(clazz);
+    int minLength = example.getMinLength();
+    int maxLength = example.getMaxLength();
+
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    node.put("type", "string");
+    node.put("pattern", "^[0-9A-Fa-f]{" + (minLength * 2) + "," + (maxLength == Integer.MAX_VALUE ? "" : (maxLength * 2)) + "}$");
+    node.put("description", String.format("OCTET STRING - hex encoded, min %d bytes, max %s bytes", minLength, maxLength == Integer.MAX_VALUE ? "unbounded" : Integer.toString(maxLength)));
+    return new CustomDefinition(node);
+  }
+
   private CustomDefinition provideEnumeratedDefinition(ResolvedType resolvedType,
       SchemaGenerationContext context) {
     String typeName = resolvedType.getTypeName();
@@ -389,6 +366,78 @@ public class Asn1Module implements Module {
     return new CustomDefinition(node);
   }
 
+  private CustomDefinition provideChoiceDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    node.put("type", "object");
+    node.put("title", resolvedType.getBriefDescription());
+    node.put("description", "ASN.1 CHOICE Type - represents a union of possible types");
+
+    // Get the class and its fields
+    Class<?> clazz = resolvedType.getErasedType();
+    Field[] fields = clazz.getDeclaredFields();
+
+    // Create oneOf array to hold possible types
+    ArrayNode oneOf = node.putArray("oneOf");
+
+    // Process each field in the choice type
+    for (Field field : fields) {
+      Asn1Property annotation = field.getAnnotation(Asn1Property.class);
+      if (annotation != null) {
+        // Create a schema for this choice option
+        ObjectNode choiceOption = context.getGeneratorConfig().createObjectNode();
+        choiceOption.put("type", "object");
+
+        ObjectNode properties = choiceOption.putObject("properties");
+        
+        // Add the field as a property
+        String propertyName = annotation.name().isEmpty() ? field.getName() : annotation.name();
+        ObjectNode property = properties.putObject(propertyName);
+        
+        // Get the field type
+        ResolvedType fieldType = context.getTypeContext().resolve(field.getGenericType());
+        
+        boolean isComplexType = fieldType.isInstanceOf(Asn1Sequence.class) || 
+                              fieldType.isInstanceOf(Asn1SequenceOf.class) ||
+                              fieldType.isInstanceOf(Asn1Choice.class) ||
+                              fieldType.getErasedType().isAnnotationPresent(Asn1ParameterizedTypes.class);
+        
+        if (isComplexType) {
+          // For complex types, use JsonSchemaGenerator recursively
+          try {
+            JsonSchemaGenerator gen = new JsonSchemaGenerator(fieldType.getErasedType());
+            String schemaJson = gen.generate();
+            // Parse the JSON string into an ObjectNode using ObjectMapper
+            ObjectNode complexSchema = (ObjectNode) objectMapper.readTree(schemaJson);
+            
+            // Add the full schema into the property
+            property.setAll(complexSchema);
+            
+          } catch (Exception e) {
+            // If generation fails, fall back to basic object type
+            property.put("type", "object");
+          }
+        } else {
+          // For simple types, use existing custom definition logic
+          CustomDefinition customDefinition = provideCustomSchemaDefinitionForType(fieldType, context);
+          if (customDefinition != null) {
+            property.setAll((ObjectNode)customDefinition.getValue());
+          } else {
+            // If no custom definition, let the schema generator handle it
+            property.put("type", "object");
+          }
+        }
+        
+        // Add required array with just this property
+        ArrayNode required = choiceOption.putArray("required");
+        required.add(propertyName);
+        
+        oneOf.add(choiceOption);
+      }
+    }
+
+    return new CustomDefinition(node, true);
+  }
+
   private String resolveTitle(TypeScope scope) {
     var type = scope.getType();
     return type.getBriefDescription();
@@ -400,6 +449,8 @@ public class Asn1Module implements Module {
       return "ASN.1 INTEGER Type";
     } else if (type.isInstanceOf(Asn1Sequence.class)) {
       return "ASN.1 SEQUENCE Type";
+    } else if (type.isInstanceOf(Asn1SequenceOf.class)) {
+      return "ASN.1 SEQUENCE OF Type";
     } else if (type.isInstanceOf(IA5String.class)) {
       return "ASN.1 IA5String Type";
     } else if (type.isInstanceOf(Asn1Bitstring.class)) {
