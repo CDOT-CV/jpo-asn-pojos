@@ -7,13 +7,18 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.util.Set;
 import java.util.stream.Stream;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.DSRCmsgID;
+import com.networknt.schema.JsonSchemaFactory;
+import com.networknt.schema.SpecVersion;
+import com.networknt.schema.JsonSchema;
+import com.networknt.schema.ValidationMessage;
+import java.util.List;
 
 @Slf4j
 public class JsonSchemaGeneratorTest {
@@ -24,7 +29,13 @@ public class JsonSchemaGeneratorTest {
         return DSRCmsgID.names().stream()
             .filter(name -> !name.endsWith("-D")) // Filter out deprecated messages
             .map(name -> {
+                // keep this logic for most things but cap NMEA Corrections
                 String className = name.substring(0, 1).toUpperCase() + name.substring(1);
+                if (name.toLowerCase().equals("nmeacorrections")) {
+                    className = "NMEAcorrections";
+                } else if (name.toLowerCase().equals("rtcmcorrections")) {
+                    className = "RTCMcorrections";
+                }
                 String fullClassName = String.format("us.dot.its.jpo.asn.j2735.r2024.%s.%s", className, className);
                 try {
                     Class<?> pduClass = Class.forName(fullClassName);
@@ -41,7 +52,6 @@ public class JsonSchemaGeneratorTest {
     @MethodSource("pduClassProvider")
     void testPduSchemaGeneration(String pduName, Class<?> pduClass) throws IOException {
         log.info("Testing schema generation for PDU: {}", pduName);
-        
         // Create generator for this specific class
         JsonSchemaGenerator generator = new JsonSchemaGenerator(pduClass);
         
@@ -64,20 +74,17 @@ public class JsonSchemaGeneratorTest {
         assertThat("Schema should have properties or oneOf", 
             schemaNode.has("properties") || schemaNode.has("oneOf"),
             is(true));
-    }
 
-    @Test
-    void testPrimitiveTypeHandling() throws IOException {
-        // Test integer type
-        JsonSchemaGenerator intGenerator = new JsonSchemaGenerator(int.class);
-        String intSchema = intGenerator.generate();
-        JsonNode intSchemaNode = mapper.readTree(intSchema);
-        assertThat(intSchemaNode.get("type").asText(), equalTo("integer"));
-
-        // Test boolean type
-        JsonSchemaGenerator boolGenerator = new JsonSchemaGenerator(boolean.class);
-        String boolSchema = boolGenerator.generate();
-        JsonNode boolSchemaNode = mapper.readTree(boolSchema);
-        assertThat(boolSchemaNode.get("type").asText(), equalTo("boolean"));
+        
+        String resourceBase = "/us/dot/its/jpo/asn/jsonschema/generator/" + pduName.substring(0, 1).toUpperCase() + pduName.substring(1);
+        List<String> resources = JsonFileLoader.listAllResourcesInDirectory(resourceBase);
+        for (String resource : resources) {
+            String json = JsonFileLoader.loadResource(resource);
+            JsonNode jsonNode = mapper.readTree(json);
+            JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
+            JsonSchema jsonSchema = factory.getSchema(schemaNode);
+            Set<ValidationMessage> errors = jsonSchema.validate(jsonNode);
+            assertThat("Sample JSON should be valid against the generated schema: " + resource, errors, empty());
+        }
     }
 } 

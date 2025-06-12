@@ -1,0 +1,359 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "properties" : {
+    "coreData" : {
+      "$ref" : "#/definitions/BSMcoreData"
+    },
+    "partII" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "partII-Id" : {
+            "type" : "integer",
+            "enum" : [ 0, 1, 2 ]
+          },
+          "partII-Value" : {
+            "type" : "object"
+          }
+        },
+        "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BSMpartIIExtension",
+        "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+        "required" : [ "partII-Id", "partII-Value" ]
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessage$SequenceOfPartII",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    },
+    "regional" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Reg_BasicSafetyMessage"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessage$SequenceOfRegional",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    }
+  },
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessage",
+  "description" : "ASN.1 SEQUENCE Type",
+  "definitions" : {
+    "Acceleration" : {
+      "type" : "integer",
+      "minimum" : -2000,
+      "maximum" : 2001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Acceleration",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "AccelerationSet4Way" : {
+      "type" : "object",
+      "properties" : {
+        "lat" : {
+          "$ref" : "#/definitions/Acceleration"
+        },
+        "long" : {
+          "$ref" : "#/definitions/Acceleration"
+        },
+        "vert" : {
+          "$ref" : "#/definitions/VerticalAcceleration"
+        },
+        "yaw" : {
+          "$ref" : "#/definitions/YawRate"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AccelerationSet4Way",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "AntiLockBrakeStatus" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "off", "on", "engaged" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AntiLockBrakeStatus",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "AuxiliaryBrakeStatus" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "off", "on", "reserved" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AuxiliaryBrakeStatus",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "BSMcoreData" : {
+      "type" : "object",
+      "properties" : {
+        "accelSet" : {
+          "$ref" : "#/definitions/AccelerationSet4Way"
+        },
+        "accuracy" : {
+          "$ref" : "#/definitions/PositionalAccuracy"
+        },
+        "angle" : {
+          "$ref" : "#/definitions/SteeringWheelAngle"
+        },
+        "brakes" : {
+          "$ref" : "#/definitions/BrakeSystemStatus"
+        },
+        "elev" : {
+          "$ref" : "#/definitions/Elevation"
+        },
+        "heading" : {
+          "$ref" : "#/definitions/Heading"
+        },
+        "id" : {
+          "$ref" : "#/definitions/TemporaryID"
+        },
+        "lat" : {
+          "$ref" : "#/definitions/Latitude"
+        },
+        "long" : {
+          "$ref" : "#/definitions/Longitude"
+        },
+        "msgCnt" : {
+          "$ref" : "#/definitions/MsgCount"
+        },
+        "secMark" : {
+          "$ref" : "#/definitions/DSecond"
+        },
+        "size" : {
+          "$ref" : "#/definitions/VehicleSize"
+        },
+        "speed" : {
+          "$ref" : "#/definitions/Speed"
+        },
+        "transmission" : {
+          "$ref" : "#/definitions/TransmissionState"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BSMcoreData",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "BrakeAppliedStatus" : {
+      "anyOf" : [ {
+        "type" : "string",
+        "pattern" : "^[0-9a-fA-F]{2}$"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "pattern" : "^[0-9a-fA-F]{2}$"
+          },
+          "length" : {
+            "type" : "integer",
+            "minimum" : 5,
+            "maximum" : 5
+          }
+        },
+        "required" : [ "value", "length" ]
+      } ],
+      "description" : "BIT STRING - hex encoded, 5 bits",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BrakeAppliedStatus"
+    },
+    "BrakeBoostApplied" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "off", "on" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BrakeBoostApplied",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "BrakeSystemStatus" : {
+      "type" : "object",
+      "properties" : {
+        "abs" : {
+          "$ref" : "#/definitions/AntiLockBrakeStatus"
+        },
+        "auxBrakes" : {
+          "$ref" : "#/definitions/AuxiliaryBrakeStatus"
+        },
+        "brakeBoost" : {
+          "$ref" : "#/definitions/BrakeBoostApplied"
+        },
+        "scs" : {
+          "$ref" : "#/definitions/StabilityControlStatus"
+        },
+        "traction" : {
+          "$ref" : "#/definitions/TractionControlStatus"
+        },
+        "wheelBrakes" : {
+          "$ref" : "#/definitions/BrakeAppliedStatus"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BrakeSystemStatus",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DSecond" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DSecond",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Elevation" : {
+      "type" : "integer",
+      "minimum" : -4096,
+      "maximum" : 61439,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Heading" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 28800,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Heading",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Latitude" : {
+      "type" : "integer",
+      "minimum" : -900000000,
+      "maximum" : 900000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Longitude" : {
+      "type" : "integer",
+      "minimum" : -1799999999,
+      "maximum" : 1800000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "MsgCount" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 127,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MsgCount",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "PositionalAccuracy" : {
+      "type" : "object",
+      "properties" : {
+        "orientation" : {
+          "$ref" : "#/definitions/SemiMajorAxisOrientation"
+        },
+        "semiMajor" : {
+          "$ref" : "#/definitions/SemiMajorAxisAccuracy"
+        },
+        "semiMinor" : {
+          "$ref" : "#/definitions/SemiMinorAxisAccuracy"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Reg_BasicSafetyMessage" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_BasicSafetyMessage",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RegionId" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SemiMajorAxisAccuracy" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SemiMajorAxisAccuracy",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SemiMajorAxisOrientation" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SemiMajorAxisOrientation",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SemiMinorAxisAccuracy" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SemiMinorAxisAccuracy",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Speed" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 8191,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Speed",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "StabilityControlStatus" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "off", "on", "engaged" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.StabilityControlStatus",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "SteeringWheelAngle" : {
+      "type" : "integer",
+      "minimum" : -126,
+      "maximum" : 127,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SteeringWheelAngle",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "TemporaryID" : {
+      "type" : "string",
+      "pattern" : "^[0-9A-Fa-f]{8,8}$",
+      "description" : "OCTET STRING - hex encoded, min 4 bytes, max 4 bytes",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TemporaryID"
+    },
+    "TractionControlStatus" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "off", "on", "engaged" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TractionControlStatus",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "TransmissionState" : {
+      "type" : "string",
+      "enum" : [ "neutral", "park", "forwardGears", "reverseGears", "reserved1", "reserved2", "reserved3", "unavailable" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TransmissionState",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "VehicleLength" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 4095,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleLength",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "VehicleSize" : {
+      "type" : "object",
+      "properties" : {
+        "length" : {
+          "$ref" : "#/definitions/VehicleLength"
+        },
+        "width" : {
+          "$ref" : "#/definitions/VehicleWidth"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSize",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "VehicleWidth" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 1023,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleWidth",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "VerticalAcceleration" : {
+      "type" : "integer",
+      "minimum" : -127,
+      "maximum" : 127,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VerticalAcceleration",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "YawRate" : {
+      "type" : "integer",
+      "minimum" : -32767,
+      "maximum" : 32767,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.YawRate",
+      "description" : "ASN.1 INTEGER Type"
+    }
+  }
+}

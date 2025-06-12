@@ -6,12 +6,9 @@ import static us.dot.its.jpo.asn.jsonschema.generator.Utils.getClassFromName;
 import com.fasterxml.classmate.ResolvedType;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.victools.jsonschema.generator.CustomDefinition;
 import com.github.victools.jsonschema.generator.CustomPropertyDefinition;
-import com.github.victools.jsonschema.generator.FieldScope;
 import com.github.victools.jsonschema.generator.MemberScope;
 import com.github.victools.jsonschema.generator.Module;
 import com.github.victools.jsonschema.generator.SchemaGenerationContext;
@@ -36,11 +33,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.IA5String;
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1Property;
-import us.dot.its.jpo.asn.j2735.r2024.Common.NodeListXY;
-import us.dot.its.jpo.asn.j2735.r2024.MapData.RestrictionAppliesTo;
-import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ComputedLane;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
-import us.dot.its.jpo.asn.jsonschema.generator.JsonSchemaGenerator;
 import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class Asn1Module implements Module {

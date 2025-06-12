@@ -1,5 +1,32 @@
 {
   "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "properties" : {
+    "intersections" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/IntersectionState"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStateList",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    },
+    "name" : {
+      "$ref" : "#/definitions/DescriptiveName"
+    },
+    "regional" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Reg_SPAT"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT$SequenceOfRegional",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    },
+    "timeStamp" : {
+      "$ref" : "#/definitions/MinuteOfTheYear"
+    }
+  },
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT",
+  "description" : "ASN.1 SEQUENCE Type",
   "definitions" : {
     "AdvisorySpeed" : {
       "type" : "object",
@@ -18,7 +45,8 @@
           "items" : {
             "$ref" : "#/definitions/Reg_AdvisorySpeed"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeed$SequenceOfRegional"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeed$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "speed" : {
           "$ref" : "#/definitions/SpeedAdvice"
@@ -54,9 +82,22 @@
         "regional" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Reg_ConnectionManeuverAssist"
+            "type" : "object",
+            "properties" : {
+              "regionId" : {
+                "type" : "integer",
+                "enum" : [ 3 ]
+              },
+              "regExtValue" : {
+                "type" : "object"
+              }
+            },
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist",
+            "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+            "required" : [ "regionId", "regExtValue" ]
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist$SequenceOfRegional"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "waitOnStop" : {
           "$ref" : "#/definitions/WaitOnStopline"
@@ -78,11 +119,6 @@
       "maxLength" : 63,
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DescriptiveName",
       "description" : "ASN.1 IA5String Type"
-    },
-    "FullRoadAuthorityID" : {
-      "type" : "string",
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.FullRoadAuthorityID",
-      "description" : "ASN.1 OBJECT IDENTIFIER Type"
     },
     "IntersectionID" : {
       "type" : "integer",
@@ -112,7 +148,8 @@
           "items" : {
             "$ref" : "#/definitions/LaneID"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.EnabledLaneList"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.EnabledLaneList",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "id" : {
           "$ref" : "#/definitions/IntersectionReferenceID"
@@ -122,7 +159,8 @@
           "items" : {
             "$ref" : "#/definitions/ConnectionManeuverAssist"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "moy" : {
           "$ref" : "#/definitions/MinuteOfTheYear"
@@ -133,22 +171,55 @@
         "regional" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Reg_IntersectionState"
+            "type" : "object",
+            "properties" : {
+              "regionId" : {
+                "type" : "integer",
+                "enum" : [ 3 ]
+              },
+              "regExtValue" : {
+                "type" : "object"
+              }
+            },
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_IntersectionState",
+            "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+            "required" : [ "regionId", "regExtValue" ]
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionState$SequenceOfRegional"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionState$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "revision" : {
           "$ref" : "#/definitions/MsgCount"
         },
         "roadAuthorityID" : {
-          "$ref" : "#/definitions/RoadAuthorityID"
+          "type" : "object",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadAuthorityID",
+          "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+          "oneOf" : [ {
+            "type" : "object",
+            "properties" : {
+              "fullRdAuthID" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "fullRdAuthID" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "relRdAuthID" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "relRdAuthID" ]
+          } ]
         },
         "states" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/MovementState"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementList"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementList",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "status" : {
           "$ref" : "#/definitions/IntersectionStatusObject"
@@ -161,10 +232,26 @@
       "description" : "ASN.1 SEQUENCE Type"
     },
     "IntersectionStatusObject" : {
-      "type" : "string",
-      "pattern" : "^[0-9a-fA-F]{4,4}$",
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStatusObject",
-      "description" : "ASN.1 BIT STRING Type"
+      "anyOf" : [ {
+        "type" : "string",
+        "pattern" : "^[0-9a-fA-F]{4}$"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "pattern" : "^[0-9a-fA-F]{4}$"
+          },
+          "length" : {
+            "type" : "integer",
+            "minimum" : 16,
+            "maximum" : 16
+          }
+        },
+        "required" : [ "value", "length" ]
+      } ],
+      "description" : "BIT STRING - hex encoded, 16 bits",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStatusObject"
     },
     "LaneConnectionID" : {
       "type" : "integer",
@@ -196,16 +283,30 @@
         "regional" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Reg_MovementEvent"
+            "type" : "object",
+            "properties" : {
+              "regionId" : {
+                "type" : "integer",
+                "enum" : [ 2 ]
+              },
+              "regExtValue" : {
+                "type" : "object"
+              }
+            },
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent",
+            "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+            "required" : [ "regionId", "regExtValue" ]
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEvent$SequenceOfRegional"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEvent$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "speeds" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/AdvisorySpeed"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeedList"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeedList",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "timing" : {
           "$ref" : "#/definitions/TimeChangeDetails"
@@ -228,7 +329,8 @@
           "items" : {
             "$ref" : "#/definitions/ConnectionManeuverAssist"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "movementName" : {
           "$ref" : "#/definitions/DescriptiveName"
@@ -238,7 +340,8 @@
           "items" : {
             "$ref" : "#/definitions/Reg_MovementState"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState$SequenceOfRegional"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type"
         },
         "signalGroup" : {
           "$ref" : "#/definitions/SignalGroupID"
@@ -248,7 +351,8 @@
           "items" : {
             "$ref" : "#/definitions/MovementEvent"
           },
-          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEventList"
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEventList",
+          "description" : "ASN.1 SEQUENCE OF Type"
         }
       },
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState",
@@ -277,45 +381,6 @@
         }
       },
       "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_AdvisorySpeed",
-      "description" : "ASN.1 SEQUENCE Type"
-    },
-    "Reg_ConnectionManeuverAssist" : {
-      "type" : "object",
-      "properties" : {
-        "regExtValue" : {
-          "title" : "java.lang.Object"
-        },
-        "regionId" : {
-          "$ref" : "#/definitions/RegionId"
-        }
-      },
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist",
-      "description" : "ASN.1 SEQUENCE Type"
-    },
-    "Reg_IntersectionState" : {
-      "type" : "object",
-      "properties" : {
-        "regExtValue" : {
-          "title" : "java.lang.Object"
-        },
-        "regionId" : {
-          "$ref" : "#/definitions/RegionId"
-        }
-      },
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_IntersectionState",
-      "description" : "ASN.1 SEQUENCE Type"
-    },
-    "Reg_MovementEvent" : {
-      "type" : "object",
-      "properties" : {
-        "regExtValue" : {
-          "title" : "java.lang.Object"
-        },
-        "regionId" : {
-          "$ref" : "#/definitions/RegionId"
-        }
-      },
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent",
       "description" : "ASN.1 SEQUENCE Type"
     },
     "Reg_MovementState" : {
@@ -351,29 +416,12 @@
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
       "description" : "ASN.1 INTEGER Type"
     },
-    "RelativeRoadAuthorityID" : {
-      "type" : "string",
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RelativeRoadAuthorityID",
-      "description" : "ASN.1 RELATIVE-OID Type"
-    },
     "RestrictionClassID" : {
       "type" : "integer",
       "minimum" : 0,
       "maximum" : 255,
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RestrictionClassID",
       "description" : "ASN.1 INTEGER Type"
-    },
-    "RoadAuthorityID" : {
-      "type" : "object",
-      "properties" : {
-        "fullRdAuthID" : {
-          "$ref" : "#/definitions/FullRoadAuthorityID"
-        },
-        "relRdAuthID" : {
-          "$ref" : "#/definitions/RelativeRoadAuthorityID"
-        }
-      },
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadAuthorityID"
     },
     "RoadRegulatorID" : {
       "type" : "integer",
@@ -453,30 +501,5 @@
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ZoneLength",
       "description" : "ASN.1 INTEGER Type"
     }
-  },
-  "type" : "object",
-  "properties" : {
-    "intersections" : {
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/definitions/IntersectionState"
-      },
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStateList"
-    },
-    "name" : {
-      "$ref" : "#/definitions/DescriptiveName"
-    },
-    "regional" : {
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/definitions/Reg_SPAT"
-      },
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT$SequenceOfRegional"
-    },
-    "timeStamp" : {
-      "$ref" : "#/definitions/MinuteOfTheYear"
-    }
-  },
-  "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT",
-  "description" : "ASN.1 SEQUENCE Type"
+  }
 }

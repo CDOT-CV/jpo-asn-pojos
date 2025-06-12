@@ -13,15 +13,34 @@ Command line tool that uses a custom module for the victools json schema generat
 ```bash
 cd build/libs
 java -jar schemagen-cli.jar -m <module> -p <pdu> -o <output-fiile>
-
-java -jar schemagen-cli.jar -m SensorDataSharingMessage -p SensorDataSharingMessage -o SensorDataSharingMessage.schema.json
-java -jar schemagen-cli.jar -m SPAT -p SPAT -o SPAT.schema.json
 ```
+
+## Batch Schema Generation
+
+To generate schemas for multiple PDUs at once, you can use the [provided script](./batch_gen_schemas.sh):
+
+```bash
+./batch_gen_schemas.sh
+```
+
+This script will generate JSON schemas for the following messages:
+
+- BasicSafetyMessage
+- PersonalSafetyMessage
+- SignalRequestMessage
+- SignalStatusMessage
+- SignalPhaseAndTimingMessage
+- MapData
+- SensorDataSharingMessage
+- RTCMCorrections
+- RoadSafetyMessage
+
+The generated schemas will be placed in the `schemas` directory.
 
 ## To do
 
 - ~~Handle parameterized open types (by reading `@Asn1ParameterizedTypes` annotations)~~
 - ~~Use "optional" property of `@Asn1Property` annotations to populate "required".~~
 - ~~Handle variable-length bit strings.~~
-- Use 'oneOf' to enforce choice types have one value.
-- Add unit tests.
+- ~~Use 'oneOf' to enforce choice types have one value.~~
+- ~~Add unit tests.~~

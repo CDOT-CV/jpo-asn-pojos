@@ -1,0 +1,429 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "properties" : {
+    "anchorPoint" : {
+      "$ref" : "#/definitions/FullPositionVector"
+    },
+    "msgCnt" : {
+      "$ref" : "#/definitions/MsgCount"
+    },
+    "msgs" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/RTCMmessage"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMmessageList",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    },
+    "regional" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Reg_RTCMcorrections"
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections.RTCMcorrections$SequenceOfRegional",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    },
+    "rev" : {
+      "$ref" : "#/definitions/RTCM_Revision"
+    },
+    "rtcmHeader" : {
+      "$ref" : "#/definitions/RTCMheader"
+    },
+    "timeStamp" : {
+      "$ref" : "#/definitions/MinuteOfTheYear"
+    }
+  },
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections.RTCMcorrections",
+  "description" : "ASN.1 SEQUENCE Type",
+  "definitions" : {
+    "AntennaOffsetSet" : {
+      "type" : "object",
+      "properties" : {
+        "antOffsetX" : {
+          "$ref" : "#/definitions/Offset_B12"
+        },
+        "antOffsetY" : {
+          "$ref" : "#/definitions/Offset_B09"
+        },
+        "antOffsetZ" : {
+          "$ref" : "#/definitions/Offset_B10"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AntennaOffsetSet",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DDateTime" : {
+      "type" : "object",
+      "properties" : {
+        "day" : {
+          "$ref" : "#/definitions/DDay"
+        },
+        "hour" : {
+          "$ref" : "#/definitions/DHour"
+        },
+        "minute" : {
+          "$ref" : "#/definitions/DMinute"
+        },
+        "month" : {
+          "$ref" : "#/definitions/DMonth"
+        },
+        "offset" : {
+          "$ref" : "#/definitions/DOffset"
+        },
+        "second" : {
+          "$ref" : "#/definitions/DSecond"
+        },
+        "year" : {
+          "$ref" : "#/definitions/DYear"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DDay" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 31,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDay",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DHour" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 31,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DHour",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DMinute" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 60,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DMinute",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DMonth" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 12,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DMonth",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DOffset" : {
+      "type" : "integer",
+      "minimum" : -840,
+      "maximum" : 840,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DOffset",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DSecond" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DSecond",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DYear" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 4095,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DYear",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Elevation" : {
+      "type" : "integer",
+      "minimum" : -4096,
+      "maximum" : 61439,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "ElevationConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "elev-500-00", "elev-200-00", "elev-100-00", "elev-050-00", "elev-020-00", "elev-010-00", "elev-005-00", "elev-002-00", "elev-001-00", "elev-000-50", "elev-000-20", "elev-000-10", "elev-000-05", "elev-000-02", "elev-000-01" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.ElevationConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "FullPositionVector" : {
+      "type" : "object",
+      "properties" : {
+        "elevation" : {
+          "$ref" : "#/definitions/Elevation"
+        },
+        "heading" : {
+          "$ref" : "#/definitions/Heading"
+        },
+        "lat" : {
+          "$ref" : "#/definitions/Latitude"
+        },
+        "long" : {
+          "$ref" : "#/definitions/Longitude"
+        },
+        "posAccuracy" : {
+          "$ref" : "#/definitions/PositionalAccuracy"
+        },
+        "posConfidence" : {
+          "$ref" : "#/definitions/PositionConfidenceSet"
+        },
+        "speed" : {
+          "$ref" : "#/definitions/TransmissionAndSpeed"
+        },
+        "speedConfidence" : {
+          "$ref" : "#/definitions/SpeedandHeadingandThrottleConfidence"
+        },
+        "timeConfidence" : {
+          "$ref" : "#/definitions/TimeConfidence"
+        },
+        "utcTime" : {
+          "$ref" : "#/definitions/DDateTime"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.FullPositionVector",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "GNSSstatus" : {
+      "anyOf" : [ {
+        "type" : "string",
+        "pattern" : "^[0-9a-fA-F]{2}$"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "pattern" : "^[0-9a-fA-F]{2}$"
+          },
+          "length" : {
+            "type" : "integer",
+            "minimum" : 8,
+            "maximum" : 8
+          }
+        },
+        "required" : [ "value", "length" ]
+      } ],
+      "description" : "BIT STRING - hex encoded, 8 bits",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.GNSSstatus"
+    },
+    "Heading" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 28800,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Heading",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "HeadingConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "prec10deg", "prec05deg", "prec01deg", "prec0-1deg", "prec0-05deg", "prec0-01deg", "prec0-0125deg" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.HeadingConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "Latitude" : {
+      "type" : "integer",
+      "minimum" : -900000000,
+      "maximum" : 900000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Longitude" : {
+      "type" : "integer",
+      "minimum" : -1799999999,
+      "maximum" : 1800000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "MinuteOfTheYear" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 527040,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MinuteOfTheYear",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "MsgCount" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 127,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MsgCount",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Offset_B09" : {
+      "type" : "integer",
+      "minimum" : -256,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Offset_B09",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Offset_B10" : {
+      "type" : "integer",
+      "minimum" : -512,
+      "maximum" : 511,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Offset_B10",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Offset_B12" : {
+      "type" : "integer",
+      "minimum" : -2048,
+      "maximum" : 2047,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Offset_B12",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "PositionConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "a500m", "a200m", "a100m", "a50m", "a20m", "a10m", "a5m", "a2m", "a1m", "a50cm", "a20cm", "a10cm", "a5cm", "a2cm", "a1cm" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "PositionConfidenceSet" : {
+      "type" : "object",
+      "properties" : {
+        "elevation" : {
+          "$ref" : "#/definitions/ElevationConfidence"
+        },
+        "pos" : {
+          "$ref" : "#/definitions/PositionConfidence"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionConfidenceSet",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "PositionalAccuracy" : {
+      "type" : "object",
+      "properties" : {
+        "orientation" : {
+          "$ref" : "#/definitions/SemiMajorAxisOrientation"
+        },
+        "semiMajor" : {
+          "$ref" : "#/definitions/SemiMajorAxisAccuracy"
+        },
+        "semiMinor" : {
+          "$ref" : "#/definitions/SemiMinorAxisAccuracy"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RTCM_Revision" : {
+      "type" : "string",
+      "enum" : [ "unknown", "rtcmRev2", "rtcmRev3", "reserved" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections.RTCM_Revision",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "RTCMheader" : {
+      "type" : "object",
+      "properties" : {
+        "offsetSet" : {
+          "$ref" : "#/definitions/AntennaOffsetSet"
+        },
+        "status" : {
+          "$ref" : "#/definitions/GNSSstatus"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMheader",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RTCMmessage" : {
+      "type" : "string",
+      "pattern" : "^[0-9A-Fa-f]{2,2046}$",
+      "description" : "OCTET STRING - hex encoded, min 1 bytes, max 1023 bytes",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMmessage"
+    },
+    "Reg_RTCMcorrections" : {
+      "type" : "object",
+      "properties" : {
+        "regExtValue" : {
+          "title" : "java.lang.Object"
+        },
+        "regionId" : {
+          "$ref" : "#/definitions/RegionId"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RTCMcorrections",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RegionId" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SemiMajorAxisAccuracy" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SemiMajorAxisAccuracy",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SemiMajorAxisOrientation" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SemiMajorAxisOrientation",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SemiMinorAxisAccuracy" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SemiMinorAxisAccuracy",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SpeedConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "prec100ms", "prec10ms", "prec5ms", "prec1ms", "prec0-1ms", "prec0-05ms", "prec0-01ms" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SpeedConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "SpeedandHeadingandThrottleConfidence" : {
+      "type" : "object",
+      "properties" : {
+        "heading" : {
+          "$ref" : "#/definitions/HeadingConfidence"
+        },
+        "speed" : {
+          "$ref" : "#/definitions/SpeedConfidence"
+        },
+        "throttle" : {
+          "$ref" : "#/definitions/ThrottleConfidence"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SpeedandHeadingandThrottleConfidence",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "ThrottleConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "prec10percent", "prec1percent", "prec0-5percent" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.ThrottleConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "TimeConfidence" : {
+      "type" : "string",
+      "enum" : [ "unavailable", "time-100-000", "time-050-000", "time-020-000", "time-010-000", "time-002-000", "time-001-000", "time-000-500", "time-000-200", "time-000-100", "time-000-050", "time-000-020", "time-000-010", "time-000-005", "time-000-002", "time-000-001", "time-000-000-5", "time-000-000-2", "time-000-000-1", "time-000-000-05", "time-000-000-02", "time-000-000-01", "time-000-000-005", "time-000-000-002", "time-000-000-001", "time-000-000-000-5", "time-000-000-000-2", "time-000-000-000-1", "time-000-000-000-05", "time-000-000-000-02", "time-000-000-000-01", "time-000-000-000-005", "time-000-000-000-002", "time-000-000-000-001", "time-000-000-000-000-5", "time-000-000-000-000-2", "time-000-000-000-000-1", "time-000-000-000-000-05", "time-000-000-000-000-02", "time-000-000-000-000-01" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TimeConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "TransmissionAndSpeed" : {
+      "type" : "object",
+      "properties" : {
+        "speed" : {
+          "$ref" : "#/definitions/Velocity"
+        },
+        "transmisson" : {
+          "$ref" : "#/definitions/TransmissionState"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TransmissionAndSpeed",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "TransmissionState" : {
+      "type" : "string",
+      "enum" : [ "neutral", "park", "forwardGears", "reverseGears", "reserved1", "reserved2", "reserved3", "unavailable" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TransmissionState",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "Velocity" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 8191,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Velocity",
+      "description" : "ASN.1 INTEGER Type"
+    }
+  }
+}

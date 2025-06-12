@@ -40,6 +40,8 @@ dependencies {
 
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'
+
+    testImplementation 'com.networknt:json-schema-validator:1.5.7'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

@@ -1,0 +1,1817 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "properties" : {
+    "commonContainer" : {
+      "$ref" : "#/definitions/CommonContainer"
+    },
+    "content" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ContentContainer",
+        "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+        "oneOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "rszContainer" : {
+              "$schema" : "http://json-schema.org/draft-07/schema#",
+              "type" : "object",
+              "properties" : {
+                "rszRegion" : {
+                  "$ref" : "#/definitions/RegionInfo"
+                },
+                "speedLimit" : {
+                  "$ref" : "#/definitions/RegulatorySpeedLimit"
+                }
+              },
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ReducedSpeedZoneContainer",
+              "description" : "ASN.1 SEQUENCE Type"
+            }
+          },
+          "required" : [ "rszContainer" ]
+        }, {
+          "type" : "object",
+          "properties" : {
+            "laneClosureContainer" : {
+              "$schema" : "http://json-schema.org/draft-07/schema#",
+              "type" : "object",
+              "properties" : {
+                "closureRegion" : {
+                  "$ref" : "#/definitions/RegionInfo"
+                },
+                "laneStatus" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/definitions/LaneInfo"
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LaneClosureContainer$SequenceOfLaneStatus",
+                  "description" : "ASN.1 SEQUENCE OF Type"
+                },
+                "laneStatusVaries" : {
+                  "$ref" : "#/definitions/Activity"
+                }
+              },
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LaneClosureContainer",
+              "description" : "ASN.1 SEQUENCE Type"
+            }
+          },
+          "required" : [ "laneClosureContainer" ]
+        }, {
+          "type" : "object",
+          "properties" : {
+            "curveContainer" : {
+              "$schema" : "http://json-schema.org/draft-07/schema#",
+              "type" : "object",
+              "properties" : {
+                "advisorySpeed" : {
+                  "$ref" : "#/definitions/SpeedAdvice"
+                },
+                "bankAngle" : {
+                  "$ref" : "#/definitions/BankAngle"
+                },
+                "curveRegion" : {
+                  "$ref" : "#/definitions/RegionInfo"
+                },
+                "minRadius" : {
+                  "$ref" : "#/definitions/Radius"
+                },
+                "surfaceCondition" : {
+                  "$ref" : "#/definitions/FrictionInformation"
+                }
+              },
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CurveContainer",
+              "description" : "ASN.1 SEQUENCE Type"
+            }
+          },
+          "required" : [ "curveContainer" ]
+        }, {
+          "type" : "object",
+          "properties" : {
+            "dynamicInfoContainer" : {
+              "$schema" : "http://json-schema.org/draft-07/schema#",
+              "type" : "object",
+              "properties" : {
+                "applicableRegion" : {
+                  "$ref" : "#/definitions/RegionInfo"
+                },
+                "dmsSignString" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/definitions/ShortString"
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.DynamicInfoContainer$SequenceOfDmsSignString",
+                  "description" : "ASN.1 SEQUENCE OF Type"
+                },
+                "priority" : {
+                  "$ref" : "#/definitions/EnumeratedPriority"
+                }
+              },
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.DynamicInfoContainer",
+              "description" : "ASN.1 SEQUENCE Type"
+            }
+          },
+          "required" : [ "dynamicInfoContainer" ]
+        }, {
+          "type" : "object",
+          "properties" : {
+            "incidentsContainer" : {
+              "$schema" : "http://json-schema.org/draft-07/schema#",
+              "type" : "object",
+              "properties" : {
+                "incidentLocation" : {
+                  "$ref" : "#/definitions/RegionInfo"
+                },
+                "responderType" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/definitions/ResponderGroupAffected"
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.IncidentsContainer$SequenceOfResponderType",
+                  "description" : "ASN.1 SEQUENCE OF Type"
+                }
+              },
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.IncidentsContainer",
+              "description" : "ASN.1 SEQUENCE Type"
+            }
+          },
+          "required" : [ "incidentsContainer" ]
+        }, {
+          "type" : "object",
+          "properties" : {
+            "situationalContainer" : {
+              "$schema" : "http://json-schema.org/draft-07/schema#",
+              "type" : "object",
+              "properties" : {
+                "anomalousTraffic" : {
+                  "$ref" : "#/definitions/Activity"
+                },
+                "applicableRegion" : {
+                  "$ref" : "#/definitions/RegionInfo"
+                },
+                "obstructions" : {
+                  "$ref" : "#/definitions/Obstructions"
+                },
+                "peoplePresent" : {
+                  "$ref" : "#/definitions/Activity"
+                },
+                "visibility" : {
+                  "$ref" : "#/definitions/NTCIPEssVisibility"
+                }
+              },
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.SituationalContainer",
+              "description" : "ASN.1 SEQUENCE Type"
+            }
+          },
+          "required" : [ "situationalContainer" ]
+        } ]
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RoadSafetyMessage$SequenceOfContent",
+      "description" : "ASN.1 SEQUENCE OF Type"
+    }
+  },
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RoadSafetyMessage",
+  "description" : "ASN.1 SEQUENCE Type",
+  "definitions" : {
+    "Activity" : {
+      "type" : "boolean",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Activity",
+      "description" : "ASN.1 BOOLEAN Type"
+    },
+    "AmChannelInteger" : {
+      "type" : "integer",
+      "minimum" : 531,
+      "maximum" : 1710,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.AudioLink$AmChannelInteger",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Asn1Boolean" : {
+      "type" : "boolean",
+      "title" : "us.dot.its.jpo.asn.runtime.types.Asn1Boolean",
+      "description" : "ASN.1 BOOLEAN Type"
+    },
+    "AudioLink" : {
+      "type" : "object",
+      "properties" : {
+        "amChannel" : {
+          "$ref" : "#/definitions/AmChannelInteger"
+        },
+        "fmChannel" : {
+          "$ref" : "#/definitions/FmChannelInteger"
+        },
+        "satelliteChannel" : {
+          "$ref" : "#/definitions/SatelliteChannelInteger"
+        },
+        "urlChannel" : {
+          "$ref" : "#/definitions/IA5String"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.AudioLink",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "CommonContainer" : {
+      "type" : "object",
+      "properties" : {
+        "crossLinking" : {
+          "$ref" : "#/definitions/CrossLinking"
+        },
+        "eventInfo" : {
+          "$ref" : "#/definitions/EventInfo"
+        },
+        "regionInfo" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/RegionInfo"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CommonContainer$SequenceOfRegionInfo",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CommonContainer",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "CrossLinking" : {
+      "type" : "object",
+      "properties" : {
+        "audioLinks" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AudioLink"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CrossLinking$SequenceOfAudioLinks",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        },
+        "rsmLink" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/EventIdentifier"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CrossLinking$SequenceOfRsmLink",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        },
+        "visualLink" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/VisualLink"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CrossLinking$SequenceOfVisualLink",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.CrossLinking",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DDate" : {
+      "type" : "object",
+      "properties" : {
+        "day" : {
+          "$ref" : "#/definitions/DDay"
+        },
+        "month" : {
+          "$ref" : "#/definitions/DMonth"
+        },
+        "year" : {
+          "$ref" : "#/definitions/DYear"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDate",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DDateTime" : {
+      "type" : "object",
+      "properties" : {
+        "day" : {
+          "$ref" : "#/definitions/DDay"
+        },
+        "hour" : {
+          "$ref" : "#/definitions/DHour"
+        },
+        "minute" : {
+          "$ref" : "#/definitions/DMinute"
+        },
+        "month" : {
+          "$ref" : "#/definitions/DMonth"
+        },
+        "offset" : {
+          "$ref" : "#/definitions/DOffset"
+        },
+        "second" : {
+          "$ref" : "#/definitions/DSecond"
+        },
+        "year" : {
+          "$ref" : "#/definitions/DYear"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DDay" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 31,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDay",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DHour" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 31,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DHour",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DMinute" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 60,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DMinute",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DMonth" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 12,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DMonth",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DOffset" : {
+      "type" : "integer",
+      "minimum" : -840,
+      "maximum" : 840,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DOffset",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DSecond" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DSecond",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DTime" : {
+      "type" : "object",
+      "properties" : {
+        "hour" : {
+          "$ref" : "#/definitions/DHour"
+        },
+        "minute" : {
+          "$ref" : "#/definitions/DMinute"
+        },
+        "offset" : {
+          "$ref" : "#/definitions/DOffset"
+        },
+        "second" : {
+          "$ref" : "#/definitions/DSecond"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DTime",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "DYear" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 4095,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DYear",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DescriptiveName" : {
+      "type" : "string",
+      "minLength" : 1,
+      "maxLength" : 63,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DescriptiveName",
+      "description" : "ASN.1 IA5String Type"
+    },
+    "Elevation" : {
+      "type" : "integer",
+      "minimum" : -4096,
+      "maximum" : 61439,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "EventIdentifier" : {
+      "type" : "object",
+      "properties" : {
+        "operatorID" : {
+          "type" : "object",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadAuthorityID",
+          "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+          "oneOf" : [ {
+            "type" : "object",
+            "properties" : {
+              "fullRdAuthID" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "fullRdAuthID" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "relRdAuthID" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "relRdAuthID" ]
+          } ]
+        },
+        "uniqueID" : {
+          "$ref" : "#/definitions/TemporaryID"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.EventIdentifier",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "EventInfo" : {
+      "type" : "object",
+      "properties" : {
+        "affectedVehicles" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/VehicleGroupAffected"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.EventInfo$SequenceOfAffectedVehicles",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        },
+        "causeCode" : {
+          "$ref" : "#/definitions/ITISgroups"
+        },
+        "endDateTime" : {
+          "$ref" : "#/definitions/DDateTime"
+        },
+        "eventCancellation" : {
+          "$ref" : "#/definitions/Activity"
+        },
+        "eventID" : {
+          "$ref" : "#/definitions/EventIdentifier"
+        },
+        "eventRecurrence" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/EventRecurrence"
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.EventInfo$SequenceOfEventRecurrence",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        },
+        "eventUpdate" : {
+          "$ref" : "#/definitions/MsgCount"
+        },
+        "startDateTime" : {
+          "$ref" : "#/definitions/DDateTime"
+        },
+        "subCauseCode" : {
+          "$ref" : "#/definitions/ITIScodes"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.EventInfo",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "EventRecurrence" : {
+      "type" : "object",
+      "properties" : {
+        "endDate" : {
+          "$ref" : "#/definitions/DDate"
+        },
+        "endTime" : {
+          "$ref" : "#/definitions/DTime"
+        },
+        "exclusion" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "friday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "monday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "saturday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "startDate" : {
+          "$ref" : "#/definitions/DDate"
+        },
+        "startTime" : {
+          "$ref" : "#/definitions/DTime"
+        },
+        "sunday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "thursday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "tuesday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        },
+        "wednesday" : {
+          "$ref" : "#/definitions/Asn1Boolean"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.EventRecurrence",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "FmChannelInteger" : {
+      "type" : "integer",
+      "minimum" : 65800,
+      "maximum" : 108009,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.AudioLink$FmChannelInteger",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "IA5String" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 2147483647,
+      "title" : "us.dot.its.jpo.asn.runtime.types.IA5String",
+      "description" : "ASN.1 IA5String Type"
+    },
+    "ITIScodes" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.ITIS.ITIScodes",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "ITISgroups" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.J2540ITIS.ITISgroups",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Latitude" : {
+      "type" : "integer",
+      "minimum" : -900000000,
+      "maximum" : 900000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Longitude" : {
+      "type" : "integer",
+      "minimum" : -1799999999,
+      "maximum" : 1800000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "MsgCount" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 127,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MsgCount",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Position3D" : {
+      "type" : "object",
+      "properties" : {
+        "elevation" : {
+          "$ref" : "#/definitions/Elevation"
+        },
+        "lat" : {
+          "$ref" : "#/definitions/Latitude"
+        },
+        "long" : {
+          "$ref" : "#/definitions/Longitude"
+        },
+        "regional" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "regionId" : {
+                "type" : "integer",
+                "enum" : [ 2, 3 ]
+              },
+              "regExtValue" : {
+                "type" : "object"
+              }
+            },
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+            "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+            "required" : [ "regionId", "regExtValue" ]
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "ReferencePointType" : {
+      "type" : "string",
+      "enum" : [ "startOfEvent", "arbitrary" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ReferencePointType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "RegionInfo" : {
+      "type" : "object",
+      "properties" : {
+        "approachRegion" : {
+          "type" : "object",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.AreaType",
+          "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+          "oneOf" : [ {
+            "type" : "object",
+            "properties" : {
+              "broadRegion" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "applicableHeading" : {
+                    "$ref" : "#/definitions/ApplicableHeading"
+                  },
+                  "broadArea" : {
+                    "type" : "object",
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.BroadRegionArea",
+                    "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+                    "oneOf" : [ {
+                      "type" : "object",
+                      "properties" : {
+                        "polygon" : {
+                          "$schema" : "http://json-schema.org/draft-07/schema#",
+                          "type" : "array",
+                          "items" : {
+                            "type" : "object",
+                            "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.NodePointLLE",
+                            "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+                            "oneOf" : [ {
+                              "type" : "object",
+                              "properties" : {
+                                "node-3Dabsolute" : {
+                                  "$schema" : "http://json-schema.org/draft-07/schema#",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "elevation" : {
+                                      "$ref" : "#/definitions/Elevation"
+                                    },
+                                    "lat" : {
+                                      "$ref" : "#/definitions/Latitude"
+                                    },
+                                    "long" : {
+                                      "$ref" : "#/definitions/Longitude"
+                                    },
+                                    "regional" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "type" : "object",
+                                        "properties" : {
+                                          "regionId" : {
+                                            "type" : "integer",
+                                            "enum" : [ 2, 3 ]
+                                          },
+                                          "regExtValue" : {
+                                            "type" : "object"
+                                          }
+                                        },
+                                        "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+                                        "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+                                        "required" : [ "regionId", "regExtValue" ]
+                                      },
+                                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+                                      "description" : "ASN.1 SEQUENCE OF Type"
+                                    }
+                                  },
+                                  "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+                                  "description" : "ASN.1 SEQUENCE Type"
+                                }
+                              },
+                              "required" : [ "node-3Dabsolute" ]
+                            }, {
+                              "type" : "object",
+                              "properties" : {
+                                "node-3Doffset" : {
+                                  "$schema" : "http://json-schema.org/draft-07/schema#",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "elev-offset" : {
+                                      "$ref" : "#/definitions/ElevOffset"
+                                    },
+                                    "lat-offset" : {
+                                      "$ref" : "#/definitions/LatOffset"
+                                    },
+                                    "long-offset" : {
+                                      "$ref" : "#/definitions/LongOffset"
+                                    }
+                                  },
+                                  "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Offset3D",
+                                  "description" : "ASN.1 SEQUENCE Type"
+                                }
+                              },
+                              "required" : [ "node-3Doffset" ]
+                            } ]
+                          },
+                          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RSMPolygon",
+                          "description" : "ASN.1 SEQUENCE OF Type"
+                        }
+                      },
+                      "required" : [ "polygon" ]
+                    }, {
+                      "type" : "object",
+                      "properties" : {
+                        "circle" : {
+                          "$schema" : "http://json-schema.org/draft-07/schema#",
+                          "type" : "object",
+                          "properties" : {
+                            "center" : {
+                              "$ref" : "#/definitions/Position3D"
+                            },
+                            "radius" : {
+                              "$ref" : "#/definitions/Radius_B12"
+                            },
+                            "units" : {
+                              "$ref" : "#/definitions/DistanceUnits"
+                            }
+                          },
+                          "title" : "us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.Circle",
+                          "description" : "ASN.1 SEQUENCE Type"
+                        }
+                      },
+                      "required" : [ "circle" ]
+                    } ]
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.BroadRegion",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "ApplicableHeading" : {
+                    "type" : "object",
+                    "properties" : {
+                      "heading" : {
+                        "$ref" : "#/definitions/HeadingDeg"
+                      },
+                      "tolerance" : {
+                        "$ref" : "#/definitions/Tolerance"
+                      }
+                    },
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ApplicableHeading",
+                    "description" : "ASN.1 SEQUENCE Type"
+                  },
+                  "HeadingDeg" : {
+                    "type" : "integer",
+                    "minimum" : 0,
+                    "maximum" : 359,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.HeadingDeg",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Tolerance" : {
+                    "type" : "integer",
+                    "minimum" : 0,
+                    "maximum" : 180,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Tolerance",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Elevation" : {
+                    "type" : "integer",
+                    "minimum" : -4096,
+                    "maximum" : 61439,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Latitude" : {
+                    "type" : "integer",
+                    "minimum" : -900000000,
+                    "maximum" : 900000001,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Longitude" : {
+                    "type" : "integer",
+                    "minimum" : -1799999999,
+                    "maximum" : 1800000001,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "ElevOffset" : {
+                    "type" : "integer",
+                    "minimum" : -4096,
+                    "maximum" : 4095,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LatOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LongOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "DistanceUnits" : {
+                    "type" : "string",
+                    "enum" : [ "centimeter", "cm2-5", "decimeter", "meter", "kilometer", "foot", "yard", "mile" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.DistanceUnits",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  },
+                  "Position3D" : {
+                    "type" : "object",
+                    "properties" : {
+                      "elevation" : {
+                        "$ref" : "#/definitions/Elevation"
+                      },
+                      "lat" : {
+                        "$ref" : "#/definitions/Latitude"
+                      },
+                      "long" : {
+                        "$ref" : "#/definitions/Longitude"
+                      },
+                      "regional" : {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "object",
+                          "properties" : {
+                            "regionId" : {
+                              "type" : "integer",
+                              "enum" : [ 2, 3 ]
+                            },
+                            "regExtValue" : {
+                              "type" : "object"
+                            }
+                          },
+                          "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+                          "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+                          "required" : [ "regionId", "regExtValue" ]
+                        },
+                        "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+                        "description" : "ASN.1 SEQUENCE OF Type"
+                      }
+                    },
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+                    "description" : "ASN.1 SEQUENCE Type"
+                  },
+                  "Radius_B12" : {
+                    "type" : "integer",
+                    "minimum" : 0,
+                    "maximum" : 4095,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.Radius_B12",
+                    "description" : "ASN.1 INTEGER Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "broadRegion" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "paths" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/definitions/Path"
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.PathList",
+                "description" : "ASN.1 SEQUENCE OF Type",
+                "definitions" : {
+                  "Path" : {
+                    "type" : "object",
+                    "properties" : {
+                      "pathPoints" : {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "object",
+                          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.NodePointLLE",
+                          "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+                          "oneOf" : [ {
+                            "type" : "object",
+                            "properties" : {
+                              "node-3Dabsolute" : {
+                                "$schema" : "http://json-schema.org/draft-07/schema#",
+                                "type" : "object",
+                                "properties" : {
+                                  "elevation" : {
+                                    "$ref" : "#/definitions/Elevation"
+                                  },
+                                  "lat" : {
+                                    "$ref" : "#/definitions/Latitude"
+                                  },
+                                  "long" : {
+                                    "$ref" : "#/definitions/Longitude"
+                                  },
+                                  "regional" : {
+                                    "type" : "array",
+                                    "items" : {
+                                      "type" : "object",
+                                      "properties" : {
+                                        "regionId" : {
+                                          "type" : "integer",
+                                          "enum" : [ 2, 3 ]
+                                        },
+                                        "regExtValue" : {
+                                          "type" : "object"
+                                        }
+                                      },
+                                      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+                                      "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+                                      "required" : [ "regionId", "regExtValue" ]
+                                    },
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+                                    "description" : "ASN.1 SEQUENCE OF Type"
+                                  }
+                                },
+                                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+                                "description" : "ASN.1 SEQUENCE Type",
+                                "definitions" : {
+                                  "Elevation" : {
+                                    "type" : "integer",
+                                    "minimum" : -4096,
+                                    "maximum" : 61439,
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+                                    "description" : "ASN.1 INTEGER Type"
+                                  },
+                                  "Latitude" : {
+                                    "type" : "integer",
+                                    "minimum" : -900000000,
+                                    "maximum" : 900000001,
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+                                    "description" : "ASN.1 INTEGER Type"
+                                  },
+                                  "Longitude" : {
+                                    "type" : "integer",
+                                    "minimum" : -1799999999,
+                                    "maximum" : 1800000001,
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+                                    "description" : "ASN.1 INTEGER Type"
+                                  }
+                                }
+                              }
+                            },
+                            "required" : [ "node-3Dabsolute" ]
+                          }, {
+                            "type" : "object",
+                            "properties" : {
+                              "node-3Doffset" : {
+                                "$schema" : "http://json-schema.org/draft-07/schema#",
+                                "type" : "object",
+                                "properties" : {
+                                  "elev-offset" : {
+                                    "$ref" : "#/definitions/ElevOffset"
+                                  },
+                                  "lat-offset" : {
+                                    "$ref" : "#/definitions/LatOffset"
+                                  },
+                                  "long-offset" : {
+                                    "$ref" : "#/definitions/LongOffset"
+                                  }
+                                },
+                                "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Offset3D",
+                                "description" : "ASN.1 SEQUENCE Type",
+                                "definitions" : {
+                                  "ElevOffset" : {
+                                    "type" : "integer",
+                                    "minimum" : -4096,
+                                    "maximum" : 4095,
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+                                    "description" : "ASN.1 INTEGER Type"
+                                  },
+                                  "LatOffset" : {
+                                    "type" : "integer",
+                                    "minimum" : -16384,
+                                    "maximum" : 16383,
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+                                    "description" : "ASN.1 INTEGER Type"
+                                  },
+                                  "LongOffset" : {
+                                    "type" : "integer",
+                                    "minimum" : -16384,
+                                    "maximum" : 16383,
+                                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+                                    "description" : "ASN.1 INTEGER Type"
+                                  }
+                                }
+                              }
+                            },
+                            "required" : [ "node-3Doffset" ]
+                          } ]
+                        },
+                        "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.PathPoints",
+                        "description" : "ASN.1 SEQUENCE OF Type"
+                      },
+                      "pathWidth" : {
+                        "$ref" : "#/definitions/PathWidthInteger"
+                      }
+                    },
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Path",
+                    "description" : "ASN.1 SEQUENCE Type"
+                  },
+                  "PathWidthInteger" : {
+                    "type" : "integer",
+                    "minimum" : 0,
+                    "maximum" : 1000,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Path$PathWidthInteger",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Elevation" : {
+                    "type" : "integer",
+                    "minimum" : -4096,
+                    "maximum" : 61439,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Latitude" : {
+                    "type" : "integer",
+                    "minimum" : -900000000,
+                    "maximum" : 900000001,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "Longitude" : {
+                    "type" : "integer",
+                    "minimum" : -1799999999,
+                    "maximum" : 1800000001,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "ElevOffset" : {
+                    "type" : "integer",
+                    "minimum" : -4096,
+                    "maximum" : 4095,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LatOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LongOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "paths" ]
+          } ]
+        },
+        "descriptiveName" : {
+          "$ref" : "#/definitions/DescriptiveName"
+        },
+        "locationUncertainty" : {
+          "type" : "object",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RegionUncertainty",
+          "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+          "oneOf" : [ {
+            "type" : "object",
+            "properties" : {
+              "alongPath" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "elev-offset" : {
+                    "$ref" : "#/definitions/ElevOffset"
+                  },
+                  "lat-offset" : {
+                    "$ref" : "#/definitions/LatOffset"
+                  },
+                  "long-offset" : {
+                    "$ref" : "#/definitions/LongOffset"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Offset3D",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "ElevOffset" : {
+                    "type" : "integer",
+                    "minimum" : -4096,
+                    "maximum" : 4095,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LatOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LongOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "alongPath" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "inCoordinateFrame" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "elev-offset" : {
+                    "$ref" : "#/definitions/ElevOffset"
+                  },
+                  "lat-offset" : {
+                    "$ref" : "#/definitions/LatOffset"
+                  },
+                  "long-offset" : {
+                    "$ref" : "#/definitions/LongOffset"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Offset3D",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "ElevOffset" : {
+                    "type" : "integer",
+                    "minimum" : -4096,
+                    "maximum" : 4095,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LatOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  },
+                  "LongOffset" : {
+                    "type" : "integer",
+                    "minimum" : -16384,
+                    "maximum" : 16383,
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+                    "description" : "ASN.1 INTEGER Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "inCoordinateFrame" ]
+          } ]
+        },
+        "referencePoint" : {
+          "$ref" : "#/definitions/Position3D"
+        },
+        "referencePointType" : {
+          "$ref" : "#/definitions/ReferencePointType"
+        },
+        "scale" : {
+          "$ref" : "#/definitions/Zoom"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RegionInfo",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "SatelliteChannelInteger" : {
+      "type" : "integer",
+      "minimum" : 1,
+      "maximum" : 9999,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.AudioLink$SatelliteChannelInteger",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "TemporaryID" : {
+      "type" : "string",
+      "pattern" : "^[0-9A-Fa-f]{8,8}$",
+      "description" : "OCTET STRING - hex encoded, min 4 bytes, max 4 bytes",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TemporaryID"
+    },
+    "VehicleGroupAffected" : {
+      "type" : "string",
+      "enum" : [ "all-vehicles", "bicycles", "motorcycles", "cars", "light-vehicles", "cars-and-light-vehicles", "cars-with-trailers", "cars-with-recreational-trailers", "vehicles-with-trailers", "heavy-vehicles", "trucks", "buses", "articulated-buses", "school-buses", "vehicles-with-semi-trailers", "vehicles-with-double-trailers", "high-profile-vehicles", "wide-vehicles", "long-vehicles", "hazardous-loads", "exceptional-loads", "abnormal-loads", "convoys", "maintenance-vehicles", "delivery-vehicles", "vehicles-with-even-numbered-license-plates", "vehicles-with-odd-numbered-license-plates", "vehicles-with-parking-permits", "vehicles-with-catalytic-converters", "vehicles-without-catalytic-converters", "gas-powered-vehicles", "diesel-powered-vehicles", "lPG-vehicles", "military-convoys", "military-vehicles" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.ITIS.VehicleGroupAffected",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "VisualLink" : {
+      "type" : "object",
+      "properties" : {
+        "urlLink" : {
+          "$ref" : "#/definitions/IA5String"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.VisualLink",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "Zoom" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 15,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.Zoom",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "ApplicableHeading" : {
+      "type" : "object",
+      "properties" : {
+        "heading" : {
+          "$ref" : "#/definitions/HeadingDeg"
+        },
+        "tolerance" : {
+          "$ref" : "#/definitions/Tolerance"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ApplicableHeading",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "HeadingDeg" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 359,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.HeadingDeg",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Tolerance" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 180,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Tolerance",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "ElevOffset" : {
+      "type" : "integer",
+      "minimum" : -4096,
+      "maximum" : 4095,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "LatOffset" : {
+      "type" : "integer",
+      "minimum" : -16384,
+      "maximum" : 16383,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "LongOffset" : {
+      "type" : "integer",
+      "minimum" : -16384,
+      "maximum" : 16383,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DistanceUnits" : {
+      "type" : "string",
+      "enum" : [ "centimeter", "cm2-5", "decimeter", "meter", "kilometer", "foot", "yard", "mile" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.DistanceUnits",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "Radius_B12" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 4095,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.TravelerInformation.Radius_B12",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Path" : {
+      "type" : "object",
+      "properties" : {
+        "pathPoints" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.NodePointLLE",
+            "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+            "oneOf" : [ {
+              "type" : "object",
+              "properties" : {
+                "node-3Dabsolute" : {
+                  "$schema" : "http://json-schema.org/draft-07/schema#",
+                  "type" : "object",
+                  "properties" : {
+                    "elevation" : {
+                      "$ref" : "#/definitions/Elevation"
+                    },
+                    "lat" : {
+                      "$ref" : "#/definitions/Latitude"
+                    },
+                    "long" : {
+                      "$ref" : "#/definitions/Longitude"
+                    },
+                    "regional" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "regionId" : {
+                            "type" : "integer",
+                            "enum" : [ 2, 3 ]
+                          },
+                          "regExtValue" : {
+                            "type" : "object"
+                          }
+                        },
+                        "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+                        "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+                        "required" : [ "regionId", "regExtValue" ]
+                      },
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+                      "description" : "ASN.1 SEQUENCE OF Type"
+                    }
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "definitions" : {
+                    "Elevation" : {
+                      "type" : "integer",
+                      "minimum" : -4096,
+                      "maximum" : 61439,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Elevation",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "Latitude" : {
+                      "type" : "integer",
+                      "minimum" : -900000000,
+                      "maximum" : 900000001,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Latitude",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "Longitude" : {
+                      "type" : "integer",
+                      "minimum" : -1799999999,
+                      "maximum" : 1800000001,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Longitude",
+                      "description" : "ASN.1 INTEGER Type"
+                    }
+                  }
+                }
+              },
+              "required" : [ "node-3Dabsolute" ]
+            }, {
+              "type" : "object",
+              "properties" : {
+                "node-3Doffset" : {
+                  "$schema" : "http://json-schema.org/draft-07/schema#",
+                  "type" : "object",
+                  "properties" : {
+                    "elev-offset" : {
+                      "$ref" : "#/definitions/ElevOffset"
+                    },
+                    "lat-offset" : {
+                      "$ref" : "#/definitions/LatOffset"
+                    },
+                    "long-offset" : {
+                      "$ref" : "#/definitions/LongOffset"
+                    }
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Offset3D",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "definitions" : {
+                    "ElevOffset" : {
+                      "type" : "integer",
+                      "minimum" : -4096,
+                      "maximum" : 4095,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ElevOffset",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "LatOffset" : {
+                      "type" : "integer",
+                      "minimum" : -16384,
+                      "maximum" : 16383,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LatOffset",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "LongOffset" : {
+                      "type" : "integer",
+                      "minimum" : -16384,
+                      "maximum" : 16383,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LongOffset",
+                      "description" : "ASN.1 INTEGER Type"
+                    }
+                  }
+                }
+              },
+              "required" : [ "node-3Doffset" ]
+            } ]
+          },
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.PathPoints",
+          "description" : "ASN.1 SEQUENCE OF Type"
+        },
+        "pathWidth" : {
+          "$ref" : "#/definitions/PathWidthInteger"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Path",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "PathWidthInteger" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 1000,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Path$PathWidthInteger",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "RegulatorySpeedLimit" : {
+      "type" : "object",
+      "properties" : {
+        "speed" : {
+          "$ref" : "#/definitions/Velocity"
+        },
+        "type" : {
+          "$ref" : "#/definitions/SpeedLimitType"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegulatorySpeedLimit",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "SpeedLimitType" : {
+      "type" : "string",
+      "enum" : [ "unknown", "maxSpeedInSchoolZone", "maxSpeedInSchoolZoneWhenChildrenArePresent", "maxSpeedInConstructionZone", "vehicleMinSpeed", "vehicleMaxSpeed", "vehicleNightMaxSpeed", "truckMinSpeed", "truckMaxSpeed", "truckNightMaxSpeed", "vehiclesWithTrailersMinSpeed", "vehiclesWithTrailersMaxSpeed", "vehiclesWithTrailersNightMaxSpeed" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SpeedLimitType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "Velocity" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 8191,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Velocity",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "LaneClosed" : {
+      "type" : "boolean",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LaneClosed",
+      "description" : "ASN.1 BOOLEAN Type"
+    },
+    "LaneInfo" : {
+      "type" : "object",
+      "properties" : {
+        "laneCloseOffset" : {
+          "$ref" : "#/definitions/ObstacleDistance"
+        },
+        "laneClosed" : {
+          "$ref" : "#/definitions/LaneClosed"
+        },
+        "lanePosition" : {
+          "$ref" : "#/definitions/RSMLanePosition"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.LaneInfo",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "ObstacleDistance" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 32767,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.ObstacleDistance",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "RSMLanePosition" : {
+      "type" : "integer",
+      "minimum" : 1,
+      "maximum" : 32,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.RSMLanePosition",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "BankAngle" : {
+      "type" : "integer",
+      "minimum" : -512,
+      "maximum" : 512,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.BankAngle",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "FrictionInformation" : {
+      "type" : "object",
+      "properties" : {
+        "dryOrWet" : {
+          "$ref" : "#/definitions/RoadSurfaceCondition"
+        },
+        "roadRoughness" : {
+          "$ref" : "#/definitions/RoadRoughness"
+        },
+        "roadSurfaceDescription" : {
+          "type" : "object",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DescriptionOfRoadSurface",
+          "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+          "oneOf" : [ {
+            "type" : "object",
+            "properties" : {
+              "portlandCement" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/PortlandCementType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PortlandCement",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "PortlandCementType" : {
+                    "type" : "string",
+                    "enum" : [ "newSharp", "traveled", "trafficPolished" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PortlandCementType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "portlandCement" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "asphaltOrTar" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/AsphaltOrTarType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AsphaltOrTar",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "AsphaltOrTarType" : {
+                    "type" : "string",
+                    "enum" : [ "newSharp", "traveled", "trafficPolished", "excessTar" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AsphaltOrTarType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "asphaltOrTar" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "gravel" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/GravelType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Gravel",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "GravelType" : {
+                    "type" : "string",
+                    "enum" : [ "packedOiled", "loose" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.GravelType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "gravel" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "grass" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/GrassType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Grass",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "GrassType" : {
+                    "type" : "string",
+                    "enum" : [ "lessThan30Mph" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.GrassType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "grass" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "cinders" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/CindersType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Cinders",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "CindersType" : {
+                    "type" : "string",
+                    "enum" : [ "packed" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.CindersType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "cinders" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "rock" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/RockType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Rock",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "RockType" : {
+                    "type" : "string",
+                    "enum" : [ "crushed" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RockType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "rock" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "ice" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/IceType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Ice",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "IceType" : {
+                    "type" : "string",
+                    "enum" : [ "smooth" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IceType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "ice" ]
+          }, {
+            "type" : "object",
+            "properties" : {
+              "snow" : {
+                "$schema" : "http://json-schema.org/draft-07/schema#",
+                "type" : "object",
+                "properties" : {
+                  "type" : {
+                    "$ref" : "#/definitions/SnowType"
+                  }
+                },
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Snow",
+                "description" : "ASN.1 SEQUENCE Type",
+                "definitions" : {
+                  "SnowType" : {
+                    "type" : "string",
+                    "enum" : [ "packed", "loose" ],
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SnowType",
+                    "description" : "ASN.1 ENUMERATED Type"
+                  }
+                }
+              }
+            },
+            "required" : [ "snow" ]
+          } ]
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.FrictionInformation",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "MeanVariation" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 25000,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.MeanVariation",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Radius" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 65535,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Radius",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "RoadRoughness" : {
+      "type" : "object",
+      "properties" : {
+        "horizontalVariationStdDev" : {
+          "$ref" : "#/definitions/VariationStdDev"
+        },
+        "meanHorizontalVariation" : {
+          "$ref" : "#/definitions/MeanVariation"
+        },
+        "meanVerticalVariation" : {
+          "$ref" : "#/definitions/MeanVariation"
+        },
+        "verticalVariationStdDev" : {
+          "$ref" : "#/definitions/VariationStdDev"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadRoughness",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RoadSurfaceCondition" : {
+      "type" : "string",
+      "enum" : [ "dry", "wet" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadSurfaceCondition",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "SpeedAdvice" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 500,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SpeedAdvice",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "VariationStdDev" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 2500,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VariationStdDev",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "PortlandCementType" : {
+      "type" : "string",
+      "enum" : [ "newSharp", "traveled", "trafficPolished" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PortlandCementType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "AsphaltOrTarType" : {
+      "type" : "string",
+      "enum" : [ "newSharp", "traveled", "trafficPolished", "excessTar" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AsphaltOrTarType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "GravelType" : {
+      "type" : "string",
+      "enum" : [ "packedOiled", "loose" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.GravelType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "GrassType" : {
+      "type" : "string",
+      "enum" : [ "lessThan30Mph" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.GrassType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "CindersType" : {
+      "type" : "string",
+      "enum" : [ "packed" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.CindersType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "RockType" : {
+      "type" : "string",
+      "enum" : [ "crushed" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RockType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "IceType" : {
+      "type" : "string",
+      "enum" : [ "smooth" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IceType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "SnowType" : {
+      "type" : "string",
+      "enum" : [ "packed", "loose" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SnowType",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "EnumeratedPriority" : {
+      "type" : "string",
+      "enum" : [ "low-priority", "medium-priority", "high-priority", "critical" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.DynamicInfoContainer$EnumeratedPriority",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "ShortString" : {
+      "type" : "string",
+      "minLength" : 1,
+      "maxLength" : 20,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.ShortString",
+      "description" : "ASN.1 IA5String Type"
+    },
+    "ResponderGroupAffected" : {
+      "type" : "string",
+      "enum" : [ "emergency-vehicle-units", "federal-law-enforcement-units", "state-police-units", "county-police-units", "local-police-units", "ambulance-units", "rescue-units", "fire-units", "hAZMAT-units", "light-tow-unit", "heavy-tow-unit", "freeway-service-patrols", "transportation-response-units", "private-contractor-response-units" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.ITIS.ResponderGroupAffected",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "NTCIPEssVisibility" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 1000001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadWeatherMessage.NTCIPEssVisibility",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Obstructions" : {
+      "type" : "object",
+      "properties" : {
+        "description" : {
+          "$ref" : "#/definitions/ITIScodes"
+        },
+        "location" : {
+          "$ref" : "#/definitions/Position3D"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.RoadSafetyMessage.Obstructions",
+      "description" : "ASN.1 SEQUENCE Type"
+    }
+  }
+}
