@@ -181,6 +181,15 @@ public class Asn1Module implements Module {
     ObjectNode valueProp = properties.putObject(typeAnnot.valueProperty());
     valueProp.put("type", "object");
 
+    // Generate schema for each possible value type
+    ArrayNode oneOf = valueProp.putArray("anyOf");
+    for (Asn1ParameterizedTypes.Type type : typeAnnot.value()) {
+      Class<?> valueClass = type.value();
+      ResolvedType valueType = context.getTypeContext().resolve(valueClass);
+      ObjectNode valueSchema = generateRecursiveSchema(valueType, context);
+      oneOf.add(valueSchema);
+    }
+
     // If this is also a sequence type, add sequence-specific properties
     if (resolvedType.isInstanceOf(Asn1Sequence.class)) {
       // Add title and description
@@ -214,6 +223,36 @@ public class Asn1Module implements Module {
       required.add(typeAnnot.valueProperty());
       
       return new CustomDefinition(node);
+    }
+  }
+
+  private ObjectNode generateRecursiveSchema(ResolvedType type, SchemaGenerationContext context) {
+    boolean isComplexType = type.isInstanceOf(Asn1Sequence.class) || 
+                          type.isInstanceOf(Asn1SequenceOf.class) ||
+                          type.isInstanceOf(Asn1Choice.class) ||
+                          type.getErasedType().isAnnotationPresent(Asn1ParameterizedTypes.class);
+    
+    if (isComplexType) {
+      try {
+        JsonSchemaGenerator gen = new JsonSchemaGenerator(type.getErasedType());
+        String schemaJson = gen.generate();
+        // Parse the JSON string into an ObjectNode using ObjectMapper
+        return (ObjectNode) objectMapper.readTree(schemaJson);
+      } catch (Exception e) {
+        // If generation fails, fall back to basic object type
+        return context.getGeneratorConfig().createObjectNode()
+            .put("type", "object");
+      }
+    } else {
+      // For simple types, use existing custom definition logic
+      CustomDefinition customDefinition = provideCustomSchemaDefinitionForType(type, context);
+      if (customDefinition != null) {
+        return (ObjectNode) customDefinition.getValue();
+      } else {
+        // If no custom definition, let the schema generator handle it
+        return context.getGeneratorConfig().createObjectNode()
+            .put("type", "object");
+      }
     }
   }
 
@@ -389,36 +428,9 @@ public class Asn1Module implements Module {
         // Get the field type
         ResolvedType fieldType = context.getTypeContext().resolve(field.getGenericType());
         
-        boolean isComplexType = fieldType.isInstanceOf(Asn1Sequence.class) || 
-                              fieldType.isInstanceOf(Asn1SequenceOf.class) ||
-                              fieldType.isInstanceOf(Asn1Choice.class) ||
-                              fieldType.getErasedType().isAnnotationPresent(Asn1ParameterizedTypes.class);
-        
-        if (isComplexType) {
-          // For complex types, use JsonSchemaGenerator recursively
-          try {
-            JsonSchemaGenerator gen = new JsonSchemaGenerator(fieldType.getErasedType());
-            String schemaJson = gen.generate();
-            // Parse the JSON string into an ObjectNode using ObjectMapper
-            ObjectNode complexSchema = (ObjectNode) objectMapper.readTree(schemaJson);
-            
-            // Add the full schema into the property
-            property.setAll(complexSchema);
-            
-          } catch (Exception e) {
-            // If generation fails, fall back to basic object type
-            property.put("type", "object");
-          }
-        } else {
-          // For simple types, use existing custom definition logic
-          CustomDefinition customDefinition = provideCustomSchemaDefinitionForType(fieldType, context);
-          if (customDefinition != null) {
-            property.setAll((ObjectNode)customDefinition.getValue());
-          } else {
-            // If no custom definition, let the schema generator handle it
-            property.put("type", "object");
-          }
-        }
+        // Generate schema for the field type
+        ObjectNode fieldSchema = generateRecursiveSchema(fieldType, context);
+        property.setAll(fieldSchema);
         
         // Add required array with just this property
         ArrayNode required = choiceOption.putArray("required");

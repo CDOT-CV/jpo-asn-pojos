@@ -5,6 +5,7 @@ mkdir -p schemas
 
 # List of PDUs to generate schemas for
 PDUS=(
+    "MessageFrame"
     "BasicSafetyMessage"
     "PersonalSafetyMessage"
     "SignalRequestMessage"

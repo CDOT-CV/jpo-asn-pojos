@@ -719,7 +719,171 @@
                 "enum" : [ 2, 3 ]
               },
               "regExtValue" : {
-                "type" : "object"
+                "type" : "object",
+                "anyOf" : [ {
+                  "$schema" : "http://json-schema.org/draft-07/schema#",
+                  "type" : "object",
+                  "properties" : {
+                    "regExtValue" : {
+                      "$ref" : "#/definitions/Position3D_addGrpB"
+                    },
+                    "regionId" : {
+                      "$ref" : "#/definitions/RegionId"
+                    }
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpBReg_Position3D",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "definitions" : {
+                    "DegreesLat" : {
+                      "type" : "integer",
+                      "minimum" : -90,
+                      "maximum" : 90,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.DegreesLat",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "DegreesLong" : {
+                      "type" : "integer",
+                      "minimum" : -180,
+                      "maximum" : 180,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.DegreesLong",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "Elevation" : {
+                      "type" : "integer",
+                      "minimum" : -32768,
+                      "maximum" : 32767,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Elevation",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "LatitudeDMS2" : {
+                      "type" : "object",
+                      "properties" : {
+                        "d" : {
+                          "$ref" : "#/definitions/DegreesLat"
+                        },
+                        "m" : {
+                          "$ref" : "#/definitions/MinutesAngle"
+                        },
+                        "s" : {
+                          "$ref" : "#/definitions/SecondsAngle"
+                        }
+                      },
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LatitudeDMS2",
+                      "description" : "ASN.1 SEQUENCE Type"
+                    },
+                    "LongitudeDMS2" : {
+                      "type" : "object",
+                      "properties" : {
+                        "d" : {
+                          "$ref" : "#/definitions/DegreesLong"
+                        },
+                        "m" : {
+                          "$ref" : "#/definitions/MinutesAngle"
+                        },
+                        "s" : {
+                          "$ref" : "#/definitions/SecondsAngle"
+                        }
+                      },
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LongitudeDMS2",
+                      "description" : "ASN.1 SEQUENCE Type"
+                    },
+                    "MinutesAngle" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 59,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.MinutesAngle",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "Position3D_addGrpB" : {
+                      "type" : "object",
+                      "properties" : {
+                        "elevation" : {
+                          "$ref" : "#/definitions/Elevation"
+                        },
+                        "latitude" : {
+                          "$ref" : "#/definitions/LatitudeDMS2"
+                        },
+                        "longitude" : {
+                          "$ref" : "#/definitions/LongitudeDMS2"
+                        }
+                      },
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpB",
+                      "description" : "ASN.1 SEQUENCE Type"
+                    },
+                    "RegionId" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 255,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "SecondsAngle" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 5999,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.SecondsAngle",
+                      "description" : "ASN.1 INTEGER Type"
+                    }
+                  }
+                }, {
+                  "$schema" : "http://json-schema.org/draft-07/schema#",
+                  "type" : "object",
+                  "properties" : {
+                    "regExtValue" : {
+                      "$ref" : "#/definitions/Position3D_addGrpC"
+                    },
+                    "regionId" : {
+                      "$ref" : "#/definitions/RegionId"
+                    }
+                  },
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpCReg_Position3D",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "definitions" : {
+                    "Altitude" : {
+                      "type" : "object",
+                      "properties" : {
+                        "confidence" : {
+                          "$ref" : "#/definitions/AltitudeConfidence"
+                        },
+                        "value" : {
+                          "$ref" : "#/definitions/AltitudeValue"
+                        }
+                      },
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Altitude",
+                      "description" : "ASN.1 SEQUENCE Type"
+                    },
+                    "AltitudeConfidence" : {
+                      "type" : "string",
+                      "enum" : [ "alt-000-01", "alt-000-02", "alt-000-05", "alt-000-10", "alt-000-20", "alt-000-50", "alt-001-00", "alt-002-00", "alt-005-00", "alt-010-00", "alt-020-00", "alt-050-00", "alt-100-00", "alt-200-00", "outOfRange", "unavailable" ],
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.AltitudeConfidence",
+                      "description" : "ASN.1 ENUMERATED Type"
+                    },
+                    "AltitudeValue" : {
+                      "type" : "integer",
+                      "minimum" : -100000,
+                      "maximum" : 800001,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.AltitudeValue",
+                      "description" : "ASN.1 INTEGER Type"
+                    },
+                    "Position3D_addGrpC" : {
+                      "type" : "object",
+                      "properties" : {
+                        "altitude" : {
+                          "$ref" : "#/definitions/Altitude"
+                        }
+                      },
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpC",
+                      "description" : "ASN.1 SEQUENCE Type"
+                    },
+                    "RegionId" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 255,
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
+                      "description" : "ASN.1 INTEGER Type"
+                    }
+                  }
+                } ]
               }
             },
             "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
@@ -1096,6 +1260,125 @@
       "maximum" : 1023,
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.SizeValue",
       "description" : "ASN.1 INTEGER Type"
+    },
+    "DegreesLat" : {
+      "type" : "integer",
+      "minimum" : -90,
+      "maximum" : 90,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.DegreesLat",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "DegreesLong" : {
+      "type" : "integer",
+      "minimum" : -180,
+      "maximum" : 180,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.DegreesLong",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "LatitudeDMS2" : {
+      "type" : "object",
+      "properties" : {
+        "d" : {
+          "$ref" : "#/definitions/DegreesLat"
+        },
+        "m" : {
+          "$ref" : "#/definitions/MinutesAngle"
+        },
+        "s" : {
+          "$ref" : "#/definitions/SecondsAngle"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LatitudeDMS2",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "LongitudeDMS2" : {
+      "type" : "object",
+      "properties" : {
+        "d" : {
+          "$ref" : "#/definitions/DegreesLong"
+        },
+        "m" : {
+          "$ref" : "#/definitions/MinutesAngle"
+        },
+        "s" : {
+          "$ref" : "#/definitions/SecondsAngle"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LongitudeDMS2",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "MinutesAngle" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 59,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.MinutesAngle",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Position3D_addGrpB" : {
+      "type" : "object",
+      "properties" : {
+        "elevation" : {
+          "$ref" : "#/definitions/Elevation"
+        },
+        "latitude" : {
+          "$ref" : "#/definitions/LatitudeDMS2"
+        },
+        "longitude" : {
+          "$ref" : "#/definitions/LongitudeDMS2"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpB",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "RegionId" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 255,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RegionId",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "SecondsAngle" : {
+      "type" : "integer",
+      "minimum" : 0,
+      "maximum" : 5999,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.SecondsAngle",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Altitude" : {
+      "type" : "object",
+      "properties" : {
+        "confidence" : {
+          "$ref" : "#/definitions/AltitudeConfidence"
+        },
+        "value" : {
+          "$ref" : "#/definitions/AltitudeValue"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Altitude",
+      "description" : "ASN.1 SEQUENCE Type"
+    },
+    "AltitudeConfidence" : {
+      "type" : "string",
+      "enum" : [ "alt-000-01", "alt-000-02", "alt-000-05", "alt-000-10", "alt-000-20", "alt-000-50", "alt-001-00", "alt-002-00", "alt-005-00", "alt-010-00", "alt-020-00", "alt-050-00", "alt-100-00", "alt-200-00", "outOfRange", "unavailable" ],
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.AltitudeConfidence",
+      "description" : "ASN.1 ENUMERATED Type"
+    },
+    "AltitudeValue" : {
+      "type" : "integer",
+      "minimum" : -100000,
+      "maximum" : 800001,
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.AltitudeValue",
+      "description" : "ASN.1 INTEGER Type"
+    },
+    "Position3D_addGrpC" : {
+      "type" : "object",
+      "properties" : {
+        "altitude" : {
+          "$ref" : "#/definitions/Altitude"
+        }
+      },
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpC",
+      "description" : "ASN.1 SEQUENCE Type"
     }
   }
 }
