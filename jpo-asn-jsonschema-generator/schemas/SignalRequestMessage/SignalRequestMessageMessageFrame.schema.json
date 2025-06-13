@@ -1,0 +1,515 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestMessageMessageFrame",
+  "description" : "ASN.1 SEQUENCE Type",
+  "properties" : {
+    "SignalRequestMessage" : {
+      "type" : "object",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestMessage",
+      "description" : "ASN.1 SEQUENCE Type",
+      "properties" : {
+        "timeStamp" : {
+          "type" : "integer",
+          "minimum" : 0,
+          "maximum" : 527040
+        },
+        "second" : {
+          "type" : "integer",
+          "minimum" : 0,
+          "maximum" : 65535
+        },
+        "sequenceNumber" : {
+          "type" : "integer",
+          "minimum" : 0,
+          "maximum" : 127
+        },
+        "requests" : {
+          "type" : "array",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestList",
+          "description" : "ASN.1 SEQUENCE OF Type",
+          "items" : {
+            "type" : "object",
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestPackage",
+            "description" : "ASN.1 SEQUENCE Type",
+            "properties" : {
+              "request" : {
+                "type" : "object",
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequest",
+                "description" : "ASN.1 SEQUENCE Type",
+                "properties" : {
+                  "id" : {
+                    "type" : "object",
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionReferenceID",
+                    "description" : "ASN.1 SEQUENCE Type",
+                    "properties" : {
+                      "region" : {
+                        "type" : "integer",
+                        "minimum" : 0,
+                        "maximum" : 65535
+                      },
+                      "id" : {
+                        "type" : "integer",
+                        "minimum" : 0,
+                        "maximum" : 65535
+                      }
+                    },
+                    "required" : [ "id" ]
+                  },
+                  "requestID" : {
+                    "type" : "integer",
+                    "minimum" : 0,
+                    "maximum" : 255
+                  },
+                  "requestType" : {
+                    "type" : "string",
+                    "enum" : [ "priorityRequestTypeReserved", "priorityRequest", "priorityRequestUpdate", "priorityCancellation" ]
+                  },
+                  "inBoundLane" : {
+                    "type" : "object",
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionAccessPoint",
+                    "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+                    "oneOf" : [ {
+                      "type" : "object",
+                      "properties" : {
+                        "lane" : {
+                          "type" : "integer",
+                          "minimum" : 0,
+                          "maximum" : 255
+                        }
+                      },
+                      "required" : [ "lane" ]
+                    }, {
+                      "type" : "object",
+                      "properties" : {
+                        "approach" : {
+                          "type" : "integer",
+                          "minimum" : 0,
+                          "maximum" : 15
+                        }
+                      },
+                      "required" : [ "approach" ]
+                    }, {
+                      "type" : "object",
+                      "properties" : {
+                        "connection" : {
+                          "type" : "integer",
+                          "minimum" : 0,
+                          "maximum" : 255
+                        }
+                      },
+                      "required" : [ "connection" ]
+                    } ]
+                  },
+                  "outBoundLane" : {
+                    "type" : "object",
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionAccessPoint",
+                    "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+                    "oneOf" : [ {
+                      "type" : "object",
+                      "properties" : {
+                        "lane" : {
+                          "type" : "integer",
+                          "minimum" : 0,
+                          "maximum" : 255
+                        }
+                      },
+                      "required" : [ "lane" ]
+                    }, {
+                      "type" : "object",
+                      "properties" : {
+                        "approach" : {
+                          "type" : "integer",
+                          "minimum" : 0,
+                          "maximum" : 15
+                        }
+                      },
+                      "required" : [ "approach" ]
+                    }, {
+                      "type" : "object",
+                      "properties" : {
+                        "connection" : {
+                          "type" : "integer",
+                          "minimum" : 0,
+                          "maximum" : 255
+                        }
+                      },
+                      "required" : [ "connection" ]
+                    } ]
+                  },
+                  "regional" : {
+                    "type" : "array",
+                    "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequest$SequenceOfRegional",
+                    "description" : "ASN.1 SEQUENCE OF Type",
+                    "items" : {
+                      "type" : "object",
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SignalRequest",
+                      "description" : "ASN.1 SEQUENCE Type",
+                      "properties" : { }
+                    },
+                    "minItems" : 1,
+                    "maxItems" : 4
+                  }
+                },
+                "required" : [ "id", "requestID", "requestType", "inBoundLane" ]
+              },
+              "minute" : {
+                "type" : "integer",
+                "minimum" : 0,
+                "maximum" : 527040
+              },
+              "second" : {
+                "type" : "integer",
+                "minimum" : 0,
+                "maximum" : 65535
+              },
+              "duration" : {
+                "type" : "integer",
+                "minimum" : 0,
+                "maximum" : 65535
+              },
+              "regional" : {
+                "type" : "array",
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestPackage$SequenceOfRegional",
+                "description" : "ASN.1 SEQUENCE OF Type",
+                "items" : {
+                  "type" : "object",
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SignalRequestPackage",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "properties" : { }
+                },
+                "minItems" : 1,
+                "maxItems" : 4
+              }
+            },
+            "required" : [ "request" ]
+          },
+          "minItems" : 1,
+          "maxItems" : 32
+        },
+        "requestor" : {
+          "type" : "object",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.RequestorDescription",
+          "description" : "ASN.1 SEQUENCE Type",
+          "properties" : {
+            "id" : {
+              "type" : "object",
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleID",
+              "description" : "ASN.1 CHOICE Type - represents a union of possible types",
+              "oneOf" : [ {
+                "type" : "object",
+                "properties" : {
+                  "entityID" : {
+                    "type" : "string",
+                    "pattern" : "^[0-9A-Fa-f]{8,8}$",
+                    "description" : "OCTET STRING - hex encoded, min 4 bytes, max 4 bytes"
+                  }
+                },
+                "required" : [ "entityID" ]
+              }, {
+                "type" : "object",
+                "properties" : {
+                  "stationID" : {
+                    "type" : "integer",
+                    "minimum" : 0,
+                    "maximum" : 4294967295
+                  }
+                },
+                "required" : [ "stationID" ]
+              } ]
+            },
+            "type" : {
+              "type" : "object",
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RequestorType",
+              "description" : "ASN.1 SEQUENCE Type",
+              "properties" : {
+                "role" : {
+                  "type" : "string",
+                  "enum" : [ "basicVehicle", "publicTransport", "specialTransport", "dangerousGoods", "roadWork", "roadRescue", "emergency", "safetyCar", "none-unknown", "truck", "motorcycle", "roadSideSource", "police", "fire", "ambulance", "dot", "transit", "slowMoving", "stopNgo", "cyclist", "pedestrian", "nonMotorized", "military" ]
+                },
+                "subrole" : {
+                  "type" : "string",
+                  "enum" : [ "requestSubRoleUnKnown", "requestSubRole1", "requestSubRole2", "requestSubRole3", "requestSubRole4", "requestSubRole5", "requestSubRole6", "requestSubRole7", "requestSubRole8", "requestSubRole9", "requestSubRole10", "requestSubRole11", "requestSubRole12", "requestSubRole13", "requestSubRole14", "requestSubRoleReserved" ]
+                },
+                "request" : {
+                  "type" : "string",
+                  "enum" : [ "requestImportanceLevelUnKnown", "requestImportanceLevel1", "requestImportanceLevel2", "requestImportanceLevel3", "requestImportanceLevel4", "requestImportanceLevel5", "requestImportanceLevel6", "requestImportanceLevel7", "requestImportanceLevel8", "requestImportanceLevel9", "requestImportanceLevel10", "requestImportanceLevel11", "requestImportanceLevel12", "requestImportanceLevel13", "requestImportanceLevel14", "requestImportanceReserved" ]
+                },
+                "iso3883" : {
+                  "type" : "integer",
+                  "minimum" : 0,
+                  "maximum" : 100
+                },
+                "hpmsType" : {
+                  "type" : "string",
+                  "enum" : [ "none", "unknown", "special", "moto", "car", "carOther", "bus", "axleCnt2", "axleCnt3", "axleCnt4", "axleCnt4Trailer", "axleCnt5Trailer", "axleCnt6Trailer", "axleCnt5MultiTrailer", "axleCnt6MultiTrailer", "axleCnt7MultiTrailer" ]
+                },
+                "regional" : {
+                  "type" : "object",
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RequestorType",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "properties" : { }
+                }
+              },
+              "required" : [ "role" ]
+            },
+            "position" : {
+              "type" : "object",
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.RequestorPositionVector",
+              "description" : "ASN.1 SEQUENCE Type",
+              "properties" : {
+                "position" : {
+                  "type" : "object",
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "properties" : {
+                    "lat" : {
+                      "type" : "integer",
+                      "minimum" : -900000000,
+                      "maximum" : 900000001
+                    },
+                    "long" : {
+                      "type" : "integer",
+                      "minimum" : -1799999999,
+                      "maximum" : 1800000001
+                    },
+                    "elevation" : {
+                      "type" : "integer",
+                      "minimum" : -4096,
+                      "maximum" : 61439
+                    },
+                    "regional" : {
+                      "type" : "array",
+                      "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+                      "description" : "ASN.1 SEQUENCE OF Type",
+                      "items" : {
+                        "type" : "object",
+                        "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+                        "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
+                        "oneOf" : [ {
+                          "type" : "object",
+                          "properties" : {
+                            "regionId" : {
+                              "type" : "integer",
+                              "const" : 2
+                            },
+                            "regExtValue" : {
+                              "type" : "object",
+                              "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpBReg_Position3D",
+                              "description" : "ASN.1 SEQUENCE Type",
+                              "properties" : {
+                                "Position3D_addGrpB" : {
+                                  "type" : "object",
+                                  "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpB",
+                                  "description" : "ASN.1 SEQUENCE Type",
+                                  "properties" : {
+                                    "latitude" : {
+                                      "type" : "object",
+                                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LatitudeDMS2",
+                                      "description" : "ASN.1 SEQUENCE Type",
+                                      "properties" : {
+                                        "d" : {
+                                          "type" : "integer",
+                                          "minimum" : -90,
+                                          "maximum" : 90
+                                        },
+                                        "m" : {
+                                          "type" : "integer",
+                                          "minimum" : 0,
+                                          "maximum" : 59
+                                        },
+                                        "s" : {
+                                          "type" : "integer",
+                                          "minimum" : 0,
+                                          "maximum" : 5999
+                                        }
+                                      },
+                                      "required" : [ "d", "m", "s" ]
+                                    },
+                                    "longitude" : {
+                                      "type" : "object",
+                                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LongitudeDMS2",
+                                      "description" : "ASN.1 SEQUENCE Type",
+                                      "properties" : {
+                                        "d" : {
+                                          "type" : "integer",
+                                          "minimum" : -180,
+                                          "maximum" : 180
+                                        },
+                                        "m" : {
+                                          "type" : "integer",
+                                          "minimum" : 0,
+                                          "maximum" : 59
+                                        },
+                                        "s" : {
+                                          "type" : "integer",
+                                          "minimum" : 0,
+                                          "maximum" : 5999
+                                        }
+                                      },
+                                      "required" : [ "d", "m", "s" ]
+                                    },
+                                    "elevation" : {
+                                      "type" : "integer",
+                                      "minimum" : -32768,
+                                      "maximum" : 32767
+                                    }
+                                  },
+                                  "required" : [ "latitude", "longitude", "elevation" ]
+                                }
+                              },
+                              "required" : [ "Position3D_addGrpB" ]
+                            }
+                          },
+                          "required" : [ "regionId", "regExtValue" ]
+                        }, {
+                          "type" : "object",
+                          "properties" : {
+                            "regionId" : {
+                              "type" : "integer",
+                              "const" : 3
+                            },
+                            "regExtValue" : {
+                              "type" : "object",
+                              "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpCReg_Position3D",
+                              "description" : "ASN.1 SEQUENCE Type",
+                              "properties" : {
+                                "Position3D_addGrpC" : {
+                                  "type" : "object",
+                                  "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpC",
+                                  "description" : "ASN.1 SEQUENCE Type",
+                                  "properties" : {
+                                    "altitude" : {
+                                      "type" : "object",
+                                      "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Altitude",
+                                      "description" : "ASN.1 SEQUENCE Type",
+                                      "properties" : {
+                                        "value" : {
+                                          "type" : "integer",
+                                          "minimum" : -100000,
+                                          "maximum" : 800001
+                                        },
+                                        "confidence" : {
+                                          "type" : "string",
+                                          "enum" : [ "alt-000-01", "alt-000-02", "alt-000-05", "alt-000-10", "alt-000-20", "alt-000-50", "alt-001-00", "alt-002-00", "alt-005-00", "alt-010-00", "alt-020-00", "alt-050-00", "alt-100-00", "alt-200-00", "outOfRange", "unavailable" ]
+                                        }
+                                      },
+                                      "required" : [ "value", "confidence" ]
+                                    }
+                                  },
+                                  "required" : [ "altitude" ]
+                                }
+                              },
+                              "required" : [ "Position3D_addGrpC" ]
+                            }
+                          },
+                          "required" : [ "regionId", "regExtValue" ]
+                        } ]
+                      },
+                      "minItems" : 1,
+                      "maxItems" : 4
+                    }
+                  },
+                  "required" : [ "lat", "long" ]
+                },
+                "heading" : {
+                  "type" : "integer",
+                  "minimum" : 0,
+                  "maximum" : 28800
+                },
+                "speed" : {
+                  "type" : "object",
+                  "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TransmissionAndSpeed",
+                  "description" : "ASN.1 SEQUENCE Type",
+                  "properties" : {
+                    "transmisson" : {
+                      "type" : "string",
+                      "enum" : [ "neutral", "park", "forwardGears", "reverseGears", "reserved1", "reserved2", "reserved3", "unavailable" ]
+                    },
+                    "speed" : {
+                      "type" : "integer",
+                      "minimum" : 0,
+                      "maximum" : 8191
+                    }
+                  },
+                  "required" : [ "transmisson", "speed" ]
+                }
+              },
+              "required" : [ "position" ]
+            },
+            "name" : {
+              "type" : "string",
+              "minLength" : 1,
+              "maxLength" : 63
+            },
+            "routeName" : {
+              "type" : "string",
+              "minLength" : 1,
+              "maxLength" : 63
+            },
+            "transitStatus" : {
+              "anyOf" : [ {
+                "type" : "string",
+                "pattern" : "^[0-9a-fA-F]{2}$"
+              }, {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string",
+                    "pattern" : "^[0-9a-fA-F]{2}$"
+                  },
+                  "length" : {
+                    "type" : "integer",
+                    "minimum" : 8,
+                    "maximum" : 8
+                  }
+                },
+                "required" : [ "value", "length" ]
+              } ],
+              "description" : "BIT STRING - hex encoded, 8 bits"
+            },
+            "transitOccupancy" : {
+              "type" : "string",
+              "enum" : [ "occupancyUnknown", "occupancyEmpty", "occupancyVeryLow", "occupancyLow", "occupancyMed", "occupancyHigh", "occupancyNearlyFull", "occupancyFull" ]
+            },
+            "transitSchedule" : {
+              "type" : "integer",
+              "minimum" : -122,
+              "maximum" : 121
+            },
+            "regional" : {
+              "type" : "array",
+              "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.RequestorDescription$SequenceOfRegional",
+              "description" : "ASN.1 SEQUENCE OF Type",
+              "items" : {
+                "type" : "object",
+                "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RequestorDescription",
+                "description" : "ASN.1 SEQUENCE Type",
+                "properties" : { }
+              },
+              "minItems" : 1,
+              "maxItems" : 4
+            }
+          },
+          "required" : [ "id" ]
+        },
+        "regional" : {
+          "type" : "array",
+          "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalRequestMessage.SignalRequestMessage$SequenceOfRegional",
+          "description" : "ASN.1 SEQUENCE OF Type",
+          "items" : {
+            "type" : "object",
+            "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SignalRequestMessage",
+            "description" : "ASN.1 SEQUENCE Type",
+            "properties" : { }
+          },
+          "minItems" : 1,
+          "maxItems" : 4
+        }
+      },
+      "required" : [ "second", "requestor" ]
+    }
+  },
+  "required" : [ "SignalRequestMessage" ],
+  "definitions" : { }
+}

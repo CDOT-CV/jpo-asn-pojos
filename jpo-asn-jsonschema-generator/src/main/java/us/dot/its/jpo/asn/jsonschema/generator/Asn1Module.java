@@ -194,6 +194,8 @@ public class Asn1Module implements Module {
         JsonSchemaGenerator gen = new JsonSchemaGenerator(valueClass);
         String schemaJson = gen.generate();
         ObjectNode valueSchema = (ObjectNode) objectMapper.readTree(schemaJson);
+        // Remove $schema field from sub-schemas
+        valueSchema.remove("$schema");
         
         // Create a parent field for the value class
         String parentFieldName = valueClass.getSimpleName();

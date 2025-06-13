@@ -236,7 +236,6 @@
                                 "description" : "ASN.1 SEQUENCE Type",
                                 "properties" : {
                                   "MovementEvent_addGrpB" : {
-                                    "$schema" : "http://json-schema.org/draft-07/schema#",
                                     "type" : "object",
                                     "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.MovementEvent_addGrpB",
                                     "description" : "ASN.1 SEQUENCE Type",
@@ -341,7 +340,6 @@
                                 "description" : "ASN.1 SEQUENCE Type",
                                 "properties" : {
                                   "ConnectionManeuverAssist_addGrpC" : {
-                                    "$schema" : "http://json-schema.org/draft-07/schema#",
                                     "type" : "object",
                                     "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.ConnectionManeuverAssist_addGrpC",
                                     "description" : "ASN.1 SEQUENCE Type",
@@ -654,7 +652,6 @@
                           "description" : "ASN.1 SEQUENCE Type",
                           "properties" : {
                             "ConnectionManeuverAssist_addGrpC" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.ConnectionManeuverAssist_addGrpC",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -918,7 +915,6 @@
                     "description" : "ASN.1 SEQUENCE Type",
                     "properties" : {
                       "IntersectionState_addGrpC" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "object",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.IntersectionState_addGrpC",
                         "description" : "ASN.1 SEQUENCE Type",

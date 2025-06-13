@@ -101,7 +101,6 @@
                         "description" : "ASN.1 SEQUENCE Type",
                         "properties" : {
                           "Position3D_addGrpB" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpB",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -178,7 +177,6 @@
                         "description" : "ASN.1 SEQUENCE Type",
                         "properties" : {
                           "Position3D_addGrpC" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpC",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -924,7 +922,6 @@
                                                   "description" : "ASN.1 SEQUENCE Type",
                                                   "properties" : {
                                                     "LaneDataAttribute_addGrpB" : {
-                                                      "$schema" : "http://json-schema.org/draft-07/schema#",
                                                       "type" : "object",
                                                       "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LaneDataAttribute_addGrpB",
                                                       "description" : "ASN.1 SEQUENCE Type",
@@ -1332,7 +1329,6 @@
                         "description" : "ASN.1 SEQUENCE Type",
                         "properties" : {
                           "Position3D_addGrpB" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpB",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -1409,7 +1405,6 @@
                         "description" : "ASN.1 SEQUENCE Type",
                         "properties" : {
                           "Position3D_addGrpC" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpC",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -2155,7 +2150,6 @@
                                                   "description" : "ASN.1 SEQUENCE Type",
                                                   "properties" : {
                                                     "LaneDataAttribute_addGrpB" : {
-                                                      "$schema" : "http://json-schema.org/draft-07/schema#",
                                                       "type" : "object",
                                                       "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LaneDataAttribute_addGrpB",
                                                       "description" : "ASN.1 SEQUENCE Type",
@@ -2524,7 +2518,6 @@
                             "description" : "ASN.1 SEQUENCE Type",
                             "properties" : {
                               "RestrictionUserType_addGrpC" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.RestrictionUserType_addGrpC",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -2578,7 +2571,6 @@
               "description" : "ASN.1 SEQUENCE Type",
               "properties" : {
                 "MapData_addGrpC" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.MapData_addGrpC",
                   "description" : "ASN.1 SEQUENCE Type",

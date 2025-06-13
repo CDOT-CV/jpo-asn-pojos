@@ -97,7 +97,7 @@ public class JsonSchemaGenerator {
         }
       }
     } catch (PathNotFoundException e) {
-      log.debug("No definitions for class: {}", clazz.getName());
+      // Do nothing
     }
     
     var writer = mapper.writerWithDefaultPrettyPrinter();

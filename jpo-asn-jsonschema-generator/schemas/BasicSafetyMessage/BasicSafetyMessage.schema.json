@@ -200,7 +200,6 @@
               "description" : "ASN.1 SEQUENCE Type",
               "properties" : {
                 "VehicleSafetyExtensions" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSafetyExtensions",
                   "description" : "ASN.1 SEQUENCE Type",
@@ -529,7 +528,6 @@
               "description" : "ASN.1 SEQUENCE Type",
               "properties" : {
                 "SpecialVehicleExtensions" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SpecialVehicleExtensions",
                   "description" : "ASN.1 SEQUENCE Type",
@@ -902,7 +900,6 @@
               "description" : "ASN.1 SEQUENCE Type",
               "properties" : {
                 "SupplementalVehicleExtensions" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SupplementalVehicleExtensions",
                   "description" : "ASN.1 SEQUENCE Type",
