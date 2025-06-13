@@ -20,6 +20,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 import us.dot.its.jpo.asn.runtime.types.Asn1CharacterString;
@@ -132,10 +134,131 @@ public class Asn1Module implements Module {
 
     if (resolvedType.isInstanceOf(Asn1Choice.class)) {
       return provideChoiceDefinition(resolvedType, context);
+    } else if (resolvedType.isInstanceOf(Asn1Sequence.class)) {
+      return provideSequenceDefinition(resolvedType, context);
+    } else if (resolvedType.isInstanceOf(Asn1SequenceOf.class)) {
+      return provideSequenceOfDefinition(resolvedType, context);
     }
 
     // Use default for anything else
     return null;
+  }
+
+  private CustomDefinition provideSequenceDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    node.put("type", "object");
+    node.put("title", resolvedType.getBriefDescription());
+    node.put("description", "ASN.1 SEQUENCE Type");
+
+    // Get the class and its fields
+    Class<?> sequenceClass = resolvedType.getErasedType();
+    Field[] fields = sequenceClass.getDeclaredFields();
+
+    // Create properties object
+    ObjectNode properties = node.putObject("properties");
+
+    // Process each field
+    List<String> requiredFields = new ArrayList<>();
+    for (Field field : fields) {
+      Asn1Property annotation = field.getAnnotation(Asn1Property.class);
+      if (annotation != null) {
+        // Get property name from annotation or field name
+        String propertyName = annotation.name().isEmpty() ? field.getName() : annotation.name();
+        
+        // Add to properties
+        ObjectNode property = properties.putObject(propertyName);
+        
+        // Get the field type
+        ResolvedType fieldType = context.getTypeContext().resolve(field.getGenericType());
+        
+        // Generate schema for the field type
+        ObjectNode fieldSchema = generateRecursiveSchema(fieldType, context);
+        property.setAll(fieldSchema);
+
+        // Add to required fields if not optional
+        if (!annotation.optional()) {
+          requiredFields.add(propertyName);
+        }
+      }
+    }
+
+    // If this is a value type from a parameterized type and has no fields,
+    // try to get the schema from the generic type parameter
+    if (fields.length == 0 && sequenceClass.getGenericSuperclass() != null) {
+      try {
+        // Get the actual type argument from the generic superclass
+        ParameterizedType paramType = (ParameterizedType) sequenceClass.getGenericSuperclass();
+        Class<?> valueClass = (Class<?>) paramType.getActualTypeArguments()[0];
+        
+        // Generate schema for the value class
+        JsonSchemaGenerator gen = new JsonSchemaGenerator(valueClass);
+        String schemaJson = gen.generate();
+        ObjectNode valueSchema = (ObjectNode) objectMapper.readTree(schemaJson);
+        
+        // Create a parent field for the value class
+        String parentFieldName = valueClass.getSimpleName();
+        ObjectNode parentField = properties.putObject(parentFieldName);
+        
+        // Update the schema with the value type's properties
+        if (valueSchema.has("properties")) {
+          parentField.setAll(valueSchema);
+        }
+        
+        // Add required fields from the value type
+        if (valueSchema.has("required")) {
+          ArrayNode valueRequired = (ArrayNode) valueSchema.get("required");
+          ArrayNode required = node.putArray("required");
+          required.add(parentFieldName);
+        }
+      } catch (Exception e) {
+        // If generation fails, keep the empty schema
+      }
+    }
+
+    // Add required fields array if there are any
+    if (!requiredFields.isEmpty()) {
+      ArrayNode required = node.putArray("required");
+      requiredFields.forEach(required::add);
+    }
+
+    return new CustomDefinition(node);
+  }
+
+  private CustomDefinition provideSequenceOfDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
+    ObjectNode node = context.getGeneratorConfig().createObjectNode();
+    node.put("type", "array");
+    node.put("title", resolvedType.getBriefDescription());
+    node.put("description", "ASN.1 SEQUENCE OF Type");
+
+    // Get the class and its type parameters
+    Class<?> sequenceOfClass = resolvedType.getErasedType();
+    try {
+      // Get the item type from the generic superclass
+      ParameterizedType paramType = (ParameterizedType) sequenceOfClass.getGenericSuperclass();
+      Class<?> itemClass = (Class<?>) paramType.getActualTypeArguments()[0];
+      
+      // Generate schema for the item type
+      ObjectNode itemsSchema = generateRecursiveSchema(context.getTypeContext().resolve(itemClass), context);
+      node.set("items", itemsSchema);
+
+      // Get size constraints from the class
+      Asn1SequenceOf<?> example = (Asn1SequenceOf<?>) sequenceOfClass.getDeclaredConstructor().newInstance();
+      long minSize = example.getSizeLowerBound();
+      long maxSize = example.getSizeUpperBound();
+
+      // Add size constraints
+      if (minSize > 0) {
+        node.put("minItems", minSize);
+      }
+      if (maxSize != -1) {
+        node.put("maxItems", maxSize);
+      }
+    } catch (Exception e) {
+      // If we can't get the constraints, just use the basic array type
+      node.set("items", context.getGeneratorConfig().createObjectNode().put("type", "object"));
+    }
+
+    return new CustomDefinition(node);
   }
 
   // Used for message types that extend Asn1Null (e.g. RoadGeometryAndAttributes)
@@ -155,75 +278,49 @@ public class Asn1Module implements Module {
     
     ObjectNode node = context.getGeneratorConfig().createObjectNode();
     node.put("type", "object");
+    node.put("title", resolvedType.getBriefDescription());
+    node.put("description", "ASN.1 SEQUENCE Type with Parameterized Values");
 
-    // Add properties object
-    ObjectNode properties = node.putObject("properties");
+    // Create oneOf array at the top level
+    ArrayNode oneOf = node.putArray("oneOf");
 
-    // Add the ID property
-    ObjectNode idProp = properties.putObject(typeAnnot.idProperty());
-    if (typeAnnot.idType() == Asn1ParameterizedTypes.IdType.INTEGER) {
-      idProp.put("type", "integer");
-      // Add enum of valid integer IDs
-      ArrayNode enumValues = idProp.putArray("enum");
-      for (Asn1ParameterizedTypes.Type type : typeAnnot.value()) {
-        enumValues.add(type.intId());
-      }
-    } else {
-      idProp.put("type", "string");
-      // Add enum of valid string IDs
-      ArrayNode enumValues = idProp.putArray("enum");
-      for (Asn1ParameterizedTypes.Type type : typeAnnot.value()) {
-        enumValues.add(type.stringId());
-      }
-    }
-
-    // Add the value property
-    ObjectNode valueProp = properties.putObject(typeAnnot.valueProperty());
-    valueProp.put("type", "object");
-
-    // Generate schema for each possible value type
-    ArrayNode oneOf = valueProp.putArray("anyOf");
+    // For each possible type, create a complete object schema
     for (Asn1ParameterizedTypes.Type type : typeAnnot.value()) {
+      ObjectNode typeNode = context.getGeneratorConfig().createObjectNode()
+          .put("type", "object");
+
+      // Add properties object
+      ObjectNode properties = typeNode.putObject("properties");
+
+      // Add the ID property
+      ObjectNode idProp = properties.putObject(typeAnnot.idProperty());
+      if (typeAnnot.idType() == Asn1ParameterizedTypes.IdType.INTEGER) {
+        idProp.put("type", "integer");
+        ArrayNode enumArray = idProp.putArray("enum");
+        enumArray.add(type.intId());
+      } else {
+        idProp.put("type", "string");
+        idProp.put("enum", type.stringId());
+      }
+
+      // Add the value property
+      ObjectNode valueProp = properties.putObject(typeAnnot.valueProperty());
       Class<?> valueClass = type.value();
       ResolvedType valueType = context.getTypeContext().resolve(valueClass);
+      
+      // Generate schema for the value type
       ObjectNode valueSchema = generateRecursiveSchema(valueType, context);
-      oneOf.add(valueSchema);
-    }
+      valueProp.setAll(valueSchema);
 
-    // If this is also a sequence type, add sequence-specific properties
-    if (resolvedType.isInstanceOf(Asn1Sequence.class)) {
-      // Add title and description
-      node.put("title", resolvedType.getBriefDescription());
-      node.put("description", "ASN.1 SEQUENCE Type with Parameterized Values");
-      
-      // Get the class
-      Class<?> clazz = resolvedType.getErasedType();
-      
-      // Get required properties
-      List<String> required = getRequiredProperties(clazz);
-      if (!required.isEmpty()) {
-        ArrayNode requiredNode = node.putArray("required");
-        // Add both sequence required properties and parameterized type required properties
-        required.forEach(requiredNode::add);
-        requiredNode.add(typeAnnot.idProperty());
-        requiredNode.add(typeAnnot.valueProperty());
-      } else {
-        // If no sequence properties are required, still add parameterized type required properties
-        ArrayNode requiredNode = node.putArray("required");
-        requiredNode.add(typeAnnot.idProperty());
-        requiredNode.add(typeAnnot.valueProperty());
-      }
-      
-      // Let schema generation handle additional sequence properties
-      return new CustomDefinition(node, true);
-    } else {
-      // For non-sequence types, just add parameterized type required properties
-      ArrayNode required = node.putArray("required");
+      // Add required properties
+      ArrayNode required = typeNode.putArray("required");
       required.add(typeAnnot.idProperty());
       required.add(typeAnnot.valueProperty());
-      
-      return new CustomDefinition(node);
+
+      oneOf.add(typeNode);
     }
+
+    return new CustomDefinition(node);
   }
 
   private ObjectNode generateRecursiveSchema(ResolvedType type, SchemaGenerationContext context) {
