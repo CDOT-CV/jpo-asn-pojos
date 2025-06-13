@@ -19,13 +19,11 @@
       "maximum" : 527040
     },
     "anchorPoint" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "object",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.FullPositionVector",
       "description" : "ASN.1 SEQUENCE Type",
       "properties" : {
         "utcTime" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
           "description" : "ASN.1 SEQUENCE Type",
@@ -88,7 +86,6 @@
           "maximum" : 28800
         },
         "speed" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TransmissionAndSpeed",
           "description" : "ASN.1 SEQUENCE Type",
@@ -106,7 +103,6 @@
           "required" : [ "transmisson", "speed" ]
         },
         "posAccuracy" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
           "description" : "ASN.1 SEQUENCE Type",
@@ -134,7 +130,6 @@
           "enum" : [ "unavailable", "time-100-000", "time-050-000", "time-020-000", "time-010-000", "time-002-000", "time-001-000", "time-000-500", "time-000-200", "time-000-100", "time-000-050", "time-000-020", "time-000-010", "time-000-005", "time-000-002", "time-000-001", "time-000-000-5", "time-000-000-2", "time-000-000-1", "time-000-000-05", "time-000-000-02", "time-000-000-01", "time-000-000-005", "time-000-000-002", "time-000-000-001", "time-000-000-000-5", "time-000-000-000-2", "time-000-000-000-1", "time-000-000-000-05", "time-000-000-000-02", "time-000-000-000-01", "time-000-000-000-005", "time-000-000-000-002", "time-000-000-000-001", "time-000-000-000-000-5", "time-000-000-000-000-2", "time-000-000-000-000-1", "time-000-000-000-000-05", "time-000-000-000-000-02", "time-000-000-000-000-01" ]
         },
         "posConfidence" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionConfidenceSet",
           "description" : "ASN.1 SEQUENCE Type",
@@ -151,7 +146,6 @@
           "required" : [ "pos", "elevation" ]
         },
         "speedConfidence" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SpeedandHeadingandThrottleConfidence",
           "description" : "ASN.1 SEQUENCE Type",
@@ -175,7 +169,6 @@
       "required" : [ "long", "lat" ]
     },
     "rtcmHeader" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "object",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMheader",
       "description" : "ASN.1 SEQUENCE Type",
@@ -202,7 +195,6 @@
           "description" : "BIT STRING - hex encoded, 8 bits"
         },
         "offsetSet" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AntennaOffsetSet",
           "description" : "ASN.1 SEQUENCE Type",
@@ -229,7 +221,6 @@
       "required" : [ "status", "offsetSet" ]
     },
     "msgs" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMmessageList",
       "description" : "ASN.1 SEQUENCE OF Type",
@@ -242,12 +233,10 @@
       "maxItems" : 5
     },
     "regional" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.RTCMcorrections.RTCMcorrections$SequenceOfRegional",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RTCMcorrections",
         "description" : "ASN.1 SEQUENCE Type",

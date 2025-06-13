@@ -15,12 +15,10 @@
       "maxLength" : 63
     },
     "intersections" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionStateList",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionState",
         "description" : "ASN.1 SEQUENCE Type",
@@ -31,7 +29,6 @@
             "maxLength" : 63
           },
           "id" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "object",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionReferenceID",
             "description" : "ASN.1 SEQUENCE Type",
@@ -86,7 +83,6 @@
             "maximum" : 65535
           },
           "enabledLanes" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "array",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.EnabledLaneList",
             "description" : "ASN.1 SEQUENCE OF Type",
@@ -99,12 +95,10 @@
             "maxItems" : 16
           },
           "states" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "array",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementList",
             "description" : "ASN.1 SEQUENCE OF Type",
             "items" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState",
               "description" : "ASN.1 SEQUENCE Type",
@@ -120,12 +114,10 @@
                   "maximum" : 255
                 },
                 "state-time-speed" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "array",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEventList",
                   "description" : "ASN.1 SEQUENCE OF Type",
                   "items" : {
-                    "$schema" : "http://json-schema.org/draft-07/schema#",
                     "type" : "object",
                     "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEvent",
                     "description" : "ASN.1 SEQUENCE Type",
@@ -135,7 +127,6 @@
                         "enum" : [ "unavailable", "dark", "stop-Then-Proceed", "stop-And-Remain", "pre-Movement", "permissive-Movement-Allowed", "protected-Movement-Allowed", "permissive-clearance", "protected-clearance", "caution-Conflicting-Traffic" ]
                       },
                       "timing" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "object",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.TimeChangeDetails",
                         "description" : "ASN.1 SEQUENCE Type",
@@ -174,12 +165,10 @@
                         "required" : [ "minEndTime" ]
                       },
                       "speeds" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "array",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeedList",
                         "description" : "ASN.1 SEQUENCE OF Type",
                         "items" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeed",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -208,12 +197,10 @@
                               "maximum" : 255
                             },
                             "regional" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "array",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.AdvisorySpeed$SequenceOfRegional",
                               "description" : "ASN.1 SEQUENCE OF Type",
                               "items" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_AdvisorySpeed",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -229,12 +216,10 @@
                         "maxItems" : 16
                       },
                       "regional" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "array",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementEvent$SequenceOfRegional",
                         "description" : "ASN.1 SEQUENCE OF Type",
                         "items" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementEvent",
                           "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -243,10 +228,9 @@
                             "properties" : {
                               "regionId" : {
                                 "type" : "integer",
-                                "enum" : [ 2 ]
+                                "const" : 2
                               },
                               "regExtValue" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.MovementEvent_addGrpBReg_MovementEvent",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -307,12 +291,10 @@
                   "maxItems" : 16
                 },
                 "maneuverAssistList" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "array",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList",
                   "description" : "ASN.1 SEQUENCE OF Type",
                   "items" : {
-                    "$schema" : "http://json-schema.org/draft-07/schema#",
                     "type" : "object",
                     "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist",
                     "description" : "ASN.1 SEQUENCE Type",
@@ -339,12 +321,10 @@
                         "type" : "boolean"
                       },
                       "regional" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "array",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist$SequenceOfRegional",
                         "description" : "ASN.1 SEQUENCE OF Type",
                         "items" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist",
                           "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -353,10 +333,9 @@
                             "properties" : {
                               "regionId" : {
                                 "type" : "integer",
-                                "enum" : [ 3 ]
+                                "const" : 3
                               },
                               "regExtValue" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -368,12 +347,10 @@
                                     "description" : "ASN.1 SEQUENCE Type",
                                     "properties" : {
                                       "vehicleToLanePositions" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "array",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.VehicleToLanePositionList",
                                         "description" : "ASN.1 SEQUENCE OF Type",
                                         "items" : {
-                                          "$schema" : "http://json-schema.org/draft-07/schema#",
                                           "type" : "object",
                                           "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.VehicleToLanePosition",
                                           "description" : "ASN.1 SEQUENCE Type",
@@ -394,7 +371,6 @@
                                         "maxItems" : 2147483647
                                       },
                                       "rsuDistanceFromAnchor" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.NodeOffsetPointXY",
                                         "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -402,7 +378,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-XY1" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_20b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -426,7 +401,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-XY2" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_22b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -450,7 +424,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-XY3" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_24b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -474,7 +447,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-XY4" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_26b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -498,7 +470,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-XY5" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_28b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -522,7 +493,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-XY6" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_32b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -546,7 +516,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "node-LatLon" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_LLmD_64b",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -570,7 +539,6 @@
                                           "type" : "object",
                                           "properties" : {
                                             "regional" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_NodeOffsetPointXY",
                                               "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -579,10 +547,9 @@
                                                 "properties" : {
                                                   "regionId" : {
                                                     "type" : "integer",
-                                                    "enum" : [ 2 ]
+                                                    "const" : 2
                                                   },
                                                   "regExtValue" : {
-                                                    "$schema" : "http://json-schema.org/draft-07/schema#",
                                                     "type" : "object",
                                                     "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY",
                                                     "description" : "ASN.1 SEQUENCE Type",
@@ -618,12 +585,10 @@
                   "maxItems" : 16
                 },
                 "regional" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "array",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.MovementState$SequenceOfRegional",
                   "description" : "ASN.1 SEQUENCE OF Type",
                   "items" : {
-                    "$schema" : "http://json-schema.org/draft-07/schema#",
                     "type" : "object",
                     "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MovementState",
                     "description" : "ASN.1 SEQUENCE Type",
@@ -639,12 +604,10 @@
             "maxItems" : 255
           },
           "maneuverAssistList" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "array",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ManeuverAssistList",
             "description" : "ASN.1 SEQUENCE OF Type",
             "items" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist",
               "description" : "ASN.1 SEQUENCE Type",
@@ -671,12 +634,10 @@
                   "type" : "boolean"
                 },
                 "regional" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "array",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.ConnectionManeuverAssist$SequenceOfRegional",
                   "description" : "ASN.1 SEQUENCE OF Type",
                   "items" : {
-                    "$schema" : "http://json-schema.org/draft-07/schema#",
                     "type" : "object",
                     "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_ConnectionManeuverAssist",
                     "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -685,10 +646,9 @@
                       "properties" : {
                         "regionId" : {
                           "type" : "integer",
-                          "enum" : [ 3 ]
+                          "const" : 3
                         },
                         "regExtValue" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.ConnectionManeuverAssist_addGrpCReg_ConnectionManeuverAssist",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -700,12 +660,10 @@
                               "description" : "ASN.1 SEQUENCE Type",
                               "properties" : {
                                 "vehicleToLanePositions" : {
-                                  "$schema" : "http://json-schema.org/draft-07/schema#",
                                   "type" : "array",
                                   "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.VehicleToLanePositionList",
                                   "description" : "ASN.1 SEQUENCE OF Type",
                                   "items" : {
-                                    "$schema" : "http://json-schema.org/draft-07/schema#",
                                     "type" : "object",
                                     "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.VehicleToLanePosition",
                                     "description" : "ASN.1 SEQUENCE Type",
@@ -726,7 +684,6 @@
                                   "maxItems" : 2147483647
                                 },
                                 "rsuDistanceFromAnchor" : {
-                                  "$schema" : "http://json-schema.org/draft-07/schema#",
                                   "type" : "object",
                                   "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.NodeOffsetPointXY",
                                   "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -734,7 +691,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-XY1" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_20b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -758,7 +714,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-XY2" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_22b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -782,7 +737,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-XY3" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_24b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -806,7 +760,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-XY4" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_26b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -830,7 +783,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-XY5" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_28b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -854,7 +806,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-XY6" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_32b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -878,7 +829,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "node-LatLon" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_LLmD_64b",
                                         "description" : "ASN.1 SEQUENCE Type",
@@ -902,7 +852,6 @@
                                     "type" : "object",
                                     "properties" : {
                                       "regional" : {
-                                        "$schema" : "http://json-schema.org/draft-07/schema#",
                                         "type" : "object",
                                         "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_NodeOffsetPointXY",
                                         "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -911,10 +860,9 @@
                                           "properties" : {
                                             "regionId" : {
                                               "type" : "integer",
-                                              "enum" : [ 2 ]
+                                              "const" : 2
                                             },
                                             "regExtValue" : {
-                                              "$schema" : "http://json-schema.org/draft-07/schema#",
                                               "type" : "object",
                                               "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.NodeOffsetPointXY_addGrpBReg_NodeOffsetPointXY",
                                               "description" : "ASN.1 SEQUENCE Type",
@@ -950,12 +898,10 @@
             "maxItems" : 16
           },
           "regional" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "array",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.IntersectionState$SequenceOfRegional",
             "description" : "ASN.1 SEQUENCE OF Type",
             "items" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_IntersectionState",
               "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -964,10 +910,9 @@
                 "properties" : {
                   "regionId" : {
                     "type" : "integer",
-                    "enum" : [ 3 ]
+                    "const" : 3
                   },
                   "regExtValue" : {
-                    "$schema" : "http://json-schema.org/draft-07/schema#",
                     "type" : "object",
                     "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.IntersectionState_addGrpCReg_IntersectionState",
                     "description" : "ASN.1 SEQUENCE Type",
@@ -979,12 +924,10 @@
                         "description" : "ASN.1 SEQUENCE Type",
                         "properties" : {
                           "activePrioritizations" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "array",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.PrioritizationResponseList",
                             "description" : "ASN.1 SEQUENCE OF Type",
                             "items" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.PrioritizationResponse",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -1020,7 +963,6 @@
             "maxItems" : 4
           },
           "roadAuthorityID" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "object",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RoadAuthorityID",
             "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -1049,12 +991,10 @@
       "maxItems" : 32
     },
     "regional" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SPAT.SPAT$SequenceOfRegional",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SPAT",
         "description" : "ASN.1 SEQUENCE Type",

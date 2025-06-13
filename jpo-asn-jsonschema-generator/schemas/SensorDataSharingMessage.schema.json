@@ -19,7 +19,6 @@
       "enum" : [ "unknown", "rsu", "obu", "vru" ]
     },
     "sDSMTimeStamp" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "object",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
       "description" : "ASN.1 SEQUENCE Type",
@@ -62,7 +61,6 @@
       }
     },
     "refPos" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "object",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
       "description" : "ASN.1 SEQUENCE Type",
@@ -83,12 +81,10 @@
           "maximum" : 61439
         },
         "regional" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "array",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
           "description" : "ASN.1 SEQUENCE OF Type",
           "items" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "object",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
             "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -97,10 +93,9 @@
               "properties" : {
                 "regionId" : {
                   "type" : "integer",
-                  "enum" : [ 2 ]
+                  "const" : 2
                 },
                 "regExtValue" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpBReg_Position3D",
                   "description" : "ASN.1 SEQUENCE Type",
@@ -112,7 +107,6 @@
                       "description" : "ASN.1 SEQUENCE Type",
                       "properties" : {
                         "latitude" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LatitudeDMS2",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -136,7 +130,6 @@
                           "required" : [ "d", "m", "s" ]
                         },
                         "longitude" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LongitudeDMS2",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -177,10 +170,9 @@
               "properties" : {
                 "regionId" : {
                   "type" : "integer",
-                  "enum" : [ 3 ]
+                  "const" : 3
                 },
                 "regExtValue" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpCReg_Position3D",
                   "description" : "ASN.1 SEQUENCE Type",
@@ -192,7 +184,6 @@
                       "description" : "ASN.1 SEQUENCE Type",
                       "properties" : {
                         "altitude" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Altitude",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -226,7 +217,6 @@
       "required" : [ "lat", "long" ]
     },
     "refPosXYConf" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "object",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
       "description" : "ASN.1 SEQUENCE Type",
@@ -254,18 +244,15 @@
       "enum" : [ "unavailable", "elev-500-00", "elev-200-00", "elev-100-00", "elev-050-00", "elev-020-00", "elev-010-00", "elev-005-00", "elev-002-00", "elev-001-00", "elev-000-50", "elev-000-20", "elev-000-10", "elev-000-05", "elev-000-02", "elev-000-01" ]
     },
     "objects" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectList",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectData",
         "description" : "ASN.1 SEQUENCE Type",
         "properties" : {
           "detObjCommon" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "object",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectCommonData",
             "description" : "ASN.1 SEQUENCE Type",
@@ -294,7 +281,6 @@
                 "enum" : [ "unavailable", "time-100-000", "time-050-000", "time-020-000", "time-010-000", "time-002-000", "time-001-000", "time-000-500", "time-000-200", "time-000-100", "time-000-050", "time-000-020", "time-000-010", "time-000-005", "time-000-002", "time-000-001", "time-000-000-5", "time-000-000-2", "time-000-000-1", "time-000-000-05", "time-000-000-02", "time-000-000-01", "time-000-000-005", "time-000-000-002", "time-000-000-001", "time-000-000-000-5", "time-000-000-000-2", "time-000-000-000-1", "time-000-000-000-05", "time-000-000-000-02", "time-000-000-000-01", "time-000-000-000-005", "time-000-000-000-002", "time-000-000-000-001", "time-000-000-000-000-5", "time-000-000-000-000-2", "time-000-000-000-000-1", "time-000-000-000-000-05", "time-000-000-000-000-02", "time-000-000-000-000-01" ]
               },
               "pos" : {
-                "$schema" : "http://json-schema.org/draft-07/schema#",
                 "type" : "object",
                 "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.PositionOffsetXYZ",
                 "description" : "ASN.1 SEQUENCE Type",
@@ -318,7 +304,6 @@
                 "required" : [ "offsetX", "offsetY" ]
               },
               "posConfidence" : {
-                "$schema" : "http://json-schema.org/draft-07/schema#",
                 "type" : "object",
                 "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionConfidenceSet",
                 "description" : "ASN.1 SEQUENCE Type",
@@ -362,7 +347,6 @@
                 "enum" : [ "unavailable", "prec10deg", "prec05deg", "prec01deg", "prec0-1deg", "prec0-05deg", "prec0-01deg", "prec0-0125deg" ]
               },
               "accel4way" : {
-                "$schema" : "http://json-schema.org/draft-07/schema#",
                 "type" : "object",
                 "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AccelerationSet4Way",
                 "description" : "ASN.1 SEQUENCE Type",
@@ -410,7 +394,6 @@
             "required" : [ "objType", "objTypeCfd", "objectID", "measurementTime", "timeConfidence", "pos", "posConfidence", "speed", "speedConfidence", "heading", "headingConf" ]
           },
           "detObjOptData" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "object",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectOptionalData",
             "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -418,7 +401,6 @@
               "type" : "object",
               "properties" : {
                 "detVeh" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedVehicleData",
                   "description" : "ASN.1 SEQUENCE Type",
@@ -444,7 +426,6 @@
                       "description" : "BIT STRING - hex encoded, minimum 9 bits"
                     },
                     "vehAttitude" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.Attitude",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -468,7 +449,6 @@
                       "required" : [ "pitch", "roll", "yaw" ]
                     },
                     "vehAttitudeConfidence" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.AttitudeConfidence",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -489,7 +469,6 @@
                       "required" : [ "pitchConfidence", "rollConfidence", "yawConfidence" ]
                     },
                     "vehAngVel" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.AngularVelocity",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -508,7 +487,6 @@
                       "required" : [ "pitchRate", "rollRate" ]
                     },
                     "vehAngVelConfidence" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.AngularVelocityConfidence",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -524,7 +502,6 @@
                       }
                     },
                     "size" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSize",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -548,7 +525,6 @@
                       "maximum" : 127
                     },
                     "vehicleSizeConfidence" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.VehicleSizeConfidence",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -586,7 +562,6 @@
               "type" : "object",
               "properties" : {
                 "detVRU" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedVRUData",
                   "description" : "ASN.1 SEQUENCE Type",
@@ -596,7 +571,6 @@
                       "enum" : [ "unavailable", "aPEDESTRIAN", "aPEDALCYCLIST", "aPUBLICSAFETYWORKER", "anANIMAL" ]
                     },
                     "propulsion" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.PropelledInformation",
                       "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -646,13 +620,11 @@
               "type" : "object",
               "properties" : {
                 "detObst" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObstacleData",
                   "description" : "ASN.1 SEQUENCE Type",
                   "properties" : {
                     "obstSize" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.ObstacleSize",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -676,7 +648,6 @@
                       "required" : [ "width", "length" ]
                     },
                     "obstSizeConfidence" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.ObstacleSizeConfidence",
                       "description" : "ASN.1 SEQUENCE Type",

@@ -20,12 +20,10 @@
       "maximum" : 127
     },
     "status" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusList",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatus",
         "description" : "ASN.1 SEQUENCE Type",
@@ -36,7 +34,6 @@
             "maximum" : 127
           },
           "id" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "object",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionReferenceID",
             "description" : "ASN.1 SEQUENCE Type",
@@ -55,24 +52,20 @@
             "required" : [ "id" ]
           },
           "sigStatus" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "array",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusPackageList",
             "description" : "ASN.1 SEQUENCE OF Type",
             "items" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusPackage",
               "description" : "ASN.1 SEQUENCE Type",
               "properties" : {
                 "requester" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalRequesterInfo",
                   "description" : "ASN.1 SEQUENCE Type",
                   "properties" : {
                     "id" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleID",
                       "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -113,7 +106,6 @@
                       "enum" : [ "basicVehicle", "publicTransport", "specialTransport", "dangerousGoods", "roadWork", "roadRescue", "emergency", "safetyCar", "none-unknown", "truck", "motorcycle", "roadSideSource", "police", "fire", "ambulance", "dot", "transit", "slowMoving", "stopNgo", "cyclist", "pedestrian", "nonMotorized", "military" ]
                     },
                     "typeData" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RequestorType",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -140,7 +132,6 @@
                           "enum" : [ "none", "unknown", "special", "moto", "car", "carOther", "bus", "axleCnt2", "axleCnt3", "axleCnt4", "axleCnt4Trailer", "axleCnt5Trailer", "axleCnt6Trailer", "axleCnt5MultiTrailer", "axleCnt6MultiTrailer", "axleCnt7MultiTrailer" ]
                         },
                         "regional" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_RequestorType",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -153,7 +144,6 @@
                   "required" : [ "id", "request", "sequenceNumber" ]
                 },
                 "inboundOn" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionAccessPoint",
                   "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -190,7 +180,6 @@
                   } ]
                 },
                 "outboundOn" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "object",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.IntersectionAccessPoint",
                   "description" : "ASN.1 CHOICE Type - represents a union of possible types",
@@ -246,12 +235,10 @@
                   "enum" : [ "unknown", "requested", "processing", "watchOtherTraffic", "granted", "rejected", "maxPresence", "reserviceLocked" ]
                 },
                 "regional" : {
-                  "$schema" : "http://json-schema.org/draft-07/schema#",
                   "type" : "array",
                   "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusPackage$SequenceOfRegional",
                   "description" : "ASN.1 SEQUENCE OF Type",
                   "items" : {
-                    "$schema" : "http://json-schema.org/draft-07/schema#",
                     "type" : "object",
                     "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SignalStatusPackage",
                     "description" : "ASN.1 SEQUENCE Type",
@@ -267,12 +254,10 @@
             "maxItems" : 32
           },
           "regional" : {
-            "$schema" : "http://json-schema.org/draft-07/schema#",
             "type" : "array",
             "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatus$SequenceOfRegional",
             "description" : "ASN.1 SEQUENCE OF Type",
             "items" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SignalStatus",
               "description" : "ASN.1 SEQUENCE Type",
@@ -288,12 +273,10 @@
       "maxItems" : 32
     },
     "regional" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.SignalStatusMessage.SignalStatusMessage$SequenceOfRegional",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SignalStatusMessage",
         "description" : "ASN.1 SEQUENCE Type",

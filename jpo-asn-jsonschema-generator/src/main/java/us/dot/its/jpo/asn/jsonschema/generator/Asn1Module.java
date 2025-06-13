@@ -296,11 +296,10 @@ public class Asn1Module implements Module {
       ObjectNode idProp = properties.putObject(typeAnnot.idProperty());
       if (typeAnnot.idType() == Asn1ParameterizedTypes.IdType.INTEGER) {
         idProp.put("type", "integer");
-        ArrayNode enumArray = idProp.putArray("enum");
-        enumArray.add(type.intId());
+        idProp.put("const", type.intId());
       } else {
         idProp.put("type", "string");
-        idProp.put("enum", type.stringId());
+        idProp.put("const", type.stringId());
       }
 
       // Add the value property
@@ -334,7 +333,10 @@ public class Asn1Module implements Module {
         JsonSchemaGenerator gen = new JsonSchemaGenerator(type.getErasedType());
         String schemaJson = gen.generate();
         // Parse the JSON string into an ObjectNode using ObjectMapper
-        return (ObjectNode) objectMapper.readTree(schemaJson);
+        ObjectNode schema = (ObjectNode) objectMapper.readTree(schemaJson);
+        // Remove $schema field from sub-schemas
+        schema.remove("$schema");
+        return schema;
       } catch (Exception e) {
         // If generation fails, fall back to basic object type
         return context.getGeneratorConfig().createObjectNode()

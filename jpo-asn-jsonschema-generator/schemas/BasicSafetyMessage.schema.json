@@ -5,7 +5,6 @@
   "description" : "ASN.1 SEQUENCE Type",
   "properties" : {
     "coreData" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "object",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BSMcoreData",
       "description" : "ASN.1 SEQUENCE Type",
@@ -41,7 +40,6 @@
           "maximum" : 61439
         },
         "accuracy" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
           "description" : "ASN.1 SEQUENCE Type",
@@ -84,7 +82,6 @@
           "maximum" : 127
         },
         "accelSet" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AccelerationSet4Way",
           "description" : "ASN.1 SEQUENCE Type",
@@ -113,7 +110,6 @@
           "required" : [ "long", "lat", "vert", "yaw" ]
         },
         "brakes" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BrakeSystemStatus",
           "description" : "ASN.1 SEQUENCE Type",
@@ -163,7 +159,6 @@
           "required" : [ "wheelBrakes", "traction", "abs", "scs", "brakeBoost", "auxBrakes" ]
         },
         "size" : {
-          "$schema" : "http://json-schema.org/draft-07/schema#",
           "type" : "object",
           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSize",
           "description" : "ASN.1 SEQUENCE Type",
@@ -185,12 +180,10 @@
       "required" : [ "msgCnt", "id", "secMark", "lat", "long", "elev", "accuracy", "transmission", "speed", "heading", "angle", "accelSet", "brakes", "size" ]
     },
     "partII" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessage$SequenceOfPartII",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BSMpartIIExtension",
         "description" : "ASN.1 SEQUENCE Type with Parameterized Values",
@@ -199,10 +192,9 @@
           "properties" : {
             "partII-Id" : {
               "type" : "integer",
-              "enum" : [ 0 ]
+              "const" : 0
             },
             "partII-Value" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSafetyExtensionsBSMpartIIExtension",
               "description" : "ASN.1 SEQUENCE Type",
@@ -234,19 +226,16 @@
                       "description" : "BIT STRING - hex encoded, minimum 13 bits"
                     },
                     "pathHistory" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PathHistory",
                       "description" : "ASN.1 SEQUENCE Type",
                       "properties" : {
                         "initialPosition" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.FullPositionVector",
                           "description" : "ASN.1 SEQUENCE Type",
                           "properties" : {
                             "utcTime" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -309,7 +298,6 @@
                               "maximum" : 28800
                             },
                             "speed" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TransmissionAndSpeed",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -327,7 +315,6 @@
                               "required" : [ "transmisson", "speed" ]
                             },
                             "posAccuracy" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -355,7 +342,6 @@
                               "enum" : [ "unavailable", "time-100-000", "time-050-000", "time-020-000", "time-010-000", "time-002-000", "time-001-000", "time-000-500", "time-000-200", "time-000-100", "time-000-050", "time-000-020", "time-000-010", "time-000-005", "time-000-002", "time-000-001", "time-000-000-5", "time-000-000-2", "time-000-000-1", "time-000-000-05", "time-000-000-02", "time-000-000-01", "time-000-000-005", "time-000-000-002", "time-000-000-001", "time-000-000-000-5", "time-000-000-000-2", "time-000-000-000-1", "time-000-000-000-05", "time-000-000-000-02", "time-000-000-000-01", "time-000-000-000-005", "time-000-000-000-002", "time-000-000-000-001", "time-000-000-000-000-5", "time-000-000-000-000-2", "time-000-000-000-000-1", "time-000-000-000-000-05", "time-000-000-000-000-02", "time-000-000-000-000-01" ]
                             },
                             "posConfidence" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionConfidenceSet",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -372,7 +358,6 @@
                               "required" : [ "pos", "elevation" ]
                             },
                             "speedConfidence" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SpeedandHeadingandThrottleConfidence",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -417,12 +402,10 @@
                           "description" : "BIT STRING - hex encoded, 8 bits"
                         },
                         "crumbData" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PathHistoryPointList",
                           "description" : "ASN.1 SEQUENCE OF Type",
                           "items" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PathHistoryPoint",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -453,7 +436,6 @@
                                 "maximum" : 8191
                               },
                               "posAccuracy" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -491,7 +473,6 @@
                       "required" : [ "crumbData" ]
                     },
                     "pathPrediction" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PathPrediction",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -540,10 +521,9 @@
           "properties" : {
             "partII-Id" : {
               "type" : "integer",
-              "enum" : [ 1 ]
+              "const" : 1
             },
             "partII-Value" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SpecialVehicleExtensionsBSMpartIIExtension",
               "description" : "ASN.1 SEQUENCE Type",
@@ -555,7 +535,6 @@
                   "description" : "ASN.1 SEQUENCE Type",
                   "properties" : {
                     "vehicleAlerts" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.EmergencyDetails",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -578,7 +557,6 @@
                           "enum" : [ "unavailable", "singleVehicle", "multiVehicle", "reserved" ]
                         },
                         "events" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.PrivilegedEvents",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -620,7 +598,6 @@
                       "required" : [ "doNotUse", "sirenUse", "lightsUse", "multi" ]
                     },
                     "description" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.EventDescription",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -631,7 +608,6 @@
                           "maximum" : 65535
                         },
                         "description" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.EventDescription$SequenceOfDescription",
                           "description" : "ASN.1 SEQUENCE OF Type",
@@ -674,12 +650,10 @@
                           "enum" : [ "useInstantlyOnly", "useFor3meters", "useFor10meters", "useFor50meters", "useFor100meters", "useFor500meters", "useFor1000meters", "useFor5000meters", "useFor10000meters", "useFor50000meters", "useFor100000meters", "useFor500000meters", "useFor1000000meters", "useFor5000000meters", "useFor10000000meters", "forever" ]
                         },
                         "regional" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.EventDescription$SequenceOfRegional",
                           "description" : "ASN.1 SEQUENCE OF Type",
                           "items" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_EventDescription",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -692,7 +666,6 @@
                       "required" : [ "typeEvent" ]
                     },
                     "doNotUse" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.TrailerData",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -703,7 +676,6 @@
                           "maximum" : 31
                         },
                         "connection" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PivotPointDescription",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -725,12 +697,10 @@
                           "required" : [ "pivotOffset", "pivotAngle", "pivots" ]
                         },
                         "units" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.TrailerUnitDescriptionList",
                           "description" : "ASN.1 SEQUENCE OF Type",
                           "items" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.TrailerUnitDescription",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -759,7 +729,6 @@
                                 "maximum" : 255
                               },
                               "bumperHeights" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BumperHeights",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -783,7 +752,6 @@
                                 "maximum" : 127
                               },
                               "frontPivot" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PivotPointDescription",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -805,7 +773,6 @@
                                 "required" : [ "pivotOffset", "pivotAngle", "pivots" ]
                               },
                               "rearPivot" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PivotPointDescription",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -832,7 +799,6 @@
                                 "maximum" : 2047
                               },
                               "positionOffset" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "object",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_24b",
                                 "description" : "ASN.1 SEQUENCE Type",
@@ -856,12 +822,10 @@
                                 "maximum" : 63
                               },
                               "crumbData" : {
-                                "$schema" : "http://json-schema.org/draft-07/schema#",
                                 "type" : "array",
                                 "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.TrailerHistoryPointList",
                                 "description" : "ASN.1 SEQUENCE OF Type",
                                 "items" : {
-                                  "$schema" : "http://json-schema.org/draft-07/schema#",
                                   "type" : "object",
                                   "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.TrailerHistoryPoint",
                                   "description" : "ASN.1 SEQUENCE Type",
@@ -877,7 +841,6 @@
                                       "maximum" : 65535
                                     },
                                     "positionOffset" : {
-                                      "$schema" : "http://json-schema.org/draft-07/schema#",
                                       "type" : "object",
                                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Node_XY_24b",
                                       "description" : "ASN.1 SEQUENCE Type",
@@ -931,10 +894,9 @@
           "properties" : {
             "partII-Id" : {
               "type" : "integer",
-              "enum" : [ 2 ]
+              "const" : 2
             },
             "partII-Value" : {
-              "$schema" : "http://json-schema.org/draft-07/schema#",
               "type" : "object",
               "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SupplementalVehicleExtensionsBSMpartIIExtension",
               "description" : "ASN.1 SEQUENCE Type",
@@ -951,7 +913,6 @@
                       "maximum" : 255
                     },
                     "classDetails" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleClassification",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -992,12 +953,10 @@
                           "maximum" : 15
                         },
                         "regional" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleClassification$SequenceOfRegional",
                           "description" : "ASN.1 SEQUENCE OF Type",
                           "items" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_VehicleClassification",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -1009,7 +968,6 @@
                       }
                     },
                     "vehicleData" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.VehicleData",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -1020,7 +978,6 @@
                           "maximum" : 127
                         },
                         "bumpers" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BumperHeights",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -1052,7 +1009,6 @@
                           "type" : "boolean"
                         },
                         "pivotPoint" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PivotPointDescription",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -1074,7 +1030,6 @@
                           "required" : [ "pivotOffset", "pivotAngle", "pivots" ]
                         },
                         "axles" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Axles",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -1105,7 +1060,6 @@
                       }
                     },
                     "doNotUse1" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.WeatherReport",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -1142,7 +1096,6 @@
                       "required" : [ "isRaining" ]
                     },
                     "doNotUse2" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.WeatherProbe",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -1158,7 +1111,6 @@
                           "maximum" : 255
                         },
                         "rainRates" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.WiperSet",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -1187,7 +1139,6 @@
                       }
                     },
                     "doNotUse3" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.ObstacleDetection",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -1212,7 +1163,6 @@
                           "enum" : [ "on-bridges", "in-tunnels", "entering-or-leaving-tunnels", "on-ramps", "in-road-construction-area", "around-a-curve", "on-curve", "on-tracks", "in-street", "shoulder", "on-minor-roads", "in-the-opposing-lanes", "adjacent-to-roadway", "across-tracks", "on-bend", "intersection", "entire-intersection", "in-the-median", "moved-to-side-of-road", "moved-to-shoulder", "on-the-roadway", "dip", "traffic-circle", "crossover", "cross-road", "side-road", "to", "by", "through", "area-of", "under", "over", "from", "approaching", "entering-at", "exiting-at", "in-shaded-areas", "in-low-lying-areas", "in-the-downtown-area", "in-the-inner-city-area", "in-parts", "in-some-places", "in-the-ditch", "in-the-valley", "on-hill-top", "near-the-foothills", "at-high-altitudes", "near-the-lake", "near-the-shore", "nearby-basin", "over-the-crest-of-a-hill", "other-than-on-the-roadway", "near-the-beach", "near-beach-access-point", "mountain-pass", "lower-level", "upper-level", "airport", "concourse", "gate", "baggage-claim", "customs-point", "reservation-center", "station", "platform", "dock", "depot", "ev-charging-point", "information-welcome-point", "at-rest-area", "at-service-area", "at-weigh-station", "roadside-park", "picnic-areas", "rest-area", "service-stations", "toilets", "bus-stop", "park-and-ride-lot", "on-the-right", "on-the-left", "in-the-center", "in-the-opposite-direction", "cross-traffic", "northbound-traffic", "eastbound-traffic", "southbound-traffic", "westbound-traffic", "north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest" ]
                         },
                         "dateTime" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -1279,7 +1229,6 @@
                       "required" : [ "obDist", "obDirect", "dateTime" ]
                     },
                     "status" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.DisabledVehicle",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -1297,13 +1246,11 @@
                       "required" : [ "statusDetails" ]
                     },
                     "doNotUse4" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SpeedProfile",
                       "description" : "ASN.1 SEQUENCE Type",
                       "properties" : {
                         "speedReports" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SpeedProfileMeasurementList",
                           "description" : "ASN.1 SEQUENCE OF Type",
@@ -1319,13 +1266,11 @@
                       "required" : [ "speedReports" ]
                     },
                     "doNotUse5" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.RTCMPackage",
                       "description" : "ASN.1 SEQUENCE Type",
                       "properties" : {
                         "rtcmHeader" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "object",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMheader",
                           "description" : "ASN.1 SEQUENCE Type",
@@ -1352,7 +1297,6 @@
                               "description" : "BIT STRING - hex encoded, 8 bits"
                             },
                             "offsetSet" : {
-                              "$schema" : "http://json-schema.org/draft-07/schema#",
                               "type" : "object",
                               "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.AntennaOffsetSet",
                               "description" : "ASN.1 SEQUENCE Type",
@@ -1379,7 +1323,6 @@
                           "required" : [ "status", "offsetSet" ]
                         },
                         "msgs" : {
-                          "$schema" : "http://json-schema.org/draft-07/schema#",
                           "type" : "array",
                           "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.RTCMmessageList",
                           "description" : "ASN.1 SEQUENCE OF Type",
@@ -1395,12 +1338,10 @@
                       "required" : [ "msgs" ]
                     },
                     "regional" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "array",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.SupplementalVehicleExtensions$SequenceOfRegional",
                       "description" : "ASN.1 SEQUENCE OF Type",
                       "items" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "object",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_SupplementalVehicleExtensions",
                         "description" : "ASN.1 SEQUENCE Type",
@@ -1414,12 +1355,10 @@
                       "enum" : [ "motorcycles", "passengerCars", "other2axle4tireSingleUnitVehs", "buses", "twoAxle6TireSingleUnitTrucks", "threeAxleSingleUnitTrucks", "fourOrMoreAxleSingleUnitTrucks", "fourOrFewerAxleSingleTrailerTrucks", "fiveAxleSingleTrailerTrucks", "sixOrMoreAxleSingleTrailerTrucks", "fiveOrFewerAxleMultiTrailerTrucks", "sixAxleMultiTrailerTrucks", "sevenOrMoreAxleMultiTrailerTrucks" ]
                     },
                     "trailers" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "array",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TrailersJ2945Slash1B",
                       "description" : "ASN.1 SEQUENCE OF Type",
                       "items" : {
-                        "$schema" : "http://json-schema.org/draft-07/schema#",
                         "type" : "object",
                         "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.TrailerUnitDescJ2945Slash1B",
                         "description" : "ASN.1 SEQUENCE Type",
@@ -1445,7 +1384,6 @@
                             "maximum" : 64255
                           },
                           "frontPivot" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PivotPointDescription",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -1467,7 +1405,6 @@
                             "required" : [ "pivotOffset", "pivotAngle", "pivots" ]
                           },
                           "rearPivot" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.PivotPointDescription",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -1489,7 +1426,6 @@
                             "required" : [ "pivotOffset", "pivotAngle", "pivots" ]
                           },
                           "bumpers" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.BumperHeights",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -1508,7 +1444,6 @@
                             "required" : [ "front", "rear" ]
                           },
                           "axles" : {
-                            "$schema" : "http://json-schema.org/draft-07/schema#",
                             "type" : "object",
                             "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.Axles",
                             "description" : "ASN.1 SEQUENCE Type",
@@ -1538,7 +1473,6 @@
                       "maxItems" : 8
                     },
                     "schoolBus" : {
-                      "$schema" : "http://json-schema.org/draft-07/schema#",
                       "type" : "object",
                       "title" : "us.dot.its.jpo.asn.j2735.r2024.Common.SchoolBusJ2945Slash1C",
                       "description" : "ASN.1 SEQUENCE Type",
@@ -1593,12 +1527,10 @@
       "maxItems" : 8
     },
     "regional" : {
-      "$schema" : "http://json-schema.org/draft-07/schema#",
       "type" : "array",
       "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessage$SequenceOfRegional",
       "description" : "ASN.1 SEQUENCE OF Type",
       "items" : {
-        "$schema" : "http://json-schema.org/draft-07/schema#",
         "type" : "object",
         "title" : "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_BasicSafetyMessage",
         "description" : "ASN.1 SEQUENCE Type",
