@@ -3,27 +3,27 @@
 # Create output directory if it doesn't exist
 mkdir -p schemas
 
+# Check if the JAR file exists
+JAR_FILE="build/libs/schemagen-cli.jar"
+if [ ! -f "$JAR_FILE" ]; then
+    echo "Error: JAR file not found at $JAR_FILE"
+    echo "Please build the project first using: ./gradlew build"
+    exit 1
+fi
+
 # List of PDUs and their corresponding modules to generate schemas for
 # Format: "PDU_NAME:MODULE_NAME"
 PDUS=(
     "MessageFrame:MessageFrame"
     "BasicSafetyMessage:BasicSafetyMessage"
-    "BasicSafetyMessageMessageFrame:BasicSafetyMessage"
     "PersonalSafetyMessage:PersonalSafetyMessage"
-    "PersonalSafetyMessageMessageFrame:PersonalSafetyMessage"
     "SignalRequestMessage:SignalRequestMessage"
-    "SignalRequestMessageMessageFrame:SignalRequestMessage"
     "SignalStatusMessage:SignalStatusMessage"
-    "SignalStatusMessageMessageFrame:SignalStatusMessage"
     "SPAT:SPAT"
-    "SPATMessageFrame:SPAT"
     "MapData:MapData"
-    "MapDataMessageFrame:MapData"
     "SensorDataSharingMessage:SensorDataSharingMessage"
-    "SensorDataSharingMessageMessageFrame:SensorDataSharingMessage"
     "RTCMcorrections:RTCMcorrections"
     "RoadSafetyMessage:RoadSafetyMessage"
-    "RoadSafetyMessageMessageFrame:RoadSafetyMessage"
 )
 
 # Generate schema for each PDU
