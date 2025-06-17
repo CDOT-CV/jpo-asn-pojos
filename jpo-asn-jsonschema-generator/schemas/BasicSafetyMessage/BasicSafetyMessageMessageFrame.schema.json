@@ -1515,11 +1515,9 @@
                           },
                           "required" : [ "flashingAmberLights", "flashingRedLights" ]
                         }
-                      },
-                      "required" : [ "fhwaVehicleClass" ]
+                      }
                     }
-                  },
-                  "required" : [ "SupplementalVehicleExtensions" ]
+                  }
                 }
               },
               "required" : [ "partII-Id", "partII-Value" ]

@@ -58,35 +58,6 @@ public class Asn1Module implements Module {
     configPart.withCustomDefinitionProvider(this::provideCustomSchemaDefinitionForType);
   }
 
-  private List<String> getRequiredProperties(Class<?> clazz) {
-    List<String> required = new ArrayList<>();
-    
-    // Get all fields including those from superclasses
-    for (Field field : clazz.getDeclaredFields()) {
-      Asn1Property annotation = field.getAnnotation(Asn1Property.class);
-      if (annotation != null && !annotation.optional()) {
-        // Use the name from the annotation if present, otherwise use the field name
-        String propertyName = annotation.name().isEmpty() ? field.getName() : annotation.name();
-        required.add(propertyName);
-      }
-    }
-    
-    // Check superclass if it's an Asn1 type
-    Class<?> superClass = clazz.getSuperclass();
-    while (superClass != null && !superClass.equals(Object.class)) {
-      for (Field field : superClass.getDeclaredFields()) {
-        Asn1Property annotation = field.getAnnotation(Asn1Property.class);
-        if (annotation != null && !annotation.optional()) {
-          String propertyName = annotation.name().isEmpty() ? field.getName() : annotation.name();
-          required.add(propertyName);
-        }
-      }
-      superClass = superClass.getSuperclass();
-    }
-    
-    return required;
-  }
-
   private CustomPropertyDefinition provideCustomSchemaDefinitionForMember(MemberScope<?, ?> scope,
       SchemaGenerationContext context) {
     ResolvedType declaringType = scope.getDeclaringType();
@@ -176,7 +147,7 @@ public class Asn1Module implements Module {
         property.setAll(fieldSchema);
 
         // Add to required fields if not optional
-        if (!annotation.optional()) {
+        if (!annotation.optional() && !annotation.extension()) {
           requiredFields.add(propertyName);
         }
       }
