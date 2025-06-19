@@ -3,6 +3,7 @@ package us.dot.its.jpo.asn.jsonschema.generator;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +13,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.Test;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.DSRCmsgID;
 import com.networknt.schema.JsonSchemaFactory;
@@ -79,6 +81,11 @@ public class JsonSchemaGeneratorTest {
         String resourceBase = "/us/dot/its/jpo/asn/jsonschema/generator/" + pduName.substring(0, 1).toUpperCase() + pduName.substring(1);
         List<String> resources = JsonFileLoader.listAllResourcesInDirectory(resourceBase);
         for (String resource : resources) {
+            // skip message frame files
+            if (resource.contains("message_frame")) {
+                continue;
+            }
+
             String json = JsonFileLoader.loadResource(resource);
             JsonNode jsonNode = mapper.readTree(json);
             JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
@@ -86,5 +93,53 @@ public class JsonSchemaGeneratorTest {
             Set<ValidationMessage> errors = jsonSchema.validate(jsonNode);
             assertThat("Sample JSON should be valid against the generated schema: " + resource, errors, empty());
         }
+    }
+
+    @Test
+    void testBasicSafetyMessageMessageFrameSchema() throws IOException {
+        log.info("Testing BasicSafetyMessageMessageFrame schema validation");
+        
+        // Load schema from file
+        String schemaPath = "/schemas/BasicSafetyMessage/BasicSafetyMessageMessageFrame.schema.json";
+        String schema = JsonFileLoader.loadResource(schemaPath);
+        assertNotNull(schema, "Schema file should not be null");
+        
+        // Parse and validate schema
+        JsonNode schemaNode = mapper.readTree(schema);
+        
+        // Basic schema validation
+        assertThat("Schema should be draft-7", 
+            schemaNode.get("$schema").asText(),
+            equalTo("http://json-schema.org/draft-07/schema#"));
+            
+        assertThat("Schema should be of type object", 
+            schemaNode.get("type").asText(),
+            equalTo("object"));
+            
+        // Check for required BasicSafetyMessage property
+        assertThat("Schema should have BasicSafetyMessage property", 
+            schemaNode.get("properties").has("BasicSafetyMessage"),
+            is(true));
+            
+        assertThat("BasicSafetyMessage should be required", 
+            schemaNode.get("required").toString(),
+            containsString("BasicSafetyMessage"));
+        
+        // Test with sample BSM data
+        String bsmJson = JsonFileLoader.loadResource("/us/dot/its/jpo/asn/jsonschema/generator/BasicSafetyMessage/bsm_core.json");
+        JsonNode bsmNode = mapper.readTree(bsmJson);
+        
+        // Create a complete message frame JSON
+        String messageFrameJson = String.format(
+            "{\"BasicSafetyMessage\": %s}", 
+            bsmJson
+        );
+        
+        JsonNode messageFrameNode = mapper.readTree(messageFrameJson);
+        JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
+        JsonSchema jsonSchema = factory.getSchema(schemaNode);
+        Set<ValidationMessage> errors = jsonSchema.validate(messageFrameNode);
+        
+        assertThat("Message frame JSON should be valid against the schema", errors, empty());
     }
 } 

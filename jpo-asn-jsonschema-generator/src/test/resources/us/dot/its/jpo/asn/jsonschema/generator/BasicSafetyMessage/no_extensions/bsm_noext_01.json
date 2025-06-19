@@ -1,0 +1,37 @@
+{
+    "coreData": {
+        "msgCnt": 3,
+        "id": "4F435445",
+        "secMark": 8856,
+        "lat": 99968667,
+        "long": -1421192669,
+        "elev": 34877,
+        "accuracy": {
+            "semiMajor": 153,
+            "semiMinor": 195,
+            "orientation": 23303
+        },
+        "transmission": "reverseGears",
+        "speed": 5260,
+        "heading": 8278,
+        "angle": -64,
+        "accelSet": {
+            "long": 24,
+            "lat": -8,
+            "vert": 68,
+            "yaw": -22833
+        },
+        "brakes": {
+            "wheelBrakes": "20",
+            "traction": "off",
+            "abs": "off",
+            "scs": "unavailable",
+            "brakeBoost": "unavailable",
+            "auxBrakes": "on"
+        },
+        "size": {
+            "width": 343,
+            "length": 1814
+        }
+    }
+}
