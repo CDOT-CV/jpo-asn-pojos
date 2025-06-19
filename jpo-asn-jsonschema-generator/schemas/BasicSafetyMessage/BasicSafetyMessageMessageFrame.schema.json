@@ -10,7 +10,7 @@
     },
     "value" : {
       "type" : "object",
-      "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessage",
+      "title" : "us.dot.its.jpo.asn.j2735.r2024.BasicSafetyMessage.BasicSafetyMessageMessageFrameValue",
       "description" : "ASN.1 SEQUENCE Type",
       "properties" : {
         "BasicSafetyMessage" : {
