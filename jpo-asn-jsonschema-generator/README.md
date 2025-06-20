@@ -36,7 +36,7 @@ This script will generate JSON schemas for the following messages:
 - RTCMCorrections
 - RoadSafetyMessage
 
-The generated schemas will be placed in the `schemas` directory. To create specific `MessageFrame` type schemas, copy the specific schema from the [MessageFrame](./schemas/MessageFrame/MessageFrame.schema.json) schema.
+The generated schemas will be placed in the `schemas` directory. To create specific `MessageFrame` type schemas, copy the specific schema from the [MessageFrame](./schemas/MessageFrame/MessageFrame.schema.json) schema. However, only the various MessageFrame schemas have been committed to version control due to reducing redundancy.
 
 ## To do
 

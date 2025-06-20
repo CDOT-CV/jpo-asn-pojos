@@ -1,8 +1,5 @@
 package us.dot.its.jpo.asn.jsonschema.generator;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;

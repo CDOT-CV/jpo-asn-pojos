@@ -79,6 +79,10 @@ public class JsonSchemaGeneratorTest {
         String resourceBase = "/us/dot/its/jpo/asn/jsonschema/generator/" + pduName.substring(0, 1).toUpperCase() + pduName.substring(1);
         List<String> resources = JsonFileLoader.listAllResourcesInDirectory(resourceBase);
         for (String resource : resources) {
+            // Ignore message frame JSON files
+            if (resource.endsWith("mf.json")) {
+                continue;
+            }
             String json = JsonFileLoader.loadResource(resource);
             JsonNode jsonNode = mapper.readTree(json);
             JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
