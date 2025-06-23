@@ -43,6 +43,18 @@ jobs:
         name: coverage-report-test-generator
         path: jpo-asn-test-generator/build/reports/jacoco/test/html/
 
+    - name: Run Tests with Coverage (jpo-asn-jsonschema-generator)
+      working-directory: ./jpo-asn-jsonschema-generator
+      run: |
+        chmod +x gradlew
+        ./gradlew check
+      
+    - name: Upload coverage reports (jpo-asn-jsonschema-generator)
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: jpo-asn-jsonschema-generator/build/reports/jacoco/testCodeCoverageReport/html/
+
     - name: Add Coverage PR Comment (jpo-asn-j2735-2024 and jpo-asn-runtime)
       uses: madrapps/jacoco-report@v1.6.1
       if: github.event_name == 'pull_request'
