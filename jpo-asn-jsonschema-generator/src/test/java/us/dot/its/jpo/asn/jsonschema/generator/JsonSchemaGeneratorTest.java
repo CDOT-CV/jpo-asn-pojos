@@ -29,25 +29,25 @@ public class JsonSchemaGeneratorTest {
 
     private static Stream<Arguments> pduClassProvider() {
         return DSRCmsgID.names().stream()
-            .filter(name -> !name.endsWith("-D")) // Filter out deprecated messages
-            .map(name -> {
-                // keep this logic for most things but cap NMEA Corrections
-                String className = name.substring(0, 1).toUpperCase() + name.substring(1);
-                if (name.toLowerCase().equals("nmeacorrections")) {
-                    className = "NMEAcorrections";
-                } else if (name.toLowerCase().equals("rtcmcorrections")) {
-                    className = "RTCMcorrections";
-                }
-                String fullClassName = String.format("us.dot.its.jpo.asn.j2735.r2024.%s.%s", className, className);
-                try {
-                    Class<?> pduClass = Class.forName(fullClassName);
-                    return Arguments.of(name, pduClass);
-                } catch (ClassNotFoundException e) {
-                    // Skip if class not found
-                    return null;
-                }
-            })
-            .filter(arg -> arg != null);
+                .filter(name -> !name.endsWith("-D")) // Filter out deprecated messages
+                .map(name -> {
+                    // keep this logic for most things but cap NMEA Corrections
+                    String className = name.substring(0, 1).toUpperCase() + name.substring(1);
+                    if (name.toLowerCase().equals("nmeacorrections")) {
+                        className = "NMEAcorrections";
+                    } else if (name.toLowerCase().equals("rtcmcorrections")) {
+                        className = "RTCMcorrections";
+                    }
+                    String fullClassName = String.format("us.dot.its.jpo.asn.j2735.r2024.%s.%s", className, className);
+                    try {
+                        Class<?> pduClass = Class.forName(fullClassName);
+                        return Arguments.of(name, pduClass);
+                    } catch (ClassNotFoundException e) {
+                        // Skip if class not found
+                        return null;
+                    }
+                })
+                .filter(arg -> arg != null);
     }
 
     @ParameterizedTest
@@ -56,36 +56,35 @@ public class JsonSchemaGeneratorTest {
         log.info("Testing schema generation for PDU: {}", pduName);
         // Create generator for this specific class
         JsonSchemaGenerator generator = new JsonSchemaGenerator(pduClass);
-        
+
         // Generate schema
         String schema = generator.generate();
         assertNotNull(schema, "Generated schema should not be null");
-        
+
         // Parse and validate schema
         JsonNode schemaNode = mapper.readTree(schema);
-        
-        // Basic schema validation
-        assertThat("Schema should be draft-7", 
-            schemaNode.get("$schema").asText(),
-            equalTo("http://json-schema.org/draft-07/schema#"));
-            
-        assertThat("Schema should be of type object", 
-            schemaNode.get("type").asText(),
-            equalTo("object"));
-            
-        assertThat("Schema should have properties or oneOf", 
-            schemaNode.has("properties") || schemaNode.has("oneOf"),
-            is(true));
 
-        
-        String resourceBase = "/us/dot/its/jpo/asn/jsonschema/generator/" + pduName.substring(0, 1).toUpperCase() + pduName.substring(1);
+        // Basic schema validation
+        assertThat("Schema should be draft-7",
+                schemaNode.get("$schema").asText(),
+                equalTo("http://json-schema.org/draft-07/schema#"));
+
+        assertThat("Schema should be of type object",
+                schemaNode.get("type").asText(),
+                equalTo("object"));
+
+        assertThat("Schema should have properties or oneOf",
+                schemaNode.has("properties") || schemaNode.has("oneOf"),
+                is(true));
+
+        String resourceBase = "/us/dot/its/jpo/asn/jsonschema/generator/" + pduName.substring(0, 1).toUpperCase()
+                + pduName.substring(1);
         List<String> resources = JsonFileLoader.listAllResourcesInDirectory(resourceBase);
         for (String resource : resources) {
-            // skip message frame files
-            if (resource.contains("message_frame")) {
+            // Ignore message frame JSON files
+            if (resource.endsWith("mf.json")) {
                 continue;
             }
-
             String json = JsonFileLoader.loadResource(resource);
             JsonNode jsonNode = mapper.readTree(json);
             JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
@@ -98,48 +97,48 @@ public class JsonSchemaGeneratorTest {
     @Test
     void testBasicSafetyMessageMessageFrameSchema() throws IOException {
         log.info("Testing BasicSafetyMessageMessageFrame schema validation");
-        
+
         // Load schema from file
         String schemaPath = "/schemas/BasicSafetyMessage/BasicSafetyMessageMessageFrame.schema.json";
         String schema = JsonFileLoader.loadResource(schemaPath);
         assertNotNull(schema, "Schema file should not be null");
-        
+
         // Parse and validate schema
         JsonNode schemaNode = mapper.readTree(schema);
-        
+
         // Basic schema validation
-        assertThat("Schema should be draft-7", 
-            schemaNode.get("$schema").asText(),
-            equalTo("http://json-schema.org/draft-07/schema#"));
-            
-        assertThat("Schema should be of type object", 
-            schemaNode.get("type").asText(),
-            equalTo("object"));
-            
+        assertThat("Schema should be draft-7",
+                schemaNode.get("$schema").asText(),
+                equalTo("http://json-schema.org/draft-07/schema#"));
+
+        assertThat("Schema should be of type object",
+                schemaNode.get("type").asText(),
+                equalTo("object"));
+
         // Check for required BasicSafetyMessage property
-        assertThat("Schema should have BasicSafetyMessage property", 
-            schemaNode.get("properties").has("BasicSafetyMessage"),
-            is(true));
-            
-        assertThat("BasicSafetyMessage should be required", 
-            schemaNode.get("required").toString(),
-            containsString("BasicSafetyMessage"));
-        
+        assertThat("Schema should have BasicSafetyMessage property",
+                schemaNode.get("properties").has("BasicSafetyMessage"),
+                is(true));
+
+        assertThat("BasicSafetyMessage should be required",
+                schemaNode.get("required").toString(),
+                containsString("BasicSafetyMessage"));
+
         // Test with sample BSM data
-        String bsmJson = JsonFileLoader.loadResource("/us/dot/its/jpo/asn/jsonschema/generator/BasicSafetyMessage/bsm_core.json");
+        String bsmJson = JsonFileLoader
+                .loadResource("/us/dot/its/jpo/asn/jsonschema/generator/BasicSafetyMessage/bsm_core.json");
         JsonNode bsmNode = mapper.readTree(bsmJson);
-        
+
         // Create a complete message frame JSON
         String messageFrameJson = String.format(
-            "{\"BasicSafetyMessage\": %s}", 
-            bsmJson
-        );
-        
+                "{\"BasicSafetyMessage\": %s}",
+                bsmJson);
+
         JsonNode messageFrameNode = mapper.readTree(messageFrameJson);
         JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
         JsonSchema jsonSchema = factory.getSchema(schemaNode);
         Set<ValidationMessage> errors = jsonSchema.validate(messageFrameNode);
-        
+
         assertThat("Message frame JSON should be valid against the schema", errors, empty());
     }
-} 
+}
