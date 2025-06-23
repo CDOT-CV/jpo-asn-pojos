@@ -1,0 +1,51 @@
+{
+    "msgCnt": 35,
+    "rev": "reserved",
+    "timeStamp": 58096,
+    "anchorPoint": {
+        "utcTime": {
+            "year": 2544,
+            "month": 9,
+            "day": 20,
+            "hour": 12,
+            "minute": 51,
+            "second": 31725,
+            "offset": -512
+        },
+        "long": -42301303,
+        "lat": -40358307,
+        "elevation": 8671,
+        "heading": 4300,
+        "speed": {
+            "transmisson": "reserved3",
+            "speed": 1748
+        },
+        "posAccuracy": {
+            "semiMajor": 245,
+            "semiMinor": 218,
+            "orientation": 10516
+        },
+        "timeConfidence": "time-000-000-002",
+        "posConfidence": {
+            "pos": "unavailable",
+            "elevation": "elev-020-00"
+        },
+        "speedConfidence": {
+            "heading": "prec10deg",
+            "speed": "prec0-05ms",
+            "throttle": "prec1percent"
+        }
+    },
+    "rtcmHeader": {
+        "status": "01",
+        "offsetSet": {
+            "antOffsetX": -863,
+            "antOffsetY": 215,
+            "antOffsetZ": 501
+        }
+    },
+    "msgs": [
+        "4F43544554",
+        "4F43"
+    ]
+}

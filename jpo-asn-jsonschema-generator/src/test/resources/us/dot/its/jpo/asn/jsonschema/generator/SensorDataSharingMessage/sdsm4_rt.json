@@ -1,0 +1,75 @@
+{
+  "msgCnt": 110,
+  "sourceID": "4F435445",
+  "equipmentType": "unknown",
+  "sDSMTimeStamp": {
+    "year": 2146,
+    "month": 7,
+    "day": 11,
+    "hour": 19,
+    "minute": 54,
+    "second": 14029,
+    "offset": -569
+  },
+  "refPos": {
+    "lat": -296885708,
+    "long": -1108066733,
+    "elevation": 59173
+  },
+  "refPosXYConf": {
+    "semiMajor": 159,
+    "semiMinor": 88,
+    "orientation": 54972
+  },
+  "refPosElConf": "elev-000-01",
+  "objects": [
+    {
+      "detObjCommon": {
+        "objType": "vehicle",
+        "objTypeCfd": 98,
+        "objectID": 57843,
+        "measurementTime": 1305,
+        "timeConfidence": "time-000-000-000-005",
+        "pos": {
+          "offsetX": 27921,
+          "offsetY": 15714,
+          "offsetZ": -25664
+        },
+        "posConfidence": {
+          "pos": "a2m",
+          "elevation": "unavailable"
+        },
+        "speed": 5782,
+        "speedConfidence": "prec0-01ms",
+        "speedZ": 5577,
+        "speedConfidenceZ": "prec0-01ms",
+        "heading": 24972,
+        "headingConf": "prec01deg",
+        "accel4way": {
+          "long": 1558,
+          "lat": -449,
+          "vert": -18,
+          "yaw": -7704
+        },
+        "accCfdX": "accl-000-05",
+        "accCfdY": "accl-010-00",
+        "accCfdZ": "accl-000-05",
+        "accCfdYaw": "degSec-000-05"
+      },
+      "detObjOptData": {
+        "detObst": {
+          "obstSize": {
+            "width": 999,
+            "length": 834,
+            "height": 764
+          },
+          "obstSizeConfidence": {
+            "widthConfidence": "size-020-00",
+            "lengthConfidence": "size-000-02",
+            "heightConfidence": "size-000-20"
+          }
+        }
+      }
+    }
+  ]
+}

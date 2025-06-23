@@ -35,9 +35,9 @@ serializers/deserializers for ASN.1 types.
 * [jpo-asn-j2735-2024](jpo-asn-j2735-2024/README.md) - POJOs for the J2735/2024 specification.
 * [jpo-asn-test-generator](jpo-asn-test-generator/README.md) - A Java command-line utility for
   generating test XER and JER messages.
+* [jpo-asn-jsonschema-generator](jpo-asn-jsonschema-generator/README.md) - A Java command-line utility for generating JSON schema files to validate output JSON messages.
 * [generate-test-data](generate-test-data/README.md) - Various utilities for generating test data
   and examples of serialized messages.
-
 
 ## Getting Started
 

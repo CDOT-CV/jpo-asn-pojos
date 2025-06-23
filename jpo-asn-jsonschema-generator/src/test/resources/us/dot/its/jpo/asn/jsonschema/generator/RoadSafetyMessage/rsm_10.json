@@ -1,0 +1,425 @@
+{
+    "commonContainer": {
+        "eventInfo": {
+            "eventID": {
+                "operatorID": {
+                    "relRdAuthID": "8976.18511.12373"
+                },
+                "uniqueID": "4F435445"
+            },
+            "eventUpdate": 6,
+            "eventCancellation": true,
+            "startDateTime": {
+                "year": 3951,
+                "month": 4,
+                "day": 22,
+                "hour": 25,
+                "minute": 34,
+                "second": 65426,
+                "offset": 90
+            },
+            "endDateTime": {
+                "year": 584,
+                "month": 2,
+                "day": 30,
+                "hour": 20,
+                "minute": 30,
+                "second": 41120,
+                "offset": -326
+            },
+            "eventRecurrence": [
+                {
+                    "startTime": {
+                        "hour": 15,
+                        "minute": 56,
+                        "second": 32059,
+                        "offset": 48
+                    },
+                    "endTime": {
+                        "hour": 17,
+                        "minute": 52,
+                        "second": 27573,
+                        "offset": 686
+                    },
+                    "startDate": {
+                        "year": 752,
+                        "month": 10,
+                        "day": 1
+                    },
+                    "endDate": {
+                        "year": 12,
+                        "month": 4,
+                        "day": 16
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                },
+                {
+                    "startTime": {
+                        "hour": 3,
+                        "minute": 54,
+                        "second": 12913,
+                        "offset": 534
+                    },
+                    "endTime": {
+                        "hour": 8,
+                        "minute": 4,
+                        "second": 42237,
+                        "offset": 641
+                    },
+                    "startDate": {
+                        "year": 637,
+                        "month": 0,
+                        "day": 23
+                    },
+                    "endDate": {
+                        "year": 1838,
+                        "month": 6,
+                        "day": 7
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                },
+                {
+                    "startTime": {
+                        "hour": 8,
+                        "minute": 56,
+                        "second": 38123,
+                        "offset": -636
+                    },
+                    "endTime": {
+                        "hour": 15,
+                        "minute": 22,
+                        "second": 33727,
+                        "offset": -276
+                    },
+                    "startDate": {
+                        "year": 3991,
+                        "month": 10,
+                        "day": 0
+                    },
+                    "endDate": {
+                        "year": 2296,
+                        "month": 5,
+                        "day": 4
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                },
+                {
+                    "startTime": {
+                        "hour": 9,
+                        "minute": 56,
+                        "second": 636,
+                        "offset": 627
+                    },
+                    "endTime": {
+                        "hour": 15,
+                        "minute": 46,
+                        "second": 43080,
+                        "offset": -553
+                    },
+                    "startDate": {
+                        "year": 832,
+                        "month": 10,
+                        "day": 16
+                    },
+                    "endDate": {
+                        "year": 2760,
+                        "month": 1,
+                        "day": 9
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                }
+            ],
+            "causeCode": 47,
+            "subCauseCode": 6266,
+            "affectedVehicles": [
+                "school-buses",
+                "convoys",
+                "vehicles-with-double-trailers",
+                "military-convoys"
+            ]
+        },
+        "regionInfo": [
+            {
+                "referencePoint": {
+                    "lat": 44390195,
+                    "long": 1369385827,
+                    "elevation": 40489
+                },
+                "locationUncertainty": {
+                    "alongPath": {
+                        "lat-offset": 7187,
+                        "long-offset": -2890,
+                        "elev-offset": -162
+                    }
+                },
+                "referencePointType": "startOfEvent",
+                "descriptiveName": "IA",
+                "scale": 0,
+                "approachRegion": {
+                    "broadRegion": {
+                        "applicableHeading": {
+                            "heading": 88,
+                            "tolerance": 117
+                        },
+                        "broadArea": {
+                            "polygon": [
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": 1775,
+                                        "long-offset": -11735,
+                                        "elev-offset": -2836
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -3565,
+                                        "long-offset": -11431,
+                                        "elev-offset": 3371
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -9031,
+                                        "long-offset": -7600,
+                                        "elev-offset": -369
+                                    }
+                                },
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": -293438827,
+                                        "long": 70929739,
+                                        "elevation": 28245
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -1697,
+                                        "long-offset": -14507,
+                                        "elev-offset": -2945
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -4317,
+                                        "long-offset": 14440,
+                                        "elev-offset": 460
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "crossLinking": {
+            "audioLinks": [
+                {
+                    "amChannel": 965,
+                    "fmChannel": 77671,
+                    "satelliteChannel": 3733,
+                    "urlChannel": "IA5St"
+                },
+                {
+                    "amChannel": 1326,
+                    "fmChannel": 73366,
+                    "satelliteChannel": 6403,
+                    "urlChannel": "IA5"
+                },
+                {
+                    "amChannel": 699,
+                    "fmChannel": 77461,
+                    "satelliteChannel": 681,
+                    "urlChannel": "IA5St"
+                },
+                {
+                    "amChannel": 1053,
+                    "fmChannel": 87506,
+                    "satelliteChannel": 6900,
+                    "urlChannel": "IA5St"
+                }
+            ],
+            "visualLink": [
+                {
+                    "urlLink": "IA5S"
+                },
+                {
+                    "urlLink": "I"
+                }
+            ],
+            "rsmLink": [
+                {
+                    "operatorID": {
+                        "relRdAuthID": "31640.40135.13403.56638.43696"
+                    },
+                    "uniqueID": "4F435445"
+                },
+                {
+                    "operatorID": {
+                        "relRdAuthID": "4427.14239.33917"
+                    },
+                    "uniqueID": "4F435445"
+                }
+            ]
+        }
+    },
+    "content": [
+        {
+            "curveContainer": {
+                "advisorySpeed": 311,
+                "surfaceCondition": {
+                    "roadSurfaceDescription": {
+                        "gravel": {
+                            "type": "loose"
+                        }
+                    },
+                    "dryOrWet": "dry",
+                    "roadRoughness": {
+                        "meanVerticalVariation": 23842,
+                        "verticalVariationStdDev": 2274,
+                        "meanHorizontalVariation": 17598,
+                        "horizontalVariationStdDev": 2124
+                    }
+                },
+                "minRadius": 46715,
+                "bankAngle": 13,
+                "curveRegion": {
+                    "referencePoint": {
+                        "lat": 492923912,
+                        "long": 1097386163,
+                        "elevation": 52846
+                    },
+                    "locationUncertainty": {
+                        "alongPath": {
+                            "lat-offset": 11635,
+                            "long-offset": 5888,
+                            "elev-offset": -961
+                        }
+                    },
+                    "referencePointType": "startOfEvent",
+                    "descriptiveName": "IA5",
+                    "scale": 3,
+                    "approachRegion": {
+                        "broadRegion": {
+                            "applicableHeading": {
+                                "heading": 351,
+                                "tolerance": 11
+                            },
+                            "broadArea": {
+                                "circle": {
+                                    "center": {
+                                        "lat": -802603871,
+                                        "long": 1450702665,
+                                        "elevation": 21091
+                                    },
+                                    "radius": 788,
+                                    "units": "cm2-5"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "dynamicInfoContainer": {
+                "priority": "low-priority",
+                "dmsSignString": [
+                    "IA5St",
+                    "IA5"
+                ],
+                "applicableRegion": {
+                    "referencePoint": {
+                        "lat": -878451827,
+                        "long": -645687594,
+                        "elevation": -3111
+                    },
+                    "locationUncertainty": {
+                        "inCoordinateFrame": {
+                            "lat-offset": 14612,
+                            "long-offset": -10334,
+                            "elev-offset": -3263
+                        }
+                    },
+                    "referencePointType": "startOfEvent",
+                    "descriptiveName": "IA5S",
+                    "scale": 15,
+                    "approachRegion": {
+                        "broadRegion": {
+                            "applicableHeading": {
+                                "heading": 331,
+                                "tolerance": 132
+                            },
+                            "broadArea": {
+                                "polygon": [
+                                    {
+                                        "node-3Dabsolute": {
+                                            "lat": 450797927,
+                                            "long": -1553155337,
+                                            "elevation": 39583
+                                        }
+                                    },
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": 3609,
+                                            "long-offset": 16064,
+                                            "elev-offset": -3571
+                                        }
+                                    },
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": -6729,
+                                            "long-offset": 7322,
+                                            "elev-offset": -2581
+                                        }
+                                    },
+                                    {
+                                        "node-3Dabsolute": {
+                                            "lat": 609320579,
+                                            "long": 382877810,
+                                            "elevation": 492
+                                        }
+                                    },
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": 16038,
+                                            "long-offset": 11410,
+                                            "elev-offset": -3553
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
