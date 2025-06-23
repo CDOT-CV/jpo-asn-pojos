@@ -446,9 +446,9 @@
                             "pivots": true
                         },
                         "axles": {
-                            "totalAxles": 109891707,
-                            "frontAxles": 131078824,
-                            "rearAxles": 132540848
+                            "totalAxles": 10,
+                            "frontAxles": 7,
+                            "rearAxles": 5
                         },
                         "leanAngle": 14
                     },
@@ -528,9 +528,9 @@
                                 "rear": 19
                             },
                             "axles": {
-                                "totalAxles": -41569392,
-                                "frontAxles": 7418166,
-                                "rearAxles": 102192676
+                                "totalAxles": 10,
+                                "frontAxles": 7,
+                                "rearAxles": 5
                             }
                         },
                         {
@@ -553,9 +553,9 @@
                                 "rear": 99
                             },
                             "axles": {
-                                "totalAxles": -71330467,
-                                "frontAxles": 129362279,
-                                "rearAxles": 35842038
+                                "totalAxles": 10,
+                                "frontAxles": 7,
+                                "rearAxles": 5
                             }
                         }
                     ],

@@ -19,7 +19,6 @@ public class JsonFileLoader {
     String str;
     try {
       str = IOUtils.resourceToString(path, StandardCharsets.UTF_8);
-      log.debug("Loaded resource: {}", str);
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
@@ -31,7 +30,7 @@ public class JsonFileLoader {
     try {
       URL dirUrl = IOUtils.resourceToURL(directory);
       File dir = new File(dirUrl.toURI());
-      if (!dir.exists() || !dir.isDirectory() || dir.toString().contains("bin")) {
+      if (!dir.exists() || !dir.isDirectory()) {
         log.warn("Resource directory does not exist or is not a directory: {}", directory);
         return resources;
       }

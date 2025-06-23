@@ -438,9 +438,9 @@
                             "pivots": true
                         },
                         "axles": {
-                            "totalAxles": -59102659,
-                            "frontAxles": 82548063,
-                            "rearAxles": 83191672
+                            "totalAxles": 4,
+                            "frontAxles": 8,
+                            "rearAxles": 1
                         },
                         "leanAngle": 40
                     },
@@ -524,9 +524,9 @@
                                 "rear": 25
                             },
                             "axles": {
-                                "totalAxles": 88766786,
-                                "frontAxles": -27398972,
-                                "rearAxles": 113972590
+                                "totalAxles": 4,
+                                "frontAxles": 8,
+                                "rearAxles": 1
                             }
                         }
                     ],
