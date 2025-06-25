@@ -13,6 +13,9 @@
     <module>jpo-asn-runtime</module>
     <module>jpo-asn-j2735-2024</module>
   </modules>
+  <properties>
+    <github_organization>usdot-jpo-ode</github_organization>
+  </properties>
   <distributionManagement>
     <repository>
       <id>github</id>
