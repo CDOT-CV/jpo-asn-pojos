@@ -16,6 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
+    <github_organization>usdot-jpo-ode</github_organization>
   </properties>
 
   <dependencies>
@@ -129,5 +130,11 @@
     </plugins>
   </build>
 
-
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/${github_organization}/jpo-ode</url>
+    </repository>
+  </distributionManagement>
 </project>
