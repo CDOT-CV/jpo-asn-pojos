@@ -25,4 +25,13 @@ public class TravelerInformationMessageFrameTest extends BaseSerializeTest<Trave
     final String roundTripXml = toXml(timmf);
     assertThat(roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
   }
+
+  @Test
+  public void xmlDeserialize_generatedXml_ODE_Test() throws IOException {
+    final String xml = loadResource("/us/dot/its/jpo/asn/j2735/r2024/TravelerInformation/xml/message_frame/mf.xml");
+    TravelerInformationMessageFrame timmf = fromXml(xml);
+    assertThat(timmf, notNullValue());
+    final String roundTripXml = toXml(timmf);
+    assertThat(roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
+  }
 }

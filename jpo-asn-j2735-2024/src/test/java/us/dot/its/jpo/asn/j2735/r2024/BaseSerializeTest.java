@@ -1,8 +1,10 @@
 package us.dot.its.jpo.asn.j2735.r2024;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper.Builder;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -18,7 +20,16 @@ import org.junit.jupiter.params.provider.Arguments;
 @Slf4j
 public abstract class BaseSerializeTest<T> {
 
-  private final static XmlMapper xmlMapper = new XmlMapper();
+  private final static XmlMapper xmlMapper;
+
+  static {
+    XmlMapper xm = new XmlMapper();
+    var builder = new Builder(xm);
+    builder.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    builder.defaultUseWrapper(true);
+    xmlMapper = builder.build();
+  }
+
   private final static ObjectMapper jsonMapper = new ObjectMapper();
   private final Class<T> clazz;
 
