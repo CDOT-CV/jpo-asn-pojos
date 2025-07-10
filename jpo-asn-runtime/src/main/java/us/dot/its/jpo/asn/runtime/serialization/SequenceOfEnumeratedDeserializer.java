@@ -42,7 +42,7 @@ public abstract class SequenceOfEnumeratedDeserializer<S extends Enum<?> & Asn1E
       result = construct();
 
       List<String> enumXmlList = extractXmlList(xmlParser);
-      System.out.println(enumXmlList);
+
       XmlMapper xmlMapper = (XmlMapper) xmlParser.getCodec();
       for (String enumXml : enumXmlList) {
         log.trace("SequenceOfEnumeratedDeserializer: enumXml: {}", enumXml);
