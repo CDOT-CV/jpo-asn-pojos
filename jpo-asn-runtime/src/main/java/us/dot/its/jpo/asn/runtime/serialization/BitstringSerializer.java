@@ -41,8 +41,11 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
         jsonGenerator.writeStartObject();
         for (int i = 0; i < asn1Bitstring.size(); i++) {
             String name = asn1Bitstring.name(i);
-            boolean isSet = asn1Bitstring.get(i);
-            jsonGenerator.writeBooleanField(name, isSet);
+            if (name != null) {
+                // We don't write unnamed bits for this format
+                boolean isSet = asn1Bitstring.get(i);
+                jsonGenerator.writeBooleanField(name, isSet);
+            }
         }
         jsonGenerator.writeEndObject();
     }
