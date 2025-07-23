@@ -233,11 +233,15 @@ public abstract class Asn1Bitstring implements Asn1Type {
     /**
      * Get the name representing the requested index.
      *
-     * @param index The index value of the bitstring being requested.
+     * @param index The index value of the bitstring being requested or null if no name exists.
      */
     public String name(int index) {
         if (index < 0 || index >= size()) {
             throw new IllegalArgumentException(String.format("Index %s out of range %s-%s", index, 0, size()));
+        }
+        if (names.length <= index) {
+            // Name does not exist
+            return null;
         }
         return names[index];
     }
