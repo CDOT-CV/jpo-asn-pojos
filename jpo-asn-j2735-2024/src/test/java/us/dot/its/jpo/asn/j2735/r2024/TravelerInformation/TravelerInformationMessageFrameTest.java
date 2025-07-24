@@ -19,10 +19,9 @@ public class TravelerInformationMessageFrameTest extends BaseSerializeTest<Trave
 
   @Test
   public void xmlDeserialize_generatedXml() throws IOException {
-    final String xml = loadResource("/us/dot/its/jpo/asn/j2735/r2024/TravelerInformation/xml/message_frame/tim_mf2.xml");
+    final String xml = loadResource("/us/dot/its/jpo/asn/j2735/r2024/TravelerInformation/xml/message_frame/tim_mf.xml");
     TravelerInformationMessageFrame timmf = fromXml(xml);
     assertThat(timmf, notNullValue());
-    final String json = toJson(timmf);
     final String roundTripXml = toXml(timmf);
     assertThat(roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
   }
