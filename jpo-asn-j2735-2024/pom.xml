@@ -6,7 +6,7 @@
 
   <groupId>usdot.jpo.asn</groupId>
   <artifactId>jpo-asn-j2735-2024</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>jpo-asn-j2735-2024</name>
   <description>J2735/2024 POJO library</description>
@@ -42,7 +42,12 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.17.0</version>
+      <version>3.18.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <version>1.14.0</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -57,7 +62,7 @@
     <dependency>
       <groupId>usdot.jpo.asn</groupId>
       <artifactId>jpo-asn-runtime</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
 
     <!-- Test dependencies -->

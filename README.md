@@ -126,7 +126,7 @@ steps:
   <dependency>
       <groupId>usdot.jpo.asn</groupId>
       <artifactId>jpo-asn-j2735-2024</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
   </dependency>
   ```
 

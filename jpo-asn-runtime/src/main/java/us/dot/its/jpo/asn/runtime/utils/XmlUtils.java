@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Objects;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.text.StringEscapeUtils;
 
 @Slf4j
 public class XmlUtils {
@@ -165,7 +166,7 @@ public class XmlUtils {
       log.trace("Value String: {}", val);
 
       pc.setCurrentValue(val);
-      xml.format("%s", val);
+      xml.format("%s",  StringEscapeUtils.escapeXml11(val));
       // Wrap the value
       if (pc.getCurrentName() != null) {
         xml.format("</%s>", pc.getCurrentName());

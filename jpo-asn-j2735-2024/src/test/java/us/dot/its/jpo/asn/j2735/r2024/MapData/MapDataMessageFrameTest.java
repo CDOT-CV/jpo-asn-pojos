@@ -23,4 +23,14 @@ public class MapDataMessageFrameTest extends BaseSerializeTest<MapDataMessageFra
     assertThat(roundTripXml,
         isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
   }
+
+  @Test
+  public void xmlRoundTripTest2() throws IOException {
+    final String xml = loadResource("/us/dot/its/jpo/asn/j2735/r2024/MapData/xml_message_frame/map_02.xml");
+    MapDataMessageFrame mdmf = fromXml(xml);
+    assertThat(mdmf, notNullValue());
+    final String roundTripXml = toXml(mdmf);
+    assertThat(roundTripXml,
+        isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
+  }
 }
