@@ -33,10 +33,10 @@ public class OpenTypeDeserializerTest {
     value.setAStr(new AString(name));
     example.setValue(value);
     String xml = mapper.writeValueAsString(example);
-    log.info(xml);
+    log.debug(xml);
     var roundTrip = mapper.readValue(xml, ExampleWithOpenType.class);
     String roundTripXml = mapper.writeValueAsString(roundTrip);
-    log.info(roundTripXml);
+    log.debug(roundTripXml);
     assertThat(roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
   }
 
