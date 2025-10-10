@@ -3,6 +3,28 @@ import re
 import random
 
 def update_axles(path):
+    """
+    Update axle-related values in JSON files within a directory tree.
+    
+    This function recursively walks through a directory tree and updates
+    totalAxles, frontAxles, and rearAxles values in all JSON files found.
+    Each field is replaced with a random integer between 1 and 10.
+    
+    Args:
+        path (str): The root directory path to start the recursive search.
+                    Can be relative (e.g., ".") or absolute path.
+    
+    Returns:
+        None
+    
+    Side Effects:
+        - Modifies JSON files in-place by updating axle values
+        - Prints the path of each updated file to stdout
+    
+    Note:
+        The function uses regex patterns to find and replace axle values,
+        so it will update ALL occurrences of these fields in each JSON file.
+    """
     for root, _, files in os.walk(path):
         for file in files:
             if file.endswith(".json"):

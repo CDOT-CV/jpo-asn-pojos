@@ -1,0 +1,6 @@
+# Requirements for update_axle_value.py
+# This script uses only Python standard library modules (os, re, random)
+# No external dependencies are required
+
+# Minimum Python version
+python>=3.6
