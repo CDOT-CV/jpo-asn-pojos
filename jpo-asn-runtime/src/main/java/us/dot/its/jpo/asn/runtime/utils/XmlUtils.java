@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Objects;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.text.StringEscapeUtils;
 
 @Slf4j
 public class XmlUtils {
@@ -90,11 +91,12 @@ public class XmlUtils {
 
     XmlReadContext pc = xmlParser.getParsingContext();
     XmlReadContext parent = pc.getParent();
+    final int parentNestingDepth = getNestingDepth(parent);
     log.trace("extractXmlList: parent name {}, value: {}, index: {}, nesting: {}",
         parent.getCurrentName(),
-        parent.getCurrentValue(), parent.getCurrentIndex(), parent.getNestingDepth());
+        parent.getCurrentValue(), parent.getCurrentIndex(), parentNestingDepth);
     XmlElement element = new XmlElement();
-    final int startNesting = parent.getNestingDepth();
+    final int startNesting = parentNestingDepth;
     final String startName = parent.getCurrentName();
 
     while (!element.isFinishedAll()) {
@@ -123,11 +125,12 @@ public class XmlUtils {
     Formatter xml = new Formatter();
     XmlReadContext pc = xmlParser.getParsingContext();
     XmlReadContext parent = pc.getParent();
+    final int parentNestingDepth = getNestingDepth(parent);
     log.debug("extractXmlElement: parent name {}, value: {}, index: {}, nesting: {}",
         parent.getCurrentName(),
-        parent.getCurrentValue(), parent.getCurrentIndex(), parent.getNestingDepth());
+        parent.getCurrentValue(), parent.getCurrentIndex(), parentNestingDepth);
     XmlElement element = new XmlElement();
-    final int startNesting = parent.getNestingDepth();
+    final int startNesting = parentNestingDepth;
     final String startName = parent.getCurrentName();
     while (!element.isFinishedItem()) {
       element = extractXml(xml, xmlParser, element, startNesting, startName);
@@ -143,6 +146,7 @@ public class XmlUtils {
       final XmlElement previous,
       final int startNesting, final String startName) throws IOException {
     XmlReadContext pc = xmlParser.getParsingContext();
+    final int nestingDepth = getNestingDepth(pc);
 
     JsonToken token = xmlParser.getCurrentToken();
     XmlElement element = new XmlElement();
@@ -162,7 +166,7 @@ public class XmlUtils {
       log.trace("Value String: {}", val);
 
       pc.setCurrentValue(val);
-      xml.format("%s", val);
+      xml.format("%s",  StringEscapeUtils.escapeXml11(val));
       // Wrap the value
       if (pc.getCurrentName() != null) {
         xml.format("</%s>", pc.getCurrentName());
@@ -171,14 +175,14 @@ public class XmlUtils {
       }
 
       // For simple choice types there won't be an END_OBJECT
-      if (pc.getNestingDepth() == startNesting + 1) {
+      if (nestingDepth == startNesting + 1) {
         element.setFinishedItem(true);
       }
     } else if (token == JsonToken.END_OBJECT && pc.hasCurrentName()) {
       xml.format("</%s>", pc.getCurrentName());
-      if (pc.getNestingDepth() == startNesting && Objects.equals(pc.getCurrentName(), startName)) {
+      if (nestingDepth == startNesting && Objects.equals(pc.getCurrentName(), startName)) {
         element.setFinishedAll(true);
-      } else if (pc.getNestingDepth() == startNesting + 1) {
+      } else if (nestingDepth == startNesting + 1) {
         element.setFinishedItem(true);
       }
     }
@@ -189,7 +193,7 @@ public class XmlUtils {
     }
 
     log.trace("current token: {} name: {} index: {}, nesting: {}",
-        token, pc.getCurrentName(), pc.getCurrentIndex(), pc.getNestingDepth());
+        token, pc.getCurrentName(), pc.getCurrentIndex(), nestingDepth);
 
     return element;
   }
@@ -203,5 +207,37 @@ public class XmlUtils {
     String fieldName;
     boolean finishedAll;
     boolean finishedItem;
+  }
+
+  /**
+   * Workaround issue with Jackson versions prior to 2.17.2, for which
+   * XmlReadContext.getNestingDepth() was not incremented correctly.
+   * Ref. <a href="https://github.com/FasterXML/jackson-dataformat-xml/issues/657">jackson-dataformat-xml/issues/657</a>
+   * Recursively calculate the nesting depth if it's not available.
+   * @param pc The XmlReadContext
+   * @return The nesting depth of the element
+   */
+  private static int getNestingDepth(XmlReadContext pc) {
+
+    // Nesting depth is non-zero, therefore it is correct, just return it.
+    if (pc.getNestingDepth() > 0) {
+      return pc.getNestingDepth();
+    }
+
+    // Otherwise, calculate the depth recursively
+    return calculateNestingDepth(pc);
+  }
+
+  /**
+   * Calculate nesting depth recursively.
+   * @param pc The XmlReadContext
+   * @return The nesting depth
+   */
+  public static int calculateNestingDepth(XmlReadContext pc) {
+    if (pc.getParent() == null) {
+      return 0;
+    } else {
+      return calculateNestingDepth(pc.getParent()) + 1;
+    }
   }
 }

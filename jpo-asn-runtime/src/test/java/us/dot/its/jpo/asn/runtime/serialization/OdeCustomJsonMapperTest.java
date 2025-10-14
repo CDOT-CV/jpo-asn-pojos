@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
 import us.dot.its.jpo.asn.runtime.examples.ExampleBitstring;
+import us.dot.its.jpo.asn.runtime.examples.ExampleBitstringFewNamedBits;
 
 public class OdeCustomJsonMapperTest {
 
@@ -48,11 +49,51 @@ public class OdeCustomJsonMapperTest {
     assertThat(ebs.hexString(), equalToIgnoringCase(HEX_STRING));
   }
 
+  @Test
+  public void serializeHumanReadable_FewNamedBits() throws JsonProcessingException {
+    var mapper = new OdeCustomJsonMapper(true);
+    var ebs = new ExampleBitstringFewNamedBits();
+    ebs.fromBinaryString(BINARY_STRING_FEW_NAMED_BITS);
+    final String str = mapper.writeValueAsString(ebs);
+    assertThat(str, jsonEquals(HUMAN_READABLE_JSON_FEW_NAMED_BITS));
+  }
+
+  @Test
+  public void deserializeHumanReadable_FewNamedBits() throws JsonProcessingException {
+    var mapper = new OdeCustomJsonMapper(true);
+    var ebs = mapper.readValue(HUMAN_READABLE_JSON_FEW_NAMED_BITS, ExampleBitstringFewNamedBits.class);
+    assertThat(ebs, notNullValue());
+    assertThat(ebs.binaryString(), equalTo(BINARY_STRING_FEW_NAMED_BITS));
+    assertThat(ebs.hexString(), equalToIgnoringCase(HEX_STRING_FEW_NAMED_BITS));
+  }
+
+  @Test
+  public void serializeHex_FewNamedBits() throws JsonProcessingException {
+    var mapper = new OdeCustomJsonMapper(false);
+    var ebs = new ExampleBitstringFewNamedBits();
+    ebs.fromBinaryString(BINARY_STRING_FEW_NAMED_BITS);
+    final String str = mapper.writeValueAsString(ebs);
+    assertThat(str, equalToIgnoringCase(HEX_JSON_FEW_NAMED_BITS));
+  }
+
+  @Test
+  public void deserializeHex_FewNamedBits() throws JsonProcessingException {
+    var mapper = new OdeCustomJsonMapper(false);
+    var ebs = mapper.readValue(HEX_JSON_FEW_NAMED_BITS, ExampleBitstringFewNamedBits.class);
+    assertThat(ebs, notNullValue());
+    assertThat(ebs.binaryString(), equalTo(BINARY_STRING_FEW_NAMED_BITS));
+    assertThat(ebs.hexString(), equalToIgnoringCase(HEX_STRING_FEW_NAMED_BITS));
+  }
+
   static final String BINARY_STRING = "1111111111111111";
+  static final String BINARY_STRING_FEW_NAMED_BITS = "1111000000000000";
+
 
   static final String HEX_STRING = "FFFF";
+  static final String HEX_STRING_FEW_NAMED_BITS = "F000";
 
   static final String HEX_JSON = "\"" + HEX_STRING + "\"";
+  static final String HEX_JSON_FEW_NAMED_BITS = "\"" + HEX_STRING_FEW_NAMED_BITS + "\"";
 
   static final String HUMAN_READABLE_JSON = """
       {
@@ -74,5 +115,16 @@ public class OdeCustomJsonMapperTest {
           "from337-5to360-0degrees": true
       }
       """;
+
+  static final String HUMAN_READABLE_JSON_FEW_NAMED_BITS = """
+      {
+        "sidewalk-RevocableLane": true,
+        "bicyleUseAllowed": true,
+        "isSidewalkFlyOverLane": true,
+        "walkBikes": true
+      }
+      """;
+
+
 
 }

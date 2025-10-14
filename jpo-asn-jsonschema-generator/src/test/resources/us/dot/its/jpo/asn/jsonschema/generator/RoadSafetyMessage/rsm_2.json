@@ -1,0 +1,546 @@
+{
+    "commonContainer": {
+        "eventInfo": {
+            "eventID": {
+                "operatorID": {
+                    "fullRdAuthID": "1.0.823.20"
+                },
+                "uniqueID": "4F435445"
+            },
+            "eventUpdate": 54,
+            "eventCancellation": true,
+            "startDateTime": {
+                "year": 2165,
+                "month": 3,
+                "day": 21,
+                "hour": 19,
+                "minute": 38,
+                "second": 7033,
+                "offset": 172
+            },
+            "endDateTime": {
+                "year": 4091,
+                "month": 2,
+                "day": 8,
+                "hour": 18,
+                "minute": 46,
+                "second": 30208,
+                "offset": 158
+            },
+            "eventRecurrence": [
+                {
+                    "startTime": {
+                        "hour": 19,
+                        "minute": 48,
+                        "second": 37277,
+                        "offset": -743
+                    },
+                    "endTime": {
+                        "hour": 31,
+                        "minute": 15,
+                        "second": 28147,
+                        "offset": -708
+                    },
+                    "startDate": {
+                        "year": 1362,
+                        "month": 7,
+                        "day": 22
+                    },
+                    "endDate": {
+                        "year": 1664,
+                        "month": 4,
+                        "day": 25
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                },
+                {
+                    "startTime": {
+                        "hour": 9,
+                        "minute": 38,
+                        "second": 37689,
+                        "offset": 827
+                    },
+                    "endTime": {
+                        "hour": 9,
+                        "minute": 54,
+                        "second": 5955,
+                        "offset": 537
+                    },
+                    "startDate": {
+                        "year": 3425,
+                        "month": 3,
+                        "day": 2
+                    },
+                    "endDate": {
+                        "year": 3214,
+                        "month": 8,
+                        "day": 26
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                },
+                {
+                    "startTime": {
+                        "hour": 10,
+                        "minute": 53,
+                        "second": 7334,
+                        "offset": -697
+                    },
+                    "endTime": {
+                        "hour": 14,
+                        "minute": 48,
+                        "second": 52180,
+                        "offset": -328
+                    },
+                    "startDate": {
+                        "year": 675,
+                        "month": 6,
+                        "day": 0
+                    },
+                    "endDate": {
+                        "year": 1844,
+                        "month": 9,
+                        "day": 14
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                },
+                {
+                    "startTime": {
+                        "hour": 9,
+                        "minute": 42,
+                        "second": 21723,
+                        "offset": -657
+                    },
+                    "endTime": {
+                        "hour": 4,
+                        "minute": 10,
+                        "second": 20608,
+                        "offset": -219
+                    },
+                    "startDate": {
+                        "year": 637,
+                        "month": 0,
+                        "day": 25
+                    },
+                    "endDate": {
+                        "year": 3011,
+                        "month": 9,
+                        "day": 10
+                    },
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true,
+                    "exclusion": true
+                }
+            ],
+            "causeCode": 216,
+            "subCauseCode": 3318,
+            "affectedVehicles": [
+                "all-vehicles",
+                "vehicles-with-parking-permits",
+                "bicycles"
+            ]
+        },
+        "regionInfo": [
+            {
+                "referencePoint": {
+                    "lat": 75663598,
+                    "long": -1690366347,
+                    "elevation": 44521
+                },
+                "locationUncertainty": {
+                    "alongPath": {
+                        "lat-offset": -980,
+                        "long-offset": 16202,
+                        "elev-offset": -2363
+                    }
+                },
+                "referencePointType": "startOfEvent",
+                "descriptiveName": "IA5",
+                "scale": 3,
+                "approachRegion": {
+                    "broadRegion": {
+                        "applicableHeading": {
+                            "heading": 165,
+                            "tolerance": 2
+                        },
+                        "broadArea": {
+                            "circle": {
+                                "center": {
+                                    "lat": 720685923,
+                                    "long": 1084968087,
+                                    "elevation": 9149
+                                },
+                                "radius": 1087,
+                                "units": "kilometer"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "referencePoint": {
+                    "lat": -575805180,
+                    "long": -592565038,
+                    "elevation": 57577
+                },
+                "locationUncertainty": {
+                    "inCoordinateFrame": {
+                        "lat-offset": -13228,
+                        "long-offset": 7486,
+                        "elev-offset": 2501
+                    }
+                },
+                "referencePointType": "startOfEvent",
+                "descriptiveName": "IA",
+                "scale": 6,
+                "approachRegion": {
+                    "paths": [
+                        {
+                            "pathWidth": 67,
+                            "pathPoints": [
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -16120,
+                                        "long-offset": 9220,
+                                        "elev-offset": -2935
+                                    }
+                                },
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": 108916031,
+                                        "long": -1774776811,
+                                        "elevation": 46217
+                                    }
+                                },
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": -471671596,
+                                        "long": 834070017,
+                                        "elevation": -261
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": 2380,
+                                        "long-offset": 7866,
+                                        "elev-offset": 1740
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -16016,
+                                        "long-offset": 4634,
+                                        "elev-offset": 912
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "pathWidth": 100,
+                            "pathPoints": [
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": 42083268,
+                                        "long": -297096386,
+                                        "elevation": 47611
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -12536,
+                                        "long-offset": 2525,
+                                        "elev-offset": 607
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "pathWidth": 819,
+                            "pathPoints": [
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": -256402448,
+                                        "long": 1458135410,
+                                        "elevation": 2462
+                                    }
+                                },
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": 893189070,
+                                        "long": -1185648428,
+                                        "elevation": 50074
+                                    }
+                                },
+                                {
+                                    "node-3Doffset": {
+                                        "lat-offset": -12403,
+                                        "long-offset": 5645,
+                                        "elev-offset": -263
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "referencePoint": {
+                    "lat": -238776460,
+                    "long": 1252280631,
+                    "elevation": 45071
+                },
+                "locationUncertainty": {
+                    "alongPath": {
+                        "lat-offset": 10460,
+                        "long-offset": 4102,
+                        "elev-offset": -2303
+                    }
+                },
+                "referencePointType": "startOfEvent",
+                "descriptiveName": "I",
+                "scale": 11,
+                "approachRegion": {
+                    "paths": [
+                        {
+                            "pathWidth": 505,
+                            "pathPoints": [
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": 334332265,
+                                        "long": 1368861775,
+                                        "elevation": 13569
+                                    }
+                                },
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": -847657507,
+                                        "long": -696284251,
+                                        "elevation": 50025
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "pathWidth": 814,
+                            "pathPoints": [
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": 141677901,
+                                        "long": 1594274204,
+                                        "elevation": 29423
+                                    }
+                                },
+                                {
+                                    "node-3Dabsolute": {
+                                        "lat": -510608744,
+                                        "long": -88134437,
+                                        "elevation": 48478
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "crossLinking": {
+            "audioLinks": [
+                {
+                    "amChannel": 1083,
+                    "fmChannel": 76698,
+                    "satelliteChannel": 3682,
+                    "urlChannel": "IA"
+                },
+                {
+                    "amChannel": 1331,
+                    "fmChannel": 71328,
+                    "satelliteChannel": 2645,
+                    "urlChannel": "IA5St"
+                },
+                {
+                    "amChannel": 1197,
+                    "fmChannel": 107259,
+                    "satelliteChannel": 1706,
+                    "urlChannel": "IA5St"
+                },
+                {
+                    "amChannel": 939,
+                    "fmChannel": 86987,
+                    "satelliteChannel": 452,
+                    "urlChannel": "IA5St"
+                }
+            ],
+            "visualLink": [
+                {
+                    "urlLink": "I"
+                }
+            ],
+            "rsmLink": [
+                {
+                    "operatorID": {
+                        "fullRdAuthID": "2.28.765.255.326"
+                    },
+                    "uniqueID": "4F435445"
+                },
+                {
+                    "operatorID": {
+                        "relRdAuthID": "16017.63975.43719.51713.7323"
+                    },
+                    "uniqueID": "4F435445"
+                },
+                {
+                    "operatorID": {
+                        "fullRdAuthID": "0.31.497"
+                    },
+                    "uniqueID": "4F435445"
+                }
+            ]
+        }
+    },
+    "content": [
+        {
+            "laneClosureContainer": {
+                "laneStatus": [
+                    {
+                        "lanePosition": 1,
+                        "laneClosed": true,
+                        "laneCloseOffset": 6420
+                    },
+                    {
+                        "lanePosition": 6,
+                        "laneClosed": true,
+                        "laneCloseOffset": 9360
+                    },
+                    {
+                        "lanePosition": 15,
+                        "laneClosed": true,
+                        "laneCloseOffset": 12135
+                    },
+                    {
+                        "lanePosition": 18,
+                        "laneClosed": true,
+                        "laneCloseOffset": 27836
+                    },
+                    {
+                        "lanePosition": 11,
+                        "laneClosed": true,
+                        "laneCloseOffset": 6242
+                    }
+                ],
+                "laneStatusVaries": true,
+                "closureRegion": {
+                    "referencePoint": {
+                        "lat": 539505279,
+                        "long": 165956943,
+                        "elevation": 40119
+                    },
+                    "locationUncertainty": {
+                        "alongPath": {
+                            "lat-offset": -9158,
+                            "long-offset": 3805,
+                            "elev-offset": 3130
+                        }
+                    },
+                    "referencePointType": "arbitrary",
+                    "descriptiveName": "IA5",
+                    "scale": 2,
+                    "approachRegion": {
+                        "paths": [
+                            {
+                                "pathWidth": 506,
+                                "pathPoints": [
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": 13795,
+                                            "long-offset": 10903,
+                                            "elev-offset": -2945
+                                        }
+                                    },
+                                    {
+                                        "node-3Dabsolute": {
+                                            "lat": 543164605,
+                                            "long": 1015127159,
+                                            "elevation": 33351
+                                        }
+                                    },
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": -3640,
+                                            "long-offset": -374,
+                                            "elev-offset": 3185
+                                        }
+                                    },
+                                    {
+                                        "node-3Dabsolute": {
+                                            "lat": 826560228,
+                                            "long": -800178131,
+                                            "elevation": -858
+                                        }
+                                    },
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": -2372,
+                                            "long-offset": 11699,
+                                            "elev-offset": 3608
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "pathWidth": 977,
+                                "pathPoints": [
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": -3282,
+                                            "long-offset": 9583,
+                                            "elev-offset": -1507
+                                        }
+                                    },
+                                    {
+                                        "node-3Dabsolute": {
+                                            "lat": -833148260,
+                                            "long": 146232228,
+                                            "elevation": 42548
+                                        }
+                                    },
+                                    {
+                                        "node-3Doffset": {
+                                            "lat-offset": 15334,
+                                            "long-offset": -4613,
+                                            "elev-offset": -157
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

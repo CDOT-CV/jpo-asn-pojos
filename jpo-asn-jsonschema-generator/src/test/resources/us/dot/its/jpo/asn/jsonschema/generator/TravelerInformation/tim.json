@@ -1,0 +1,1879 @@
+{
+    "msgCnt": 89,
+    "timeStamp": 130462,
+    "packetID": "4F4354455420535452",
+    "urlB": "IA5St",
+    "dataFrames": [
+        {
+            "doNotUse1": 7,
+            "frameType": "advisory",
+            "msgId": {
+                "furtherInfoID": "4F43"
+            },
+            "startYear": 3831,
+            "startTime": 250608,
+            "durationTime": 10219,
+            "priority": 6,
+            "doNotUse2": 22,
+            "regions": [
+                {
+                    "name": "IA5St",
+                    "id": {
+                        "region": 21266,
+                        "id": 19924
+                    },
+                    "anchor": {
+                        "lat": -247788717,
+                        "long": 172036334,
+                        "elevation": 42430
+                    },
+                    "laneWidth": 21385,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "2000",
+                    "description": {
+                        "oldRegion": {
+                            "direction": "1000",
+                            "extent": "useFor10000000meters",
+                            "area": {
+                                "shapePointSet": {
+                                    "anchor": {
+                                        "lat": -867624355,
+                                        "long": -1125512671,
+                                        "elevation": 4889
+                                    },
+                                    "laneWidth": 11162,
+                                    "directionality": "reverse",
+                                    "nodeList": {
+                                        "nodes": [
+                                            {
+                                                "delta": {
+                                                    "node-XY1": {
+                                                        "x": -100,
+                                                        "y": -200
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY2": {
+                                                        "x": 300,
+                                                        "y": 700
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY3": {
+                                                        "x": -1000,
+                                                        "y": 800
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY4": {
+                                                        "x": 3000,
+                                                        "y": 3100
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY5": {
+                                                        "x": -1995,
+                                                        "y": -3251
+                                                    }
+                                                },
+                                                "attributes": {
+                                                    "localNode": [
+                                                        "roundedCapStyleB",
+                                                        "downstreamStopLine",
+                                                        "closedToTraffic",
+                                                        "stopLine"
+                                                    ],
+                                                    "disabled": [
+                                                        "adjacentParkingOnRight",
+                                                        "sharedWithTrackedVehicle",
+                                                        "sharedBikeLane",
+                                                        "transitStopOnRight"
+                                                    ],
+                                                    "enabled": [
+                                                        "curbOnRight"
+                                                    ],
+                                                    "data": [
+                                                        {
+                                                            "laneCrownPointLeft": -59
+                                                        },
+                                                        {
+                                                            "laneCrownPointRight": -19
+                                                        }
+                                                    ],
+                                                    "dWidth": -262,
+                                                    "dElevation": -441
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY6": {
+                                                        "x": 13150,
+                                                        "y": 28495
+                                                    }
+                                                },
+                                                "attributes": {
+                                                    "localNode": [
+                                                        "roundedCapStyleB",
+                                                        "roundedCapStyleA",
+                                                        "closedToTraffic"
+                                                    ],
+                                                    "disabled": [
+                                                        "timeRestrictionsOnParking"
+                                                    ],
+                                                    "enabled": [
+                                                        "taperToRight"
+                                                    ],
+                                                    "data": [
+                                                        {
+                                                            "laneCrownPointLeft": -124
+                                                        },
+                                                        {
+                                                            "laneAngle": 96
+                                                        },
+                                                        {
+                                                            "pathEndPointAngle": -53
+                                                        },
+                                                        {
+                                                            "laneAngle": 47
+                                                        }
+                                                    ],
+                                                    "dWidth": 87,
+                                                    "dElevation": -52
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-LatLon": {
+                                                        "lon": -484650272,
+                                                        "lat": 799084833
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA",
+                    "id": {
+                        "region": 30715,
+                        "id": 65255
+                    },
+                    "anchor": {
+                        "lat": 542055265,
+                        "long": 632592574,
+                        "elevation": 8598
+                    },
+                    "laneWidth": 20835,
+                    "directionality": "forward",
+                    "closedPath": true,
+                    "direction": "0040",
+                    "description": {
+                        "oldRegion": {
+                            "direction": "0001",
+                            "extent": "useFor5000meters",
+                            "area": {
+                                "regionPointSet": {
+                                    "anchor": {
+                                        "lat": -310919171,
+                                        "long": -169708141,
+                                        "elevation": 60004
+                                    },
+                                    "scale": 0,
+                                    "nodeList": [
+                                        {
+                                            "xOffset": -9580,
+                                            "yOffset": -26076,
+                                            "zOffset": -3430
+                                        },
+                                        {
+                                            "xOffset": -29325,
+                                            "yOffset": 30375,
+                                            "zOffset": 31232
+                                        },
+                                        {
+                                            "xOffset": -19472,
+                                            "yOffset": 15221,
+                                            "zOffset": 19281
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5S",
+                    "id": {
+                        "region": 62649,
+                        "id": 54279
+                    },
+                    "anchor": {
+                        "lat": -365750656,
+                        "long": -409996946,
+                        "elevation": 26273
+                    },
+                    "laneWidth": 2831,
+                    "directionality": "forward",
+                    "closedPath": true,
+                    "direction": "2000",
+                    "description": {
+                        "oldRegion": {
+                            "direction": "0400",
+                            "extent": "forever",
+                            "area": {
+                                "circle": {
+                                    "center": {
+                                        "lat": 643301609,
+                                        "long": 1364442936,
+                                        "elevation": 29320
+                                    },
+                                    "radius": 2404,
+                                    "units": "meter"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 18847,
+                        "id": 22120
+                    },
+                    "anchor": {
+                        "lat": -499448086,
+                        "long": 498212767,
+                        "elevation": 32778
+                    },
+                    "laneWidth": 11689,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "0080",
+                    "description": {
+                        "geometry": {
+                            "direction": "8000",
+                            "extent": "useFor1000meters",
+                            "laneWidth": 30815,
+                            "circle": {
+                                "center": {
+                                    "lat": -415521055,
+                                    "long": 137912361,
+                                    "elevation": 26698
+                                },
+                                "radius": 2410,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 30428,
+                        "id": 32587
+                    },
+                    "anchor": {
+                        "lat": 95109787,
+                        "long": -1173876780,
+                        "elevation": 59570
+                    },
+                    "laneWidth": 2161,
+                    "directionality": "both",
+                    "closedPath": true,
+                    "direction": "1000",
+                    "description": {
+                        "geometry": {
+                            "direction": "0004",
+                            "extent": "useFor3meters",
+                            "laneWidth": 17117,
+                            "circle": {
+                                "center": {
+                                    "lat": -442538609,
+                                    "long": 1561489830,
+                                    "elevation": -2642
+                                },
+                                "radius": 1205,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "ll": {
+                                    "nodes": [
+                                        {
+                                            "delta": {
+                                                "node-LL1": {
+                                                    "lon": -1000,
+                                                    "lat": -1500
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL2": {
+                                                    "lon": -300,
+                                                    "lat": 5000
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL3": {
+                                                    "lon": 28086,
+                                                    "lat": -11267
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "safeIsland",
+                                                    "safeIsland",
+                                                    "curbPresentAtStepOff",
+                                                    "downstreamStopLine"
+                                                ],
+                                                "disabled": [
+                                                    "turnOutPointOnRight"
+                                                ],
+                                                "enabled": [
+                                                    "rfSignalRequestPresent",
+                                                    "curbOnLeft",
+                                                    "adjacentBikeLaneOnLeft",
+                                                    "turnOutPointOnRight"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "pathEndPointAngle": 121
+                                                    },
+                                                    {
+                                                        "speedLimits": [
+                                                            {
+                                                                "type": "vehicleMinSpeed",
+                                                                "speed": 2519
+                                                            },
+                                                            {
+                                                                "type": "maxSpeedInConstructionZone",
+                                                                "speed": 5381
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "laneAngle": -93
+                                                    },
+                                                    {
+                                                        "laneCrownPointCenter": 45
+                                                    }
+                                                ],
+                                                "dWidth": 234,
+                                                "dElevation": -104
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL4": {
+                                                    "lon": 31072,
+                                                    "lat": -31072
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL5": {
+                                                    "lon": -1812985,
+                                                    "lat": 1575913
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "safeIsland",
+                                                    "safeIsland",
+                                                    "downstreamStartNode"
+                                                ],
+                                                "disabled": [
+                                                    "turnOutPointOnRight",
+                                                    "taperToRight",
+                                                    "taperToCenterLine"
+                                                ],
+                                                "enabled": [
+                                                    "safeIsland",
+                                                    "reserved",
+                                                    "adjacentParkingOnRight",
+                                                    "headInParking",
+                                                    "taperToCenterLine"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "laneCrownPointRight": 30
+                                                    },
+                                                    {
+                                                        "laneCrownPointCenter": -2
+                                                    },
+                                                    {
+                                                        "pathEndPointAngle": 35
+                                                    },
+                                                    {
+                                                        "laneAngle": 21
+                                                    }
+                                                ],
+                                                "dWidth": -153,
+                                                "dElevation": 146
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL6": {
+                                                    "lon": 3792025,
+                                                    "lat": -5503114
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "roundedCapStyleB",
+                                                    "reserved"
+                                                ],
+                                                "disabled": [
+                                                    "bikeBoxInFront",
+                                                    "sharedBikeLane",
+                                                    "turnOutPointOnRight",
+                                                    "rumbleStripPresent"
+                                                ],
+                                                "enabled": [
+                                                    "whiteLine"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "pathEndPointAngle": -107
+                                                    },
+                                                    {
+                                                        "laneCrownPointCenter": 100
+                                                    },
+                                                    {
+                                                        "speedLimits": [
+                                                            {
+                                                                "type": "vehicleMaxSpeed",
+                                                                "speed": 7823
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "dWidth": 368,
+                                                "dElevation": 247
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LatLon": {
+                                                    "lon": -484650272,
+                                                    "lat": 799084833
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "divergePoint",
+                                                    "stopLine",
+                                                    "hydrantPresent",
+                                                    "reserved"
+                                                ],
+                                                "disabled": [
+                                                    "loadingzoneOnLeft",
+                                                    "adjacentParkingOnLeft",
+                                                    "curbOnLeft"
+                                                ],
+                                                "enabled": [
+                                                    "turnOutPointOnLeft"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "pathEndPointAngle": -50
+                                                    },
+                                                    {
+                                                        "laneCrownPointRight": -95
+                                                    }
+                                                ],
+                                                "dWidth": -137,
+                                                "dElevation": -416
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "xy": {
+                                    "nodes": [
+                                        {
+                                            "delta": {
+                                                "node-XY1": {
+                                                    "x": -100,
+                                                    "y": -200
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY2": {
+                                                    "x": 300,
+                                                    "y": 700
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY3": {
+                                                    "x": -1000,
+                                                    "y": 800
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY4": {
+                                                    "x": 3000,
+                                                    "y": 3100
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY5": {
+                                                    "x": -1995,
+                                                    "y": -3251
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "roundedCapStyleB",
+                                                    "downstreamStopLine",
+                                                    "closedToTraffic",
+                                                    "stopLine"
+                                                ],
+                                                "disabled": [
+                                                    "adjacentParkingOnRight",
+                                                    "sharedWithTrackedVehicle",
+                                                    "sharedBikeLane",
+                                                    "transitStopOnRight"
+                                                ],
+                                                "enabled": [
+                                                    "curbOnRight"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "laneCrownPointLeft": -59
+                                                    },
+                                                    {
+                                                        "laneCrownPointRight": -19
+                                                    }
+                                                ],
+                                                "dWidth": -262,
+                                                "dElevation": -441
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY6": {
+                                                    "x": 13150,
+                                                    "y": 28495
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "roundedCapStyleB",
+                                                    "roundedCapStyleA",
+                                                    "closedToTraffic"
+                                                ],
+                                                "disabled": [
+                                                    "timeRestrictionsOnParking"
+                                                ],
+                                                "enabled": [
+                                                    "taperToRight"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "laneCrownPointLeft": -124
+                                                    },
+                                                    {
+                                                        "laneAngle": 96
+                                                    },
+                                                    {
+                                                        "pathEndPointAngle": -53
+                                                    },
+                                                    {
+                                                        "laneAngle": 47
+                                                    }
+                                                ],
+                                                "dWidth": 87,
+                                                "dElevation": -52
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LatLon": {
+                                                    "lon": -484650272,
+                                                    "lat": 799084833
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "xy": {
+                                    "computed": {
+                                        "referenceLaneId": 214,
+                                        "offsetXaxis": {
+                                            "large": -15374
+                                        },
+                                        "offsetYaxis": {
+                                            "large": -25650
+                                        },
+                                        "rotateXY": 17824,
+                                        "scaleXaxis": 1179,
+                                        "scaleYaxis": 1647
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "xy": {
+                                    "computed": {
+                                        "referenceLaneId": 214,
+                                        "offsetXaxis": {
+                                            "small": -500
+                                        },
+                                        "offsetYaxis": {
+                                            "small": -200
+                                        },
+                                        "rotateXY": 17824,
+                                        "scaleXaxis": 1179,
+                                        "scaleYaxis": 1647
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "doNotUse3": 17,
+            "doNotUse4": 2,
+            "content": {
+                "genericSign": [
+                    {
+                        "item": {
+                            "itis": 56342
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "itis": 35833
+                        }
+                    }
+                ]
+            },
+            "url": "IA5S",
+            "contentNew": {
+                "frictionInfo": {
+                    "roadSurfaceDescription": {
+                        "grass": {
+                            "type": "lessThan30Mph"
+                        }
+                    },
+                    "dryOrWet": "dry",
+                    "roadRoughness": {
+                        "meanVerticalVariation": 2874,
+                        "verticalVariationStdDev": 1825,
+                        "meanHorizontalVariation": 8736,
+                        "horizontalVariationStdDev": 274
+                    }
+                }
+            }
+        },
+        {
+            "doNotUse1": 7,
+            "frameType": "roadSignage",
+            "msgId": {
+                "roadSignID": {
+                    "position": {
+                        "lat": 288051106,
+                        "long": 654040760,
+                        "elevation": 26871
+                    },
+                    "viewAngle": "0010",
+                    "mutcdCode": "motoristService",
+                    "crc": "4F43"
+                }
+            },
+            "startYear": 3831,
+            "startTime": 250608,
+            "durationTime": 10219,
+            "priority": 6,
+            "doNotUse2": 22,
+            "regions": [
+                {
+                    "name": "IA5St",
+                    "id": {
+                        "region": 21266,
+                        "id": 19924
+                    },
+                    "anchor": {
+                        "lat": -247788717,
+                        "long": 172036334,
+                        "elevation": 42430
+                    },
+                    "laneWidth": 21385,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "2000",
+                    "description": {
+                        "oldRegion": {
+                            "direction": "1000",
+                            "extent": "useFor10000000meters",
+                            "area": {
+                                "shapePointSet": {
+                                    "anchor": {
+                                        "lat": -867624355,
+                                        "long": -1125512671,
+                                        "elevation": 4889
+                                    },
+                                    "laneWidth": 11162,
+                                    "directionality": "reverse",
+                                    "nodeList": {
+                                        "nodes": [
+                                            {
+                                                "delta": {
+                                                    "node-XY1": {
+                                                        "x": -100,
+                                                        "y": -200
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY2": {
+                                                        "x": 300,
+                                                        "y": 700
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY3": {
+                                                        "x": -1000,
+                                                        "y": 800
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY4": {
+                                                        "x": 3000,
+                                                        "y": 3100
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY5": {
+                                                        "x": -1995,
+                                                        "y": -3251
+                                                    }
+                                                },
+                                                "attributes": {
+                                                    "localNode": [
+                                                        "roundedCapStyleB",
+                                                        "downstreamStopLine",
+                                                        "closedToTraffic",
+                                                        "stopLine"
+                                                    ],
+                                                    "disabled": [
+                                                        "adjacentParkingOnRight",
+                                                        "sharedWithTrackedVehicle",
+                                                        "sharedBikeLane",
+                                                        "transitStopOnRight"
+                                                    ],
+                                                    "enabled": [
+                                                        "curbOnRight"
+                                                    ],
+                                                    "data": [
+                                                        {
+                                                            "laneCrownPointLeft": -59
+                                                        },
+                                                        {
+                                                            "laneCrownPointRight": -19
+                                                        }
+                                                    ],
+                                                    "dWidth": -262,
+                                                    "dElevation": -441
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-XY6": {
+                                                        "x": 13150,
+                                                        "y": 28495
+                                                    }
+                                                },
+                                                "attributes": {
+                                                    "localNode": [
+                                                        "roundedCapStyleB",
+                                                        "roundedCapStyleA",
+                                                        "closedToTraffic"
+                                                    ],
+                                                    "disabled": [
+                                                        "timeRestrictionsOnParking"
+                                                    ],
+                                                    "enabled": [
+                                                        "taperToRight"
+                                                    ],
+                                                    "data": [
+                                                        {
+                                                            "laneCrownPointLeft": -124
+                                                        },
+                                                        {
+                                                            "laneAngle": 96
+                                                        },
+                                                        {
+                                                            "pathEndPointAngle": -53
+                                                        },
+                                                        {
+                                                            "laneAngle": 47
+                                                        }
+                                                    ],
+                                                    "dWidth": 87,
+                                                    "dElevation": -52
+                                                }
+                                            },
+                                            {
+                                                "delta": {
+                                                    "node-LatLon": {
+                                                        "lon": -484650272,
+                                                        "lat": 799084833
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA",
+                    "id": {
+                        "region": 30715,
+                        "id": 65255
+                    },
+                    "anchor": {
+                        "lat": 542055265,
+                        "long": 632592574,
+                        "elevation": 8598
+                    },
+                    "laneWidth": 20835,
+                    "directionality": "forward",
+                    "closedPath": true,
+                    "direction": "0040",
+                    "description": {
+                        "oldRegion": {
+                            "direction": "0001",
+                            "extent": "useFor5000meters",
+                            "area": {
+                                "regionPointSet": {
+                                    "anchor": {
+                                        "lat": -310919171,
+                                        "long": -169708141,
+                                        "elevation": 60004
+                                    },
+                                    "scale": 0,
+                                    "nodeList": [
+                                        {
+                                            "xOffset": -9580,
+                                            "yOffset": -26076,
+                                            "zOffset": -3430
+                                        },
+                                        {
+                                            "xOffset": -29325,
+                                            "yOffset": 30375,
+                                            "zOffset": 31232
+                                        },
+                                        {
+                                            "xOffset": -19472,
+                                            "yOffset": 15221,
+                                            "zOffset": 19281
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5S",
+                    "id": {
+                        "region": 62649,
+                        "id": 54279
+                    },
+                    "anchor": {
+                        "lat": -365750656,
+                        "long": -409996946,
+                        "elevation": 26273
+                    },
+                    "laneWidth": 2831,
+                    "directionality": "forward",
+                    "closedPath": true,
+                    "direction": "2000",
+                    "description": {
+                        "oldRegion": {
+                            "direction": "0400",
+                            "extent": "forever",
+                            "area": {
+                                "circle": {
+                                    "center": {
+                                        "lat": 643301609,
+                                        "long": 1364442936,
+                                        "elevation": 29320
+                                    },
+                                    "radius": 2404,
+                                    "units": "meter"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 18847,
+                        "id": 22120
+                    },
+                    "anchor": {
+                        "lat": -499448086,
+                        "long": 498212767,
+                        "elevation": 32778
+                    },
+                    "laneWidth": 11689,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "0080",
+                    "description": {
+                        "geometry": {
+                            "direction": "8000",
+                            "extent": "useFor1000meters",
+                            "laneWidth": 30815,
+                            "circle": {
+                                "center": {
+                                    "lat": -415521055,
+                                    "long": 137912361,
+                                    "elevation": 26698
+                                },
+                                "radius": 2410,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 30428,
+                        "id": 32587
+                    },
+                    "anchor": {
+                        "lat": 95109787,
+                        "long": -1173876780,
+                        "elevation": 59570
+                    },
+                    "laneWidth": 2161,
+                    "directionality": "both",
+                    "closedPath": true,
+                    "direction": "1000",
+                    "description": {
+                        "geometry": {
+                            "direction": "0004",
+                            "extent": "useFor3meters",
+                            "laneWidth": 17117,
+                            "circle": {
+                                "center": {
+                                    "lat": -442538609,
+                                    "long": 1561489830,
+                                    "elevation": -2642
+                                },
+                                "radius": 1205,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "ll": {
+                                    "nodes": [
+                                        {
+                                            "delta": {
+                                                "node-LL1": {
+                                                    "lon": -1000,
+                                                    "lat": -1500
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL2": {
+                                                    "lon": -300,
+                                                    "lat": 5000
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL3": {
+                                                    "lon": 28086,
+                                                    "lat": -11267
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "safeIsland",
+                                                    "safeIsland",
+                                                    "curbPresentAtStepOff",
+                                                    "downstreamStopLine"
+                                                ],
+                                                "disabled": [
+                                                    "turnOutPointOnRight"
+                                                ],
+                                                "enabled": [
+                                                    "rfSignalRequestPresent",
+                                                    "curbOnLeft",
+                                                    "adjacentBikeLaneOnLeft",
+                                                    "turnOutPointOnRight"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "pathEndPointAngle": 121
+                                                    },
+                                                    {
+                                                        "speedLimits": [
+                                                            {
+                                                                "type": "vehicleMinSpeed",
+                                                                "speed": 2519
+                                                            },
+                                                            {
+                                                                "type": "maxSpeedInConstructionZone",
+                                                                "speed": 5381
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "laneAngle": -93
+                                                    },
+                                                    {
+                                                        "laneCrownPointCenter": 45
+                                                    }
+                                                ],
+                                                "dWidth": 234,
+                                                "dElevation": -104
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL4": {
+                                                    "lon": 31072,
+                                                    "lat": -31072
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL5": {
+                                                    "lon": -1812985,
+                                                    "lat": 1575913
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "safeIsland",
+                                                    "safeIsland",
+                                                    "downstreamStartNode"
+                                                ],
+                                                "disabled": [
+                                                    "turnOutPointOnRight",
+                                                    "taperToRight",
+                                                    "taperToCenterLine"
+                                                ],
+                                                "enabled": [
+                                                    "safeIsland",
+                                                    "reserved",
+                                                    "adjacentParkingOnRight",
+                                                    "headInParking",
+                                                    "taperToCenterLine"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "laneCrownPointRight": 30
+                                                    },
+                                                    {
+                                                        "laneCrownPointCenter": -2
+                                                    },
+                                                    {
+                                                        "pathEndPointAngle": 35
+                                                    },
+                                                    {
+                                                        "laneAngle": 21
+                                                    }
+                                                ],
+                                                "dWidth": -153,
+                                                "dElevation": 146
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LL6": {
+                                                    "lon": 3792025,
+                                                    "lat": -5503114
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "roundedCapStyleB",
+                                                    "reserved"
+                                                ],
+                                                "disabled": [
+                                                    "bikeBoxInFront",
+                                                    "sharedBikeLane",
+                                                    "turnOutPointOnRight",
+                                                    "rumbleStripPresent"
+                                                ],
+                                                "enabled": [
+                                                    "whiteLine"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "pathEndPointAngle": -107
+                                                    },
+                                                    {
+                                                        "laneCrownPointCenter": 100
+                                                    },
+                                                    {
+                                                        "speedLimits": [
+                                                            {
+                                                                "type": "vehicleMaxSpeed",
+                                                                "speed": 7823
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "dWidth": 368,
+                                                "dElevation": 247
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LatLon": {
+                                                    "lon": -484650272,
+                                                    "lat": 799084833
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "divergePoint",
+                                                    "stopLine",
+                                                    "hydrantPresent",
+                                                    "reserved"
+                                                ],
+                                                "disabled": [
+                                                    "loadingzoneOnLeft",
+                                                    "adjacentParkingOnLeft",
+                                                    "curbOnLeft"
+                                                ],
+                                                "enabled": [
+                                                    "turnOutPointOnLeft"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "pathEndPointAngle": -50
+                                                    },
+                                                    {
+                                                        "laneCrownPointRight": -95
+                                                    }
+                                                ],
+                                                "dWidth": -137,
+                                                "dElevation": -416
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "xy": {
+                                    "nodes": [
+                                        {
+                                            "delta": {
+                                                "node-XY1": {
+                                                    "x": -100,
+                                                    "y": -200
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY2": {
+                                                    "x": 300,
+                                                    "y": 700
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY3": {
+                                                    "x": -1000,
+                                                    "y": 800
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY4": {
+                                                    "x": 3000,
+                                                    "y": 3100
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY5": {
+                                                    "x": -1995,
+                                                    "y": -3251
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "roundedCapStyleB",
+                                                    "downstreamStopLine",
+                                                    "closedToTraffic",
+                                                    "stopLine"
+                                                ],
+                                                "disabled": [
+                                                    "adjacentParkingOnRight",
+                                                    "sharedWithTrackedVehicle",
+                                                    "sharedBikeLane",
+                                                    "transitStopOnRight"
+                                                ],
+                                                "enabled": [
+                                                    "curbOnRight"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "laneCrownPointLeft": -59
+                                                    },
+                                                    {
+                                                        "laneCrownPointRight": -19
+                                                    }
+                                                ],
+                                                "dWidth": -262,
+                                                "dElevation": -441
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-XY6": {
+                                                    "x": 13150,
+                                                    "y": 28495
+                                                }
+                                            },
+                                            "attributes": {
+                                                "localNode": [
+                                                    "roundedCapStyleB",
+                                                    "roundedCapStyleA",
+                                                    "closedToTraffic"
+                                                ],
+                                                "disabled": [
+                                                    "timeRestrictionsOnParking"
+                                                ],
+                                                "enabled": [
+                                                    "taperToRight"
+                                                ],
+                                                "data": [
+                                                    {
+                                                        "laneCrownPointLeft": -124
+                                                    },
+                                                    {
+                                                        "laneAngle": 96
+                                                    },
+                                                    {
+                                                        "pathEndPointAngle": -53
+                                                    },
+                                                    {
+                                                        "laneAngle": 47
+                                                    }
+                                                ],
+                                                "dWidth": 87,
+                                                "dElevation": -52
+                                            }
+                                        },
+                                        {
+                                            "delta": {
+                                                "node-LatLon": {
+                                                    "lon": -484650272,
+                                                    "lat": 799084833
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "xy": {
+                                    "computed": {
+                                        "referenceLaneId": 214,
+                                        "offsetXaxis": {
+                                            "large": -15374
+                                        },
+                                        "offsetYaxis": {
+                                            "large": -25650
+                                        },
+                                        "rotateXY": 17824,
+                                        "scaleXaxis": 1179,
+                                        "scaleYaxis": 1647
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "IA5",
+                    "id": {
+                        "region": 1764,
+                        "id": 42002
+                    },
+                    "anchor": {
+                        "lat": 472293650,
+                        "long": 1289108906,
+                        "elevation": 46789
+                    },
+                    "laneWidth": 26663,
+                    "directionality": "unavailable",
+                    "closedPath": true,
+                    "direction": "0400",
+                    "description": {
+                        "path": {
+                            "scale": 3,
+                            "offset": {
+                                "xy": {
+                                    "computed": {
+                                        "referenceLaneId": 214,
+                                        "offsetXaxis": {
+                                            "small": -500
+                                        },
+                                        "offsetYaxis": {
+                                            "small": -200
+                                        },
+                                        "rotateXY": 17824,
+                                        "scaleXaxis": 1179,
+                                        "scaleYaxis": 1647
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "doNotUse3": 17,
+            "doNotUse4": 2,
+            "content": {
+                "advisory": [
+                    {
+                        "item": {
+                            "itis": 56342
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "itis": 35833
+                        }
+                    }
+                ]
+            },
+            "url": "IA5S",
+            "contentNew": {
+                "frictionInfo": {
+                    "roadSurfaceDescription": {
+                        "grass": {
+                            "type": "lessThan30Mph"
+                        }
+                    },
+                    "dryOrWet": "dry",
+                    "roadRoughness": {
+                        "meanVerticalVariation": 2874,
+                        "verticalVariationStdDev": 1825,
+                        "meanHorizontalVariation": 8736,
+                        "horizontalVariationStdDev": 274
+                    }
+                }
+            }
+        },
+        {
+            "doNotUse1": 7,
+            "frameType": "unknown",
+            "msgId": {
+                "roadSignID": {
+                    "position": {
+                        "lat": 288051106,
+                        "long": 654040760,
+                        "elevation": 26871
+                    },
+                    "viewAngle": "0010",
+                    "mutcdCode": "motoristService",
+                    "crc": "4F43"
+                }
+            },
+            "startYear": 3831,
+            "startTime": 250608,
+            "durationTime": 10219,
+            "priority": 6,
+            "doNotUse2": 22,
+            "regions": [
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 18847,
+                        "id": 22120
+                    },
+                    "anchor": {
+                        "lat": -499448086,
+                        "long": 498212767,
+                        "elevation": 32778
+                    },
+                    "laneWidth": 11689,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "0080",
+                    "description": {
+                        "geometry": {
+                            "direction": "8000",
+                            "extent": "useFor1000meters",
+                            "laneWidth": 30815,
+                            "circle": {
+                                "center": {
+                                    "lat": -415521055,
+                                    "long": 137912361,
+                                    "elevation": 26698
+                                },
+                                "radius": 2410,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                }
+            ],
+            "doNotUse3": 17,
+            "doNotUse4": 2,
+            "content": {
+                "workZone": [
+                    {
+                        "item": {
+                            "itis": 56342
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "itis": 35833
+                        }
+                    }
+                ]
+            },
+            "url": "IA5S",
+            "contentNew": {
+                "frictionInfo": {
+                    "roadSurfaceDescription": {
+                        "grass": {
+                            "type": "lessThan30Mph"
+                        }
+                    },
+                    "dryOrWet": "dry",
+                    "roadRoughness": {
+                        "meanVerticalVariation": 2874,
+                        "verticalVariationStdDev": 1825,
+                        "meanHorizontalVariation": 8736,
+                        "horizontalVariationStdDev": 274
+                    }
+                }
+            }
+        },
+        {
+            "doNotUse1": 7,
+            "frameType": "commercialSignage",
+            "msgId": {
+                "roadSignID": {
+                    "position": {
+                        "lat": 288051106,
+                        "long": 654040760,
+                        "elevation": 26871
+                    },
+                    "viewAngle": "0010",
+                    "mutcdCode": "motoristService",
+                    "crc": "4F43"
+                }
+            },
+            "startYear": 3831,
+            "startTime": 250608,
+            "durationTime": 10219,
+            "priority": 6,
+            "doNotUse2": 22,
+            "regions": [
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 18847,
+                        "id": 22120
+                    },
+                    "anchor": {
+                        "lat": -499448086,
+                        "long": 498212767,
+                        "elevation": 32778
+                    },
+                    "laneWidth": 11689,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "0080",
+                    "description": {
+                        "geometry": {
+                            "direction": "8000",
+                            "extent": "useFor1000meters",
+                            "laneWidth": 30815,
+                            "circle": {
+                                "center": {
+                                    "lat": -415521055,
+                                    "long": 137912361,
+                                    "elevation": 26698
+                                },
+                                "radius": 2410,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                }
+            ],
+            "doNotUse3": 17,
+            "doNotUse4": 2,
+            "content": {
+                "speedLimit": [
+                    {
+                        "item": {
+                            "itis": 56342
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "itis": 35833
+                        }
+                    }
+                ]
+            },
+            "url": "IA5S",
+            "contentNew": {
+                "frictionInfo": {
+                    "roadSurfaceDescription": {
+                        "grass": {
+                            "type": "lessThan30Mph"
+                        }
+                    },
+                    "dryOrWet": "dry",
+                    "roadRoughness": {
+                        "meanVerticalVariation": 2874,
+                        "verticalVariationStdDev": 1825,
+                        "meanHorizontalVariation": 8736,
+                        "horizontalVariationStdDev": 274
+                    }
+                }
+            }
+        },
+        {
+            "doNotUse1": 7,
+            "frameType": "commercialSignage",
+            "msgId": {
+                "roadSignID": {
+                    "position": {
+                        "lat": 288051106,
+                        "long": 654040760,
+                        "elevation": 26871
+                    },
+                    "viewAngle": "0010",
+                    "mutcdCode": "motoristService",
+                    "crc": "4F43"
+                }
+            },
+            "startYear": 3831,
+            "startTime": 250608,
+            "durationTime": 10219,
+            "priority": 6,
+            "doNotUse2": 22,
+            "regions": [
+                {
+                    "name": "I",
+                    "id": {
+                        "region": 18847,
+                        "id": 22120
+                    },
+                    "anchor": {
+                        "lat": -499448086,
+                        "long": 498212767,
+                        "elevation": 32778
+                    },
+                    "laneWidth": 11689,
+                    "directionality": "reverse",
+                    "closedPath": true,
+                    "direction": "0080",
+                    "description": {
+                        "geometry": {
+                            "direction": "8000",
+                            "extent": "useFor1000meters",
+                            "laneWidth": 30815,
+                            "circle": {
+                                "center": {
+                                    "lat": -415521055,
+                                    "long": 137912361,
+                                    "elevation": 26698
+                                },
+                                "radius": 2410,
+                                "units": "meter"
+                            }
+                        }
+                    }
+                }
+            ],
+            "doNotUse3": 17,
+            "doNotUse4": 2,
+            "content": {
+                "exitService": [
+                    {
+                        "item": {
+                            "itis": 56342
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "text": "IA5St"
+                        }
+                    },
+                    {
+                        "item": {
+                            "itis": 35833
+                        }
+                    }
+                ]
+            },
+            "url": "IA5S",
+            "contentNew": {
+                "frictionInfo": {
+                    "roadSurfaceDescription": {
+                        "grass": {
+                            "type": "lessThan30Mph"
+                        }
+                    },
+                    "dryOrWet": "dry",
+                    "roadRoughness": {
+                        "meanVerticalVariation": 2874,
+                        "verticalVariationStdDev": 1825,
+                        "meanHorizontalVariation": 8736,
+                        "horizontalVariationStdDev": 274
+                    }
+                }
+            }
+        }
+    ]
+}
