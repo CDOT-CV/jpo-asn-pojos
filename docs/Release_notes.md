@@ -1,6 +1,6 @@
 # jpo-asn-pojos Release Notes
 
-## Version 1.0.2, released October 2025
+## Version 1.1.0, released October 2025
 
 This release introduces JSON schema generation for J2735 messages based on POJO definitions and adds a distributionManagement tag to the repository pom.xml, enabling the jpo-ode to publish Maven packages that depend on the jpo-asn-pojos projects. A workaround has been implemented for a Jackson bug present in versions prior to 2.17.2, where the XmlReadContext nesting depth property was not incremented correctly during JSON deserialization. Additionally, this update resolves two serialization bugs caused by bitstrings with fewer named bits than the declared size and open types containing strings with special characters (e.g., &, <).
 
