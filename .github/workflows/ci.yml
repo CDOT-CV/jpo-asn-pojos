@@ -2,85 +2,119 @@ name: Test & Coverage
 
 on:
   pull_request:
+  push:
+    branches:
+      - "develop"
+      - "master"
+      - "release/*"
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-    
-    - name: Run Tests with Coverage (jpo-asn-j2735-2024 and jpo-asn-runtime)
-      working-directory: ./jpo-asn-j2735-2024
-      run: |
-        chmod +x gradlew
-        ./gradlew check
-      
-    - name: Upload coverage reports (jpo-asn-j2735-2024 and jpo-asn-runtime)
-      uses: actions/upload-artifact@v4
-      with:
-        name: coverage-report
-        path: jpo-asn-j2735-2024/build/reports/jacoco/testCodeCoverageReport/html/
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
-    - name: Run Tests with Coverage (jpo-asn-test-generator)
-      working-directory: ./jpo-asn-test-generator
-      run: |
-        chmod +x gradlew
-        ./gradlew test jacocoTestReport
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
 
-    - name: Upload coverage reports (jpo-asn-test-generator)
-      uses: actions/upload-artifact@v4
-      with:
-        name: coverage-report-test-generator
-        path: jpo-asn-test-generator/build/reports/jacoco/test/html/
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
 
-    - name: Run Tests with Coverage (jpo-asn-jsonschema-generator)
-      working-directory: ./jpo-asn-jsonschema-generator
-      run: |
-        chmod +x gradlew
-        ./gradlew check
-      
-    - name: Upload coverage reports (jpo-asn-jsonschema-generator)
-      uses: actions/upload-artifact@v4
-      with:
-        name: coverage-report
-        path: jpo-asn-jsonschema-generator/build/reports/jacoco/testCodeCoverageReport/html/
+      - name: Run Tests with Coverage (jpo-asn-j2735-2024)
+        working-directory: ./jpo-asn-j2735-2024
+        run: |
+          chmod +x gradlew
+          ./gradlew clean check
 
-    - name: Add Coverage PR Comment (jpo-asn-j2735-2024 and jpo-asn-runtime)
-      uses: madrapps/jacoco-report@v1.6.1
-      if: github.event_name == 'pull_request'
-      with:
-        title: Jacoco Coverage Reports (jpo-asn-j2735-2024 and jpo-asn-runtime)
-        update-comment: true
-        paths: ${{ github.workspace }}/jpo-asn-j2735-2024/build/reports/jacoco/testCodeCoverageReport/testCodeCoverageReport.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 75
+      - name: Run Tests with Coverage (jpo-asn-runtime)
+        working-directory: ./jpo-asn-runtime
+        run: |
+          chmod +x gradlew
+          ./gradlew clean test jacocoTestReport
 
-    - name: Add Coverage PR Comment (jpo-asn-test-generator)
-      uses: madrapps/jacoco-report@v1.6.1
-      if: github.event_name == 'pull_request'
-      with:
-        title: Jacoco Coverage Reports (jpo-asn-test-generator)
-        update-comment: true
-        paths: ${{ github.workspace }}/jpo-asn-test-generator/build/reports/jacoco/test/jacocoTestReport.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 75
+      - name: Run Tests with Coverage (jpo-asn-test-generator)
+        working-directory: ./jpo-asn-test-generator
+        run: |
+          chmod +x gradlew
+          ./gradlew clean test jacocoTestReport
 
-    - name: Add Coverage PR Comment (jpo-asn-jsonschema-generator)
-      uses: madrapps/jacoco-report@v1.6.1
-      if: github.event_name == 'pull_request'
-      with:
-        title: Jacoco Coverage Reports (jpo-asn-jsonschema-generator)
-        update-comment: true
-        paths: ${{ github.workspace }}/jpo-asn-jsonschema-generator/build/reports/jacoco/test/jacocoTestReport.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 75
+      - name: Run Tests with Coverage (jpo-asn-jsonschema-generator)
+        working-directory: ./jpo-asn-jsonschema-generator
+        run: |
+          chmod +x gradlew
+          ./gradlew clean check
+
+      - name: Upload Sonar inputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: sonar-inputs
+          path: |
+            jpo-asn-j2735-2024/build/reports/jacoco/testCodeCoverageReport/testCodeCoverageReport.xml
+            jpo-asn-test-generator/build/reports/jacoco/test/jacocoTestReport.xml
+            jpo-asn-jsonschema-generator/build/reports/jacoco/test/jacocoTestReport.xml
+            jpo-asn-runtime/build/reports/jacoco/test/jacocoTestReport.xml
+            jpo-asn-j2735-2024/build/classes/java/main
+            jpo-asn-j2735-2024/build/classes/java/test
+            jpo-asn-runtime/build/classes/java/main
+            jpo-asn-runtime/build/classes/java/test
+            jpo-asn-test-generator/build/classes/java/main
+            jpo-asn-test-generator/build/classes/java/test
+            jpo-asn-jsonschema-generator/build/classes/java/main
+            jpo-asn-jsonschema-generator/build/classes/java/test
+
+      - name: Add Coverage PR Comment (jpo-asn-j2735-2024 and jpo-asn-runtime)
+        if: github.event_name == 'pull_request'
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          title: Jacoco Coverage Reports (jpo-asn-j2735-2024 and jpo-asn-runtime)
+          update-comment: true
+          paths: ${{ github.workspace }}/jpo-asn-j2735-2024/build/reports/jacoco/testCodeCoverageReport/testCodeCoverageReport.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 80
+
+      - name: Add Coverage PR Comment (jpo-asn-test-generator)
+        if: github.event_name == 'pull_request'
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          title: Jacoco Coverage Reports (jpo-asn-test-generator)
+          update-comment: true
+          paths: ${{ github.workspace }}/jpo-asn-test-generator/build/reports/jacoco/test/jacocoTestReport.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 80
+
+      - name: Add Coverage PR Comment (jpo-asn-jsonschema-generator)
+        if: github.event_name == 'pull_request'
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          title: Jacoco Coverage Reports (jpo-asn-jsonschema-generator)
+          update-comment: true
+          paths: ${{ github.workspace }}/jpo-asn-jsonschema-generator/build/reports/jacoco/test/jacocoTestReport.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 80
+
+  sonar:
+    needs: test
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.owner.login == 'usdot-jpo-ode')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Download Sonar inputs
+        uses: actions/download-artifact@v4
+        with:
+          name: sonar-inputs
+          path: .
+
+      - name: Run SonarQube Cloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
