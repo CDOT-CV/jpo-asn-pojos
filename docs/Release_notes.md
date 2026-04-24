@@ -10,6 +10,7 @@ access, such as IPv6 only access, may retrieve them as resources from the JAR.
 Includes one new feature:
 
 * [JSON schemas in resources](https://github.com/neaeraconsulting/jpo-asn-pojos/pull/1)
+* [Add SonarCloud analysis to CI workflow](https://github.com/usdot-jpo-ode/jpo-asn-pojos/pull/18)
 
 ## Version 1.1.0, released October 2025
 
