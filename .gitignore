@@ -107,6 +107,11 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+# Idea copilot files
+.idea/copilot.*
+
+.profileconfig.json
+
 ####################################################################################################
 # VSCode Ignores
 # Ref. https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore

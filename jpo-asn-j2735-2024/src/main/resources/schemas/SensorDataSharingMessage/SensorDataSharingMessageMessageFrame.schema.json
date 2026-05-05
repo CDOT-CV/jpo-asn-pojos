@@ -1,0 +1,1183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.SensorDataSharingMessageMessageFrame",
+  "description": "ASN.1 SEQUENCE Type",
+  "properties": {
+    "messageId": {
+      "type": "integer",
+      "const": 41
+    },
+    "value": {
+      "type": "object",
+      "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.SensorDataSharingMessageMessageFrameValue",
+      "description": "ASN.1 SEQUENCE Type",
+      "properties": {
+        "SensorDataSharingMessage": {
+          "type": "object",
+          "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.SensorDataSharingMessage",
+          "description": "ASN.1 SEQUENCE Type",
+          "properties": {
+            "msgCnt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 127
+            },
+            "sourceID": {
+              "type": "string",
+              "pattern": "^[0-9A-Fa-f]{8,8}$",
+              "description": "OCTET STRING - hex encoded, min 4 bytes, max 4 bytes"
+            },
+            "equipmentType": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "rsu",
+                "obu",
+                "vru"
+              ]
+            },
+            "sDSMTimeStamp": {
+              "type": "object",
+              "title": "us.dot.its.jpo.asn.j2735.r2024.Common.DDateTime",
+              "description": "ASN.1 SEQUENCE Type",
+              "properties": {
+                "year": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4095
+                },
+                "month": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 12
+                },
+                "day": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 31
+                },
+                "hour": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 31
+                },
+                "minute": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 60
+                },
+                "second": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                },
+                "offset": {
+                  "type": "integer",
+                  "minimum": -840,
+                  "maximum": 840
+                }
+              }
+            },
+            "refPos": {
+              "type": "object",
+              "title": "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D",
+              "description": "ASN.1 SEQUENCE Type",
+              "properties": {
+                "lat": {
+                  "type": "integer",
+                  "minimum": -900000000,
+                  "maximum": 900000001
+                },
+                "long": {
+                  "type": "integer",
+                  "minimum": -1799999999,
+                  "maximum": 1800000001
+                },
+                "elevation": {
+                  "type": "integer",
+                  "minimum": -4096,
+                  "maximum": 61439
+                },
+                "regional": {
+                  "type": "array",
+                  "title": "us.dot.its.jpo.asn.j2735.r2024.Common.Position3D$SequenceOfRegional",
+                  "description": "ASN.1 SEQUENCE OF Type",
+                  "items": {
+                    "type": "object",
+                    "title": "us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_Position3D",
+                    "description": "ASN.1 SEQUENCE Type with Parameterized Values",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "regionId": {
+                            "type": "integer",
+                            "const": 2
+                          },
+                          "regExtValue": {
+                            "type": "object",
+                            "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpBReg_Position3D",
+                            "description": "ASN.1 SEQUENCE Type",
+                            "properties": {
+                              "Position3D_addGrpB": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.Position3D_addGrpB",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "latitude": {
+                                    "type": "object",
+                                    "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LatitudeDMS2",
+                                    "description": "ASN.1 SEQUENCE Type",
+                                    "properties": {
+                                      "d": {
+                                        "type": "integer",
+                                        "minimum": -90,
+                                        "maximum": 90
+                                      },
+                                      "m": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 59
+                                      },
+                                      "s": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 5999
+                                      }
+                                    },
+                                    "required": [
+                                      "d",
+                                      "m",
+                                      "s"
+                                    ]
+                                  },
+                                  "longitude": {
+                                    "type": "object",
+                                    "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpB.LongitudeDMS2",
+                                    "description": "ASN.1 SEQUENCE Type",
+                                    "properties": {
+                                      "d": {
+                                        "type": "integer",
+                                        "minimum": -180,
+                                        "maximum": 180
+                                      },
+                                      "m": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 59
+                                      },
+                                      "s": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 5999
+                                      }
+                                    },
+                                    "required": [
+                                      "d",
+                                      "m",
+                                      "s"
+                                    ]
+                                  },
+                                  "elevation": {
+                                    "type": "integer",
+                                    "minimum": -32768,
+                                    "maximum": 32767
+                                  }
+                                },
+                                "required": [
+                                  "latitude",
+                                  "longitude",
+                                  "elevation"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "Position3D_addGrpB"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "regionId",
+                          "regExtValue"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "regionId": {
+                            "type": "integer",
+                            "const": 3
+                          },
+                          "regExtValue": {
+                            "type": "object",
+                            "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpCReg_Position3D",
+                            "description": "ASN.1 SEQUENCE Type",
+                            "properties": {
+                              "Position3D_addGrpC": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Position3D_addGrpC",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "altitude": {
+                                    "type": "object",
+                                    "title": "us.dot.its.jpo.asn.j2735.r2024.AddGrpC.Altitude",
+                                    "description": "ASN.1 SEQUENCE Type",
+                                    "properties": {
+                                      "value": {
+                                        "type": "integer",
+                                        "minimum": -100000,
+                                        "maximum": 800001
+                                      },
+                                      "confidence": {
+                                        "type": "string",
+                                        "enum": [
+                                          "alt-000-01",
+                                          "alt-000-02",
+                                          "alt-000-05",
+                                          "alt-000-10",
+                                          "alt-000-20",
+                                          "alt-000-50",
+                                          "alt-001-00",
+                                          "alt-002-00",
+                                          "alt-005-00",
+                                          "alt-010-00",
+                                          "alt-020-00",
+                                          "alt-050-00",
+                                          "alt-100-00",
+                                          "alt-200-00",
+                                          "outOfRange",
+                                          "unavailable"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "confidence"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "altitude"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "Position3D_addGrpC"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "regionId",
+                          "regExtValue"
+                        ]
+                      }
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 4
+                }
+              },
+              "required": [
+                "lat",
+                "long"
+              ]
+            },
+            "refPosXYConf": {
+              "type": "object",
+              "title": "us.dot.its.jpo.asn.j2735.r2024.Common.PositionalAccuracy",
+              "description": "ASN.1 SEQUENCE Type",
+              "properties": {
+                "semiMajor": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 255
+                },
+                "semiMinor": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 255
+                },
+                "orientation": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 65535
+                }
+              },
+              "required": [
+                "semiMajor",
+                "semiMinor",
+                "orientation"
+              ]
+            },
+            "refPosElConf": {
+              "type": "string",
+              "enum": [
+                "unavailable",
+                "elev-500-00",
+                "elev-200-00",
+                "elev-100-00",
+                "elev-050-00",
+                "elev-020-00",
+                "elev-010-00",
+                "elev-005-00",
+                "elev-002-00",
+                "elev-001-00",
+                "elev-000-50",
+                "elev-000-20",
+                "elev-000-10",
+                "elev-000-05",
+                "elev-000-02",
+                "elev-000-01"
+              ]
+            },
+            "objects": {
+              "type": "array",
+              "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectList",
+              "description": "ASN.1 SEQUENCE OF Type",
+              "items": {
+                "type": "object",
+                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectData",
+                "description": "ASN.1 SEQUENCE Type",
+                "properties": {
+                  "detObjCommon": {
+                    "type": "object",
+                    "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectCommonData",
+                    "description": "ASN.1 SEQUENCE Type",
+                    "properties": {
+                      "objType": {
+                        "type": "string",
+                        "enum": [
+                          "unknown",
+                          "vehicle",
+                          "vru",
+                          "animal"
+                        ]
+                      },
+                      "objTypeCfd": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 101
+                      },
+                      "objectID": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 65535
+                      },
+                      "measurementTime": {
+                        "type": "integer",
+                        "minimum": -1500,
+                        "maximum": 1500
+                      },
+                      "timeConfidence": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "time-100-000",
+                          "time-050-000",
+                          "time-020-000",
+                          "time-010-000",
+                          "time-002-000",
+                          "time-001-000",
+                          "time-000-500",
+                          "time-000-200",
+                          "time-000-100",
+                          "time-000-050",
+                          "time-000-020",
+                          "time-000-010",
+                          "time-000-005",
+                          "time-000-002",
+                          "time-000-001",
+                          "time-000-000-5",
+                          "time-000-000-2",
+                          "time-000-000-1",
+                          "time-000-000-05",
+                          "time-000-000-02",
+                          "time-000-000-01",
+                          "time-000-000-005",
+                          "time-000-000-002",
+                          "time-000-000-001",
+                          "time-000-000-000-5",
+                          "time-000-000-000-2",
+                          "time-000-000-000-1",
+                          "time-000-000-000-05",
+                          "time-000-000-000-02",
+                          "time-000-000-000-01",
+                          "time-000-000-000-005",
+                          "time-000-000-000-002",
+                          "time-000-000-000-001",
+                          "time-000-000-000-000-5",
+                          "time-000-000-000-000-2",
+                          "time-000-000-000-000-1",
+                          "time-000-000-000-000-05",
+                          "time-000-000-000-000-02",
+                          "time-000-000-000-000-01"
+                        ]
+                      },
+                      "pos": {
+                        "type": "object",
+                        "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.PositionOffsetXYZ",
+                        "description": "ASN.1 SEQUENCE Type",
+                        "properties": {
+                          "offsetX": {
+                            "type": "integer",
+                            "minimum": -32767,
+                            "maximum": 32767
+                          },
+                          "offsetY": {
+                            "type": "integer",
+                            "minimum": -32767,
+                            "maximum": 32767
+                          },
+                          "offsetZ": {
+                            "type": "integer",
+                            "minimum": -32767,
+                            "maximum": 32767
+                          }
+                        },
+                        "required": [
+                          "offsetX",
+                          "offsetY"
+                        ]
+                      },
+                      "posConfidence": {
+                        "type": "object",
+                        "title": "us.dot.its.jpo.asn.j2735.r2024.Common.PositionConfidenceSet",
+                        "description": "ASN.1 SEQUENCE Type",
+                        "properties": {
+                          "pos": {
+                            "type": "string",
+                            "enum": [
+                              "unavailable",
+                              "a500m",
+                              "a200m",
+                              "a100m",
+                              "a50m",
+                              "a20m",
+                              "a10m",
+                              "a5m",
+                              "a2m",
+                              "a1m",
+                              "a50cm",
+                              "a20cm",
+                              "a10cm",
+                              "a5cm",
+                              "a2cm",
+                              "a1cm"
+                            ]
+                          },
+                          "elevation": {
+                            "type": "string",
+                            "enum": [
+                              "unavailable",
+                              "elev-500-00",
+                              "elev-200-00",
+                              "elev-100-00",
+                              "elev-050-00",
+                              "elev-020-00",
+                              "elev-010-00",
+                              "elev-005-00",
+                              "elev-002-00",
+                              "elev-001-00",
+                              "elev-000-50",
+                              "elev-000-20",
+                              "elev-000-10",
+                              "elev-000-05",
+                              "elev-000-02",
+                              "elev-000-01"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "pos",
+                          "elevation"
+                        ]
+                      },
+                      "speed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 8191
+                      },
+                      "speedConfidence": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "prec100ms",
+                          "prec10ms",
+                          "prec5ms",
+                          "prec1ms",
+                          "prec0-1ms",
+                          "prec0-05ms",
+                          "prec0-01ms"
+                        ]
+                      },
+                      "speedZ": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 8191
+                      },
+                      "speedConfidenceZ": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "prec100ms",
+                          "prec10ms",
+                          "prec5ms",
+                          "prec1ms",
+                          "prec0-1ms",
+                          "prec0-05ms",
+                          "prec0-01ms"
+                        ]
+                      },
+                      "heading": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 28800
+                      },
+                      "headingConf": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "prec10deg",
+                          "prec05deg",
+                          "prec01deg",
+                          "prec0-1deg",
+                          "prec0-05deg",
+                          "prec0-01deg",
+                          "prec0-0125deg"
+                        ]
+                      },
+                      "accel4way": {
+                        "type": "object",
+                        "title": "us.dot.its.jpo.asn.j2735.r2024.Common.AccelerationSet4Way",
+                        "description": "ASN.1 SEQUENCE Type",
+                        "properties": {
+                          "long": {
+                            "type": "integer",
+                            "minimum": -2000,
+                            "maximum": 2001
+                          },
+                          "lat": {
+                            "type": "integer",
+                            "minimum": -2000,
+                            "maximum": 2001
+                          },
+                          "vert": {
+                            "type": "integer",
+                            "minimum": -127,
+                            "maximum": 127
+                          },
+                          "yaw": {
+                            "type": "integer",
+                            "minimum": -32767,
+                            "maximum": 32767
+                          }
+                        },
+                        "required": [
+                          "long",
+                          "lat",
+                          "vert",
+                          "yaw"
+                        ]
+                      },
+                      "accCfdX": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "accl-100-00",
+                          "accl-010-00",
+                          "accl-005-00",
+                          "accl-001-00",
+                          "accl-000-10",
+                          "accl-000-05",
+                          "accl-000-01"
+                        ]
+                      },
+                      "accCfdY": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "accl-100-00",
+                          "accl-010-00",
+                          "accl-005-00",
+                          "accl-001-00",
+                          "accl-000-10",
+                          "accl-000-05",
+                          "accl-000-01"
+                        ]
+                      },
+                      "accCfdZ": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "accl-100-00",
+                          "accl-010-00",
+                          "accl-005-00",
+                          "accl-001-00",
+                          "accl-000-10",
+                          "accl-000-05",
+                          "accl-000-01"
+                        ]
+                      },
+                      "accCfdYaw": {
+                        "type": "string",
+                        "enum": [
+                          "unavailable",
+                          "degSec-100-00",
+                          "degSec-010-00",
+                          "degSec-005-00",
+                          "degSec-001-00",
+                          "degSec-000-10",
+                          "degSec-000-05",
+                          "degSec-000-01"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "objType",
+                      "objTypeCfd",
+                      "objectID",
+                      "measurementTime",
+                      "timeConfidence",
+                      "pos",
+                      "posConfidence",
+                      "speed",
+                      "speedConfidence",
+                      "heading",
+                      "headingConf"
+                    ]
+                  },
+                  "detObjOptData": {
+                    "type": "object",
+                    "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObjectOptionalData",
+                    "description": "ASN.1 CHOICE Type - represents a union of possible types",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "detVeh": {
+                            "type": "object",
+                            "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedVehicleData",
+                            "description": "ASN.1 SEQUENCE Type",
+                            "properties": {
+                              "lights": {
+                                "anyOf": [
+                                  {
+                                    "type": "string",
+                                    "pattern": "^[0-9a-fA-F]{4,}$"
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "value": {
+                                        "type": "string",
+                                        "pattern": "^[0-9a-fA-F]{4,}$"
+                                      },
+                                      "length": {
+                                        "type": "integer",
+                                        "minimum": 9
+                                      }
+                                    },
+                                    "required": [
+                                      "value",
+                                      "length"
+                                    ]
+                                  }
+                                ],
+                                "description": "BIT STRING - hex encoded, minimum 9 bits"
+                              },
+                              "vehAttitude": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.Attitude",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "pitch": {
+                                    "type": "integer",
+                                    "minimum": -7200,
+                                    "maximum": 7200
+                                  },
+                                  "roll": {
+                                    "type": "integer",
+                                    "minimum": -14400,
+                                    "maximum": 14400
+                                  },
+                                  "yaw": {
+                                    "type": "integer",
+                                    "minimum": -14400,
+                                    "maximum": 14400
+                                  }
+                                },
+                                "required": [
+                                  "pitch",
+                                  "roll",
+                                  "yaw"
+                                ]
+                              },
+                              "vehAttitudeConfidence": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.AttitudeConfidence",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "pitchConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "prec10deg",
+                                      "prec05deg",
+                                      "prec01deg",
+                                      "prec0-1deg",
+                                      "prec0-05deg",
+                                      "prec0-01deg",
+                                      "prec0-0125deg"
+                                    ]
+                                  },
+                                  "rollConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "prec10deg",
+                                      "prec05deg",
+                                      "prec01deg",
+                                      "prec0-1deg",
+                                      "prec0-05deg",
+                                      "prec0-01deg",
+                                      "prec0-0125deg"
+                                    ]
+                                  },
+                                  "yawConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "prec10deg",
+                                      "prec05deg",
+                                      "prec01deg",
+                                      "prec0-1deg",
+                                      "prec0-05deg",
+                                      "prec0-01deg",
+                                      "prec0-0125deg"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "pitchConfidence",
+                                  "rollConfidence",
+                                  "yawConfidence"
+                                ]
+                              },
+                              "vehAngVel": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.AngularVelocity",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "pitchRate": {
+                                    "type": "integer",
+                                    "minimum": -32767,
+                                    "maximum": 32767
+                                  },
+                                  "rollRate": {
+                                    "type": "integer",
+                                    "minimum": -32767,
+                                    "maximum": 32767
+                                  }
+                                },
+                                "required": [
+                                  "pitchRate",
+                                  "rollRate"
+                                ]
+                              },
+                              "vehAngVelConfidence": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.AngularVelocityConfidence",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "pitchRateConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "degSec-100-00",
+                                      "degSec-010-00",
+                                      "degSec-005-00",
+                                      "degSec-001-00",
+                                      "degSec-000-10",
+                                      "degSec-000-05",
+                                      "degSec-000-01"
+                                    ]
+                                  },
+                                  "rollRateConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "degSec-100-00",
+                                      "degSec-010-00",
+                                      "degSec-005-00",
+                                      "degSec-001-00",
+                                      "degSec-000-10",
+                                      "degSec-000-05",
+                                      "degSec-000-01"
+                                    ]
+                                  }
+                                }
+                              },
+                              "size": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.Common.VehicleSize",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "width": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 1023
+                                  },
+                                  "length": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 4095
+                                  }
+                                },
+                                "required": [
+                                  "width",
+                                  "length"
+                                ]
+                              },
+                              "height": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 127
+                              },
+                              "vehicleSizeConfidence": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.VehicleSizeConfidence",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "vehicleWidthConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "size-100-00",
+                                      "size-050-00",
+                                      "size-020-00",
+                                      "size-010-00",
+                                      "size-005-00",
+                                      "size-002-00",
+                                      "size-001-00",
+                                      "size-000-50",
+                                      "size-000-20",
+                                      "size-000-10",
+                                      "size-000-05",
+                                      "size-000-02",
+                                      "size-000-01"
+                                    ]
+                                  },
+                                  "vehicleLengthConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "size-100-00",
+                                      "size-050-00",
+                                      "size-020-00",
+                                      "size-010-00",
+                                      "size-005-00",
+                                      "size-002-00",
+                                      "size-001-00",
+                                      "size-000-50",
+                                      "size-000-20",
+                                      "size-000-10",
+                                      "size-000-05",
+                                      "size-000-02",
+                                      "size-000-01"
+                                    ]
+                                  },
+                                  "vehicleHeightConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "size-100-00",
+                                      "size-050-00",
+                                      "size-020-00",
+                                      "size-010-00",
+                                      "size-005-00",
+                                      "size-002-00",
+                                      "size-001-00",
+                                      "size-000-50",
+                                      "size-000-20",
+                                      "size-000-10",
+                                      "size-000-05",
+                                      "size-000-02",
+                                      "size-000-01"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "vehicleWidthConfidence",
+                                  "vehicleLengthConfidence"
+                                ]
+                              },
+                              "vehicleClass": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 255
+                              },
+                              "classConf": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 101
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "detVeh"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "detVRU": {
+                            "type": "object",
+                            "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedVRUData",
+                            "description": "ASN.1 SEQUENCE Type",
+                            "properties": {
+                              "basicType": {
+                                "type": "string",
+                                "enum": [
+                                  "unavailable",
+                                  "aPEDESTRIAN",
+                                  "aPEDALCYCLIST",
+                                  "aPUBLICSAFETYWORKER",
+                                  "anANIMAL"
+                                ]
+                              },
+                              "propulsion": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.PersonalSafetyMessage.PropelledInformation",
+                                "description": "ASN.1 CHOICE Type - represents a union of possible types",
+                                "oneOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "human": {
+                                        "type": "string",
+                                        "enum": [
+                                          "unavailable",
+                                          "otherTypes",
+                                          "onFoot",
+                                          "skateboard",
+                                          "pushOrKickScooter",
+                                          "wheelchair"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "human"
+                                    ]
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "animal": {
+                                        "type": "string",
+                                        "enum": [
+                                          "unavailable",
+                                          "otherTypes",
+                                          "animalMounted",
+                                          "animalDrawnCarriage"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "animal"
+                                    ]
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "motor": {
+                                        "type": "string",
+                                        "enum": [
+                                          "unavailable",
+                                          "otherTypes",
+                                          "wheelChair",
+                                          "bicycle",
+                                          "scooter",
+                                          "selfBalancingDevice"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "motor"
+                                    ]
+                                  }
+                                ]
+                              },
+                              "attachment": {
+                                "type": "string",
+                                "enum": [
+                                  "unavailable",
+                                  "stroller",
+                                  "bicycleTrailer",
+                                  "cart",
+                                  "wheelchair",
+                                  "otherWalkAssistAttachments",
+                                  "pet"
+                                ]
+                              },
+                              "radius": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 200
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "detVRU"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "detObst": {
+                            "type": "object",
+                            "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.DetectedObstacleData",
+                            "description": "ASN.1 SEQUENCE Type",
+                            "properties": {
+                              "obstSize": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.ObstacleSize",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "width": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 1023
+                                  },
+                                  "length": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 1023
+                                  },
+                                  "height": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 1023
+                                  }
+                                },
+                                "required": [
+                                  "width",
+                                  "length"
+                                ]
+                              },
+                              "obstSizeConfidence": {
+                                "type": "object",
+                                "title": "us.dot.its.jpo.asn.j2735.r2024.SensorDataSharingMessage.ObstacleSizeConfidence",
+                                "description": "ASN.1 SEQUENCE Type",
+                                "properties": {
+                                  "widthConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "size-100-00",
+                                      "size-050-00",
+                                      "size-020-00",
+                                      "size-010-00",
+                                      "size-005-00",
+                                      "size-002-00",
+                                      "size-001-00",
+                                      "size-000-50",
+                                      "size-000-20",
+                                      "size-000-10",
+                                      "size-000-05",
+                                      "size-000-02",
+                                      "size-000-01"
+                                    ]
+                                  },
+                                  "lengthConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "size-100-00",
+                                      "size-050-00",
+                                      "size-020-00",
+                                      "size-010-00",
+                                      "size-005-00",
+                                      "size-002-00",
+                                      "size-001-00",
+                                      "size-000-50",
+                                      "size-000-20",
+                                      "size-000-10",
+                                      "size-000-05",
+                                      "size-000-02",
+                                      "size-000-01"
+                                    ]
+                                  },
+                                  "heightConfidence": {
+                                    "type": "string",
+                                    "enum": [
+                                      "unavailable",
+                                      "size-100-00",
+                                      "size-050-00",
+                                      "size-020-00",
+                                      "size-010-00",
+                                      "size-005-00",
+                                      "size-002-00",
+                                      "size-001-00",
+                                      "size-000-50",
+                                      "size-000-20",
+                                      "size-000-10",
+                                      "size-000-05",
+                                      "size-000-02",
+                                      "size-000-01"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "widthConfidence",
+                                  "lengthConfidence"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "obstSize",
+                              "obstSizeConfidence"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "detObst"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "detObjCommon"
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 256
+            }
+          },
+          "required": [
+            "msgCnt",
+            "sourceID",
+            "equipmentType",
+            "sDSMTimeStamp",
+            "refPos",
+            "refPosXYConf",
+            "objects"
+          ]
+        }
+      },
+      "required": [
+        "SensorDataSharingMessage"
+      ]
+    }
+  },
+  "required": [
+    "messageId",
+    "value"
+  ],
+  "definitions": {
+    
+  }
+}

@@ -8,7 +8,7 @@
   <artifactId>jpo-asn-composite</artifactId>
   <name>jpo-asn-composite</name>
   <description>Composite POM for jpo-asn pojo projects</description>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
   <packaging>pom</packaging>
 
   <properties>
