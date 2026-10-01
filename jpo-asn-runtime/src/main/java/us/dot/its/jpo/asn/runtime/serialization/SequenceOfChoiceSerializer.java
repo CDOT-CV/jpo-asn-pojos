@@ -1,7 +1,5 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
-
 import java.io.StringWriter;
 import javax.xml.namespace.QName;
 import tools.jackson.core.JsonGenerator;
@@ -26,6 +24,11 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
   protected final Class<S> choiceClass;
   protected final Class<T> sequenceOfClass;
 
+  private static final String ITEM = "item";
+  private static final String ITEM_START = "<" + ITEM + ">";
+  private static final String ITEM_END = "</" + ITEM + ">";
+  private static final String ITEM_EMPTY = "<" + ITEM + "/>";
+
   protected SequenceOfChoiceSerializer(Class<S> choiceClass, Class<T> sequenceOfClass) {
     super(sequenceOfClass);
     this.choiceClass = choiceClass;
@@ -35,7 +38,7 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
   @Override
   public void serialize(T sequenceOf, JsonGenerator jsonGenerator,
       SerializationContext serializerProvider) {
-    if (serializerProvider instanceof XmlSerializationContext xmlProvider) {
+    if (serializerProvider instanceof XmlSerializationContext) {
       // XER: Choice items not wrapped
       var xmlGen = (ToXmlGenerator) jsonGenerator;
 
@@ -47,12 +50,10 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
             choiceItem);
         var sw = new StringWriter();
         try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
-          xGen.setNextName(new QName("item"));
+          xGen.setNextName(new QName(ITEM));
           serializerProvider.writeValue(xGen, choiceItem);
         }
-        String choiceXml = sw.toString();
-        String unwrappedXml = unwrap(choiceXml);
-        xmlGen.writeRaw(unwrappedXml);
+        xmlGen.writeRaw(stripItemElement(sw.toString()));
       }
       xmlGen.writeEndArray();
 
@@ -62,5 +63,18 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
     }
   }
 
+  // Remove the placeholder root element each choice item is written under, leaving the
+  // element of the chosen alternative
+  private static String stripItemElement(String xml) {
+    final String trimmed = xml.trim();
+    if (trimmed.equals(ITEM_EMPTY)) {
+      return "";
+    }
+    if (!trimmed.startsWith(ITEM_START) || !trimmed.endsWith(ITEM_END)
+        || trimmed.length() < ITEM_START.length() + ITEM_END.length()) {
+      throw new IllegalStateException("Unexpected choice item XML: " + xml);
+    }
+    return trimmed.substring(ITEM_START.length(), trimmed.length() - ITEM_END.length());
+  }
 
 }

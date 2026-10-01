@@ -13,6 +13,8 @@ import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.SerializationFeature;
 import tools.jackson.databind.exc.UnrecognizedPropertyException;
 import tools.jackson.dataformat.xml.XmlMapper;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
@@ -40,6 +42,18 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
     log.debug("{}", m);
     String roundTripXml = toXml(m);
     assertThat(description, roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
+  }
+
+  @Test
+  public void canSerializeXmlWithIndentation() throws IOException {
+    var mapper = XmlMapper.builder()
+        .enable(SerializationFeature.INDENT_OUTPUT)
+        .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+        .build();
+    MessageContainsSequenceOfChoice m = fromXml(XML_MIXED);
+    String indentedXml = mapper.writeValueAsString(m);
+    log.debug(indentedXml);
+    assertThat(indentedXml, isIdenticalTo(XML_MIXED).ignoreWhitespace().ignoreElementContentWhitespace());
   }
 
   @ParameterizedTest
