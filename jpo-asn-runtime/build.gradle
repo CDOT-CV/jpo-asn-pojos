@@ -26,7 +26,7 @@ dependencies {
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.5'
+    api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.7'
     api 'org.apache.commons:commons-lang3:3.18.0'
     api 'org.apache.commons:commons-text:1.14.0'
 
