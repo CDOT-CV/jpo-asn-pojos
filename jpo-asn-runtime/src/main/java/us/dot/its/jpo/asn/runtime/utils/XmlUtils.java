@@ -1,8 +1,8 @@
 package us.dot.its.jpo.asn.runtime.utils;
 
-import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
-import com.fasterxml.jackson.dataformat.xml.deser.XmlReadContext;
+import tools.jackson.core.JsonToken;
+import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.deser.XmlReadContext;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -80,24 +80,24 @@ public class XmlUtils {
    * Extract unwrapped items from the XML stream, in original order with duplicates
    *
    * @param xmlParser - The XML Parser from within a custom
-   *                  {@link com.fasterxml.jackson.databind.deser.std.StdDeserializer#deserialize}
+   *                  {@link tools.jackson.databind.deser.std.StdDeserializer#deserialize}
    *                  method.
    * @return List of XML strings
    * @throws IOException Parser exception
    */
-  public static List<String> extractXmlList(FromXmlParser xmlParser) throws IOException {
+  public static List<String> extractXmlList(FromXmlParser xmlParser) {
     Formatter xml = new Formatter();
     List<String> itemXmlList = new ArrayList<>();
 
-    XmlReadContext pc = xmlParser.getParsingContext();
+    XmlReadContext pc = (XmlReadContext)xmlParser.streamReadContext();
     XmlReadContext parent = pc.getParent();
     final int parentNestingDepth = getNestingDepth(parent);
     log.trace("extractXmlList: parent name {}, value: {}, index: {}, nesting: {}",
-        parent.getCurrentName(),
-        parent.getCurrentValue(), parent.getCurrentIndex(), parentNestingDepth);
+        parent.currentName(),
+        parent.currentValue(), parent.getCurrentIndex(), parentNestingDepth);
     XmlElement element = new XmlElement();
     final int startNesting = parentNestingDepth;
-    final String startName = parent.getCurrentName();
+    final String startName = parent.currentName();
 
     while (!element.isFinishedAll()) {
       element = extractXml(xml, xmlParser, element, startNesting, startName);
@@ -116,22 +116,22 @@ public class XmlUtils {
    * Extract a single unwrapped xml item from the XML stream, preserving order of elements
    *
    * @param xmlParser - The XML Parser from within a custom
-   *                  {@link com.fasterxml.jackson.databind.deser.std.StdDeserializer#deserialize}
+   *                  {@link tools.jackson.databind.deser.std.StdDeserializer#deserialize}
    *                  method.
    * @return The reconstructed, unwrapped XML.
    * @throws IOException Parser exception
    */
-  public static String extractXmlElement(FromXmlParser xmlParser) throws IOException {
+  public static String extractXmlElement(FromXmlParser xmlParser) {
     Formatter xml = new Formatter();
-    XmlReadContext pc = xmlParser.getParsingContext();
+    XmlReadContext pc = (XmlReadContext)xmlParser.streamReadContext();
     XmlReadContext parent = pc.getParent();
     final int parentNestingDepth = getNestingDepth(parent);
     log.debug("extractXmlElement: parent name {}, value: {}, index: {}, nesting: {}",
-        parent.getCurrentName(),
-        parent.getCurrentValue(), parent.getCurrentIndex(), parentNestingDepth);
+        parent.currentName(),
+        parent.currentValue(), parent.getCurrentIndex(), parentNestingDepth);
     XmlElement element = new XmlElement();
     final int startNesting = parentNestingDepth;
-    final String startName = parent.getCurrentName();
+    final String startName = parent.currentName();
     while (!element.isFinishedItem()) {
       element = extractXml(xml, xmlParser, element, startNesting, startName);
       if (!element.isFinishedItem()) {
@@ -144,11 +144,11 @@ public class XmlUtils {
   // Helper method for extracting an xml element from the XmlParser stream
   private static XmlElement extractXml(Formatter xml, FromXmlParser xmlParser,
       final XmlElement previous,
-      final int startNesting, final String startName) throws IOException {
-    XmlReadContext pc = xmlParser.getParsingContext();
+      final int startNesting, final String startName) {
+    XmlReadContext pc = (XmlReadContext)xmlParser.streamReadContext();
     final int nestingDepth = getNestingDepth(pc);
 
-    JsonToken token = xmlParser.getCurrentToken();
+    JsonToken token = xmlParser.currentToken();
     XmlElement element = new XmlElement();
     element.setToken(token);
 
@@ -158,18 +158,18 @@ public class XmlUtils {
       element.setToken(token);
     }
 
-    if (token == JsonToken.FIELD_NAME && pc.getCurrentName() != null) {
-      xml.format("<%s>", pc.getCurrentName());
-      element.setFieldName(pc.getCurrentName());
+    if (token == JsonToken.PROPERTY_NAME && pc.currentName() != null) {
+      xml.format("<%s>", pc.currentName());
+      element.setFieldName(pc.currentName());
     } else if (token == JsonToken.VALUE_STRING) {
       String val = xmlParser.getValueAsString();
       log.trace("Value String: {}", val);
 
-      pc.setCurrentValue(val);
+      pc.assignCurrentValue(val);
       xml.format("%s",  StringEscapeUtils.escapeXml11(val));
       // Wrap the value
-      if (pc.getCurrentName() != null) {
-        xml.format("</%s>", pc.getCurrentName());
+      if (pc.currentName() != null) {
+        xml.format("</%s>", pc.currentName());
       } else if (previous != null && previous.getFieldName() != null) {
         xml.format("</%s>", previous.getFieldName());
       }
@@ -179,8 +179,8 @@ public class XmlUtils {
         element.setFinishedItem(true);
       }
     } else if (token == JsonToken.END_OBJECT && pc.hasCurrentName()) {
-      xml.format("</%s>", pc.getCurrentName());
-      if (nestingDepth == startNesting && Objects.equals(pc.getCurrentName(), startName)) {
+      xml.format("</%s>", pc.currentName());
+      if (nestingDepth == startNesting && Objects.equals(pc.currentName(), startName)) {
         element.setFinishedAll(true);
       } else if (nestingDepth == startNesting + 1) {
         element.setFinishedItem(true);
@@ -193,7 +193,7 @@ public class XmlUtils {
     }
 
     log.trace("current token: {} name: {} index: {}, nesting: {}",
-        token, pc.getCurrentName(), pc.getCurrentIndex(), nestingDepth);
+        token, pc.currentName(), pc.getCurrentIndex(), nestingDepth);
 
     return element;
   }

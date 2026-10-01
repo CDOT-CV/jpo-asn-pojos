@@ -3,8 +3,8 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -24,7 +24,7 @@ public class OpenTypeDeserializerTest {
       "name & with & ampersands",
       "name with < angle > brackets"
   })
-  public void roundTripOpenTypeToXml(String name) throws JsonProcessingException {
+  public void roundTripOpenTypeToXml(String name) throws JacksonException {
     var mapper = new XmlMapper();
     var example = new ExampleWithOpenType();
     example.setMessageId(new AInteger(10));

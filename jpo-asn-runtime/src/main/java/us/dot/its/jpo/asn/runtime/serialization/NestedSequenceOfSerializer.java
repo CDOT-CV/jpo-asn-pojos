@@ -2,13 +2,12 @@ package us.dot.its.jpo.asn.runtime.serialization;
 
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import javax.xml.namespace.QName;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Integer;
@@ -30,12 +29,12 @@ public class NestedSequenceOfSerializer<T extends Asn1SequenceOf<?>> extends Std
     }
 
     @Override
-    public void serialize(T t, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
+    public void serialize(T t, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
         try {
-            if (serializerProvider instanceof XmlSerializerProvider) {
+            if (serializerProvider instanceof XmlSerializationContext) {
                 // Wrapped XER
                 var xmlGen = (ToXmlGenerator) jsonGenerator;
-                var mapper = (ObjectMapper) xmlGen.getCodec();
+                var mapper = (ObjectMapper) xmlGen.objectWriteContext();
 
                 if ("INTEGER".equals(wrapped.getLocalPart())) {
                     xmlGen.writeStartArray();
@@ -60,7 +59,7 @@ public class NestedSequenceOfSerializer<T extends Asn1SequenceOf<?>> extends Std
 
             } else {
                 // Pass through JER
-                jsonGenerator.writeObject(t);
+                jsonGenerator.writePOJO(t);
             }
         } catch (Exception ex) {
             log.error("Error serializing", ex);

@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import tools.jackson.core.JacksonException;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
 import us.dot.its.jpo.asn.runtime.examples.MessageContainsSequenceOfChoice;
 import java.io.IOException;
@@ -45,8 +45,8 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
   @ParameterizedTest
   @MethodSource("malformedXmlValues")
   public void malformedXmlDoesNotHang(final String description, final String xml)  {
-    JsonProcessingException jpe = assertThrows(
-        JsonProcessingException.class,
+    JacksonException jpe = assertThrows(
+        JacksonException.class,
         () -> fromXml(xml),
         "Invalid xml: Expect JsonProcessingException and not stack overflow or anything else"
     );

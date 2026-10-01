@@ -1,24 +1,22 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.TreeNode;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.BeanProperty;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.exc.MismatchedInputException;
-import com.fasterxml.jackson.databind.exc.ValueInstantiationException;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.node.TextNode;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.TreeNode;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.BeanProperty;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JavaType;
+import tools.jackson.databind.ValueDeserializer;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.exc.MismatchedInputException;
+import tools.jackson.databind.exc.ValueInstantiationException;
+import tools.jackson.databind.node.ObjectNode;
+import tools.jackson.databind.node.StringNode;
+import tools.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
-import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -30,7 +28,7 @@ import java.util.Map.Entry;
  */
 @SuppressWarnings({"unchecked"})
 @Slf4j
-public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDeserializer<T> implements ContextualDeserializer {
+public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDeserializer<T>  {
 
     private final Class<T> valueType;
 
@@ -66,7 +64,7 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
     }
 
     @Override
-    public JsonDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) {
+    public ValueDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) {
         JavaType type;
         if (property != null) {
             type = property.getType();
@@ -80,11 +78,11 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
     }
 
     @Override
-    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         T bitstring = construct(jsonParser);
-        if (jsonParser.getCodec() instanceof XmlMapper) {
+        if (jsonParser.objectReadContext() instanceof XmlMapper) {
             // XML: binary
-            String str = jsonParser.getText();
+            String str = jsonParser.getString();
             bitstring.fromBinaryString(str);
         } else {
             deserializeFromJson(bitstring, jsonParser);
@@ -92,15 +90,15 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
         return bitstring;
     }
 
-    private void deserializeFromJson(T bitstring, JsonParser jsonParser) throws IOException {
-        if (jsonParser.getCodec() instanceof OdeCustomJsonMapper customMapper && customMapper.isHumanReadableJsonBitstrings()) {
+    private void deserializeFromJson(T bitstring, JsonParser jsonParser)  {
+        if (jsonParser.objectReadContext() instanceof OdeCustomJsonMapper customMapper && customMapper.isHumanReadableJsonBitstrings()) {
             deserializeFromJsonMap(bitstring, jsonParser);
         } else {
             deserializeFromJer(bitstring, jsonParser);
         }
     }
 
-    private void deserializeFromJsonMap(T bitstring, JsonParser jsonParser) throws IOException {
+    private void deserializeFromJsonMap(T bitstring, JsonParser jsonParser)  {
         // ODE JSON dialect: read verbose map
         TypeReference<Map<String, Boolean>> boolMapType = new TypeReference<>() {};
         Map<String, Boolean> map = jsonParser.readValueAs(boolMapType);
@@ -109,7 +107,7 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
         }
     }
 
-    private void deserializeFromJer(T bitstring, JsonParser jsonParser) throws IOException {
+    private void deserializeFromJer(T bitstring, JsonParser jsonParser)  {
         // JER is hex encoded
         // The bitstring may be encoded as a simple hex string if it is fixed length, or if
         // variable length it may be encoded as:
@@ -118,11 +116,11 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
         //   "length": 9
         // }
         // Check for both.
-        TreeNode node = jsonParser.getCodec().readTree(jsonParser);
+        TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
         if (node instanceof ObjectNode objectNode) {
             log.trace("Bitstring encoded as objectNode {}", objectNode);
             if (objectNode.has("value") && objectNode.has("length")) {
-                String hexValue = objectNode.get("value").asText();
+                String hexValue = objectNode.get("value").asString();
                 int bitLength = objectNode.get("length").asInt();
                 bitstring.fromHexString(hexValue, bitLength);
             } else {
@@ -130,9 +128,9 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
                     String.format("Object node missing 'value' or 'length' field in JSON encoding for bitstring: %s",
                         objectNode));
             }
-        } else if (node instanceof TextNode textNode) {
+        } else if (node instanceof StringNode textNode) {
             log.trace("Bitstring encoded as textNode {}", textNode);
-            bitstring.fromHexString(textNode.asText());
+            bitstring.fromHexString(textNode.asString());
         }
     }
 

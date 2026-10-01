@@ -1,22 +1,21 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.TreeNode;
-import com.fasterxml.jackson.databind.BeanProperty;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.deser.ContextualDeserializer;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.exc.ValueInstantiationException;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.TreeNode;
+import tools.jackson.databind.BeanProperty;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JavaType;
+import tools.jackson.databind.ValueDeserializer;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.exc.ValueInstantiationException;
+import tools.jackson.dataformat.xml.XmlMapper;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 
 @SuppressWarnings({"unchecked"})
-public final class BooleanDeserializer<T extends Asn1Boolean> extends StdDeserializer<T> implements ContextualDeserializer {
+public final class BooleanDeserializer<T extends Asn1Boolean> extends StdDeserializer<T> {
 
     private final Class<T> valueType;
 
@@ -45,7 +44,7 @@ public final class BooleanDeserializer<T extends Asn1Boolean> extends StdDeseria
     }
 
     @Override
-    public JsonDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) {
+    public ValueDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) {
         JavaType type;
         if (property != null) {
             type = property.getType();
@@ -59,15 +58,14 @@ public final class BooleanDeserializer<T extends Asn1Boolean> extends StdDeseria
     }
 
     @Override
-    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
+    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) {
         T result = construct(jsonParser);
-        if (jsonParser.getCodec() instanceof XmlMapper) {
+        if (jsonParser.objectReadContext() instanceof XmlMapper) {
             // XML: unwrap empty element
-            TreeNode node = jsonParser.getCodec().readTree(jsonParser);
-            var iterator = node.fieldNames();
-            if (iterator.hasNext()) {
-                String str = node.fieldNames().next();
-                result.setValue(Boolean.parseBoolean(str));
+            TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
+            var propNames = node.propertyNames();
+            for (var propName : propNames) {
+                result.setValue(Boolean.parseBoolean(propName));
             }
         } else {
             // JSON

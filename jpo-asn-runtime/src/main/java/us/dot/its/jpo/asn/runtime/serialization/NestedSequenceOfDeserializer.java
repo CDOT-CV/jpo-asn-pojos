@@ -1,16 +1,15 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.TreeNode;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
-import java.io.IOException;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.TreeNode;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.ObjectNode;
+import tools.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
 /**
@@ -30,12 +29,12 @@ public class NestedSequenceOfDeserializer<T extends Asn1SequenceOf<?>> extends S
     }
 
     @Override
-    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         T result = null;
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // For XML, we need to remove the wrapper and distinguish between single items and arrays
-            XmlMapper xmlMapper = (XmlMapper)xmlParser.getCodec();
-            TreeNode node = xmlParser.getCodec().readTree(xmlParser);
+            XmlMapper xmlMapper = (XmlMapper)xmlParser.objectReadContext();
+            TreeNode node = xmlParser.objectReadContext().readTree(xmlParser);
 
             if (node instanceof ObjectNode objectNode) {
                 JsonNode unwrapped = objectNode.findValue(wrapped);
@@ -52,7 +51,7 @@ public class NestedSequenceOfDeserializer<T extends Asn1SequenceOf<?>> extends S
                 }
             }
         }else {
-            result = jsonParser.getCodec().readValue(jsonParser, thisClass);
+            result = jsonParser.objectReadContext().readValue(jsonParser, thisClass);
         }
         return result;
     }

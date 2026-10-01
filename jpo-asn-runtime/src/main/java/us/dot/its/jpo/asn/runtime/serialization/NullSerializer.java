@@ -1,9 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import java.io.IOException;
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 
@@ -25,7 +25,7 @@ public class NullSerializer extends StdSerializer<Asn1Null> {
 
   @Override
   public void serialize(Asn1Null asn1Null, JsonGenerator jsonGenerator,
-      SerializerProvider serializerProvider) throws IOException {
+      SerializationContext serializerProvider) {
     if (jsonGenerator instanceof ToXmlGenerator xmlGenerator) {
       // XML: write empty element
       xmlGenerator.writeStartObject();

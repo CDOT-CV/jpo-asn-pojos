@@ -2,17 +2,16 @@ package us.dot.its.jpo.asn.runtime.serialization;
 
 import static us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType.INTEGER;
 
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.TreeNode;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
-import java.io.IOException;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.TreeNode;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.node.ObjectNode;
+import tools.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
@@ -39,7 +38,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
     }
 
     @Override
-    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         final var typeAnnot = thisClass.getAnnotation(Asn1ParameterizedTypes.class);
         if (typeAnnot == null) {
             throw new RuntimeException("Missing Asn1ParameterizedTypes annotation.");
@@ -58,7 +57,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
         }
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // XER
-            XmlMapper xmlMapper = (XmlMapper)xmlParser.getCodec();
+            XmlMapper xmlMapper = (XmlMapper)xmlParser.objectReadContext();
             TreeNode node = xmlMapper.readTree(xmlParser);
 
             if (node instanceof ObjectNode objectNode) {
@@ -69,7 +68,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 if (idPropNode == null) {
                     throw new RuntimeException("idPropNode is null");
                 }
-                final Object id = (idType == INTEGER) ? idPropNode.asInt() : idPropNode.asText();
+                final Object id = (idType == INTEGER) ? idPropNode.asInt() : idPropNode.asString();
                 log.trace("id: {}", id);
                 Class<?> subType = getSubtypeForId(id, idType, types);
                 log.trace("subtype: {}", subType.getName());
@@ -79,8 +78,8 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
             }
         } else {
             // JER
-            TreeNode node = jsonParser.getCodec().readTree(jsonParser);
-            var mapper = (ObjectMapper)jsonParser.getCodec();
+            TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
+            var mapper = (ObjectMapper)jsonParser.objectReadContext();
             if (node instanceof ObjectNode objectNode) {
                 log.trace("ObjectNode: {}", objectNode);
                 JsonNode idPropNode = objectNode.findValue(idPropName);
@@ -89,7 +88,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 if (idPropNode == null) {
                     throw new RuntimeException("idPropNode is null");
                 }
-                final Object id = (idType == INTEGER) ? idPropNode.asInt() : idPropNode.asText();
+                final Object id = (idType == INTEGER) ? idPropNode.asInt() : idPropNode.asString();
                 log.trace("id: {}", id);
                 Class<?> subType = getSubtypeForId(id, idType, types);
                 log.trace("subtype: {}", subType.getName());

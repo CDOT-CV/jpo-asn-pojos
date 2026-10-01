@@ -1,8 +1,10 @@
 package us.dot.its.jpo.asn.runtime;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.dataformat.xml.XmlMapper;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -19,21 +21,24 @@ import org.junit.jupiter.params.provider.Arguments;
 @Slf4j
 public abstract class BaseSerializeTest<T> {
 
-  private final static XmlMapper xmlMapper = new XmlMapper();
-  private final static ObjectMapper jsonMapper = new ObjectMapper();
+  // Why Jackson???
+  private final static XmlMapper xmlMapper = XmlMapper.builder().disable(
+      MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
+  private final static ObjectMapper jsonMapper = JsonMapper.builder().disable(
+      MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
   private final Class<T> clazz;
 
   public BaseSerializeTest(Class<T> clazz) {
     this.clazz = clazz;
   }
 
-  protected String toXml(T object) throws JsonProcessingException {
+  protected String toXml(T object) throws JacksonException {
     String str = xmlMapper.writeValueAsString(object);
     log.debug(str);
     return str;
   }
 
-  protected String toJson(T object) throws JsonProcessingException {
+  protected String toJson(T object) throws JacksonException {
     String str = jsonMapper.writeValueAsString(object);
     log.debug(str);
     return str;

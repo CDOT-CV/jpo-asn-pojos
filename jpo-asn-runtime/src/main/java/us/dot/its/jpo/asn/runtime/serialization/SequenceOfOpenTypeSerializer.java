@@ -1,12 +1,11 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
@@ -25,12 +24,11 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
   }
 
   @Override
-  public void serialize(T sequenceOf, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
-      throws IOException {
-    if (serializerProvider instanceof XmlSerializerProvider) {
+  public void serialize(T sequenceOf, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
+    if (serializerProvider instanceof XmlSerializationContext) {
       // XER: Write each item sequentially without wrapping
       var xmlGen = (ToXmlGenerator)jsonGenerator;
-      var mapper = (ObjectMapper)xmlGen.getCodec();
+      var mapper = (ObjectMapper)xmlGen.objectWriteContext();
       for (var item : sequenceOf) {
         String itemXml = mapper.writeValueAsString(item);
         log.trace("itemXml: {}", itemXml);
@@ -38,7 +36,7 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
       }
     } else {
       // JER: The default works
-      jsonGenerator.writeObject(sequenceOf);
+      jsonGenerator.writePOJO(sequenceOf);
     }
 
   }

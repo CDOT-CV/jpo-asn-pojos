@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.equalToIgnoringCase;
 import static org.hamcrest.Matchers.notNullValue;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import tools.jackson.core.JacksonException;
 import org.junit.jupiter.api.Test;
 import us.dot.its.jpo.asn.runtime.examples.ExampleBitstring;
 import us.dot.its.jpo.asn.runtime.examples.ExampleBitstringFewNamedBits;
@@ -14,7 +14,7 @@ import us.dot.its.jpo.asn.runtime.examples.ExampleBitstringFewNamedBits;
 public class OdeCustomJsonMapperTest {
 
   @Test
-  public void serializeHumanReadable() throws JsonProcessingException {
+  public void serializeHumanReadable() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(true);
     ExampleBitstring ebs = new ExampleBitstring();
     ebs.fromBinaryString(BINARY_STRING);
@@ -23,7 +23,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void deserializeHumanReadable() throws JsonProcessingException {
+  public void deserializeHumanReadable() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(true);
     ExampleBitstring ebs = mapper.readValue(HUMAN_READABLE_JSON, ExampleBitstring.class);
     assertThat(ebs, notNullValue());
@@ -32,7 +32,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void serializeHex() throws JsonProcessingException {
+  public void serializeHex() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(false);
     ExampleBitstring ebs = new ExampleBitstring();
     ebs.fromBinaryString(BINARY_STRING);
@@ -41,7 +41,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void deserializeHex() throws JsonProcessingException {
+  public void deserializeHex() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(false);
     ExampleBitstring ebs = mapper.readValue(HEX_JSON, ExampleBitstring.class);
     assertThat(ebs, notNullValue());
@@ -50,7 +50,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void serializeHumanReadable_FewNamedBits() throws JsonProcessingException {
+  public void serializeHumanReadable_FewNamedBits() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(true);
     var ebs = new ExampleBitstringFewNamedBits();
     ebs.fromBinaryString(BINARY_STRING_FEW_NAMED_BITS);
@@ -59,7 +59,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void deserializeHumanReadable_FewNamedBits() throws JsonProcessingException {
+  public void deserializeHumanReadable_FewNamedBits() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(true);
     var ebs = mapper.readValue(HUMAN_READABLE_JSON_FEW_NAMED_BITS, ExampleBitstringFewNamedBits.class);
     assertThat(ebs, notNullValue());
@@ -68,7 +68,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void serializeHex_FewNamedBits() throws JsonProcessingException {
+  public void serializeHex_FewNamedBits() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(false);
     var ebs = new ExampleBitstringFewNamedBits();
     ebs.fromBinaryString(BINARY_STRING_FEW_NAMED_BITS);
@@ -77,7 +77,7 @@ public class OdeCustomJsonMapperTest {
   }
 
   @Test
-  public void deserializeHex_FewNamedBits() throws JsonProcessingException {
+  public void deserializeHex_FewNamedBits() throws JacksonException {
     var mapper = new OdeCustomJsonMapper(false);
     var ebs = mapper.readValue(HEX_JSON_FEW_NAMED_BITS, ExampleBitstringFewNamedBits.class);
     assertThat(ebs, notNullValue());

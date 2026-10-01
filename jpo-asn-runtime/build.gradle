@@ -26,7 +26,7 @@ dependencies {
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.17.2'
+    api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.5'
     api 'org.apache.commons:commons-lang3:3.18.0'
     api 'org.apache.commons:commons-text:1.14.0'
 
@@ -39,7 +39,7 @@ dependencies {
     testImplementation 'commons-io:commons-io:2.18.0'
     testImplementation 'org.xmlunit:xmlunit-core:2.10.0'
     testImplementation 'org.xmlunit:xmlunit-matchers:2.10.0'
-    testImplementation 'net.javacrumbs.json-unit:json-unit:4.1.0'
+    testImplementation 'net.javacrumbs.json-unit:json-unit:6.2.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

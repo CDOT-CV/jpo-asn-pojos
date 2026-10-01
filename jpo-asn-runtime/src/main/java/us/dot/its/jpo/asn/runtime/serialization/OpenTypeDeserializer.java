@@ -2,17 +2,17 @@ package us.dot.its.jpo.asn.runtime.serialization;
 
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.extractXmlElement;
 
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.TreeNode;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
-import java.io.IOException;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.JsonToken;
+import tools.jackson.core.TreeNode;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.node.ObjectNode;
+import tools.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
@@ -25,6 +25,8 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
 
     protected final Class<T> thisClass;
     protected final String wrapped;
+    private static final XmlMapper XML_MAPPER = XmlMapper.builder()
+        .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
 
     protected OpenTypeDeserializer(Class<T> vc, String wrapped) {
         super(vc);
@@ -34,21 +36,26 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
 
 
     @Override
-    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         T result = null;
         log.debug("deserialize open type");
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // XML: Unwrap
             log.debug("deserialize open type: xml");
-            XmlMapper xmlMapper = (XmlMapper)xmlParser.getCodec();
+            final int depth = xmlParser.streamReadContext().getNestingDepth();
             String xml = extractXmlElement(xmlParser);
+            // Leave the parser on the END_OBJECT of the open type wrapper element
+            while (!(xmlParser.currentToken() == JsonToken.END_OBJECT
+                && xmlParser.streamReadContext().getNestingDepth() < depth)) {
+                xmlParser.nextToken();
+            }
             log.debug("extracted xml: {}", xml);
-            result = xmlMapper.readValue(xml, thisClass);
+            result = XML_MAPPER.readValue(xml, thisClass);
         } else {
             // JSON:
             log.debug("deserialize open type: json");
-            TreeNode node = jsonParser.getCodec().readTree(jsonParser);
-            var mapper = (ObjectMapper)jsonParser.getCodec();
+            TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
+            //var mapper = (ObjectMapper)jsonParser.objectReadContext();
             if (node instanceof ObjectNode objectNode) {
                 // Try unwrapping
                 JsonNode innerNode = objectNode.findValue(wrapped);
@@ -56,9 +63,7 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
                     log.debug("deserialize open type json unwrapped {}", wrapped);
                 }
                 JsonNode useNode = innerNode != null ? innerNode : objectNode;
-                String json = mapper.writeValueAsString(useNode);
-                log.debug("deserialize open type: json value: {}", json);
-                result = mapper.readValue(json, thisClass);
+                result = deserializationContext.readTreeAsValue(useNode, thisClass);
             }
         }
         return result;

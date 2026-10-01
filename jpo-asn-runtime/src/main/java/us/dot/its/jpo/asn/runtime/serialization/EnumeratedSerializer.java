@@ -1,10 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 
 /**
@@ -20,8 +19,8 @@ public class EnumeratedSerializer<T extends Enum<?> & Asn1Enumerated> extends St
     }
 
     @Override
-    public void serialize(T t, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        if (serializerProvider instanceof XmlSerializerProvider) {
+    public void serialize(T t, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
+        if (serializerProvider instanceof XmlSerializationContext) {
             jsonGenerator.writeStartObject();
 
             //

@@ -1,10 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 /**
@@ -18,8 +17,8 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
     }
 
     @Override
-    public void serialize(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        if (serializerProvider instanceof XmlSerializerProvider) {
+    public void serialize(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
+        if (serializerProvider instanceof XmlSerializationContext) {
             // XER serializes bitstrings as binary (strings of "1"s and "0"s)
             jsonGenerator.writeString(asn1Bitstring.binaryString());
         } else {
@@ -27,8 +26,8 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
         }
     }
 
-    private void serializeJson(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) throws IOException {
-        var codec = jsonGenerator.getCodec();
+    private void serializeJson(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) {
+        var codec = jsonGenerator.objectWriteContext();
         if (codec instanceof OdeCustomJsonMapper customMapper && customMapper.isHumanReadableJsonBitstrings()) {
             serializeJsonMap(asn1Bitstring, jsonGenerator);
         } else {
@@ -36,7 +35,7 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
         }
     }
 
-    private void serializeJsonMap(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) throws IOException {
+    private void serializeJsonMap(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) {
         // ODE JSON dialect serializes bitstrings as verbose maps
         jsonGenerator.writeStartObject();
         for (int i = 0; i < asn1Bitstring.size(); i++) {
@@ -44,13 +43,13 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
             if (name != null) {
                 // We don't write unnamed bits for this format
                 boolean isSet = asn1Bitstring.get(i);
-                jsonGenerator.writeBooleanField(name, isSet);
+                jsonGenerator.writeBooleanProperty(name, isSet);
             }
         }
         jsonGenerator.writeEndObject();
     }
 
-    private void serializeJer(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) throws IOException {
+    private void serializeJer(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) {
         // JER serializes BIT STRING values as hex strings.
         //
         // Serialize as a simple JSON hex string if the size constraint is fixed.
@@ -71,8 +70,8 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
         if (asn1Bitstring.variableSize()) {
             // Variable-size format
             jsonGenerator.writeStartObject();
-            jsonGenerator.writeStringField("value", asn1Bitstring.hexString());
-            jsonGenerator.writeNumberField("length", asn1Bitstring.actualSize());
+            jsonGenerator.writeStringProperty("value", asn1Bitstring.hexString());
+            jsonGenerator.writeNumberProperty("length", asn1Bitstring.actualSize());
             jsonGenerator.writeEndObject();
         } else {
             // Fixed size format
