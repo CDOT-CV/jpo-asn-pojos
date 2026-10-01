@@ -41,6 +41,9 @@ public class NullDeserializer<T extends Asn1Null> extends StdDeserializer<T> {
     if (log.isTraceEnabled()) {
       TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
       log.trace("node: {}", node);
+    } else {
+      // skip the node to prevent error from "fail on trailing tokens"
+      jsonParser.skipChildren();
     }
     return (T) construct();
   }
