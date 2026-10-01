@@ -1,13 +1,13 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.extractXmlElement;
-
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.JsonParser;
+import tools.jackson.core.JsonToken;
 import tools.jackson.core.TreeNode;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.exc.MismatchedInputException;
 import tools.jackson.databind.node.ObjectNode;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
@@ -35,12 +35,23 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
         T result = null;
         log.debug("deserialize open type");
         if (jsonParser instanceof FromXmlParser xmlParser) {
-            // XML: Unwrap
+            // XML: Unwrap, reading the single child element directly from the stream
             log.debug("deserialize open type: xml");
-            String xml = extractXmlElement(xmlParser);
-            log.debug("extracted xml: {}", xml);
-            try (FromXmlParser parser = (FromXmlParser)deserializationContext.createParser(xml)) {
-                result = deserializationContext.readValue(parser, thisClass);
+            JsonToken token = xmlParser.currentToken();
+            if (token == JsonToken.START_OBJECT) {
+                token = xmlParser.nextToken();
+            }
+            if (token != JsonToken.PROPERTY_NAME) {
+                throw MismatchedInputException.from(xmlParser, thisClass,
+                    "Expected an open type element, found " + token);
+            }
+            log.debug("open type element: {}", xmlParser.currentName());
+            xmlParser.nextToken();
+            result = deserializationContext.readValue(xmlParser, thisClass);
+            token = xmlParser.nextToken();
+            if (token != JsonToken.END_OBJECT) {
+                throw MismatchedInputException.from(xmlParser, thisClass,
+                    "Expected exactly one open type element, found " + token);
             }
         } else {
             // JSON:

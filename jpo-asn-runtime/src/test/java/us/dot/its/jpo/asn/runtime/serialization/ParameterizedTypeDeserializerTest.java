@@ -4,6 +4,7 @@ import static net.javacrumbs.jsonunit.JsonMatchers.jsonEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
 import java.util.stream.Stream;
@@ -13,6 +14,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tools.jackson.databind.MapperFeature;
 import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.exc.MismatchedInputException;
 import tools.jackson.databind.json.JsonMapper;
 import tools.jackson.dataformat.xml.XmlMapper;
 import us.dot.its.jpo.asn.runtime.examples.ExampleParameterized;
@@ -56,6 +58,12 @@ public class ParameterizedTypeDeserializerTest {
     String roundTripXml = XML_MAPPER.writeValueAsString(container);
     assertThat(roundTripXml,
         isIdenticalTo(XML_CONTAINER).ignoreWhitespace().ignoreElementContentWhitespace());
+  }
+
+  @Test
+  public void xmlIdMustBeFirst() {
+    assertThrows(MismatchedInputException.class,
+        () -> XML_MAPPER.readValue(XML_ID_NOT_FIRST, ExampleParameterized.class));
   }
 
   private static Stream<Arguments> xmlValues() {
@@ -142,6 +150,18 @@ public class ParameterizedTypeDeserializerTest {
           }
         }
       }
+      """;
+
+  static final String XML_ID_NOT_FIRST = """
+      <ExampleParameterized>
+        <value>
+          <ASequence>
+            <a-int>5</a-int>
+            <a-str>asdf</a-str>
+          </ASequence>
+        </value>
+        <messageId>1</messageId>
+      </ExampleParameterized>
       """;
 
   static final String XML_CONTAINER = """

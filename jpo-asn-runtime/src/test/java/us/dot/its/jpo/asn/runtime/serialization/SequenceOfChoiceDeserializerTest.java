@@ -5,12 +5,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
 import tools.jackson.core.JacksonException;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.exc.UnrecognizedPropertyException;
+import tools.jackson.dataformat.xml.XmlMapper;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
 import us.dot.its.jpo.asn.runtime.examples.MessageContainsSequenceOfChoice;
 import java.io.IOException;
@@ -53,6 +57,24 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
     assertThat(m.getId().getValue(), equalTo(10L));
     assertThat(m.getNum().getValue(), equalTo(7L));
     assertThat(m.getChoices(), anyOf(nullValue(), empty()));
+  }
+
+  @Test
+  public void unknownChoiceAlternativeIsSkippedByDefault() throws IOException {
+    MessageContainsSequenceOfChoice m = fromXml(XML_UNKNOWN_ALTERNATIVE);
+    assertThat(m.getChoices(), hasSize(2));
+    assertThat(m.getChoices().get(0).getA().getAStr().getValue(), equalTo("asdf"));
+    assertThat(m.getChoices().get(1).getB().getBStr().getValue(), equalTo("qwerty"));
+    assertThat(m.getNum().getValue(), equalTo(7L));
+  }
+
+  @Test
+  public void unknownChoiceAlternativeFailsWhenConfigured() {
+    var mapper = XmlMapper.builder()
+        .enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+        .build();
+    assertThrows(UnrecognizedPropertyException.class,
+        () -> mapper.readValue(XML_UNKNOWN_ALTERNATIVE, MessageContainsSequenceOfChoice.class));
   }
 
   @ParameterizedTest
@@ -245,6 +267,26 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
       <MessageContainsSequenceOfChoice>
         <id>10</id>
         <choices/>
+        <num>7</num>
+      </MessageContainsSequenceOfChoice>
+      """;
+
+  public static final String XML_UNKNOWN_ALTERNATIVE = """
+      <MessageContainsSequenceOfChoice>
+        <id>10</id>
+        <choices>
+          <a>
+            <a-int>5</a-int>
+            <a-str>asdf</a-str>
+          </a>
+          <c>
+            <c-int>1</c-int>
+          </c>
+          <b>
+            <b-int>6</b-int>
+            <b-str>qwerty</b-str>
+          </b>
+        </choices>
         <num>7</num>
       </MessageContainsSequenceOfChoice>
       """;
