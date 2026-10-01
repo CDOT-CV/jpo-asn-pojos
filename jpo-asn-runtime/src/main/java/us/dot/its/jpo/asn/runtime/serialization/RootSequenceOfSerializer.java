@@ -8,7 +8,6 @@ import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * This serializer is needed to work around a couple Jackson issues with serializing collections to

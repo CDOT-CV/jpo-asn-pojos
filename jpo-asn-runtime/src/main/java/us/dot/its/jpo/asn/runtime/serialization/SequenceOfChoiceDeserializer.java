@@ -11,7 +11,6 @@ import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 
 /**
@@ -53,7 +52,10 @@ public abstract class SequenceOfChoiceDeserializer<S extends Asn1Choice, T exten
         log.trace("SequenceOfChoiceDeserializer: choiceXml: {}", choiceXml);
         var wrapped = String.format("<%s>%s</%s>", choiceClass.getSimpleName(), choiceXml,
             choiceClass.getSimpleName());
-        S choice = XML_MAPPER.readValue(wrapped, choiceClass);
+        S choice = null;
+        try (FromXmlParser parser = (FromXmlParser)deserializationContext.createParser(wrapped)) {
+          choice = deserializationContext.readValue(parser, choiceClass);
+        }
         result.add(choice);
       }
     } else {

@@ -1,9 +1,8 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
-
+import java.io.StringWriter;
+import javax.xml.namespace.QName;
 import tools.jackson.core.JsonGenerator;
-import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
@@ -31,9 +30,12 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
       // XER: Write each item sequentially without wrapping
       var xmlGen = (ToXmlGenerator)jsonGenerator;
       for (var item : sequenceOf) {
-        String itemXml = XML_MAPPER.writeValueAsString(item);
-        log.trace("itemXml: {}", itemXml);
-        xmlGen.writeRaw(itemXml);
+        var sw = new StringWriter();
+        try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+          itemGen.setNextName(new QName("item"));
+          serializerProvider.writeValue(itemGen, item);
+        }
+        xmlGen.writeRaw(sw.toString());
       }
     } else {
       // JER: The default works

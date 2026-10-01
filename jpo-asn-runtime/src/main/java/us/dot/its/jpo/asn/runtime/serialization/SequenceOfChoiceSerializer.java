@@ -2,6 +2,8 @@ package us.dot.its.jpo.asn.runtime.serialization;
 
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
 
+import java.io.StringWriter;
+import javax.xml.namespace.QName;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
@@ -10,7 +12,6 @@ import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * Serializer for SEQUENCE-OF CHOICE types. These are unwrapped in XER, but wrapped in JER.
@@ -44,7 +45,12 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
             "SequenceOfChoiceSerializer: ChoiceClass: {}, SequenceOfClass: {}, choiceItem: {}",
             choiceClass.getName(), sequenceOfClass.getName(),
             choiceItem);
-        String choiceXml = XML_MAPPER.writeValueAsString(choiceItem);
+        var sw = new StringWriter();
+        try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+          xGen.setNextName(new QName("item"));
+          serializerProvider.writeValue(xGen, choiceItem);
+        }
+        String choiceXml = sw.toString();
         String unwrappedXml = unwrap(choiceXml);
         xmlGen.writeRaw(unwrappedXml);
       }

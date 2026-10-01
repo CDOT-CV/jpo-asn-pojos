@@ -11,7 +11,6 @@ import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 @Slf4j
 public abstract class SequenceOfEnumeratedDeserializer<S extends Enum<?> & Asn1Enumerated, T extends Asn1SequenceOf<S>>
@@ -45,9 +44,11 @@ public abstract class SequenceOfEnumeratedDeserializer<S extends Enum<?> & Asn1E
         log.trace("SequenceOfEnumeratedDeserializer: enumXml: {}", enumXml);
         var wrapped = String.format("<%s>%s</%s>", enumClass.getSimpleName(), enumXml,
             enumClass.getSimpleName());
-        S enumerated = XML_MAPPER.readValue(wrapped, enumClass);
+        S enumerated = null;
+        try (FromXmlParser parser = (FromXmlParser)deserializationContext.createParser(wrapped)) {
+          enumerated = deserializationContext.readValue(parser, enumClass);
+        }
         result.add(enumerated);
-
       }
     } else {
       // JER is simpler, pass though

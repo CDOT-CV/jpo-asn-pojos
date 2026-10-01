@@ -13,7 +13,6 @@ import tools.jackson.databind.node.ObjectNode;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * See description in {@link OpenTypeSerializer}
@@ -47,7 +46,9 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
                 xmlParser.nextToken();
             }
             log.debug("extracted xml: {}", xml);
-            result = XML_MAPPER.readValue(xml, thisClass);
+            try (FromXmlParser parser = (FromXmlParser)deserializationContext.createParser(xml)) {
+                result = deserializationContext.readValue(parser, thisClass);
+            }
         } else {
             // JSON:
             log.debug("deserialize open type: json");

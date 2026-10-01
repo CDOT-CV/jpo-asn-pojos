@@ -1,5 +1,6 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
+import java.io.StringWriter;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
@@ -7,7 +8,6 @@ import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import javax.xml.namespace.QName;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * Serializer for ASN.1 "open types" which are fields without a specific type,
@@ -70,8 +70,12 @@ public abstract class OpenTypeSerializer<T extends Asn1Type> extends StdSerializ
                 xmlGen.writePOJO(t);
                 xmlGen.finishWrappedValue(wrapper, wrapped);
             } else {
-                String itemXml = XML_MAPPER.writeValueAsString(t);
-                xmlGen.writeRaw(itemXml);
+                var sw = new StringWriter();
+                try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+                    xGen.setNextName(wrapped);
+                    serializerProvider.writeValue(xGen, t);
+                }
+                xmlGen.writeRaw(sw.toString());
             }
         } else {
             // Wrapped JER

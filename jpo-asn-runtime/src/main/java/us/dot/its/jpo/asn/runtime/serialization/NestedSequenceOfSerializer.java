@@ -1,11 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
-
+import java.io.StringWriter;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
-import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import javax.xml.namespace.QName;
@@ -45,13 +43,12 @@ public class NestedSequenceOfSerializer<T extends Asn1SequenceOf<?>> extends Std
                 } else {
                     // Works for sequence
                     for (var item : t) {
-                        xmlGen.writeRaw(String.format("<%s>", wrapped));
-
-                        final String itemXml = XML_MAPPER.writeValueAsString(item);
-                        final String strippedXml = unwrap(itemXml);
-                        xmlGen.writeRaw(strippedXml);
-
-                        xmlGen.writeRaw(String.format("</%s>", wrapped));
+                        var sw = new StringWriter();
+                        try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+                            xGen.setNextName(wrapped);
+                            serializerProvider.writeValue(xGen, item);
+                        }
+                        xmlGen.writeRaw(sw.toString());
                     }
                 }
 
