@@ -18,7 +18,9 @@ import tools.jackson.databind.SerializationFeature;
 import tools.jackson.databind.exc.UnrecognizedPropertyException;
 import tools.jackson.dataformat.xml.XmlMapper;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
+import us.dot.its.jpo.asn.runtime.examples.Choice;
 import us.dot.its.jpo.asn.runtime.examples.MessageContainsSequenceOfChoice;
+import us.dot.its.jpo.asn.runtime.examples.SequenceOfChoice;
 import java.io.IOException;
 import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
@@ -71,6 +73,15 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
     assertThat(m.getId().getValue(), equalTo(10L));
     assertThat(m.getNum().getValue(), equalTo(7L));
     assertThat(m.getChoices(), anyOf(nullValue(), empty()));
+  }
+
+  @Test
+  public void choiceWithNoAlternativeIsEmpty() throws IOException {
+    var choices = new SequenceOfChoice();
+    choices.add(new Choice());
+    var m = new MessageContainsSequenceOfChoice();
+    m.setChoices(choices);
+    assertThat(toXml(m), isIdenticalTo(XML_NO_ALTERNATIVE).ignoreWhitespace());
   }
 
   @Test
@@ -282,6 +293,12 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
         <id>10</id>
         <choices/>
         <num>7</num>
+      </MessageContainsSequenceOfChoice>
+      """;
+
+  public static final String XML_NO_ALTERNATIVE = """
+      <MessageContainsSequenceOfChoice>
+        <choices/>
       </MessageContainsSequenceOfChoice>
       """;
 

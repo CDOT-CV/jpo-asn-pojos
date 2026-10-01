@@ -7,6 +7,7 @@ import us.dot.its.jpo.asn.runtime.serialization.BitstringSerializer;
 
 import java.util.BitSet;
 import java.util.HexFormat;
+import java.util.Objects;
 
 import static us.dot.its.jpo.asn.runtime.utils.BitUtils.reverseBits;
 
@@ -115,7 +116,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
      */
     public void set(String name, boolean value) {
         for (int i = 0; i < size; i++) {
-            if (name(i).equals(name)) {
+            if (Objects.equals(name(i), name)) {
                 set(i, value);
                 return;
             }

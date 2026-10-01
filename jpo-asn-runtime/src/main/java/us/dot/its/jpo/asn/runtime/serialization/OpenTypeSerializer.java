@@ -1,6 +1,7 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import java.io.StringWriter;
+import java.util.Collection;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
@@ -73,7 +74,16 @@ public abstract class OpenTypeSerializer<T extends Asn1Type> extends StdSerializ
                 var sw = new StringWriter();
                 try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
                     xGen.setNextName(wrapped);
-                    serializerProvider.writeValue(xGen, t);
+                    if (t instanceof Collection) {
+                        // A collection doesn't write its own element, so write the wrapped element
+                        // the same way Jackson does for a root collection
+                        xGen.writeStartObject();
+                        xGen.writeName("item");
+                        serializerProvider.writeValue(xGen, t);
+                        xGen.writeEndObject();
+                    } else {
+                        serializerProvider.writeValue(xGen, t);
+                    }
                 }
                 xmlGen.writeRaw(sw.toString());
             }

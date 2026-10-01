@@ -132,6 +132,7 @@ public class RootSequenceOfSerializer
         var sw = new StringWriter();
         try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
           itemGen.setNextName(ROOT_NAME_LOOKUP.findRootName(serializerProvider, item.getClass()));
+          serializerProvider.writeValue(itemGen, item);
         }
         xmlGen.writeRaw(sw.toString());
       }

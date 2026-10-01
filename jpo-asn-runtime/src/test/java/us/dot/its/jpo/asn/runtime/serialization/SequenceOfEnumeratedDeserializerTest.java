@@ -2,10 +2,18 @@ package us.dot.its.jpo.asn.runtime.serialization;
 
 import static net.javacrumbs.jsonunit.JsonMatchers.jsonEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
+import org.junit.jupiter.api.Test;
 import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.exc.MismatchedInputException;
+import us.dot.its.jpo.asn.runtime.examples.FruitEnum;
 import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.dataformat.xml.XmlReadFeature;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
@@ -21,6 +29,27 @@ public class SequenceOfEnumeratedDeserializerTest extends
 
   public SequenceOfEnumeratedDeserializerTest() {
     super(MessageContainsSequenceOfEnumerated.class);
+  }
+
+  @Test
+  public void unknownEnumValue() {
+    var ex = assertThrows(MismatchedInputException.class, () -> fromXml(XML_UNKNOWN));
+    assertThat(ex.getMessage(),
+        containsString("Invalid enum value: kiwi. Must be one of: apple, orange, banana"));
+  }
+
+  @Test
+  public void enumElementWithContent() throws IOException {
+    MessageContainsSequenceOfEnumerated m = fromXml(XML_WITH_CONTENT);
+    assertThat(m.getFruits(), contains(FruitEnum.APPLE, FruitEnum.ORANGE));
+    assertThat(m.getId().getValue(), equalTo(2L));
+  }
+
+  @Test
+  public void emptySequenceOf() throws IOException {
+    MessageContainsSequenceOfEnumerated m = fromXml(XML_EMPTY);
+    assertThat(m.getFruits(), empty());
+    assertThat(m.getId().getValue(), equalTo(1L));
   }
 
   @ParameterizedTest
@@ -73,6 +102,35 @@ public class SequenceOfEnumeratedDeserializerTest extends
         Arguments.of("Duplicate values, mixed order", JSON_MIXED)
     );
   }
+
+  public static final String XML_UNKNOWN = """
+      <MessageContainsSequenceOfEnumerated>
+        <id>1</id>
+        <fruits>
+          <apple/>
+          <kiwi/>
+        </fruits>
+      </MessageContainsSequenceOfEnumerated>
+      """;
+
+  public static final String XML_WITH_CONTENT = """
+      <MessageContainsSequenceOfEnumerated>
+        <fruits>
+          <apple>
+            <unexpected>1</unexpected>
+          </apple>
+          <orange/>
+        </fruits>
+        <id>2</id>
+      </MessageContainsSequenceOfEnumerated>
+      """;
+
+  public static final String XML_EMPTY = """
+      <MessageContainsSequenceOfEnumerated>
+        <fruits/>
+        <id>1</id>
+      </MessageContainsSequenceOfEnumerated>
+      """;
 
   public static final String XML_SINGLE = """
       <MessageContainsSequenceOfEnumerated>

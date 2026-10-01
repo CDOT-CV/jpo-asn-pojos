@@ -34,12 +34,12 @@ public class NestedSequenceOfDeserializer<T extends Asn1SequenceOf<?>> extends S
             JsonNode node = deserializationContext.readTree(xmlParser);
             if (node instanceof ObjectNode objectNode) {
                 JsonNode unwrapped = objectNode.findValue(wrapped);
-                if (unwrapped instanceof ObjectNode unwrappedObject) {
+                if (unwrapped instanceof ArrayNode arrayNode) {
+                    result = deserializationContext.readTreeAsValue(arrayNode, thisClass);
+                } else if (unwrapped != null) {
                     // Single item not identified as array, so put it in an array
                     ArrayNode arrayNode = deserializationContext.getNodeFactory().arrayNode();
-                    arrayNode.add(unwrappedObject);
-                    result = deserializationContext.readTreeAsValue(arrayNode, thisClass);
-                } else if (unwrapped instanceof ArrayNode arrayNode) {
+                    arrayNode.add(unwrapped);
                     result = deserializationContext.readTreeAsValue(arrayNode, thisClass);
                 }
             }
