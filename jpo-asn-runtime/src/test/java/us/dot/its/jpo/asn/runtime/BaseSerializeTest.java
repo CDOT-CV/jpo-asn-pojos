@@ -21,11 +21,12 @@ import org.junit.jupiter.params.provider.Arguments;
 @Slf4j
 public abstract class BaseSerializeTest<T> {
 
-  // Why Jackson???
   private final static XmlMapper xmlMapper = XmlMapper.builder().disable(
       MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
+
   private final static ObjectMapper jsonMapper = JsonMapper.builder().disable(
       MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
+
   private final Class<T> clazz;
 
   public BaseSerializeTest(Class<T> clazz) {
