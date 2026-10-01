@@ -1,14 +1,10 @@
 package us.dot.its.jpo.asn.runtime.utils;
 
 import tools.jackson.core.JsonToken;
+import tools.jackson.databind.exc.MismatchedInputException;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
-import tools.jackson.dataformat.xml.deser.XmlReadContext;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.List;
-import java.util.Objects;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.text.StringEscapeUtils;
 
@@ -17,6 +13,10 @@ public class XmlUtils {
 
   /**
    * Remove the outermost element from an XML string.
+   *
+   * <p>Assumes a single root element, as produced by a Jackson generator.  A leading XML
+   * declaration, processing instructions, and comments are skipped, attributes on the root
+   * element are ignored, and a self-closing root element unwraps to an empty string.
    *
    * @param xml - Input xml string
    * @return The unwrapped xml
@@ -31,213 +31,193 @@ public class XmlUtils {
     if (xml.isBlank()) {
       return "";
     }
-    final String trimmed = xml.trim();
+    final String trimmed = skipProlog(xml, xml.trim());
 
-    // Remove the first element and matching last element
-
-    // Get the first element
-    final int startFirst = trimmed.indexOf('<') + 1;
-    if (startFirst != 1) {
+    // Get the start tag of the root element
+    if (!trimmed.startsWith("<")) {
       throw notWellFormed(xml);
     }
-    final int endFirst = trimmed.indexOf('>');
-    if (endFirst <= 0) {
+    final int endStartTag = trimmed.indexOf('>');
+    if (endStartTag < 0) {
       throw notWellFormed(xml);
     }
-    final String firstElement = trimmed.substring(startFirst, endFirst);
-    log.trace("firstElement: {}", firstElement);
-
-    // Get the last element
-    final int startLast = trimmed.lastIndexOf("</") + 2;
-    if (startLast < 2) {
-      throw notWellFormed(xml);
-    }
-    final int endLast = trimmed.lastIndexOf('>');
-    if (endLast != trimmed.length() - 1) {
-      throw notWellFormed(xml);
-    }
-    final String lastElement = trimmed.substring(startLast, endLast);
-    log.trace("lastElement: {}", lastElement);
-
-    if (endFirst >= startLast) {
-      throw notWellFormed(xml);
-    }
-    if (!firstElement.equals(lastElement)) {
+    final String startName = elementName(trimmed);
+    log.trace("startName: {}", startName);
+    if (startName.isEmpty()) {
       throw notWellFormed(xml);
     }
 
-    final String unwrapped = trimmed.substring(endFirst + 1, startLast - 2);
+    // Self-closing root element
+    if (trimmed.charAt(endStartTag - 1) == '/') {
+      if (endStartTag != trimmed.length() - 1) {
+        throw notWellFormed(xml);
+      }
+      return "";
+    }
+
+    // Get the end tag of the root element
+    final int startEndTag = trimmed.lastIndexOf("</");
+    if (startEndTag <= endStartTag || !trimmed.endsWith(">")) {
+      throw notWellFormed(xml);
+    }
+    final String endName = trimmed.substring(startEndTag + 2, trimmed.length() - 1).trim();
+    log.trace("endName: {}", endName);
+    if (!startName.equals(endName)) {
+      throw notWellFormed(xml);
+    }
+
+    final String unwrapped = trimmed.substring(endStartTag + 1, startEndTag);
     log.trace("unwrapped: {}", unwrapped);
     return unwrapped;
+  }
+
+  // Skip any XML declaration, processing instructions, and comments before the root element
+  private static String skipProlog(final String xml, String trimmed) {
+    while (true) {
+      final String terminator;
+      if (trimmed.startsWith("<?")) {
+        terminator = "?>";
+      } else if (trimmed.startsWith("<!--")) {
+        terminator = "-->";
+      } else {
+        return trimmed;
+      }
+      final int end = trimmed.indexOf(terminator);
+      if (end < 0) {
+        throw notWellFormed(xml);
+      }
+      trimmed = trimmed.substring(end + terminator.length()).trim();
+    }
+  }
+
+  // Name of the element whose start tag begins the string, ignoring any attributes
+  private static String elementName(final String xml) {
+    int end = 1;
+    while (end < xml.length()) {
+      final char c = xml.charAt(end);
+      if (Character.isWhitespace(c) || c == '/' || c == '>') {
+        break;
+      }
+      end++;
+    }
+    return xml.substring(1, end);
   }
 
   private static IllegalArgumentException notWellFormed(final String xml) {
     return new IllegalArgumentException(String.format("unwrap: XML is not well formed: %s", xml));
   }
 
+  /*
+   * The extract methods below rebuild XML text from the FromXmlParser token stream, preserving
+   * the document order of all elements, including repeated elements, which reading into a
+   * JsonNode tree does not.
+   *
+   * They are called from within a custom deserialize method with the parser positioned on the
+   * START_OBJECT (or first PROPERTY_NAME) of the current element.  They return with the parser
+   * positioned on that element's matching END_OBJECT, as required of a custom deserializer.  If
+   * the current element is empty, the parser is on a scalar token instead, and is not advanced.
+   */
 
   /**
-   * Extract unwrapped items from the XML stream, in original order with duplicates
+   * Extract the child elements of the current XML element, in document order with duplicates.
    *
    * @param xmlParser - The XML Parser from within a custom
    *                  {@link tools.jackson.databind.deser.std.StdDeserializer#deserialize}
    *                  method.
-   * @return List of XML strings
-   * @throws IOException Parser exception
+   * @return List of XML strings, one per child element.  Empty if the current element is empty.
    */
   public static List<String> extractXmlList(FromXmlParser xmlParser) {
-    Formatter xml = new Formatter();
-    List<String> itemXmlList = new ArrayList<>();
-
-    XmlReadContext pc = (XmlReadContext)xmlParser.streamReadContext();
-    XmlReadContext parent = pc.getParent();
-    final int parentNestingDepth = getNestingDepth(parent);
-    log.trace("extractXmlList: parent name {}, value: {}, index: {}, nesting: {}",
-        parent.currentName(),
-        parent.currentValue(), parent.getCurrentIndex(), parentNestingDepth);
-    XmlElement element = new XmlElement();
-    final int startNesting = parentNestingDepth;
-    final String startName = parent.currentName();
-
-    while (!element.isFinishedAll()) {
-      element = extractXml(xml, xmlParser, element, startNesting, startName);
-      if (element.isFinishedItem()) {
-        itemXmlList.add(xml.toString());
-        xml = new Formatter();
-      }
-      if (!element.isFinishedAll()) {
-        xmlParser.nextToken();
-      }
+    if (!isObjectStart(xmlParser.currentToken())) {
+      return new ArrayList<>();
     }
-    return itemXmlList;
+    return readChildren(xmlParser);
   }
 
   /**
-   * Extract a single unwrapped xml item from the XML stream, preserving order of elements
+   * Extract the single child element of the current XML element, for example, the content of an
+   * open type wrapper element.
    *
    * @param xmlParser - The XML Parser from within a custom
    *                  {@link tools.jackson.databind.deser.std.StdDeserializer#deserialize}
    *                  method.
-   * @return The reconstructed, unwrapped XML.
-   * @throws IOException Parser exception
+   * @return The XML of the child element.
+   * @throws MismatchedInputException If the current element does not have exactly one child.
    */
   public static String extractXmlElement(FromXmlParser xmlParser) {
-    Formatter xml = new Formatter();
-    XmlReadContext pc = (XmlReadContext)xmlParser.streamReadContext();
-    XmlReadContext parent = pc.getParent();
-    final int parentNestingDepth = getNestingDepth(parent);
-    log.debug("extractXmlElement: parent name {}, value: {}, index: {}, nesting: {}",
-        parent.currentName(),
-        parent.currentValue(), parent.getCurrentIndex(), parentNestingDepth);
-    XmlElement element = new XmlElement();
-    final int startNesting = parentNestingDepth;
-    final String startName = parent.currentName();
-    while (!element.isFinishedItem()) {
-      element = extractXml(xml, xmlParser, element, startNesting, startName);
-      if (!element.isFinishedItem()) {
-        xmlParser.nextToken();
-      }
+    final List<String> children = extractXmlList(xmlParser);
+    if (children.size() != 1) {
+      throw MismatchedInputException.from(xmlParser, (Class<?>) null,
+          String.format("Expected exactly one child element, found %d", children.size()));
     }
-    return xml.toString();
-  }
-
-  // Helper method for extracting an xml element from the XmlParser stream
-  private static XmlElement extractXml(Formatter xml, FromXmlParser xmlParser,
-      final XmlElement previous,
-      final int startNesting, final String startName) {
-    XmlReadContext pc = (XmlReadContext)xmlParser.streamReadContext();
-    final int nestingDepth = getNestingDepth(pc);
-
-    JsonToken token = xmlParser.currentToken();
-    XmlElement element = new XmlElement();
-    element.setToken(token);
-
-    if (token == JsonToken.START_OBJECT) {
-      // Advance to field name
-      token = xmlParser.nextToken();
-      element.setToken(token);
-    }
-
-    if (token == JsonToken.PROPERTY_NAME && pc.currentName() != null) {
-      xml.format("<%s>", pc.currentName());
-      element.setFieldName(pc.currentName());
-    } else if (token == JsonToken.VALUE_STRING) {
-      String val = xmlParser.getValueAsString();
-      log.trace("Value String: {}", val);
-
-      pc.assignCurrentValue(val);
-      xml.format("%s",  StringEscapeUtils.escapeXml11(val));
-      // Wrap the value
-      if (pc.currentName() != null) {
-        xml.format("</%s>", pc.currentName());
-      } else if (previous != null && previous.getFieldName() != null) {
-        xml.format("</%s>", previous.getFieldName());
-      }
-
-      // For simple choice types there won't be an END_OBJECT
-      if (nestingDepth == startNesting + 1) {
-        element.setFinishedItem(true);
-      }
-    } else if (token == JsonToken.END_OBJECT && pc.hasCurrentName()) {
-      xml.format("</%s>", pc.currentName());
-      if (nestingDepth == startNesting && Objects.equals(pc.currentName(), startName)) {
-        element.setFinishedAll(true);
-      } else if (nestingDepth == startNesting + 1) {
-        element.setFinishedItem(true);
-      }
-    }
-
-    if (token == null) {
-      element.setFinishedItem(true);
-      element.setFinishedAll(true);
-    }
-
-    log.trace("current token: {} name: {} index: {}, nesting: {}",
-        token, pc.currentName(), pc.getCurrentIndex(), nestingDepth);
-
-    return element;
-  }
-
-
-  // Helper class for extractXml method
-  @Data
-  private static class XmlElement {
-
-    JsonToken token;
-    String fieldName;
-    boolean finishedAll;
-    boolean finishedItem;
+    return children.get(0);
   }
 
   /**
-   * Workaround issue with Jackson versions prior to 2.17.2, for which
-   * XmlReadContext.getNestingDepth() was not incremented correctly.
-   * Ref. <a href="https://github.com/FasterXML/jackson-dataformat-xml/issues/657">jackson-dataformat-xml/issues/657</a>
-   * Recursively calculate the nesting depth if it's not available.
-   * @param pc The XmlReadContext
-   * @return The nesting depth of the element
+   * Extract the complete current XML element.
+   *
+   * @param xmlParser - The XML Parser from within a custom
+   *                  {@link tools.jackson.databind.deser.std.StdDeserializer#deserialize}
+   *                  method.
+   * @param rootName  - Name of the root element to wrap the extracted content in.  Jackson ignores
+   *                  the root element name when reading, so any valid name works.
+   * @return The reconstructed XML, wrapped in a root element named {@code rootName}.
    */
-  private static int getNestingDepth(XmlReadContext pc) {
-
-    // Nesting depth is non-zero, therefore it is correct, just return it.
-    if (pc.getNestingDepth() > 0) {
-      return pc.getNestingDepth();
-    }
-
-    // Otherwise, calculate the depth recursively
-    return calculateNestingDepth(pc);
-  }
-
-  /**
-   * Calculate nesting depth recursively.
-   * @param pc The XmlReadContext
-   * @return The nesting depth
-   */
-  public static int calculateNestingDepth(XmlReadContext pc) {
-    if (pc.getParent() == null) {
-      return 0;
+  public static String extractXmlObject(FromXmlParser xmlParser, String rootName) {
+    final JsonToken token = xmlParser.currentToken();
+    final String content;
+    if (isObjectStart(token)) {
+      content = String.join("", readChildren(xmlParser));
+    } else if (token != null && token.isScalarValue() && token != JsonToken.VALUE_NULL) {
+      content = StringEscapeUtils.escapeXml11(xmlParser.getString());
     } else {
-      return calculateNestingDepth(pc.getParent()) + 1;
+      content = "";
     }
+    return String.format("<%s>%s</%s>", rootName, content, rootName);
+  }
+
+  private static boolean isObjectStart(JsonToken token) {
+    return token == JsonToken.START_OBJECT || token == JsonToken.PROPERTY_NAME;
+  }
+
+  // Parser on START_OBJECT or the first PROPERTY_NAME, leaves it on the matching END_OBJECT
+  private static List<String> readChildren(FromXmlParser xmlParser) {
+    final List<String> children = new ArrayList<>();
+    JsonToken token = xmlParser.currentToken();
+    if (token == JsonToken.START_OBJECT) {
+      token = nextToken(xmlParser);
+    }
+    while (token != JsonToken.END_OBJECT) {
+      if (token != JsonToken.PROPERTY_NAME) {
+        throw MismatchedInputException.from(xmlParser, (Class<?>) null,
+            String.format("Expected an XML element, found %s", token));
+      }
+      children.add(readElement(xmlParser, xmlParser.currentName()));
+      token = nextToken(xmlParser);
+    }
+    return children;
+  }
+
+  // Parser on the element's PROPERTY_NAME, leaves it on the last token of the element's value
+  private static String readElement(FromXmlParser xmlParser, String name) {
+    final JsonToken token = nextToken(xmlParser);
+    if (token == JsonToken.START_OBJECT) {
+      return String.format("<%s>%s</%s>", name, String.join("", readChildren(xmlParser)), name);
+    } else if (token == JsonToken.VALUE_NULL) {
+      return String.format("<%s/>", name);
+    } else if (token.isScalarValue()) {
+      return String.format("<%s>%s</%s>", name,
+          StringEscapeUtils.escapeXml11(xmlParser.getString()), name);
+    }
+    throw MismatchedInputException.from(xmlParser, (Class<?>) null,
+        String.format("Unexpected token %s in XML element <%s>", token, name));
+  }
+
+  private static JsonToken nextToken(FromXmlParser xmlParser) {
+    final JsonToken token = xmlParser.nextToken();
+    if (token == null) {
+      throw MismatchedInputException.from(xmlParser, (Class<?>) null,
+          "Unexpected end of input while extracting XML");
+    }
+    return token;
   }
 }

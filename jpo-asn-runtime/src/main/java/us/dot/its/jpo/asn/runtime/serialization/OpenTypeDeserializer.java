@@ -4,7 +4,6 @@ import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.extractXmlElement;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.JsonParser;
-import tools.jackson.core.JsonToken;
 import tools.jackson.core.TreeNode;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.JsonNode;
@@ -38,13 +37,7 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // XML: Unwrap
             log.debug("deserialize open type: xml");
-            final int depth = xmlParser.streamReadContext().getNestingDepth();
             String xml = extractXmlElement(xmlParser);
-            // Leave the parser on the END_OBJECT of the open type wrapper element
-            while (!(xmlParser.currentToken() == JsonToken.END_OBJECT
-                && xmlParser.streamReadContext().getNestingDepth() < depth)) {
-                xmlParser.nextToken();
-            }
             log.debug("extracted xml: {}", xml);
             try (FromXmlParser parser = (FromXmlParser)deserializationContext.createParser(xml)) {
                 result = deserializationContext.readValue(parser, thisClass);

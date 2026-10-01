@@ -1,11 +1,13 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
+import java.io.StringWriter;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
+import tools.jackson.dataformat.xml.util.XmlRootNameLookup;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
@@ -112,6 +114,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 public class RootSequenceOfSerializer
     extends StdSerializer<Asn1SequenceOf<Asn1Type>> {
 
+  private static final XmlRootNameLookup ROOT_NAME_LOOKUP = new XmlRootNameLookup();
+
   protected RootSequenceOfSerializer() {
     super(Asn1SequenceOf.class);
   }
@@ -125,8 +129,11 @@ public class RootSequenceOfSerializer
       var xmlGen = (ToXmlGenerator) jsonGenerator;
       xmlGen.writeStartArray();
       for (Asn1Type item : sequenceOf) {
-        String itemXml = XML_MAPPER.writeValueAsString(item);
-        xmlGen.writeRaw(itemXml);
+        var sw = new StringWriter();
+        try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+          itemGen.setNextName(ROOT_NAME_LOOKUP.findRootName(serializerProvider, item.getClass()));
+        }
+        xmlGen.writeRaw(sw.toString());
       }
       xmlGen.writeEndArray();
     } else {

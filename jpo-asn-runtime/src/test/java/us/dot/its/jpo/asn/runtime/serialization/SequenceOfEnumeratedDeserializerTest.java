@@ -5,6 +5,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.dataformat.xml.XmlReadFeature;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
 import us.dot.its.jpo.asn.runtime.examples.MessageContainsSequenceOfEnumerated;
 import java.io.IOException;
@@ -24,6 +27,21 @@ public class SequenceOfEnumeratedDeserializerTest extends
   @MethodSource("xmlValues")
   public void canRoundTripXml(final String description, final String xml) throws IOException {
     MessageContainsSequenceOfEnumerated m = fromXml(xml);
+    assertThat(description, m, notNullValue());
+    String roundTripXml = toXml(m);
+    assertThat(description, roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
+  }
+
+  @ParameterizedTest
+  @MethodSource("xmlValues")
+  public void canRoundTripXmlWithEmptyElementAsNull(final String description, final String xml)
+      throws IOException {
+    var mapper = XmlMapper.builder()
+        .enable(XmlReadFeature.EMPTY_ELEMENT_AS_NULL)
+        .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+        .build();
+    MessageContainsSequenceOfEnumerated m =
+        mapper.readValue(xml, MessageContainsSequenceOfEnumerated.class);
     assertThat(description, m, notNullValue());
     String roundTripXml = toXml(m);
     assertThat(description, roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());

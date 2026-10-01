@@ -1,15 +1,15 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import static us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType.INTEGER;
+import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.extractXmlObject;
+
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.JsonParser;
 import tools.jackson.core.TreeNode;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.node.ObjectNode;
-import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
@@ -56,13 +56,16 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
         }
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // XER
-            TreeNode node = deserializationContext.readTree(xmlParser);
+            final String xml = extractXmlObject(xmlParser, thisClass.getSimpleName());
+            log.trace("node xml: {}", xml);
+            final JsonNode node;
+            try (JsonParser parser = deserializationContext.createParser(xml)) {
+                node = deserializationContext.readTree(parser);
+            }
 
             if (node instanceof ObjectNode objectNode) {
                 log.trace("ObjectNode: {}", objectNode);
                 JsonNode idPropNode = objectNode.findValue(idPropName);
-                String xml = XML_MAPPER.writeValueAsString(node);
-                log.trace("node xml: {}", xml);
                 if (idPropNode == null) {
                     throw new RuntimeException("idPropNode is null");
                 }

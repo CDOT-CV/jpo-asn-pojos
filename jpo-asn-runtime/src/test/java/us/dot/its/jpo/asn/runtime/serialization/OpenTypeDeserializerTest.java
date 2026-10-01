@@ -1,11 +1,13 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import us.dot.its.jpo.asn.runtime.examples.AInteger;
@@ -40,5 +42,25 @@ public class OpenTypeDeserializerTest {
     assertThat(roundTripXml, isIdenticalTo(xml).ignoreWhitespace().ignoreElementContentWhitespace());
   }
 
+  @Test
+  public void openTypeFollowedBySibling() throws JacksonException {
+    var mapper = new XmlMapper();
+    var example = mapper.readValue(XML_OPEN_TYPE_FIRST, ExampleWithOpenType.class);
+    assertThat(example.getMessageId().getValue(), equalTo(10L));
+    assertThat(example.getValue().getAInt().getValue(), equalTo(20L));
+    assertThat(example.getValue().getAStr().getValue(), equalTo("asdf"));
+  }
+
+  static final String XML_OPEN_TYPE_FIRST = """
+      <MessageFrame>
+        <value>
+          <ASequence>
+            <a-int>20</a-int>
+            <a-str>asdf</a-str>
+          </ASequence>
+        </value>
+        <messageId>10</messageId>
+      </MessageFrame>
+      """;
 
 }

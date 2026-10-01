@@ -1,12 +1,12 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import java.io.StringWriter;
-import javax.xml.namespace.QName;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
+import tools.jackson.dataformat.xml.util.XmlRootNameLookup;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
@@ -17,6 +17,8 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
 
   protected final Class<S> itemClass;
   protected final Class<T> sequenceOfClass;
+
+  private static final XmlRootNameLookup ROOT_NAME_LOOKUP = new XmlRootNameLookup();
 
   protected SequenceOfOpenTypeSerializer(Class<S> itemClass, Class<T> sequenceOfClass) {
     super(sequenceOfClass);
@@ -32,7 +34,7 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
       for (var item : sequenceOf) {
         var sw = new StringWriter();
         try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
-          itemGen.setNextName(new QName("item"));
+          itemGen.setNextName(ROOT_NAME_LOOKUP.findRootName(serializerProvider, item.getClass()));
           serializerProvider.writeValue(itemGen, item);
         }
         xmlGen.writeRaw(sw.toString());

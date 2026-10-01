@@ -2,7 +2,11 @@ package us.dot.its.jpo.asn.runtime.serialization;
 
 import static net.javacrumbs.jsonunit.JsonMatchers.jsonEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.anyOf;
+import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 
@@ -12,6 +16,7 @@ import us.dot.its.jpo.asn.runtime.examples.MessageContainsSequenceOfChoice;
 import java.io.IOException;
 import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -40,6 +45,14 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
     assertThat(description, m, notNullValue());
     String roundTripJson = toJson(m);
     assertThat(description, roundTripJson, jsonEquals(json));
+  }
+
+  @Test
+  public void emptySequenceOfDoesNotConsumeSiblings() throws IOException {
+    MessageContainsSequenceOfChoice m = fromXml(XML_EMPTY);
+    assertThat(m.getId().getValue(), equalTo(10L));
+    assertThat(m.getNum().getValue(), equalTo(7L));
+    assertThat(m.getChoices(), anyOf(nullValue(), empty()));
   }
 
   @ParameterizedTest
@@ -226,6 +239,14 @@ public class SequenceOfChoiceDeserializerTest extends BaseSerializeTest<MessageC
         ],
         "num": 7
       }
+      """;
+
+  public static final String XML_EMPTY = """
+      <MessageContainsSequenceOfChoice>
+        <id>10</id>
+        <choices/>
+        <num>7</num>
+      </MessageContainsSequenceOfChoice>
       """;
 
   public static final String XML_MALFORMED1 = """
