@@ -1,7 +1,7 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import static us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType.INTEGER;
-
+import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 import tools.jackson.core.JacksonException;
 import tools.jackson.core.JsonParser;
 import tools.jackson.core.TreeNode;
@@ -10,7 +10,6 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.node.ObjectNode;
-import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
@@ -57,13 +56,12 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
         }
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // XER
-            XmlMapper xmlMapper = (XmlMapper)xmlParser.objectReadContext();
-            TreeNode node = xmlMapper.readTree(xmlParser);
+            TreeNode node = XML_MAPPER.readTree(xmlParser);
 
             if (node instanceof ObjectNode objectNode) {
                 log.trace("ObjectNode: {}", objectNode);
                 JsonNode idPropNode = objectNode.findValue(idPropName);
-                String xml = xmlMapper.writeValueAsString(node);
+                String xml = XML_MAPPER.writeValueAsString(node);
                 log.trace("node xml: {}", xml);
                 if (idPropNode == null) {
                     throw new RuntimeException("idPropNode is null");
@@ -72,7 +70,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 log.trace("id: {}", id);
                 Class<?> subType = getSubtypeForId(id, idType, types);
                 log.trace("subtype: {}", subType.getName());
-                return (T)xmlMapper.readValue(xml, subType);
+                return (T)XML_MAPPER.readValue(xml, subType);
             } else {
                 throw new RuntimeException("Not instance of object");
             }
@@ -81,10 +79,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
             TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
             var mapper = (ObjectMapper)jsonParser.objectReadContext();
             if (node instanceof ObjectNode objectNode) {
-                log.trace("ObjectNode: {}", objectNode);
                 JsonNode idPropNode = objectNode.findValue(idPropName);
-                String json = mapper.writeValueAsString(objectNode);
-                log.trace("node json: {}", json);
                 if (idPropNode == null) {
                     throw new RuntimeException("idPropNode is null");
                 }
@@ -92,9 +87,7 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 log.trace("id: {}", id);
                 Class<?> subType = getSubtypeForId(id, idType, types);
                 log.trace("subtype: {}", subType.getName());
-                T deserializedItem = (T)mapper.readValue(json, subType);
-                log.trace("deserializedItem: {}", deserializedItem);
-                return deserializedItem;
+                return (T)deserializationContext.readTreeAsValue(objectNode, subType);
             } else {
                 throw new RuntimeException("Not instance of object");
             }

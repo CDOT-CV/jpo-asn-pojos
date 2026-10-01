@@ -8,7 +8,7 @@ import tools.jackson.databind.JavaType;
 import tools.jackson.databind.ValueDeserializer;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.exc.ValueInstantiationException;
-import tools.jackson.dataformat.xml.XmlMapper;
+import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 import java.io.IOException;
@@ -60,7 +60,7 @@ public final class BooleanDeserializer<T extends Asn1Boolean> extends StdDeseria
     @Override
     public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) {
         T result = construct(jsonParser);
-        if (jsonParser.objectReadContext() instanceof XmlMapper) {
+        if (jsonParser instanceof FromXmlParser) {
             // XML: unwrap empty element
             TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
             var propNames = node.propertyNames();

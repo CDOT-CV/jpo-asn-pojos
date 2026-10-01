@@ -3,12 +3,12 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
-import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
+import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * This serializer is needed to work around a couple Jackson issues with serializing collections to
@@ -124,10 +124,9 @@ public class RootSequenceOfSerializer
       // XER
       // Workaround for a root level collection.
       var xmlGen = (ToXmlGenerator) jsonGenerator;
-      var mapper = (XmlMapper) xmlGen.objectWriteContext();
       xmlGen.writeStartArray();
       for (Asn1Type item : sequenceOf) {
-        String itemXml = mapper.writeValueAsString(item);
+        String itemXml = XML_MAPPER.writeValueAsString(item);
         xmlGen.writeRaw(itemXml);
       }
       xmlGen.writeEndArray();

@@ -3,15 +3,14 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
 
 import tools.jackson.core.JsonGenerator;
-import tools.jackson.databind.MapperFeature;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
-import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
+import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * Serializer for SEQUENCE-OF CHOICE types. These are unwrapped in XER, but wrapped in JER.
@@ -25,9 +24,6 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
 
   protected final Class<S> choiceClass;
   protected final Class<T> sequenceOfClass;
-
-  private static final XmlMapper XML_MAPPER = XmlMapper.builder()
-      .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
 
   protected SequenceOfChoiceSerializer(Class<S> choiceClass, Class<T> sequenceOfClass) {
     super(sequenceOfClass);

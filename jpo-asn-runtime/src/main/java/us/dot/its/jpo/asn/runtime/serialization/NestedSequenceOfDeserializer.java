@@ -8,7 +8,7 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.node.ArrayNode;
 import tools.jackson.databind.node.ObjectNode;
-import tools.jackson.dataformat.xml.XmlMapper;
+import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
@@ -33,7 +33,7 @@ public class NestedSequenceOfDeserializer<T extends Asn1SequenceOf<?>> extends S
         T result = null;
         if (jsonParser instanceof FromXmlParser xmlParser) {
             // For XML, we need to remove the wrapper and distinguish between single items and arrays
-            XmlMapper xmlMapper = (XmlMapper)xmlParser.objectReadContext();
+            //XmlMapper xmlMapper = (XmlMapper)xmlParser.objectReadContext();
             TreeNode node = xmlParser.objectReadContext().readTree(xmlParser);
 
             if (node instanceof ObjectNode objectNode) {
@@ -41,13 +41,13 @@ public class NestedSequenceOfDeserializer<T extends Asn1SequenceOf<?>> extends S
                 if (unwrapped instanceof ObjectNode unwrappedObject) {
 
                     // Single item not identified as array, so put it in an array
-                    ArrayNode arrayNode = xmlMapper.createArrayNode();
+                    ArrayNode arrayNode = XML_MAPPER.createArrayNode();
                     arrayNode.add(unwrappedObject);
-                    result = xmlMapper.convertValue(arrayNode, thisClass);
+                    result = XML_MAPPER.convertValue(arrayNode, thisClass);
 
                 } else if (unwrapped instanceof ArrayNode arrayNode) {
 
-                    result = xmlMapper.convertValue(arrayNode, thisClass);
+                    result = XML_MAPPER.convertValue(arrayNode, thisClass);
                 }
             }
         }else {

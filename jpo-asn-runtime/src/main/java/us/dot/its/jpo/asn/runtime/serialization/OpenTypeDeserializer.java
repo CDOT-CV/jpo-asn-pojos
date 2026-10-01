@@ -8,13 +8,12 @@ import tools.jackson.core.JsonToken;
 import tools.jackson.core.TreeNode;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.MapperFeature;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.node.ObjectNode;
-import tools.jackson.dataformat.xml.XmlMapper;
 import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
+import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 
 /**
  * See description in {@link OpenTypeSerializer}
@@ -25,8 +24,6 @@ public abstract class OpenTypeDeserializer<T extends Asn1Type> extends StdDeseri
 
     protected final Class<T> thisClass;
     protected final String wrapped;
-    private static final XmlMapper XML_MAPPER = XmlMapper.builder()
-        .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
 
     protected OpenTypeDeserializer(Class<T> vc, String wrapped) {
         super(vc);

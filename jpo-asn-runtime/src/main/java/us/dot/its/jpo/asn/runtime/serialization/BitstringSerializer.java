@@ -17,18 +17,17 @@ public class BitstringSerializer extends StdSerializer<Asn1Bitstring> {
     }
 
     @Override
-    public void serialize(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
-        if (serializerProvider instanceof XmlSerializationContext) {
+    public void serialize(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator, SerializationContext context) {
+        if (context instanceof XmlSerializationContext) {
             // XER serializes bitstrings as binary (strings of "1"s and "0"s)
             jsonGenerator.writeString(asn1Bitstring.binaryString());
         } else {
-            serializeJson(asn1Bitstring, jsonGenerator);
+            serializeJson(asn1Bitstring, jsonGenerator, context);
         }
     }
 
-    private void serializeJson(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator) {
-        var codec = jsonGenerator.objectWriteContext();
-        if (codec instanceof OdeCustomJsonMapper customMapper && customMapper.isHumanReadableJsonBitstrings()) {
+    private void serializeJson(Asn1Bitstring asn1Bitstring, JsonGenerator jsonGenerator, SerializationContext context) {
+        if (Boolean.TRUE.equals(context.getAttribute(OdeCustomJsonMapper.HUMAN_READABLE_BITSTRINGS))) {
             serializeJsonMap(asn1Bitstring, jsonGenerator);
         } else {
             serializeJer(asn1Bitstring, jsonGenerator);

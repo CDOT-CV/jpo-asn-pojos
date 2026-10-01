@@ -3,9 +3,9 @@ package us.dot.its.jpo.asn.runtime.serialization;
 import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
 
 import tools.jackson.core.JsonGenerator;
-import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
+import static us.dot.its.jpo.asn.runtime.serialization.Mappers.XML_MAPPER;
 import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
 import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import javax.xml.namespace.QName;
@@ -34,7 +34,7 @@ public class NestedSequenceOfSerializer<T extends Asn1SequenceOf<?>> extends Std
             if (serializerProvider instanceof XmlSerializationContext) {
                 // Wrapped XER
                 var xmlGen = (ToXmlGenerator) jsonGenerator;
-                var mapper = (ObjectMapper) xmlGen.objectWriteContext();
+                //var mapper = (ObjectMapper) xmlGen.objectWriteContext();
 
                 if ("INTEGER".equals(wrapped.getLocalPart())) {
                     xmlGen.writeStartArray();
@@ -47,7 +47,7 @@ public class NestedSequenceOfSerializer<T extends Asn1SequenceOf<?>> extends Std
                     for (var item : t) {
                         xmlGen.writeRaw(String.format("<%s>", wrapped));
 
-                        final String itemXml = mapper.writeValueAsString(item);
+                        final String itemXml = XML_MAPPER.writeValueAsString(item);
                         final String strippedXml = unwrap(itemXml);
                         xmlGen.writeRaw(strippedXml);
 

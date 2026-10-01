@@ -13,8 +13,8 @@ import tools.jackson.databind.exc.MismatchedInputException;
 import tools.jackson.databind.exc.ValueInstantiationException;
 import tools.jackson.databind.node.ObjectNode;
 import tools.jackson.databind.node.StringNode;
-import tools.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
+import tools.jackson.dataformat.xml.deser.FromXmlParser;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 import java.lang.reflect.Constructor;
@@ -80,18 +80,22 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
     @Override
     public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         T bitstring = construct(jsonParser);
-        if (jsonParser.objectReadContext() instanceof XmlMapper) {
+        if (jsonParser instanceof FromXmlParser) {
             // XML: binary
             String str = jsonParser.getString();
             bitstring.fromBinaryString(str);
         } else {
-            deserializeFromJson(bitstring, jsonParser);
+            deserializeFromJson(bitstring, jsonParser, deserializationContext);
         }
         return bitstring;
     }
 
-    private void deserializeFromJson(T bitstring, JsonParser jsonParser)  {
-        if (jsonParser.objectReadContext() instanceof OdeCustomJsonMapper customMapper && customMapper.isHumanReadableJsonBitstrings()) {
+    private void deserializeFromJson(T bitstring, JsonParser jsonParser,
+            DeserializationContext deserializationContext)  {
+        if (Boolean.TRUE.equals(
+            deserializationContext.getAttribute(
+                OdeCustomJsonMapper.HUMAN_READABLE_BITSTRINGS))
+        ) {
             deserializeFromJsonMap(bitstring, jsonParser);
         } else {
             deserializeFromJer(bitstring, jsonParser);
