@@ -1,6 +1,7 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
 import lombok.Getter;
+import tools.jackson.databind.MapperFeature;
 import tools.jackson.databind.cfg.ContextAttributes;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -41,6 +42,7 @@ public class OdeCustomJsonMapper extends JsonMapper {
    */
   public OdeCustomJsonMapper(boolean humanReadableJsonBitstrings) {
     super(JsonMapper.builder()
+        .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
         .defaultAttributes(
             ContextAttributes
                 .getEmpty()
