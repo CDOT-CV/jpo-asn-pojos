@@ -8,14 +8,14 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
-    id("io.freefair.lombok") version "8.12.1"
+    id("io.freefair.lombok") version "9.7.0"
     id 'jacoco'
     id 'jacoco-report-aggregation'
     id 'com.gradleup.shadow' version '8.3.6'
 }
 
 ext {
-    jsonSchemaGeneratorVersion = '4.38.0'
+    jsonSchemaGeneratorVersion = '5.0.0'
 }
 
 repositories {
@@ -32,7 +32,7 @@ dependencies {
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    implementation 'info.picocli:picocli:4.7.6'
+    implementation 'info.picocli:picocli:4.7.7'
     implementation 'usdot.jpo.asn:jpo-asn-runtime'
     implementation 'usdot.jpo.asn:jpo-asn-j2735-2024'
     implementation "com.github.victools:jsonschema-generator:${jsonSchemaGeneratorVersion}"
@@ -43,7 +43,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'
 
-    testImplementation 'com.networknt:json-schema-validator:1.5.7'
+    testImplementation 'com.networknt:json-schema-validator:3.0.6'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

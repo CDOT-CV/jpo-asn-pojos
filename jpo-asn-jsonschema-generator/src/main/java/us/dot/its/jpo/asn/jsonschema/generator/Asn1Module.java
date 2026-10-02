@@ -1,12 +1,8 @@
 package us.dot.its.jpo.asn.jsonschema.generator;
 
 import static us.dot.its.jpo.asn.jsonschema.generator.Utils.construct;
-import static us.dot.its.jpo.asn.jsonschema.generator.Utils.getClassFromName;
 
 import com.fasterxml.classmate.ResolvedType;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.victools.jsonschema.generator.CustomDefinition;
 import com.github.victools.jsonschema.generator.CustomPropertyDefinition;
 import com.github.victools.jsonschema.generator.MemberScope;
@@ -21,6 +17,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.ObjectNode;
 
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
@@ -39,7 +38,7 @@ import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.types.Asn1OctetString;
 
 public class Asn1Module implements Module {
-  private final ObjectMapper objectMapper = new ObjectMapper();
+  private final JsonMapper objectMapper = JsonMapper.builder().build();
 
   @Override
   public void applyToConfigBuilder(SchemaGeneratorConfigBuilder schemaGeneratorConfigBuilder) {
@@ -94,8 +93,7 @@ public class Asn1Module implements Module {
     }
 
     // First check for parameterized types since they take precedence
-    String typeName = resolvedType.getTypeName();
-    Class<?> clazz = getClassFromName(typeName);
+    Class<?> clazz = resolvedType.getErasedType();
     if (clazz != null) {
       Asn1ParameterizedTypes typeAnnot = clazz.getAnnotation(Asn1ParameterizedTypes.class);
       if (typeAnnot != null) {
@@ -118,7 +116,7 @@ public class Asn1Module implements Module {
   private CustomDefinition provideSequenceDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
     ObjectNode node = context.getGeneratorConfig().createObjectNode();
     node.put("type", "object");
-    node.put("title", resolvedType.getBriefDescription());
+    node.put("title", resolvedType.getErasedType().getName());
     node.put("description", "ASN.1 SEQUENCE Type");
 
     // Get the class and its fields
@@ -200,7 +198,7 @@ public class Asn1Module implements Module {
   private CustomDefinition provideSequenceOfDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
     ObjectNode node = context.getGeneratorConfig().createObjectNode();
     node.put("type", "array");
-    node.put("title", resolvedType.getBriefDescription());
+    node.put("title", resolvedType.getErasedType().getName());
     node.put("description", "ASN.1 SEQUENCE OF Type");
 
     // Get the class and its type parameters
@@ -251,7 +249,7 @@ public class Asn1Module implements Module {
     
     ObjectNode node = context.getGeneratorConfig().createObjectNode();
     node.put("type", "object");
-    node.put("title", resolvedType.getBriefDescription());
+    node.put("title", resolvedType.getErasedType().getName());
     node.put("description", "ASN.1 SEQUENCE Type with Parameterized Values");
 
     // Create oneOf array at the top level
@@ -331,8 +329,7 @@ public class Asn1Module implements Module {
   private CustomDefinition provideIntegerDefinition(ResolvedType resolvedType,
       SchemaGenerationContext context) {
 
-    String typeName = resolvedType.getTypeName();
-    Class<?> clazz = getClassFromName(typeName);
+    Class<?> clazz = resolvedType.getErasedType();
 
     Asn1Integer exampleInt = (Asn1Integer) construct(clazz);
     long lowerBound = exampleInt.getLowerBound();
@@ -349,8 +346,7 @@ public class Asn1Module implements Module {
   private CustomDefinition provideCharacterStringDefinition(ResolvedType resolvedType,
       SchemaGenerationContext context) {
 
-    String typeName = resolvedType.getTypeName();
-    Class<?> clazz = getClassFromName(typeName);
+    Class<?> clazz = resolvedType.getErasedType();
 
     Asn1CharacterString example = (Asn1CharacterString) construct(clazz);
     int maxLength = example.getMaxLength();
@@ -366,8 +362,7 @@ public class Asn1Module implements Module {
 
   private CustomDefinition provideBitstringDefinition(ResolvedType resolvedType,
       SchemaGenerationContext context) {
-    String typeName = resolvedType.getTypeName();
-    Class<?> clazz = getClassFromName(typeName);
+    Class<?> clazz = resolvedType.getErasedType();
 
     Asn1Bitstring example = (Asn1Bitstring) construct(clazz);
     final int minBits = example.size();
@@ -430,8 +425,7 @@ public class Asn1Module implements Module {
   }
 
   private CustomDefinition provideOctetStringDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
-    String typeName = resolvedType.getTypeName();
-    Class<?> clazz = getClassFromName(typeName);
+    Class<?> clazz = resolvedType.getErasedType();
 
     us.dot.its.jpo.asn.runtime.types.Asn1OctetString example = (us.dot.its.jpo.asn.runtime.types.Asn1OctetString) construct(clazz);
     int minLength = example.getMinLength();
@@ -446,8 +440,7 @@ public class Asn1Module implements Module {
 
   private CustomDefinition provideEnumeratedDefinition(ResolvedType resolvedType,
       SchemaGenerationContext context) {
-    String typeName = resolvedType.getTypeName();
-    Class<?> clazz = getClassFromName(typeName);
+    Class<?> clazz = resolvedType.getErasedType();
     Object[] constants = clazz.getEnumConstants();
     List<String> names = Arrays.stream(constants).map(c -> ((Asn1Enumerated) c).getName()).toList();
     ObjectNode node = context.getGeneratorConfig().createObjectNode()
@@ -473,7 +466,7 @@ public class Asn1Module implements Module {
   private CustomDefinition provideChoiceDefinition(ResolvedType resolvedType, SchemaGenerationContext context) {
     ObjectNode node = context.getGeneratorConfig().createObjectNode();
     node.put("type", "object");
-    node.put("title", resolvedType.getBriefDescription());
+    node.put("title", resolvedType.getErasedType().getName());
     node.put("description", "ASN.1 CHOICE Type - represents a union of possible types");
 
     // Get the class and its fields
@@ -517,7 +510,7 @@ public class Asn1Module implements Module {
 
   private String resolveTitle(TypeScope scope) {
     var type = scope.getType();
-    return type.getBriefDescription();
+    return type.getErasedType().getName();
   }
 
   private String resolveDescription(TypeScope scope) {
