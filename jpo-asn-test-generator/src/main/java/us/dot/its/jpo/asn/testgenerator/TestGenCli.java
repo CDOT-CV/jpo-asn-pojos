@@ -12,6 +12,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Spec;
+import tools.jackson.core.JacksonException;
 
 @Command(
     name = "java -jar testgen-cli",
@@ -161,7 +162,7 @@ public class TestGenCli implements Runnable {
         cmd().getOut().println("JER:");
         cmd().getOut().println(json);
       }
-    } catch (IOException e) {
+    } catch (IOException | JacksonException e) {
       cmd().getErr().println(e.getMessage());
       ExceptionUtils.printRootCauseStackTrace(e);
       throw new RuntimeException(e);

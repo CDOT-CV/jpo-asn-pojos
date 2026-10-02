@@ -15,7 +15,7 @@ plugins {
 }
 
 group = 'usdot.jpo.asn'
-version = '1.2.0'
+version = '2.0.0-beta2'
 
 repositories {
     // Use Maven Central for resolving dependencies.

@@ -1,12 +1,13 @@
 package us.dot.its.jpo.asn.testgenerator;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 import picocli.CommandLine.Model.CommandSpec;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.dataformat.xml.XmlMapper;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.types.*;
 
@@ -115,14 +116,16 @@ public abstract class RandomGenerator<T extends Asn1Type> {
     return instance;
   }
 
-  private static final XmlMapper xmlMapper = new XmlMapper();
-  private static final ObjectMapper jsonMapper = new ObjectMapper();
+  private static final XmlMapper xmlMapper =
+      XmlMapper.builder().disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
+  private static final JsonMapper jsonMapper =
+      JsonMapper.builder().disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY).build();
 
-  public String toXml(Object instance) throws JsonProcessingException {
+  public String toXml(Object instance) throws JacksonException {
     return xmlMapper.writeValueAsString(instance);
   }
 
-  public String toJson(Object instance) throws JsonProcessingException {
+  public String toJson(Object instance) throws JacksonException {
     return jsonMapper.writeValueAsString(instance);
   }
 }
