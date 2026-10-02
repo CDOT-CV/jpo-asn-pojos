@@ -3,24 +3,22 @@ package us.dot.its.jpo.asn.j2735.r2024.TravelerInformation;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static us.dot.its.jpo.asn.j2735.r2024.BaseSerializeTest.XML_MAPPER;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.junit.jupiter.api.Test;
+import tools.jackson.core.JacksonException;
 
 /**
  * Unit tests for the SegmentAttributeLLList class.
  */
 public class SegmentAttributeLLListTest {
   @Test
-  public void testSerialization() throws JsonProcessingException {
+  public void testSerialization() throws JacksonException {
     SegmentAttributeLLList list = new SegmentAttributeLLList();
     list.add(SegmentAttributeLL.ADJACENTBIKELANEONRIGHT);
     list.add(SegmentAttributeLL.CURBONLEFT);
 
-    ObjectMapper xmlMapper = new XmlMapper();
-    String xml = xmlMapper.writeValueAsString(list);
+    String xml = XML_MAPPER.writeValueAsString(list);
 
     assertNotNull(xml);
     assertTrue(xml.contains("<item><adjacentBikeLaneOnRight/></item>"));
@@ -28,14 +26,13 @@ public class SegmentAttributeLLListTest {
   }
 
   @Test
-  public void testDeserialization() throws JsonProcessingException {
+  public void testDeserialization() throws JacksonException {
     String xml = "<SegmentAttributeLLList>" +
         "<item><adjacentBikeLaneOnRight/></item>" +
         "<item><curbOnLeft/></item>" +
         "</SegmentAttributeLLList>";
 
-    ObjectMapper xmlMapper = new XmlMapper();
-    SegmentAttributeLLList list = xmlMapper.readValue(xml, SegmentAttributeLLList.class);
+    SegmentAttributeLLList list = XML_MAPPER.readValue(xml, SegmentAttributeLLList.class);
 
     assertNotNull(list);
     assertEquals(2, list.size());

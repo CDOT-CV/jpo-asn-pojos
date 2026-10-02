@@ -22,9 +22,9 @@
 
 package us.dot.its.jpo.asn.j2735.r2024.TravelerInformation;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
+import tools.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.runtime.serialization.EnumeratedDeserializer;
 import us.dot.its.jpo.asn.runtime.serialization.EnumeratedSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;

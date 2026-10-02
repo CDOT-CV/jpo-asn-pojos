@@ -1,12 +1,13 @@
 package us.dot.its.jpo.asn.runtime.types;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.runtime.serialization.BitStringDeserializer;
 import us.dot.its.jpo.asn.runtime.serialization.BitstringSerializer;
 
 import java.util.BitSet;
 import java.util.HexFormat;
+import java.util.Objects;
 
 import static us.dot.its.jpo.asn.runtime.utils.BitUtils.reverseBits;
 
@@ -115,7 +116,7 @@ public abstract class Asn1Bitstring implements Asn1Type {
      */
     public void set(String name, boolean value) {
         for (int i = 0; i < size; i++) {
-            if (name(i).equals(name)) {
+            if (Objects.equals(name(i), name)) {
                 set(i, value);
                 return;
             }

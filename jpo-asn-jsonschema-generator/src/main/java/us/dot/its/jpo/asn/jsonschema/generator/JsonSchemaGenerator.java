@@ -1,21 +1,19 @@
 package us.dot.its.jpo.asn.jsonschema.generator;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.github.victools.jsonschema.generator.OptionPreset;
 import com.github.victools.jsonschema.generator.Option;
 import com.github.victools.jsonschema.generator.SchemaGenerator;
 import com.github.victools.jsonschema.generator.SchemaGeneratorConfigBuilder;
 import com.github.victools.jsonschema.generator.SchemaVersion;
-import com.github.victools.jsonschema.module.jackson.JacksonModule;
+import com.github.victools.jsonschema.module.jackson.JacksonSchemaModule;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.jayway.jsonpath.Configuration;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.node.ObjectNode;
 
 import java.util.List;
 import java.util.Map;
@@ -25,18 +23,18 @@ import java.util.Map;
 public class JsonSchemaGenerator {
 
   private final Class<?> clazz;
-  private final static ObjectMapper mapper = new ObjectMapper();
+  private final static JsonMapper mapper = JsonMapper.builder().build();
 
   public JsonSchemaGenerator(Class<?> clazz) {
     this.clazz = clazz;
   }
 
-  public String generate() throws JsonProcessingException {
+  public String generate() throws JacksonException {
     var config = new SchemaGeneratorConfigBuilder(SchemaVersion.DRAFT_7, OptionPreset.PLAIN_JSON)
         .with(Option.EXTRA_OPEN_API_FORMAT_VALUES)
         .without(Option.FLATTENED_ENUMS_FROM_TOSTRING)
         .with(Option.DEFINITIONS_FOR_ALL_OBJECTS)
-        .with(new JacksonModule())
+        .with(new JacksonSchemaModule())
         .with(new Asn1Module())
         .build();
 

@@ -1,9 +1,8 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1CharacterString;
 
 public class CharacterStringSerializer extends StdSerializer<Asn1CharacterString> {
@@ -13,7 +12,7 @@ public class CharacterStringSerializer extends StdSerializer<Asn1CharacterString
     }
 
     @Override
-    public void serialize(Asn1CharacterString asn1CharacterString, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
+    public void serialize(Asn1CharacterString asn1CharacterString, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
         jsonGenerator.writeString(asn1CharacterString.getValue());
     }
 }

@@ -25,7 +25,7 @@ package us.dot.its.jpo.asn.j2735.r2024.MessageFrame;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;
 import us.dot.its.jpo.asn.runtime.serialization.ParameterizedTypeDeserializer;
