@@ -7,7 +7,7 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.node.ArrayNode;
 import tools.jackson.databind.node.ObjectNode;
-import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.XmlFactory;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
 /**
@@ -29,9 +29,9 @@ public class NestedSequenceOfDeserializer<T extends Asn1SequenceOf<?>> extends S
     @Override
     public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         T result = null;
-        if (jsonParser instanceof FromXmlParser xmlParser) {
+        if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
             // For XML, we need to remove the wrapper and distinguish between single items and arrays
-            JsonNode node = deserializationContext.readTree(xmlParser);
+            JsonNode node = deserializationContext.readTree(jsonParser);
             if (node instanceof ObjectNode objectNode) {
                 JsonNode unwrapped = objectNode.findValue(wrapped);
                 if (unwrapped instanceof ArrayNode arrayNode) {

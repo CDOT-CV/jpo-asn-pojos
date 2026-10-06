@@ -10,7 +10,7 @@ import tools.jackson.databind.deser.SettableBeanProperty;
 import tools.jackson.databind.deser.bean.BeanDeserializerBase;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.exc.MismatchedInputException;
-import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.XmlFactory;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
@@ -42,14 +42,14 @@ public abstract class SequenceOfChoiceDeserializer<S extends Asn1Choice, T exten
   public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
       throws JacksonException {
     T result = construct();
-    if (jsonParser instanceof FromXmlParser xmlParser) {
+    if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
 
       // XML: expects unwrapped choice items, each an element named for the chosen alternative.
       // Read them directly from the stream, because reading into a tree doesn't preserve the
       // original order of sequence items.
-      JsonToken token = xmlParser.currentToken();
+      JsonToken token = jsonParser.currentToken();
       if (token == JsonToken.START_OBJECT) {
-        token = xmlParser.nextToken();
+        token = jsonParser.nextToken();
       } else if (token != JsonToken.PROPERTY_NAME) {
         // Empty element, no items
         return result;
@@ -57,24 +57,24 @@ public abstract class SequenceOfChoiceDeserializer<S extends Asn1Choice, T exten
       final BeanDeserializerBase choiceDeserializer = findChoiceDeserializer(deserializationContext);
       while (token != JsonToken.END_OBJECT) {
         if (token != JsonToken.PROPERTY_NAME) {
-          throw MismatchedInputException.from(xmlParser, sequenceOfClass,
+          throw MismatchedInputException.from(jsonParser, sequenceOfClass,
               "Expected a choice element, found " + token);
         }
-        final String name = xmlParser.currentName();
+        final String name = jsonParser.currentName();
         log.trace("SequenceOfChoiceDeserializer: name: {}", name);
         final SettableBeanProperty alternative =
             choiceDeserializer.findProperty(PropertyName.construct(name));
-        xmlParser.nextToken();
+        jsonParser.nextToken();
         if (alternative == null) {
-          deserializationContext.handleUnknownProperty(xmlParser, choiceDeserializer, choiceClass,
+          deserializationContext.handleUnknownProperty(jsonParser, choiceDeserializer, choiceClass,
               name);
         } else {
           final Object choice =
               choiceDeserializer.getValueInstantiator().createUsingDefault(deserializationContext);
-          alternative.deserializeAndSet(xmlParser, deserializationContext, choice);
+          alternative.deserializeAndSet(jsonParser, deserializationContext, choice);
           result.add(choiceClass.cast(choice));
         }
-        token = xmlParser.nextToken();
+        token = jsonParser.nextToken();
       }
     } else {
       // JSON is easier! It expects wrapped choice items, pass through as normal

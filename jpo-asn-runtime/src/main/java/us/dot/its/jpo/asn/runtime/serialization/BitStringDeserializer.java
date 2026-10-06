@@ -14,7 +14,7 @@ import tools.jackson.databind.exc.ValueInstantiationException;
 import tools.jackson.databind.node.ObjectNode;
 import tools.jackson.databind.node.StringNode;
 import lombok.extern.slf4j.Slf4j;
-import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.XmlFactory;
 import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 import java.lang.reflect.Constructor;
@@ -80,7 +80,8 @@ public final class BitStringDeserializer<T extends Asn1Bitstring> extends StdDes
     @Override
     public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws JacksonException {
         T bitstring = construct(jsonParser);
-        if (jsonParser instanceof FromXmlParser) {
+        // Check for XmlFactory, not FromXmlParser, because parser type may be TreeTraversalParser here
+        if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
             // XML: binary
             String str = jsonParser.getString();
             bitstring.fromBinaryString(str);

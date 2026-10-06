@@ -12,7 +12,7 @@ import tools.jackson.databind.deser.bean.BeanDeserializerBase;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.exc.MismatchedInputException;
 import tools.jackson.databind.node.ObjectNode;
-import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.XmlFactory;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.types.Asn1Sequence;
@@ -56,20 +56,20 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
                 log.trace("type: {}", t);
             }
         }
-        if (jsonParser instanceof FromXmlParser xmlParser) {
+        if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
             // XER: SEQUENCE components are in declaration order, so the id element comes first.
             // Read it to choose the subtype, then read the remaining elements directly from the
             // stream into an instance of the subtype.
-            JsonToken token = xmlParser.currentToken();
+            JsonToken token = jsonParser.currentToken();
             if (token == JsonToken.START_OBJECT) {
-                token = xmlParser.nextToken();
+                token = jsonParser.nextToken();
             }
-            if (token != JsonToken.PROPERTY_NAME || !idPropName.equals(xmlParser.currentName())) {
-                throw MismatchedInputException.from(xmlParser, thisClass,
+            if (token != JsonToken.PROPERTY_NAME || !idPropName.equals(jsonParser.currentName())) {
+                throw MismatchedInputException.from(jsonParser, thisClass,
                     String.format("Expected '%s' as the first element", idPropName));
             }
-            xmlParser.nextToken();
-            final JsonNode idPropNode = deserializationContext.readTree(xmlParser);
+            jsonParser.nextToken();
+            final JsonNode idPropNode = deserializationContext.readTree(jsonParser);
             final Object id = (idType == INTEGER) ? idPropNode.asInt() : idPropNode.asString();
             log.trace("id: {}", id);
             Class<?> subType = getSubtypeForId(id, idType, types);
@@ -83,8 +83,8 @@ public abstract class ParameterizedTypeDeserializer<T extends Asn1Sequence> exte
             // The subtype's constructor sets the id
             final Object instance =
                 beanDeserializer.getValueInstantiator().createUsingDefault(deserializationContext);
-            xmlParser.nextToken();
-            return (T) beanDeserializer.deserialize(xmlParser, deserializationContext, instance);
+            jsonParser.nextToken();
+            return (T) beanDeserializer.deserialize(jsonParser, deserializationContext, instance);
         } else {
             // JER
             TreeNode node = deserializationContext.readTree(jsonParser);

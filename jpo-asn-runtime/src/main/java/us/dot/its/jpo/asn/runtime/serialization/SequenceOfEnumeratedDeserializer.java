@@ -6,7 +6,7 @@ import tools.jackson.core.JsonToken;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.exc.MismatchedInputException;
-import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.XmlFactory;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -35,30 +35,30 @@ public abstract class SequenceOfEnumeratedDeserializer<S extends Enum<?> & Asn1E
   public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
       throws JacksonException {
     T result = null;
-    if (jsonParser instanceof FromXmlParser xmlParser) {
+    if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
       // XER
       // Unwrapped enum items, each an empty element named for the enum value
       result = construct();
-      JsonToken token = xmlParser.currentToken();
+      JsonToken token = jsonParser.currentToken();
       if (token == JsonToken.START_OBJECT) {
-        token = xmlParser.nextToken();
+        token = jsonParser.nextToken();
       } else if (token != JsonToken.PROPERTY_NAME) {
         // Empty element, no items
         return result;
       }
       while (token != JsonToken.END_OBJECT) {
         if (token != JsonToken.PROPERTY_NAME) {
-          throw MismatchedInputException.from(xmlParser, thisClass,
+          throw MismatchedInputException.from(jsonParser, thisClass,
               "Expected an enumerated element, found " + token);
         }
-        final String name = xmlParser.currentName();
+        final String name = jsonParser.currentName();
         log.trace("SequenceOfEnumeratedDeserializer: name: {}", name);
-        final JsonToken value = xmlParser.nextToken();
+        final JsonToken value = jsonParser.nextToken();
         if (value != null && value.isStructStart()) {
-          xmlParser.skipChildren();
+          jsonParser.skipChildren();
         }
-        result.add(findEnum(xmlParser, name));
-        token = xmlParser.nextToken();
+        result.add(findEnum(jsonParser, name));
+        token = jsonParser.nextToken();
       }
     } else {
       // JER is simpler, pass though

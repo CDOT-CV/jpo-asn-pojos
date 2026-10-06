@@ -6,7 +6,7 @@ import tools.jackson.core.TreeNode;
 import tools.jackson.databind.DeserializationContext;
 import tools.jackson.databind.deser.std.StdDeserializer;
 import tools.jackson.databind.exc.MismatchedInputException;
-import tools.jackson.dataformat.xml.deser.FromXmlParser;
+import tools.jackson.dataformat.xml.XmlFactory;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -28,11 +28,11 @@ public abstract class EnumeratedDeserializer<T extends Enum<?> & Asn1Enumerated>
   public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
       throws JacksonException {
     String name = null;
-    if (jsonParser instanceof FromXmlParser xmlParser) {
+    if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
       // XML
       // The enum in BASIC-XER is an empty element, so Jackson thinks it's an object with a key
       // of that name with no value
-      TreeNode node = xmlParser.objectReadContext().readTree(xmlParser);
+      TreeNode node = jsonParser.readValueAsTree();
       var propNames = node.propertyNames();
       for (var propName : propNames) {
         name = propName;
