@@ -114,8 +114,6 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 public class RootSequenceOfSerializer
     extends StdSerializer<Asn1SequenceOf<Asn1Type>> {
 
-  private static final XmlRootNameLookup ROOT_NAME_LOOKUP = new XmlRootNameLookup();
-
   protected RootSequenceOfSerializer() {
     super(Asn1SequenceOf.class);
   }
@@ -126,12 +124,13 @@ public class RootSequenceOfSerializer
     if (serializerProvider instanceof XmlSerializationContext) {
       // XER
       // Workaround for a root level collection.
+      var rootLookupName = new XmlRootNameLookup();
       var xmlGen = (ToXmlGenerator) jsonGenerator;
       xmlGen.writeStartArray();
       for (Asn1Type item : sequenceOf) {
         var sw = new StringWriter();
         try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
-          itemGen.setNextName(ROOT_NAME_LOOKUP.findRootName(serializerProvider, item.getClass()));
+          itemGen.setNextName(rootLookupName.findRootName(serializerProvider, item.getClass()));
           serializerProvider.writeValue(itemGen, item);
         }
         xmlGen.writeRaw(sw.toString());

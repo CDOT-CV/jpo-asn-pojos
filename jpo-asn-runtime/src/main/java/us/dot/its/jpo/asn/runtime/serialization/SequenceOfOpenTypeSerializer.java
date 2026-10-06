@@ -18,8 +18,6 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
   protected final Class<S> itemClass;
   protected final Class<T> sequenceOfClass;
 
-  private static final XmlRootNameLookup ROOT_NAME_LOOKUP = new XmlRootNameLookup();
-
   protected SequenceOfOpenTypeSerializer(Class<S> itemClass, Class<T> sequenceOfClass) {
     super(sequenceOfClass);
     this.itemClass = itemClass;
@@ -30,11 +28,12 @@ public class SequenceOfOpenTypeSerializer<S extends Asn1Type, T extends Asn1Sequ
   public void serialize(T sequenceOf, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
     if (serializerProvider instanceof XmlSerializationContext) {
       // XER: Write each item sequentially without wrapping
+      var rootNameLookup = new XmlRootNameLookup();
       var xmlGen = (ToXmlGenerator)jsonGenerator;
       for (var item : sequenceOf) {
         var sw = new StringWriter();
         try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
-          itemGen.setNextName(ROOT_NAME_LOOKUP.findRootName(serializerProvider, item.getClass()));
+          itemGen.setNextName(rootNameLookup.findRootName(serializerProvider, item.getClass()));
           serializerProvider.writeValue(itemGen, item);
         }
         xmlGen.writeRaw(sw.toString());
