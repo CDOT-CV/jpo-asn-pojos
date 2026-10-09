@@ -1,15 +1,16 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.extractXmlList;
-
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
-import java.io.IOException;
-import java.util.List;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.JsonToken;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JavaType;
+import tools.jackson.databind.PropertyName;
+import tools.jackson.databind.deser.SettableBeanProperty;
+import tools.jackson.databind.deser.bean.BeanDeserializerBase;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.exc.MismatchedInputException;
+import tools.jackson.dataformat.xml.XmlFactory;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
@@ -39,31 +40,56 @@ public abstract class SequenceOfChoiceDeserializer<S extends Asn1Choice, T exten
 
   @Override
   public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-      throws IOException, JacksonException {
+      throws JacksonException {
     T result = construct();
-    if (jsonParser instanceof FromXmlParser xmlParser) {
+    if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
 
-      // XML: expects unwrapped choice items.
-      // We need to do all this because simple xmlMapper.readTree doesn't preserve the
+      // XML: expects unwrapped choice items, each an element named for the chosen alternative.
+      // Read them directly from the stream, because reading into a tree doesn't preserve the
       // original order of sequence items.
-      XmlMapper xmlMapper = (XmlMapper) xmlParser.getCodec();
-
-      List<String> choiceXmlList = extractXmlList(xmlParser);
-
-      // Wrap and deserialize each choice item
-      for (String choiceXml : choiceXmlList) {
-        log.trace("SequenceOfChoiceDeserializer: choiceXml: {}", choiceXml);
-        var wrapped = String.format("<%s>%s</%s>", choiceClass.getSimpleName(), choiceXml,
-            choiceClass.getSimpleName());
-        S choice = xmlMapper.readValue(wrapped, choiceClass);
-        result.add(choice);
+      JsonToken token = jsonParser.currentToken();
+      if (token == JsonToken.START_OBJECT) {
+        token = jsonParser.nextToken();
+      } else if (token != JsonToken.PROPERTY_NAME) {
+        // Empty element, no items
+        return result;
+      }
+      final BeanDeserializerBase choiceDeserializer = findChoiceDeserializer(deserializationContext);
+      while (token != JsonToken.END_OBJECT) {
+        if (token != JsonToken.PROPERTY_NAME) {
+          throw MismatchedInputException.from(jsonParser, sequenceOfClass,
+              "Expected a choice element, found " + token);
+        }
+        final String name = jsonParser.currentName();
+        log.trace("SequenceOfChoiceDeserializer: name: {}", name);
+        final SettableBeanProperty alternative =
+            choiceDeserializer.findProperty(PropertyName.construct(name));
+        jsonParser.nextToken();
+        if (alternative == null) {
+          deserializationContext.handleUnknownProperty(jsonParser, choiceDeserializer, choiceClass,
+              name);
+        } else {
+          final Object choice =
+              choiceDeserializer.getValueInstantiator().createUsingDefault(deserializationContext);
+          alternative.deserializeAndSet(jsonParser, deserializationContext, choice);
+          result.add(choiceClass.cast(choice));
+        }
+        token = jsonParser.nextToken();
       }
     } else {
       // JSON is easier! It expects wrapped choice items, pass through as normal
-      result = jsonParser.getCodec().readValue(jsonParser, sequenceOfClass);
+      result = jsonParser.objectReadContext().readValue(jsonParser, sequenceOfClass);
     }
     return result;
   }
 
+  private BeanDeserializerBase findChoiceDeserializer(DeserializationContext ctxt) {
+    final JavaType choiceType = ctxt.constructType(choiceClass);
+    if (ctxt.findRootValueDeserializer(choiceType) instanceof BeanDeserializerBase beanDeserializer) {
+      return beanDeserializer;
+    }
+    return ctxt.reportBadDefinition(choiceType,
+        "SequenceOfChoiceDeserializer requires a bean deserializer for " + choiceClass.getName());
+  }
 
 }

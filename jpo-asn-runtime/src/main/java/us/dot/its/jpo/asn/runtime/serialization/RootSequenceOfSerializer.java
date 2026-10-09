@@ -1,13 +1,13 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import java.io.StringWriter;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
+import tools.jackson.dataformat.xml.util.XmlRootNameLookup;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
@@ -17,8 +17,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
  *
  * <p>One issue happens when serializing a root-level collection to XML. Jackson defaults to
  * naming the items "item" instead of using the root name of the item class, and the
- * {@link com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper} and
- * {@link com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty} annotations can't be
+ * {@link tools.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper} and
+ * {@link tools.jackson.dataformat.xml.annotation.JacksonXmlProperty} annotations can't be
  * used at the class level to specify the element name of the items.  Annotate the collection class
  * like this to enable serializing it with the correct item elements.  For example:
  * <pre>
@@ -50,7 +50,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
  *   }
  * </pre>
  * since it's not possible to add the
- * {@link com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty} annotation to the
+ * {@link tools.jackson.dataformat.xml.annotation.JacksonXmlProperty} annotation to the
  * collection class to specify the item name, and any
  * {@link com.fasterxml.jackson.annotation.JsonRootName} annotation added to the "Thing" class is
  * otherwise ignored when serializing a collection containing it.</p>
@@ -115,29 +115,32 @@ public class RootSequenceOfSerializer
     extends StdSerializer<Asn1SequenceOf<Asn1Type>> {
 
   protected RootSequenceOfSerializer() {
-    super(Asn1SequenceOf.class, true);
+    super(Asn1SequenceOf.class);
   }
 
   @Override
   public void serialize(Asn1SequenceOf<Asn1Type> sequenceOf, JsonGenerator jsonGenerator,
-      SerializerProvider serializerProvider)
-      throws IOException {
-    if (serializerProvider instanceof XmlSerializerProvider) {
+      SerializationContext serializerProvider) {
+    if (serializerProvider instanceof XmlSerializationContext) {
       // XER
       // Workaround for a root level collection.
+      var rootLookupName = new XmlRootNameLookup();
       var xmlGen = (ToXmlGenerator) jsonGenerator;
-      var mapper = (XmlMapper) xmlGen.getCodec();
       xmlGen.writeStartArray();
       for (Asn1Type item : sequenceOf) {
-        String itemXml = mapper.writeValueAsString(item);
-        xmlGen.writeRaw(itemXml);
+        var sw = new StringWriter();
+        try (ToXmlGenerator itemGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+          itemGen.setNextName(rootLookupName.findRootName(serializerProvider, item.getClass()));
+          serializerProvider.writeValue(itemGen, item);
+        }
+        xmlGen.writeRaw(sw.toString());
       }
       xmlGen.writeEndArray();
     } else {
       // JER
       jsonGenerator.writeStartArray();
       for (Asn1Type item : sequenceOf) {
-        jsonGenerator.writeObject(item);
+        jsonGenerator.writePOJO(item);
       }
       jsonGenerator.writeEndArray();
     }

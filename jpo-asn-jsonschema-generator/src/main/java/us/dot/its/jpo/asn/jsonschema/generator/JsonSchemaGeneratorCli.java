@@ -11,6 +11,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Spec;
+import tools.jackson.core.JacksonException;
 
 @Command(name = "java -jar schemagen-cli.jar")
 public class JsonSchemaGeneratorCli implements Runnable {
@@ -65,7 +66,7 @@ public class JsonSchemaGeneratorCli implements Runnable {
       } else {
         cmd().getOut().println(schema);
       }
-    } catch (IOException e) {
+    } catch (IOException | JacksonException e) {
       throw new RuntimeException(e);
     }
   }

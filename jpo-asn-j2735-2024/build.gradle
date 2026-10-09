@@ -8,14 +8,14 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    id("io.freefair.lombok") version "8.12.1"
+    id("io.freefair.lombok") version "9.7.0"
     id 'jacoco'
     id 'jacoco-report-aggregation'
     id("com.diffplug.spotless") version "7.0.2"
 }
 
 group = 'usdot.jpo.asn'
-version = '1.2.0'
+version = '2.0.0-beta2'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -29,13 +29,11 @@ dependencies {
     testImplementation 'commons-io:commons-io:2.18.0'
     testImplementation 'org.xmlunit:xmlunit-core:2.10.0'
     testImplementation 'org.xmlunit:xmlunit-matchers:2.10.0'
-    testImplementation 'net.javacrumbs.json-unit:json-unit:4.1.0'
-
+    testImplementation 'net.javacrumbs.json-unit:json-unit:6.2.0'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.17.2'
-    api 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.7'
 
     api 'usdot.jpo.asn:jpo-asn-runtime'
 

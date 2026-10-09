@@ -22,6 +22,7 @@
 
 package us.dot.its.jpo.asn.j2735.r2024.TrafficLightStatusMessage;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -41,11 +42,23 @@ public class TrafficLightID extends Asn1Choice {
 
   @Asn1Property(tag = 0, name = "id")
   @JsonProperty("id")
-  private Asn1Integer id;
+  private IdInteger id;
 
   @Asn1Property(tag = 1, name = "oid")
   @JsonProperty("oid")
   private Asn1ObjectIdentifier oid;
 
   public TrafficLightID() {}
+
+  public static class IdInteger extends Asn1Integer {
+    public IdInteger() {
+      super(-2147483648L, 2147483647L);
+    }
+
+    @JsonCreator
+    public IdInteger(long value) {
+      this();
+      this.setValue(value);
+    }
+  }
 }
