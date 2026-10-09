@@ -61,7 +61,7 @@ public class AString extends IA5String {
 
   public AString(String value) {
     this();
-    this.value = value;
+    this.setValue(value);
   }
 }
 ```
@@ -69,8 +69,6 @@ public class AString extends IA5String {
 An ASN.1 INTEGER type with value constraints:
 
 ```java
-
-@JsonDeserialize(using = AInteger.AIntegerDeserializer.class)
 public class AInteger extends Asn1Integer {
 
   public AInteger() {
@@ -80,12 +78,8 @@ public class AInteger extends Asn1Integer {
   @JsonCreator
   public AInteger(long value) {
     this();
-    this.value = value;
+    this.setValue(value);
   }
-
-
-}
-
 }
 ```
 
@@ -110,18 +104,39 @@ public class ASequence extends Asn1Sequence {
 }
 ```
 
+### Configure the Jackson Mappers
+
+This library uses Jackson 3 (`tools.jackson` packages).
+
+**Important:** The `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY` feature must be disabled in any Jackson mapper that is used with classes derived from the types in this library. In Jackson 3 this feature is enabled by default, which causes the properties of ASN.1 SEQUENCE types to be written in alphabetical order, instead of in the order in which the fields are declared, which does not produce valid XER.
+
+```java
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.dataformat.xml.XmlMapper;
+
+// Always cache and reuse mappers
+final static XmlMapper xmlMapper = XmlMapper.builder()
+    .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+    .build();
+
+final static JsonMapper jsonMapper = JsonMapper.builder()
+    .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+    .build();
+```
+
+Jackson 3 mappers are immutable, so the feature can't be disabled after the mapper has been built. See also [Required Jackson Mapper Configuration](../README.md#required-jackson-mapper-configuration).
+
 ### Serialize to XER
 
 ```java
 ASequence aSequence = ...
-XmlMapper xmlMapper = SerializationUtil.xmlMapper();
 String xml = xmlMapper.writeValueAsString(aSequence);
 ```
 
 ### Serialize to JER
 
 ```java
-ObjectMapper jsonMapper = SerializationUtil.jsonMapper();
 String json = jsonMapper.writeValueAsString(aSequence);
 ```
 
@@ -139,7 +154,7 @@ ASequence aSequence = jsonMapper.readValue(json, ASequence.class);
 
 ## Optional Custom JSON Format
 
-Note that by default this library uses standard ASN.1 JSON Encoding Rules which produces hex formatted BIT STRING values. A custom Jackson ObjectMapper is provided to be used for cases where having human-readable JSON BIT STRINGs is of paramount importance.
+Note that by default this library uses standard ASN.1 JSON Encoding Rules which produces hex formatted BIT STRING values. A custom Jackson ObjectMapper is provided to be used for cases where having human-readable JSON BIT STRINGs is of paramount importance. The `OdeCustomJsonMapper` already has the `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY` feature disabled, so no additional configuration is needed for it.
 
 Usage examples:
 
