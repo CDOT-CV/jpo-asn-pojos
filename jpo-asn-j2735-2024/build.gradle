@@ -8,10 +8,10 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    id("io.freefair.lombok") version "8.12.1"
+    id("io.freefair.lombok") version "9.8.2"
     id 'jacoco'
     id 'jacoco-report-aggregation'
-    id("com.diffplug.spotless") version "7.0.2"
+    id("com.diffplug.spotless") version "8.10.4"
 }
 
 group = 'com.neaeraconsulting'
@@ -52,6 +52,16 @@ java {
     }
 }
 
+// Keep backwards compatibility with consumers still using Java 21
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
+
+// JaCoCo 0.8.14+ is required to run tests on a Java 25 JVM
+jacoco {
+    toolVersion = '0.8.14'
+}
+
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
@@ -70,6 +80,8 @@ tasks.named('check') {
 }
 
 spotless {
+    // Keep each file's existing line endings rather than Spotless 8's default, which rewrites CRLF files to LF
+    lineEndings = com.diffplug.spotless.LineEnding.PRESERVE
     java {
         targetExclude('**/package-info.java',
              '**/test/**/*.*',

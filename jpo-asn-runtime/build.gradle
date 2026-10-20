@@ -8,7 +8,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    id("io.freefair.lombok") version "8.12.1"
+    id("io.freefair.lombok") version "9.8.2"
     id 'jacoco'
 }
 
@@ -49,6 +49,16 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
     }
+}
+
+// Keep backwards compatibility with consumers still using Java 21
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
+
+// JaCoCo 0.8.14+ is required to run tests on a Java 25 JVM
+jacoco {
+    toolVersion = '0.8.14'
 }
 
 test {

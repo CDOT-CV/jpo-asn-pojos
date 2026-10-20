@@ -8,9 +8,9 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
-    id("io.freefair.lombok") version "8.12.1"
-    id 'com.gradleup.shadow' version '8.3.11'
-    id("com.diffplug.spotless") version "7.0.2"
+    id("io.freefair.lombok") version "9.8.2"
+    id 'com.gradleup.shadow' version '9.6.1'
+    id("com.diffplug.spotless") version "8.10.4"
     id 'jacoco'
 }
 
@@ -44,6 +44,16 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
     }
+}
+
+// Keep backwards compatibility with consumers still using Java 21
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
+
+// JaCoCo 0.8.14+ is required to run tests on a Java 25 JVM
+jacoco {
+    toolVersion = '0.8.14'
 }
 
 application {
@@ -81,6 +91,8 @@ jar {
 }
 
 spotless {
+    // Keep each file's existing line endings rather than Spotless 8's default, which rewrites CRLF files to LF
+    lineEndings = com.diffplug.spotless.LineEnding.PRESERVE
     java {
         googleJavaFormat('1.29.0').skipJavadocFormatting()
     }

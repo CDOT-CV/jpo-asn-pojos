@@ -72,6 +72,7 @@ gradle-app.setting
 *.ipr
 .idea/.name
 .idea/remote-targets.xml
+.idea/editor.xml
 
 # CMake
 cmake-build-*/
