@@ -24,7 +24,7 @@ package us.dot.its.jpo.asn.j2735.r2024.REGION;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.annotation.JsonDeserialize;
 import us.dot.its.jpo.asn.j2735.r2024.Common.RegionalExtension;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes;
 import us.dot.its.jpo.asn.runtime.annotations.Asn1ParameterizedTypes.IdType;

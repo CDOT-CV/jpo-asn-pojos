@@ -1,16 +1,15 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.extractXmlList;
-
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.deser.FromXmlParser;
-import java.io.IOException;
-import java.util.List;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.JsonToken;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.databind.exc.MismatchedInputException;
+import tools.jackson.dataformat.xml.XmlFactory;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
@@ -34,29 +33,50 @@ public abstract class SequenceOfEnumeratedDeserializer<S extends Enum<?> & Asn1E
 
   @Override
   public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-      throws IOException, JacksonException {
+      throws JacksonException {
     T result = null;
-    if (jsonParser instanceof FromXmlParser xmlParser) {
+    if (deserializationContext.tokenStreamFactory() instanceof XmlFactory) {
       // XER
-      // Unwrapped enum items
+      // Unwrapped enum items, each an empty element named for the enum value
       result = construct();
-
-      List<String> enumXmlList = extractXmlList(xmlParser);
-
-      XmlMapper xmlMapper = (XmlMapper) xmlParser.getCodec();
-      for (String enumXml : enumXmlList) {
-        log.trace("SequenceOfEnumeratedDeserializer: enumXml: {}", enumXml);
-        var wrapped = String.format("<%s>%s</%s>", enumClass.getSimpleName(), enumXml,
-            enumClass.getSimpleName());
-        S enumerated = xmlMapper.readValue(wrapped, enumClass);
-        result.add(enumerated);
-
+      JsonToken token = jsonParser.currentToken();
+      if (token == JsonToken.START_OBJECT) {
+        token = jsonParser.nextToken();
+      } else if (token != JsonToken.PROPERTY_NAME) {
+        // Empty element, no items
+        return result;
+      }
+      while (token != JsonToken.END_OBJECT) {
+        if (token != JsonToken.PROPERTY_NAME) {
+          throw MismatchedInputException.from(jsonParser, thisClass,
+              "Expected an enumerated element, found " + token);
+        }
+        final String name = jsonParser.currentName();
+        log.trace("SequenceOfEnumeratedDeserializer: name: {}", name);
+        final JsonToken value = jsonParser.nextToken();
+        if (value != null && value.isStructStart()) {
+          jsonParser.skipChildren();
+        }
+        result.add(findEnum(jsonParser, name));
+        token = jsonParser.nextToken();
       }
     } else {
       // JER is simpler, pass though
-      result = jsonParser.getCodec().readValue(jsonParser, thisClass);
+      result = jsonParser.objectReadContext().readValue(jsonParser, thisClass);
     }
     return result;
+  }
+
+  private S findEnum(JsonParser jsonParser, String name) {
+    for (S enumValue : listEnumValues()) {
+      if (Objects.equals(enumValue.getName(), name)) {
+        return enumValue;
+      }
+    }
+    throw MismatchedInputException.from(jsonParser, enumClass,
+        String.format("Invalid enum value: %s. Must be one of: %s", name,
+            Stream.of(listEnumValues()).map(Asn1Enumerated::getName)
+                .collect(Collectors.joining(", "))));
   }
 
 }

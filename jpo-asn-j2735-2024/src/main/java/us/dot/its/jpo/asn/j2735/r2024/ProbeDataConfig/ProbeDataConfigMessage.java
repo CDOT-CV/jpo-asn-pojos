@@ -24,7 +24,7 @@ package us.dot.its.jpo.asn.j2735.r2024.ProbeDataConfig;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.runtime.serialization.RootSequenceOfSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 

@@ -26,6 +26,8 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Bitstring;
 
 public class VehicleEventFlags extends Asn1Bitstring {
 
+  public static final int extensionSize = 14;
+
   public boolean isEventHazardLights() {
     return get(0);
   }
@@ -130,12 +132,12 @@ public class VehicleEventFlags extends Asn1Bitstring {
     set(12, eventAirBagDeployment);
   }
 
-  public void setEventJackKnife(boolean eventJackKnife) {
-    set(13, eventJackKnife);
-  }
-
   public boolean isEventJackKnife() {
     return get(13);
+  }
+
+  public void setEventJackKnife(boolean eventJackKnife) {
+    set(13, eventJackKnife);
   }
 
   public VehicleEventFlags() {

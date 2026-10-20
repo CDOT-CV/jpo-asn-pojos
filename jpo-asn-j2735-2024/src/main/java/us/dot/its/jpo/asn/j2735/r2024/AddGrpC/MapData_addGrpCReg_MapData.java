@@ -23,9 +23,9 @@
 package us.dot.its.jpo.asn.j2735.r2024.AddGrpC;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.databind.JsonDeserializer.None;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.databind.ValueDeserializer.None;
+import tools.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.annotation.JsonSerialize;
 import us.dot.its.jpo.asn.j2735.r2024.REGION.Reg_MapData;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeDeserializer;
 import us.dot.its.jpo.asn.runtime.serialization.OpenTypeSerializer;

@@ -20,18 +20,18 @@ repositories {
 }
 
 dependencies {
-    lombok 'org.projectlombok:lombok:1.18.40'
+    lombok 'org.projectlombok:lombok:1.18.48'
 
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.22.2'
-    implementation 'org.apache.commons:commons-lang3:3.17.0'
+    implementation 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.7'
+    implementation 'org.apache.commons:commons-lang3:3.18.0'
     implementation 'commons-io:commons-io:2.18.0'
-    implementation 'commons-beanutils:commons-beanutils:1.10.1'
-    implementation 'info.picocli:picocli:4.7.6'
+    implementation 'commons-beanutils:commons-beanutils:1.11.0'
+    implementation 'info.picocli:picocli:4.7.7'
     implementation 'com.neaeraconsulting:jpo-asn-runtime'
     implementation 'com.neaeraconsulting:jpo-asn-j2735-2024'
 
@@ -94,7 +94,7 @@ spotless {
     // Keep each file's existing line endings rather than Spotless 8's default, which rewrites CRLF files to LF
     lineEndings = com.diffplug.spotless.LineEnding.PRESERVE
     java {
-        googleJavaFormat('1.29.0').skipJavadocFormatting()
+        googleJavaFormat('1.36.1').skipJavadocFormatting()
     }
 }
 

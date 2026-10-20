@@ -1,11 +1,10 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JacksonException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.TreeNode;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import java.io.IOException;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.core.TreeNode;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.deser.std.StdDeserializer;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Null;
 
@@ -36,12 +35,15 @@ public class NullDeserializer<T extends Asn1Null> extends StdDeserializer<T> {
   @SuppressWarnings({"unchecked"})
   @Override
   public T deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-      throws IOException, JacksonException {
+      throws JacksonException {
     // Used by XER only, JER never calls this.
     // Read the empty node
     if (log.isTraceEnabled()) {
-      TreeNode node = jsonParser.getCodec().readTree(jsonParser);
+      TreeNode node = jsonParser.objectReadContext().readTree(jsonParser);
       log.trace("node: {}", node);
+    } else {
+      // skip the node to prevent error from "fail on trailing tokens"
+      jsonParser.skipChildren();
     }
     return (T) construct();
   }

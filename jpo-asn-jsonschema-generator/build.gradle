@@ -15,7 +15,7 @@ plugins {
 }
 
 ext {
-    jsonSchemaGeneratorVersion = '4.38.0'
+    jsonSchemaGeneratorVersion = '5.0.0'
 }
 
 repositories {
@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    lombok 'org.projectlombok:lombok:1.18.40'
+    lombok 'org.projectlombok:lombok:1.18.48'
 
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
@@ -34,7 +34,7 @@ dependencies {
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    implementation 'info.picocli:picocli:4.7.6'
+    implementation 'info.picocli:picocli:4.7.7'
     implementation 'com.neaeraconsulting:jpo-asn-runtime'
     implementation 'com.neaeraconsulting:jpo-asn-j2735-2024'
     implementation "com.github.victools:jsonschema-generator:${jsonSchemaGeneratorVersion}"
@@ -45,7 +45,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'
 
-    testImplementation 'com.networknt:json-schema-validator:1.5.7'
+    testImplementation 'com.networknt:json-schema-validator:3.0.6'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

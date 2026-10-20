@@ -3,24 +3,22 @@ package us.dot.its.jpo.asn.j2735.r2024.Common;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static us.dot.its.jpo.asn.j2735.r2024.BaseSerializeTest.XML_MAPPER;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.junit.jupiter.api.Test;
+import tools.jackson.core.JacksonException;
 
 /**
  * Unit tests for the NodeAttributeXYList class.
  */
 public class NodeAttributeXYListTest {
   @Test
-  public void testSerialization() throws JsonProcessingException {
+  public void testSerialization() throws JacksonException {
     NodeAttributeXYList list = new NodeAttributeXYList();
     list.add(NodeAttributeXY.ROUNDEDCAPSTYLEB);
     list.add(NodeAttributeXY.DOWNSTREAMSTOPLINE);
 
-    ObjectMapper xmlMapper = new XmlMapper();
-    String xml = xmlMapper.writeValueAsString(list);
+    String xml = XML_MAPPER.writeValueAsString(list);
 
     assertNotNull(xml);
     assertTrue(xml.contains("<item><roundedCapStyleB/></item>"));
@@ -28,14 +26,13 @@ public class NodeAttributeXYListTest {
   }
 
   @Test
-  public void testDeserialization() throws JsonProcessingException {
+  public void testDeserialization() throws JacksonException {
     String xml = "<NodeAttributeXYList>" +
         "<item><roundedCapStyleB/></item>" +
         "<item><downstreamStopLine/></item>" +
         "</NodeAttributeXYList>";
 
-    ObjectMapper xmlMapper = new XmlMapper();
-    NodeAttributeXYList list = xmlMapper.readValue(xml, NodeAttributeXYList.class);
+    NodeAttributeXYList list = XML_MAPPER.readValue(xml, NodeAttributeXYList.class);
 
     assertNotNull(list);
     assertEquals(2, list.size());

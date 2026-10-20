@@ -148,7 +148,7 @@ public class Position3D extends Asn1Sequence {
 
 ### Custom Serializers/Deserializers
 
-The library makes extensive use of custom Jackson serializers/deserializers and annotations. This was necessary to achieve the goal of having POJOs capable of handling both XER and JER in the same classes, while still leveraging Jackson, but does lead to some complexity.
+The library makes extensive use of custom Jackson 3 serializers/deserializers and annotations. This was necessary to achieve the goal of having POJOs capable of handling both XER and JER in the same classes, while still leveraging Jackson, but does lead to some complexity.
 
 For instance, in some cases when adding a `@JsonDeserialize(using = SomeCustomDeserializer.class)` annotation to a base class, it's necessary to add `@JsonDeserialize(using = None.class)` to the implementation classes to prevent an infinite recursion in the deserializer.  
 
@@ -181,6 +181,24 @@ From this directory:
 
 ## Usage examples:
 
+### Configure the Jackson mappers:
+
+**Important:** The `MapperFeature.SORT_PROPERTIES_ALPHABETICALLY` feature must be disabled in any Jackson mapper that is used with the POJOs.  This feature is enabled by default in Jackson 3, and causes the properties to be written in alphabetical order, instead of in the order defined in the ASN.1 specification.  See [Required Jackson Mapper Configuration](../README.md#required-jackson-mapper-configuration) for details.
+
+```java
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.dataformat.xml.XmlMapper;
+
+XmlMapper xmlMapper = XmlMapper.builder()
+    .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+    .build();
+
+JsonMapper jsonMapper = JsonMapper.builder()
+    .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+    .build();
+```
+
 ### Deserialize from XER:
 
 ```java
@@ -197,15 +215,13 @@ String XML =
         ...
         """;
 
-XmlMapper xmlMapper = new XmlMapper();
-SPATMessageFrame spatMessageFrame = xmlMapper.readValue(xml, SPATMessageFrame.class);
+SPATMessageFrame spatMessageFrame = xmlMapper.readValue(XML, SPATMessageFrame.class);
 int messageId = spatMessageFrame.getMessageId();
 ```
 
 ### Serialize to JER:
 
 ```java
-ObjectMapper jsonMapper = new ObjectMapper();
 SPATMessageFrame spat = createSpat();
 String json = jsonMapper.writeValueAsString(spat);
 ```

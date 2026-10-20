@@ -2,16 +2,15 @@ package us.dot.its.jpo.asn.jsonschema.generator.schemas;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.networknt.schema.JsonSchemaFactory;
-import com.networknt.schema.SpecVersion;
-import com.networknt.schema.JsonSchema;
-import com.networknt.schema.ValidationMessage;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.JsonNode;
+import com.networknt.schema.SchemaRegistry;
+import com.networknt.schema.SpecificationVersion;
+import com.networknt.schema.Schema;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Set;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
 public class BasicSafetyMessageMessageFrameSchemaTest {
@@ -26,14 +25,14 @@ public class BasicSafetyMessageMessageFrameSchemaTest {
     String schemaData = new String(Files.readAllBytes(Paths.get(schemaPath)), StandardCharsets.UTF_8);
 
     // Validate
-    ObjectMapper mapper = new ObjectMapper();
+    JsonMapper mapper = JsonMapper.builder().build();
     JsonNode jsonNode = mapper.readTree(jsonData);
     JsonNode schemaNode = mapper.readTree(schemaData);
 
-    JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
-    JsonSchema schema = factory.getSchema(schemaNode);
+    SchemaRegistry registry = SchemaRegistry.withDefaultDialect(SpecificationVersion.DRAFT_7);
+    Schema schema = registry.getSchema(schemaNode);
 
-    Set<ValidationMessage> errors = schema.validate(jsonNode);
+    List<com.networknt.schema.Error> errors = schema.validate(jsonNode);
     assertTrue(errors.isEmpty(), "JSON should be valid against the schema. Errors: " + errors);
   }
 }

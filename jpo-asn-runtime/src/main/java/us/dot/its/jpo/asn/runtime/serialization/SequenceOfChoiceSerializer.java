@@ -1,14 +1,12 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import static us.dot.its.jpo.asn.runtime.utils.XmlUtils.unwrap;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import java.io.StringWriter;
+import javax.xml.namespace.QName;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.runtime.types.Asn1Choice;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
@@ -26,6 +24,11 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
   protected final Class<S> choiceClass;
   protected final Class<T> sequenceOfClass;
 
+  private static final String ITEM = "item";
+  private static final String ITEM_START = "<" + ITEM + ">";
+  private static final String ITEM_END = "</" + ITEM + ">";
+  private static final String ITEM_EMPTY = "<" + ITEM + "/>";
+
   protected SequenceOfChoiceSerializer(Class<S> choiceClass, Class<T> sequenceOfClass) {
     super(sequenceOfClass);
     this.choiceClass = choiceClass;
@@ -34,11 +37,10 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
 
   @Override
   public void serialize(T sequenceOf, JsonGenerator jsonGenerator,
-      SerializerProvider serializerProvider) throws IOException {
-    if (serializerProvider instanceof XmlSerializerProvider xmlProvider) {
+      SerializationContext serializerProvider) {
+    if (serializerProvider instanceof XmlSerializationContext) {
       // XER: Choice items not wrapped
       var xmlGen = (ToXmlGenerator) jsonGenerator;
-      var mapper = (ObjectMapper)xmlGen.getCodec();
 
       xmlGen.writeStartArray();
       for (S choiceItem : sequenceOf) {
@@ -46,17 +48,33 @@ public class SequenceOfChoiceSerializer<S extends Asn1Choice, T extends Asn1Sequ
             "SequenceOfChoiceSerializer: ChoiceClass: {}, SequenceOfClass: {}, choiceItem: {}",
             choiceClass.getName(), sequenceOfClass.getName(),
             choiceItem);
-        String choiceXml = mapper.writeValueAsString(choiceItem);
-        String unwrappedXml = unwrap(choiceXml);
-        xmlGen.writeRaw(unwrappedXml);
+        var sw = new StringWriter();
+        try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+          xGen.setNextName(new QName(ITEM));
+          serializerProvider.writeValue(xGen, choiceItem);
+        }
+        xmlGen.writeRaw(stripItemElement(sw.toString()));
       }
       xmlGen.writeEndArray();
 
     } else {
       // JER: Normal, choice items are wrapped
-      jsonGenerator.writeObject(sequenceOf);
+      jsonGenerator.writePOJO(sequenceOf);
     }
   }
 
+  // Remove the placeholder root element each choice item is written under, leaving the
+  // element of the chosen alternative
+  private static String stripItemElement(String xml) {
+    final String trimmed = xml.trim();
+    if (trimmed.equals(ITEM_EMPTY)) {
+      return "";
+    }
+    if (!trimmed.startsWith(ITEM_START) || !trimmed.endsWith(ITEM_END)
+        || trimmed.length() < ITEM_START.length() + ITEM_END.length()) {
+      throw new IllegalStateException("Unexpected choice item XML: " + xml);
+    }
+    return trimmed.substring(ITEM_START.length(), trimmed.length() - ITEM_END.length());
+  }
 
 }

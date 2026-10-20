@@ -1,8 +1,14 @@
 package us.dot.its.jpo.asn.runtime.types;
 
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Asn1SequenceOfTest {
@@ -130,6 +136,49 @@ public class Asn1SequenceOfTest {
             sequence.add(item3);
         });
         assertTrue(exception.getMessage().contains("would exceed maximum allowed size"));
+    }
+
+    @Test
+    void testAddAtIndex() {
+        TestSequence sequence = new TestSequence(0, 2);
+        sequence.add(item1);
+        sequence.add(0, item2);
+        assertThat(sequence, contains(item2, item1));
+        assertThat(sequence.getFirst(), equalTo(item2));
+
+        var ex = assertThrows(IllegalStateException.class, () -> sequence.add(0, item3));
+        assertThat(ex.getMessage(), containsString("would exceed maximum allowed size"));
+    }
+
+    @Test
+    void testAddAll() {
+        TestSequence sequence = new TestSequence(0, 3);
+        assertThat(sequence.addAll(List.of(item1, item2)), equalTo(true));
+        assertThat(sequence.addAll(1, List.of(item3)), equalTo(true));
+        assertThat(sequence, contains(item1, item3, item2));
+        assertThat(sequence.getLast(), equalTo(item2));
+    }
+
+    @Test
+    void testAddAllExceedingUpperBound() {
+        TestSequence sequence = new TestSequence(0, 2);
+        sequence.add(item1);
+        assertThrows(IllegalStateException.class, () -> sequence.addAll(List.of(item2, item3)));
+        assertThrows(IllegalStateException.class, () -> sequence.addAll(0, List.of(item2, item3)));
+        assertThat(sequence, hasSize(1));
+    }
+
+    @Test
+    void testSetGetAndRemove() {
+        TestSequence sequence = new TestSequence(0, 3);
+        sequence.add(item1);
+        sequence.add(item2);
+        assertThat(sequence.set(1, item3), equalTo(item2));
+        assertThat(sequence.remove(0), equalTo(item1));
+        assertThat(sequence, contains(item3));
+        assertThat(sequence.getItemClass(), equalTo(TestAsn1Type.class));
+        assertThat(sequence.getSizeLowerBound(), equalTo(0L));
+        assertThat(sequence.getSizeUpperBound(), equalTo(3L));
     }
 
     @Test

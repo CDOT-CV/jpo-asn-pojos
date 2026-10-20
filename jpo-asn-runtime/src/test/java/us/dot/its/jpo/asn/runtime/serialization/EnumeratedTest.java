@@ -1,13 +1,15 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
+import static net.javacrumbs.jsonunit.JsonMatchers.jsonEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.xmlunit.matchers.CompareMatcher.isIdenticalTo;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.fasterxml.jackson.databind.exc.MismatchedInputException;
+import tools.jackson.databind.exc.MismatchedInputException;
 import us.dot.its.jpo.asn.runtime.BaseSerializeTest;
 import us.dot.its.jpo.asn.runtime.examples.FruitEnum;
 import java.io.IOException;
@@ -31,6 +33,16 @@ public class EnumeratedTest extends BaseSerializeTest<FruitEnum> {
   public void canDeserializeJson() throws IOException {
     FruitEnum fe = fromJson(JSON);
     assertThat(fe, allOf(notNullValue(), equalTo(FruitEnum.APPLE)));
+  }
+
+  @Test
+  public void canSerializeXml() throws IOException {
+    assertThat(toXml(FruitEnum.APPLE), isIdenticalTo(XML));
+  }
+
+  @Test
+  public void canSerializeJson() throws IOException {
+    assertThat(toJson(FruitEnum.APPLE), jsonEquals(JSON));
   }
 
   @Test

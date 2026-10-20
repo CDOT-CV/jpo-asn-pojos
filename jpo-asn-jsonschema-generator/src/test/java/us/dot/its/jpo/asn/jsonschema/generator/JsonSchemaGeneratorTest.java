@@ -4,26 +4,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 import java.io.IOException;
-import java.util.Set;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import lombok.extern.slf4j.Slf4j;
 import us.dot.its.jpo.asn.j2735.r2024.MessageFrame.DSRCmsgID;
-import com.networknt.schema.JsonSchemaFactory;
-import com.networknt.schema.SpecVersion;
-import com.networknt.schema.JsonSchema;
-import com.networknt.schema.ValidationMessage;
+import com.networknt.schema.SchemaRegistry;
+import com.networknt.schema.SpecificationVersion;
+import com.networknt.schema.Schema;
 import java.util.List;
 
 @Slf4j
 public class JsonSchemaGeneratorTest {
 
-    private final static ObjectMapper mapper = new ObjectMapper();
+    private final static JsonMapper mapper = JsonMapper.builder().build();
 
     private static Stream<Arguments> pduClassProvider() {
         return DSRCmsgID.names().stream()
@@ -64,11 +62,11 @@ public class JsonSchemaGeneratorTest {
 
         // Basic schema validation
         assertThat("Schema should be draft-7",
-                schemaNode.get("$schema").asText(),
+                schemaNode.get("$schema").asString(),
                 equalTo("http://json-schema.org/draft-07/schema#"));
 
         assertThat("Schema should be of type object",
-                schemaNode.get("type").asText(),
+                schemaNode.get("type").asString(),
                 equalTo("object"));
 
         assertThat("Schema should have properties or oneOf",
@@ -85,9 +83,9 @@ public class JsonSchemaGeneratorTest {
             }
             String json = JsonFileLoader.loadResource(resource);
             JsonNode jsonNode = mapper.readTree(json);
-            JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V7);
-            JsonSchema jsonSchema = factory.getSchema(schemaNode);
-            Set<ValidationMessage> errors = jsonSchema.validate(jsonNode);
+            SchemaRegistry registry = SchemaRegistry.withDefaultDialect(SpecificationVersion.DRAFT_7);
+            Schema jsonSchema = registry.getSchema(schemaNode);
+            List<com.networknt.schema.Error> errors = jsonSchema.validate(jsonNode);
             assertThat("Sample JSON should be valid against the generated schema: " + resource, errors, empty());
         }
     }

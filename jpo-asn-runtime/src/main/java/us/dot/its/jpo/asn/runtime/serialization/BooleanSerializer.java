@@ -1,10 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import us.dot.its.jpo.asn.runtime.types.Asn1Boolean;
 
 public class BooleanSerializer extends StdSerializer<Asn1Boolean> {
@@ -14,8 +13,8 @@ public class BooleanSerializer extends StdSerializer<Asn1Boolean> {
     }
 
     @Override
-    public void serialize(Asn1Boolean asn1Boolean, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        if (serializerProvider instanceof XmlSerializerProvider) {
+    public void serialize(Asn1Boolean asn1Boolean, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
+        if (serializerProvider instanceof XmlSerializationContext) {
             // XER uses <true/> and <false/> for booleans
             jsonGenerator.writeStartObject();
             jsonGenerator.writeRaw(String.format("<%s/>", asn1Boolean.getValue()));

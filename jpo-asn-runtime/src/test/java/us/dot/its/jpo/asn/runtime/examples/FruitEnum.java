@@ -3,8 +3,8 @@ package us.dot.its.jpo.asn.runtime.examples;
 import us.dot.its.jpo.asn.runtime.serialization.EnumeratedDeserializer;
 import us.dot.its.jpo.asn.runtime.serialization.EnumeratedSerializer;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.databind.annotation.JsonDeserialize;
+import tools.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 
 @Getter

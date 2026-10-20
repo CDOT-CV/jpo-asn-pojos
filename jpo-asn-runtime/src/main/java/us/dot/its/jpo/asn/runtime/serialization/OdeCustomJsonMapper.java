@@ -1,7 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.cfg.ContextAttributes;
+import tools.jackson.databind.json.JsonMapper;
 
 /**
  * Configurable ObjectMapper to allow customizations to the JER format produced.
@@ -29,16 +31,22 @@ import lombok.Getter;
  * </pre>
  */
 @Getter
-public class OdeCustomJsonMapper extends ObjectMapper {
+public class OdeCustomJsonMapper extends JsonMapper {
 
-  private final boolean humanReadableJsonBitstrings;
+  //private final static String humanReadableJsonBitstrings;
+  public final static String HUMAN_READABLE_BITSTRINGS = "HUMAN_READABLE_BITSTRINGS";
 
   /**
    * @param humanReadableJsonBitstrings Whether to serialize/deserializer BIT STRING values to JSON
    *                                    using a non-standard human-readable format.
    */
   public OdeCustomJsonMapper(boolean humanReadableJsonBitstrings) {
-    this.humanReadableJsonBitstrings = humanReadableJsonBitstrings;
+    super(JsonMapper.builder()
+        .disable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+        .defaultAttributes(
+            ContextAttributes
+                .getEmpty()
+                .withSharedAttribute(HUMAN_READABLE_BITSTRINGS, humanReadableJsonBitstrings)));
   }
 
 }

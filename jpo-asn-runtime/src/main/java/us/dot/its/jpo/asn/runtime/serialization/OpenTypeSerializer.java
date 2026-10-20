@@ -1,12 +1,12 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import java.io.StringWriter;
+import java.util.Collection;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.ToXmlGenerator;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import javax.xml.namespace.QName;
 import us.dot.its.jpo.asn.runtime.types.Asn1Type;
 
@@ -62,23 +62,35 @@ public abstract class OpenTypeSerializer<T extends Asn1Type> extends StdSerializ
     }
 
     @Override
-    public void serialize(T t, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        if (serializerProvider instanceof XmlSerializerProvider) {
+    public void serialize(T t, JsonGenerator jsonGenerator, SerializationContext serializerProvider) {
+        if (serializerProvider instanceof XmlSerializationContext) {
             // Wrapped XER
             var xmlGen = (ToXmlGenerator)jsonGenerator;
             if (wrapper != null) {
                 xmlGen.startWrappedValue(wrapper, wrapped);
-                xmlGen.writeObject(t);
+                xmlGen.writePOJO(t);
                 xmlGen.finishWrappedValue(wrapper, wrapped);
             } else {
-                var mapper = (XmlMapper)xmlGen.getCodec();
-                String itemXml = mapper.writeValueAsString(t);
-                xmlGen.writeRaw(itemXml);
+                var sw = new StringWriter();
+                try (ToXmlGenerator xGen = (ToXmlGenerator)serializerProvider.createGenerator(sw)) {
+                    xGen.setNextName(wrapped);
+                    if (t instanceof Collection) {
+                        // A collection doesn't write its own element, so write the wrapped element
+                        // the same way Jackson does for a root collection
+                        xGen.writeStartObject();
+                        xGen.writeName("item");
+                        serializerProvider.writeValue(xGen, t);
+                        xGen.writeEndObject();
+                    } else {
+                        serializerProvider.writeValue(xGen, t);
+                    }
+                }
+                xmlGen.writeRaw(sw.toString());
             }
         } else {
             // Wrapped JER
             jsonGenerator.writeStartObject();
-            jsonGenerator.writeObjectField(wrapped.getLocalPart(), t);
+            jsonGenerator.writePOJOProperty(wrapped.getLocalPart(), t);
             jsonGenerator.writeEndObject();
         }
 

@@ -1,10 +1,9 @@
 package us.dot.its.jpo.asn.runtime.serialization;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.fasterxml.jackson.dataformat.xml.ser.XmlSerializerProvider;
-import java.io.IOException;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.dataformat.xml.ser.XmlSerializationContext;
 import us.dot.its.jpo.asn.runtime.types.Asn1Enumerated;
 import us.dot.its.jpo.asn.runtime.types.Asn1SequenceOf;
 
@@ -21,9 +20,8 @@ public class SequenceOfEnumeratedSerializer<S extends Asn1Enumerated, T extends 
   }
 
   @Override
-  public void serialize(T sequenceOf, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
-      throws IOException {
-    if (serializerProvider instanceof XmlSerializerProvider xmlProvider) {
+  public void serialize(T sequenceOf, JsonGenerator jsonGenerator, SerializationContext serializerProvider){
+    if (serializerProvider instanceof XmlSerializationContext xmlProvider) {
       // XER: write unwrapped
       jsonGenerator.writeStartArray();
       for (var enumItem : sequenceOf) {
@@ -32,7 +30,7 @@ public class SequenceOfEnumeratedSerializer<S extends Asn1Enumerated, T extends 
       jsonGenerator.writeEndArray();
     } else {
       // JER: Normal, pass through
-      jsonGenerator.writeObject(sequenceOf);
+      jsonGenerator.writePOJO(sequenceOf);
     }
   }
 }
