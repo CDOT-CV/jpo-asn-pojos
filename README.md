@@ -98,7 +98,16 @@ To run tests using Maven, from the root directory:
 
 ### Use as a Maven Dependency
 
-The library releases are deployed to Maven Central.
+The library releases are deployed to Maven Central. Each organization that maintains this
+repository publishes under its own groupId:
+
+| Publisher                                                              | groupId                   |
+|------------------------------------------------------------------------|---------------------------|
+| [USDOT JPO ODE](https://github.com/usdot-jpo-ode/jpo-asn-pojos)        | `io.github.usdot-jpo-ode` |
+| [CDOT](https://github.com/CDOT-CV/jpo-asn-pojos)                       | `io.github.cdot-cv`       |
+| [Neaera Consulting](https://github.com/neaeraconsulting/jpo-asn-pojos) | `com.neaeraconsulting`    |
+
+The examples below use `io.github.usdot-jpo-ode`; substitute the groupId of the publisher you want.
 
 To consume the release from Maven Central, add a dependency to `pom.xml` (or configure equivalently
 for Gradle):
@@ -106,12 +115,12 @@ for Gradle):
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.neaeraconsulting</groupId>
+        <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
         <version>2.0.0-beta1</version>
     </dependency>
     <dependency>
-        <groupId>com.neaeraconsulting</groupId>
+        <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
         <version>2.0.0-beta1</version>
     </dependency>
@@ -160,12 +169,12 @@ and add the dependencies to the "SNAPSHOT" version:
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.neaeraconsulting</groupId>
+        <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
         <version>2.0.0-beta1-SNAPSHOT</version>
     </dependency>
     <dependency>
-        <groupId>com.neaeraconsulting</groupId>
+        <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
         <version>2.0.0-beta1-SNAPSHOT</version>
     </dependency>
@@ -203,7 +212,7 @@ steps:
   Then, add the dependencies in your `build.gradle` file:
   ```groovy
   dependencies {
-      implementation('com.neaeraconsulting:jpo-asn-j2735-2024')
+      implementation('io.github.usdot-jpo-ode:jpo-asn-j2735-2024')
   }
   ```
 
@@ -218,16 +227,46 @@ steps:
   Then, add the dependencies in your `pom.xml` file:
   ```xml
   <dependency>
-      <groupId>com.neaeraconsulting</groupId>
+      <groupId>io.github.usdot-jpo-ode</groupId>
       <artifactId>jpo-asn-j2735-2024</artifactId>
       <version>2.0.0-beta2</version>
   </dependency>
   ```
 
+  When built from source, the libraries use the groupId `io.github.usdot-jpo-ode` regardless of
+  which fork the source comes from (see [Publishing to Maven Central](#publishing-to-maven-central)).
+
 Replace `path/to/jpo-asn-pojos` with the actual path to the submodule directory relative to your
 project's root directory.
 
+## Publishing to Maven Central
 
+The `Publish JARs to the Maven Central Repository` workflows publish the `jpo-asn-runtime` and
+`jpo-asn-j2735-2024` libraries when a GitHub release is published (releases) or pre-released
+(snapshots). The checked-in build files are the same in every fork; each fork configures publishing
+through GitHub repository settings (**Settings > Secrets and variables > Actions**):
+
+| Name                       | Kind     | Purpose                                                                                       |
+|----------------------------|----------|-----------------------------------------------------------------------------------------------|
+| `MAVEN_CENTRAL_PUBLISH`    | Variable | Set to `true` to enable publishing. The workflows are skipped in forks that don't set it.     |
+| `MAVEN_GROUP_ID`           | Variable | Optional. Overrides the groupId, which otherwise defaults to `io.github.<owner>` (lowercase). |
+| `CENTRAL_TOKEN_USERNAME`   | Secret   | Central Portal user token username.                                                           |
+| `CENTRAL_TOKEN_PASSWORD`   | Secret   | Central Portal user token password.                                                           |
+| `GPG_SIGNING_KEY`          | Secret   | ASCII-armored private key used to sign the artifacts.                                         |
+| `GPG_SIGNING_KEY_PASSWORD` | Secret   | Passphrase for the signing key.                                                               |
+
+The groupId's namespace must be verified for the publishing account in the
+[Central Portal](https://central.sonatype.com/publishing/namespaces). For example, the
+`CDOT-CV` organization publishes as `io.github.cdot-cv` without setting `MAVEN_GROUP_ID`, while
+Neaera Consulting sets `MAVEN_GROUP_ID` to `com.neaeraconsulting`.
+
+The workflows pass the groupId and the repository to Maven as the `publish.groupId` and
+`publish.githubRepository` properties. The same properties can be set for a local build, for
+example:
+
+```bash
+./mvnw clean install -Dpublish.groupId=com.neaeraconsulting -Dpublish.githubRepository=neaeraconsulting/jpo-asn-pojos
+```
 
 ## Usage
 

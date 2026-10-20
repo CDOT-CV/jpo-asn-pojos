@@ -14,7 +14,7 @@ plugins {
     id("com.diffplug.spotless") version "8.10.4"
 }
 
-group = 'com.neaeraconsulting'
+group = 'io.github.usdot-jpo-ode'
 version = '2.0.0-beta2'
 
 repositories {
@@ -37,7 +37,7 @@ dependencies {
 
     api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.7'
 
-    api 'com.neaeraconsulting:jpo-asn-runtime'
+    api 'io.github.usdot-jpo-ode:jpo-asn-runtime'
 
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'

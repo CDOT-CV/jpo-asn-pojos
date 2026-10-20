@@ -35,8 +35,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     implementation 'info.picocli:picocli:4.7.7'
-    implementation 'com.neaeraconsulting:jpo-asn-runtime'
-    implementation 'com.neaeraconsulting:jpo-asn-j2735-2024'
+    implementation 'io.github.usdot-jpo-ode:jpo-asn-runtime'
+    implementation 'io.github.usdot-jpo-ode:jpo-asn-j2735-2024'
     implementation "com.github.victools:jsonschema-generator:${jsonSchemaGeneratorVersion}"
     implementation "com.github.victools:jsonschema-module-jackson:${jsonSchemaGeneratorVersion}"
     implementation 'commons-io:commons-io:2.18.0'

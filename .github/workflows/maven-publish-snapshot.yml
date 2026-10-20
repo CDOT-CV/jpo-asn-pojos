@@ -7,10 +7,20 @@ on:
       - prereleased
 jobs:
   publish:
-    if: ${{ github.repository == 'neaeraconsulting/jpo-asn-pojos' }}
+    # Only publish from forks that opt in with the MAVEN_CENTRAL_PUBLISH repository variable
+    if: ${{ vars.MAVEN_CENTRAL_PUBLISH == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Resolve publish coordinates
+        id: coords
+        # groupId defaults to io.github.<owner> (lowercased); set the MAVEN_GROUP_ID repository variable to override
+        env:
+          MAVEN_GROUP_ID: ${{ vars.MAVEN_GROUP_ID }}
+        run: |
+          group_id="${MAVEN_GROUP_ID:-io.github.${GITHUB_REPOSITORY_OWNER,,}}"
+          echo "Publishing with groupId ${group_id} from ${GITHUB_REPOSITORY}"
+          echo "group_id=${group_id}" >> "$GITHUB_OUTPUT"
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
         with:
@@ -50,14 +60,14 @@ jobs:
           exit 1
 
       - name: Publish package (runtime)
-        run: mvn -P release --batch-mode deploy --projects :jpo-asn-runtime
+        run: mvn -P release --batch-mode deploy --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
         env:
           MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
 
       - name: Publish package (pojos)
-        run: mvn -P release --batch-mode deploy --projects :jpo-asn-j2735-2024
+        run: mvn -P release --batch-mode deploy --projects :jpo-asn-j2735-2024 -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
         env:
           MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}

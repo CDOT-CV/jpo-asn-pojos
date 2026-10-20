@@ -32,8 +32,8 @@ dependencies {
     implementation 'commons-io:commons-io:2.18.0'
     implementation 'commons-beanutils:commons-beanutils:1.11.0'
     implementation 'info.picocli:picocli:4.7.7'
-    implementation 'com.neaeraconsulting:jpo-asn-runtime'
-    implementation 'com.neaeraconsulting:jpo-asn-j2735-2024'
+    implementation 'io.github.usdot-jpo-ode:jpo-asn-runtime'
+    implementation 'io.github.usdot-jpo-ode:jpo-asn-j2735-2024'
 
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'
