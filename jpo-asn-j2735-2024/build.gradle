@@ -55,6 +55,12 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 21
 }
 
+// The generated classes have no comments; skip the thousands of "no comment" warnings.
+// They are still included in the javadoc.
+tasks.withType(Javadoc).configureEach {
+    options.addBooleanOption('Xdoclint:all,-missing', true)
+}
+
 // JaCoCo 0.8.14+ is required to run tests on a Java 25 JVM
 jacoco {
     toolVersion = '0.8.14'
