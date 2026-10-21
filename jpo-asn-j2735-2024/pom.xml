@@ -28,26 +28,33 @@
       <organization>Neaera Consulting</organization>
       <organizationUrl>https://neaeraconsulting.com/</organizationUrl>
     </developer>
-  </developers>
-
-  <contributors>
-    <contributor>
+    <developer>
       <name>Drew Johnston</name>
       <organization>Neaera Consulting</organization>
-    </contributor>
-    <contributor>
+    </developer>
+    <developer>
       <name>Michael English</name>
       <organization>Neaera Consulting</organization>
-    </contributor>
-    <contributor>
+    </developer>
+    <developer>
       <name>Matt Cook</name>
       <organization>Trihydro</organization>
-    </contributor>
-    <contributor>
+    </developer>
+    <developer>
       <name>Brandon Payne</name>
       <organization>Trihydro</organization>
-    </contributor>
-  </contributors>
+    </developer>
+    <developer>
+      <name> Saikrishna Bairamoni</name>
+      <organization>Leidos</organization>
+    </developer>
+    <developer>
+      <name>Dan Du</name>
+      <organization>Leidos</organization>
+    </developer>
+  </developers>
+
+
 
   <scm>
     <connection>scm:git:https://github.com/${publish.githubRepository}.git</connection>
