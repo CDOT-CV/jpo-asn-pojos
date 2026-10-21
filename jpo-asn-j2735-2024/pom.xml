@@ -29,14 +29,17 @@
       <organizationUrl>https://neaeraconsulting.com/</organizationUrl>
     </developer>
     <developer>
+      <id>drewjj</id>
       <name>Drew Johnston</name>
       <organization>Neaera Consulting</organization>
     </developer>
     <developer>
+      <id>Michael7371</id>
       <name>Michael English</name>
       <organization>Neaera Consulting</organization>
     </developer>
     <developer>
+      <id> mcook42</id>
       <name>Matt Cook</name>
       <organization>Trihydro</organization>
     </developer>
@@ -45,10 +48,11 @@
       <organization>Trihydro</organization>
     </developer>
     <developer>
-      <name> Saikrishna Bairamoni</name>
+      <name>Saikrishna Bairamoni</name>
       <organization>Leidos</organization>
     </developer>
     <developer>
+      <id>dan-du-car</id>
       <name>Dan Du</name>
       <organization>Leidos</organization>
     </developer>
