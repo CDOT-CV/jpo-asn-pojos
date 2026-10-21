@@ -104,23 +104,32 @@ jobs:
     needs: test
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    # Secrets can't be used in a job-level 'if', so the steps check this instead.
+    # Forks that haven't configured SonarCloud skip the scan rather than fail.
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     steps:
+      - name: Skip Sonar (no SONAR_TOKEN)
+        if: env.SONAR_TOKEN == ''
+        run: echo "::notice title=Sonar skipped::SONAR_TOKEN secret is not set for ${{ github.repository }}; skipping SonarQube Cloud scan."
+
       - uses: actions/checkout@v6
+        if: env.SONAR_TOKEN != ''
         with:
           fetch-depth: 0
 
       - name: Download Sonar inputs
+        if: env.SONAR_TOKEN != ''
         uses: actions/download-artifact@v4
         with:
           name: sonar-inputs
           path: .
 
       - name: Run SonarQube Cloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+        if: env.SONAR_TOKEN != ''
+        uses: SonarSource/sonarqube-scan-action@v6
         with:
           args: >
             -Dsonar.projectKey=${{ github.repository_owner }}_jpo-asn-pojos
             -Dsonar.organization=${{ vars.SONAR_ORGANIZATION || github.repository_owner }}
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
