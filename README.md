@@ -101,6 +101,8 @@ To run tests using Maven, from the root directory:
 The library releases are deployed to Maven Central. Each organization that maintains this
 repository publishes under its own groupId. The badges show the latest version each publisher has
 released and the latest snapshot; a badge shows "not found" until that publisher has published one.
+Badge color only indicates the kind of version: orange is a pre-release (such as `-beta1` or
+`-SNAPSHOT`) and blue is a stable release. It does not reflect build or test status.
 
 | Publisher                                                              | groupId                   | Release | Snapshot |
 |------------------------------------------------------------------------|---------------------------|---------|----------|
