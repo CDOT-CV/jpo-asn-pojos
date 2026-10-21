@@ -99,15 +99,17 @@ To run tests using Maven, from the root directory:
 ### Use as a Maven Dependency
 
 The library releases are deployed to Maven Central. Each organization that maintains this
-repository publishes under its own groupId:
+repository publishes under its own groupId. The badges show the latest version each publisher has
+released and the latest snapshot; a badge shows "not found" until that publisher has published one.
 
-| Publisher                                                              | groupId                   |
-|------------------------------------------------------------------------|---------------------------|
-| [USDOT JPO ODE](https://github.com/usdot-jpo-ode/jpo-asn-pojos)        | `io.github.usdot-jpo-ode` |
-| [CDOT](https://github.com/CDOT-CV/jpo-asn-pojos)                       | `io.github.cdot-cv`       |
-| [Neaera Consulting](https://github.com/neaeraconsulting/jpo-asn-pojos) | `com.neaeraconsulting`    |
+| Publisher                                                              | groupId                   | Release | Snapshot |
+|------------------------------------------------------------------------|---------------------------|---------|----------|
+| [USDOT JPO ODE](https://github.com/usdot-jpo-ode/jpo-asn-pojos)        | `io.github.usdot-jpo-ode` | [![Maven Central](https://img.shields.io/maven-central/v/io.github.usdot-jpo-ode/jpo-asn-j2735-2024?label=release)](https://central.sonatype.com/artifact/io.github.usdot-jpo-ode/jpo-asn-j2735-2024) | ![Snapshot](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Fio%2Fgithub%2Fusdot-jpo-ode%2Fjpo-asn-j2735-2024%2Fmaven-metadata.xml&label=snapshot) |
+| [CDOT](https://github.com/CDOT-CV/jpo-asn-pojos)                       | `io.github.cdot-cv`       | [![Maven Central](https://img.shields.io/maven-central/v/io.github.cdot-cv/jpo-asn-j2735-2024?label=release)](https://central.sonatype.com/artifact/io.github.cdot-cv/jpo-asn-j2735-2024) | ![Snapshot](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Fio%2Fgithub%2Fcdot-cv%2Fjpo-asn-j2735-2024%2Fmaven-metadata.xml&label=snapshot) |
+| [Neaera Consulting](https://github.com/neaeraconsulting/jpo-asn-pojos) | `com.neaeraconsulting`    | [![Maven Central](https://img.shields.io/maven-central/v/com.neaeraconsulting/jpo-asn-j2735-2024?label=release)](https://central.sonatype.com/artifact/com.neaeraconsulting/jpo-asn-j2735-2024) | ![Snapshot](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Fcom%2Fneaeraconsulting%2Fjpo-asn-j2735-2024%2Fmaven-metadata.xml&label=snapshot) |
 
-The examples below use `io.github.usdot-jpo-ode`; substitute the groupId of the publisher you want.
+The examples below use `io.github.usdot-jpo-ode`; substitute the groupId of the publisher you want,
+and replace `VERSION` with a version from its badge.
 
 To consume the release from Maven Central, add a dependency to `pom.xml` (or configure equivalently
 for Gradle):
@@ -117,12 +119,12 @@ for Gradle):
     <dependency>
         <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
-        <version>2.0.0-beta1</version>
+        <version>VERSION</version>
     </dependency>
     <dependency>
         <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
-        <version>2.0.0-beta1</version>
+        <version>VERSION</version>
     </dependency>
 </dependencies>
 ```
@@ -164,19 +166,19 @@ repositories {
 }
 ```
 
-and add the dependencies to the "SNAPSHOT" version:
+and add the dependencies to the "SNAPSHOT" version shown in the Snapshot badge:
 
 ```xml
 <dependencies>
     <dependency>
         <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
-        <version>2.0.0-beta1-SNAPSHOT</version>
+        <version>VERSION-SNAPSHOT</version>
     </dependency>
     <dependency>
         <groupId>io.github.usdot-jpo-ode</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
-        <version>2.0.0-beta1-SNAPSHOT</version>
+        <version>VERSION-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
@@ -224,12 +226,13 @@ steps:
   </modules>
   ```
 
-  Then, add the dependencies in your `pom.xml` file:
+  Then, add the dependencies in your `pom.xml` file, replacing `VERSION` with the `<version>` in
+  the submodule's `jpo-asn-j2735-2024/pom.xml`:
   ```xml
   <dependency>
       <groupId>io.github.usdot-jpo-ode</groupId>
       <artifactId>jpo-asn-j2735-2024</artifactId>
-      <version>2.0.0-beta2</version>
+      <version>VERSION</version>
   </dependency>
   ```
 
