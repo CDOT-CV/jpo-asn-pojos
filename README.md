@@ -161,7 +161,8 @@ repositories {
 
     // Only search this repository for the specific dependency
     content {
-      includeModule("<the snapshot's groupId>", "<the snapshot's artifactId>")
+        includeModule("<the snapshot's groupId>", "jpo-asn-runtime")
+        includeModule("<the snapshot's groupId>", "jpo-asn-j2735-2024")
     }
   }
   mavenCentral()
