@@ -249,29 +249,93 @@ project's root directory.
 The `Publish JARs to the Maven Central Repository` workflows publish the `jpo-asn-runtime` and
 `jpo-asn-j2735-2024` libraries when a GitHub release is published (releases) or pre-released
 (snapshots). The checked-in build files are the same in every fork; each fork configures publishing
-through GitHub repository settings (**Settings > Secrets and variables > Actions**):
+through its GitHub settings.
 
-| Name                       | Kind     | Purpose                                                                                       |
-|----------------------------|----------|-----------------------------------------------------------------------------------------------|
-| `MAVEN_CENTRAL_PUBLISH`    | Variable | Set to `true` to enable publishing. The workflows are skipped in forks that don't set it.     |
-| `MAVEN_GROUP_ID`           | Variable | Optional. Overrides the groupId, which otherwise defaults to `io.github.<owner>` (lowercase). |
-| `CENTRAL_TOKEN_USERNAME`   | Secret   | Central Portal user token username.                                                           |
-| `CENTRAL_TOKEN_PASSWORD`   | Secret   | Central Portal user token password.                                                           |
-| `GPG_SIGNING_KEY`          | Secret   | ASCII-armored private key used to sign the artifacts.                                         |
-| `GPG_SIGNING_KEY_PASSWORD` | Secret   | Passphrase for the signing key.                                                               |
+| Workflow                     | Trigger                    | Environment              | Version                  | Publishes to              |
+|------------------------------|----------------------------|--------------------------|--------------------------|---------------------------|
+| `maven-publish-release.yml`  | A release is published     | `maven-central-release`  | Must not end `-SNAPSHOT` | Maven Central (permanent) |
+| `maven-publish-snapshot.yml` | A pre-release is published | `maven-central-snapshot` | Must end `-SNAPSHOT`     | Central Portal snapshots  |
+
+The release event runs the workflow from the tagged commit, so tag a commit that contains the
+current workflow files. Set the version in all `pom.xml` and `build.gradle` files before tagging:
+remove `-SNAPSHOT` for a release and keep it for a snapshot.
+
+### Variables and Secrets
+
+Variables and secrets are set under **Settings > Secrets and variables > Actions**, except the
+publishing credentials, which go in the deployment environments (see below):
+
+| Name                       | Kind     | Where                       | Purpose                                                                                       |
+|----------------------------|----------|-----------------------------|-----------------------------------------------------------------------------------------------|
+| `MAVEN_CENTRAL_PUBLISH`    | Variable | Repository                  | Set to `true` to enable publishing. The workflows are skipped in forks that don't set it.     |
+| `MAVEN_GROUP_ID`           | Variable | Repository                  | Optional. Overrides the groupId, which otherwise defaults to `io.github.<owner>` (lowercase). |
+| `CENTRAL_TOKEN_USERNAME`   | Secret   | Both environments           | Central Portal user token username.                                                           |
+| `CENTRAL_TOKEN_PASSWORD`   | Secret   | Both environments           | Central Portal user token password.                                                           |
+| `GPG_SIGNING_KEY`          | Secret   | Both environments           | ASCII-armored private key used to sign the artifacts.                                         |
+| `GPG_SIGNING_KEY_PASSWORD` | Secret   | Both environments           | Passphrase for the signing key.                                                               |
+
+`MAVEN_CENTRAL_PUBLISH` must be a repository (or organization) variable: it is checked in the
+job's `if:` condition, which GitHub evaluates before the environment is loaded. `MAVEN_GROUP_ID`
+is the same for both environments, so it is kept at the repository level as well.
 
 The groupId's namespace must be verified for the publishing account in the
-[Central Portal](https://central.sonatype.com/publishing/namespaces). For example, the
-`CDOT-CV` organization publishes as `io.github.cdot-cv` without setting `MAVEN_GROUP_ID`, while
-Neaera Consulting sets `MAVEN_GROUP_ID` to `com.neaeraconsulting`.
+[Central Portal](https://central.sonatype.com/). 
 
 The workflows pass the groupId and the repository to Maven as the `publish.groupId` and
 `publish.githubRepository` properties. The same properties can be set for a local build, for
 example:
 
 ```bash
-./mvnw clean install -Dpublish.groupId=com.neaeraconsulting -Dpublish.githubRepository=neaeraconsulting/jpo-asn-pojos
+ ./mvnw clean install -Dpublish.groupId=io.github.usdot-jpo-ode -Dpublish.githubRepository=usdot-jpo-ode/jpo-asn-pojos
 ```
+
+### Release Approvals
+
+Each workflow runs in a GitHub deployment environment, configured per repository under
+**Settings > Environments** (unfortunately, Github has no organization-level environments). 
+
+* **`maven-central-release`**: add **Required reviewers**. The release job waits at "Waiting for
+  review" until a reviewer approves it, and has no access to the publishing secrets until then.
+  Rejecting it publishes nothing. Turn on **Prevent self-review** to require someone other than
+  the person who published the GitHub release to approve it.  
+* **`maven-central-snapshot`**: For snapshots, reviewers can be added if a fork wants them, or the
+  reviewer list can be left empty to not require reviewers.
+
+Approval is the only manual step: the release profile sets `autoPublish` in the
+`central-publishing-maven-plugin`, so once approved, the artifacts are published to Maven Central
+without a separate **Publish** step in the Central Portal. 
+
+**Note that releases on Maven Central are
+permanent and can't be changed or deleted; snapshots are overwritten by later snapshots and
+cleaned up by Sonatype after 90 days.**
+
+The plugin also sets `waitUntil` to `published` and
+`waitMaxTime` to one hour per library, so the workflow fails if publishing fails or takes longer
+than that.
+
+## SonarQube Cloud Analysis
+
+The `sonar` job in the `Test & Coverage` workflow (`ci.yml`) sends the test coverage to
+[SonarQube Cloud](https://sonarcloud.io). Each fork analyzes into its own SonarQube Cloud project,
+with the project key `<owner>_jpo-asn-pojos`.
+
+| Name                 | Kind     | Where      | Purpose                                                                                                  |
+|----------------------|----------|------------|----------------------------------------------------------------------------------------------------------|
+| `SONAR_TOKEN`        | Secret   | Repository | SonarQube Cloud token. If it isn't set, the scan is skipped with a notice instead of failing the build. |
+| `SONAR_ORGANIZATION` | Variable | Repository | Optional. SonarQube Cloud organization key, if it differs from the GitHub owner name.                   |
+
+To set up analysis for a fork:
+
+1. In SonarQube Cloud, import the GitHub organization and the repository. The project key must be
+   `<owner>_jpo-asn-pojos`.
+2. In the project, turn off **Administration > Analysis Method > Automatic Analysis**. A CI scan
+   fails while Automatic Analysis is on, and Automatic Analysis doesn't include coverage.
+3. Generate a token under **My Account > Access Tokens > Personal Tokens** (available when signed
+   in with GitHub), or a scoped organization token on paid plans.
+4. Add it to the GitHub repository as the `SONAR_TOKEN` secret.
+
+The scan runs on pushes to `develop`, `master` and `release/*`, and on pull requests from
+branches in the same repository; pull requests from other forks can't read the secret.
 
 ## Usage
 
