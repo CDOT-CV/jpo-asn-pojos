@@ -9,6 +9,9 @@ jobs:
   publish:
     # Only publish from forks that opt in with the MAVEN_CENTRAL_PUBLISH repository variable
     if: ${{ vars.MAVEN_CENTRAL_PUBLISH == 'true' }}
+    # Separate environment from releases so snapshots can publish without approval
+    # or with a different approval list
+    environment: maven-central-snapshot
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

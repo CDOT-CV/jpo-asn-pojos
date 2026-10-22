@@ -9,6 +9,8 @@ jobs:
     # Only publish from forks that opt in with the MAVEN_CENTRAL_PUBLISH repository variable, and only on
     # actual releases, not pre-releases (see the snapshot workflow for pre-releases)
     if: ${{ vars.MAVEN_CENTRAL_PUBLISH == 'true' && !github.event.release.prerelease }}
+    # Waits for approval if the repository's maven-central-release environment requires reviewers
+    environment: maven-central-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
