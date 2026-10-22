@@ -281,14 +281,6 @@ is the same for both environments, so it is kept at the repository level as well
 The groupId's namespace must be verified for the publishing account in the
 [Central Portal](https://central.sonatype.com/). 
 
-The workflows pass the groupId and the repository to Maven as the `publish.groupId` and
-`publish.githubRepository` properties. The same properties can be set for a local build, for
-example:
-
-```bash
- ./mvnw clean install -Dpublish.groupId=io.github.usdot-jpo-ode -Dpublish.githubRepository=usdot-jpo-ode/jpo-asn-pojos
-```
-
 ### Release Approvals
 
 Each workflow runs in a GitHub deployment environment, configured per repository under
