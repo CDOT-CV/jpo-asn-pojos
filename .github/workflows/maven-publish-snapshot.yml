@@ -37,11 +37,11 @@ jobs:
 
       - name: Get Maven version (runtime)
         id: get_runtime_version
-        run: echo "RUNTIME_VERSION=$(mvn help:evaluate --projects :jpo-asn-runtime -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+        run: echo "RUNTIME_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-runtime -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
 
       - name: Get Maven version (pojos)
         id: get_pojos_version
-        run: echo "POJOS_VERSION=$(mvn help:evaluate --projects :jpo-asn-j2735-2024 -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+        run: echo "POJOS_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-j2735-2024 -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
 
       - name: Echo Maven version (runtime)
         run: echo "The runtime version is ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}"
@@ -63,14 +63,14 @@ jobs:
           exit 1
 
       - name: Publish package (runtime)
-        run: mvn -P release --batch-mode deploy --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
         env:
           MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
 
       - name: Publish package (pojos)
-        run: mvn -P release --batch-mode deploy --projects :jpo-asn-j2735-2024 -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-j2735-2024 -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
         env:
           MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
