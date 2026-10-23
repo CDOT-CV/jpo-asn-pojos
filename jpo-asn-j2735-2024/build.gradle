@@ -8,14 +8,14 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    id("io.freefair.lombok") version "9.7.0"
+    id("io.freefair.lombok") version "9.8.2"
     id 'jacoco'
     id 'jacoco-report-aggregation'
-    id("com.diffplug.spotless") version "7.0.2"
+    id("com.diffplug.spotless") version "8.10.4"
 }
 
-group = 'usdot.jpo.asn'
-version = '2.0.0-beta2'
+group = 'io.github.usdot-jpo-ode'
+version = '2.0.0-beta2-SNAPSHOT'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -23,6 +23,8 @@ repositories {
 }
 
 dependencies {
+    lombok 'org.projectlombok:lombok:1.18.48'
+
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
@@ -33,9 +35,9 @@ dependencies {
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.7'
+    api 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.8'
 
-    api 'usdot.jpo.asn:jpo-asn-runtime'
+    api 'io.github.usdot-jpo-ode:jpo-asn-runtime'
 
     implementation 'org.slf4j:slf4j-api:2.0.5'
     implementation 'org.slf4j:slf4j-simple:2.0.5'
@@ -44,8 +46,24 @@ dependencies {
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
+}
+
+// Keep backwards compatibility with consumers still using Java 21
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
+
+// The generated classes have no comments; skip the thousands of "no comment" warnings.
+// They are still included in the javadoc.
+tasks.withType(Javadoc).configureEach {
+    options.addBooleanOption('Xdoclint:all,-missing', true)
+}
+
+// JaCoCo 0.8.14+ is required to run tests on a Java 25 JVM
+jacoco {
+    toolVersion = '0.8.14'
 }
 
 test {
@@ -66,11 +84,13 @@ tasks.named('check') {
 }
 
 spotless {
+    // Keep each file's existing line endings rather than Spotless 8's default, which rewrites CRLF files to LF
+    lineEndings = com.diffplug.spotless.LineEnding.PRESERVE
     java {
         targetExclude('**/package-info.java',
              '**/test/**/*.*',
              '**/resources/**/*.*')
-        googleJavaFormat('1.21.0').skipJavadocFormatting()
+        googleJavaFormat('1.36.1').skipJavadocFormatting()
     }
 }
 

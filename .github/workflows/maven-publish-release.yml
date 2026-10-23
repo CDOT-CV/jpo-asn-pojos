@@ -1,0 +1,59 @@
+name: Publish JARs to the Maven Central Repository
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    # Only publish from forks that opt in with the MAVEN_CENTRAL_PUBLISH repository variable, and only on
+    # actual releases, not pre-releases (see the snapshot workflow for pre-releases)
+    if: ${{ vars.MAVEN_CENTRAL_PUBLISH == 'true' && !github.event.release.prerelease }}
+    # Waits for approval if the repository's maven-central-release environment requires reviewers
+    environment: maven-central-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve publish coordinates
+        id: coords
+        # groupId defaults to io.github.<owner> (lowercased); set the MAVEN_GROUP_ID repository variable to override
+        env:
+          MAVEN_GROUP_ID: ${{ vars.MAVEN_GROUP_ID }}
+        run: |
+          group_id="${MAVEN_GROUP_ID:-io.github.${GITHUB_REPOSITORY_OWNER,,}}"
+          echo "Publishing with groupId ${group_id} from ${GITHUB_REPOSITORY}"
+          echo "group_id=${group_id}" >> "$GITHUB_OUTPUT"
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v4
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Publish package (runtime)
+        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+        env:
+          MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
+
+      - name: Publish package (pojos)
+        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-j2735-2024 -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+        env:
+          MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
+
+      - name: Upload build artifacts for debugging
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maven-central-release-artifacts
+          path: |
+            jpo-asn-runtime/target
+            jpo-asn-j2735-2024/target
+          retention-days: 7

@@ -53,7 +53,7 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Type;
  * {@link tools.jackson.dataformat.xml.annotation.JacksonXmlProperty} annotation to the
  * collection class to specify the item name, and any
  * {@link com.fasterxml.jackson.annotation.JsonRootName} annotation added to the "Thing" class is
- * otherwise ignored when serializing a collection containing it.</p>
+ * otherwise ignored when serializing a collection containing it.
  *
  * <p>Another issue happens when a class has more than one collection property with the same item
  * type. This is a known Jackson issue documented here:

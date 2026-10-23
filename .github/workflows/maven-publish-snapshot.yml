@@ -1,0 +1,87 @@
+# Publish a snapshot to Maven Central on prereleases
+# Prerequisite: the version number must end with '-SNAPSHOT' to publish a snapshot
+name: Publish JARs to the Maven Central Repository (Snapshots)
+on:
+  release:
+    types:
+      - prereleased
+jobs:
+  publish:
+    # Only publish from forks that opt in with the MAVEN_CENTRAL_PUBLISH repository variable
+    if: ${{ vars.MAVEN_CENTRAL_PUBLISH == 'true' }}
+    # Separate environment from releases so snapshots can publish without approval
+    # or with a different approval list
+    environment: maven-central-snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve publish coordinates
+        id: coords
+        # groupId defaults to io.github.<owner> (lowercased); set the MAVEN_GROUP_ID repository variable to override
+        env:
+          MAVEN_GROUP_ID: ${{ vars.MAVEN_GROUP_ID }}
+        run: |
+          group_id="${MAVEN_GROUP_ID:-io.github.${GITHUB_REPOSITORY_OWNER,,}}"
+          echo "Publishing with groupId ${group_id} from ${GITHUB_REPOSITORY}"
+          echo "group_id=${group_id}" >> "$GITHUB_OUTPUT"
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v4
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Get Maven version (runtime)
+        id: get_runtime_version
+        run: echo "RUNTIME_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-runtime -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+
+      - name: Get Maven version (pojos)
+        id: get_pojos_version
+        run: echo "POJOS_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-j2735-2024 -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+
+      - name: Echo Maven version (runtime)
+        run: echo "The runtime version is ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}"
+
+      - name: Echo Maven version (pojos)
+        run: echo "The runtime version is ${{ steps.get_pojos_version.outputs.POJOS_VERSION }}"
+
+      # Fail the build if either version is not already a SNAPSHOT version
+      - name: Verify Snapshot Version (runtime)
+        if: ${{ !endsWith(steps.get_runtime_version.outputs.RUNTIME_VERSION, '-SNAPSHOT') }}
+        run: |
+          echo "::error::Runtime version '${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}' does not end with -SNAPSHOT"
+          exit 1
+
+      - name: Verify Snapshot Version (pojos)
+        if: ${{ !endsWith(steps.get_pojos_version.outputs.POJOS_VERSION, '-SNAPSHOT') }}
+        run: |
+          echo "::error::Pojos version '${{ steps.get_pojos_version.outputs.POJOS_VERSION }}' does not end with -SNAPSHOT"
+          exit 1
+
+      - name: Publish package (runtime)
+        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+        env:
+          MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
+
+      - name: Publish package (pojos)
+        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-j2735-2024 -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+        env:
+          MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
+
+      - name: Upload build artifacts for debugging
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maven-central-snapshot-artifacts
+          path: |
+            jpo-asn-runtime/target
+            jpo-asn-j2735-2024/target
+          retention-days: 7
