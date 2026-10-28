@@ -45,13 +45,24 @@ jobs:
       - name: Verify Release Version (runtime)
         if: ${{ endsWith(steps.get_runtime_version.outputs.RUNTIME_VERSION, '-SNAPSHOT') }}
         run: |
-          echo "::error::Runtime version '${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}' must not end with -SNAPSHOT for a release"
+          echo "::error::Runtime version '${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}'" \
+            "must not end with -SNAPSHOT for a release"
           exit 1
 
       - name: Verify Release Version (pojos)
         if: ${{ endsWith(steps.get_pojos_version.outputs.POJOS_VERSION, '-SNAPSHOT') }}
         run: |
-          echo "::error::Pojos version '${{ steps.get_pojos_version.outputs.POJOS_VERSION }}' must not end with -SNAPSHOT for a release"
+          echo "::error::Pojos version '${{ steps.get_pojos_version.outputs.POJOS_VERSION }}'" \
+            "must not end with -SNAPSHOT for a release"
+          exit 1
+
+      # Verify the runtime and pojos versions are the same
+      - name: Verify Matching Versions
+        if: ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION != steps.get_pojos_version.outputs.POJOS_VERSION }}
+        run: |
+          echo "::error::Runtime version '${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}'" \
+            "and pojos version '${{ steps.get_pojos_version.outputs.POJOS_VERSION }}' must match," \
+            "because pojos depends on the runtime with its own version"
           exit 1
 
       # Publish both modules in one Maven run so they reach Maven Central as a single deployment.
