@@ -56,6 +56,12 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 21
 }
 
+// Skip the "missing" checks ("no comment", "no @param", ...), which only produce warnings.
+// The other doclint checks still run, and their errors fail the build.
+tasks.withType(Javadoc).configureEach {
+    options.addBooleanOption('Xdoclint:all,-missing', true)
+}
+
 // JaCoCo 0.8.14+ is required to run tests on a Java 25 JVM
 jacoco {
     toolVersion = '0.8.14'

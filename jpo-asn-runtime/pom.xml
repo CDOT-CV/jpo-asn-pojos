@@ -231,6 +231,11 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>3.12.0</version>
+            <configuration>
+              <!-- Skip the "missing" checks ("no comment", "no @param", ...), which only produce
+                   warnings. The other doclint checks still run, and their errors fail the build. -->
+              <doclint>all,-missing</doclint>
+            </configuration>
             <executions>
               <execution>
                 <id>attach-javadoc</id>
