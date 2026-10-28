@@ -307,8 +307,8 @@ permanent and can't be changed or deleted; snapshots are overwritten by later sn
 cleaned up by Sonatype after 90 days.**
 
 The plugin also sets `waitUntil` to `published` and
-`waitMaxTime` to one hour per library, so the workflow fails if publishing fails or takes longer
-than that.
+`waitMaxTime` to one hour, so the workflow fails if publishing fails or takes longer than that.
+Both libraries are uploaded together as a single deployment, so the hour covers both.
 
 ## SonarQube Cloud Analysis
 
