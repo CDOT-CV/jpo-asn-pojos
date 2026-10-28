@@ -44,10 +44,10 @@ jobs:
         run: echo "POJOS_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-j2735-2024 -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
 
       - name: Echo Maven version (runtime)
-        run: echo "The runtime version is ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}"
+        run: echo "The RUNTIME version is ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}"
 
       - name: Echo Maven version (pojos)
-        run: echo "The runtime version is ${{ steps.get_pojos_version.outputs.POJOS_VERSION }}"
+        run: echo "The POJOS version is ${{ steps.get_pojos_version.outputs.POJOS_VERSION }}"
 
       # Fail the build if either version is not already a SNAPSHOT version
       - name: Verify Snapshot Version (runtime)
