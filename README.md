@@ -264,9 +264,27 @@ remove `-SNAPSHOT` for a release and keep it for a snapshot.
 Before publishing, both workflows check that `jpo-asn-runtime` and `jpo-asn-j2735-2024` have the
 same version, and that the tag matches it. The tag must be the version, optionally after a prefix
 that doesn't end in a digit or `.`, such as `cdot-` or `v`. For version `2.0.0-beta1`, the tags
-`2.0.0-beta1`, `v2.0.0-beta1` and `cdot-2.0.0-beta1` all match; `cdot-12.0.0-beta1` does not. For a
-pre-release, `-SNAPSHOT` is optional in the tag: `cdot-2.0.0-beta2` and `cdot-2.0.0-beta2-SNAPSHOT`
-both match version `2.0.0-beta2-SNAPSHOT`.
+`2.0.0-beta1`, `v2.0.0-beta1` and `cdot-2.0.0-beta1` all match; `cdot-12.0.0-beta1` does not.
+
+A pre-release tag must end with `-SNAPSHOT` or a numbered `-SNAPSHOT<n>`. Without the suffix, the
+pre-release would use up the tag the release needs, such as `cdot-2.0.0-beta2`, since a tag can't
+be reused. Because a snapshot version can be republished but a tag can't, number successive
+snapshot tags: `cdot-2.0.0-beta2-SNAPSHOT1`, `cdot-2.0.0-beta2-SNAPSHOT2`, and so on. Each one
+publishes version `2.0.0-beta2-SNAPSHOT`, replacing the previous snapshot.
+
+Git tags and Maven versions are separate. The tag's prefix and snapshot number exist only in Git
+and GitHub, and never appear in the published Maven version:
+
+| Git tag                      | Published Maven version                         | Version consumers depend on |
+|------------------------------|-------------------------------------------------|-----------------------------|
+| `cdot-2.0.0-beta2-SNAPSHOT1` | `2.0.0-beta2-SNAPSHOT`                          | `2.0.0-beta2-SNAPSHOT`      |
+| `cdot-2.0.0-beta2-SNAPSHOT2` | `2.0.0-beta2-SNAPSHOT` (replaces the one above) | `2.0.0-beta2-SNAPSHOT`      |
+| `cdot-2.0.0-beta2`           | `2.0.0-beta2`                                   | `2.0.0-beta2`               |
+
+Consumers can't ask for `SNAPSHOT1` or `SNAPSHOT2`: a dependency on `2.0.0-beta2-SNAPSHOT` gets
+whichever snapshot was published most recently. To find which commit that is, look at the latest
+pre-release on GitHub. The prefix (`cdot-`) doesn't set the groupId either; the groupId comes from
+the publishing repository (see [Variables and Secrets](#variables-and-secrets)).
 
 Don't promote a pre-release to a release. Its tag points at a commit whose version still ends in
 `-SNAPSHOT`, which the release workflow rejects. To release, update the version

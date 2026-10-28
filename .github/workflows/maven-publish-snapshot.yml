@@ -73,21 +73,28 @@ jobs:
             "because pojos depends on the runtime with its own version"
           exit 1
 
-      # Verify the pre-release tag is the version, optionally after a prefix such as 'cdot-' or 'v'.
-      # -SNAPSHOT is optional in the tag, so 'cdot-2.0.0-beta2' and 'cdot-2.0.0-beta2-SNAPSHOT'
-      # both match version '2.0.0-beta2-SNAPSHOT'. The prefix can't end in a digit or '.', so tag
-      # 'cdot-12.0.0' doesn't match version '2.0.0-SNAPSHOT'.
+      # Verify the pre-release tag is the version, optionally after a prefix such as 'cdot-' or 'v',
+      # and ends with -SNAPSHOT or a numbered -SNAPSHOT<n>. Tags can't be reused but snapshots can be
+      # republished, so 'cdot-2.0.0-beta2-SNAPSHOT1', 'cdot-2.0.0-beta2-SNAPSHOT2', ... all publish
+      # version '2.0.0-beta2-SNAPSHOT'. The suffix is required so that 'cdot-2.0.0-beta2' stays free
+      # for the release. The prefix can't end in a digit or '.', so tag 'cdot-12.0.0-SNAPSHOT1'
+      # doesn't match version '2.0.0-SNAPSHOT'.
       - name: Verify Tag Matches Version
         env:
           TAG: ${{ github.event.release.tag_name }}
           VERSION: ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}
         run: |
-          tag="${TAG%-SNAPSHOT}"
           version="${VERSION%-SNAPSHOT}"
+          if [[ "$TAG" =~ ^(.*)-SNAPSHOT[0-9]*$ ]]; then
+            tag="${BASH_REMATCH[1]}"
+          else
+            echo "::error::Pre-release tag '$TAG' must end with -SNAPSHOT or -SNAPSHOT<n>," \
+              "such as '${version}-SNAPSHOT1', so the tag without it stays free for the release"
+            exit 1
+          fi
           prefix="${tag%"$version"}"
           if [ "$prefix" = "$tag" ]; then
-            echo "::error::Pre-release tag '$TAG' does not end with version '$version'" \
-              "(with or without -SNAPSHOT)"
+            echo "::error::Pre-release tag '$TAG' does not match version '$VERSION'"
             exit 1
           fi
           case "$prefix" in
