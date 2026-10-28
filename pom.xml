@@ -4,15 +4,16 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>usdot.jpo.asn</groupId>
+
+  <groupId>${publish.groupId}</groupId>
   <artifactId>jpo-asn-composite</artifactId>
   <name>jpo-asn-composite</name>
   <description>Composite POM for jpo-asn pojo projects</description>
-  <version>2.0.0-beta2</version>
+  <version>2.0.0-beta2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
-    <github_organization>usdot-jpo-ode</github_organization>
+    <publish.groupId>io.github.usdot-jpo-ode</publish.groupId>
   </properties>
 
   <modules>
@@ -20,11 +21,4 @@
     <module>jpo-asn-j2735-2024</module>
   </modules>
 
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/${github_organization}/jpo-ode</url>
-    </repository>
-  </distributionManagement>
 </project>
