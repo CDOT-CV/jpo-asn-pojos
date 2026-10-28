@@ -261,6 +261,10 @@ The release event runs the workflow from the tagged commit, so tag a commit that
 current workflow files. Set the version in all `pom.xml` and `build.gradle` files before tagging:
 remove `-SNAPSHOT` for a release and keep it for a snapshot.
 
+Don't promote a pre-release to a release. Its tag points at a commit whose version still ends in
+`-SNAPSHOT`, which the release workflow rejects. To release, update the version
+number to remove `-SNAPSHOT`, tag that commit, and publish a new release from the new tag.
+
 ### Variables and Secrets
 
 Variables and secrets are set under **Settings > Secrets and variables > Actions**, except the

@@ -34,6 +34,26 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
+      - name: Get Maven version (runtime)
+        id: get_runtime_version
+        run: echo "RUNTIME_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-runtime -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+
+      - name: Get Maven version (pojos)
+        id: get_pojos_version
+        run: echo "POJOS_VERSION=$(sh ./mvnw help:evaluate --projects :jpo-asn-j2735-2024 -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+
+      - name: Verify Release Version (runtime)
+        if: ${{ endsWith(steps.get_runtime_version.outputs.RUNTIME_VERSION, '-SNAPSHOT') }}
+        run: |
+          echo "::error::Runtime version '${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}' must not end with -SNAPSHOT for a release"
+          exit 1
+
+      - name: Verify Release Version (pojos)
+        if: ${{ endsWith(steps.get_pojos_version.outputs.POJOS_VERSION, '-SNAPSHOT') }}
+        run: |
+          echo "::error::Pojos version '${{ steps.get_pojos_version.outputs.POJOS_VERSION }}' must not end with -SNAPSHOT for a release"
+          exit 1
+
       - name: Publish package (runtime)
         run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
         env:
