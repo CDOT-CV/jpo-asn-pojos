@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    lombok 'org.projectlombok:lombok:1.18.48'
+    lombok libs.lombok
 
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
