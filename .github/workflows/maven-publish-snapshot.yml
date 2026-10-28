@@ -62,15 +62,18 @@ jobs:
           echo "::error::Pojos version '${{ steps.get_pojos_version.outputs.POJOS_VERSION }}' does not end with -SNAPSHOT"
           exit 1
 
-      - name: Publish package (runtime)
-        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-runtime -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
-        env:
-          MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSWORD }}
-
-      - name: Publish package (pojos)
-        run: sh ./mvnw -P release --batch-mode deploy -Dmaven.repository.credentialScope=id --projects :jpo-asn-j2735-2024 -Dpublish.groupId=${{ steps.coords.outputs.group_id }} -Dpublish.githubRepository=${{ github.repository }}
+      # Publish both modules in one Maven run, the same way as maven-publish-release.yml.
+      # central-publishing-maven-plugin stages each module's artifacts during the build and uploads
+      # them together after the last module, so a failure in either module (tests, javadoc, signing)
+      # publishes neither snapshot. Maven builds runtime first, and pojos uses that runtime build.
+      # --projects leaves out the root jpo-asn-composite aggregator pom, which is not published.
+      - name: Publish packages (runtime and pojos)
+        run: |
+          sh ./mvnw -P release --batch-mode deploy \
+            -Dmaven.repository.credentialScope=id \
+            --projects :jpo-asn-runtime,:jpo-asn-j2735-2024 \
+            -Dpublish.groupId=${{ steps.coords.outputs.group_id }} \
+            -Dpublish.githubRepository=${{ github.repository }}
         env:
           MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
