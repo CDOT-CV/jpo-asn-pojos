@@ -38,7 +38,7 @@ dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
-    testImplementation 'commons-io:commons-io:2.18.0'
+    testImplementation 'commons-io:commons-io:2.22.0'
     testImplementation 'org.xmlunit:xmlunit-core:2.10.0'
     testImplementation 'org.xmlunit:xmlunit-matchers:2.10.0'
     testImplementation 'net.javacrumbs.json-unit:json-unit:6.2.0'

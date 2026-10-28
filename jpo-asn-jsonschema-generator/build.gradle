@@ -39,7 +39,7 @@ dependencies {
     implementation 'io.github.usdot-jpo-ode:jpo-asn-j2735-2024'
     implementation "com.github.victools:jsonschema-generator:${jsonSchemaGeneratorVersion}"
     implementation "com.github.victools:jsonschema-module-jackson:${jsonSchemaGeneratorVersion}"
-    implementation 'commons-io:commons-io:2.18.0'
+    implementation 'commons-io:commons-io:2.22.0'
     implementation 'com.jayway.jsonpath:json-path:3.0.0'
 
     implementation 'org.slf4j:slf4j-api:2.0.5'
