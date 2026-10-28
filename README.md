@@ -261,6 +261,13 @@ The release event runs the workflow from the tagged commit, so tag a commit that
 current workflow files. Set the version in all `pom.xml` and `build.gradle` files before tagging:
 remove `-SNAPSHOT` for a release and keep it for a snapshot.
 
+Before publishing, both workflows check that `jpo-asn-runtime` and `jpo-asn-j2735-2024` have the
+same version, and that the tag matches it. The tag must be the version, optionally after a prefix
+that doesn't end in a digit or `.`, such as `cdot-` or `v`. For version `2.0.0-beta1`, the tags
+`2.0.0-beta1`, `v2.0.0-beta1` and `cdot-2.0.0-beta1` all match; `cdot-12.0.0-beta1` does not. For a
+pre-release, `-SNAPSHOT` is optional in the tag: `cdot-2.0.0-beta2` and `cdot-2.0.0-beta2-SNAPSHOT`
+both match version `2.0.0-beta2-SNAPSHOT`.
+
 Don't promote a pre-release to a release. Its tag points at a commit whose version still ends in
 `-SNAPSHOT`, which the release workflow rejects. To release, update the version
 number to remove `-SNAPSHOT`, tag that commit, and publish a new release from the new tag.

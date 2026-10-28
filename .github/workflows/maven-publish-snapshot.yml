@@ -73,6 +73,32 @@ jobs:
             "because pojos depends on the runtime with its own version"
           exit 1
 
+      # Verify the pre-release tag is the version, optionally after a prefix such as 'cdot-' or 'v'.
+      # -SNAPSHOT is optional in the tag, so 'cdot-2.0.0-beta2' and 'cdot-2.0.0-beta2-SNAPSHOT'
+      # both match version '2.0.0-beta2-SNAPSHOT'. The prefix can't end in a digit or '.', so tag
+      # 'cdot-12.0.0' doesn't match version '2.0.0-SNAPSHOT'.
+      - name: Verify Tag Matches Version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          VERSION: ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}
+        run: |
+          tag="${TAG%-SNAPSHOT}"
+          version="${VERSION%-SNAPSHOT}"
+          prefix="${tag%"$version"}"
+          if [ "$prefix" = "$tag" ]; then
+            echo "::error::Pre-release tag '$TAG' does not end with version '$version'" \
+              "(with or without -SNAPSHOT)"
+            exit 1
+          fi
+          case "$prefix" in
+            "" | *[!0-9.]) ;;
+            *)
+              echo "::error::Pre-release tag '$TAG' does not match version '$VERSION'" \
+                "(the version must follow a non-numeric prefix such as 'cdot-' or 'v')"
+              exit 1
+              ;;
+          esac
+
       # Publish both modules in one Maven run, the same way as maven-publish-release.yml.
       # central-publishing-maven-plugin stages each module's artifacts during the build and uploads
       # them together after the last module, so a failure in either module (tests, javadoc, signing)

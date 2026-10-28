@@ -65,6 +65,27 @@ jobs:
             "because pojos depends on the runtime with its own version"
           exit 1
 
+      # Verify the release tag is the version, optionally after a prefix such as 'cdot-' or 'v'.
+      # The prefix can't end in a digit or '.', so tag 'cdot-12.0.0' doesn't match version '2.0.0'.
+      - name: Verify Tag Matches Version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          VERSION: ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}
+        run: |
+          prefix="${TAG%"$VERSION"}"
+          if [ "$prefix" = "$TAG" ]; then
+            echo "::error::Release tag '$TAG' does not end with version '$VERSION'"
+            exit 1
+          fi
+          case "$prefix" in
+            "" | *[!0-9.]) ;;
+            *)
+              echo "::error::Release tag '$TAG' does not match version '$VERSION'" \
+                "(the version must follow a non-numeric prefix such as 'cdot-' or 'v')"
+              exit 1
+              ;;
+          esac
+
       # Publish both modules in one Maven run so they reach Maven Central as a single deployment.
       # central-publishing-maven-plugin stages each module's signed artifacts during the build and,
       # after the last module, uploads them together as one bundle that Central validates and
