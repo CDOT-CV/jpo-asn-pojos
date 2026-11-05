@@ -12,6 +12,8 @@ plugins {
     id 'jacoco'
 }
 
+// Only used by includeBuild to match dependencies on this group to the local build. Gradle
+// doesn't publish; the Maven poms set the published groupId. Kept matching the Maven default.
 group = 'io.github.usdot-jpo-ode'
 version = '2.0.0-beta2-SNAPSHOT'
 
