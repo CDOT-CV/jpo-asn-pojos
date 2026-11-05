@@ -14,7 +14,7 @@ jobs:
     environment: maven-central-snapshot
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Resolve publish coordinates
         id: coords
         # groupId defaults to io.github.<owner> (lowercased); set the MAVEN_GROUP_ID repository variable to override
@@ -25,15 +25,15 @@ jobs:
           echo "Publishing with groupId ${group_id} from ${GITHUB_REPOSITORY}"
           echo "group_id=${group_id}" >> "$GITHUB_OUTPUT"
       - name: Set up Maven Central Repository
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6.2.0
         with:
           java-version: '25'
           distribution: 'temurin'
           server-id: central
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
+          server-username-env-var: MAVEN_USERNAME
+          server-password-env-var: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
-          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+          gpg-passphrase-env-var: MAVEN_GPG_PASSPHRASE
 
       - name: Get Maven version (runtime)
         id: get_runtime_version
