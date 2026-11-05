@@ -15,7 +15,6 @@ import us.dot.its.jpo.asn.runtime.types.Asn1Null;
  *   JSON token null"</li>
  *   <li>XER: ITU-T Rec. X.680 (02/2021), sec. 24.3: defines XMLNullValue as 'empty'"</li>
  * </ul>
- * </p>
  */
 public class NullSerializer extends StdSerializer<Asn1Null> {
 

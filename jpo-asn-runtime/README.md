@@ -13,8 +13,7 @@ This module contains base classes and serializers/deserialiers for ASN.1 types i
 
 ### Prerequisites
 
-* JDK 21 or higher
-* Gradle or Maven
+See the [repository compatibility matrix](../README.md#prerequisites) for the current JDK, Gradle, and Maven versions. This module can be built with either wrapper from the commands below.
 
 ### Build
 
