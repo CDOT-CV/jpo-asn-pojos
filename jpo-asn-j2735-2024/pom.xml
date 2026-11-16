@@ -322,8 +322,6 @@
               <autoPublish>true</autoPublish>
               <!-- Wait until the artifacts are live so a publishing failure fails the workflow -->
               <waitUntil>published</waitUntil>
-              <!-- Seconds; publishing can be slow, so allow double the default of 1800 -->
-              <waitMaxTime>3600</waitMaxTime>
             </configuration>
           </plugin>
 
