@@ -13,6 +13,8 @@
   <packaging>pom</packaging>
 
   <properties>
+    <!-- Default for builds without -D; the publish workflows override it. Modules don't inherit
+         this (no <parent>), so each pom defines it too. -->
     <publish.groupId>io.github.usdot-jpo-ode</publish.groupId>
   </properties>
 

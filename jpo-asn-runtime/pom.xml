@@ -65,7 +65,8 @@
   </scm>
 
   <properties>
-    <!-- Publishing coordinates. Each fork's publish workflow overrides these with -D; see README -->
+    <!-- Defaults for builds without -D. The publish workflows override both (groupId from
+         MAVEN_GROUP_ID or io.github.<owner>; repository from github.repository). -->
     <publish.groupId>io.github.usdot-jpo-ode</publish.groupId>
     <publish.githubRepository>usdot-jpo-ode/jpo-asn-pojos</publish.githubRepository>
     <maven.compiler.release>21</maven.compiler.release>
