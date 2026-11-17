@@ -98,4 +98,7 @@ spotless {
     }
 }
 
-compileJava.dependsOn 'spotlessApply'
+// Fail on bad formatting instead of rewriting sources; run ./gradlew spotlessApply to fix
+tasks.named('test') {
+    finalizedBy 'spotlessCheck'
+}

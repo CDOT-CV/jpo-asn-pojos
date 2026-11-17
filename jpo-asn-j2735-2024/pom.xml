@@ -213,12 +213,15 @@
             </googleJavaFormat>
           </java>
         </configuration>
+        <!-- Fails the build on bad formatting instead of rewriting sources; run ./mvnw spotless:apply to fix.
+             Bound to the test phase so it runs after the tests, and on test, package, verify and deploy. -->
         <executions>
           <execution>
+            <id>spotless-check</id>
             <goals>
-              <goal>apply</goal>
+              <goal>check</goal>
             </goals>
-            <phase>process-sources</phase>
+            <phase>test</phase>
           </execution>
         </executions>
       </plugin>

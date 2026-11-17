@@ -77,6 +77,21 @@ To build the project using Maven, from the root directory:
 ./mvnw clean package
 ```
 
+### Code Formatting
+
+Java sources in `jpo-asn-j2735-2024` and `jpo-asn-test-generator` are formatted with
+[google-java-format](https://github.com/google/google-java-format) via Spotless. Builds don't
+reformat code; `test` (and therefore `check`, `package`, and `verify`) fails if a file isn't
+formatted. To fix formatting:
+
+```bash
+# Gradle, from the module directory
+./gradlew spotlessApply
+
+# Maven, from the root directory
+./mvnw spotless:apply --projects :jpo-asn-j2735-2024
+```
+
 ### Run Tests
 
 To run tests using Gradle:
