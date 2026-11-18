@@ -6,8 +6,7 @@ It generates syntactically correct ASN.1 JER and XER messages that observe the c
 
 ## Prerequisites
 
-* Java 21+
-* Gradle
+See the [repository compatibility matrix](../README.md#prerequisites) for the current JDK, Gradle, and Maven versions. This module is built with Gradle from the commands below.
 
 ## Build
 
