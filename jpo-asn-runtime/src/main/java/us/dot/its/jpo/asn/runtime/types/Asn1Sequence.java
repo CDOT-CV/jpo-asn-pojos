@@ -14,7 +14,6 @@ package us.dot.its.jpo.asn.runtime.types;
  *   <li>Elements may be of different types</li>
  *   <li>The structure is statically defined (except for optional elements)</li>
  * </ul>
- * <p>
  *
  * @see Asn1Type The base interface for all ASN.1 types
  * @since 1.0

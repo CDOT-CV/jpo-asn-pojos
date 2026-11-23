@@ -26,7 +26,7 @@ import java.util.Collection;
  * <pre>
  * VehicleList ::= SEQUENCE OF Vehicle
  * </pre>
- * would be represented as a subclass of Asn1SequenceOf<Vehicle>
+ * would be represented as a subclass of Asn1SequenceOf&lt;Vehicle&gt;
  *
  * @param <T> The type of items in the SEQUENCE OF, must extend {@link Asn1Type}
  *
